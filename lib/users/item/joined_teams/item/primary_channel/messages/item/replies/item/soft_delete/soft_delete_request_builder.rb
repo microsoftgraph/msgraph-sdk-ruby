@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../../../users'
 require_relative '../../../../../../../../item'
 require_relative '../../../../../../../joined_teams'
@@ -37,7 +37,7 @@ module MicrosoftGraph
                                                     super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/primaryChannel/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/softDelete")
                                                 end
                                                 ## 
-                                                ## Invoke action softDelete
+                                                ## Delete a single chatMessage or a chat message reply in a channel or a chat.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of void
                                                 ## 
@@ -46,12 +46,12 @@ module MicrosoftGraph
                                                         request_configuration
                                                     )
                                                     error_mapping = Hash.new
-                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                                 end
                                                 ## 
-                                                ## Invoke action softDelete
+                                                ## Delete a single chatMessage or a chat message reply in a channel or a chat.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
                                                 ## 

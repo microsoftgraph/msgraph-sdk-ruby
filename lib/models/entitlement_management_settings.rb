@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the durationUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
-            ## @param value Value to set for the duration_until_external_user_deleted_after_blocked property.
+            ## @param value Value to set for the durationUntilExternalUserDeletedAfterBlocked property.
             ## @return a void
             ## 
             def duration_until_external_user_deleted_after_blocked=(value)
@@ -52,7 +52,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalUserLifecycleAction property value. Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
-            ## @param value Value to set for the external_user_lifecycle_action property.
+            ## @param value Value to set for the externalUserLifecycleAction property.
             ## @return a void
             ## 
             def external_user_lifecycle_action=(value)

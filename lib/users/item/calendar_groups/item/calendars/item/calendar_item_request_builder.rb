@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
 require_relative '../../../../../../models/calendar'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../users'
 require_relative '../../../../item'
 require_relative '../../../calendar_groups'
@@ -9,17 +9,10 @@ require_relative '../../item'
 require_relative '../calendars'
 require_relative './allowed_calendar_sharing_roles_with_user/allowed_calendar_sharing_roles_with_user_request_builder'
 require_relative './calendar_permissions/calendar_permissions_request_builder'
-require_relative './calendar_permissions/item/calendar_permission_item_request_builder'
 require_relative './calendar_view/calendar_view_request_builder'
-require_relative './calendar_view/item/event_item_request_builder'
 require_relative './events/events_request_builder'
-require_relative './events/item/event_item_request_builder'
 require_relative './get_schedule/get_schedule_request_builder'
 require_relative './item'
-require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
-require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
-require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
-require_relative './single_value_extended_properties/single_value_extended_properties_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -53,16 +46,6 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::GetSchedule::GetScheduleRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.calendar entity.
-                                def multi_value_extended_properties()
-                                    return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::MultiValueExtendedProperties::MultiValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.calendar entity.
-                                def single_value_extended_properties()
-                                    return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::SingleValueExtendedProperties::SingleValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
                                 ## Provides operations to call the allowedCalendarSharingRoles method.
                                 ## @param user Usage: User='{User}'
                                 ## @return a allowed_calendar_sharing_roles_with_user_request_builder
@@ -70,28 +53,6 @@ module MicrosoftGraph
                                 def allowed_calendar_sharing_roles_with_user(user)
                                     raise StandardError, 'user cannot be null' if user.nil?
                                     return AllowedCalendarSharingRolesWithUserRequestBuilder.new(@path_parameters, @request_adapter, User)
-                                end
-                                ## 
-                                ## Provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a calendar_permission_item_request_builder
-                                ## 
-                                def calendar_permissions_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["calendarPermission%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarPermissions::Item::CalendarPermissionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a event_item_request_builder
-                                ## 
-                                def calendar_view_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["event%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarView::Item::EventItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new CalendarItemRequestBuilder and sets the default values.
@@ -112,20 +73,9 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the events property of the microsoft.graph.calendar entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a event_item_request_builder
-                                ## 
-                                def events_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["event%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::EventItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## The calendars in the calendar group. Navigation property. Read-only. Nullable.
@@ -137,20 +87,9 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Calendar.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.calendar entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a multi_value_legacy_extended_property_item_request_builder
-                                ## 
-                                def multi_value_extended_properties_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["multiValueLegacyExtendedProperty%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::MultiValueExtendedProperties::Item::MultiValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Update the navigation property calendars in users
@@ -164,20 +103,9 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Calendar.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.calendar entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a single_value_legacy_extended_property_item_request_builder
-                                ## 
-                                def single_value_extended_properties_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["singleValueLegacyExtendedProperty%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::SingleValueExtendedProperties::Item::SingleValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Delete navigation property calendars for users

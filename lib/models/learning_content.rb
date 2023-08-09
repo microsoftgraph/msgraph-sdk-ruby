@@ -70,7 +70,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalTags property value. Keywords, topics, and other tags associated with the learning content. Optional.
-            ## @param value Value to set for the additional_tags property.
+            ## @param value Value to set for the additionalTags property.
             ## @return a void
             ## 
             def additional_tags=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentWebUrl property value. The content web URL for the learning content. Required.
-            ## @param value Value to set for the content_web_url property.
+            ## @param value Value to set for the contentWebUrl property.
             ## @return a void
             ## 
             def content_web_url=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The date and time when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalId property value. Unique external content ID for the learning content. Required.
-            ## @param value Value to set for the external_id property.
+            ## @param value Value to set for the externalId property.
             ## @return a void
             ## 
             def external_id=(value)
@@ -232,7 +232,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isActive property value. Indicates whether the content is active or not. Inactive content doesn't show up in the UI. The default value is true. Optional.
-            ## @param value Value to set for the is_active property.
+            ## @param value Value to set for the isActive property.
             ## @return a void
             ## 
             def is_active=(value)
@@ -247,7 +247,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isPremium property value. Indicates whether the learning content requires the user to sign-in on the learning provider platform or not. The default value is false. Optional.
-            ## @param value Value to set for the is_premium property.
+            ## @param value Value to set for the isPremium property.
             ## @return a void
             ## 
             def is_premium=(value)
@@ -262,7 +262,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isSearchable property value. Indicates whether the learning content is searchable or not. The default value is true. Optional.
-            ## @param value Value to set for the is_searchable property.
+            ## @param value Value to set for the isSearchable property.
             ## @return a void
             ## 
             def is_searchable=(value)
@@ -277,7 +277,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the languageTag property value. The language of the learning content, for example, en-us or fr-fr. Required.
-            ## @param value Value to set for the language_tag property.
+            ## @param value Value to set for the languageTag property.
             ## @return a void
             ## 
             def language_tag=(value)
@@ -292,7 +292,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The date and time when the learning content was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -307,7 +307,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the numberOfPages property value. The number of pages of the learning content, for example, 9. Optional.
-            ## @param value Value to set for the number_of_pages property.
+            ## @param value Value to set for the numberOfPages property.
             ## @return a void
             ## 
             def number_of_pages=(value)
@@ -349,7 +349,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the skillTags property value. The skills tags associated with the learning content. Optional.
-            ## @param value Value to set for the skill_tags property.
+            ## @param value Value to set for the skillTags property.
             ## @return a void
             ## 
             def skill_tags=(value)
@@ -364,7 +364,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sourceName property value. The source name of the learning content, such as LinkedIn Learning or Coursera. Optional.
-            ## @param value Value to set for the source_name property.
+            ## @param value Value to set for the sourceName property.
             ## @return a void
             ## 
             def source_name=(value)
@@ -379,7 +379,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the thumbnailWebUrl property value. The URL of learning content thumbnail image. Optional.
-            ## @param value Value to set for the thumbnail_web_url property.
+            ## @param value Value to set for the thumbnailWebUrl property.
             ## @return a void
             ## 
             def thumbnail_web_url=(value)

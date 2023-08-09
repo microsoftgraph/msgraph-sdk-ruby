@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The file name.
             @file_name
             ## 
-            ## Instantiates a new FileAssessmentRequest and sets the default values.
+            ## Instantiates a new fileAssessmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -29,7 +29,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
-            ## @param value Value to set for the content_data property.
+            ## @param value Value to set for the contentData property.
             ## @return a void
             ## 
             def content_data=(value)
@@ -53,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fileName property value. The file name.
-            ## @param value Value to set for the file_name property.
+            ## @param value Value to set for the fileName property.
             ## @return a void
             ## 
             def file_name=(value)

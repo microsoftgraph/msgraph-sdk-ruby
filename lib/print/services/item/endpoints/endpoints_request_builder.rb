@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../models/print_service_endpoint'
 require_relative '../../../../models/print_service_endpoint_collection_response'
 require_relative '../../../print'
@@ -8,6 +8,7 @@ require_relative '../../services'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './endpoints'
+require_relative './item/print_service_endpoint_item_request_builder'
 
 module MicrosoftGraph
     module Print
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Print::Services::Item::Endpoints::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the endpoints property of the microsoft.graph.printService entity.
+                        ## @param print_service_endpoint_id The unique identifier of printServiceEndpoint
+                        ## @return a print_service_endpoint_item_request_builder
+                        ## 
+                        def by_print_service_endpoint_id(print_service_endpoint_id)
+                            raise StandardError, 'print_service_endpoint_id cannot be null' if print_service_endpoint_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["printServiceEndpoint%2Did"] = print_service_endpoint_id
+                            return MicrosoftGraph::Print::Services::Item::Endpoints::Item::PrintServiceEndpointItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new EndpointsRequestBuilder and sets the default values.
@@ -42,8 +54,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintServiceEndpointCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -58,8 +70,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintServiceEndpoint.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 

@@ -40,7 +40,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the minLength property value. The minLength property
-                                    ## @param value Value to set for the min_length property.
+                                    ## @param value Value to set for the minLength property.
                                     ## @return a void
                                     ## 
                                     def min_length=(value)

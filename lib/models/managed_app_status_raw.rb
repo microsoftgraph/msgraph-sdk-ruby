@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Represents an un-typed status report about organizations app protection and configuration.
         class ManagedAppStatusRaw < MicrosoftGraph::Models::ManagedAppStatus
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Status report content.
             @content
             ## 
-            ## Instantiates a new ManagedAppStatusRaw and sets the default values.
+            ## Instantiates a new managedAppStatusRaw and sets the default values.
             ## @return a void
             ## 
             def initialize()

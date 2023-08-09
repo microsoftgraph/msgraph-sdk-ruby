@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../microsoft_graph'
 require_relative '../../../../../../../../../models/checklist_item'
-require_relative '../../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../../users'
 require_relative '../../../../../../../item'
 require_relative '../../../../../../todo'
@@ -36,7 +36,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/checklistItems/{checklistItem%2Did}{?%24select,%24expand}")
                                             end
                                             ## 
-                                            ## Delete navigation property checklistItems for users
+                                            ## Delete a checklistItem object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of void
                                             ## 
@@ -45,12 +45,12 @@ module MicrosoftGraph
                                                     request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## A collection of checklistItems linked to a task.
+                                            ## Read the properties and relationships of a checklistItem object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of checklist_item
                                             ## 
@@ -59,12 +59,12 @@ module MicrosoftGraph
                                                     request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChecklistItem.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Update the navigation property checklistItems in users
+                                            ## Update the properties of a checklistItem object.
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of checklist_item
@@ -75,12 +75,12 @@ module MicrosoftGraph
                                                     body, request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChecklistItem.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Delete navigation property checklistItems for users
+                                            ## Delete a checklistItem object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -96,7 +96,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## A collection of checklistItems linked to a task.
+                                            ## Read the properties and relationships of a checklistItem object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -114,7 +114,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## Update the navigation property checklistItems in users
+                                            ## Update the properties of a checklistItem object.
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
@@ -135,7 +135,7 @@ module MicrosoftGraph
                                             end
 
                                             ## 
-                                            # A collection of checklistItems linked to a task.
+                                            # Read the properties and relationships of a checklistItem object.
                                             class ChecklistItemItemRequestBuilderGetQueryParameters
                                                 
                                                 ## 

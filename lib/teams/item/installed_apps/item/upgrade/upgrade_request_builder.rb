@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../teams'
 require_relative '../../../item'
 require_relative '../../installed_apps'
@@ -28,24 +28,28 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Upgrade an app installation within a chat.
+                            ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
-                            def post(request_configuration=nil)
+                            def post(body, request_configuration=nil)
+                                raise StandardError, 'body cannot be null' if body.nil?
                                 request_info = self.to_post_request_information(
-                                    request_configuration
+                                    body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
                             ## Upgrade an app installation within a chat.
+                            ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
-                            def to_post_request_information(request_configuration=nil)
+                            def to_post_request_information(body, request_configuration=nil)
+                                raise StandardError, 'body cannot be null' if body.nil?
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
                                 request_info.url_template = @url_template
                                 request_info.path_parameters = @path_parameters
@@ -54,6 +58,7 @@ module MicrosoftGraph
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
                             end
                         end

@@ -1,18 +1,14 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
 require_relative '../../models/domain'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../domains'
 require_relative './domain_name_references/domain_name_references_request_builder'
-require_relative './domain_name_references/item/directory_object_item_request_builder'
 require_relative './federation_configuration/federation_configuration_request_builder'
-require_relative './federation_configuration/item/internal_domain_federation_item_request_builder'
 require_relative './force_delete/force_delete_request_builder'
 require_relative './item'
 require_relative './promote/promote_request_builder'
-require_relative './service_configuration_records/item/domain_dns_record_item_request_builder'
 require_relative './service_configuration_records/service_configuration_records_request_builder'
-require_relative './verification_dns_records/item/domain_dns_record_item_request_builder'
 require_relative './verification_dns_records/verification_dns_records_request_builder'
 require_relative './verify/verify_request_builder'
 
@@ -77,31 +73,9 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def domain_name_references_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Domains::Item::DomainNameReferences::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.
-                ## @param id Unique identifier of the item
-                ## @return a internal_domain_federation_item_request_builder
-                ## 
-                def federation_configuration_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["internalDomainFederation%2Did"] = id
-                    return MicrosoftGraph::Domains::Item::FederationConfiguration::Item::InternalDomainFederationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Retrieve the properties and relationships of domain object.
@@ -113,8 +87,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Domain.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -129,20 +103,9 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Domain.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
-                ## @param id Unique identifier of the item
-                ## @return a domain_dns_record_item_request_builder
-                ## 
-                def service_configuration_records_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["domainDnsRecord%2Did"] = id
-                    return MicrosoftGraph::Domains::Item::ServiceConfigurationRecords::Item::DomainDnsRecordItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Deletes a domain from a tenant.
@@ -197,17 +160,6 @@ module MicrosoftGraph
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
-                end
-                ## 
-                ## Provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.
-                ## @param id Unique identifier of the item
-                ## @return a domain_dns_record_item_request_builder
-                ## 
-                def verification_dns_records_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["domainDnsRecord%2Did"] = id
-                    return MicrosoftGraph::Domains::Item::VerificationDnsRecords::Item::DomainDnsRecordItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
 
                 ## 

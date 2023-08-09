@@ -1,12 +1,14 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../models/user_scope_teams_app_installation'
 require_relative '../../../me'
 require_relative '../../teamwork'
 require_relative '../installed_apps'
 require_relative './chat/chat_request_builder'
 require_relative './item'
+require_relative './teams_app/teams_app_request_builder'
+require_relative './teams_app_definition/teams_app_definition_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -23,6 +25,16 @@ module MicrosoftGraph
                             return MicrosoftGraph::Me::Teamwork::InstalledApps::Item::Chat::ChatRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        # Provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.
+                        def teams_app()
+                            return MicrosoftGraph::Me::Teamwork::InstalledApps::Item::TeamsApp::TeamsAppRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
+                        def teams_app_definition()
+                            return MicrosoftGraph::Me::Teamwork::InstalledApps::Item::TeamsAppDefinition::TeamsAppDefinitionRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new UserScopeTeamsAppInstallationItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -32,7 +44,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/me/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property installedApps for me
+                        ## Uninstall an app from the personal scope of the specified user.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -41,12 +53,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## The apps installed in the personal scope of this user.
+                        ## Retrieve the app installed in the personal scope of the specified user.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of user_scope_teams_app_installation
                         ## 
@@ -55,8 +67,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserScopeTeamsAppInstallation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -71,12 +83,12 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserScopeTeamsAppInstallation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property installedApps for me
+                        ## Uninstall an app from the personal scope of the specified user.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -92,7 +104,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## The apps installed in the personal scope of this user.
+                        ## Retrieve the app installed in the personal scope of the specified user.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -131,7 +143,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The apps installed in the personal scope of this user.
+                        # Retrieve the app installed in the personal scope of the specified user.
                         class UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters
                             
                             ## 

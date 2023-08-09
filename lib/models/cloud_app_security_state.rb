@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
-            ## @param value Value to set for the destination_service_ip property.
+            ## @param value Value to set for the destinationServiceIp property.
             ## @return a void
             ## 
             def destination_service_ip=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the destinationServiceName property value. Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
-            ## @param value Value to set for the destination_service_name property.
+            ## @param value Value to set for the destinationServiceName property.
             ## @return a void
             ## 
             def destination_service_name=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
-            ## @param value Value to set for the risk_score property.
+            ## @param value Value to set for the riskScore property.
             ## @return a void
             ## 
             def risk_score=(value)

@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/unified_role_management_policy_assignment'
 require_relative '../../models/unified_role_management_policy_assignment_collection_response'
 require_relative '../policies'
 require_relative './count/count_request_builder'
+require_relative './item/unified_role_management_policy_assignment_item_request_builder'
 require_relative './role_management_policy_assignments'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Policies::RoleManagementPolicyAssignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the roleManagementPolicyAssignments property of the microsoft.graph.policyRoot entity.
+                ## @param unified_role_management_policy_assignment_id The unique identifier of unifiedRoleManagementPolicyAssignment
+                ## @return a unified_role_management_policy_assignment_item_request_builder
+                ## 
+                def by_unified_role_management_policy_assignment_id(unified_role_management_policy_assignment_id)
+                    raise StandardError, 'unified_role_management_policy_assignment_id cannot be null' if unified_role_management_policy_assignment_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["unifiedRoleManagementPolicyAssignment%2Did"] = unified_role_management_policy_assignment_id
+                    return MicrosoftGraph::Policies::RoleManagementPolicyAssignments::Item::UnifiedRoleManagementPolicyAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new RoleManagementPolicyAssignmentsRequestBuilder and sets the default values.
@@ -38,8 +50,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleManagementPolicyAssignmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -54,8 +66,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleManagementPolicyAssignment.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 

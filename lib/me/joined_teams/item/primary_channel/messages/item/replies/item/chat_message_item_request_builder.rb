@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../microsoft_graph'
 require_relative '../../../../../../../../models/chat_message'
-require_relative '../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../me'
 require_relative '../../../../../../joined_teams'
 require_relative '../../../../../item'
@@ -10,10 +10,11 @@ require_relative '../../../messages'
 require_relative '../../item'
 require_relative '../replies'
 require_relative './hosted_contents/hosted_contents_request_builder'
-require_relative './hosted_contents/item/chat_message_hosted_content_item_request_builder'
 require_relative './item'
+require_relative './set_reaction/set_reaction_request_builder'
 require_relative './soft_delete/soft_delete_request_builder'
 require_relative './undo_soft_delete/undo_soft_delete_request_builder'
+require_relative './unset_reaction/unset_reaction_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -34,6 +35,11 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::Messages::Item::Replies::Item::HostedContents::HostedContentsRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        # Provides operations to call the setReaction method.
+                                        def set_reaction()
+                                            return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::Messages::Item::Replies::Item::SetReaction::SetReactionRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
                                         # Provides operations to call the softDelete method.
                                         def soft_delete()
                                             return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::Messages::Item::Replies::Item::SoftDelete::SoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
@@ -42,6 +48,11 @@ module MicrosoftGraph
                                         # Provides operations to call the undoSoftDelete method.
                                         def undo_soft_delete()
                                             return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::Messages::Item::Replies::Item::UndoSoftDelete::UndoSoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        # Provides operations to call the unsetReaction method.
+                                        def unset_reaction()
+                                            return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::Messages::Item::Replies::Item::UnsetReaction::UnsetReactionRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new ChatMessageItemRequestBuilder and sets the default values.
@@ -62,12 +73,12 @@ module MicrosoftGraph
                                                 request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## Replies for a specified message. Supports $expand for channel messages.
+                                        ## Retrieve a single message or a message reply in a channel or a chat.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of chat_message
                                         ## 
@@ -76,20 +87,9 @@ module MicrosoftGraph
                                                 request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessage.create_from_discriminator_value(pn) }, error_mapping)
-                                        end
-                                        ## 
-                                        ## Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-                                        ## @param id Unique identifier of the item
-                                        ## @return a chat_message_hosted_content_item_request_builder
-                                        ## 
-                                        def hosted_contents_by_id(id)
-                                            raise StandardError, 'id cannot be null' if id.nil?
-                                            url_tpl_params = @path_parameters.clone
-                                            url_tpl_params["chatMessageHostedContent%2Did"] = id
-                                            return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::Messages::Item::Replies::Item::HostedContents::Item::ChatMessageHostedContentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                         end
                                         ## 
                                         ## Update the navigation property replies in me
@@ -103,8 +103,8 @@ module MicrosoftGraph
                                                 body, request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessage.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
@@ -124,7 +124,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Replies for a specified message. Supports $expand for channel messages.
+                                        ## Retrieve a single message or a message reply in a channel or a chat.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -163,7 +163,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Replies for a specified message. Supports $expand for channel messages.
+                                        # Retrieve a single message or a message reply in a channel or a chat.
                                         class ChatMessageItemRequestBuilderGetQueryParameters
                                             
                                             ## 

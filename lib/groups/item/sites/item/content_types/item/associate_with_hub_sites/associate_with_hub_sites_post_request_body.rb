@@ -36,7 +36,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the hubSiteUrls property value. The hubSiteUrls property
-                                    ## @param value Value to set for the hub_site_urls property.
+                                    ## @param value Value to set for the hubSiteUrls property.
                                     ## @return a void
                                     ## 
                                     def hub_site_urls=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the propagateToExistingLists property value. The propagateToExistingLists property
-                                    ## @param value Value to set for the propagate_to_existing_lists property.
+                                    ## @param value Value to set for the propagateToExistingLists property.
                                     ## @return a void
                                     ## 
                                     def propagate_to_existing_lists=(value)

@@ -33,7 +33,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the AdditionalData property.
+                    ## @param value Value to set for the additionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the keyCredential property value. The keyCredential property
-                    ## @param value Value to set for the key_credential property.
+                    ## @param value Value to set for the keyCredential property.
                     ## @return a void
                     ## 
                     def key_credential=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the passwordCredential property value. The passwordCredential property
-                    ## @param value Value to set for the password_credential property.
+                    ## @param value Value to set for the passwordCredential property.
                     ## @return a void
                     ## 
                     def password_credential=(value)

@@ -1,11 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative '../models/o_data_errors/o_data_error'
+require_relative '../models/o_data_errors_o_data_error'
 require_relative '../models/tenant_relationship'
 require_relative './delegated_admin_customers/delegated_admin_customers_request_builder'
-require_relative './delegated_admin_customers/item/delegated_admin_customer_item_request_builder'
 require_relative './delegated_admin_relationships/delegated_admin_relationships_request_builder'
-require_relative './delegated_admin_relationships/item/delegated_admin_relationship_item_request_builder'
+require_relative './find_tenant_information_by_domain_name_with_domain_name/find_tenant_information_by_domain_name_with_domain_name_request_builder'
+require_relative './find_tenant_information_by_tenant_id_with_tenant_id/find_tenant_information_by_tenant_id_with_tenant_id_request_builder'
 require_relative './tenant_relationships'
 
 module MicrosoftGraph
@@ -34,26 +34,22 @@ module MicrosoftGraph
                 super(path_parameters, request_adapter, "{+baseurl}/tenantRelationships{?%24select,%24expand}")
             end
             ## 
-            ## Provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
-            ## @param id Unique identifier of the item
-            ## @return a delegated_admin_customer_item_request_builder
+            ## Provides operations to call the findTenantInformationByDomainName method.
+            ## @param domain_name Usage: domainName='{domainName}'
+            ## @return a find_tenant_information_by_domain_name_with_domain_name_request_builder
             ## 
-            def delegated_admin_customers_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["delegatedAdminCustomer%2Did"] = id
-                return MicrosoftGraph::TenantRelationships::DelegatedAdminCustomers::Item::DelegatedAdminCustomerItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            def find_tenant_information_by_domain_name_with_domain_name(domain_name)
+                raise StandardError, 'domain_name cannot be null' if domain_name.nil?
+                return FindTenantInformationByDomainNameWithDomainNameRequestBuilder.new(@path_parameters, @request_adapter, domainName)
             end
             ## 
-            ## Provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.
-            ## @param id Unique identifier of the item
-            ## @return a delegated_admin_relationship_item_request_builder
+            ## Provides operations to call the findTenantInformationByTenantId method.
+            ## @param tenant_id Usage: tenantId='{tenantId}'
+            ## @return a find_tenant_information_by_tenant_id_with_tenant_id_request_builder
             ## 
-            def delegated_admin_relationships_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["delegatedAdminRelationship%2Did"] = id
-                return MicrosoftGraph::TenantRelationships::DelegatedAdminRelationships::Item::DelegatedAdminRelationshipItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            def find_tenant_information_by_tenant_id_with_tenant_id(tenant_id)
+                raise StandardError, 'tenant_id cannot be null' if tenant_id.nil?
+                return FindTenantInformationByTenantIdWithTenantIdRequestBuilder.new(@path_parameters, @request_adapter, tenantId)
             end
             ## 
             ## Get tenantRelationships
@@ -65,8 +61,8 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TenantRelationship.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -81,8 +77,8 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TenantRelationship.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 

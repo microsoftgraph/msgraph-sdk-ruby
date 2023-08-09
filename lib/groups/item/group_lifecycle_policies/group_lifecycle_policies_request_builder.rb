@@ -2,11 +2,12 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/group_lifecycle_policy'
 require_relative '../../../models/group_lifecycle_policy_collection_response'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './group_lifecycle_policies'
+require_relative './item/group_lifecycle_policy_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
+                    ## @param group_lifecycle_policy_id The unique identifier of groupLifecyclePolicy
+                    ## @return a group_lifecycle_policy_item_request_builder
+                    ## 
+                    def by_group_lifecycle_policy_id(group_lifecycle_policy_id)
+                        raise StandardError, 'group_lifecycle_policy_id cannot be null' if group_lifecycle_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["groupLifecyclePolicy%2Did"] = group_lifecycle_policy_id
+                        return MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item::GroupLifecyclePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.
@@ -40,8 +52,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::GroupLifecyclePolicyCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -56,8 +68,8 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::GroupLifecyclePolicy.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

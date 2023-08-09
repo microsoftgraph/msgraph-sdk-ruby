@@ -2,11 +2,12 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/connected_organization'
 require_relative '../../../models/connected_organization_collection_response'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../identity_governance'
 require_relative '../entitlement_management'
 require_relative './connected_organizations'
 require_relative './count/count_request_builder'
+require_relative './item/connected_organization_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
+                    ## @param connected_organization_id The unique identifier of connectedOrganization
+                    ## @return a connected_organization_item_request_builder
+                    ## 
+                    def by_connected_organization_id(connected_organization_id)
+                        raise StandardError, 'connected_organization_id cannot be null' if connected_organization_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["connectedOrganization%2Did"] = connected_organization_id
+                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ConnectedOrganizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ConnectedOrganizationsRequestBuilder and sets the default values.
@@ -40,12 +52,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConnectedOrganizationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create new navigation property to connectedOrganizations for identityGovernance
+                    ## Create a new connectedOrganization object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of connected_organization
@@ -56,8 +68,8 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConnectedOrganization.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Create new navigation property to connectedOrganizations for identityGovernance
+                    ## Create a new connectedOrganization object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information

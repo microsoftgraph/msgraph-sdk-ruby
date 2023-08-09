@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/role_definition'
 require_relative '../../models/role_definition_collection_response'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
+require_relative './item/role_definition_item_request_builder'
 require_relative './role_definitions'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::DeviceManagement::RoleDefinitions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
+                ## @param role_definition_id The unique identifier of roleDefinition
+                ## @return a role_definition_item_request_builder
+                ## 
+                def by_role_definition_id(role_definition_id)
+                    raise StandardError, 'role_definition_id cannot be null' if role_definition_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["roleDefinition%2Did"] = role_definition_id
+                    return MicrosoftGraph::DeviceManagement::RoleDefinitions::Item::RoleDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new RoleDefinitionsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/roleDefinitions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## The Role Definitions.
+                ## List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of role_definition_collection_response
                 ## 
@@ -38,12 +50,12 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RoleDefinitionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create new navigation property to roleDefinitions for deviceManagement
+                ## Create a new deviceAndAppManagementRoleDefinition object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of role_definition
@@ -54,12 +66,12 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RoleDefinition.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## The Role Definitions.
+                ## List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create new navigation property to roleDefinitions for deviceManagement
+                ## Create a new deviceAndAppManagementRoleDefinition object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The Role Definitions.
+                # List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
                 class RoleDefinitionsRequestBuilderGetQueryParameters
                     
                     ## 

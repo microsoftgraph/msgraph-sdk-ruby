@@ -51,7 +51,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                            ## @param value Value to set for the AdditionalData property.
+                            ## @param value Value to set for the additionalData property.
                             ## @return a void
                             ## 
                             def additional_data=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the expirationDateTime property value. The expirationDateTime property
-                            ## @param value Value to set for the expiration_date_time property.
+                            ## @param value Value to set for the expirationDateTime property.
                             ## @return a void
                             ## 
                             def expiration_date_time=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the requireSignIn property value. The requireSignIn property
-                            ## @param value Value to set for the require_sign_in property.
+                            ## @param value Value to set for the requireSignIn property.
                             ## @return a void
                             ## 
                             def require_sign_in=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the retainInheritedPermissions property value. The retainInheritedPermissions property
-                            ## @param value Value to set for the retain_inherited_permissions property.
+                            ## @param value Value to set for the retainInheritedPermissions property.
                             ## @return a void
                             ## 
                             def retain_inherited_permissions=(value)
@@ -203,7 +203,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the sendInvitation property value. The sendInvitation property
-                            ## @param value Value to set for the send_invitation property.
+                            ## @param value Value to set for the sendInvitation property.
                             ## @return a void
                             ## 
                             def send_invitation=(value)

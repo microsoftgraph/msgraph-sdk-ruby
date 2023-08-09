@@ -20,7 +20,7 @@ module MicrosoftGraph
             # User ID of the sender of the offer shift request.
             @sender_shift_id
             ## 
-            ## Instantiates a new OfferShiftRequest and sets the default values.
+            ## Instantiates a new offerShiftRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recipientActionDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the recipient_action_date_time property.
+            ## @param value Value to set for the recipientActionDateTime property.
             ## @return a void
             ## 
             def recipient_action_date_time=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recipientActionMessage property value. Custom message sent by recipient of the offer shift request.
-            ## @param value Value to set for the recipient_action_message property.
+            ## @param value Value to set for the recipientActionMessage property.
             ## @return a void
             ## 
             def recipient_action_message=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recipientUserId property value. User ID of the recipient of the offer shift request.
-            ## @param value Value to set for the recipient_user_id property.
+            ## @param value Value to set for the recipientUserId property.
             ## @return a void
             ## 
             def recipient_user_id=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the senderShiftId property value. User ID of the sender of the offer shift request.
-            ## @param value Value to set for the sender_shift_id property.
+            ## @param value Value to set for the senderShiftId property.
             ## @return a void
             ## 
             def sender_shift_id=(value)

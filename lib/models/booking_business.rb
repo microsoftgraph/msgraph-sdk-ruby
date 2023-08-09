@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Represents a Microsot Bookings Business.
         class BookingBusiness < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -99,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the businessHours property value. The hours of operation for the business.
-            ## @param value Value to set for the business_hours property.
+            ## @param value Value to set for the businessHours property.
             ## @return a void
             ## 
             def business_hours=(value)
@@ -114,7 +116,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the businessType property value. The type of business.
-            ## @param value Value to set for the business_type property.
+            ## @param value Value to set for the businessType property.
             ## @return a void
             ## 
             def business_type=(value)
@@ -129,14 +131,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the calendarView property value. The set of appointments of this business in a specified date range. Read-only. Nullable.
-            ## @param value Value to set for the calendar_view property.
+            ## @param value Value to set for the calendarView property.
             ## @return a void
             ## 
             def calendar_view=(value)
                 @calendar_view = value
             end
             ## 
-            ## Instantiates a new BookingBusiness and sets the default values.
+            ## Instantiates a new bookingBusiness and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -160,7 +162,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
-            ## @param value Value to set for the custom_questions property.
+            ## @param value Value to set for the customQuestions property.
             ## @return a void
             ## 
             def custom_questions=(value)
@@ -190,7 +192,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultCurrencyIso property value. The code for the currency that the business operates in on Microsoft Bookings.
-            ## @param value Value to set for the default_currency_iso property.
+            ## @param value Value to set for the defaultCurrencyIso property.
             ## @return a void
             ## 
             def default_currency_iso=(value)
@@ -205,7 +207,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the business, which interfaces with customers. This name appears at the top of the business scheduling page.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -261,7 +263,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isPublished property value. The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
-            ## @param value Value to set for the is_published property.
+            ## @param value Value to set for the isPublished property.
             ## @return a void
             ## 
             def is_published=(value)
@@ -276,7 +278,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the languageTag property value. The language of the self-service booking page.
-            ## @param value Value to set for the language_tag property.
+            ## @param value Value to set for the languageTag property.
             ## @return a void
             ## 
             def language_tag=(value)
@@ -306,7 +308,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the publicUrl property value. The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
-            ## @param value Value to set for the public_url property.
+            ## @param value Value to set for the publicUrl property.
             ## @return a void
             ## 
             def public_url=(value)
@@ -321,7 +323,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the schedulingPolicy property value. Specifies how bookings can be created for this business.
-            ## @param value Value to set for the scheduling_policy property.
+            ## @param value Value to set for the schedulingPolicy property.
             ## @return a void
             ## 
             def scheduling_policy=(value)
@@ -376,7 +378,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the staffMembers property value. All the staff members that provide services in this business. Read-only. Nullable.
-            ## @param value Value to set for the staff_members property.
+            ## @param value Value to set for the staffMembers property.
             ## @return a void
             ## 
             def staff_members=(value)
@@ -391,7 +393,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webSiteUrl property value. The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
-            ## @param value Value to set for the web_site_url property.
+            ## @param value Value to set for the webSiteUrl property.
             ## @return a void
             ## 
             def web_site_url=(value)

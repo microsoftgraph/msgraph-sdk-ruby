@@ -13,7 +13,7 @@ module MicrosoftGraph
             # A copy of the points property that is made when the grade is released to the student.
             @published_points
             ## 
-            ## Instantiates a new EducationPointsOutcome and sets the default values.
+            ## Instantiates a new educationPointsOutcome and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the publishedPoints property value. A copy of the points property that is made when the grade is released to the student.
-            ## @param value Value to set for the published_points property.
+            ## @param value Value to set for the publishedPoints property.
             ## @return a void
             ## 
             def published_points=(value)

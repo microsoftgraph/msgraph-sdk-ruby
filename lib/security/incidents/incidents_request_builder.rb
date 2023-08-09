@@ -1,11 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
-require_relative '../../models/security/incident'
-require_relative '../../models/security/incident_collection_response'
+require_relative '../../models/o_data_errors_o_data_error'
+require_relative '../../models/security_incident'
+require_relative '../../models/security_incident_collection_response'
 require_relative '../security'
 require_relative './count/count_request_builder'
 require_relative './incidents'
+require_relative './item/incident_item_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Security::Incidents::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the incidents property of the microsoft.graph.security entity.
+                ## @param incident_id The unique identifier of incident
+                ## @return a incident_item_request_builder
+                ## 
+                def by_incident_id(incident_id)
+                    raise StandardError, 'incident_id cannot be null' if incident_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["incident%2Did"] = incident_id
+                    return MicrosoftGraph::Security::Incidents::Item::IncidentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new IncidentsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,24 +41,24 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/security/incidents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
+                ## Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                ## @return a Fiber of incident_collection_response
+                ## @return a Fiber of security_incident_collection_response
                 ## 
                 def get(request_configuration=nil)
                     request_info = self.to_get_request_information(
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::IncidentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityIncidentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
                 ## Create new navigation property to incidents for security
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                ## @return a Fiber of incident
+                ## @return a Fiber of security_incident
                 ## 
                 def post(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
@@ -54,12 +66,12 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::Incident.create_from_discriminator_value(pn) }, error_mapping)
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityIncident.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
+                ## Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
+                # Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
                 class IncidentsRequestBuilderGetQueryParameters
                     
                     ## 

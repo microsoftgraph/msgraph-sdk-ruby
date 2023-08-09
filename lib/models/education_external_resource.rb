@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Location of the resource. Required
             @web_url
             ## 
-            ## Instantiates a new EducationExternalResource and sets the default values.
+            ## Instantiates a new educationExternalResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. Location of the resource. Required
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

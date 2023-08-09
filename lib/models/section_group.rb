@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the parentNotebook property value. The notebook that contains the section group. Read-only.
-            ## @param value Value to set for the parent_notebook property.
+            ## @param value Value to set for the parentNotebook property.
             ## @return a void
             ## 
             def parent_notebook=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the parentSectionGroup property value. The section group that contains the section group. Read-only.
-            ## @param value Value to set for the parent_section_group property.
+            ## @param value Value to set for the parentSectionGroup property.
             ## @return a void
             ## 
             def parent_section_group=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sectionGroups property value. The section groups in the section. Read-only. Nullable.
-            ## @param value Value to set for the section_groups property.
+            ## @param value Value to set for the sectionGroups property.
             ## @return a void
             ## 
             def section_groups=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sectionGroupsUrl property value. The URL for the sectionGroups navigation property, which returns all the section groups in the section group. Read-only.
-            ## @param value Value to set for the section_groups_url property.
+            ## @param value Value to set for the sectionGroupsUrl property.
             ## @return a void
             ## 
             def section_groups_url=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sectionsUrl property value. The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
-            ## @param value Value to set for the sections_url property.
+            ## @param value Value to set for the sectionsUrl property.
             ## @return a void
             ## 
             def sections_url=(value)

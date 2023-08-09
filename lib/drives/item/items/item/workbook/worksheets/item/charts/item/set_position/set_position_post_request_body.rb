@@ -43,7 +43,7 @@ module MicrosoftGraph
                                                 end
                                                 ## 
                                                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                                ## @param value Value to set for the AdditionalData property.
+                                                ## @param value Value to set for the additionalData property.
                                                 ## @return a void
                                                 ## 
                                                 def additional_data=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph
                                                 end
                                                 ## 
                                                 ## Sets the endCell property value. The endCell property
-                                                ## @param value Value to set for the end_cell property.
+                                                ## @param value Value to set for the endCell property.
                                                 ## @return a void
                                                 ## 
                                                 def end_cell=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph
                                                 end
                                                 ## 
                                                 ## Sets the startCell property value. The startCell property
-                                                ## @param value Value to set for the start_cell property.
+                                                ## @param value Value to set for the startCell property.
                                                 ## @return a void
                                                 ## 
                                                 def start_cell=(value)

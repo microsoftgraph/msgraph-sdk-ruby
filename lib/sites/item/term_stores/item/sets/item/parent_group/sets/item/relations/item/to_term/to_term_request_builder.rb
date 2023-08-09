@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../../../../../../../models/term_store/term'
+require_relative '../../../../../../../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../../../../../../../models/term_store_term'
 require_relative '../../../../../../../../../../../sites'
 require_relative '../../../../../../../../../../item'
 require_relative '../../../../../../../../../term_stores'
@@ -44,16 +44,16 @@ module MicrosoftGraph
                                                         ## 
                                                         ## The to [term] of the relation. The term to which the relationship is defined.
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                                        ## @return a Fiber of term
+                                                        ## @return a Fiber of term_store_term
                                                         ## 
                                                         def get(request_configuration=nil)
                                                             request_info = self.to_get_request_information(
                                                                 request_configuration
                                                             )
                                                             error_mapping = Hash.new
-                                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Term.create_from_discriminator_value(pn) }, error_mapping)
+                                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreTerm.create_from_discriminator_value(pn) }, error_mapping)
                                                         end
                                                         ## 
                                                         ## The to [term] of the relation. The term to which the relationship is defined.

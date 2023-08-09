@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
 require_relative '../../../../../../../models/item_activity_stat'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -9,7 +9,6 @@ require_relative '../../../item'
 require_relative '../../analytics'
 require_relative '../item_activity_stats'
 require_relative './activities/activities_request_builder'
-require_relative './activities/item/item_activity_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -30,17 +29,6 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Drives::Item::Items::Item::Analytics::ItemActivityStats::Item::Activities::ActivitiesRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
-                                    ## Provides operations to manage the activities property of the microsoft.graph.itemActivityStat entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a item_activity_item_request_builder
-                                    ## 
-                                    def activities_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["itemActivity%2Did"] = id
-                                        return MicrosoftGraph::Drives::Item::Items::Item::Analytics::ItemActivityStats::Item::Activities::Item::ItemActivityItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
                                     ## Instantiates a new ItemActivityStatItemRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -59,8 +47,8 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
@@ -73,8 +61,8 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ItemActivityStat.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
@@ -89,8 +77,8 @@ module MicrosoftGraph
                                             body, request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ItemActivityStat.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 

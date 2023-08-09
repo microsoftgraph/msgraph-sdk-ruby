@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../users'
 require_relative '../../../../item'
 require_relative '../../../joined_teams'
@@ -26,7 +26,7 @@ module MicrosoftGraph
                                 ## @return a void
                                 ## 
                                 def initialize(path_parameters, request_adapter)
-                                    super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/getAllMessages(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}")
+                                    super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/getAllMessages(){?model*,%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}")
                                 end
                                 ## 
                                 ## Invoke function getAllMessages
@@ -38,8 +38,8 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::GetAllMessages::GetAllMessagesResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
@@ -72,6 +72,9 @@ module MicrosoftGraph
                                     # Filter items by property values
                                     attr_accessor :filter
                                     ## 
+                                    # The payment model for the API
+                                    attr_accessor :model
+                                    ## 
                                     # Order items by property values
                                     attr_accessor :orderby
                                     ## 
@@ -98,6 +101,8 @@ module MicrosoftGraph
                                                 return "%24count"
                                             when "filter"
                                                 return "%24filter"
+                                            when "model"
+                                                return "model"
                                             when "orderby"
                                                 return "%24orderby"
                                             when "search"

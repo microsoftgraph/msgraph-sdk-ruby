@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
         class IosManagedAppProtection < MicrosoftGraph::Models::TargetedManagedAppProtection
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -36,7 +38,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
-            ## @param value Value to set for the app_data_encryption_type property.
+            ## @param value Value to set for the appDataEncryptionType property.
             ## @return a void
             ## 
             def app_data_encryption_type=(value)
@@ -58,7 +60,7 @@ module MicrosoftGraph
                 @apps = value
             end
             ## 
-            ## Instantiates a new IosManagedAppProtection and sets the default values.
+            ## Instantiates a new iosManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -83,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-            ## @param value Value to set for the custom_browser_protocol property.
+            ## @param value Value to set for the customBrowserProtocol property.
             ## @return a void
             ## 
             def custom_browser_protocol=(value)
@@ -98,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
-            ## @param value Value to set for the deployed_app_count property.
+            ## @param value Value to set for the deployedAppCount property.
             ## @return a void
             ## 
             def deployed_app_count=(value)
@@ -113,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-            ## @param value Value to set for the deployment_summary property.
+            ## @param value Value to set for the deploymentSummary property.
             ## @return a void
             ## 
             def deployment_summary=(value)
@@ -128,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
-            ## @param value Value to set for the face_id_blocked property.
+            ## @param value Value to set for the faceIdBlocked property.
             ## @return a void
             ## 
             def face_id_blocked=(value)
@@ -158,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
-            ## @param value Value to set for the minimum_required_sdk_version property.
+            ## @param value Value to set for the minimumRequiredSdkVersion property.
             ## @return a void
             ## 
             def minimum_required_sdk_version=(value)

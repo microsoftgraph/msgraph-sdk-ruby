@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The signIns property
             @sign_ins
             ## 
-            ## Instantiates a new AuditLogRoot and sets the default values.
+            ## Instantiates a new auditLogRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -40,7 +40,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the directoryAudits property value. The directoryAudits property
-            ## @param value Value to set for the directory_audits property.
+            ## @param value Value to set for the directoryAudits property.
             ## @return a void
             ## 
             def directory_audits=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the signIns property value. The signIns property
-            ## @param value Value to set for the sign_ins property.
+            ## @param value Value to set for the signIns property.
             ## @return a void
             ## 
             def sign_ins=(value)

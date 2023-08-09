@@ -1,31 +1,25 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/team'
 require_relative '../../me'
 require_relative '../joined_teams'
 require_relative './all_channels/all_channels_request_builder'
-require_relative './all_channels/item/channel_item_request_builder'
 require_relative './archive/archive_request_builder'
 require_relative './channels/channels_request_builder'
-require_relative './channels/item/channel_item_request_builder'
 require_relative './clone/clone_request_builder'
 require_relative './complete_migration/complete_migration_request_builder'
 require_relative './group/group_request_builder'
 require_relative './incoming_channels/incoming_channels_request_builder'
-require_relative './incoming_channels/item/channel_item_request_builder'
 require_relative './installed_apps/installed_apps_request_builder'
-require_relative './installed_apps/item/teams_app_installation_item_request_builder'
 require_relative './item'
-require_relative './members/item/conversation_member_item_request_builder'
 require_relative './members/members_request_builder'
-require_relative './operations/item/teams_async_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
+require_relative './permission_grants/permission_grants_request_builder'
 require_relative './photo/photo_request_builder'
 require_relative './primary_channel/primary_channel_request_builder'
 require_relative './schedule/schedule_request_builder'
 require_relative './send_activity_notification/send_activity_notification_request_builder'
-require_relative './tags/item/teamwork_tag_item_request_builder'
 require_relative './tags/tags_request_builder'
 require_relative './template/template_request_builder'
 require_relative './unarchive/unarchive_request_builder'
@@ -89,6 +83,11 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::JoinedTeams::Item::Operations::OperationsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
+                    def permission_grants()
+                        return MicrosoftGraph::Me::JoinedTeams::Item::PermissionGrants::PermissionGrantsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to manage the photo property of the microsoft.graph.team entity.
                     def photo()
                         return MicrosoftGraph::Me::JoinedTeams::Item::Photo::PhotoRequestBuilder.new(@path_parameters, @request_adapter)
@@ -124,28 +123,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::JoinedTeams::Item::Unarchive::UnarchiveRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the allChannels property of the microsoft.graph.team entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a channel_item_request_builder
-                    ## 
-                    def all_channels_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["channel%2Did"] = id
-                        return MicrosoftGraph::Me::JoinedTeams::Item::AllChannels::Item::ChannelItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the channels property of the microsoft.graph.team entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a channel_item_request_builder
-                    ## 
-                    def channels_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["channel%2Did"] = id
-                        return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::ChannelItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new TeamItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -164,8 +141,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
@@ -178,53 +155,9 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Team.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a channel_item_request_builder
-                    ## 
-                    def incoming_channels_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["channel%2Did"] = id
-                        return MicrosoftGraph::Me::JoinedTeams::Item::IncomingChannels::Item::ChannelItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the installedApps property of the microsoft.graph.team entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a teams_app_installation_item_request_builder
-                    ## 
-                    def installed_apps_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["teamsAppInstallation%2Did"] = id
-                        return MicrosoftGraph::Me::JoinedTeams::Item::InstalledApps::Item::TeamsAppInstallationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the members property of the microsoft.graph.team entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a conversation_member_item_request_builder
-                    ## 
-                    def members_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["conversationMember%2Did"] = id
-                        return MicrosoftGraph::Me::JoinedTeams::Item::Members::Item::ConversationMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the operations property of the microsoft.graph.team entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a teams_async_operation_item_request_builder
-                    ## 
-                    def operations_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["teamsAsyncOperation%2Did"] = id
-                        return MicrosoftGraph::Me::JoinedTeams::Item::Operations::Item::TeamsAsyncOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property joinedTeams in me
@@ -238,20 +171,9 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Team.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the tags property of the microsoft.graph.team entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a teamwork_tag_item_request_builder
-                    ## 
-                    def tags_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["teamworkTag%2Did"] = id
-                        return MicrosoftGraph::Me::JoinedTeams::Item::Tags::Item::TeamworkTagItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property joinedTeams for me

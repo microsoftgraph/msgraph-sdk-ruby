@@ -28,7 +28,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attendanceRecords property value. List of attendance records of an attendance report. Read-only.
-            ## @param value Value to set for the attendance_records property.
+            ## @param value Value to set for the attendanceRecords property.
             ## @return a void
             ## 
             def attendance_records=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the meetingEndDateTime property value. UTC time when the meeting ended. Read-only.
-            ## @param value Value to set for the meeting_end_date_time property.
+            ## @param value Value to set for the meetingEndDateTime property.
             ## @return a void
             ## 
             def meeting_end_date_time=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the meetingStartDateTime property value. UTC time when the meeting started. Read-only.
-            ## @param value Value to set for the meeting_start_date_time property.
+            ## @param value Value to set for the meetingStartDateTime property.
             ## @return a void
             ## 
             def meeting_start_date_time=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the totalParticipantCount property value. Total number of participants. Read-only.
-            ## @param value Value to set for the total_participant_count property.
+            ## @param value Value to set for the totalParticipantCount property.
             ## @return a void
             ## 
             def total_participant_count=(value)

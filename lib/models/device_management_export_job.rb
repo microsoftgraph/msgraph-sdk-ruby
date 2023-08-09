@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the expirationDateTime property value. Time that the exported report expires
-            ## @param value Value to set for the expiration_date_time property.
+            ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
             def expiration_date_time=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the localizationType property value. Configures how the requested export job is localized
-            ## @param value Value to set for the localization_type property.
+            ## @param value Value to set for the localizationType property.
             ## @return a void
             ## 
             def localization_type=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reportName property value. Name of the report
-            ## @param value Value to set for the report_name property.
+            ## @param value Value to set for the reportName property.
             ## @return a void
             ## 
             def report_name=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the requestDateTime property value. Time that the exported report was requested
-            ## @param value Value to set for the request_date_time property.
+            ## @param value Value to set for the requestDateTime property.
             ## @return a void
             ## 
             def request_date_time=(value)
@@ -206,7 +206,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
-            ## @param value Value to set for the snapshot_id property.
+            ## @param value Value to set for the snapshotId property.
             ## @return a void
             ## 
             def snapshot_id=(value)

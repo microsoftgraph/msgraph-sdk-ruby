@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the archiveFolder property value. Folder ID of an archive folder for the user.
-            ## @param value Value to set for the archive_folder property.
+            ## @param value Value to set for the archiveFolder property.
             ## @return a void
             ## 
             def archive_folder=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the automaticRepliesSetting property value. Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
-            ## @param value Value to set for the automatic_replies_setting property.
+            ## @param value Value to set for the automaticRepliesSetting property.
             ## @return a void
             ## 
             def automatic_replies_setting=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dateFormat property value. The date format for the user's mailbox.
-            ## @param value Value to set for the date_format property.
+            ## @param value Value to set for the dateFormat property.
             ## @return a void
             ## 
             def date_format=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
-            ## @param value Value to set for the delegate_meeting_message_delivery_options property.
+            ## @param value Value to set for the delegateMeetingMessageDeliveryOptions property.
             ## @return a void
             ## 
             def delegate_meeting_message_delivery_options=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -206,7 +206,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeFormat property value. The time format for the user's mailbox.
-            ## @param value Value to set for the time_format property.
+            ## @param value Value to set for the timeFormat property.
             ## @return a void
             ## 
             def time_format=(value)
@@ -221,7 +221,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeZone property value. The default time zone for the user's mailbox.
-            ## @param value Value to set for the time_zone property.
+            ## @param value Value to set for the timeZone property.
             ## @return a void
             ## 
             def time_zone=(value)
@@ -236,7 +236,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPurpose property value. The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
-            ## @param value Value to set for the user_purpose property.
+            ## @param value Value to set for the userPurpose property.
             ## @return a void
             ## 
             def user_purpose=(value)
@@ -251,7 +251,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the workingHours property value. The days of the week and hours in a specific time zone that the user works.
-            ## @param value Value to set for the working_hours property.
+            ## @param value Value to set for the workingHours property.
             ## @return a void
             ## 
             def working_hours=(value)

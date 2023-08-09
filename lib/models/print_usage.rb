@@ -8,17 +8,68 @@ module MicrosoftGraph
         class PrintUsage < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The blackAndWhitePageCount property
+            @black_and_white_page_count
+            ## 
+            # The colorPageCount property
+            @color_page_count
+            ## 
             # The completedBlackAndWhiteJobCount property
             @completed_black_and_white_job_count
             ## 
             # The completedColorJobCount property
             @completed_color_job_count
             ## 
+            # The completedJobCount property
+            @completed_job_count
+            ## 
+            # The doubleSidedSheetCount property
+            @double_sided_sheet_count
+            ## 
             # The incompleteJobCount property
             @incomplete_job_count
             ## 
+            # The mediaSheetCount property
+            @media_sheet_count
+            ## 
+            # The pageCount property
+            @page_count
+            ## 
+            # The singleSidedSheetCount property
+            @single_sided_sheet_count
+            ## 
             # The usageDate property
             @usage_date
+            ## 
+            ## Gets the blackAndWhitePageCount property value. The blackAndWhitePageCount property
+            ## @return a int64
+            ## 
+            def black_and_white_page_count
+                return @black_and_white_page_count
+            end
+            ## 
+            ## Sets the blackAndWhitePageCount property value. The blackAndWhitePageCount property
+            ## @param value Value to set for the blackAndWhitePageCount property.
+            ## @return a void
+            ## 
+            def black_and_white_page_count=(value)
+                @black_and_white_page_count = value
+            end
+            ## 
+            ## Gets the colorPageCount property value. The colorPageCount property
+            ## @return a int64
+            ## 
+            def color_page_count
+                return @color_page_count
+            end
+            ## 
+            ## Sets the colorPageCount property value. The colorPageCount property
+            ## @param value Value to set for the colorPageCount property.
+            ## @return a void
+            ## 
+            def color_page_count=(value)
+                @color_page_count = value
+            end
             ## 
             ## Gets the completedBlackAndWhiteJobCount property value. The completedBlackAndWhiteJobCount property
             ## @return a int64
@@ -28,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the completedBlackAndWhiteJobCount property value. The completedBlackAndWhiteJobCount property
-            ## @param value Value to set for the completed_black_and_white_job_count property.
+            ## @param value Value to set for the completedBlackAndWhiteJobCount property.
             ## @return a void
             ## 
             def completed_black_and_white_job_count=(value)
@@ -43,11 +94,26 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the completedColorJobCount property value. The completedColorJobCount property
-            ## @param value Value to set for the completed_color_job_count property.
+            ## @param value Value to set for the completedColorJobCount property.
             ## @return a void
             ## 
             def completed_color_job_count=(value)
                 @completed_color_job_count = value
+            end
+            ## 
+            ## Gets the completedJobCount property value. The completedJobCount property
+            ## @return a int64
+            ## 
+            def completed_job_count
+                return @completed_job_count
+            end
+            ## 
+            ## Sets the completedJobCount property value. The completedJobCount property
+            ## @param value Value to set for the completedJobCount property.
+            ## @return a void
+            ## 
+            def completed_job_count=(value)
+                @completed_job_count = value
             end
             ## 
             ## Instantiates a new printUsage and sets the default values.
@@ -76,14 +142,36 @@ module MicrosoftGraph
                 return PrintUsage.new
             end
             ## 
+            ## Gets the doubleSidedSheetCount property value. The doubleSidedSheetCount property
+            ## @return a int64
+            ## 
+            def double_sided_sheet_count
+                return @double_sided_sheet_count
+            end
+            ## 
+            ## Sets the doubleSidedSheetCount property value. The doubleSidedSheetCount property
+            ## @param value Value to set for the doubleSidedSheetCount property.
+            ## @return a void
+            ## 
+            def double_sided_sheet_count=(value)
+                @double_sided_sheet_count = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "blackAndWhitePageCount" => lambda {|n| @black_and_white_page_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                    "colorPageCount" => lambda {|n| @color_page_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "completedBlackAndWhiteJobCount" => lambda {|n| @completed_black_and_white_job_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "completedColorJobCount" => lambda {|n| @completed_color_job_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                    "completedJobCount" => lambda {|n| @completed_job_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                    "doubleSidedSheetCount" => lambda {|n| @double_sided_sheet_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "incompleteJobCount" => lambda {|n| @incomplete_job_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                    "mediaSheetCount" => lambda {|n| @media_sheet_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                    "pageCount" => lambda {|n| @page_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                    "singleSidedSheetCount" => lambda {|n| @single_sided_sheet_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "usageDate" => lambda {|n| @usage_date = n.get_date_value() },
                 })
             end
@@ -96,11 +184,41 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the incompleteJobCount property value. The incompleteJobCount property
-            ## @param value Value to set for the incomplete_job_count property.
+            ## @param value Value to set for the incompleteJobCount property.
             ## @return a void
             ## 
             def incomplete_job_count=(value)
                 @incomplete_job_count = value
+            end
+            ## 
+            ## Gets the mediaSheetCount property value. The mediaSheetCount property
+            ## @return a int64
+            ## 
+            def media_sheet_count
+                return @media_sheet_count
+            end
+            ## 
+            ## Sets the mediaSheetCount property value. The mediaSheetCount property
+            ## @param value Value to set for the mediaSheetCount property.
+            ## @return a void
+            ## 
+            def media_sheet_count=(value)
+                @media_sheet_count = value
+            end
+            ## 
+            ## Gets the pageCount property value. The pageCount property
+            ## @return a int64
+            ## 
+            def page_count
+                return @page_count
+            end
+            ## 
+            ## Sets the pageCount property value. The pageCount property
+            ## @param value Value to set for the pageCount property.
+            ## @return a void
+            ## 
+            def page_count=(value)
+                @page_count = value
             end
             ## 
             ## Serializes information the current object
@@ -110,10 +228,32 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("blackAndWhitePageCount", @black_and_white_page_count)
+                writer.write_object_value("colorPageCount", @color_page_count)
                 writer.write_object_value("completedBlackAndWhiteJobCount", @completed_black_and_white_job_count)
                 writer.write_object_value("completedColorJobCount", @completed_color_job_count)
+                writer.write_object_value("completedJobCount", @completed_job_count)
+                writer.write_object_value("doubleSidedSheetCount", @double_sided_sheet_count)
                 writer.write_object_value("incompleteJobCount", @incomplete_job_count)
+                writer.write_object_value("mediaSheetCount", @media_sheet_count)
+                writer.write_object_value("pageCount", @page_count)
+                writer.write_object_value("singleSidedSheetCount", @single_sided_sheet_count)
                 writer.write_date_value("usageDate", @usage_date)
+            end
+            ## 
+            ## Gets the singleSidedSheetCount property value. The singleSidedSheetCount property
+            ## @return a int64
+            ## 
+            def single_sided_sheet_count
+                return @single_sided_sheet_count
+            end
+            ## 
+            ## Sets the singleSidedSheetCount property value. The singleSidedSheetCount property
+            ## @param value Value to set for the singleSidedSheetCount property.
+            ## @return a void
+            ## 
+            def single_sided_sheet_count=(value)
+                @single_sided_sheet_count = value
             end
             ## 
             ## Gets the usageDate property value. The usageDate property
@@ -124,7 +264,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the usageDate property value. The usageDate property
-            ## @param value Value to set for the usage_date property.
+            ## @param value Value to set for the usageDate property.
             ## @return a void
             ## 
             def usage_date=(value)

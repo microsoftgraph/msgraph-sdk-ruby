@@ -1,11 +1,10 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/threat_assessment_request'
 require_relative '../../information_protection'
 require_relative '../threat_assessment_requests'
 require_relative './item'
-require_relative './results/item/threat_assessment_result_item_request_builder'
 require_relative './results/results_request_builder'
 
 module MicrosoftGraph
@@ -40,12 +39,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get threatAssessmentRequests from informationProtection
+                    ## Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of threat_assessment_request
                     ## 
@@ -54,8 +53,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ThreatAssessmentRequest.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -70,20 +69,9 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ThreatAssessmentRequest.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a threat_assessment_result_item_request_builder
-                    ## 
-                    def results_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["threatAssessmentResult%2Did"] = id
-                        return MicrosoftGraph::InformationProtection::ThreatAssessmentRequests::Item::Results::Item::ThreatAssessmentResultItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property threatAssessmentRequests for informationProtection
@@ -102,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Get threatAssessmentRequests from informationProtection
+                    ## Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -141,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get threatAssessmentRequests from informationProtection
+                    # Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
                     class ThreatAssessmentRequestItemRequestBuilderGetQueryParameters
                         
                         ## 

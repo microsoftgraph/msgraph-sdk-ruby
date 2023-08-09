@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the addressableUserName property value. Addressable user name.
-            ## @param value Value to set for the addressable_user_name property.
+            ## @param value Value to set for the addressableUserName property.
             ## @return a void
             ## 
             def addressable_user_name=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the azureActiveDirectoryDeviceId property value. AAD Device ID - to be deprecated
-            ## @param value Value to set for the azure_active_directory_device_id property.
+            ## @param value Value to set for the azureActiveDirectoryDeviceId property.
             ## @return a void
             ## 
             def azure_active_directory_device_id=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display Name
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enrollmentState property value. The enrollmentState property
-            ## @param value Value to set for the enrollment_state property.
+            ## @param value Value to set for the enrollmentState property.
             ## @return a void
             ## 
             def enrollment_state=(value)
@@ -166,7 +166,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the groupTag property value. Group Tag of the Windows autopilot device.
-            ## @param value Value to set for the group_tag property.
+            ## @param value Value to set for the groupTag property.
             ## @return a void
             ## 
             def group_tag=(value)
@@ -181,7 +181,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastContactedDateTime property value. Intune Last Contacted Date Time of the Windows autopilot device.
-            ## @param value Value to set for the last_contacted_date_time property.
+            ## @param value Value to set for the lastContactedDateTime property.
             ## @return a void
             ## 
             def last_contacted_date_time=(value)
@@ -196,7 +196,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managedDeviceId property value. Managed Device ID
-            ## @param value Value to set for the managed_device_id property.
+            ## @param value Value to set for the managedDeviceId property.
             ## @return a void
             ## 
             def managed_device_id=(value)
@@ -241,7 +241,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the productKey property value. Product Key of the Windows autopilot device.
-            ## @param value Value to set for the product_key property.
+            ## @param value Value to set for the productKey property.
             ## @return a void
             ## 
             def product_key=(value)
@@ -256,7 +256,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the purchaseOrderIdentifier property value. Purchase Order Identifier of the Windows autopilot device.
-            ## @param value Value to set for the purchase_order_identifier property.
+            ## @param value Value to set for the purchaseOrderIdentifier property.
             ## @return a void
             ## 
             def purchase_order_identifier=(value)
@@ -271,7 +271,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceName property value. Resource Name.
-            ## @param value Value to set for the resource_name property.
+            ## @param value Value to set for the resourceName property.
             ## @return a void
             ## 
             def resource_name=(value)
@@ -286,7 +286,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serialNumber property value. Serial number of the Windows autopilot device.
-            ## @param value Value to set for the serial_number property.
+            ## @param value Value to set for the serialNumber property.
             ## @return a void
             ## 
             def serial_number=(value)
@@ -326,7 +326,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the skuNumber property value. SKU Number
-            ## @param value Value to set for the sku_number property.
+            ## @param value Value to set for the skuNumber property.
             ## @return a void
             ## 
             def sku_number=(value)
@@ -341,7 +341,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the systemFamily property value. System Family
-            ## @param value Value to set for the system_family property.
+            ## @param value Value to set for the systemFamily property.
             ## @return a void
             ## 
             def system_family=(value)
@@ -356,7 +356,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPrincipalName property value. User Principal Name.
-            ## @param value Value to set for the user_principal_name property.
+            ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
             def user_principal_name=(value)

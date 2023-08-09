@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Represents a staff member who provides services in a business.
         class BookingStaffMember < MicrosoftGraph::Models::BookingStaffMemberBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -39,14 +41,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the availabilityIsAffectedByPersonalCalendar property value. True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
-            ## @param value Value to set for the availability_is_affected_by_personal_calendar property.
+            ## @param value Value to set for the availabilityIsAffectedByPersonalCalendar property.
             ## @return a void
             ## 
             def availability_is_affected_by_personal_calendar=(value)
                 @availability_is_affected_by_personal_calendar = value
             end
             ## 
-            ## Instantiates a new BookingStaffMember and sets the default values.
+            ## Instantiates a new bookingStaffMember and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the staff member, as displayed to customers. Required.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -86,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the emailAddress property value. The email address of the staff member. This can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
-            ## @param value Value to set for the email_address property.
+            ## @param value Value to set for the emailAddress property.
             ## @return a void
             ## 
             def email_address=(value)
@@ -117,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
-            ## @param value Value to set for the is_email_notification_enabled property.
+            ## @param value Value to set for the isEmailNotificationEnabled property.
             ## @return a void
             ## 
             def is_email_notification_enabled=(value)
@@ -164,7 +166,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeZone property value. The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
-            ## @param value Value to set for the time_zone property.
+            ## @param value Value to set for the timeZone property.
             ## @return a void
             ## 
             def time_zone=(value)
@@ -179,7 +181,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the useBusinessHours property value. True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
-            ## @param value Value to set for the use_business_hours property.
+            ## @param value Value to set for the useBusinessHours property.
             ## @return a void
             ## 
             def use_business_hours=(value)
@@ -194,7 +196,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
-            ## @param value Value to set for the working_hours property.
+            ## @param value Value to set for the workingHours property.
             ## @return a void
             ## 
             def working_hours=(value)

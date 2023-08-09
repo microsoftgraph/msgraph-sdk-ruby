@@ -27,7 +27,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the AdditionalData property.
+                        ## @param value Value to set for the additionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the securityEnabledOnly property value. The securityEnabledOnly property
-                        ## @param value Value to set for the security_enabled_only property.
+                        ## @param value Value to set for the securityEnabledOnly property.
                         ## @return a void
                         ## 
                         def security_enabled_only=(value)

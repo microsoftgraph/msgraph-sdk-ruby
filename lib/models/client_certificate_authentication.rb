@@ -18,14 +18,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the certificateList property value. The list of certificates uploaded for this API connector.
-            ## @param value Value to set for the certificate_list property.
+            ## @param value Value to set for the certificateList property.
             ## @return a void
             ## 
             def certificate_list=(value)
                 @certificate_list = value
             end
             ## 
-            ## Instantiates a new ClientCertificateAuthentication and sets the default values.
+            ## Instantiates a new clientCertificateAuthentication and sets the default values.
             ## @return a void
             ## 
             def initialize()

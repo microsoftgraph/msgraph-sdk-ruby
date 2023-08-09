@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the addressLocal property value. Represents range reference for the specified range in the language of the user. Read-only.
-            ## @param value Value to set for the address_local property.
+            ## @param value Value to set for the addressLocal property.
             ## @return a void
             ## 
             def address_local=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellCount property value. Number of cells in the range. Read-only.
-            ## @param value Value to set for the cell_count property.
+            ## @param value Value to set for the cellCount property.
             ## @return a void
             ## 
             def cell_count=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the columnCount property value. Represents the total number of columns in the range. Read-only.
-            ## @param value Value to set for the column_count property.
+            ## @param value Value to set for the columnCount property.
             ## @return a void
             ## 
             def column_count=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the columnHidden property value. Represents if all columns of the current range are hidden.
-            ## @param value Value to set for the column_hidden property.
+            ## @param value Value to set for the columnHidden property.
             ## @return a void
             ## 
             def column_hidden=(value)
@@ -150,14 +150,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the columnIndex property value. Represents the column number of the first cell in the range. Zero-indexed. Read-only.
-            ## @param value Value to set for the column_index property.
+            ## @param value Value to set for the columnIndex property.
             ## @return a void
             ## 
             def column_index=(value)
                 @column_index = value
             end
             ## 
-            ## Instantiates a new WorkbookRange and sets the default values.
+            ## Instantiates a new workbookRange and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -211,7 +211,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the formulasLocal property value. Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
-            ## @param value Value to set for the formulas_local property.
+            ## @param value Value to set for the formulasLocal property.
             ## @return a void
             ## 
             def formulas_local=(value)
@@ -226,7 +226,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the formulasR1C1 property value. Represents the formula in R1C1-style notation.
-            ## @param value Value to set for the formulas_r1_c1 property.
+            ## @param value Value to set for the formulasR1C1 property.
             ## @return a void
             ## 
             def formulas_r1_c1=(value)
@@ -284,7 +284,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the numberFormat property value. Represents Excel's number format code for the given cell.
-            ## @param value Value to set for the number_format property.
+            ## @param value Value to set for the numberFormat property.
             ## @return a void
             ## 
             def number_format=(value)
@@ -299,7 +299,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the rowCount property value. Returns the total number of rows in the range. Read-only.
-            ## @param value Value to set for the row_count property.
+            ## @param value Value to set for the rowCount property.
             ## @return a void
             ## 
             def row_count=(value)
@@ -314,7 +314,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the rowHidden property value. Represents if all rows of the current range are hidden.
-            ## @param value Value to set for the row_hidden property.
+            ## @param value Value to set for the rowHidden property.
             ## @return a void
             ## 
             def row_hidden=(value)
@@ -329,7 +329,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the rowIndex property value. Returns the row number of the first cell in the range. Zero-indexed. Read-only.
-            ## @param value Value to set for the row_index property.
+            ## @param value Value to set for the rowIndex property.
             ## @return a void
             ## 
             def row_index=(value)
@@ -403,7 +403,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the valueTypes property value. Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
-            ## @param value Value to set for the value_types property.
+            ## @param value Value to set for the valueTypes property.
             ## @return a void
             ## 
             def value_types=(value)

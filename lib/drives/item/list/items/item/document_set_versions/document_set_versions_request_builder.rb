@@ -2,7 +2,7 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
 require_relative '../../../../../../models/document_set_version'
 require_relative '../../../../../../models/document_set_version_collection_response'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../drives'
 require_relative '../../../../item'
 require_relative '../../../list'
@@ -10,6 +10,7 @@ require_relative '../../items'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './document_set_versions'
+require_relative './item/document_set_version_item_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Drives::Item::List::Items::Item::DocumentSetVersions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
+                                ## @param document_set_version_id The unique identifier of documentSetVersion
+                                ## @return a document_set_version_item_request_builder
+                                ## 
+                                def by_document_set_version_id(document_set_version_id)
+                                    raise StandardError, 'document_set_version_id cannot be null' if document_set_version_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["documentSetVersion%2Did"] = document_set_version_id
+                                    return MicrosoftGraph::Drives::Item::List::Items::Item::DocumentSetVersions::Item::DocumentSetVersionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new DocumentSetVersionsRequestBuilder and sets the default values.
@@ -46,8 +58,8 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DocumentSetVersionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
@@ -62,8 +74,8 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DocumentSetVersion.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 

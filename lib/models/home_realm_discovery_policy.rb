@@ -7,7 +7,7 @@ module MicrosoftGraph
         class HomeRealmDiscoveryPolicy < MicrosoftGraph::Models::StsPolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new HomeRealmDiscoveryPolicy and sets the default values.
+            ## Instantiates a new homeRealmDiscoveryPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

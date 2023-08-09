@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display name of the training.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
-            ## @param value Value to set for the latest_training_status property.
+            ## @param value Value to set for the latestTrainingStatus property.
             ## @return a void
             ## 
             def latest_training_status=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.
-            ## @param value Value to set for the training_assigned_properties property.
+            ## @param value Value to set for the trainingAssignedProperties property.
             ## @return a void
             ## 
             def training_assigned_properties=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the trainingCompletedProperties property value. Event details of the training when it was completed by the user.
-            ## @param value Value to set for the training_completed_properties property.
+            ## @param value Value to set for the trainingCompletedProperties property.
             ## @return a void
             ## 
             def training_completed_properties=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the trainingUpdatedProperties property value. Event details of the training when it was updated/in-progress by the user.
-            ## @param value Value to set for the training_updated_properties property.
+            ## @param value Value to set for the trainingUpdatedProperties property.
             ## @return a void
             ## 
             def training_updated_properties=(value)

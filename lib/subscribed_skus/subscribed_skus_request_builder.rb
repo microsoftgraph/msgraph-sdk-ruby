@@ -1,8 +1,9 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative '../models/o_data_errors/o_data_error'
+require_relative '../models/o_data_errors_o_data_error'
 require_relative '../models/subscribed_sku'
 require_relative '../models/subscribed_sku_collection_response'
+require_relative './item/subscribed_sku_item_request_builder'
 require_relative './subscribed_skus'
 
 module MicrosoftGraph
@@ -11,6 +12,17 @@ module MicrosoftGraph
         # Provides operations to manage the collection of subscribedSku entities.
         class SubscribedSkusRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
             
+            ## 
+            ## Provides operations to manage the collection of subscribedSku entities.
+            ## @param subscribed_sku_id The unique identifier of subscribedSku
+            ## @return a subscribed_sku_item_request_builder
+            ## 
+            def by_subscribed_sku_id(subscribed_sku_id)
+                raise StandardError, 'subscribed_sku_id cannot be null' if subscribed_sku_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["subscribedSku%2Did"] = subscribed_sku_id
+                return MicrosoftGraph::SubscribedSkus::Item::SubscribedSkuItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            end
             ## 
             ## Instantiates a new SubscribedSkusRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
@@ -21,7 +33,7 @@ module MicrosoftGraph
                 super(path_parameters, request_adapter, "{+baseurl}/subscribedSkus{?%24search,%24orderby,%24select}")
             end
             ## 
-            ## Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph **skuId** and **skuPartNumber** properties, see Product names and service plan identifiers for licensing.
+            ## Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of subscribed_sku_collection_response
             ## 
@@ -30,8 +42,8 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SubscribedSkuCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -46,12 +58,12 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SubscribedSku.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph **skuId** and **skuPartNumber** properties, see Product names and service plan identifiers for licensing.
+            ## Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -90,7 +102,7 @@ module MicrosoftGraph
             end
 
             ## 
-            # Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph **skuId** and **skuPartNumber** properties, see Product names and service plan identifiers for licensing.
+            # Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
             class SubscribedSkusRequestBuilderGetQueryParameters
                 
                 ## 

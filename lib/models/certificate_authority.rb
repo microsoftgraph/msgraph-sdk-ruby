@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the certificateRevocationListUrl property value. The URL of the certificate revocation list.
-            ## @param value Value to set for the certificate_revocation_list_url property.
+            ## @param value Value to set for the certificateRevocationListUrl property.
             ## @return a void
             ## 
             def certificate_revocation_list_url=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deltaCertificateRevocationListUrl property value. The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
-            ## @param value Value to set for the delta_certificate_revocation_list_url property.
+            ## @param value Value to set for the deltaCertificateRevocationListUrl property.
             ## @return a void
             ## 
             def delta_certificate_revocation_list_url=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isRootAuthority property value. Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.
-            ## @param value Value to set for the is_root_authority property.
+            ## @param value Value to set for the isRootAuthority property.
             ## @return a void
             ## 
             def is_root_authority=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the issuerSki property value. The subject key identifier of the certificate, calculated from the certificate value. Read-only.
-            ## @param value Value to set for the issuer_ski property.
+            ## @param value Value to set for the issuerSki property.
             ## @return a void
             ## 
             def issuer_ski=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

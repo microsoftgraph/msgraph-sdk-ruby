@@ -1,15 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../models/user_flow_language_configuration'
 require_relative '../../../../identity'
 require_relative '../../../b2x_user_flows'
 require_relative '../../item'
 require_relative '../languages'
 require_relative './default_pages/default_pages_request_builder'
-require_relative './default_pages/item/user_flow_language_page_item_request_builder'
 require_relative './item'
-require_relative './overrides_pages/item/user_flow_language_page_item_request_builder'
 require_relative './overrides_pages/overrides_pages_request_builder'
 
 module MicrosoftGraph
@@ -42,17 +40,6 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a user_flow_language_page_item_request_builder
-                            ## 
-                            def default_pages_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["userFlowLanguagePage%2Did"] = id
-                                return MicrosoftGraph::Identity::B2xUserFlows::Item::Languages::Item::DefaultPages::Item::UserFlowLanguagePageItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
                             ## Delete navigation property languages for identity
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
@@ -62,12 +49,12 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+                            ## Read the properties and relationships of a userFlowLanguageConfiguration object. These objects represent a language available in a user flow. Note: Language customization is enabled by default in Azure Active Directory user flows.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of user_flow_language_configuration
                             ## 
@@ -76,20 +63,9 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserFlowLanguageConfiguration.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a user_flow_language_page_item_request_builder
-                            ## 
-                            def overrides_pages_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["userFlowLanguagePage%2Did"] = id
-                                return MicrosoftGraph::Identity::B2xUserFlows::Item::Languages::Item::OverridesPages::Item::UserFlowLanguagePageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Update the navigation property languages in identity
@@ -103,8 +79,8 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserFlowLanguageConfiguration.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
@@ -124,7 +100,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+                            ## Read the properties and relationships of a userFlowLanguageConfiguration object. These objects represent a language available in a user flow. Note: Language customization is enabled by default in Azure Active Directory user flows.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -163,7 +139,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+                            # Read the properties and relationships of a userFlowLanguageConfiguration object. These objects represent a language available in a user flow. Note: Language customization is enabled by default in Azure Active Directory user flows.
                             class UserFlowLanguageConfigurationItemRequestBuilderGetQueryParameters
                                 
                                 ## 

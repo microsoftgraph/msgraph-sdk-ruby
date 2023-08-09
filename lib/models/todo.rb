@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The task lists in the users mailbox.
             @lists
             ## 
-            ## Instantiates a new Todo and sets the default values.
+            ## Instantiates a new todo and sets the default values.
             ## @return a void
             ## 
             def initialize()

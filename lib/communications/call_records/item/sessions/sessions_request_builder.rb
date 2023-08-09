@@ -1,12 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/call_records/session'
-require_relative '../../../../models/call_records/session_collection_response'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/call_records_session'
+require_relative '../../../../models/call_records_session_collection_response'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../communications'
 require_relative '../../call_records'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/session_item_request_builder'
 require_relative './sessions'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Communications::CallRecords::Item::Sessions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
+                        ## @param session_id The unique identifier of session
+                        ## @return a session_item_request_builder
+                        ## 
+                        def by_session_id(session_id)
+                            raise StandardError, 'session_id cannot be null' if session_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["session%2Did"] = session_id
+                            return MicrosoftGraph::Communications::CallRecords::Item::Sessions::Item::SessionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new SessionsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,24 +45,24 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve the list of sessions associated with a callRecord object.
+                        ## Retrieve the list of sessions associated with a callRecord object. If the sessions list is truncated, a sessions@odata.nextLink value will be provided to retrieve the next page of sessions. The maximum page size for sessions is 60 entries.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                        ## @return a Fiber of session_collection_response
+                        ## @return a Fiber of call_records_session_collection_response
                         ## 
                         def get(request_configuration=nil)
                             request_info = self.to_get_request_information(
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecords::SessionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecordsSessionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
                         ## Create new navigation property to sessions for communications
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                        ## @return a Fiber of session
+                        ## @return a Fiber of call_records_session
                         ## 
                         def post(body, request_configuration=nil)
                             raise StandardError, 'body cannot be null' if body.nil?
@@ -58,12 +70,12 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecords::Session.create_from_discriminator_value(pn) }, error_mapping)
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecordsSession.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve the list of sessions associated with a callRecord object.
+                        ## Retrieve the list of sessions associated with a callRecord object. If the sessions list is truncated, a sessions@odata.nextLink value will be provided to retrieve the next page of sessions. The maximum page size for sessions is 60 entries.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Retrieve the list of sessions associated with a callRecord object.
+                        # Retrieve the list of sessions associated with a callRecord object. If the sessions list is truncated, a sessions@odata.nextLink value will be provided to retrieve the next page of sessions. The maximum page size for sessions is 60 entries.
                         class SessionsRequestBuilderGetQueryParameters
                             
                             ## 

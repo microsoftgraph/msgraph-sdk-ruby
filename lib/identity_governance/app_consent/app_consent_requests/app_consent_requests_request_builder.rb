@@ -2,12 +2,13 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/app_consent_request'
 require_relative '../../../models/app_consent_request_collection_response'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../identity_governance'
 require_relative '../app_consent'
 require_relative './app_consent_requests'
 require_relative './count/count_request_builder'
 require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './item/app_consent_request_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -21,6 +22,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::IdentityGovernance::AppConsent::AppConsentRequests::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the appConsentRequests property of the microsoft.graph.appConsentApprovalRoute entity.
+                    ## @param app_consent_request_id The unique identifier of appConsentRequest
+                    ## @return a app_consent_request_item_request_builder
+                    ## 
+                    def by_app_consent_request_id(app_consent_request_id)
+                        raise StandardError, 'app_consent_request_id cannot be null' if app_consent_request_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["appConsentRequest%2Did"] = app_consent_request_id
+                        return MicrosoftGraph::IdentityGovernance::AppConsent::AppConsentRequests::Item::AppConsentRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AppConsentRequestsRequestBuilder and sets the default values.
@@ -50,8 +62,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AppConsentRequestCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -66,8 +78,8 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AppConsentRequest.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

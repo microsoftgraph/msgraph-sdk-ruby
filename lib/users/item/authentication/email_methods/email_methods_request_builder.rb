@@ -2,12 +2,13 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/email_authentication_method'
 require_relative '../../../../models/email_authentication_method_collection_response'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../users'
 require_relative '../../item'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
 require_relative './email_methods'
+require_relative './item/email_authentication_method_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Users::Item::Authentication::EmailMethods::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.
+                        ## @param email_authentication_method_id The unique identifier of emailAuthenticationMethod
+                        ## @return a email_authentication_method_item_request_builder
+                        ## 
+                        def by_email_authentication_method_id(email_authentication_method_id)
+                            raise StandardError, 'email_authentication_method_id cannot be null' if email_authentication_method_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["emailAuthenticationMethod%2Did"] = email_authentication_method_id
+                            return MicrosoftGraph::Users::Item::Authentication::EmailMethods::Item::EmailAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new EmailMethodsRequestBuilder and sets the default values.
@@ -42,8 +54,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EmailAuthenticationMethodCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -58,8 +70,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EmailAuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 

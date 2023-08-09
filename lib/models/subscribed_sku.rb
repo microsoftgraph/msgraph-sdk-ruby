@@ -7,10 +7,16 @@ module MicrosoftGraph
         class SubscribedSku < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # For example, 'User' or 'Company'.
+            # The unique ID of the account this SKU belongs to.
+            @account_id
+            ## 
+            # The name of the account this SKU belongs to.
+            @account_name
+            ## 
+            # The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: 'User', 'Company'.
             @applies_to
             ## 
-            # Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
+            # Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer cancelled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
             @capability_status
             ## 
             # The number of licenses that have been assigned.
@@ -19,7 +25,7 @@ module MicrosoftGraph
             # Information about the number and status of prepaid licenses.
             @prepaid_units
             ## 
-            # Information about the service plans that are available with the SKU. Not nullable
+            # Information about the service plans that are available with the SKU. Not nullable.
             @service_plans
             ## 
             # The unique identifier (GUID) for the service SKU.
@@ -28,37 +34,70 @@ module MicrosoftGraph
             # The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
             @sku_part_number
             ## 
-            ## Gets the appliesTo property value. For example, 'User' or 'Company'.
+            # The subscriptionIds property
+            @subscription_ids
+            ## 
+            ## Gets the accountId property value. The unique ID of the account this SKU belongs to.
+            ## @return a string
+            ## 
+            def account_id
+                return @account_id
+            end
+            ## 
+            ## Sets the accountId property value. The unique ID of the account this SKU belongs to.
+            ## @param value Value to set for the accountId property.
+            ## @return a void
+            ## 
+            def account_id=(value)
+                @account_id = value
+            end
+            ## 
+            ## Gets the accountName property value. The name of the account this SKU belongs to.
+            ## @return a string
+            ## 
+            def account_name
+                return @account_name
+            end
+            ## 
+            ## Sets the accountName property value. The name of the account this SKU belongs to.
+            ## @param value Value to set for the accountName property.
+            ## @return a void
+            ## 
+            def account_name=(value)
+                @account_name = value
+            end
+            ## 
+            ## Gets the appliesTo property value. The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: 'User', 'Company'.
             ## @return a string
             ## 
             def applies_to
                 return @applies_to
             end
             ## 
-            ## Sets the appliesTo property value. For example, 'User' or 'Company'.
-            ## @param value Value to set for the applies_to property.
+            ## Sets the appliesTo property value. The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: 'User', 'Company'.
+            ## @param value Value to set for the appliesTo property.
             ## @return a void
             ## 
             def applies_to=(value)
                 @applies_to = value
             end
             ## 
-            ## Gets the capabilityStatus property value. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
+            ## Gets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer cancelled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
             ## @return a string
             ## 
             def capability_status
                 return @capability_status
             end
             ## 
-            ## Sets the capabilityStatus property value. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
-            ## @param value Value to set for the capability_status property.
+            ## Sets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer cancelled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
+            ## @param value Value to set for the capabilityStatus property.
             ## @return a void
             ## 
             def capability_status=(value)
                 @capability_status = value
             end
             ## 
-            ## Instantiates a new SubscribedSku and sets the default values.
+            ## Instantiates a new subscribedSku and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -73,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the consumedUnits property value. The number of licenses that have been assigned.
-            ## @param value Value to set for the consumed_units property.
+            ## @param value Value to set for the consumedUnits property.
             ## @return a void
             ## 
             def consumed_units=(value)
@@ -94,6 +133,8 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "accountId" => lambda {|n| @account_id = n.get_string_value() },
+                    "accountName" => lambda {|n| @account_name = n.get_string_value() },
                     "appliesTo" => lambda {|n| @applies_to = n.get_string_value() },
                     "capabilityStatus" => lambda {|n| @capability_status = n.get_string_value() },
                     "consumedUnits" => lambda {|n| @consumed_units = n.get_number_value() },
@@ -101,6 +142,7 @@ module MicrosoftGraph
                     "servicePlans" => lambda {|n| @service_plans = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ServicePlanInfo.create_from_discriminator_value(pn) }) },
                     "skuId" => lambda {|n| @sku_id = n.get_guid_value() },
                     "skuPartNumber" => lambda {|n| @sku_part_number = n.get_string_value() },
+                    "subscriptionIds" => lambda {|n| @subscription_ids = n.get_collection_of_primitive_values(String) },
                 })
             end
             ## 
@@ -112,7 +154,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the prepaidUnits property value. Information about the number and status of prepaid licenses.
-            ## @param value Value to set for the prepaid_units property.
+            ## @param value Value to set for the prepaidUnits property.
             ## @return a void
             ## 
             def prepaid_units=(value)
@@ -126,6 +168,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_string_value("accountId", @account_id)
+                writer.write_string_value("accountName", @account_name)
                 writer.write_string_value("appliesTo", @applies_to)
                 writer.write_string_value("capabilityStatus", @capability_status)
                 writer.write_number_value("consumedUnits", @consumed_units)
@@ -133,17 +177,18 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("servicePlans", @service_plans)
                 writer.write_guid_value("skuId", @sku_id)
                 writer.write_string_value("skuPartNumber", @sku_part_number)
+                writer.write_collection_of_primitive_values("subscriptionIds", @subscription_ids)
             end
             ## 
-            ## Gets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable
+            ## Gets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable.
             ## @return a service_plan_info
             ## 
             def service_plans
                 return @service_plans
             end
             ## 
-            ## Sets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable
-            ## @param value Value to set for the service_plans property.
+            ## Sets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable.
+            ## @param value Value to set for the servicePlans property.
             ## @return a void
             ## 
             def service_plans=(value)
@@ -158,7 +203,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the skuId property value. The unique identifier (GUID) for the service SKU.
-            ## @param value Value to set for the sku_id property.
+            ## @param value Value to set for the skuId property.
             ## @return a void
             ## 
             def sku_id=(value)
@@ -173,11 +218,26 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
-            ## @param value Value to set for the sku_part_number property.
+            ## @param value Value to set for the skuPartNumber property.
             ## @return a void
             ## 
             def sku_part_number=(value)
                 @sku_part_number = value
+            end
+            ## 
+            ## Gets the subscriptionIds property value. The subscriptionIds property
+            ## @return a string
+            ## 
+            def subscription_ids
+                return @subscription_ids
+            end
+            ## 
+            ## Sets the subscriptionIds property value. The subscriptionIds property
+            ## @param value Value to set for the subscriptionIds property.
+            ## @return a void
+            ## 
+            def subscription_ids=(value)
+                @subscription_ids = value
             end
         end
     end

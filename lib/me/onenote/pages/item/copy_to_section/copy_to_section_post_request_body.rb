@@ -38,7 +38,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                            ## @param value Value to set for the AdditionalData property.
+                            ## @param value Value to set for the additionalData property.
                             ## @return a void
                             ## 
                             def additional_data=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the groupId property value. The groupId property
-                            ## @param value Value to set for the group_id property.
+                            ## @param value Value to set for the groupId property.
                             ## @return a void
                             ## 
                             def group_id=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the siteCollectionId property value. The siteCollectionId property
-                            ## @param value Value to set for the site_collection_id property.
+                            ## @param value Value to set for the siteCollectionId property.
                             ## @return a void
                             ## 
                             def site_collection_id=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the siteId property value. The siteId property
-                            ## @param value Value to set for the site_id property.
+                            ## @param value Value to set for the siteId property.
                             ## @return a void
                             ## 
                             def site_id=(value)

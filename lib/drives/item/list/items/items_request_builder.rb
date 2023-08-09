@@ -2,11 +2,12 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/list_item'
 require_relative '../../../../models/list_item_collection_response'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../drives'
 require_relative '../../item'
 require_relative '../list'
 require_relative './count/count_request_builder'
+require_relative './item/list_item_item_request_builder'
 require_relative './items'
 
 module MicrosoftGraph
@@ -24,13 +25,24 @@ module MicrosoftGraph
                             return MicrosoftGraph::Drives::Item::List::Items::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the items property of the microsoft.graph.list entity.
+                        ## @param list_item_id The unique identifier of listItem
+                        ## @return a list_item_item_request_builder
+                        ## 
+                        def by_list_item_id(list_item_id)
+                            raise StandardError, 'list_item_id cannot be null' if list_item_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["listItem%2Did"] = list_item_id
+                            return MicrosoftGraph::Drives::Item::List::Items::Item::ListItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new ItemsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/list/items{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
+                            super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/list/items{?%24top,%24skip,%24search,%24filter,%24orderby,%24select,%24expand}")
                         end
                         ## 
                         ## Get the collection of [items][item] in a [list][].
@@ -42,8 +54,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ListItemCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -58,8 +70,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ListItem.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -106,9 +118,6 @@ module MicrosoftGraph
                         class ItemsRequestBuilderGetQueryParameters
                             
                             ## 
-                            # Include count of items
-                            attr_accessor :count
-                            ## 
                             # Expand related entities
                             attr_accessor :expand
                             ## 
@@ -137,8 +146,6 @@ module MicrosoftGraph
                             def get_query_parameter(original_name)
                                 raise StandardError, 'original_name cannot be null' if original_name.nil?
                                 case original_name
-                                    when "count"
-                                        return "%24count"
                                     when "expand"
                                         return "%24expand"
                                     when "filter"

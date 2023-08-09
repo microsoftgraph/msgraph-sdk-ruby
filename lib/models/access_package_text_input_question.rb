@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The regular expression pattern which any answer to this question must match.
             @regex_pattern
             ## 
-            ## Instantiates a new AccessPackageTextInputQuestion and sets the default values.
+            ## Instantiates a new accessPackageTextInputQuestion and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isSingleLineQuestion property value. Indicates whether the answer will be in single or multiple line format.
-            ## @param value Value to set for the is_single_line_question property.
+            ## @param value Value to set for the isSingleLineQuestion property.
             ## @return a void
             ## 
             def is_single_line_question=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the regexPattern property value. The regular expression pattern which any answer to this question must match.
-            ## @param value Value to set for the regex_pattern property.
+            ## @param value Value to set for the regexPattern property.
             ## @return a void
             ## 
             def regex_pattern=(value)

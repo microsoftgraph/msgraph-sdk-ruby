@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
 require_relative '../../../../../models/identity_provider'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../identity'
 require_relative '../../../b2x_user_flows'
 require_relative '../../item'
@@ -28,6 +28,20 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/identityProviders/{identityProvider%2Did}{?%24select,%24expand}")
                             end
                             ## 
+                            ## Delete an identity provider from a b2xIdentityUserFlow object. For self-service sign-up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @return a Fiber of void
+                            ## 
+                            def delete(request_configuration=nil)
+                                request_info = self.to_delete_request_information(
+                                    request_configuration
+                                )
+                                error_mapping = Hash.new
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                return @request_adapter.send_async(request_info, nil, error_mapping)
+                            end
+                            ## 
                             ## The identity providers included in the user flow.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of identity_provider
@@ -37,9 +51,25 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityProvider.create_from_discriminator_value(pn) }, error_mapping)
+                            end
+                            ## 
+                            ## Delete an identity provider from a b2xIdentityUserFlow object. For self-service sign-up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @return a request_information
+                            ## 
+                            def to_delete_request_information(request_configuration=nil)
+                                request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :DELETE
+                                unless request_configuration.nil?
+                                    request_info.add_headers_from_raw_object(request_configuration.headers)
+                                    request_info.add_request_options(request_configuration.options)
+                                end
+                                return request_info
                             end
                             ## 
                             ## The identity providers included in the user flow.

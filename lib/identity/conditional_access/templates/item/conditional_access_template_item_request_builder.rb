@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/conditional_access_template'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../identity'
 require_relative '../../conditional_access'
 require_relative '../templates'
@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identity/conditionalAccess/templates/{conditionalAccessTemplate%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+                        ## Read the properties and relationships of a conditionalAccessTemplate object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of conditional_access_template
                         ## 
@@ -35,12 +35,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConditionalAccessTemplate.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+                        ## Read the properties and relationships of a conditionalAccessTemplate object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -59,7 +59,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
+                        # Read the properties and relationships of a conditionalAccessTemplate object.
                         class ConditionalAccessTemplateItemRequestBuilderGetQueryParameters
                             
                             ## 

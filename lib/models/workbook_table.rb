@@ -110,7 +110,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the highlightFirstColumn property value. Indicates whether the first column contains special formatting.
-            ## @param value Value to set for the highlight_first_column property.
+            ## @param value Value to set for the highlightFirstColumn property.
             ## @return a void
             ## 
             def highlight_first_column=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the highlightLastColumn property value. Indicates whether the last column contains special formatting.
-            ## @param value Value to set for the highlight_last_column property.
+            ## @param value Value to set for the highlightLastColumn property.
             ## @return a void
             ## 
             def highlight_last_column=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the legacyId property value. Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
-            ## @param value Value to set for the legacy_id property.
+            ## @param value Value to set for the legacyId property.
             ## @return a void
             ## 
             def legacy_id=(value)
@@ -208,7 +208,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showBandedColumns property value. Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.
-            ## @param value Value to set for the show_banded_columns property.
+            ## @param value Value to set for the showBandedColumns property.
             ## @return a void
             ## 
             def show_banded_columns=(value)
@@ -223,7 +223,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showBandedRows property value. Indicates whether the rows show banded formatting in which odd rows are highlighted differently from even ones to make reading the table easier.
-            ## @param value Value to set for the show_banded_rows property.
+            ## @param value Value to set for the showBandedRows property.
             ## @return a void
             ## 
             def show_banded_rows=(value)
@@ -238,7 +238,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showFilterButton property value. Indicates whether the filter buttons are visible at the top of each column header. Setting this is only allowed if the table contains a header row.
-            ## @param value Value to set for the show_filter_button property.
+            ## @param value Value to set for the showFilterButton property.
             ## @return a void
             ## 
             def show_filter_button=(value)
@@ -253,7 +253,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showHeaders property value. Indicates whether the header row is visible or not. This value can be set to show or remove the header row.
-            ## @param value Value to set for the show_headers property.
+            ## @param value Value to set for the showHeaders property.
             ## @return a void
             ## 
             def show_headers=(value)
@@ -268,7 +268,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showTotals property value. Indicates whether the total row is visible or not. This value can be set to show or remove the total row.
-            ## @param value Value to set for the show_totals property.
+            ## @param value Value to set for the showTotals property.
             ## @return a void
             ## 
             def show_totals=(value)

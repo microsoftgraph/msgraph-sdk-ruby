@@ -2,11 +2,12 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/federated_identity_credential'
 require_relative '../../../models/federated_identity_credential_collection_response'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../applications'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './federated_identity_credentials'
+require_relative './item/federated_identity_credential_item_request_builder'
 
 module MicrosoftGraph
     module Applications
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Applications::Item::FederatedIdentityCredentials::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
+                    ## @param federated_identity_credential_id The unique identifier of federatedIdentityCredential
+                    ## @return a federated_identity_credential_item_request_builder
+                    ## 
+                    def by_federated_identity_credential_id(federated_identity_credential_id)
+                        raise StandardError, 'federated_identity_credential_id cannot be null' if federated_identity_credential_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["federatedIdentityCredential%2Did"] = federated_identity_credential_id
+                        return MicrosoftGraph::Applications::Item::FederatedIdentityCredentials::Item::FederatedIdentityCredentialItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new FederatedIdentityCredentialsRequestBuilder and sets the default values.
@@ -40,8 +52,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::FederatedIdentityCredentialCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -56,8 +68,8 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::FederatedIdentityCredential.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

@@ -1,11 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
-require_relative '../../../models/o_data_errors/o_data_error'
-require_relative '../../../models/security/retention_event'
-require_relative '../../../models/security/retention_event_collection_response'
+require_relative '../../../models/o_data_errors_o_data_error'
+require_relative '../../../models/security_retention_event'
+require_relative '../../../models/security_retention_event_collection_response'
 require_relative '../../security'
 require_relative '../triggers'
 require_relative './count/count_request_builder'
+require_relative './item/retention_event_item_request_builder'
 require_relative './retention_events'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Security::Triggers::RetentionEvents::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the retentionEvents property of the microsoft.graph.security.triggersRoot entity.
+                    ## @param retention_event_id The unique identifier of retentionEvent
+                    ## @return a retention_event_item_request_builder
+                    ## 
+                    def by_retention_event_id(retention_event_id)
+                        raise StandardError, 'retention_event_id cannot be null' if retention_event_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["retentionEvent%2Did"] = retention_event_id
+                        return MicrosoftGraph::Security::Triggers::RetentionEvents::Item::RetentionEventItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new RetentionEventsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,24 +43,24 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/security/triggers/retentionEvents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get retentionEvents from security
+                    ## Get a list of the retentionEvent objects and their properties.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                    ## @return a Fiber of retention_event_collection_response
+                    ## @return a Fiber of security_retention_event_collection_response
                     ## 
                     def get(request_configuration=nil)
                         request_info = self.to_get_request_information(
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::RetentionEventCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityRetentionEventCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create new navigation property to retentionEvents for security
+                    ## Create a new retentionEvent object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                    ## @return a Fiber of retention_event
+                    ## @return a Fiber of security_retention_event
                     ## 
                     def post(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
@@ -56,12 +68,12 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::RetentionEvent.create_from_discriminator_value(pn) }, error_mapping)
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityRetentionEvent.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get retentionEvents from security
+                    ## Get a list of the retentionEvent objects and their properties.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Create new navigation property to retentionEvents for security
+                    ## Create a new retentionEvent object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get retentionEvents from security
+                    # Get a list of the retentionEvent objects and their properties.
                     class RetentionEventsRequestBuilderGetQueryParameters
                         
                         ## 

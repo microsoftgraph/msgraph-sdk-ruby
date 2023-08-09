@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
             @values
             ## 
-            ## Instantiates a new GroupSettingTemplate and sets the default values.
+            ## Instantiates a new groupSettingTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display name of the template. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)

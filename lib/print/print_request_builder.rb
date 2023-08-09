@@ -1,19 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative '../models/o_data_errors/o_data_error'
+require_relative '../models/o_data_errors_o_data_error'
 require_relative '../models/print'
 require_relative './connectors/connectors_request_builder'
-require_relative './connectors/item/print_connector_item_request_builder'
-require_relative './operations/item/print_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
 require_relative './print'
-require_relative './printers/item/printer_item_request_builder'
 require_relative './printers/printers_request_builder'
-require_relative './services/item/print_service_item_request_builder'
 require_relative './services/services_request_builder'
-require_relative './shares/item/printer_share_item_request_builder'
 require_relative './shares/shares_request_builder'
-require_relative './task_definitions/item/print_task_definition_item_request_builder'
 require_relative './task_definitions/task_definitions_request_builder'
 
 module MicrosoftGraph
@@ -53,17 +47,6 @@ module MicrosoftGraph
                 return MicrosoftGraph::Print::TaskDefinitions::TaskDefinitionsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
-            ## Provides operations to manage the connectors property of the microsoft.graph.print entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_connector_item_request_builder
-            ## 
-            def connectors_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printConnector%2Did"] = id
-                return MicrosoftGraph::Print::Connectors::Item::PrintConnectorItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Instantiates a new PrintRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
             ## @param request_adapter The request adapter to use to execute the requests.
@@ -82,20 +65,9 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Print.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the operations property of the microsoft.graph.print entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_operation_item_request_builder
-            ## 
-            def operations_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printOperation%2Did"] = id
-                return MicrosoftGraph::Print::Operations::Item::PrintOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Update print
@@ -109,53 +81,9 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Print.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the printers property of the microsoft.graph.print entity.
-            ## @param id Unique identifier of the item
-            ## @return a printer_item_request_builder
-            ## 
-            def printers_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printer%2Did"] = id
-                return MicrosoftGraph::Print::Printers::Item::PrinterItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the services property of the microsoft.graph.print entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_service_item_request_builder
-            ## 
-            def services_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printService%2Did"] = id
-                return MicrosoftGraph::Print::Services::Item::PrintServiceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the shares property of the microsoft.graph.print entity.
-            ## @param id Unique identifier of the item
-            ## @return a printer_share_item_request_builder
-            ## 
-            def shares_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printerShare%2Did"] = id
-                return MicrosoftGraph::Print::Shares::Item::PrinterShareItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_task_definition_item_request_builder
-            ## 
-            def task_definitions_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printTaskDefinition%2Did"] = id
-                return MicrosoftGraph::Print::TaskDefinitions::Item::PrintTaskDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get print

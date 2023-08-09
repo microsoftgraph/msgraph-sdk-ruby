@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/call_records/segment'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../models/call_records_segment'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../communications'
 require_relative '../../../../../call_records'
 require_relative '../../../../item'
@@ -41,29 +41,29 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
                                     ## The list of segments involved in the session. Read-only. Nullable.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                    ## @return a Fiber of segment
+                                    ## @return a Fiber of call_records_segment
                                     ## 
                                     def get(request_configuration=nil)
                                         request_info = self.to_get_request_information(
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecords::Segment.create_from_discriminator_value(pn) }, error_mapping)
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecordsSegment.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
                                     ## Update the navigation property segments in communications
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                    ## @return a Fiber of segment
+                                    ## @return a Fiber of call_records_segment
                                     ## 
                                     def patch(body, request_configuration=nil)
                                         raise StandardError, 'body cannot be null' if body.nil?
@@ -71,9 +71,9 @@ module MicrosoftGraph
                                             body, request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecords::Segment.create_from_discriminator_value(pn) }, error_mapping)
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecordsSegment.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
                                     ## Delete navigation property segments for communications

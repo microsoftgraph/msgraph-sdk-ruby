@@ -31,7 +31,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the AdditionalData property.
+                    ## @param value Value to set for the additionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the displayName property value. The displayName property
-                    ## @param value Value to set for the display_name property.
+                    ## @param value Value to set for the displayName property.
                     ## @return a void
                     ## 
                     def display_name=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the mailNickname property value. The mailNickname property
-                    ## @param value Value to set for the mail_nickname property.
+                    ## @param value Value to set for the mailNickname property.
                     ## @return a void
                     ## 
                     def mail_nickname=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the onBehalfOfUserId property value. The onBehalfOfUserId property
-                    ## @param value Value to set for the on_behalf_of_user_id property.
+                    ## @param value Value to set for the onBehalfOfUserId property.
                     ## @return a void
                     ## 
                     def on_behalf_of_user_id=(value)

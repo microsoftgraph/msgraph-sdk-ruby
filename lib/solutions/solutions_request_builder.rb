@@ -1,11 +1,9 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative '../models/o_data_errors/o_data_error'
+require_relative '../models/o_data_errors_o_data_error'
 require_relative '../models/solutions_root'
 require_relative './booking_businesses/booking_businesses_request_builder'
-require_relative './booking_businesses/item/booking_business_item_request_builder'
 require_relative './booking_currencies/booking_currencies_request_builder'
-require_relative './booking_currencies/item/booking_currency_item_request_builder'
 require_relative './solutions'
 
 module MicrosoftGraph
@@ -23,28 +21,6 @@ module MicrosoftGraph
             # Provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
             def booking_currencies()
                 return MicrosoftGraph::Solutions::BookingCurrencies::BookingCurrenciesRequestBuilder.new(@path_parameters, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a booking_business_item_request_builder
-            ## 
-            def booking_businesses_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["bookingBusiness%2Did"] = id
-                return MicrosoftGraph::Solutions::BookingBusinesses::Item::BookingBusinessItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a booking_currency_item_request_builder
-            ## 
-            def booking_currencies_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["bookingCurrency%2Did"] = id
-                return MicrosoftGraph::Solutions::BookingCurrencies::Item::BookingCurrencyItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new SolutionsRequestBuilder and sets the default values.
@@ -65,8 +41,8 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SolutionsRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -81,8 +57,8 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SolutionsRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 

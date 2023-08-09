@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the matchCase property value. Represents whether the casing impacted the last sort of the table. Read-only.
-            ## @param value Value to set for the match_case property.
+            ## @param value Value to set for the matchCase property.
             ## @return a void
             ## 
             def match_case=(value)

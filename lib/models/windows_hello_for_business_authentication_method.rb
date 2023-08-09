@@ -20,7 +20,7 @@ module MicrosoftGraph
             # Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
             @key_strength
             ## 
-            ## Instantiates a new WindowsHelloForBusinessAuthenticationMethod and sets the default values.
+            ## Instantiates a new windowsHelloForBusinessAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The date and time that this Windows Hello for Business key was registered.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the device on which Windows Hello for Business is registered
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyStrength property value. Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
-            ## @param value Value to set for the key_strength property.
+            ## @param value Value to set for the keyStrength property.
             ## @return a void
             ## 
             def key_strength=(value)

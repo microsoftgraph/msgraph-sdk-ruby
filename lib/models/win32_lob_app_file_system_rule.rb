@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A complex type to store file or folder rule data for a Win32 LOB app.
         class Win32LobAppFileSystemRule < MicrosoftGraph::Models::Win32LobAppRule
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -33,7 +35,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the check32BitOn64System property value. A value indicating whether to expand environment variables in the 32-bit context on 64-bit systems.
-            ## @param value Value to set for the check32_bit_on64_system property.
+            ## @param value Value to set for the check32BitOn64System property.
             ## @return a void
             ## 
             def check32_bit_on64_system=(value)
@@ -48,14 +50,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the comparisonValue property value. The file or folder comparison value.
-            ## @param value Value to set for the comparison_value property.
+            ## @param value Value to set for the comparisonValue property.
             ## @return a void
             ## 
             def comparison_value=(value)
                 @comparison_value = value
             end
             ## 
-            ## Instantiates a new Win32LobAppFileSystemRule and sets the default values.
+            ## Instantiates a new win32LobAppFileSystemRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -80,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fileOrFolderName property value. The file or folder name to look up.
-            ## @param value Value to set for the file_or_folder_name property.
+            ## @param value Value to set for the fileOrFolderName property.
             ## @return a void
             ## 
             def file_or_folder_name=(value)
@@ -109,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the operationType property value. Contains all supported file system detection type.
-            ## @param value Value to set for the operation_type property.
+            ## @param value Value to set for the operationType property.
             ## @return a void
             ## 
             def operation_type=(value)

@@ -1,14 +1,15 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
-require_relative '../../../../../../models/call_records/segment'
-require_relative '../../../../../../models/call_records/segment_collection_response'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/call_records_segment'
+require_relative '../../../../../../models/call_records_segment_collection_response'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../communications'
 require_relative '../../../../call_records'
 require_relative '../../../item'
 require_relative '../../sessions'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/segment_item_request_builder'
 require_relative './segments'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Communications::CallRecords::Item::Sessions::Item::Segments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
+                                ## @param segment_id The unique identifier of segment
+                                ## @return a segment_item_request_builder
+                                ## 
+                                def by_segment_id(segment_id)
+                                    raise StandardError, 'segment_id cannot be null' if segment_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["segment%2Did"] = segment_id
+                                    return MicrosoftGraph::Communications::CallRecords::Item::Sessions::Item::Segments::Item::SegmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new SegmentsRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -39,22 +51,22 @@ module MicrosoftGraph
                                 ## 
                                 ## The list of segments involved in the session. Read-only. Nullable.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a Fiber of segment_collection_response
+                                ## @return a Fiber of call_records_segment_collection_response
                                 ## 
                                 def get(request_configuration=nil)
                                     request_info = self.to_get_request_information(
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecords::SegmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecordsSegmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
                                 ## Create new navigation property to segments for communications
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a Fiber of segment
+                                ## @return a Fiber of call_records_segment
                                 ## 
                                 def post(body, request_configuration=nil)
                                     raise StandardError, 'body cannot be null' if body.nil?
@@ -62,9 +74,9 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecords::Segment.create_from_discriminator_value(pn) }, error_mapping)
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecordsSegment.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
                                 ## The list of segments involved in the session. Read-only. Nullable.

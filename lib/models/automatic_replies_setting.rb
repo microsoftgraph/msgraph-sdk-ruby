@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
-            ## @param value Value to set for the external_audience property.
+            ## @param value Value to set for the externalAudience property.
             ## @return a void
             ## 
             def external_audience=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalReplyMessage property value. The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
-            ## @param value Value to set for the external_reply_message property.
+            ## @param value Value to set for the externalReplyMessage property.
             ## @return a void
             ## 
             def external_reply_message=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the internalReplyMessage property value. The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
-            ## @param value Value to set for the internal_reply_message property.
+            ## @param value Value to set for the internalReplyMessage property.
             ## @return a void
             ## 
             def internal_reply_message=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduledEndDateTime property value. The date and time that automatic replies are set to end, if Status is set to Scheduled.
-            ## @param value Value to set for the scheduled_end_date_time property.
+            ## @param value Value to set for the scheduledEndDateTime property.
             ## @return a void
             ## 
             def scheduled_end_date_time=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduledStartDateTime property value. The date and time that automatic replies are set to begin, if Status is set to Scheduled.
-            ## @param value Value to set for the scheduled_start_date_time property.
+            ## @param value Value to set for the scheduledStartDateTime property.
             ## @return a void
             ## 
             def scheduled_start_date_time=(value)

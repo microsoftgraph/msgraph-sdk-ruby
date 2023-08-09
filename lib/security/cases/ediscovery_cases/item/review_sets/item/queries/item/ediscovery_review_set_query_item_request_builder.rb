@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../../../models/security/ediscovery_review_set_query'
+require_relative '../../../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../../../models/security_ediscovery_review_set_query'
 require_relative '../../../../../../../security'
 require_relative '../../../../../../cases'
 require_relative '../../../../../ediscovery_cases'
@@ -10,7 +10,8 @@ require_relative '../../../review_sets'
 require_relative '../../item'
 require_relative '../queries'
 require_relative './item'
-require_relative './security_apply_tags/security_apply_tags_request_builder'
+require_relative './microsoft_graph_security_apply_tags/microsoft_graph_security_apply_tags_request_builder'
+require_relative './microsoft_graph_security_export/microsoft_graph_security_export_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -27,8 +28,13 @@ module MicrosoftGraph
                                         
                                         ## 
                                         # Provides operations to call the applyTags method.
-                                        def security_apply_tags()
-                                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::SecurityApplyTags::SecurityApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
+                                        def microsoft_graph_security_apply_tags()
+                                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::MicrosoftGraphSecurityApplyTags::MicrosoftGraphSecurityApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        # Provides operations to call the export method.
+                                        def microsoft_graph_security_export()
+                                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::MicrosoftGraphSecurityExport::MicrosoftGraphSecurityExportRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new EdiscoveryReviewSetQueryItemRequestBuilder and sets the default values.
@@ -40,7 +46,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/queries/{ediscoveryReviewSetQuery%2Did}{?%24select,%24expand}")
                                         end
                                         ## 
-                                        ## Delete navigation property queries for security
+                                        ## Delete an ediscoveryReviewSetQuery object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of void
                                         ## 
@@ -49,29 +55,29 @@ module MicrosoftGraph
                                                 request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## Represents queries within the review set.
+                                        ## Read the properties and relationships of an ediscoveryReviewSetQuery object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                        ## @return a Fiber of ediscovery_review_set_query
+                                        ## @return a Fiber of security_ediscovery_review_set_query
                                         ## 
                                         def get(request_configuration=nil)
                                             request_info = self.to_get_request_information(
                                                 request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryReviewSetQuery.create_from_discriminator_value(pn) }, error_mapping)
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryReviewSetQuery.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Update the navigation property queries in security
+                                        ## Update the properties of an ediscoveryReviewSetQuery object.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                        ## @return a Fiber of ediscovery_review_set_query
+                                        ## @return a Fiber of security_ediscovery_review_set_query
                                         ## 
                                         def patch(body, request_configuration=nil)
                                             raise StandardError, 'body cannot be null' if body.nil?
@@ -79,12 +85,12 @@ module MicrosoftGraph
                                                 body, request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryReviewSetQuery.create_from_discriminator_value(pn) }, error_mapping)
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryReviewSetQuery.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Delete navigation property queries for security
+                                        ## Delete an ediscoveryReviewSetQuery object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -100,7 +106,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Represents queries within the review set.
+                                        ## Read the properties and relationships of an ediscoveryReviewSetQuery object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -118,7 +124,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Update the navigation property queries in security
+                                        ## Update the properties of an ediscoveryReviewSetQuery object.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
@@ -139,7 +145,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Represents queries within the review set.
+                                        # Read the properties and relationships of an ediscoveryReviewSetQuery object.
                                         class EdiscoveryReviewSetQueryItemRequestBuilderGetQueryParameters
                                             
                                             ## 

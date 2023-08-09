@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedTrainingsInfos property value. List of assigned trainings and their information in an attack simulation and training campaign.
-            ## @param value Value to set for the assigned_trainings_infos property.
+            ## @param value Value to set for the assignedTrainingsInfos property.
             ## @return a void
             ## 
             def assigned_trainings_infos=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the trainingsAssignedUserCount property value. Number of users who were assigned trainings in an attack simulation and training campaign.
-            ## @param value Value to set for the trainings_assigned_user_count property.
+            ## @param value Value to set for the trainingsAssignedUserCount property.
             ## @return a void
             ## 
             def trainings_assigned_user_count=(value)

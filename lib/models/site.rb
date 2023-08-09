@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './term_store/store'
+require_relative './term_store_store'
 
 module MicrosoftGraph
     module Models
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentTypes property value. The collection of content types defined for this site.
-            ## @param value Value to set for the content_types property.
+            ## @param value Value to set for the contentTypes property.
             ## @return a void
             ## 
             def content_types=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The full title for the site. Read-only.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -195,7 +195,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalColumns property value. The externalColumns property
-            ## @param value Value to set for the external_columns property.
+            ## @param value Value to set for the externalColumns property.
             ## @return a void
             ## 
             def external_columns=(value)
@@ -224,8 +224,8 @@ module MicrosoftGraph
                     "sharepointIds" => lambda {|n| @sharepoint_ids = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SharepointIds.create_from_discriminator_value(pn) }) },
                     "siteCollection" => lambda {|n| @site_collection = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SiteCollection.create_from_discriminator_value(pn) }) },
                     "sites" => lambda {|n| @sites = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Site.create_from_discriminator_value(pn) }) },
-                    "termStore" => lambda {|n| @term_store = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermStore::Store.create_from_discriminator_value(pn) }) },
-                    "termStores" => lambda {|n| @term_stores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TermStore::Store.create_from_discriminator_value(pn) }) },
+                    "termStore" => lambda {|n| @term_store = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermStoreStore.create_from_discriminator_value(pn) }) },
+                    "termStores" => lambda {|n| @term_stores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TermStoreStore.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -355,7 +355,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-            ## @param value Value to set for the sharepoint_ids property.
+            ## @param value Value to set for the sharepointIds property.
             ## @return a void
             ## 
             def sharepoint_ids=(value)
@@ -370,7 +370,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the siteCollection property value. Provides details about the site's site collection. Available only on the root site. Read-only.
-            ## @param value Value to set for the site_collection property.
+            ## @param value Value to set for the siteCollection property.
             ## @return a void
             ## 
             def site_collection=(value)
@@ -393,14 +393,14 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the termStore property value. The default termStore under this site.
-            ## @return a store
+            ## @return a term_store_store
             ## 
             def term_store
                 return @term_store
             end
             ## 
             ## Sets the termStore property value. The default termStore under this site.
-            ## @param value Value to set for the term_store property.
+            ## @param value Value to set for the termStore property.
             ## @return a void
             ## 
             def term_store=(value)
@@ -408,14 +408,14 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the termStores property value. The collection of termStores under this site.
-            ## @return a store
+            ## @return a term_store_store
             ## 
             def term_stores
                 return @term_stores
             end
             ## 
             ## Sets the termStores property value. The collection of termStores under this site.
-            ## @param value Value to set for the term_stores property.
+            ## @param value Value to set for the termStores property.
             ## @return a void
             ## 
             def term_stores=(value)

@@ -1,13 +1,14 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/o_data_errors/o_data_error'
 require_relative '../../../../../models/open_shift'
 require_relative '../../../../../models/open_shift_collection_response'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../groups'
 require_relative '../../../item'
 require_relative '../../team'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/open_shift_item_request_builder'
 require_relative './open_shifts'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Groups::Item::Team::Schedule::OpenShifts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
+                            ## @param open_shift_id The unique identifier of openShift
+                            ## @return a open_shift_item_request_builder
+                            ## 
+                            def by_open_shift_id(open_shift_id)
+                                raise StandardError, 'open_shift_id cannot be null' if open_shift_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["openShift%2Did"] = open_shift_id
+                                return MicrosoftGraph::Groups::Item::Team::Schedule::OpenShifts::Item::OpenShiftItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new OpenShiftsRequestBuilder and sets the default values.
@@ -44,12 +56,12 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OpenShiftCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Create new navigation property to openShifts for groups
+                            ## Create an instance of an openShift object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of open_shift
@@ -60,8 +72,8 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OpenShift.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
@@ -83,7 +95,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Create new navigation property to openShifts for groups
+                            ## Create an instance of an openShift object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information

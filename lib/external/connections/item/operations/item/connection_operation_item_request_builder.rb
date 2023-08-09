@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/external_connectors/connection_operation'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/external_connectors_connection_operation'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../external'
 require_relative '../../../connections'
 require_relative '../../item'
@@ -37,29 +37,29 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get operations from external
+                            ## Read the properties and relationships of a connectionOperation object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of connection_operation
+                            ## @return a Fiber of external_connectors_connection_operation
                             ## 
                             def get(request_configuration=nil)
                                 request_info = self.to_get_request_information(
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ConnectionOperation.create_from_discriminator_value(pn) }, error_mapping)
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectorsConnectionOperation.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## Update the navigation property operations in external
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of connection_operation
+                            ## @return a Fiber of external_connectors_connection_operation
                             ## 
                             def patch(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
@@ -67,9 +67,9 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ConnectionOperation.create_from_discriminator_value(pn) }, error_mapping)
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectorsConnectionOperation.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## Delete navigation property operations for external
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get operations from external
+                            ## Read the properties and relationships of a connectionOperation object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get operations from external
+                            # Read the properties and relationships of a connectionOperation object.
                             class ConnectionOperationItemRequestBuilderGetQueryParameters
                                 
                                 ## 

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # If present, represents a conversation (for example, team or channel) @mentioned in a message.
             @conversation
             ## 
-            ## Instantiates a new ChatMessageMentionedIdentitySet and sets the default values.
+            ## Instantiates a new chatMessageMentionedIdentitySet and sets the default values.
             ## @return a void
             ## 
             def initialize()

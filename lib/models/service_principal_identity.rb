@@ -18,14 +18,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appId property value. The application identifier of the service principal.
-            ## @param value Value to set for the app_id property.
+            ## @param value Value to set for the appId property.
             ## @return a void
             ## 
             def app_id=(value)
                 @app_id = value
             end
             ## 
-            ## Instantiates a new ServicePrincipalIdentity and sets the default values.
+            ## Instantiates a new servicePrincipalIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

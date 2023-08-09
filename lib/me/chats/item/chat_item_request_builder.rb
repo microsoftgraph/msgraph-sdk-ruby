@@ -1,24 +1,20 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/chat'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../me'
 require_relative '../chats'
 require_relative './hide_for_user/hide_for_user_request_builder'
 require_relative './installed_apps/installed_apps_request_builder'
-require_relative './installed_apps/item/teams_app_installation_item_request_builder'
 require_relative './item'
 require_relative './last_message_preview/last_message_preview_request_builder'
 require_relative './mark_chat_read_for_user/mark_chat_read_for_user_request_builder'
 require_relative './mark_chat_unread_for_user/mark_chat_unread_for_user_request_builder'
-require_relative './members/item/conversation_member_item_request_builder'
 require_relative './members/members_request_builder'
-require_relative './messages/item/chat_message_item_request_builder'
 require_relative './messages/messages_request_builder'
-require_relative './pinned_messages/item/pinned_chat_message_info_item_request_builder'
+require_relative './permission_grants/permission_grants_request_builder'
 require_relative './pinned_messages/pinned_messages_request_builder'
 require_relative './send_activity_notification/send_activity_notification_request_builder'
-require_relative './tabs/item/teams_tab_item_request_builder'
 require_relative './tabs/tabs_request_builder'
 require_relative './unhide_for_user/unhide_for_user_request_builder'
 
@@ -66,6 +62,11 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::Chats::Item::Messages::MessagesRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
+                    def permission_grants()
+                        return MicrosoftGraph::Me::Chats::Item::PermissionGrants::PermissionGrantsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
                     def pinned_messages()
                         return MicrosoftGraph::Me::Chats::Item::PinnedMessages::PinnedMessagesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -104,12 +105,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get chats from me
+                    ## Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of chat
                     ## 
@@ -118,42 +119,9 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Chat.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the installedApps property of the microsoft.graph.chat entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a teams_app_installation_item_request_builder
-                    ## 
-                    def installed_apps_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["teamsAppInstallation%2Did"] = id
-                        return MicrosoftGraph::Me::Chats::Item::InstalledApps::Item::TeamsAppInstallationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the members property of the microsoft.graph.chat entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a conversation_member_item_request_builder
-                    ## 
-                    def members_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["conversationMember%2Did"] = id
-                        return MicrosoftGraph::Me::Chats::Item::Members::Item::ConversationMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the messages property of the microsoft.graph.chat entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a chat_message_item_request_builder
-                    ## 
-                    def messages_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["chatMessage%2Did"] = id
-                        return MicrosoftGraph::Me::Chats::Item::Messages::Item::ChatMessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property chats in me
@@ -167,31 +135,9 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Chat.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a pinned_chat_message_info_item_request_builder
-                    ## 
-                    def pinned_messages_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["pinnedChatMessageInfo%2Did"] = id
-                        return MicrosoftGraph::Me::Chats::Item::PinnedMessages::Item::PinnedChatMessageInfoItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the tabs property of the microsoft.graph.chat entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a teams_tab_item_request_builder
-                    ## 
-                    def tabs_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["teamsTab%2Did"] = id
-                        return MicrosoftGraph::Me::Chats::Item::Tabs::Item::TeamsTabItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property chats for me
@@ -210,7 +156,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Get chats from me
+                    ## Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -249,7 +195,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get chats from me
+                    # Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
                     class ChatItemRequestBuilderGetQueryParameters
                         
                         ## 

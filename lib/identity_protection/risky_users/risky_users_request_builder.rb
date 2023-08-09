@@ -1,12 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/risky_user'
 require_relative '../../models/risky_user_collection_response'
 require_relative '../identity_protection'
 require_relative './confirm_compromised/confirm_compromised_request_builder'
 require_relative './count/count_request_builder'
 require_relative './dismiss/dismiss_request_builder'
+require_relative './item/risky_user_item_request_builder'
 require_relative './risky_users'
 
 module MicrosoftGraph
@@ -32,6 +33,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::IdentityProtection::RiskyUsers::Dismiss::DismissRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
+                ## @param risky_user_id The unique identifier of riskyUser
+                ## @return a risky_user_item_request_builder
+                ## 
+                def by_risky_user_id(risky_user_id)
+                    raise StandardError, 'risky_user_id cannot be null' if risky_user_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["riskyUser%2Did"] = risky_user_id
+                    return MicrosoftGraph::IdentityProtection::RiskyUsers::Item::RiskyUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new RiskyUsersRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -50,8 +62,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RiskyUserCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -66,8 +78,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RiskyUser.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 

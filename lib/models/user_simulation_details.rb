@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedTrainingsCount property value. Number of trainings assigned to a user in an attack simulation and training campaign.
-            ## @param value Value to set for the assigned_trainings_count property.
+            ## @param value Value to set for the assignedTrainingsCount property.
             ## @return a void
             ## 
             def assigned_trainings_count=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the completedTrainingsCount property value. Number of trainings completed by a user in an attack simulation and training campaign.
-            ## @param value Value to set for the completed_trainings_count property.
+            ## @param value Value to set for the completedTrainingsCount property.
             ## @return a void
             ## 
             def completed_trainings_count=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compromisedDateTime property value. Date and time of the compromising online action by a user in an attack simulation and training campaign.
-            ## @param value Value to set for the compromised_date_time property.
+            ## @param value Value to set for the compromisedDateTime property.
             ## @return a void
             ## 
             def compromised_date_time=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inProgressTrainingsCount property value. Number of trainings in progress by a user in an attack simulation and training campaign.
-            ## @param value Value to set for the in_progress_trainings_count property.
+            ## @param value Value to set for the inProgressTrainingsCount property.
             ## @return a void
             ## 
             def in_progress_trainings_count=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isCompromised property value. Indicates whether a user was compromised in an attack simulation and training campaign.
-            ## @param value Value to set for the is_compromised property.
+            ## @param value Value to set for the isCompromised property.
             ## @return a void
             ## 
             def is_compromised=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -188,7 +188,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reportedPhishDateTime property value. Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
-            ## @param value Value to set for the reported_phish_date_time property.
+            ## @param value Value to set for the reportedPhishDateTime property.
             ## @return a void
             ## 
             def reported_phish_date_time=(value)
@@ -222,7 +222,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the simulationEvents property value. List of simulation events of a user in the attack simulation and training campaign.
-            ## @param value Value to set for the simulation_events property.
+            ## @param value Value to set for the simulationEvents property.
             ## @return a void
             ## 
             def simulation_events=(value)
@@ -237,7 +237,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the simulationUser property value. User in an attack simulation and training campaign.
-            ## @param value Value to set for the simulation_user property.
+            ## @param value Value to set for the simulationUser property.
             ## @return a void
             ## 
             def simulation_user=(value)
@@ -252,7 +252,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the trainingEvents property value. List of training events of a user in the attack simulation and training campaign.
-            ## @param value Value to set for the training_events property.
+            ## @param value Value to set for the trainingEvents property.
             ## @return a void
             ## 
             def training_events=(value)

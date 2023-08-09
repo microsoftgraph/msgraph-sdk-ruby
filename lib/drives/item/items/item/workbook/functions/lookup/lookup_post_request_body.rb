@@ -40,7 +40,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the lookupValue property value. The lookupValue property
-                                    ## @param value Value to set for the lookup_value property.
+                                    ## @param value Value to set for the lookupValue property.
                                     ## @return a void
                                     ## 
                                     def lookup_value=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the lookupVector property value. The lookupVector property
-                                    ## @param value Value to set for the lookup_vector property.
+                                    ## @param value Value to set for the lookupVector property.
                                     ## @return a void
                                     ## 
                                     def lookup_vector=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the resultVector property value. The resultVector property
-                                    ## @param value Value to set for the result_vector property.
+                                    ## @param value Value to set for the resultVector property.
                                     ## @return a void
                                     ## 
                                     def result_vector=(value)

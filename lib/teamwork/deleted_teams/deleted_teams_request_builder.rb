@@ -2,11 +2,12 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
 require_relative '../../models/deleted_team'
 require_relative '../../models/deleted_team_collection_response'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../teamwork'
 require_relative './count/count_request_builder'
 require_relative './deleted_teams'
 require_relative './get_all_messages/get_all_messages_request_builder'
+require_relative './item/deleted_team_item_request_builder'
 
 module MicrosoftGraph
     module Teamwork
@@ -24,6 +25,17 @@ module MicrosoftGraph
                 # Provides operations to call the getAllMessages method.
                 def get_all_messages()
                     return MicrosoftGraph::Teamwork::DeletedTeams::GetAllMessages::GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
+                ## @param deleted_team_id The unique identifier of deletedTeam
+                ## @return a deleted_team_item_request_builder
+                ## 
+                def by_deleted_team_id(deleted_team_id)
+                    raise StandardError, 'deleted_team_id cannot be null' if deleted_team_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["deletedTeam%2Did"] = deleted_team_id
+                    return MicrosoftGraph::Teamwork::DeletedTeams::Item::DeletedTeamItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new DeletedTeamsRequestBuilder and sets the default values.
@@ -44,8 +56,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeletedTeamCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -60,8 +72,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeletedTeam.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 

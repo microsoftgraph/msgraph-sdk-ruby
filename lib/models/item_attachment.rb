@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The attached message or event. Navigation property.
             @item
             ## 
-            ## Instantiates a new ItemAttachment and sets the default values.
+            ## Instantiates a new itemAttachment and sets the default values.
             ## @return a void
             ## 
             def initialize()

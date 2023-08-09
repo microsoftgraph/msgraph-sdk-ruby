@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The SharePoint user associated with this action. Optional.
             @site_user
             ## 
-            ## Instantiates a new SharePointIdentitySet and sets the default values.
+            ## Instantiates a new sharePointIdentitySet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the siteGroup property value. The SharePoint group associated with this action. Optional.
-            ## @param value Value to set for the site_group property.
+            ## @param value Value to set for the siteGroup property.
             ## @return a void
             ## 
             def site_group=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the siteUser property value. The SharePoint user associated with this action. Optional.
-            ## @param value Value to set for the site_user property.
+            ## @param value Value to set for the siteUser property.
             ## @return a void
             ## 
             def site_user=(value)

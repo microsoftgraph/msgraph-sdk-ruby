@@ -46,7 +46,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appId property value. The globally unique identifier for the associated application (its appId property), if any.
-            ## @param value Value to set for the app_id property.
+            ## @param value Value to set for the appId property.
             ## @return a void
             ## 
             def app_id=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name for the service principal.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEnabled property value. true if the service principal account is enabled; otherwise, false.
-            ## @param value Value to set for the is_enabled property.
+            ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
             def is_enabled=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isProcessing property value. Indicates whether Azure AD is currently processing the service principal's risky state.
-            ## @param value Value to set for the is_processing property.
+            ## @param value Value to set for the isProcessing property.
             ## @return a void
             ## 
             def is_processing=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden,  unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-            ## @param value Value to set for the risk_detail property.
+            ## @param value Value to set for the riskDetail property.
             ## @return a void
             ## 
             def risk_detail=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskLastUpdatedDateTime property value. The date and time that the risk state was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z. Supports $filter (eq).
-            ## @param value Value to set for the risk_last_updated_date_time property.
+            ## @param value Value to set for the riskLastUpdatedDateTime property.
             ## @return a void
             ## 
             def risk_last_updated_date_time=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskLevel property value. Level of the detected risky workload identity. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
-            ## @param value Value to set for the risk_level property.
+            ## @param value Value to set for the riskLevel property.
             ## @return a void
             ## 
             def risk_level=(value)
@@ -208,7 +208,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskState property value. State of the service principal's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-            ## @param value Value to set for the risk_state property.
+            ## @param value Value to set for the riskState property.
             ## @return a void
             ## 
             def risk_state=(value)
@@ -242,7 +242,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
-            ## @param value Value to set for the service_principal_type property.
+            ## @param value Value to set for the servicePrincipalType property.
             ## @return a void
             ## 
             def service_principal_type=(value)

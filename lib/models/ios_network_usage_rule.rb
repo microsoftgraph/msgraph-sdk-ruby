@@ -32,7 +32,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularDataBlockWhenRoaming property value. If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.
-            ## @param value Value to set for the cellular_data_block_when_roaming property.
+            ## @param value Value to set for the cellularDataBlockWhenRoaming property.
             ## @return a void
             ## 
             def cellular_data_block_when_roaming=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularDataBlocked property value. If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
-            ## @param value Value to set for the cellular_data_blocked property.
+            ## @param value Value to set for the cellularDataBlocked property.
             ## @return a void
             ## 
             def cellular_data_blocked=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managedApps property value. Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
-            ## @param value Value to set for the managed_apps property.
+            ## @param value Value to set for the managedApps property.
             ## @return a void
             ## 
             def managed_apps=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

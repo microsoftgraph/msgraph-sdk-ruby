@@ -58,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activationUrl property value. Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
-            ## @param value Value to set for the activation_url property.
+            ## @param value Value to set for the activationUrl property.
             ## @return a void
             ## 
             def activation_url=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activitySourceHost property value. Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.
-            ## @param value Value to set for the activity_source_host property.
+            ## @param value Value to set for the activitySourceHost property.
             ## @return a void
             ## 
             def activity_source_host=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appActivityId property value. Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
-            ## @param value Value to set for the app_activity_id property.
+            ## @param value Value to set for the appActivityId property.
             ## @return a void
             ## 
             def app_activity_id=(value)
@@ -103,14 +103,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appDisplayName property value. Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
-            ## @param value Value to set for the app_display_name property.
+            ## @param value Value to set for the appDisplayName property.
             ## @return a void
             ## 
             def app_display_name=(value)
                 @app_display_name = value
             end
             ## 
-            ## Instantiates a new UserActivity and sets the default values.
+            ## Instantiates a new userActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -125,7 +125,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentInfo property value. Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
-            ## @param value Value to set for the content_info property.
+            ## @param value Value to set for the contentInfo property.
             ## @return a void
             ## 
             def content_info=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentUrl property value. Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).
-            ## @param value Value to set for the content_url property.
+            ## @param value Value to set for the contentUrl property.
             ## @return a void
             ## 
             def content_url=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Set by the server. DateTime in UTC when the object was created on the server.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -179,7 +179,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the expirationDateTime property value. Set by the server. DateTime in UTC when the object expired on the server.
-            ## @param value Value to set for the expiration_date_time property.
+            ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
             def expiration_date_time=(value)
@@ -194,7 +194,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fallbackUrl property value. Optional. URL used to launch the activity in a web-based app, if available.
-            ## @param value Value to set for the fallback_url property.
+            ## @param value Value to set for the fallbackUrl property.
             ## @return a void
             ## 
             def fallback_url=(value)
@@ -231,7 +231,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-            ## @param value Value to set for the history_items property.
+            ## @param value Value to set for the historyItems property.
             ## @return a void
             ## 
             def history_items=(value)
@@ -246,7 +246,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. Set by the server. DateTime in UTC when the object was modified on the server.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -299,7 +299,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userTimezone property value. Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
-            ## @param value Value to set for the user_timezone property.
+            ## @param value Value to set for the userTimezone property.
             ## @return a void
             ## 
             def user_timezone=(value)
@@ -314,7 +314,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the visualElements property value. The visualElements property
-            ## @param value Value to set for the visual_elements property.
+            ## @param value Value to set for the visualElements property.
             ## @return a void
             ## 
             def visual_elements=(value)

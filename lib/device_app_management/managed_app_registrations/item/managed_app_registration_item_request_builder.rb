@@ -1,15 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/managed_app_registration'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../device_app_management'
 require_relative '../managed_app_registrations'
 require_relative './applied_policies/applied_policies_request_builder'
-require_relative './applied_policies/item/managed_app_policy_item_request_builder'
 require_relative './intended_policies/intended_policies_request_builder'
-require_relative './intended_policies/item/managed_app_policy_item_request_builder'
 require_relative './item'
-require_relative './operations/item/managed_app_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
 
 module MicrosoftGraph
@@ -36,17 +33,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::Operations::OperationsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the appliedPolicies property of the microsoft.graph.managedAppRegistration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a managed_app_policy_item_request_builder
-                    ## 
-                    def applied_policies_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["managedAppPolicy%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::AppliedPolicies::Item::ManagedAppPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new ManagedAppRegistrationItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -65,12 +51,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The managed app registrations.
+                    ## Read properties and relationships of the androidManagedAppRegistration object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of managed_app_registration
                     ## 
@@ -79,31 +65,9 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedAppRegistration.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the intendedPolicies property of the microsoft.graph.managedAppRegistration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a managed_app_policy_item_request_builder
-                    ## 
-                    def intended_policies_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["managedAppPolicy%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::IntendedPolicies::Item::ManagedAppPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a managed_app_operation_item_request_builder
-                    ## 
-                    def operations_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["managedAppOperation%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::Operations::Item::ManagedAppOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property managedAppRegistrations in deviceAppManagement
@@ -117,8 +81,8 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedAppRegistration.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -138,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The managed app registrations.
+                    ## Read properties and relationships of the androidManagedAppRegistration object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -177,7 +141,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The managed app registrations.
+                    # Read properties and relationships of the androidManagedAppRegistration object.
                     class ManagedAppRegistrationItemRequestBuilderGetQueryParameters
                         
                         ## 

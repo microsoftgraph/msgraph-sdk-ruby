@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the albumArtist property value. The artist named on the album for the audio file.
-            ## @param value Value to set for the album_artist property.
+            ## @param value Value to set for the albumArtist property.
             ## @return a void
             ## 
             def album_artist=(value)
@@ -205,7 +205,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the discCount property value. The total number of discs in this album.
-            ## @param value Value to set for the disc_count property.
+            ## @param value Value to set for the discCount property.
             ## @return a void
             ## 
             def disc_count=(value)
@@ -275,7 +275,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hasDrm property value. Indicates if the file is protected with digital rights management.
-            ## @param value Value to set for the has_drm property.
+            ## @param value Value to set for the hasDrm property.
             ## @return a void
             ## 
             def has_drm=(value)
@@ -290,7 +290,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isVariableBitrate property value. Indicates if the file is encoded with a variable bitrate.
-            ## @param value Value to set for the is_variable_bitrate property.
+            ## @param value Value to set for the isVariableBitrate property.
             ## @return a void
             ## 
             def is_variable_bitrate=(value)
@@ -305,7 +305,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -376,7 +376,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the trackCount property value. The total number of tracks on the original disc for this audio file.
-            ## @param value Value to set for the track_count property.
+            ## @param value Value to set for the trackCount property.
             ## @return a void
             ## 
             def track_count=(value)

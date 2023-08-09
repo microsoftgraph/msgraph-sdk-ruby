@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Defines the scopes of the resources for which access is reviewed.
             @resource_scopes
             ## 
-            ## Instantiates a new PrincipalResourceMembershipsScope and sets the default values.
+            ## Instantiates a new principalResourceMembershipsScope and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
-            ## @param value Value to set for the principal_scopes property.
+            ## @param value Value to set for the principalScopes property.
             ## @return a void
             ## 
             def principal_scopes=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceScopes property value. Defines the scopes of the resources for which access is reviewed.
-            ## @param value Value to set for the resource_scopes property.
+            ## @param value Value to set for the resourceScopes property.
             ## @return a void
             ## 
             def resource_scopes=(value)

@@ -1,14 +1,14 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../models/shared_with_channel_team_info'
 require_relative '../../../../teams'
 require_relative '../../../item'
 require_relative '../../primary_channel'
 require_relative '../shared_with_teams'
 require_relative './allowed_members/allowed_members_request_builder'
-require_relative './allowed_members/item/conversation_member_item_request_builder'
 require_relative './item'
+require_relative './team/team_request_builder'
 
 module MicrosoftGraph
     module Teams
@@ -26,15 +26,9 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Teams::Item::PrimaryChannel::SharedWithTeams::Item::AllowedMembers::AllowedMembersRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
-                            ## Provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a conversation_member_item_request_builder
-                            ## 
-                            def allowed_members_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["conversationMember%2Did"] = id
-                                return MicrosoftGraph::Teams::Item::PrimaryChannel::SharedWithTeams::Item::AllowedMembers::Item::ConversationMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            # Provides operations to manage the team property of the microsoft.graph.teamInfo entity.
+                            def team()
+                                return MicrosoftGraph::Teams::Item::PrimaryChannel::SharedWithTeams::Item::Team::TeamRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new SharedWithChannelTeamInfoItemRequestBuilder and sets the default values.
@@ -46,7 +40,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property sharedWithTeams for teams
+                            ## Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -55,12 +49,12 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## A collection of teams with which a channel is shared.
+                            ## Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of shared_with_channel_team_info
                             ## 
@@ -69,8 +63,8 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SharedWithChannelTeamInfo.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
@@ -85,12 +79,12 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SharedWithChannelTeamInfo.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property sharedWithTeams for teams
+                            ## Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a membershipType value of shared.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +100,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## A collection of teams with which a channel is shared.
+                            ## Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -145,7 +139,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # A collection of teams with which a channel is shared.
+                            # Get a team that has been shared with a specified channel. This operation is allowed only for channels with a membershipType value of shared.
                             class SharedWithChannelTeamInfoItemRequestBuilderGetQueryParameters
                                 
                                 ## 

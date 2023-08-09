@@ -1,8 +1,8 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../../models/term_store/set'
-require_relative '../../../../../../../models/term_store/set_collection_response'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../../models/term_store_set'
+require_relative '../../../../../../../models/term_store_set_collection_response'
 require_relative '../../../../../../sites'
 require_relative '../../../../../item'
 require_relative '../../../../term_store'
@@ -10,6 +10,7 @@ require_relative '../../../sets'
 require_relative '../../item'
 require_relative '../parent_group'
 require_relative './count/count_request_builder'
+require_relative './item/set_item_request_builder'
 require_relative './sets'
 
 module MicrosoftGraph
@@ -30,6 +31,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Sites::Item::TermStore::Sets::Item::ParentGroup::Sets::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
+                                    ## @param set_id1 The unique identifier of set
+                                    ## @return a set_item_request_builder
+                                    ## 
+                                    def by_set_id1(set_id1)
+                                        raise StandardError, 'set_id1 cannot be null' if set_id1.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["set%2Did1"] = set_id1
+                                        return MicrosoftGraph::Sites::Item::TermStore::Sets::Item::ParentGroup::Sets::Item::SetItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new SetsRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -41,22 +53,22 @@ module MicrosoftGraph
                                     ## 
                                     ## Get a list of the set objects and their properties.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                    ## @return a Fiber of set_collection_response
+                                    ## @return a Fiber of term_store_set_collection_response
                                     ## 
                                     def get(request_configuration=nil)
                                         request_info = self.to_get_request_information(
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::SetCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreSetCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
                                     ## Create new navigation property to sets for sites
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                    ## @return a Fiber of set
+                                    ## @return a Fiber of term_store_set
                                     ## 
                                     def post(body, request_configuration=nil)
                                         raise StandardError, 'body cannot be null' if body.nil?
@@ -64,9 +76,9 @@ module MicrosoftGraph
                                             body, request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Set.create_from_discriminator_value(pn) }, error_mapping)
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreSet.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
                                     ## Get a list of the set objects and their properties.

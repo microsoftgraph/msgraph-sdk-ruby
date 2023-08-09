@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
 require_relative '../../../../../models/channel'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../teamwork'
 require_relative '../../../deleted_teams'
 require_relative '../../item'
@@ -10,15 +10,11 @@ require_relative './complete_migration/complete_migration_request_builder'
 require_relative './does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name/732db1068832007d49ec9b451d8ca1cfd0136d0663ec94246815c75150bfdfa9'
 require_relative './files_folder/files_folder_request_builder'
 require_relative './item'
-require_relative './members/item/conversation_member_item_request_builder'
 require_relative './members/members_request_builder'
-require_relative './messages/item/chat_message_item_request_builder'
 require_relative './messages/messages_request_builder'
 require_relative './provision_email/provision_email_request_builder'
 require_relative './remove_email/remove_email_request_builder'
-require_relative './shared_with_teams/item/shared_with_channel_team_info_item_request_builder'
 require_relative './shared_with_teams/shared_with_teams_request_builder'
-require_relative './tabs/item/teams_tab_item_request_builder'
 require_relative './tabs/tabs_request_builder'
 
 module MicrosoftGraph
@@ -95,8 +91,8 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
@@ -109,31 +105,9 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Channel.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the members property of the microsoft.graph.channel entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a conversation_member_item_request_builder
-                            ## 
-                            def members_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["conversationMember%2Did"] = id
-                                return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::Item::Members::Item::ConversationMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Provides operations to manage the messages property of the microsoft.graph.channel entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a chat_message_item_request_builder
-                            ## 
-                            def messages_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["chatMessage%2Did"] = id
-                                return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::Item::Messages::Item::ChatMessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Update the navigation property channels in teamwork
@@ -147,31 +121,9 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Channel.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a shared_with_channel_team_info_item_request_builder
-                            ## 
-                            def shared_with_teams_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["sharedWithChannelTeamInfo%2Did"] = id
-                                return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::Item::SharedWithTeams::Item::SharedWithChannelTeamInfoItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Provides operations to manage the tabs property of the microsoft.graph.channel entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a teams_tab_item_request_builder
-                            ## 
-                            def tabs_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["teamsTab%2Did"] = id
-                                return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::Item::Tabs::Item::TeamsTabItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Delete navigation property channels for teamwork

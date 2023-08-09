@@ -1,13 +1,14 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
 require_relative '../../../../../models/access_package_collection_response'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../identity_governance'
 require_relative '../../../entitlement_management'
 require_relative '../../access_packages'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './incompatible_access_packages'
+require_relative './item/access_package_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -31,6 +32,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackages::Item::IncompatibleAccessPackages::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.accessPackages.item.incompatibleAccessPackages.item collection
+                            ## @param access_package_id1 Unique identifier of the item
+                            ## @return a access_package_item_request_builder
+                            ## 
+                            def by_access_package_id1(access_package_id1)
+                                raise StandardError, 'access_package_id1 cannot be null' if access_package_id1.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["accessPackage%2Did1"] = access_package_id1
+                                return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackages::Item::IncompatibleAccessPackages::Item::AccessPackageItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new IncompatibleAccessPackagesRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -49,8 +61,8 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 

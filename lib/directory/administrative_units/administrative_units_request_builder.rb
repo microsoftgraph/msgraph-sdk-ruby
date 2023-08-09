@@ -2,11 +2,12 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
 require_relative '../../models/administrative_unit'
 require_relative '../../models/administrative_unit_collection_response'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../directory'
 require_relative './administrative_units'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/administrative_unit_item_request_builder'
 
 module MicrosoftGraph
     module Directory
@@ -24,6 +25,17 @@ module MicrosoftGraph
                 # Provides operations to call the delta method.
                 def delta()
                     return MicrosoftGraph::Directory::AdministrativeUnits::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
+                ## @param administrative_unit_id The unique identifier of administrativeUnit
+                ## @return a administrative_unit_item_request_builder
+                ## 
+                def by_administrative_unit_id(administrative_unit_id)
+                    raise StandardError, 'administrative_unit_id cannot be null' if administrative_unit_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["administrativeUnit%2Did"] = administrative_unit_id
+                    return MicrosoftGraph::Directory::AdministrativeUnits::Item::AdministrativeUnitItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
@@ -44,8 +56,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AdministrativeUnitCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -60,8 +72,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AdministrativeUnit.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 

@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../models/user_scope_teams_app_installation'
 require_relative '../../../../models/user_scope_teams_app_installation_collection_response'
 require_relative '../../../users'
@@ -8,6 +8,7 @@ require_relative '../../item'
 require_relative '../teamwork'
 require_relative './count/count_request_builder'
 require_relative './installed_apps'
+require_relative './item/user_scope_teams_app_installation_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Users::Item::Teamwork::InstalledApps::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
+                        ## @param user_scope_teams_app_installation_id The unique identifier of userScopeTeamsAppInstallation
+                        ## @return a user_scope_teams_app_installation_item_request_builder
+                        ## 
+                        def by_user_scope_teams_app_installation_id(user_scope_teams_app_installation_id)
+                            raise StandardError, 'user_scope_teams_app_installation_id cannot be null' if user_scope_teams_app_installation_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["userScopeTeamsAppInstallation%2Did"] = user_scope_teams_app_installation_id
+                            return MicrosoftGraph::Users::Item::Teamwork::InstalledApps::Item::UserScopeTeamsAppInstallationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new InstalledAppsRequestBuilder and sets the default values.
@@ -42,8 +54,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserScopeTeamsAppInstallationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -58,8 +70,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserScopeTeamsAppInstallation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 

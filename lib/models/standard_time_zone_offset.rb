@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dayOccurrence property value. Represents the nth occurrence of the day of week that the transition from daylight saving time to standard time occurs.
-            ## @param value Value to set for the day_occurrence property.
+            ## @param value Value to set for the dayOccurrence property.
             ## @return a void
             ## 
             def day_occurrence=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dayOfWeek property value. Represents the day of the week when the transition from daylight saving time to standard time.
-            ## @param value Value to set for the day_of_week property.
+            ## @param value Value to set for the dayOfWeek property.
             ## @return a void
             ## 
             def day_of_week=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

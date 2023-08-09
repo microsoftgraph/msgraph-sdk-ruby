@@ -34,7 +34,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appVersion property value. The connector's version.
-            ## @param value Value to set for the app_version property.
+            ## @param value Value to set for the appVersion property.
             ## @return a void
             ## 
             def app_version=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the connector.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fullyQualifiedDomainName property value. The connector machine's hostname.
-            ## @param value Value to set for the fully_qualified_domain_name property.
+            ## @param value Value to set for the fullyQualifiedDomainName property.
             ## @return a void
             ## 
             def fully_qualified_domain_name=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the operatingSystem property value. The connector machine's operating system version.
-            ## @param value Value to set for the operating_system property.
+            ## @param value Value to set for the operatingSystem property.
             ## @return a void
             ## 
             def operating_system=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the registeredDateTime property value. The DateTimeOffset when the connector was registered.
-            ## @param value Value to set for the registered_date_time property.
+            ## @param value Value to set for the registeredDateTime property.
             ## @return a void
             ## 
             def registered_date_time=(value)

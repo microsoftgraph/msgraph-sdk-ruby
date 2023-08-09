@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
         class DefaultManagedAppProtection < MicrosoftGraph::Models::ManagedAppProtection
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -51,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
-            ## @param value Value to set for the app_data_encryption_type property.
+            ## @param value Value to set for the appDataEncryptionType property.
             ## @return a void
             ## 
             def app_data_encryption_type=(value)
@@ -73,7 +75,7 @@ module MicrosoftGraph
                 @apps = value
             end
             ## 
-            ## Instantiates a new DefaultManagedAppProtection and sets the default values.
+            ## Instantiates a new defaultManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -98,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customSettings property value. A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-            ## @param value Value to set for the custom_settings property.
+            ## @param value Value to set for the customSettings property.
             ## @return a void
             ## 
             def custom_settings=(value)
@@ -113,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
-            ## @param value Value to set for the deployed_app_count property.
+            ## @param value Value to set for the deployedAppCount property.
             ## @return a void
             ## 
             def deployed_app_count=(value)
@@ -128,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-            ## @param value Value to set for the deployment_summary property.
+            ## @param value Value to set for the deploymentSummary property.
             ## @return a void
             ## 
             def deployment_summary=(value)
@@ -143,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
-            ## @param value Value to set for the disable_app_encryption_if_device_encryption_is_enabled property.
+            ## @param value Value to set for the disableAppEncryptionIfDeviceEncryptionIsEnabled property.
             ## @return a void
             ## 
             def disable_app_encryption_if_device_encryption_is_enabled=(value)
@@ -158,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the encryptAppData property value. Indicates whether managed-app data should be encrypted. (Android only)
-            ## @param value Value to set for the encrypt_app_data property.
+            ## @param value Value to set for the encryptAppData property.
             ## @return a void
             ## 
             def encrypt_app_data=(value)
@@ -173,7 +175,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
-            ## @param value Value to set for the face_id_blocked property.
+            ## @param value Value to set for the faceIdBlocked property.
             ## @return a void
             ## 
             def face_id_blocked=(value)
@@ -208,7 +210,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
-            ## @param value Value to set for the minimum_required_patch_version property.
+            ## @param value Value to set for the minimumRequiredPatchVersion property.
             ## @return a void
             ## 
             def minimum_required_patch_version=(value)
@@ -223,7 +225,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
-            ## @param value Value to set for the minimum_required_sdk_version property.
+            ## @param value Value to set for the minimumRequiredSdkVersion property.
             ## @return a void
             ## 
             def minimum_required_sdk_version=(value)
@@ -238,7 +240,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
-            ## @param value Value to set for the minimum_warning_patch_version property.
+            ## @param value Value to set for the minimumWarningPatchVersion property.
             ## @return a void
             ## 
             def minimum_warning_patch_version=(value)
@@ -253,7 +255,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the screenCaptureBlocked property value. Indicates whether screen capture is blocked. (Android only)
-            ## @param value Value to set for the screen_capture_blocked property.
+            ## @param value Value to set for the screenCaptureBlocked property.
             ## @return a void
             ## 
             def screen_capture_blocked=(value)

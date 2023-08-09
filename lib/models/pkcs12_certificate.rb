@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Represents the pfx content that is sent. The value should be a base-64 encoded version of the actual certificate content. Required.
             @pkcs12_value
             ## 
-            ## Instantiates a new Pkcs12Certificate and sets the default values.
+            ## Instantiates a new pkcs12Certificate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pkcs12Value property value. Represents the pfx content that is sent. The value should be a base-64 encoded version of the actual certificate content. Required.
-            ## @param value Value to set for the pkcs12_value property.
+            ## @param value Value to set for the pkcs12Value property.
             ## @return a void
             ## 
             def pkcs12_value=(value)

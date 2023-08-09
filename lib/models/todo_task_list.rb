@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the task list.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isOwner property value. True if the user is owner of the given task list.
-            ## @param value Value to set for the is_owner property.
+            ## @param value Value to set for the isOwner property.
             ## @return a void
             ## 
             def is_owner=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isShared property value. True if the task list is shared with other users
-            ## @param value Value to set for the is_shared property.
+            ## @param value Value to set for the isShared property.
             ## @return a void
             ## 
             def is_shared=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wellknownListName property value. The wellknownListName property
-            ## @param value Value to set for the wellknown_list_name property.
+            ## @param value Value to set for the wellknownListName property.
             ## @return a void
             ## 
             def wellknown_list_name=(value)

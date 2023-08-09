@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the logoUrl property value. CDN URL to the application's logo, Read-only.
-            ## @param value Value to set for the logo_url property.
+            ## @param value Value to set for the logoUrl property.
             ## @return a void
             ## 
             def logo_url=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
-            ## @param value Value to set for the marketing_url property.
+            ## @param value Value to set for the marketingUrl property.
             ## @return a void
             ## 
             def marketing_url=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
-            ## @param value Value to set for the privacy_statement_url property.
+            ## @param value Value to set for the privacyStatementUrl property.
             ## @return a void
             ## 
             def privacy_statement_url=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
-            ## @param value Value to set for the support_url property.
+            ## @param value Value to set for the supportUrl property.
             ## @return a void
             ## 
             def support_url=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
-            ## @param value Value to set for the terms_of_service_url property.
+            ## @param value Value to set for the termsOfServiceUrl property.
             ## @return a void
             ## 
             def terms_of_service_url=(value)

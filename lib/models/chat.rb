@@ -32,6 +32,9 @@ module MicrosoftGraph
             # Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
             @online_meeting_info
             ## 
+            # The permissionGrants property
+            @permission_grants
+            ## 
             # A collection of all the pinned messages in the chat. Nullable.
             @pinned_messages
             ## 
@@ -58,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the chatType property value. The chatType property
-            ## @param value Value to set for the chat_type property.
+            ## @param value Value to set for the chatType property.
             ## @return a void
             ## 
             def chat_type=(value)
@@ -80,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Date and time at which the chat was created. Read-only.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -109,6 +112,7 @@ module MicrosoftGraph
                     "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConversationMember.create_from_discriminator_value(pn) }) },
                     "messages" => lambda {|n| @messages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ChatMessage.create_from_discriminator_value(pn) }) },
                     "onlineMeetingInfo" => lambda {|n| @online_meeting_info = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamworkOnlineMeetingInfo.create_from_discriminator_value(pn) }) },
+                    "permissionGrants" => lambda {|n| @permission_grants = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ResourceSpecificPermissionGrant.create_from_discriminator_value(pn) }) },
                     "pinnedMessages" => lambda {|n| @pinned_messages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PinnedChatMessageInfo.create_from_discriminator_value(pn) }) },
                     "tabs" => lambda {|n| @tabs = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TeamsTab.create_from_discriminator_value(pn) }) },
                     "tenantId" => lambda {|n| @tenant_id = n.get_string_value() },
@@ -126,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installedApps property value. A collection of all the apps in the chat. Nullable.
-            ## @param value Value to set for the installed_apps property.
+            ## @param value Value to set for the installedApps property.
             ## @return a void
             ## 
             def installed_apps=(value)
@@ -141,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
-            ## @param value Value to set for the last_message_preview property.
+            ## @param value Value to set for the lastMessagePreview property.
             ## @return a void
             ## 
             def last_message_preview=(value)
@@ -156,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
-            ## @param value Value to set for the last_updated_date_time property.
+            ## @param value Value to set for the lastUpdatedDateTime property.
             ## @return a void
             ## 
             def last_updated_date_time=(value)
@@ -201,11 +205,26 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
-            ## @param value Value to set for the online_meeting_info property.
+            ## @param value Value to set for the onlineMeetingInfo property.
             ## @return a void
             ## 
             def online_meeting_info=(value)
                 @online_meeting_info = value
+            end
+            ## 
+            ## Gets the permissionGrants property value. The permissionGrants property
+            ## @return a resource_specific_permission_grant
+            ## 
+            def permission_grants
+                return @permission_grants
+            end
+            ## 
+            ## Sets the permissionGrants property value. The permissionGrants property
+            ## @param value Value to set for the permissionGrants property.
+            ## @return a void
+            ## 
+            def permission_grants=(value)
+                @permission_grants = value
             end
             ## 
             ## Gets the pinnedMessages property value. A collection of all the pinned messages in the chat. Nullable.
@@ -216,7 +235,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pinnedMessages property value. A collection of all the pinned messages in the chat. Nullable.
-            ## @param value Value to set for the pinned_messages property.
+            ## @param value Value to set for the pinnedMessages property.
             ## @return a void
             ## 
             def pinned_messages=(value)
@@ -238,6 +257,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("members", @members)
                 writer.write_collection_of_object_values("messages", @messages)
                 writer.write_object_value("onlineMeetingInfo", @online_meeting_info)
+                writer.write_collection_of_object_values("permissionGrants", @permission_grants)
                 writer.write_collection_of_object_values("pinnedMessages", @pinned_messages)
                 writer.write_collection_of_object_values("tabs", @tabs)
                 writer.write_string_value("tenantId", @tenant_id)
@@ -269,7 +289,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
-            ## @param value Value to set for the tenant_id property.
+            ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
             def tenant_id=(value)
@@ -314,7 +334,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

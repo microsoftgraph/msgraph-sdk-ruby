@@ -4,10 +4,12 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # MacOS device features configuration profile.
         class MacOSDeviceFeaturesConfiguration < MicrosoftGraph::Models::AppleDeviceFeaturesConfigurationBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new MacOSDeviceFeaturesConfiguration and sets the default values.
+            ## Instantiates a new macOSDeviceFeaturesConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

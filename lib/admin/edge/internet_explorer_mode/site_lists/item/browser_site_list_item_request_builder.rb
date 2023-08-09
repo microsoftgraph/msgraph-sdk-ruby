@@ -1,16 +1,14 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
 require_relative '../../../../../models/browser_site_list'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../admin'
 require_relative '../../../edge'
 require_relative '../../internet_explorer_mode'
 require_relative '../site_lists'
 require_relative './item'
 require_relative './publish/publish_request_builder'
-require_relative './shared_cookies/item/browser_shared_cookie_item_request_builder'
 require_relative './shared_cookies/shared_cookies_request_builder'
-require_relative './sites/item/browser_site_item_request_builder'
 require_relative './sites/sites_request_builder'
 
 module MicrosoftGraph
@@ -48,7 +46,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/admin/edge/internetExplorerMode/siteLists/{browserSiteList%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property siteLists for admin
+                            ## Delete a browserSiteList object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -57,12 +55,12 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get siteLists from admin
+                            ## Get a browserSiteList that contains browserSite and browserSharedCookie resources.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of browser_site_list
                             ## 
@@ -71,12 +69,12 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BrowserSiteList.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property siteLists in admin
+                            ## Update the properties of a browserSiteList object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of browser_site_list
@@ -87,34 +85,12 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BrowserSiteList.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Provides operations to manage the sharedCookies property of the microsoft.graph.browserSiteList entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a browser_shared_cookie_item_request_builder
-                            ## 
-                            def shared_cookies_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["browserSharedCookie%2Did"] = id
-                                return MicrosoftGraph::Admin::Edge::InternetExplorerMode::SiteLists::Item::SharedCookies::Item::BrowserSharedCookieItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Provides operations to manage the sites property of the microsoft.graph.browserSiteList entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a browser_site_item_request_builder
-                            ## 
-                            def sites_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["browserSite%2Did"] = id
-                                return MicrosoftGraph::Admin::Edge::InternetExplorerMode::SiteLists::Item::Sites::Item::BrowserSiteItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Delete navigation property siteLists for admin
+                            ## Delete a browserSiteList object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -130,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get siteLists from admin
+                            ## Get a browserSiteList that contains browserSite and browserSharedCookie resources.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -148,7 +124,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property siteLists in admin
+                            ## Update the properties of a browserSiteList object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -169,7 +145,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get siteLists from admin
+                            # Get a browserSiteList that contains browserSite and browserSharedCookie resources.
                             class BrowserSiteListItemRequestBuilderGetQueryParameters
                                 
                                 ## 

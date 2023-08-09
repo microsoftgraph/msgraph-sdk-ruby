@@ -1,23 +1,19 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/call'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../communications'
 require_relative '../calls'
 require_relative './add_large_gallery_view/add_large_gallery_view_request_builder'
 require_relative './answer/answer_request_builder'
 require_relative './audio_routing_groups/audio_routing_groups_request_builder'
-require_relative './audio_routing_groups/item/audio_routing_group_item_request_builder'
 require_relative './cancel_media_processing/cancel_media_processing_request_builder'
 require_relative './change_screen_sharing_role/change_screen_sharing_role_request_builder'
 require_relative './content_sharing_sessions/content_sharing_sessions_request_builder'
-require_relative './content_sharing_sessions/item/content_sharing_session_item_request_builder'
 require_relative './item'
 require_relative './keep_alive/keep_alive_request_builder'
 require_relative './mute/mute_request_builder'
-require_relative './operations/item/comms_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
-require_relative './participants/item/participant_item_request_builder'
 require_relative './participants/participants_request_builder'
 require_relative './play_prompt/play_prompt_request_builder'
 require_relative './record_response/record_response_request_builder'
@@ -127,17 +123,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Communications::Calls::Item::UpdateRecordingStatus::UpdateRecordingStatusRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a audio_routing_group_item_request_builder
-                    ## 
-                    def audio_routing_groups_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["audioRoutingGroup%2Did"] = id
-                        return MicrosoftGraph::Communications::Calls::Item::AudioRoutingGroups::Item::AudioRoutingGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new CallItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -147,18 +132,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/communications/calls/{call%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a content_sharing_session_item_request_builder
-                    ## 
-                    def content_sharing_sessions_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["contentSharingSession%2Did"] = id
-                        return MicrosoftGraph::Communications::Calls::Item::ContentSharingSessions::Item::ContentSharingSessionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Delete navigation property calls for communications
+                    ## Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -167,12 +141,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get calls from communications
+                    ## Retrieve the properties and relationships of a call object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of call
                     ## 
@@ -181,31 +155,9 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Call.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the operations property of the microsoft.graph.call entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a comms_operation_item_request_builder
-                    ## 
-                    def operations_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["commsOperation%2Did"] = id
-                        return MicrosoftGraph::Communications::Calls::Item::Operations::Item::CommsOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the participants property of the microsoft.graph.call entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a participant_item_request_builder
-                    ## 
-                    def participants_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["participant%2Did"] = id
-                        return MicrosoftGraph::Communications::Calls::Item::Participants::Item::ParticipantItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property calls in communications
@@ -219,12 +171,12 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Call.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property calls for communications
+                    ## Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -240,7 +192,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Get calls from communications
+                    ## Retrieve the properties and relationships of a call object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -279,7 +231,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get calls from communications
+                    # Retrieve the properties and relationships of a call object.
                     class CallItemRequestBuilderGetQueryParameters
                         
                         ## 

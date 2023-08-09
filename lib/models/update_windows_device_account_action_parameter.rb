@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the calendarSyncEnabled property value. Not yet documented
-            ## @param value Value to set for the calendar_sync_enabled property.
+            ## @param value Value to set for the calendarSyncEnabled property.
             ## @return a void
             ## 
             def calendar_sync_enabled=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceAccount property value. Not yet documented
-            ## @param value Value to set for the device_account property.
+            ## @param value Value to set for the deviceAccount property.
             ## @return a void
             ## 
             def device_account=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceAccountEmail property value. Not yet documented
-            ## @param value Value to set for the device_account_email property.
+            ## @param value Value to set for the deviceAccountEmail property.
             ## @return a void
             ## 
             def device_account_email=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the exchangeServer property value. Not yet documented
-            ## @param value Value to set for the exchange_server property.
+            ## @param value Value to set for the exchangeServer property.
             ## @return a void
             ## 
             def exchange_server=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRotationEnabled property value. Not yet documented
-            ## @param value Value to set for the password_rotation_enabled property.
+            ## @param value Value to set for the passwordRotationEnabled property.
             ## @return a void
             ## 
             def password_rotation_enabled=(value)
@@ -191,7 +191,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sessionInitiationProtocalAddress property value. Not yet documented
-            ## @param value Value to set for the session_initiation_protocal_address property.
+            ## @param value Value to set for the sessionInitiationProtocalAddress property.
             ## @return a void
             ## 
             def session_initiation_protocal_address=(value)

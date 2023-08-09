@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Partner display name
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the groupsRequiringPartnerEnrollment property value. User groups that specifies whether enrollment is through partner.
-            ## @param value Value to set for the groups_requiring_partner_enrollment property.
+            ## @param value Value to set for the groupsRequiringPartnerEnrollment property.
             ## @return a void
             ## 
             def groups_requiring_partner_enrollment=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isConfigured property value. Whether device management partner is configured or not
-            ## @param value Value to set for the is_configured property.
+            ## @param value Value to set for the isConfigured property.
             ## @return a void
             ## 
             def is_configured=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
-            ## @param value Value to set for the last_heartbeat_date_time property.
+            ## @param value Value to set for the lastHeartbeatDateTime property.
             ## @return a void
             ## 
             def last_heartbeat_date_time=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the partnerAppType property value. Partner App Type.
-            ## @param value Value to set for the partner_app_type property.
+            ## @param value Value to set for the partnerAppType property.
             ## @return a void
             ## 
             def partner_app_type=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the partnerState property value. Partner state of this tenant.
-            ## @param value Value to set for the partner_state property.
+            ## @param value Value to set for the partnerState property.
             ## @return a void
             ## 
             def partner_state=(value)
@@ -186,7 +186,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the singleTenantAppId property value. Partner Single tenant App id
-            ## @param value Value to set for the single_tenant_app_id property.
+            ## @param value Value to set for the singleTenantAppId property.
             ## @return a void
             ## 
             def single_tenant_app_id=(value)
@@ -201,7 +201,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant
-            ## @param value Value to set for the when_partner_devices_will_be_marked_as_non_compliant_date_time property.
+            ## @param value Value to set for the whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime property.
             ## @return a void
             ## 
             def when_partner_devices_will_be_marked_as_non_compliant_date_time=(value)
@@ -216,7 +216,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the whenPartnerDevicesWillBeRemovedDateTime property value. DateTime in UTC when PartnerDevices will be removed
-            ## @param value Value to set for the when_partner_devices_will_be_removed_date_time property.
+            ## @param value Value to set for the whenPartnerDevicesWillBeRemovedDateTime property.
             ## @return a void
             ## 
             def when_partner_devices_will_be_removed_date_time=(value)

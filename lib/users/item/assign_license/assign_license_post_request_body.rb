@@ -29,7 +29,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the addLicenses property value. The addLicenses property
-                    ## @param value Value to set for the add_licenses property.
+                    ## @param value Value to set for the addLicenses property.
                     ## @return a void
                     ## 
                     def add_licenses=(value)
@@ -44,7 +44,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the AdditionalData property.
+                    ## @param value Value to set for the additionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the removeLicenses property value. The removeLicenses property
-                    ## @param value Value to set for the remove_licenses property.
+                    ## @param value Value to set for the removeLicenses property.
                     ## @return a void
                     ## 
                     def remove_licenses=(value)

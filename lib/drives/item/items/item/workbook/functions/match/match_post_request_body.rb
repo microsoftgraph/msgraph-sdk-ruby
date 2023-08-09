@@ -40,7 +40,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the lookupArray property value. The lookupArray property
-                                    ## @param value Value to set for the lookup_array property.
+                                    ## @param value Value to set for the lookupArray property.
                                     ## @return a void
                                     ## 
                                     def lookup_array=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the lookupValue property value. The lookupValue property
-                                    ## @param value Value to set for the lookup_value property.
+                                    ## @param value Value to set for the lookupValue property.
                                     ## @return a void
                                     ## 
                                     def lookup_value=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the matchType property value. The matchType property
-                                    ## @param value Value to set for the match_type property.
+                                    ## @param value Value to set for the matchType property.
                                     ## @return a void
                                     ## 
                                     def match_type=(value)

@@ -19,7 +19,7 @@ module MicrosoftGraph
             # A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
             @display_name
             ## 
-            ## Instantiates a new Contract and sets the default values.
+            ## Instantiates a new contract and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,7 +35,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contractType property value. Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
-            ## @param value Value to set for the contract_type property.
+            ## @param value Value to set for the contractType property.
             ## @return a void
             ## 
             def contract_type=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customerId property value. The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
-            ## @param value Value to set for the customer_id property.
+            ## @param value Value to set for the customerId property.
             ## @return a void
             ## 
             def customer_id=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
-            ## @param value Value to set for the default_domain_name property.
+            ## @param value Value to set for the defaultDomainName property.
             ## @return a void
             ## 
             def default_domain_name=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)

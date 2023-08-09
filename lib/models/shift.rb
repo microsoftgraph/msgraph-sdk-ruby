@@ -19,7 +19,7 @@ module MicrosoftGraph
             # ID of the user assigned to the shift. Required.
             @user_id
             ## 
-            ## Instantiates a new Shift and sets the default values.
+            ## Instantiates a new shift and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
-            ## @param value Value to set for the draft_shift property.
+            ## @param value Value to set for the draftShift property.
             ## @return a void
             ## 
             def draft_shift=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
-            ## @param value Value to set for the scheduling_group_id property.
+            ## @param value Value to set for the schedulingGroupId property.
             ## @return a void
             ## 
             def scheduling_group_id=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
-            ## @param value Value to set for the shared_shift property.
+            ## @param value Value to set for the sharedShift property.
             ## @return a void
             ## 
             def shared_shift=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userId property value. ID of the user assigned to the shift. Required.
-            ## @param value Value to set for the user_id property.
+            ## @param value Value to set for the userId property.
             ## @return a void
             ## 
             def user_id=(value)

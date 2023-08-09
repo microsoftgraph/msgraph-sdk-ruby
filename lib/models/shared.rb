@@ -34,7 +34,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharedBy property value. The identity of the user who shared the item. Read-only.
-            ## @param value Value to set for the shared_by property.
+            ## @param value Value to set for the sharedBy property.
             ## @return a void
             ## 
             def shared_by=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharedDateTime property value. The UTC date and time when the item was shared. Read-only.
-            ## @param value Value to set for the shared_date_time property.
+            ## @param value Value to set for the sharedDateTime property.
             ## @return a void
             ## 
             def shared_date_time=(value)

@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
             @im_address
             ## 
-            # true if the user has flagged this person as a favorite.
+            # True if the user has flagged this person as a favorite.
             @is_favorite
             ## 
             # The person's job title.
@@ -87,7 +87,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the companyName property value. The name of the person's company.
-            ## @param value Value to set for the company_name property.
+            ## @param value Value to set for the companyName property.
             ## @return a void
             ## 
             def company_name=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The person's display name.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the givenName property value. The person's given name.
-            ## @param value Value to set for the given_name property.
+            ## @param value Value to set for the givenName property.
             ## @return a void
             ## 
             def given_name=(value)
@@ -190,22 +190,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the imAddress property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
-            ## @param value Value to set for the im_address property.
+            ## @param value Value to set for the imAddress property.
             ## @return a void
             ## 
             def im_address=(value)
                 @im_address = value
             end
             ## 
-            ## Gets the isFavorite property value. true if the user has flagged this person as a favorite.
+            ## Gets the isFavorite property value. True if the user has flagged this person as a favorite.
             ## @return a boolean
             ## 
             def is_favorite
                 return @is_favorite
             end
             ## 
-            ## Sets the isFavorite property value. true if the user has flagged this person as a favorite.
-            ## @param value Value to set for the is_favorite property.
+            ## Sets the isFavorite property value. True if the user has flagged this person as a favorite.
+            ## @param value Value to set for the isFavorite property.
             ## @return a void
             ## 
             def is_favorite=(value)
@@ -220,7 +220,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the jobTitle property value. The person's job title.
-            ## @param value Value to set for the job_title property.
+            ## @param value Value to set for the jobTitle property.
             ## @return a void
             ## 
             def job_title=(value)
@@ -235,7 +235,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the officeLocation property value. The location of the person's office.
-            ## @param value Value to set for the office_location property.
+            ## @param value Value to set for the officeLocation property.
             ## @return a void
             ## 
             def office_location=(value)
@@ -250,7 +250,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the personNotes property value. Free-form notes that the user has taken about this person.
-            ## @param value Value to set for the person_notes property.
+            ## @param value Value to set for the personNotes property.
             ## @return a void
             ## 
             def person_notes=(value)
@@ -265,7 +265,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the personType property value. The type of person.
-            ## @param value Value to set for the person_type property.
+            ## @param value Value to set for the personType property.
             ## @return a void
             ## 
             def person_type=(value)
@@ -295,7 +295,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the postalAddresses property value. The person's addresses.
-            ## @param value Value to set for the postal_addresses property.
+            ## @param value Value to set for the postalAddresses property.
             ## @return a void
             ## 
             def postal_addresses=(value)
@@ -325,7 +325,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scoredEmailAddresses property value. The person's email addresses.
-            ## @param value Value to set for the scored_email_addresses property.
+            ## @param value Value to set for the scoredEmailAddresses property.
             ## @return a void
             ## 
             def scored_email_addresses=(value)
@@ -383,7 +383,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPrincipalName property value. The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person's email name. The general format is alias@domain.
-            ## @param value Value to set for the user_principal_name property.
+            ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
             def user_principal_name=(value)
@@ -413,7 +413,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the yomiCompany property value. The phonetic Japanese name of the person's company.
-            ## @param value Value to set for the yomi_company property.
+            ## @param value Value to set for the yomiCompany property.
             ## @return a void
             ## 
             def yomi_company=(value)

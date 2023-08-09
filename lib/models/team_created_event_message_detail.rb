@@ -19,7 +19,7 @@ module MicrosoftGraph
             # Unique identifier of the team.
             @team_id
             ## 
-            ## Instantiates a new TeamCreatedEventMessageDetail and sets the default values.
+            ## Instantiates a new teamCreatedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the teamDescription property value. Description for the team.
-            ## @param value Value to set for the team_description property.
+            ## @param value Value to set for the teamDescription property.
             ## @return a void
             ## 
             def team_description=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the teamDisplayName property value. Display name of the team.
-            ## @param value Value to set for the team_display_name property.
+            ## @param value Value to set for the teamDisplayName property.
             ## @return a void
             ## 
             def team_display_name=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the teamId property value. Unique identifier of the team.
-            ## @param value Value to set for the team_id property.
+            ## @param value Value to set for the teamId property.
             ## @return a void
             ## 
             def team_id=(value)

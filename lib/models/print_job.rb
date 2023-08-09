@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. The createdBy property
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The DateTimeOffset when the job was created. Read-only.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isFetchable property value. If true, document can be fetched by printer.
-            ## @param value Value to set for the is_fetchable property.
+            ## @param value Value to set for the isFetchable property.
             ## @return a void
             ## 
             def is_fetchable=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the redirectedFrom property value. Contains the source job URL, if the job has been redirected from another printer.
-            ## @param value Value to set for the redirected_from property.
+            ## @param value Value to set for the redirectedFrom property.
             ## @return a void
             ## 
             def redirected_from=(value)
@@ -166,7 +166,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the redirectedTo property value. Contains the destination job URL, if the job has been redirected to another printer.
-            ## @param value Value to set for the redirected_to property.
+            ## @param value Value to set for the redirectedTo property.
             ## @return a void
             ## 
             def redirected_to=(value)

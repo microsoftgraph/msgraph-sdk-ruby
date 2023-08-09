@@ -10,7 +10,10 @@ module MicrosoftGraph
             # The printerId property
             @printer_id
             ## 
-            ## Instantiates a new PrintUsageByPrinter and sets the default values.
+            # The name of the printer represented by these statistics.
+            @printer_name
+            ## 
+            ## Instantiates a new printUsageByPrinter and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -33,6 +36,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "printerId" => lambda {|n| @printer_id = n.get_string_value() },
+                    "printerName" => lambda {|n| @printer_name = n.get_string_value() },
                 })
             end
             ## 
@@ -44,11 +48,26 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the printerId property value. The printerId property
-            ## @param value Value to set for the printer_id property.
+            ## @param value Value to set for the printerId property.
             ## @return a void
             ## 
             def printer_id=(value)
                 @printer_id = value
+            end
+            ## 
+            ## Gets the printerName property value. The name of the printer represented by these statistics.
+            ## @return a string
+            ## 
+            def printer_name
+                return @printer_name
+            end
+            ## 
+            ## Sets the printerName property value. The name of the printer represented by these statistics.
+            ## @param value Value to set for the printerName property.
+            ## @return a void
+            ## 
+            def printer_name=(value)
+                @printer_name = value
             end
             ## 
             ## Serializes information the current object
@@ -59,6 +78,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("printerId", @printer_id)
+                writer.write_string_value("printerName", @printer_name)
             end
         end
     end

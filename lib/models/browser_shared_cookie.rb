@@ -8,34 +8,34 @@ module MicrosoftGraph
         class BrowserSharedCookie < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The comment of the cookie
+            # The comment for the shared cookie.
             @comment
             ## 
-            # The datetime that the admin created the cookie
+            # The date and time when the shared cookie was created.
             @created_date_time
             ## 
-            # The datetime that the admin deleted the cookie
+            # The date and time when the shared cookie was deleted.
             @deleted_date_time
             ## 
-            # The name of the cookie
+            # The name of the cookie.
             @display_name
             ## 
-            # The history of the cookie
+            # The history of modifications applied to the cookie.
             @history
             ## 
-            # Boolean attribute that determines whether a cookie is  a host-only or domain cookie
+            # Controls whether a cookie is a host-only or domain cookie.
             @host_only
             ## 
-            # The URL of the cookie
+            # The URL of the cookie.
             @host_or_domain
             ## 
-            # The identity of the admin who last updated the cookie
+            # The user who last modified the cookie.
             @last_modified_by
             ## 
-            # The datetime that the admin last updated the cookie
+            # The date and time when the cookie was last modified.
             @last_modified_date_time
             ## 
-            # The path of the cookie
+            # The path of the cookie.
             @path
             ## 
             # The sourceEnvironment property
@@ -44,14 +44,14 @@ module MicrosoftGraph
             # The status property
             @status
             ## 
-            ## Gets the comment property value. The comment of the cookie
+            ## Gets the comment property value. The comment for the shared cookie.
             ## @return a string
             ## 
             def comment
                 return @comment
             end
             ## 
-            ## Sets the comment property value. The comment of the cookie
+            ## Sets the comment property value. The comment for the shared cookie.
             ## @param value Value to set for the comment property.
             ## @return a void
             ## 
@@ -66,15 +66,15 @@ module MicrosoftGraph
                 super
             end
             ## 
-            ## Gets the createdDateTime property value. The datetime that the admin created the cookie
+            ## Gets the createdDateTime property value. The date and time when the shared cookie was created.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The datetime that the admin created the cookie
-            ## @param value Value to set for the created_date_time property.
+            ## Sets the createdDateTime property value. The date and time when the shared cookie was created.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -90,30 +90,30 @@ module MicrosoftGraph
                 return BrowserSharedCookie.new
             end
             ## 
-            ## Gets the deletedDateTime property value. The datetime that the admin deleted the cookie
+            ## Gets the deletedDateTime property value. The date and time when the shared cookie was deleted.
             ## @return a date_time
             ## 
             def deleted_date_time
                 return @deleted_date_time
             end
             ## 
-            ## Sets the deletedDateTime property value. The datetime that the admin deleted the cookie
-            ## @param value Value to set for the deleted_date_time property.
+            ## Sets the deletedDateTime property value. The date and time when the shared cookie was deleted.
+            ## @param value Value to set for the deletedDateTime property.
             ## @return a void
             ## 
             def deleted_date_time=(value)
                 @deleted_date_time = value
             end
             ## 
-            ## Gets the displayName property value. The name of the cookie
+            ## Gets the displayName property value. The name of the cookie.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The name of the cookie
-            ## @param value Value to set for the display_name property.
+            ## Sets the displayName property value. The name of the cookie.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -140,14 +140,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the history property value. The history of the cookie
+            ## Gets the history property value. The history of modifications applied to the cookie.
             ## @return a browser_shared_cookie_history
             ## 
             def history
                 return @history
             end
             ## 
-            ## Sets the history property value. The history of the cookie
+            ## Sets the history property value. The history of modifications applied to the cookie.
             ## @param value Value to set for the history property.
             ## @return a void
             ## 
@@ -155,74 +155,74 @@ module MicrosoftGraph
                 @history = value
             end
             ## 
-            ## Gets the hostOnly property value. Boolean attribute that determines whether a cookie is  a host-only or domain cookie
+            ## Gets the hostOnly property value. Controls whether a cookie is a host-only or domain cookie.
             ## @return a boolean
             ## 
             def host_only
                 return @host_only
             end
             ## 
-            ## Sets the hostOnly property value. Boolean attribute that determines whether a cookie is  a host-only or domain cookie
-            ## @param value Value to set for the host_only property.
+            ## Sets the hostOnly property value. Controls whether a cookie is a host-only or domain cookie.
+            ## @param value Value to set for the hostOnly property.
             ## @return a void
             ## 
             def host_only=(value)
                 @host_only = value
             end
             ## 
-            ## Gets the hostOrDomain property value. The URL of the cookie
+            ## Gets the hostOrDomain property value. The URL of the cookie.
             ## @return a string
             ## 
             def host_or_domain
                 return @host_or_domain
             end
             ## 
-            ## Sets the hostOrDomain property value. The URL of the cookie
-            ## @param value Value to set for the host_or_domain property.
+            ## Sets the hostOrDomain property value. The URL of the cookie.
+            ## @param value Value to set for the hostOrDomain property.
             ## @return a void
             ## 
             def host_or_domain=(value)
                 @host_or_domain = value
             end
             ## 
-            ## Gets the lastModifiedBy property value. The identity of the admin who last updated the cookie
+            ## Gets the lastModifiedBy property value. The user who last modified the cookie.
             ## @return a identity_set
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. The identity of the admin who last updated the cookie
-            ## @param value Value to set for the last_modified_by property.
+            ## Sets the lastModifiedBy property value. The user who last modified the cookie.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The datetime that the admin last updated the cookie
+            ## Gets the lastModifiedDateTime property value. The date and time when the cookie was last modified.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The datetime that the admin last updated the cookie
-            ## @param value Value to set for the last_modified_date_time property.
+            ## Sets the lastModifiedDateTime property value. The date and time when the cookie was last modified.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the path property value. The path of the cookie
+            ## Gets the path property value. The path of the cookie.
             ## @return a string
             ## 
             def path
                 return @path
             end
             ## 
-            ## Sets the path property value. The path of the cookie
+            ## Sets the path property value. The path of the cookie.
             ## @param value Value to set for the path property.
             ## @return a void
             ## 
@@ -259,7 +259,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sourceEnvironment property value. The sourceEnvironment property
-            ## @param value Value to set for the source_environment property.
+            ## @param value Value to set for the sourceEnvironment property.
             ## @return a void
             ## 
             def source_environment=(value)

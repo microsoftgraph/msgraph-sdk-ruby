@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../groups'
 require_relative '../../../../item'
 require_relative '../../../team'
@@ -38,8 +38,8 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Groups::Item::Team::Channels::Item::DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName::DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
@@ -74,6 +74,24 @@ module MicrosoftGraph
                                     ## 
                                     # Usage: userPrincipalName='@userPrincipalName'
                                     attr_accessor :user_principal_name
+                                    ## 
+                                    ## Maps the query parameters names to their encoded names for the URI template parsing.
+                                    ## @param original_name The original query parameter name in the class.
+                                    ## @return a string
+                                    ## 
+                                    def get_query_parameter(original_name)
+                                        raise StandardError, 'original_name cannot be null' if original_name.nil?
+                                        case original_name
+                                            when "tenant_id"
+                                                return "tenantId"
+                                            when "user_id"
+                                                return "userId"
+                                            when "user_principal_name"
+                                                return "userPrincipalName"
+                                            else
+                                                return original_name
+                                        end
+                                    end
                                 end
                             end
                         end

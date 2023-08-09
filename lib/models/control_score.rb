@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
-            ## @param value Value to set for the control_category property.
+            ## @param value Value to set for the controlCategory property.
             ## @return a void
             ## 
             def control_category=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the controlName property value. Control unique name.
-            ## @param value Value to set for the control_name property.
+            ## @param value Value to set for the controlName property.
             ## @return a void
             ## 
             def control_name=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

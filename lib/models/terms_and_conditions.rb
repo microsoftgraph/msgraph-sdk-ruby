@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the acceptanceStatement property value. Administrator-supplied explanation of the terms and conditions, typically describing what it means to accept the terms and conditions set out in the T&C policy. This is shown to the user on prompts to accept the T&C policy.
-            ## @param value Value to set for the acceptance_statement property.
+            ## @param value Value to set for the acceptanceStatement property.
             ## @return a void
             ## 
             def acceptance_statement=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the acceptanceStatuses property value. The list of acceptance statuses for this T&C policy.
-            ## @param value Value to set for the acceptance_statuses property.
+            ## @param value Value to set for the acceptanceStatuses property.
             ## @return a void
             ## 
             def acceptance_statuses=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bodyText property value. Administrator-supplied body text of the terms and conditions, typically the terms themselves. This is shown to the user on prompts to accept the T&C policy.
-            ## @param value Value to set for the body_text property.
+            ## @param value Value to set for the bodyText property.
             ## @return a void
             ## 
             def body_text=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. DateTime the object was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -154,7 +154,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Administrator-supplied name for the T&C policy.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -187,7 +187,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. DateTime the object was last modified.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)

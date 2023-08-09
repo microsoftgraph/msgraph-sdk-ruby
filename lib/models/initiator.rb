@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Type of initiator. Possible values are: user, application, system, unknownFutureValue.
             @initiator_type
             ## 
-            ## Instantiates a new Initiator and sets the default values.
+            ## Instantiates a new initiator and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
-            ## @param value Value to set for the initiator_type property.
+            ## @param value Value to set for the initiatorType property.
             ## @return a void
             ## 
             def initiator_type=(value)

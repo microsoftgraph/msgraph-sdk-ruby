@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../../../models/term_store/group'
+require_relative '../../../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../../../models/term_store_group'
 require_relative '../../../../../../../groups'
 require_relative '../../../../../../item'
 require_relative '../../../../../sites'
@@ -10,7 +10,6 @@ require_relative '../../../term_stores'
 require_relative '../../item'
 require_relative '../groups'
 require_relative './item'
-require_relative './sets/item/set_item_request_builder'
 require_relative './sets/sets_request_builder'
 
 module MicrosoftGraph
@@ -41,7 +40,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStores/{store%2Did}/groups/{group%2Did1}{?%24select,%24expand}")
                                         end
                                         ## 
-                                        ## Delete navigation property groups for groups
+                                        ## Delete a group object in a term [store].
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of void
                                         ## 
@@ -50,29 +49,29 @@ module MicrosoftGraph
                                                 request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## Collection of all groups available in the term store.
+                                        ## Read the properties and relationships of a term store group object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                        ## @return a Fiber of group
+                                        ## @return a Fiber of term_store_group
                                         ## 
                                         def get(request_configuration=nil)
                                             request_info = self.to_get_request_information(
                                                 request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Group.create_from_discriminator_value(pn) }, error_mapping)
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreGroup.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
                                         ## Update the navigation property groups in groups
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                        ## @return a Fiber of group
+                                        ## @return a Fiber of term_store_group
                                         ## 
                                         def patch(body, request_configuration=nil)
                                             raise StandardError, 'body cannot be null' if body.nil?
@@ -80,23 +79,12 @@ module MicrosoftGraph
                                                 body, request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Group.create_from_discriminator_value(pn) }, error_mapping)
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreGroup.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
-                                        ## @param id Unique identifier of the item
-                                        ## @return a set_item_request_builder
-                                        ## 
-                                        def sets_by_id(id)
-                                            raise StandardError, 'id cannot be null' if id.nil?
-                                            url_tpl_params = @path_parameters.clone
-                                            url_tpl_params["set%2Did"] = id
-                                            return MicrosoftGraph::Groups::Item::Sites::Item::TermStores::Item::Groups::Item::Sets::Item::SetItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                        end
-                                        ## 
-                                        ## Delete navigation property groups for groups
+                                        ## Delete a group object in a term [store].
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -112,7 +100,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Collection of all groups available in the term store.
+                                        ## Read the properties and relationships of a term store group object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -151,7 +139,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Collection of all groups available in the term store.
+                                        # Read the properties and relationships of a term store group object.
                                         class GroupItemRequestBuilderGetQueryParameters
                                             
                                             ## 

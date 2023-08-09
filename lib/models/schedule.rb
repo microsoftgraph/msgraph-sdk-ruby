@@ -10,16 +10,16 @@ module MicrosoftGraph
             # Indicates whether the schedule is enabled for the team. Required.
             @enabled
             ## 
-            # The offerShiftRequests property
+            # The offer requests for shifts in the schedule.
             @offer_shift_requests
             ## 
             # Indicates whether offer shift requests are enabled for the schedule.
             @offer_shift_requests_enabled
             ## 
-            # The openShiftChangeRequests property
+            # The open shift requests in the schedule.
             @open_shift_change_requests
             ## 
-            # The openShifts property
+            # The set of open shifts in a scheduling group in the schedule.
             @open_shifts
             ## 
             # Indicates whether open shifts are enabled for the schedule.
@@ -37,7 +37,7 @@ module MicrosoftGraph
             # The shifts in the schedule.
             @shifts
             ## 
-            # The swapShiftsChangeRequests property
+            # The swap requests for shifts in the schedule.
             @swap_shifts_change_requests
             ## 
             # Indicates whether swap shifts requests are enabled for the schedule.
@@ -49,7 +49,7 @@ module MicrosoftGraph
             # The set of reasons for a time off in the schedule.
             @time_off_reasons
             ## 
-            # The timeOffRequests property
+            # The time off requests in the schedule.
             @time_off_requests
             ## 
             # Indicates whether time off requests are enabled for the schedule.
@@ -122,15 +122,15 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the offerShiftRequests property value. The offerShiftRequests property
+            ## Gets the offerShiftRequests property value. The offer requests for shifts in the schedule.
             ## @return a offer_shift_request
             ## 
             def offer_shift_requests
                 return @offer_shift_requests
             end
             ## 
-            ## Sets the offerShiftRequests property value. The offerShiftRequests property
-            ## @param value Value to set for the offer_shift_requests property.
+            ## Sets the offerShiftRequests property value. The offer requests for shifts in the schedule.
+            ## @param value Value to set for the offerShiftRequests property.
             ## @return a void
             ## 
             def offer_shift_requests=(value)
@@ -145,37 +145,37 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the offerShiftRequestsEnabled property value. Indicates whether offer shift requests are enabled for the schedule.
-            ## @param value Value to set for the offer_shift_requests_enabled property.
+            ## @param value Value to set for the offerShiftRequestsEnabled property.
             ## @return a void
             ## 
             def offer_shift_requests_enabled=(value)
                 @offer_shift_requests_enabled = value
             end
             ## 
-            ## Gets the openShiftChangeRequests property value. The openShiftChangeRequests property
+            ## Gets the openShiftChangeRequests property value. The open shift requests in the schedule.
             ## @return a open_shift_change_request
             ## 
             def open_shift_change_requests
                 return @open_shift_change_requests
             end
             ## 
-            ## Sets the openShiftChangeRequests property value. The openShiftChangeRequests property
-            ## @param value Value to set for the open_shift_change_requests property.
+            ## Sets the openShiftChangeRequests property value. The open shift requests in the schedule.
+            ## @param value Value to set for the openShiftChangeRequests property.
             ## @return a void
             ## 
             def open_shift_change_requests=(value)
                 @open_shift_change_requests = value
             end
             ## 
-            ## Gets the openShifts property value. The openShifts property
+            ## Gets the openShifts property value. The set of open shifts in a scheduling group in the schedule.
             ## @return a open_shift
             ## 
             def open_shifts
                 return @open_shifts
             end
             ## 
-            ## Sets the openShifts property value. The openShifts property
-            ## @param value Value to set for the open_shifts property.
+            ## Sets the openShifts property value. The set of open shifts in a scheduling group in the schedule.
+            ## @param value Value to set for the openShifts property.
             ## @return a void
             ## 
             def open_shifts=(value)
@@ -190,7 +190,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the openShiftsEnabled property value. Indicates whether open shifts are enabled for the schedule.
-            ## @param value Value to set for the open_shifts_enabled property.
+            ## @param value Value to set for the openShiftsEnabled property.
             ## @return a void
             ## 
             def open_shifts_enabled=(value)
@@ -205,7 +205,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the provisionStatus property value. The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
-            ## @param value Value to set for the provision_status property.
+            ## @param value Value to set for the provisionStatus property.
             ## @return a void
             ## 
             def provision_status=(value)
@@ -220,7 +220,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the provisionStatusCode property value. Additional information about why schedule provisioning failed.
-            ## @param value Value to set for the provision_status_code property.
+            ## @param value Value to set for the provisionStatusCode property.
             ## @return a void
             ## 
             def provision_status_code=(value)
@@ -235,7 +235,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the schedulingGroups property value. The logical grouping of users in the schedule (usually by role).
-            ## @param value Value to set for the scheduling_groups property.
+            ## @param value Value to set for the schedulingGroups property.
             ## @return a void
             ## 
             def scheduling_groups=(value)
@@ -283,15 +283,15 @@ module MicrosoftGraph
                 @shifts = value
             end
             ## 
-            ## Gets the swapShiftsChangeRequests property value. The swapShiftsChangeRequests property
+            ## Gets the swapShiftsChangeRequests property value. The swap requests for shifts in the schedule.
             ## @return a swap_shifts_change_request
             ## 
             def swap_shifts_change_requests
                 return @swap_shifts_change_requests
             end
             ## 
-            ## Sets the swapShiftsChangeRequests property value. The swapShiftsChangeRequests property
-            ## @param value Value to set for the swap_shifts_change_requests property.
+            ## Sets the swapShiftsChangeRequests property value. The swap requests for shifts in the schedule.
+            ## @param value Value to set for the swapShiftsChangeRequests property.
             ## @return a void
             ## 
             def swap_shifts_change_requests=(value)
@@ -306,7 +306,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the swapShiftsRequestsEnabled property value. Indicates whether swap shifts requests are enabled for the schedule.
-            ## @param value Value to set for the swap_shifts_requests_enabled property.
+            ## @param value Value to set for the swapShiftsRequestsEnabled property.
             ## @return a void
             ## 
             def swap_shifts_requests_enabled=(value)
@@ -321,7 +321,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeClockEnabled property value. Indicates whether time clock is enabled for the schedule.
-            ## @param value Value to set for the time_clock_enabled property.
+            ## @param value Value to set for the timeClockEnabled property.
             ## @return a void
             ## 
             def time_clock_enabled=(value)
@@ -336,22 +336,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeOffReasons property value. The set of reasons for a time off in the schedule.
-            ## @param value Value to set for the time_off_reasons property.
+            ## @param value Value to set for the timeOffReasons property.
             ## @return a void
             ## 
             def time_off_reasons=(value)
                 @time_off_reasons = value
             end
             ## 
-            ## Gets the timeOffRequests property value. The timeOffRequests property
+            ## Gets the timeOffRequests property value. The time off requests in the schedule.
             ## @return a time_off_request
             ## 
             def time_off_requests
                 return @time_off_requests
             end
             ## 
-            ## Sets the timeOffRequests property value. The timeOffRequests property
-            ## @param value Value to set for the time_off_requests property.
+            ## Sets the timeOffRequests property value. The time off requests in the schedule.
+            ## @param value Value to set for the timeOffRequests property.
             ## @return a void
             ## 
             def time_off_requests=(value)
@@ -366,7 +366,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeOffRequestsEnabled property value. Indicates whether time off requests are enabled for the schedule.
-            ## @param value Value to set for the time_off_requests_enabled property.
+            ## @param value Value to set for the timeOffRequestsEnabled property.
             ## @return a void
             ## 
             def time_off_requests_enabled=(value)
@@ -381,7 +381,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeZone property value. Indicates the time zone of the schedule team using tz database format. Required.
-            ## @param value Value to set for the time_zone property.
+            ## @param value Value to set for the timeZone property.
             ## @return a void
             ## 
             def time_zone=(value)
@@ -396,7 +396,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timesOff property value. The instances of times off in the schedule.
-            ## @param value Value to set for the times_off property.
+            ## @param value Value to set for the timesOff property.
             ## @return a void
             ## 
             def times_off=(value)
@@ -411,7 +411,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the workforceIntegrationIds property value. The workforceIntegrationIds property
-            ## @param value Value to set for the workforce_integration_ids property.
+            ## @param value Value to set for the workforceIntegrationIds property.
             ## @return a void
             ## 
             def workforce_integration_ids=(value)

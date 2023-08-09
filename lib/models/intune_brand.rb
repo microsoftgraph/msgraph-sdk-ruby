@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contactITEmailAddress property value. Email address of the person/organization responsible for IT support.
-            ## @param value Value to set for the contact_i_t_email_address property.
+            ## @param value Value to set for the contactITEmailAddress property.
             ## @return a void
             ## 
             def contact_i_t_email_address=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contactITName property value. Name of the person/organization responsible for IT support.
-            ## @param value Value to set for the contact_i_t_name property.
+            ## @param value Value to set for the contactITName property.
             ## @return a void
             ## 
             def contact_i_t_name=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contactITNotes property value. Text comments regarding the person/organization responsible for IT support.
-            ## @param value Value to set for the contact_i_t_notes property.
+            ## @param value Value to set for the contactITNotes property.
             ## @return a void
             ## 
             def contact_i_t_notes=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contactITPhoneNumber property value. Phone number of the person/organization responsible for IT support.
-            ## @param value Value to set for the contact_i_t_phone_number property.
+            ## @param value Value to set for the contactITPhoneNumber property.
             ## @return a void
             ## 
             def contact_i_t_phone_number=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the darkBackgroundLogo property value. Logo image displayed in Company Portal apps which have a dark background behind the logo.
-            ## @param value Value to set for the dark_background_logo property.
+            ## @param value Value to set for the darkBackgroundLogo property.
             ## @return a void
             ## 
             def dark_background_logo=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Company/organization name that is displayed to end users.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -209,7 +209,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo.
-            ## @param value Value to set for the light_background_logo property.
+            ## @param value Value to set for the lightBackgroundLogo property.
             ## @return a void
             ## 
             def light_background_logo=(value)
@@ -224,7 +224,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -239,7 +239,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site.
-            ## @param value Value to set for the online_support_site_name property.
+            ## @param value Value to set for the onlineSupportSiteName property.
             ## @return a void
             ## 
             def online_support_site_name=(value)
@@ -254,7 +254,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onlineSupportSiteUrl property value. URL to the company/organization’s IT helpdesk site.
-            ## @param value Value to set for the online_support_site_url property.
+            ## @param value Value to set for the onlineSupportSiteUrl property.
             ## @return a void
             ## 
             def online_support_site_url=(value)
@@ -269,7 +269,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the privacyUrl property value. URL to the company/organization’s privacy policy.
-            ## @param value Value to set for the privacy_url property.
+            ## @param value Value to set for the privacyUrl property.
             ## @return a void
             ## 
             def privacy_url=(value)
@@ -308,7 +308,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-            ## @param value Value to set for the show_display_name_next_to_logo property.
+            ## @param value Value to set for the showDisplayNameNextToLogo property.
             ## @return a void
             ## 
             def show_display_name_next_to_logo=(value)
@@ -323,7 +323,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showLogo property value. Boolean that represents whether the administrator-supplied logo images are shown or not shown.
-            ## @param value Value to set for the show_logo property.
+            ## @param value Value to set for the showLogo property.
             ## @return a void
             ## 
             def show_logo=(value)
@@ -338,7 +338,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
-            ## @param value Value to set for the show_name_next_to_logo property.
+            ## @param value Value to set for the showNameNextToLogo property.
             ## @return a void
             ## 
             def show_name_next_to_logo=(value)
@@ -353,7 +353,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the themeColor property value. Primary theme color used in the Company Portal applications and web portal.
-            ## @param value Value to set for the theme_color property.
+            ## @param value Value to set for the themeColor property.
             ## @return a void
             ## 
             def theme_color=(value)

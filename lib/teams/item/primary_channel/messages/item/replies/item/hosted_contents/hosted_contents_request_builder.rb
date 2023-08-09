@@ -2,7 +2,7 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../microsoft_graph'
 require_relative '../../../../../../../../models/chat_message_hosted_content'
 require_relative '../../../../../../../../models/chat_message_hosted_content_collection_response'
-require_relative '../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../teams'
 require_relative '../../../../../../item'
 require_relative '../../../../../primary_channel'
@@ -12,6 +12,7 @@ require_relative '../../replies'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './hosted_contents'
+require_relative './item/chat_message_hosted_content_item_request_builder'
 
 module MicrosoftGraph
     module Teams
@@ -32,6 +33,17 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::Item::Replies::Item::HostedContents::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        ## Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
+                                        ## @param chat_message_hosted_content_id The unique identifier of chatMessageHostedContent
+                                        ## @return a chat_message_hosted_content_item_request_builder
+                                        ## 
+                                        def by_chat_message_hosted_content_id(chat_message_hosted_content_id)
+                                            raise StandardError, 'chat_message_hosted_content_id cannot be null' if chat_message_hosted_content_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["chatMessageHostedContent%2Did"] = chat_message_hosted_content_id
+                                            return MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::Item::Replies::Item::HostedContents::Item::ChatMessageHostedContentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new HostedContentsRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -50,8 +62,8 @@ module MicrosoftGraph
                                                 request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessageHostedContentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
@@ -66,8 +78,8 @@ module MicrosoftGraph
                                                 body, request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessageHostedContent.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 

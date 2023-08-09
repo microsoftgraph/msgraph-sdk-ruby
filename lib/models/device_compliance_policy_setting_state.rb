@@ -59,7 +59,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the currentValue property value. Current value of setting on device
-            ## @param value Value to set for the current_value property.
+            ## @param value Value to set for the currentValue property.
             ## @return a void
             ## 
             def current_value=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the errorCode property value. Error code for the setting
-            ## @param value Value to set for the error_code property.
+            ## @param value Value to set for the errorCode property.
             ## @return a void
             ## 
             def error_code=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the errorDescription property value. Error description
-            ## @param value Value to set for the error_description property.
+            ## @param value Value to set for the errorDescription property.
             ## @return a void
             ## 
             def error_description=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the instanceDisplayName property value. Name of setting instance that is being reported.
-            ## @param value Value to set for the instance_display_name property.
+            ## @param value Value to set for the instanceDisplayName property.
             ## @return a void
             ## 
             def instance_display_name=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -223,7 +223,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingName property value. Localized/user friendly setting name that is being reported
-            ## @param value Value to set for the setting_name property.
+            ## @param value Value to set for the settingName property.
             ## @return a void
             ## 
             def setting_name=(value)
@@ -268,7 +268,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userEmail property value. UserEmail
-            ## @param value Value to set for the user_email property.
+            ## @param value Value to set for the userEmail property.
             ## @return a void
             ## 
             def user_email=(value)
@@ -283,7 +283,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userId property value. UserId
-            ## @param value Value to set for the user_id property.
+            ## @param value Value to set for the userId property.
             ## @return a void
             ## 
             def user_id=(value)
@@ -298,7 +298,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userName property value. UserName
-            ## @param value Value to set for the user_name property.
+            ## @param value Value to set for the userName property.
             ## @return a void
             ## 
             def user_name=(value)
@@ -313,7 +313,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPrincipalName property value. UserPrincipalName.
-            ## @param value Value to set for the user_principal_name property.
+            ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
             def user_principal_name=(value)

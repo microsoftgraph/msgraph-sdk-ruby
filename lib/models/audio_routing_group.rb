@@ -7,13 +7,13 @@ module MicrosoftGraph
         class AudioRoutingGroup < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The receivers property
+            # List of receiving participant ids.
             @receivers
             ## 
             # The routingMode property
             @routing_mode
             ## 
-            # The sources property
+            # List of source participant ids.
             @sources
             ## 
             ## Instantiates a new audioRoutingGroup and sets the default values.
@@ -43,14 +43,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the receivers property value. The receivers property
+            ## Gets the receivers property value. List of receiving participant ids.
             ## @return a string
             ## 
             def receivers
                 return @receivers
             end
             ## 
-            ## Sets the receivers property value. The receivers property
+            ## Sets the receivers property value. List of receiving participant ids.
             ## @param value Value to set for the receivers property.
             ## @return a void
             ## 
@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the routingMode property value. The routingMode property
-            ## @param value Value to set for the routing_mode property.
+            ## @param value Value to set for the routingMode property.
             ## @return a void
             ## 
             def routing_mode=(value)
@@ -85,14 +85,14 @@ module MicrosoftGraph
                 writer.write_collection_of_primitive_values("sources", @sources)
             end
             ## 
-            ## Gets the sources property value. The sources property
+            ## Gets the sources property value. List of source participant ids.
             ## @return a string
             ## 
             def sources
                 return @sources
             end
             ## 
-            ## Sets the sources property value. The sources property
+            ## Sets the sources property value. List of source participant ids.
             ## @param value Value to set for the sources property.
             ## @return a void
             ## 
