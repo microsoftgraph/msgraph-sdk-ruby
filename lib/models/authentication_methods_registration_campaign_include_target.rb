@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the targetType property value. The targetType property
-            ## @param value Value to set for the target_type property.
+            ## @param value Value to set for the targetType property.
             ## @return a void
             ## 
             def target_type=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
-            ## @param value Value to set for the targeted_authentication_method property.
+            ## @param value Value to set for the targetedAuthenticationMethod property.
             ## @return a void
             ## 
             def targeted_authentication_method=(value)

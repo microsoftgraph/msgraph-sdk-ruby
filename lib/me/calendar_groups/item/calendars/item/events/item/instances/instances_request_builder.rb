@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../microsoft_graph'
 require_relative '../../../../../../../../models/event_collection_response'
-require_relative '../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../me'
 require_relative '../../../../../../calendar_groups'
 require_relative '../../../../../item'
@@ -12,6 +12,7 @@ require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
 require_relative './instances'
+require_relative './item/event_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -37,6 +38,17 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        ## Provides operations to manage the instances property of the microsoft.graph.event entity.
+                                        ## @param event_id1 The unique identifier of event
+                                        ## @return a event_item_request_builder
+                                        ## 
+                                        def by_event_id1(event_id1)
+                                            raise StandardError, 'event_id1 cannot be null' if event_id1.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["event%2Did1"] = event_id1
+                                            return MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::EventItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new InstancesRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -55,8 +67,8 @@ module MicrosoftGraph
                                                 request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EventCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
@@ -116,6 +128,8 @@ module MicrosoftGraph
                                                 case original_name
                                                     when "count"
                                                         return "%24count"
+                                                    when "end_date_time"
+                                                        return "endDateTime"
                                                     when "filter"
                                                         return "%24filter"
                                                     when "orderby"
@@ -124,6 +138,8 @@ module MicrosoftGraph
                                                         return "%24select"
                                                     when "skip"
                                                         return "%24skip"
+                                                    when "start_date_time"
+                                                        return "startDateTime"
                                                     when "top"
                                                         return "%24top"
                                                     else

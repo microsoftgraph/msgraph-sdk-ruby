@@ -2,11 +2,12 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/device_compliance_scheduled_action_for_rule'
 require_relative '../../../../models/device_compliance_scheduled_action_for_rule_collection_response'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../device_management'
 require_relative '../../device_compliance_policies'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/device_compliance_scheduled_action_for_rule_item_request_builder'
 require_relative './scheduled_actions_for_rule'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduledActionsForRule::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.
+                        ## @param device_compliance_scheduled_action_for_rule_id The unique identifier of deviceComplianceScheduledActionForRule
+                        ## @return a device_compliance_scheduled_action_for_rule_item_request_builder
+                        ## 
+                        def by_device_compliance_scheduled_action_for_rule_id(device_compliance_scheduled_action_for_rule_id)
+                            raise StandardError, 'device_compliance_scheduled_action_for_rule_id cannot be null' if device_compliance_scheduled_action_for_rule_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["deviceComplianceScheduledActionForRule%2Did"] = device_compliance_scheduled_action_for_rule_id
+                            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduledActionsForRule::Item::DeviceComplianceScheduledActionForRuleItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new ScheduledActionsForRuleRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy%2Did}/scheduledActionsForRule{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+                        ## List properties and relationships of the deviceComplianceScheduledActionForRule objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of device_compliance_scheduled_action_for_rule_collection_response
                         ## 
@@ -42,12 +54,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceComplianceScheduledActionForRuleCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create new navigation property to scheduledActionsForRule for deviceManagement
+                        ## Create a new deviceComplianceScheduledActionForRule object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of device_compliance_scheduled_action_for_rule
@@ -58,12 +70,12 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceComplianceScheduledActionForRule.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+                        ## List properties and relationships of the deviceComplianceScheduledActionForRule objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create new navigation property to scheduledActionsForRule for deviceManagement
+                        ## Create a new deviceComplianceScheduledActionForRule object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+                        # List properties and relationships of the deviceComplianceScheduledActionForRule objects.
                         class ScheduledActionsForRuleRequestBuilderGetQueryParameters
                             
                             ## 

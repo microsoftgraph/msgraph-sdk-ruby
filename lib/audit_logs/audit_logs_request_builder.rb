@@ -1,13 +1,10 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative '../models/audit_log_root'
-require_relative '../models/o_data_errors/o_data_error'
+require_relative '../models/o_data_errors_o_data_error'
 require_relative './audit_logs'
 require_relative './directory_audits/directory_audits_request_builder'
-require_relative './directory_audits/item/directory_audit_item_request_builder'
-require_relative './provisioning/item/provisioning_object_summary_item_request_builder'
 require_relative './provisioning/provisioning_request_builder'
-require_relative './sign_ins/item/sign_in_item_request_builder'
 require_relative './sign_ins/sign_ins_request_builder'
 
 module MicrosoftGraph
@@ -41,17 +38,6 @@ module MicrosoftGraph
                 super(path_parameters, request_adapter, "{+baseurl}/auditLogs{?%24select,%24expand}")
             end
             ## 
-            ## Provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a directory_audit_item_request_builder
-            ## 
-            def directory_audits_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["directoryAudit%2Did"] = id
-                return MicrosoftGraph::AuditLogs::DirectoryAudits::Item::DirectoryAuditItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Get auditLogs
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of audit_log_root
@@ -61,8 +47,8 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuditLogRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -77,31 +63,9 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuditLogRoot.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a provisioning_object_summary_item_request_builder
-            ## 
-            def provisioning_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["provisioningObjectSummary%2Did"] = id
-                return MicrosoftGraph::AuditLogs::Provisioning::Item::ProvisioningObjectSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a sign_in_item_request_builder
-            ## 
-            def sign_ins_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["signIn%2Did"] = id
-                return MicrosoftGraph::AuditLogs::SignIns::Item::SignInItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get auditLogs

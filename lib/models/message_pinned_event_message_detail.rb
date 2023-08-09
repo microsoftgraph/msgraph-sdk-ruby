@@ -14,7 +14,7 @@ module MicrosoftGraph
             # Initiator of the event.
             @initiator
             ## 
-            ## Instantiates a new MessagePinnedEventMessageDetail and sets the default values.
+            ## Instantiates a new messagePinnedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the eventDateTime property value. Date and time when the event occurred.
-            ## @param value Value to set for the event_date_time property.
+            ## @param value Value to set for the eventDateTime property.
             ## @return a void
             ## 
             def event_date_time=(value)

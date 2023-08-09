@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Desktop App for Windows information protection
         class WindowsInformationProtectionDesktopApp < MicrosoftGraph::Models::WindowsInformationProtectionApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -24,7 +26,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the binaryName property value. The binary name.
-            ## @param value Value to set for the binary_name property.
+            ## @param value Value to set for the binaryName property.
             ## @return a void
             ## 
             def binary_name=(value)
@@ -39,7 +41,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the binaryVersionHigh property value. The high binary version.
-            ## @param value Value to set for the binary_version_high property.
+            ## @param value Value to set for the binaryVersionHigh property.
             ## @return a void
             ## 
             def binary_version_high=(value)
@@ -54,14 +56,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the binaryVersionLow property value. The lower binary version.
-            ## @param value Value to set for the binary_version_low property.
+            ## @param value Value to set for the binaryVersionLow property.
             ## @return a void
             ## 
             def binary_version_low=(value)
                 @binary_version_low = value
             end
             ## 
-            ## Instantiates a new WindowsInformationProtectionDesktopApp and sets the default values.
+            ## Instantiates a new windowsInformationProtectionDesktopApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A class containing the properties for Audit Event.
         class AuditEvent < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -64,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activityDateTime property value. The date time in UTC when the activity was performed.
-            ## @param value Value to set for the activity_date_time property.
+            ## @param value Value to set for the activityDateTime property.
             ## @return a void
             ## 
             def activity_date_time=(value)
@@ -79,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activityOperationType property value. The HTTP operation type of the activity.
-            ## @param value Value to set for the activity_operation_type property.
+            ## @param value Value to set for the activityOperationType property.
             ## @return a void
             ## 
             def activity_operation_type=(value)
@@ -94,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activityResult property value. The result of the activity.
-            ## @param value Value to set for the activity_result property.
+            ## @param value Value to set for the activityResult property.
             ## @return a void
             ## 
             def activity_result=(value)
@@ -109,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activityType property value. The type of activity that was being performed.
-            ## @param value Value to set for the activity_type property.
+            ## @param value Value to set for the activityType property.
             ## @return a void
             ## 
             def activity_type=(value)
@@ -154,14 +156,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the componentName property value. Component name.
-            ## @param value Value to set for the component_name property.
+            ## @param value Value to set for the componentName property.
             ## @return a void
             ## 
             def component_name=(value)
                 @component_name = value
             end
             ## 
-            ## Instantiates a new AuditEvent and sets the default values.
+            ## Instantiates a new auditEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -176,7 +178,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the correlationId property value. The client request Id that is used to correlate activity within the system.
-            ## @param value Value to set for the correlation_id property.
+            ## @param value Value to set for the correlationId property.
             ## @return a void
             ## 
             def correlation_id=(value)
@@ -200,7 +202,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Event display name.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)

@@ -1,12 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../models/service_update_message'
 require_relative '../../../admin'
 require_relative '../../service_announcement'
 require_relative '../messages'
 require_relative './attachments/attachments_request_builder'
-require_relative './attachments/item/service_announcement_attachment_item_request_builder'
 require_relative './attachments_archive/attachments_archive_request_builder'
 require_relative './item'
 
@@ -30,17 +29,6 @@ module MicrosoftGraph
                             return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Item::AttachmentsArchive::AttachmentsArchiveRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        ## Provides operations to manage the attachments property of the microsoft.graph.serviceUpdateMessage entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a service_announcement_attachment_item_request_builder
-                        ## 
-                        def attachments_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["serviceAnnouncementAttachment%2Did"] = id
-                            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Item::Attachments::Item::ServiceAnnouncementAttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## Instantiates a new ServiceUpdateMessageItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -59,12 +47,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+                        ## Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of service_update_message
                         ## 
@@ -73,8 +61,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServiceUpdateMessage.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -89,8 +77,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServiceUpdateMessage.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -110,7 +98,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+                        ## Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -149,7 +137,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
+                        # Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
                         class ServiceUpdateMessageItemRequestBuilderGetQueryParameters
                             
                             ## 

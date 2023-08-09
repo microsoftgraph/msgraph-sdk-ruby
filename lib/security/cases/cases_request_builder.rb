@@ -1,11 +1,10 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
-require_relative '../../models/security/cases_root'
+require_relative '../../models/o_data_errors_o_data_error'
+require_relative '../../models/security_cases_root'
 require_relative '../security'
 require_relative './cases'
 require_relative './ediscovery_cases/ediscovery_cases_request_builder'
-require_relative './ediscovery_cases/item/ediscovery_case_item_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -38,40 +37,29 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.
-                ## @param id Unique identifier of the item
-                ## @return a ediscovery_case_item_request_builder
-                ## 
-                def ediscovery_cases_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["ediscoveryCase%2Did"] = id
-                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::EdiscoveryCaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Get cases from security
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                ## @return a Fiber of cases_root
+                ## @return a Fiber of security_cases_root
                 ## 
                 def get(request_configuration=nil)
                     request_info = self.to_get_request_information(
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::CasesRoot.create_from_discriminator_value(pn) }, error_mapping)
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityCasesRoot.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
                 ## Update the navigation property cases in security
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                ## @return a Fiber of cases_root
+                ## @return a Fiber of security_cases_root
                 ## 
                 def patch(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
@@ -79,9 +67,9 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::CasesRoot.create_from_discriminator_value(pn) }, error_mapping)
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityCasesRoot.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
                 ## Delete navigation property cases for security

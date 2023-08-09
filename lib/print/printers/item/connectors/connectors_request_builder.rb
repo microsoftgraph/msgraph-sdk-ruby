@@ -1,12 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../models/print_connector_collection_response'
 require_relative '../../../print'
 require_relative '../../printers'
 require_relative '../item'
 require_relative './connectors'
 require_relative './count/count_request_builder'
+require_relative './item/print_connector_item_request_builder'
 
 module MicrosoftGraph
     module Print
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Print::Printers::Item::Connectors::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the connectors property of the microsoft.graph.printer entity.
+                        ## @param print_connector_id The unique identifier of printConnector
+                        ## @return a print_connector_item_request_builder
+                        ## 
+                        def by_print_connector_id(print_connector_id)
+                            raise StandardError, 'print_connector_id cannot be null' if print_connector_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["printConnector%2Did"] = print_connector_id
+                            return MicrosoftGraph::Print::Printers::Item::Connectors::Item::PrintConnectorItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ConnectorsRequestBuilder and sets the default values.
@@ -41,8 +53,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintConnectorCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 

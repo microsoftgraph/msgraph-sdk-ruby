@@ -53,6 +53,9 @@ module MicrosoftGraph
             # List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
             @mentions
             ## 
+            # List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
+            @message_history
+            ## 
             # The messageType property
             @message_type
             ## 
@@ -115,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the channelIdentity property value. If the message was sent in a channel, represents identity of the channel.
-            ## @param value Value to set for the channel_identity property.
+            ## @param value Value to set for the channelIdentity property.
             ## @return a void
             ## 
             def channel_identity=(value)
@@ -130,7 +133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the chatId property value. If the message was sent in a chat, represents the identity of the chat.
-            ## @param value Value to set for the chat_id property.
+            ## @param value Value to set for the chatId property.
             ## @return a void
             ## 
             def chat_id=(value)
@@ -152,7 +155,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Timestamp of when the chat message was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -176,7 +179,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deletedDateTime property value. Read only. Timestamp at which the chat message was deleted, or null if not deleted.
-            ## @param value Value to set for the deleted_date_time property.
+            ## @param value Value to set for the deletedDateTime property.
             ## @return a void
             ## 
             def deleted_date_time=(value)
@@ -206,7 +209,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the eventDetail property value. Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
-            ## @param value Value to set for the event_detail property.
+            ## @param value Value to set for the eventDetail property.
             ## @return a void
             ## 
             def event_detail=(value)
@@ -248,6 +251,7 @@ module MicrosoftGraph
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "locale" => lambda {|n| @locale = n.get_string_value() },
                     "mentions" => lambda {|n| @mentions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ChatMessageMention.create_from_discriminator_value(pn) }) },
+                    "messageHistory" => lambda {|n| @message_history = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ChatMessageHistoryItem.create_from_discriminator_value(pn) }) },
                     "messageType" => lambda {|n| @message_type = n.get_enum_value(MicrosoftGraph::Models::ChatMessageType) },
                     "policyViolation" => lambda {|n| @policy_violation = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ChatMessagePolicyViolation.create_from_discriminator_value(pn) }) },
                     "reactions" => lambda {|n| @reactions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ChatMessageReaction.create_from_discriminator_value(pn) }) },
@@ -267,7 +271,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hostedContents property value. Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-            ## @param value Value to set for the hosted_contents property.
+            ## @param value Value to set for the hostedContents property.
             ## @return a void
             ## 
             def hosted_contents=(value)
@@ -297,7 +301,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastEditedDateTime property value. Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
-            ## @param value Value to set for the last_edited_date_time property.
+            ## @param value Value to set for the lastEditedDateTime property.
             ## @return a void
             ## 
             def last_edited_date_time=(value)
@@ -312,7 +316,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -349,6 +353,21 @@ module MicrosoftGraph
                 @mentions = value
             end
             ## 
+            ## Gets the messageHistory property value. List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
+            ## @return a chat_message_history_item
+            ## 
+            def message_history
+                return @message_history
+            end
+            ## 
+            ## Sets the messageHistory property value. List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
+            ## @param value Value to set for the messageHistory property.
+            ## @return a void
+            ## 
+            def message_history=(value)
+                @message_history = value
+            end
+            ## 
             ## Gets the messageType property value. The messageType property
             ## @return a chat_message_type
             ## 
@@ -357,7 +376,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the messageType property value. The messageType property
-            ## @param value Value to set for the message_type property.
+            ## @param value Value to set for the messageType property.
             ## @return a void
             ## 
             def message_type=(value)
@@ -372,7 +391,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the policyViolation property value. Defines the properties of a policy violation set by a data loss prevention (DLP) application.
-            ## @param value Value to set for the policy_violation property.
+            ## @param value Value to set for the policyViolation property.
             ## @return a void
             ## 
             def policy_violation=(value)
@@ -417,7 +436,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the replyToId property value. Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
-            ## @param value Value to set for the reply_to_id property.
+            ## @param value Value to set for the replyToId property.
             ## @return a void
             ## 
             def reply_to_id=(value)
@@ -446,6 +465,7 @@ module MicrosoftGraph
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
                 writer.write_string_value("locale", @locale)
                 writer.write_collection_of_object_values("mentions", @mentions)
+                writer.write_collection_of_object_values("messageHistory", @message_history)
                 writer.write_enum_value("messageType", @message_type)
                 writer.write_object_value("policyViolation", @policy_violation)
                 writer.write_collection_of_object_values("reactions", @reactions)
@@ -494,7 +514,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. Read-only. Link to the message in Microsoft Teams.
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

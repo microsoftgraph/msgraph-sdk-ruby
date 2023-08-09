@@ -24,7 +24,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clientContext property value. Unique Client Context string. Max limit is 256 chars.
-            ## @param value Value to set for the client_context property.
+            ## @param value Value to set for the clientContext property.
             ## @return a void
             ## 
             def client_context=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resultInfo property value. The result information. Read-only.
-            ## @param value Value to set for the result_info property.
+            ## @param value Value to set for the resultInfo property.
             ## @return a void
             ## 
             def result_info=(value)

@@ -1,8 +1,8 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../../../../../../../models/term_store/relation'
-require_relative '../../../../../../../../../../../../models/term_store/relation_collection_response'
+require_relative '../../../../../../../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../../../../../../../models/term_store_relation'
+require_relative '../../../../../../../../../../../../models/term_store_relation_collection_response'
 require_relative '../../../../../../../../../../../groups'
 require_relative '../../../../../../../../../../item'
 require_relative '../../../../../../../../../sites'
@@ -15,6 +15,7 @@ require_relative '../../../item'
 require_relative '../../terms'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/relation_item_request_builder'
 require_relative './relations'
 
 module MicrosoftGraph
@@ -40,6 +41,17 @@ module MicrosoftGraph
                                                             return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Groups::Item::Sets::Item::Terms::Item::Relations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                                         end
                                                         ## 
+                                                        ## Provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
+                                                        ## @param relation_id The unique identifier of relation
+                                                        ## @return a relation_item_request_builder
+                                                        ## 
+                                                        def by_relation_id(relation_id)
+                                                            raise StandardError, 'relation_id cannot be null' if relation_id.nil?
+                                                            url_tpl_params = @path_parameters.clone
+                                                            url_tpl_params["relation%2Did"] = relation_id
+                                                            return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Groups::Item::Sets::Item::Terms::Item::Relations::Item::RelationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                                        end
+                                                        ## 
                                                         ## Instantiates a new RelationsRequestBuilder and sets the default values.
                                                         ## @param path_parameters Path parameters for the request
                                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -51,22 +63,22 @@ module MicrosoftGraph
                                                         ## 
                                                         ## To indicate which terms are related to the current term as either pinned or reused.
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                                        ## @return a Fiber of relation_collection_response
+                                                        ## @return a Fiber of term_store_relation_collection_response
                                                         ## 
                                                         def get(request_configuration=nil)
                                                             request_info = self.to_get_request_information(
                                                                 request_configuration
                                                             )
                                                             error_mapping = Hash.new
-                                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::RelationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+                                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreRelationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                                         end
                                                         ## 
                                                         ## Create new navigation property to relations for groups
                                                         ## @param body The request body
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                                        ## @return a Fiber of relation
+                                                        ## @return a Fiber of term_store_relation
                                                         ## 
                                                         def post(body, request_configuration=nil)
                                                             raise StandardError, 'body cannot be null' if body.nil?
@@ -74,9 +86,9 @@ module MicrosoftGraph
                                                                 body, request_configuration
                                                             )
                                                             error_mapping = Hash.new
-                                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Relation.create_from_discriminator_value(pn) }, error_mapping)
+                                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreRelation.create_from_discriminator_value(pn) }, error_mapping)
                                                         end
                                                         ## 
                                                         ## To indicate which terms are related to the current term as either pinned or reused.

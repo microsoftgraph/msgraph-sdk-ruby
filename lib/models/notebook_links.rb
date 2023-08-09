@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the oneNoteClientUrl property value. Opens the notebook in the OneNote native client if it's installed.
-            ## @param value Value to set for the one_note_client_url property.
+            ## @param value Value to set for the oneNoteClientUrl property.
             ## @return a void
             ## 
             def one_note_client_url=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the oneNoteWebUrl property value. Opens the notebook in OneNote on the web.
-            ## @param value Value to set for the one_note_web_url property.
+            ## @param value Value to set for the oneNoteWebUrl property.
             ## @return a void
             ## 
             def one_note_web_url=(value)

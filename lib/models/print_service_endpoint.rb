@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. A human-readable display name for the endpoint.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)

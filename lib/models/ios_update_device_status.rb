@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
-            ## @param value Value to set for the compliance_grace_period_expiration_date_time property.
+            ## @param value Value to set for the complianceGracePeriodExpirationDateTime property.
             ## @return a void
             ## 
             def compliance_grace_period_expiration_date_time=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceDisplayName property value. Device name of the DevicePolicyStatus.
-            ## @param value Value to set for the device_display_name property.
+            ## @param value Value to set for the deviceDisplayName property.
             ## @return a void
             ## 
             def device_display_name=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceId property value. The device id that is being reported.
-            ## @param value Value to set for the device_id property.
+            ## @param value Value to set for the deviceId property.
             ## @return a void
             ## 
             def device_id=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceModel property value. The device model that is being reported
-            ## @param value Value to set for the device_model property.
+            ## @param value Value to set for the deviceModel property.
             ## @return a void
             ## 
             def device_model=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installStatus property value. The installStatus property
-            ## @param value Value to set for the install_status property.
+            ## @param value Value to set for the installStatus property.
             ## @return a void
             ## 
             def install_status=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastReportedDateTime property value. Last modified date time of the policy report.
-            ## @param value Value to set for the last_reported_date_time property.
+            ## @param value Value to set for the lastReportedDateTime property.
             ## @return a void
             ## 
             def last_reported_date_time=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the osVersion property value. The device version that is being reported.
-            ## @param value Value to set for the os_version property.
+            ## @param value Value to set for the osVersion property.
             ## @return a void
             ## 
             def os_version=(value)
@@ -224,7 +224,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userId property value. The User id that is being reported.
-            ## @param value Value to set for the user_id property.
+            ## @param value Value to set for the userId property.
             ## @return a void
             ## 
             def user_id=(value)
@@ -239,7 +239,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userName property value. The User Name that is being reported
-            ## @param value Value to set for the user_name property.
+            ## @param value Value to set for the userName property.
             ## @return a void
             ## 
             def user_name=(value)
@@ -254,7 +254,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPrincipalName property value. UserPrincipalName.
-            ## @param value Value to set for the user_principal_name property.
+            ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
             def user_principal_name=(value)

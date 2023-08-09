@@ -2,8 +2,9 @@ require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative '../models/agreement_acceptance'
 require_relative '../models/agreement_acceptance_collection_response'
-require_relative '../models/o_data_errors/o_data_error'
+require_relative '../models/o_data_errors_o_data_error'
 require_relative './agreement_acceptances'
+require_relative './item/agreement_acceptance_item_request_builder'
 
 module MicrosoftGraph
     module AgreementAcceptances
@@ -11,6 +12,17 @@ module MicrosoftGraph
         # Provides operations to manage the collection of agreementAcceptance entities.
         class AgreementAcceptancesRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
             
+            ## 
+            ## Provides operations to manage the collection of agreementAcceptance entities.
+            ## @param agreement_acceptance_id The unique identifier of agreementAcceptance
+            ## @return a agreement_acceptance_item_request_builder
+            ## 
+            def by_agreement_acceptance_id(agreement_acceptance_id)
+                raise StandardError, 'agreement_acceptance_id cannot be null' if agreement_acceptance_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["agreementAcceptance%2Did"] = agreement_acceptance_id
+                return MicrosoftGraph::AgreementAcceptances::Item::AgreementAcceptanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            end
             ## 
             ## Instantiates a new AgreementAcceptancesRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
@@ -30,8 +42,8 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AgreementAcceptanceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -46,8 +58,8 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AgreementAcceptance.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 

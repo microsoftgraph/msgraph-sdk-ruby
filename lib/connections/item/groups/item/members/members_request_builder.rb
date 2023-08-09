@@ -1,13 +1,14 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/external_connectors/identity'
-require_relative '../../../../../models/external_connectors/identity_collection_response'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/external_connectors_identity'
+require_relative '../../../../../models/external_connectors_identity_collection_response'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../connections'
 require_relative '../../../item'
 require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/identity_item_request_builder'
 require_relative './members'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Connections::Item::Groups::Item::Members::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the members property of the microsoft.graph.externalConnectors.externalGroup entity.
+                            ## @param identity_id The unique identifier of identity
+                            ## @return a identity_item_request_builder
+                            ## 
+                            def by_identity_id(identity_id)
+                                raise StandardError, 'identity_id cannot be null' if identity_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["identity%2Did"] = identity_id
+                                return MicrosoftGraph::Connections::Item::Groups::Item::Members::Item::IdentityItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new MembersRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,22 +49,22 @@ module MicrosoftGraph
                             ## 
                             ## A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of identity_collection_response
+                            ## @return a Fiber of external_connectors_identity_collection_response
                             ## 
                             def get(request_configuration=nil)
                                 request_info = self.to_get_request_information(
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::IdentityCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectorsIdentityCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## Create an identity resource for a new member in an externalGroup.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of identity
+                            ## @return a Fiber of external_connectors_identity
                             ## 
                             def post(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
@@ -60,9 +72,9 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::Identity.create_from_discriminator_value(pn) }, error_mapping)
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectorsIdentity.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.

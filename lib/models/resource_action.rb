@@ -29,7 +29,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedResourceActions property value. Allowed Actions
-            ## @param value Value to set for the allowed_resource_actions property.
+            ## @param value Value to set for the allowedResourceActions property.
             ## @return a void
             ## 
             def allowed_resource_actions=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notAllowedResourceActions property value. Not Allowed Actions.
-            ## @param value Value to set for the not_allowed_resource_actions property.
+            ## @param value Value to set for the notAllowedResourceActions property.
             ## @return a void
             ## 
             def not_allowed_resource_actions=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

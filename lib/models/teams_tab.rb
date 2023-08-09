@@ -58,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Name of the tab.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.
-            ## @param value Value to set for the teams_app property.
+            ## @param value Value to set for the teamsApp property.
             ## @return a void
             ## 
             def teams_app=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. Deep link URL of the tab instance. Read only.
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

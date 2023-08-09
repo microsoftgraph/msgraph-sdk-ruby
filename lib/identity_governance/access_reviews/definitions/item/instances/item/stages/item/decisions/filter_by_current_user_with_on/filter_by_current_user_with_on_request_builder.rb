@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../../../identity_governance'
 require_relative '../../../../../../../../access_reviews'
 require_relative '../../../../../../../definitions'
@@ -47,8 +47,8 @@ module MicrosoftGraph
                                                         request_configuration
                                                     )
                                                     error_mapping = Hash.new
-                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::Decisions::FilterByCurrentUserWithOn::FilterByCurrentUserWithOnResponse.create_from_discriminator_value(pn) }, error_mapping)
                                                 end
                                                 ## 

@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessContainerId property value. The identifier of the access container (for example, a security group). For 'securityGroup' access containers, this must be a valid ID of an Azure AD security group in the Microsoft partner's tenant.
-            ## @param value Value to set for the access_container_id property.
+            ## @param value Value to set for the accessContainerId property.
             ## @return a void
             ## 
             def access_container_id=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessContainerType property value. The accessContainerType property
-            ## @param value Value to set for the access_container_type property.
+            ## @param value Value to set for the accessContainerType property.
             ## @return a void
             ## 
             def access_container_type=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

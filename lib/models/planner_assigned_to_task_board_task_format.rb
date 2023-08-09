@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the orderHintsByAssignee property value. Dictionary of hints used to order tasks on the AssignedTo view of the Task Board. The key of each entry is one of the users the task is assigned to and the value is the order hint. The format of each value is defined as outlined here.
-            ## @param value Value to set for the order_hints_by_assignee property.
+            ## @param value Value to set for the orderHintsByAssignee property.
             ## @return a void
             ## 
             def order_hints_by_assignee=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the unassignedOrderHint property value. Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.
-            ## @param value Value to set for the unassigned_order_hint property.
+            ## @param value Value to set for the unassignedOrderHint property.
             ## @return a void
             ## 
             def unassigned_order_hint=(value)

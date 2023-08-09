@@ -1,11 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/site_collection_response'
 require_relative '../../groups'
 require_relative '../item'
 require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
+require_relative './get_all_sites/get_all_sites_request_builder'
+require_relative './item/site_item_request_builder'
 require_relative './remove/remove_request_builder'
 require_relative './sites'
 
@@ -28,9 +30,25 @@ module MicrosoftGraph
                         return MicrosoftGraph::Groups::Item::Sites::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to call the getAllSites method.
+                    def get_all_sites()
+                        return MicrosoftGraph::Groups::Item::Sites::GetAllSites::GetAllSitesRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to call the remove method.
                     def remove()
                         return MicrosoftGraph::Groups::Item::Sites::Remove::RemoveRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the sites property of the microsoft.graph.group entity.
+                    ## @param site_id The unique identifier of site
+                    ## @return a site_item_request_builder
+                    ## 
+                    def by_site_id(site_id)
+                        raise StandardError, 'site_id cannot be null' if site_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["site%2Did"] = site_id
+                        return MicrosoftGraph::Groups::Item::Sites::Item::SiteItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new SitesRequestBuilder and sets the default values.
@@ -51,8 +69,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SiteCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

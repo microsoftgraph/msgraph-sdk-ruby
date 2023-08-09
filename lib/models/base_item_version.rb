@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedBy property value. Identity of the user which last modified the version. Read-only.
-            ## @param value Value to set for the last_modified_by property.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. Date and time the version was last modified. Read-only.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)

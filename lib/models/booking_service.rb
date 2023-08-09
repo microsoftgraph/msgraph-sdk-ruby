@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
-            ## @param value Value to set for the additional_information property.
+            ## @param value Value to set for the additionalInformation property.
             ## @return a void
             ## 
             def additional_information=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customQuestions property value. Contains the set of custom questions associated with a particular service.
-            ## @param value Value to set for the custom_questions property.
+            ## @param value Value to set for the customQuestions property.
             ## @return a void
             ## 
             def custom_questions=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultDuration property value. The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
-            ## @param value Value to set for the default_duration property.
+            ## @param value Value to set for the defaultDuration property.
             ## @return a void
             ## 
             def default_duration=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultLocation property value. The default physical location for the service.
-            ## @param value Value to set for the default_location property.
+            ## @param value Value to set for the defaultLocation property.
             ## @return a void
             ## 
             def default_location=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultPrice property value. The default monetary price for the service.
-            ## @param value Value to set for the default_price property.
+            ## @param value Value to set for the defaultPrice property.
             ## @return a void
             ## 
             def default_price=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultPriceType property value. Represents the type of pricing of a booking service.
-            ## @param value Value to set for the default_price_type property.
+            ## @param value Value to set for the defaultPriceType property.
             ## @return a void
             ## 
             def default_price_type=(value)
@@ -186,7 +186,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultReminders property value. The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.
-            ## @param value Value to set for the default_reminders property.
+            ## @param value Value to set for the defaultReminders property.
             ## @return a void
             ## 
             def default_reminders=(value)
@@ -216,7 +216,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. A service name.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -260,7 +260,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isAnonymousJoinEnabled property value. True if the URL to join the appointment anonymously (anonymousJoinWebUrl) will be generated for the appointment booked for this service.
-            ## @param value Value to set for the is_anonymous_join_enabled property.
+            ## @param value Value to set for the isAnonymousJoinEnabled property.
             ## @return a void
             ## 
             def is_anonymous_join_enabled=(value)
@@ -275,7 +275,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
-            ## @param value Value to set for the is_hidden_from_customers property.
+            ## @param value Value to set for the isHiddenFromCustomers property.
             ## @return a void
             ## 
             def is_hidden_from_customers=(value)
@@ -290,7 +290,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
-            ## @param value Value to set for the is_location_online property.
+            ## @param value Value to set for the isLocationOnline property.
             ## @return a void
             ## 
             def is_location_online=(value)
@@ -305,7 +305,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the languageTag property value. The language of the self-service booking page.
-            ## @param value Value to set for the language_tag property.
+            ## @param value Value to set for the languageTag property.
             ## @return a void
             ## 
             def language_tag=(value)
@@ -320,7 +320,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maximumAttendeesCount property value. The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
-            ## @param value Value to set for the maximum_attendees_count property.
+            ## @param value Value to set for the maximumAttendeesCount property.
             ## @return a void
             ## 
             def maximum_attendees_count=(value)
@@ -350,7 +350,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the postBuffer property value. The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
-            ## @param value Value to set for the post_buffer property.
+            ## @param value Value to set for the postBuffer property.
             ## @return a void
             ## 
             def post_buffer=(value)
@@ -365,7 +365,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the preBuffer property value. The time to buffer before an appointment for this service can start.
-            ## @param value Value to set for the pre_buffer property.
+            ## @param value Value to set for the preBuffer property.
             ## @return a void
             ## 
             def pre_buffer=(value)
@@ -380,7 +380,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the schedulingPolicy property value. The set of policies that determine how appointments for this type of service should be created and managed.
-            ## @param value Value to set for the scheduling_policy property.
+            ## @param value Value to set for the schedulingPolicy property.
             ## @return a void
             ## 
             def scheduling_policy=(value)
@@ -424,7 +424,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the smsNotificationsEnabled property value. True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
-            ## @param value Value to set for the sms_notifications_enabled property.
+            ## @param value Value to set for the smsNotificationsEnabled property.
             ## @return a void
             ## 
             def sms_notifications_enabled=(value)
@@ -439,7 +439,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the staffMemberIds property value. Represents those staff members who provide this service.
-            ## @param value Value to set for the staff_member_ids property.
+            ## @param value Value to set for the staffMemberIds property.
             ## @return a void
             ## 
             def staff_member_ids=(value)
@@ -454,7 +454,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. The URL a customer uses to access the service.
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

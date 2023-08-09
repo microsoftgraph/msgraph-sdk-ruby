@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../microsoft_graph'
 require_relative '../../../../../../../../../models/approval_stage'
-require_relative '../../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../../identity_governance'
 require_relative '../../../../../../../app_consent'
 require_relative '../../../../../../app_consent_requests'
@@ -45,12 +45,12 @@ module MicrosoftGraph
                                                     request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## A collection of stages in the approval decision.
+                                            ## In Azure AD entitlement management, retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of approval_stage
                                             ## 
@@ -59,12 +59,12 @@ module MicrosoftGraph
                                                     request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApprovalStage.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Update the navigation property stages in identityGovernance
+                                            ## In Azure AD entitlement management, approve or deny an approvalStage object in an approval.
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of approval_stage
@@ -75,8 +75,8 @@ module MicrosoftGraph
                                                     body, request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApprovalStage.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
@@ -96,7 +96,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## A collection of stages in the approval decision.
+                                            ## In Azure AD entitlement management, retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -114,7 +114,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## Update the navigation property stages in identityGovernance
+                                            ## In Azure AD entitlement management, approve or deny an approvalStage object in an approval.
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
@@ -135,7 +135,7 @@ module MicrosoftGraph
                                             end
 
                                             ## 
-                                            # A collection of stages in the approval decision.
+                                            # In Azure AD entitlement management, retrieve the properties of an approvalStage object. An approval stage is contained within an approval object.
                                             class ApprovalStageItemRequestBuilderGetQueryParameters
                                                 
                                                 ## 

@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../../../models/planner_task_details'
 require_relative '../../../../../../../../me'
 require_relative '../../../../../../../planner'
@@ -45,12 +45,12 @@ module MicrosoftGraph
                                                     request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## Retrieve the properties and relationships of a **plannerTaskDetails** object.
+                                            ## Retrieve the properties and relationships of a plannerTaskDetails object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of planner_task_details
                                             ## 
@@ -59,8 +59,8 @@ module MicrosoftGraph
                                                     request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerTaskDetails.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
@@ -75,8 +75,8 @@ module MicrosoftGraph
                                                     body, request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerTaskDetails.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
@@ -96,7 +96,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## Retrieve the properties and relationships of a **plannerTaskDetails** object.
+                                            ## Retrieve the properties and relationships of a plannerTaskDetails object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -135,7 +135,7 @@ module MicrosoftGraph
                                             end
 
                                             ## 
-                                            # Retrieve the properties and relationships of a **plannerTaskDetails** object.
+                                            # Retrieve the properties and relationships of a plannerTaskDetails object.
                                             class DetailsRequestBuilderGetQueryParameters
                                                 
                                                 ## 

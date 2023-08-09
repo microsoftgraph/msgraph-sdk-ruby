@@ -16,6 +16,9 @@ module MicrosoftGraph
             # The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
             @hit_id
             ## 
+            # Indicates whether the current result is collapsed when the collapseProperties property in the searchRequest is used.
+            @is_collapsed
+            ## 
             # The OdataType property
             @odata_type
             ## 
@@ -39,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentSource property value. The name of the content source that the externalItem is part of.
-            ## @param value Value to set for the content_source property.
+            ## @param value Value to set for the contentSource property.
             ## @return a void
             ## 
             def content_source=(value)
@@ -84,6 +87,7 @@ module MicrosoftGraph
                 return {
                     "contentSource" => lambda {|n| @content_source = n.get_string_value() },
                     "hitId" => lambda {|n| @hit_id = n.get_string_value() },
+                    "isCollapsed" => lambda {|n| @is_collapsed = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "rank" => lambda {|n| @rank = n.get_number_value() },
                     "resource" => lambda {|n| @resource = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Entity.create_from_discriminator_value(pn) }) },
@@ -100,11 +104,26 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hitId property value. The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
-            ## @param value Value to set for the hit_id property.
+            ## @param value Value to set for the hitId property.
             ## @return a void
             ## 
             def hit_id=(value)
                 @hit_id = value
+            end
+            ## 
+            ## Gets the isCollapsed property value. Indicates whether the current result is collapsed when the collapseProperties property in the searchRequest is used.
+            ## @return a boolean
+            ## 
+            def is_collapsed
+                return @is_collapsed
+            end
+            ## 
+            ## Sets the isCollapsed property value. Indicates whether the current result is collapsed when the collapseProperties property in the searchRequest is used.
+            ## @param value Value to set for the isCollapsed property.
+            ## @return a void
+            ## 
+            def is_collapsed=(value)
+                @is_collapsed = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -115,7 +134,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -160,7 +179,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resultTemplateId property value. ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
-            ## @param value Value to set for the result_template_id property.
+            ## @param value Value to set for the resultTemplateId property.
             ## @return a void
             ## 
             def result_template_id=(value)
@@ -175,6 +194,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("contentSource", @content_source)
                 writer.write_string_value("hitId", @hit_id)
+                writer.write_boolean_value("isCollapsed", @is_collapsed)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_number_value("rank", @rank)
                 writer.write_object_value("resource", @resource)

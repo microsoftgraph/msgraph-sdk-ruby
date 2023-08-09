@@ -10,10 +10,10 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Collection of the certification controls associated with certification
+            # Collection of the certification controls associated with the certification.
             @certification_controls
             ## 
-            # Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
+            # The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.
             @certification_name
             ## 
             # The OdataType property
@@ -27,37 +27,37 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the certificationControls property value. Collection of the certification controls associated with certification
+            ## Gets the certificationControls property value. Collection of the certification controls associated with the certification.
             ## @return a certification_control
             ## 
             def certification_controls
                 return @certification_controls
             end
             ## 
-            ## Sets the certificationControls property value. Collection of the certification controls associated with certification
-            ## @param value Value to set for the certification_controls property.
+            ## Sets the certificationControls property value. Collection of the certification controls associated with the certification.
+            ## @param value Value to set for the certificationControls property.
             ## @return a void
             ## 
             def certification_controls=(value)
                 @certification_controls = value
             end
             ## 
-            ## Gets the certificationName property value. Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
+            ## Gets the certificationName property value. The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.
             ## @return a string
             ## 
             def certification_name
                 return @certification_name
             end
             ## 
-            ## Sets the certificationName property value. Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
-            ## @param value Value to set for the certification_name property.
+            ## Sets the certificationName property value. The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.
+            ## @param value Value to set for the certificationName property.
             ## @return a void
             ## 
             def certification_name=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

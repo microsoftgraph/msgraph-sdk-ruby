@@ -7,7 +7,7 @@ module MicrosoftGraph
         class InternetExplorerMode < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The siteLists property
+            # A collection of site lists to support Internet Explorer mode.
             @site_lists
             ## 
             ## Instantiates a new internetExplorerMode and sets the default values.
@@ -45,15 +45,15 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("siteLists", @site_lists)
             end
             ## 
-            ## Gets the siteLists property value. The siteLists property
+            ## Gets the siteLists property value. A collection of site lists to support Internet Explorer mode.
             ## @return a browser_site_list
             ## 
             def site_lists
                 return @site_lists
             end
             ## 
-            ## Sets the siteLists property value. The siteLists property
-            ## @param value Value to set for the site_lists property.
+            ## Sets the siteLists property value. A collection of site lists to support Internet Explorer mode.
+            ## @param value Value to set for the siteLists property.
             ## @return a void
             ## 
             def site_lists=(value)

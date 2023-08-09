@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the providerId property value. The providerId property
-            ## @param value Value to set for the provider_id property.
+            ## @param value Value to set for the providerId property.
             ## @return a void
             ## 
             def provider_id=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the providerName property value. The providerName property
-            ## @param value Value to set for the provider_name property.
+            ## @param value Value to set for the providerName property.
             ## @return a void
             ## 
             def provider_name=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the providerResourceId property value. The providerResourceId property
-            ## @param value Value to set for the provider_resource_id property.
+            ## @param value Value to set for the providerResourceId property.
             ## @return a void
             ## 
             def provider_resource_id=(value)

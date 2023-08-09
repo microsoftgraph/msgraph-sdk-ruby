@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
+            # For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
             @format
             ## 
             # The formula used to compute the value for this column.
@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
+            # The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
             @output_type
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -53,14 +53,14 @@ module MicrosoftGraph
                 return CalculatedColumn.new
             end
             ## 
-            ## Gets the format property value. For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
+            ## Gets the format property value. For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
             ## @return a string
             ## 
             def format
                 return @format
             end
             ## 
-            ## Sets the format property value. For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
+            ## Sets the format property value. For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
             ## @param value Value to set for the format property.
             ## @return a void
             ## 
@@ -103,22 +103,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
                 @odata_type = value
             end
             ## 
-            ## Gets the outputType property value. The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
+            ## Gets the outputType property value. The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
             ## @return a string
             ## 
             def output_type
                 return @output_type
             end
             ## 
-            ## Sets the outputType property value. The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
-            ## @param value Value to set for the output_type property.
+            ## Sets the outputType property value. The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
+            ## @param value Value to set for the outputType property.
             ## @return a void
             ## 
             def output_type=(value)

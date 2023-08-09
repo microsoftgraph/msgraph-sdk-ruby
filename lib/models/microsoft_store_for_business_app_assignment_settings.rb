@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties used to assign an Microsoft Store for Business mobile app to a group.
         class MicrosoftStoreForBusinessAppAssignmentSettings < MicrosoftGraph::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Whether or not to use device execution context for Microsoft Store for Business mobile app.
             @use_device_context
             ## 
-            ## Instantiates a new MicrosoftStoreForBusinessAppAssignmentSettings and sets the default values.
+            ## Instantiates a new microsoftStoreForBusinessAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the useDeviceContext property value. Whether or not to use device execution context for Microsoft Store for Business mobile app.
-            ## @param value Value to set for the use_device_context property.
+            ## @param value Value to set for the useDeviceContext property.
             ## @return a void
             ## 
             def use_device_context=(value)

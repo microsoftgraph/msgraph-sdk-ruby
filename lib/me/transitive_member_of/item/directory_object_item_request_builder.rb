@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/directory_object'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../me'
 require_relative '../transitive_member_of'
 require_relative './graph_administrative_unit/graph_administrative_unit_request_builder'
+require_relative './graph_directory_role/graph_directory_role_request_builder'
 require_relative './graph_group/graph_group_request_builder'
 require_relative './item'
 
@@ -20,6 +21,11 @@ module MicrosoftGraph
                     # Casts the previous resource to administrativeUnit.
                     def graph_administrative_unit()
                         return MicrosoftGraph::Me::TransitiveMemberOf::Item::GraphAdministrativeUnit::GraphAdministrativeUnitRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Casts the previous resource to directoryRole.
+                    def graph_directory_role()
+                        return MicrosoftGraph::Me::TransitiveMemberOf::Item::GraphDirectoryRole::GraphDirectoryRoleRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Casts the previous resource to group.
@@ -45,8 +51,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

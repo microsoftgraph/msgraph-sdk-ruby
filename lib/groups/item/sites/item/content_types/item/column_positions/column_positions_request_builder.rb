@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
 require_relative '../../../../../../../models/column_definition_collection_response'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../groups'
 require_relative '../../../../../item'
 require_relative '../../../../sites'
@@ -10,6 +10,7 @@ require_relative '../../content_types'
 require_relative '../item'
 require_relative './column_positions'
 require_relative './count/count_request_builder'
+require_relative './item/column_definition_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -27,6 +28,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::ColumnPositions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.
+                                    ## @param column_definition_id The unique identifier of columnDefinition
+                                    ## @return a column_definition_item_request_builder
+                                    ## 
+                                    def by_column_definition_id(column_definition_id)
+                                        raise StandardError, 'column_definition_id cannot be null' if column_definition_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["columnDefinition%2Did"] = column_definition_id
+                                        return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::ColumnPositions::Item::ColumnDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new ColumnPositionsRequestBuilder and sets the default values.
@@ -47,8 +59,8 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ColumnDefinitionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 

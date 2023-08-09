@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cameraMake property value. Camera manufacturer. Read-only.
-            ## @param value Value to set for the camera_make property.
+            ## @param value Value to set for the cameraMake property.
             ## @return a void
             ## 
             def camera_make=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cameraModel property value. Camera model. Read-only.
-            ## @param value Value to set for the camera_model property.
+            ## @param value Value to set for the cameraModel property.
             ## @return a void
             ## 
             def camera_model=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the exposureDenominator property value. The denominator for the exposure time fraction from the camera. Read-only.
-            ## @param value Value to set for the exposure_denominator property.
+            ## @param value Value to set for the exposureDenominator property.
             ## @return a void
             ## 
             def exposure_denominator=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the exposureNumerator property value. The numerator for the exposure time fraction from the camera. Read-only.
-            ## @param value Value to set for the exposure_numerator property.
+            ## @param value Value to set for the exposureNumerator property.
             ## @return a void
             ## 
             def exposure_numerator=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fNumber property value. The F-stop value from the camera. Read-only.
-            ## @param value Value to set for the f_number property.
+            ## @param value Value to set for the fNumber property.
             ## @return a void
             ## 
             def f_number=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the focalLength property value. The focal length from the camera. Read-only.
-            ## @param value Value to set for the focal_length property.
+            ## @param value Value to set for the focalLength property.
             ## @return a void
             ## 
             def focal_length=(value)
@@ -203,7 +203,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -252,7 +252,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the takenDateTime property value. Represents the date and time the photo was taken. Read-only.
-            ## @param value Value to set for the taken_date_time property.
+            ## @param value Value to set for the takenDateTime property.
             ## @return a void
             ## 
             def taken_date_time=(value)

@@ -68,7 +68,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentTypes property value. The collection of content types present in this list.
-            ## @param value Value to set for the content_types property.
+            ## @param value Value to set for the contentTypes property.
             ## @return a void
             ## 
             def content_types=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The displayable title of the list.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -204,7 +204,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-            ## @param value Value to set for the sharepoint_ids property.
+            ## @param value Value to set for the sharepointIds property.
             ## @return a void
             ## 
             def sharepoint_ids=(value)

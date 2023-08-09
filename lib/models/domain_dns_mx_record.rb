@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Value used when configuring the Preference/Priority property of the MX record at the DNS host.
             @preference
             ## 
-            ## Instantiates a new DomainDnsMxRecord and sets the default values.
+            ## Instantiates a new domainDnsMxRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mailExchange property value. Value used when configuring the answer/destination/value of the MX record at the DNS host.
-            ## @param value Value to set for the mail_exchange property.
+            ## @param value Value to set for the mailExchange property.
             ## @return a void
             ## 
             def mail_exchange=(value)

@@ -28,7 +28,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the AdditionalData property.
+                        ## @param value Value to set for the additionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -68,7 +68,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the managedEBookAssignments property value. The managedEBookAssignments property
-                        ## @param value Value to set for the managed_e_book_assignments property.
+                        ## @param value Value to set for the managedEBookAssignments property.
                         ## @return a void
                         ## 
                         def managed_e_book_assignments=(value)

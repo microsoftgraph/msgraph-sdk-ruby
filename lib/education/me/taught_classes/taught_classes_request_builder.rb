@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/education_class_collection_response'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../education'
 require_relative '../me'
 require_relative './count/count_request_builder'
+require_relative './item/education_class_item_request_builder'
 require_relative './taught_classes'
 
 module MicrosoftGraph
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Education::Me::TaughtClasses::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
+                    ## @param education_class_id The unique identifier of educationClass
+                    ## @return a education_class_item_request_builder
+                    ## 
+                    def by_education_class_id(education_class_id)
+                        raise StandardError, 'education_class_id cannot be null' if education_class_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["educationClass%2Did"] = education_class_id
+                        return MicrosoftGraph::Education::Me::TaughtClasses::Item::EducationClassItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new TaughtClassesRequestBuilder and sets the default values.
@@ -39,8 +51,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationClassCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

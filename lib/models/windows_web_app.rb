@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for Windows web apps.
         class WindowsWebApp < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -18,14 +20,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appUrl property value. Indicates the Windows web app URL. Example: 'https://www.contoso.com'
-            ## @param value Value to set for the app_url property.
+            ## @param value Value to set for the appUrl property.
             ## @return a void
             ## 
             def app_url=(value)
                 @app_url = value
             end
             ## 
-            ## Instantiates a new WindowsWebApp and sets the default values.
+            ## Instantiates a new windowsWebApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

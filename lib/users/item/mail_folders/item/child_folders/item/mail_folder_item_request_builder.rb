@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
 require_relative '../../../../../../models/mail_folder'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../users'
 require_relative '../../../../item'
 require_relative '../../../mail_folders'
@@ -9,15 +9,9 @@ require_relative '../../item'
 require_relative '../child_folders'
 require_relative './copy/copy_request_builder'
 require_relative './item'
-require_relative './message_rules/item/message_rule_item_request_builder'
 require_relative './message_rules/message_rules_request_builder'
-require_relative './messages/item/message_item_request_builder'
 require_relative './messages/messages_request_builder'
 require_relative './move/move_request_builder'
-require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
-require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
-require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
-require_relative './single_value_extended_properties/single_value_extended_properties_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -51,23 +45,13 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Move::MoveRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.
-                                def multi_value_extended_properties()
-                                    return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::MultiValueExtendedProperties::MultiValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.mailFolder entity.
-                                def single_value_extended_properties()
-                                    return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::SingleValueExtendedProperties::SingleValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
                                 ## Instantiates a new MailFolderItemRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
                                 ## @return a void
                                 ## 
                                 def initialize(path_parameters, request_adapter)
-                                    super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}{?%24select,%24expand}")
+                                    super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}{?includeHiddenFolders*,%24select,%24expand}")
                                 end
                                 ## 
                                 ## Delete navigation property childFolders for users
@@ -79,8 +63,8 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
@@ -93,42 +77,9 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MailFolder.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a message_rule_item_request_builder
-                                ## 
-                                def message_rules_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["messageRule%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::MessageRules::Item::MessageRuleItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a message_item_request_builder
-                                ## 
-                                def messages_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["message%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Messages::Item::MessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a multi_value_legacy_extended_property_item_request_builder
-                                ## 
-                                def multi_value_extended_properties_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["multiValueLegacyExtendedProperty%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::MultiValueExtendedProperties::Item::MultiValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Update the navigation property childFolders in users
@@ -142,20 +93,9 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MailFolder.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.mailFolder entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a single_value_legacy_extended_property_item_request_builder
-                                ## 
-                                def single_value_extended_properties_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["singleValueLegacyExtendedProperty%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::SingleValueExtendedProperties::Item::SingleValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Delete navigation property childFolders for users
@@ -220,6 +160,9 @@ module MicrosoftGraph
                                     # Expand related entities
                                     attr_accessor :expand
                                     ## 
+                                    # Include Hidden Folders
+                                    attr_accessor :include_hidden_folders
+                                    ## 
                                     # Select properties to be returned
                                     attr_accessor :select
                                     ## 
@@ -232,6 +175,8 @@ module MicrosoftGraph
                                         case original_name
                                             when "expand"
                                                 return "%24expand"
+                                            when "include_hidden_folders"
+                                                return "includeHiddenFolders"
                                             when "select"
                                                 return "%24select"
                                             else

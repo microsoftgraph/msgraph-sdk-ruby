@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../../models/o_data_errors/o_data_error'
 require_relative '../../../../../../../../../models/onenote_section'
+require_relative '../../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../../users'
 require_relative '../../../../../../../item'
 require_relative '../../../../../../onenote'
@@ -13,7 +13,6 @@ require_relative '../sections'
 require_relative './copy_to_notebook/copy_to_notebook_request_builder'
 require_relative './copy_to_section_group/copy_to_section_group_request_builder'
 require_relative './item'
-require_relative './pages/item/onenote_page_item_request_builder'
 require_relative './pages/pages_request_builder'
 require_relative './parent_notebook/parent_notebook_request_builder'
 require_relative './parent_section_group/parent_section_group_request_builder'
@@ -76,8 +75,8 @@ module MicrosoftGraph
                                                     request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
@@ -90,20 +89,9 @@ module MicrosoftGraph
                                                     request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnenoteSection.create_from_discriminator_value(pn) }, error_mapping)
-                                            end
-                                            ## 
-                                            ## Provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.
-                                            ## @param id Unique identifier of the item
-                                            ## @return a onenote_page_item_request_builder
-                                            ## 
-                                            def pages_by_id(id)
-                                                raise StandardError, 'id cannot be null' if id.nil?
-                                                url_tpl_params = @path_parameters.clone
-                                                url_tpl_params["onenotePage%2Did"] = id
-                                                return MicrosoftGraph::Users::Item::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Item::Pages::Item::OnenotePageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                             end
                                             ## 
                                             ## Update the navigation property sections in users
@@ -117,8 +105,8 @@ module MicrosoftGraph
                                                     body, request_configuration
                                                 )
                                                 error_mapping = Hash.new
-                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnenoteSection.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 

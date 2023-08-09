@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../../models/security/ediscovery_add_to_review_set_operation'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../../models/security_ediscovery_add_to_review_set_operation'
 require_relative '../../../../../../security'
 require_relative '../../../../../cases'
 require_relative '../../../../ediscovery_cases'
@@ -34,16 +34,16 @@ module MicrosoftGraph
                                     ## 
                                     ## Adds the results of the eDiscovery search to the specified reviewSet.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                    ## @return a Fiber of ediscovery_add_to_review_set_operation
+                                    ## @return a Fiber of security_ediscovery_add_to_review_set_operation
                                     ## 
                                     def get(request_configuration=nil)
                                         request_info = self.to_get_request_information(
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryAddToReviewSetOperation.create_from_discriminator_value(pn) }, error_mapping)
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryAddToReviewSetOperation.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
                                     ## Adds the results of the eDiscovery search to the specified reviewSet.

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Details of the scope this role is associated with.
             @scope
             ## 
-            ## Instantiates a new AccessReviewInstanceDecisionItemAzureRoleResource and sets the default values.
+            ## Instantiates a new accessReviewInstanceDecisionItemAzureRoleResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

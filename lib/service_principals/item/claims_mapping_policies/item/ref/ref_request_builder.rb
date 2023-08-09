@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../service_principals'
 require_relative '../../../item'
 require_relative '../../claims_mapping_policies'
@@ -27,7 +27,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsMappingPolicies/{claimsMappingPolicy%2Did}/$ref{?%40id*}")
                             end
                             ## 
-                            ## Delete ref of navigation property claimsMappingPolicies for servicePrincipals
+                            ## Remove a claimsMappingPolicy from a servicePrincipal.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -36,12 +36,12 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Delete ref of navigation property claimsMappingPolicies for servicePrincipals
+                            ## Remove a claimsMappingPolicy from a servicePrincipal.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -59,7 +59,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Delete ref of navigation property claimsMappingPolicies for servicePrincipals
+                            # Remove a claimsMappingPolicy from a servicePrincipal.
                             class RefRequestBuilderDeleteQueryParameters
                                 
                                 ## 

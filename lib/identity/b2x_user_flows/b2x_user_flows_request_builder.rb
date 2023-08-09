@@ -2,10 +2,11 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
 require_relative '../../models/b2x_identity_user_flow'
 require_relative '../../models/b2x_identity_user_flow_collection_response'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../identity'
 require_relative './b2x_user_flows'
 require_relative './count/count_request_builder'
+require_relative './item/b2x_identity_user_flow_item_request_builder'
 
 module MicrosoftGraph
     module Identity
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Identity::B2xUserFlows::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
+                ## @param b2x_identity_user_flow_id The unique identifier of b2xIdentityUserFlow
+                ## @return a b2x_identity_user_flow_item_request_builder
+                ## 
+                def by_b2x_identity_user_flow_id(b2x_identity_user_flow_id)
+                    raise StandardError, 'b2x_identity_user_flow_id cannot be null' if b2x_identity_user_flow_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["b2xIdentityUserFlow%2Did"] = b2x_identity_user_flow_id
+                    return MicrosoftGraph::Identity::B2xUserFlows::Item::B2xIdentityUserFlowItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new B2xUserFlowsRequestBuilder and sets the default values.
@@ -38,8 +50,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::B2xIdentityUserFlowCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -54,8 +66,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::B2xIdentityUserFlow.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 

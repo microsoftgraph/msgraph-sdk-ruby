@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A complex type to store registry rule data for a Win32 LOB app.
         class Win32LobAppRegistryRule < MicrosoftGraph::Models::Win32LobAppRule
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -33,7 +35,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the check32BitOn64System property value. A value indicating whether to search the 32-bit registry on 64-bit systems.
-            ## @param value Value to set for the check32_bit_on64_system property.
+            ## @param value Value to set for the check32BitOn64System property.
             ## @return a void
             ## 
             def check32_bit_on64_system=(value)
@@ -48,14 +50,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the comparisonValue property value. The registry comparison value.
-            ## @param value Value to set for the comparison_value property.
+            ## @param value Value to set for the comparisonValue property.
             ## @return a void
             ## 
             def comparison_value=(value)
                 @comparison_value = value
             end
             ## 
-            ## Instantiates a new Win32LobAppRegistryRule and sets the default values.
+            ## Instantiates a new win32LobAppRegistryRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -94,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyPath property value. The full path of the registry entry containing the value to detect.
-            ## @param value Value to set for the key_path property.
+            ## @param value Value to set for the keyPath property.
             ## @return a void
             ## 
             def key_path=(value)
@@ -109,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the operationType property value. Contains all supported registry data detection type.
-            ## @param value Value to set for the operation_type property.
+            ## @param value Value to set for the operationType property.
             ## @return a void
             ## 
             def operation_type=(value)
@@ -154,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the valueName property value. The name of the registry value to detect.
-            ## @param value Value to set for the value_name property.
+            ## @param value Value to set for the valueName property.
             ## @return a void
             ## 
             def value_name=(value)

@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @bundles = value
             end
             ## 
-            ## Instantiates a new Drive and sets the default values.
+            ## Instantiates a new drive and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
-            ## @param value Value to set for the drive_type property.
+            ## @param value Value to set for the driveType property.
             ## @return a void
             ## 
             def drive_type=(value)
@@ -224,7 +224,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharePointIds property value. The sharePointIds property
-            ## @param value Value to set for the share_point_ids property.
+            ## @param value Value to set for the sharePointIds property.
             ## @return a void
             ## 
             def share_point_ids=(value)

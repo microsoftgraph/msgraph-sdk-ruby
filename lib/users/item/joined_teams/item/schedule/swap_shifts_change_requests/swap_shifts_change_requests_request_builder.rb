@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../models/swap_shifts_change_request'
 require_relative '../../../../../../models/swap_shifts_change_request_collection_response'
 require_relative '../../../../../users'
@@ -9,6 +9,7 @@ require_relative '../../../joined_teams'
 require_relative '../../item'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/swap_shifts_change_request_item_request_builder'
 require_relative './swap_shifts_change_requests'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Users::Item::JoinedTeams::Item::Schedule::SwapShiftsChangeRequests::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the swapShiftsChangeRequests property of the microsoft.graph.schedule entity.
+                                ## @param swap_shifts_change_request_id The unique identifier of swapShiftsChangeRequest
+                                ## @return a swap_shifts_change_request_item_request_builder
+                                ## 
+                                def by_swap_shifts_change_request_id(swap_shifts_change_request_id)
+                                    raise StandardError, 'swap_shifts_change_request_id cannot be null' if swap_shifts_change_request_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["swapShiftsChangeRequest%2Did"] = swap_shifts_change_request_id
+                                    return MicrosoftGraph::Users::Item::JoinedTeams::Item::Schedule::SwapShiftsChangeRequests::Item::SwapShiftsChangeRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new SwapShiftsChangeRequestsRequestBuilder and sets the default values.
@@ -46,8 +58,8 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SwapShiftsChangeRequestCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
@@ -62,8 +74,8 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SwapShiftsChangeRequest.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 

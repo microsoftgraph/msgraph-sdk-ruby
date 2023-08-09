@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This class contains compliance settings for Android Work Profile.
         class AndroidWorkProfileCompliancePolicy < MicrosoftGraph::Models::DeviceCompliancePolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -70,7 +72,7 @@ module MicrosoftGraph
             # Require encryption on Android devices.
             @storage_require_encryption
             ## 
-            ## Instantiates a new AndroidWorkProfileCompliancePolicy and sets the default values.
+            ## Instantiates a new androidWorkProfileCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -95,7 +97,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
-            ## @param value Value to set for the device_threat_protection_enabled property.
+            ## @param value Value to set for the deviceThreatProtectionEnabled property.
             ## @return a void
             ## 
             def device_threat_protection_enabled=(value)
@@ -110,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
-            ## @param value Value to set for the device_threat_protection_required_security_level property.
+            ## @param value Value to set for the deviceThreatProtectionRequiredSecurityLevel property.
             ## @return a void
             ## 
             def device_threat_protection_required_security_level=(value)
@@ -154,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
-            ## @param value Value to set for the min_android_security_patch_level property.
+            ## @param value Value to set for the minAndroidSecurityPatchLevel property.
             ## @return a void
             ## 
             def min_android_security_patch_level=(value)
@@ -169,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the osMaximumVersion property value. Maximum Android version.
-            ## @param value Value to set for the os_maximum_version property.
+            ## @param value Value to set for the osMaximumVersion property.
             ## @return a void
             ## 
             def os_maximum_version=(value)
@@ -184,7 +186,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the osMinimumVersion property value. Minimum Android version.
-            ## @param value Value to set for the os_minimum_version property.
+            ## @param value Value to set for the osMinimumVersion property.
             ## @return a void
             ## 
             def os_minimum_version=(value)
@@ -199,7 +201,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
-            ## @param value Value to set for the password_expiration_days property.
+            ## @param value Value to set for the passwordExpirationDays property.
             ## @return a void
             ## 
             def password_expiration_days=(value)
@@ -214,7 +216,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
-            ## @param value Value to set for the password_minimum_length property.
+            ## @param value Value to set for the passwordMinimumLength property.
             ## @return a void
             ## 
             def password_minimum_length=(value)
@@ -229,7 +231,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
-            ## @param value Value to set for the password_minutes_of_inactivity_before_lock property.
+            ## @param value Value to set for the passwordMinutesOfInactivityBeforeLock property.
             ## @return a void
             ## 
             def password_minutes_of_inactivity_before_lock=(value)
@@ -244,7 +246,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 1 to 24
-            ## @param value Value to set for the password_previous_password_block_count property.
+            ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
             ## @return a void
             ## 
             def password_previous_password_block_count=(value)
@@ -259,7 +261,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequired property value. Require a password to unlock device.
-            ## @param value Value to set for the password_required property.
+            ## @param value Value to set for the passwordRequired property.
             ## @return a void
             ## 
             def password_required=(value)
@@ -274,7 +276,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequiredType property value. Android required password type.
-            ## @param value Value to set for the password_required_type property.
+            ## @param value Value to set for the passwordRequiredType property.
             ## @return a void
             ## 
             def password_required_type=(value)
@@ -289,7 +291,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
-            ## @param value Value to set for the security_block_jailbroken_devices property.
+            ## @param value Value to set for the securityBlockJailbrokenDevices property.
             ## @return a void
             ## 
             def security_block_jailbroken_devices=(value)
@@ -304,7 +306,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityDisableUsbDebugging property value. Disable USB debugging on Android devices.
-            ## @param value Value to set for the security_disable_usb_debugging property.
+            ## @param value Value to set for the securityDisableUsbDebugging property.
             ## @return a void
             ## 
             def security_disable_usb_debugging=(value)
@@ -319,7 +321,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityPreventInstallAppsFromUnknownSources property value. Require that devices disallow installation of apps from unknown sources.
-            ## @param value Value to set for the security_prevent_install_apps_from_unknown_sources property.
+            ## @param value Value to set for the securityPreventInstallAppsFromUnknownSources property.
             ## @return a void
             ## 
             def security_prevent_install_apps_from_unknown_sources=(value)
@@ -334,7 +336,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityRequireCompanyPortalAppIntegrity property value. Require the device to pass the Company Portal client app runtime integrity check.
-            ## @param value Value to set for the security_require_company_portal_app_integrity property.
+            ## @param value Value to set for the securityRequireCompanyPortalAppIntegrity property.
             ## @return a void
             ## 
             def security_require_company_portal_app_integrity=(value)
@@ -349,7 +351,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityRequireGooglePlayServices property value. Require Google Play Services to be installed and enabled on the device.
-            ## @param value Value to set for the security_require_google_play_services property.
+            ## @param value Value to set for the securityRequireGooglePlayServices property.
             ## @return a void
             ## 
             def security_require_google_play_services=(value)
@@ -364,7 +366,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
-            ## @param value Value to set for the security_require_safety_net_attestation_basic_integrity property.
+            ## @param value Value to set for the securityRequireSafetyNetAttestationBasicIntegrity property.
             ## @return a void
             ## 
             def security_require_safety_net_attestation_basic_integrity=(value)
@@ -379,7 +381,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
-            ## @param value Value to set for the security_require_safety_net_attestation_certified_device property.
+            ## @param value Value to set for the securityRequireSafetyNetAttestationCertifiedDevice property.
             ## @return a void
             ## 
             def security_require_safety_net_attestation_certified_device=(value)
@@ -394,7 +396,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityRequireUpToDateSecurityProviders property value. Require the device to have up to date security providers. The device will require Google Play Services to be enabled and up to date.
-            ## @param value Value to set for the security_require_up_to_date_security_providers property.
+            ## @param value Value to set for the securityRequireUpToDateSecurityProviders property.
             ## @return a void
             ## 
             def security_require_up_to_date_security_providers=(value)
@@ -409,7 +411,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
-            ## @param value Value to set for the security_require_verify_apps property.
+            ## @param value Value to set for the securityRequireVerifyApps property.
             ## @return a void
             ## 
             def security_require_verify_apps=(value)
@@ -454,7 +456,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the storageRequireEncryption property value. Require encryption on Android devices.
-            ## @param value Value to set for the storage_require_encryption property.
+            ## @param value Value to set for the storageRequireEncryption property.
             ## @return a void
             ## 
             def storage_require_encryption=(value)

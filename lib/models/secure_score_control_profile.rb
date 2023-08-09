@@ -50,7 +50,7 @@ module MicrosoftGraph
             # Service that owns the control (Exchange, Sharepoint, Azure AD).
             @service
             ## 
-            # List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+            # List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
             @threats
             ## 
             # The tier property
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the actionType property value. Control action type (Config, Review, Behavior).
-            ## @param value Value to set for the action_type property.
+            ## @param value Value to set for the actionType property.
             ## @return a void
             ## 
             def action_type=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the actionUrl property value. URL to where the control can be actioned.
-            ## @param value Value to set for the action_url property.
+            ## @param value Value to set for the actionUrl property.
             ## @return a void
             ## 
             def action_url=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the azureTenantId property value. GUID string for tenant ID.
-            ## @param value Value to set for the azure_tenant_id property.
+            ## @param value Value to set for the azureTenantId property.
             ## @return a void
             ## 
             def azure_tenant_id=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the complianceInformation property value. The collection of compliance information associated with secure score control
-            ## @param value Value to set for the compliance_information property.
+            ## @param value Value to set for the complianceInformation property.
             ## @return a void
             ## 
             def compliance_information=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
-            ## @param value Value to set for the control_category property.
+            ## @param value Value to set for the controlCategory property.
             ## @return a void
             ## 
             def control_category=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
-            ## @param value Value to set for the control_state_updates property.
+            ## @param value Value to set for the controlStateUpdates property.
             ## @return a void
             ## 
             def control_state_updates=(value)
@@ -221,7 +221,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the implementationCost property value. Resource cost of implemmentating control (low, moderate, high).
-            ## @param value Value to set for the implementation_cost property.
+            ## @param value Value to set for the implementationCost property.
             ## @return a void
             ## 
             def implementation_cost=(value)
@@ -236,7 +236,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -251,7 +251,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maxScore property value. max attainable score for the control.
-            ## @param value Value to set for the max_score property.
+            ## @param value Value to set for the maxScore property.
             ## @return a void
             ## 
             def max_score=(value)
@@ -296,7 +296,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the remediationImpact property value. Description of the impact on users of the remediation.
-            ## @param value Value to set for the remediation_impact property.
+            ## @param value Value to set for the remediationImpact property.
             ## @return a void
             ## 
             def remediation_impact=(value)
@@ -346,14 +346,14 @@ module MicrosoftGraph
                 @service = value
             end
             ## 
-            ## Gets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+            ## Gets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
             ## @return a string
             ## 
             def threats
                 return @threats
             end
             ## 
-            ## Sets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+            ## Sets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
             ## @param value Value to set for the threats property.
             ## @return a void
             ## 
@@ -399,7 +399,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userImpact property value. The userImpact property
-            ## @param value Value to set for the user_impact property.
+            ## @param value Value to set for the userImpact property.
             ## @return a void
             ## 
             def user_impact=(value)
@@ -414,7 +414,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the vendorInformation property value. The vendorInformation property
-            ## @param value Value to set for the vendor_information property.
+            ## @param value Value to set for the vendorInformation property.
             ## @return a void
             ## 
             def vendor_information=(value)

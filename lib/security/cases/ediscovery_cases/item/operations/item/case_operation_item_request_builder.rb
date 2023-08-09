@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../models/security/case_operation'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../models/security_case_operation'
 require_relative '../../../../../security'
 require_relative '../../../../cases'
 require_relative '../../../ediscovery_cases'
@@ -39,29 +39,29 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Returns a list of case caseOperation objects for this case.
+                                ## Read the properties and relationships of a caseOperation object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a Fiber of case_operation
+                                ## @return a Fiber of security_case_operation
                                 ## 
                                 def get(request_configuration=nil)
                                     request_info = self.to_get_request_information(
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::CaseOperation.create_from_discriminator_value(pn) }, error_mapping)
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityCaseOperation.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
                                 ## Update the navigation property operations in security
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a Fiber of case_operation
+                                ## @return a Fiber of security_case_operation
                                 ## 
                                 def patch(body, request_configuration=nil)
                                     raise StandardError, 'body cannot be null' if body.nil?
@@ -69,9 +69,9 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::CaseOperation.create_from_discriminator_value(pn) }, error_mapping)
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityCaseOperation.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
                                 ## Delete navigation property operations for security
@@ -90,7 +90,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Returns a list of case caseOperation objects for this case.
+                                ## Read the properties and relationships of a caseOperation object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -129,7 +129,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Returns a list of case caseOperation objects for this case.
+                                # Read the properties and relationships of a caseOperation object.
                                 class CaseOperationItemRequestBuilderGetQueryParameters
                                     
                                     ## 

@@ -24,7 +24,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the channelDescription property value. The updated description of the channel.
-            ## @param value Value to set for the channel_description property.
+            ## @param value Value to set for the channelDescription property.
             ## @return a void
             ## 
             def channel_description=(value)
@@ -39,14 +39,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the channelId property value. Unique identifier of the channel.
-            ## @param value Value to set for the channel_id property.
+            ## @param value Value to set for the channelId property.
             ## @return a void
             ## 
             def channel_id=(value)
                 @channel_id = value
             end
             ## 
-            ## Instantiates a new ChannelDescriptionUpdatedEventMessageDetail and sets the default values.
+            ## Instantiates a new channelDescriptionUpdatedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

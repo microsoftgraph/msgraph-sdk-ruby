@@ -23,7 +23,7 @@ module MicrosoftGraph
             # Numerical version of this instance of the Authenticator app.
             @phone_app_version
             ## 
-            ## Instantiates a new MicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+            ## Instantiates a new microsoftAuthenticatorAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceTag property value. Tags containing app metadata.
-            ## @param value Value to set for the device_tag property.
+            ## @param value Value to set for the deviceTag property.
             ## @return a void
             ## 
             def device_tag=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the device on which this app is registered.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the phoneAppVersion property value. Numerical version of this instance of the Authenticator app.
-            ## @param value Value to set for the phone_app_version property.
+            ## @param value Value to set for the phoneAppVersion property.
             ## @return a void
             ## 
             def phone_app_version=(value)

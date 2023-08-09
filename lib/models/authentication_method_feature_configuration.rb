@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the excludeTarget property value. A single entity that is excluded from this feature.
-            ## @param value Value to set for the exclude_target property.
+            ## @param value Value to set for the excludeTarget property.
             ## @return a void
             ## 
             def exclude_target=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeTarget property value. A single entity that is included in this feature.
-            ## @param value Value to set for the include_target property.
+            ## @param value Value to set for the includeTarget property.
             ## @return a void
             ## 
             def include_target=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

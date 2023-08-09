@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Count of the number of slots for the given open shift.
             @open_slot_count
             ## 
-            ## Instantiates a new OpenShiftItem and sets the default values.
+            ## Instantiates a new openShiftItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the openSlotCount property value. Count of the number of slots for the given open shift.
-            ## @param value Value to set for the open_slot_count property.
+            ## @param value Value to set for the openSlotCount property.
             ## @return a void
             ## 
             def open_slot_count=(value)

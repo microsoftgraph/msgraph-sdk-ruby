@@ -4,10 +4,12 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties used to assign an iOS VPP EBook to a group.
         class IosVppEBookAssignment < MicrosoftGraph::Models::ManagedEBookAssignment
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new IosVppEBookAssignment and sets the default values.
+            ## Instantiates a new iosVppEBookAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

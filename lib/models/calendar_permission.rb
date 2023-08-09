@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
-            ## @param value Value to set for the allowed_roles property.
+            ## @param value Value to set for the allowedRoles property.
             ## @return a void
             ## 
             def allowed_roles=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the emailAddress property value. Represents a sharee or delegate who has access to the calendar. For the 'My Organization' sharee, the address property is null. Read-only.
-            ## @param value Value to set for the email_address property.
+            ## @param value Value to set for the emailAddress property.
             ## @return a void
             ## 
             def email_address=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isInsideOrganization property value. True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
-            ## @param value Value to set for the is_inside_organization property.
+            ## @param value Value to set for the isInsideOrganization property.
             ## @return a void
             ## 
             def is_inside_organization=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isRemovable property value. True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
-            ## @param value Value to set for the is_removable property.
+            ## @param value Value to set for the isRemovable property.
             ## @return a void
             ## 
             def is_removable=(value)

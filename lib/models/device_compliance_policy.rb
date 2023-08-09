@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. DateTime the object was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceSettingStateSummaries property value. Compliance Setting State Device Summary
-            ## @param value Value to set for the device_setting_state_summaries property.
+            ## @param value Value to set for the deviceSettingStateSummaries property.
             ## @return a void
             ## 
             def device_setting_state_summaries=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceStatusOverview property value. Device compliance devices status overview
-            ## @param value Value to set for the device_status_overview property.
+            ## @param value Value to set for the deviceStatusOverview property.
             ## @return a void
             ## 
             def device_status_overview=(value)
@@ -167,7 +167,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceStatuses property value. List of DeviceComplianceDeviceStatus.
-            ## @param value Value to set for the device_statuses property.
+            ## @param value Value to set for the deviceStatuses property.
             ## @return a void
             ## 
             def device_statuses=(value)
@@ -182,7 +182,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Admin provided name of the device configuration.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -217,7 +217,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. DateTime the object was last modified.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -232,7 +232,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
-            ## @param value Value to set for the scheduled_actions_for_rule property.
+            ## @param value Value to set for the scheduledActionsForRule property.
             ## @return a void
             ## 
             def scheduled_actions_for_rule=(value)
@@ -268,7 +268,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userStatusOverview property value. Device compliance users status overview
-            ## @param value Value to set for the user_status_overview property.
+            ## @param value Value to set for the userStatusOverview property.
             ## @return a void
             ## 
             def user_status_overview=(value)
@@ -283,7 +283,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userStatuses property value. List of DeviceComplianceUserStatus.
-            ## @param value Value to set for the user_statuses property.
+            ## @param value Value to set for the userStatuses property.
             ## @return a void
             ## 
             def user_statuses=(value)

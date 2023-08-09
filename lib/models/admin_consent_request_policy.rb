@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEnabled property value. Specifies whether the admin consent request feature is enabled or disabled. Required.
-            ## @param value Value to set for the is_enabled property.
+            ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
             def is_enabled=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notifyReviewers property value. Specifies whether reviewers will receive notifications. Required.
-            ## @param value Value to set for the notify_reviewers property.
+            ## @param value Value to set for the notifyReviewers property.
             ## @return a void
             ## 
             def notify_reviewers=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the remindersEnabled property value. Specifies whether reviewers will receive reminder emails. Required.
-            ## @param value Value to set for the reminders_enabled property.
+            ## @param value Value to set for the remindersEnabled property.
             ## @return a void
             ## 
             def reminders_enabled=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the requestDurationInDays property value. Specifies the duration the request is active before it automatically expires if no decision is applied.
-            ## @param value Value to set for the request_duration_in_days property.
+            ## @param value Value to set for the requestDurationInDays property.
             ## @return a void
             ## 
             def request_duration_in_days=(value)

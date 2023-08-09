@@ -13,7 +13,7 @@ module MicrosoftGraph
             # ID of the servicePrincipal.
             @service_principal_id
             ## 
-            ## Instantiates a new SingleServicePrincipal and sets the default values.
+            ## Instantiates a new singleServicePrincipal and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipalId property value. ID of the servicePrincipal.
-            ## @param value Value to set for the service_principal_id property.
+            ## @param value Value to set for the servicePrincipalId property.
             ## @return a void
             ## 
             def service_principal_id=(value)

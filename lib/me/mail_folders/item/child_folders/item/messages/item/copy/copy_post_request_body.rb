@@ -35,7 +35,7 @@ module MicrosoftGraph
                                         end
                                         ## 
                                         ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                        ## @param value Value to set for the AdditionalData property.
+                                        ## @param value Value to set for the additionalData property.
                                         ## @return a void
                                         ## 
                                         def additional_data=(value)
@@ -58,15 +58,15 @@ module MicrosoftGraph
                                             return CopyPostRequestBody.new
                                         end
                                         ## 
-                                        ## Gets the destinationId property value. The DestinationId property
+                                        ## Gets the DestinationId property value. The DestinationId property
                                         ## @return a string
                                         ## 
                                         def destination_id
                                             return @destination_id
                                         end
                                         ## 
-                                        ## Sets the destinationId property value. The DestinationId property
-                                        ## @param value Value to set for the destination_id property.
+                                        ## Sets the DestinationId property value. The DestinationId property
+                                        ## @param value Value to set for the DestinationId property.
                                         ## @return a void
                                         ## 
                                         def destination_id=(value)

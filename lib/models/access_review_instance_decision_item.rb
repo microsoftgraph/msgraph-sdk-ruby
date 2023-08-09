@@ -23,6 +23,9 @@ module MicrosoftGraph
             # Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow. Supports $select, $orderby, and $filter (eq only).
             @decision
             ## 
+            # Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+            @insights
+            ## 
             # Justification left by the reviewer when they made the decision.
             @justification
             ## 
@@ -55,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessReviewId property value. The identifier of the accessReviewInstance parent. Supports $select. Read-only.
-            ## @param value Value to set for the access_review_id property.
+            ## @param value Value to set for the accessReviewId property.
             ## @return a void
             ## 
             def access_review_id=(value)
@@ -70,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appliedBy property value. The identifier of the user who applied the decision. Read-only.
-            ## @param value Value to set for the applied_by property.
+            ## @param value Value to set for the appliedBy property.
             ## @return a void
             ## 
             def applied_by=(value)
@@ -85,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appliedDateTime property value. The timestamp when the approval decision was applied.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't applied the decision or it was automatically applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
-            ## @param value Value to set for the applied_date_time property.
+            ## @param value Value to set for the appliedDateTime property.
             ## @return a void
             ## 
             def applied_date_time=(value)
@@ -100,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
-            ## @param value Value to set for the apply_result property.
+            ## @param value Value to set for the applyResult property.
             ## @return a void
             ## 
             def apply_result=(value)
@@ -148,6 +151,7 @@ module MicrosoftGraph
                     "appliedDateTime" => lambda {|n| @applied_date_time = n.get_date_time_value() },
                     "applyResult" => lambda {|n| @apply_result = n.get_string_value() },
                     "decision" => lambda {|n| @decision = n.get_string_value() },
+                    "insights" => lambda {|n| @insights = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::GovernanceInsight.create_from_discriminator_value(pn) }) },
                     "justification" => lambda {|n| @justification = n.get_string_value() },
                     "principal" => lambda {|n| @principal = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Identity.create_from_discriminator_value(pn) }) },
                     "principalLink" => lambda {|n| @principal_link = n.get_string_value() },
@@ -157,6 +161,21 @@ module MicrosoftGraph
                     "reviewedBy" => lambda {|n| @reviewed_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserIdentity.create_from_discriminator_value(pn) }) },
                     "reviewedDateTime" => lambda {|n| @reviewed_date_time = n.get_date_time_value() },
                 })
+            end
+            ## 
+            ## Gets the insights property value. Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+            ## @return a governance_insight
+            ## 
+            def insights
+                return @insights
+            end
+            ## 
+            ## Sets the insights property value. Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+            ## @param value Value to set for the insights property.
+            ## @return a void
+            ## 
+            def insights=(value)
+                @insights = value
             end
             ## 
             ## Gets the justification property value. Justification left by the reviewer when they made the decision.
@@ -197,7 +216,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the principalLink property value. A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.
-            ## @param value Value to set for the principal_link property.
+            ## @param value Value to set for the principalLink property.
             ## @return a void
             ## 
             def principal_link=(value)
@@ -242,7 +261,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceLink property value. A link to the resource. For example, https://graph.microsoft.com/v1.0/servicePrincipals/c86300f3-8695-4320-9f6e-32a2555f5ff8. Supports $select. Read-only.
-            ## @param value Value to set for the resource_link property.
+            ## @param value Value to set for the resourceLink property.
             ## @return a void
             ## 
             def resource_link=(value)
@@ -257,7 +276,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reviewedBy property value. The identifier of the reviewer.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Supports $select. Read-only.
-            ## @param value Value to set for the reviewed_by property.
+            ## @param value Value to set for the reviewedBy property.
             ## @return a void
             ## 
             def reviewed_by=(value)
@@ -272,7 +291,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reviewedDateTime property value. The timestamp when the review decision occurred. Supports $select. Read-only.
-            ## @param value Value to set for the reviewed_date_time property.
+            ## @param value Value to set for the reviewedDateTime property.
             ## @return a void
             ## 
             def reviewed_date_time=(value)
@@ -291,6 +310,7 @@ module MicrosoftGraph
                 writer.write_date_time_value("appliedDateTime", @applied_date_time)
                 writer.write_string_value("applyResult", @apply_result)
                 writer.write_string_value("decision", @decision)
+                writer.write_collection_of_object_values("insights", @insights)
                 writer.write_string_value("justification", @justification)
                 writer.write_object_value("principal", @principal)
                 writer.write_string_value("principalLink", @principal_link)

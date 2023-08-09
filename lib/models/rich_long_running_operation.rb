@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The type of the operation.
             @type
             ## 
-            ## Instantiates a new RichLongRunningOperation and sets the default values.
+            ## Instantiates a new richLongRunningOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -70,7 +70,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the percentageComplete property value. A value between 0 and 100 that indicates the progress of the operation.
-            ## @param value Value to set for the percentage_complete property.
+            ## @param value Value to set for the percentageComplete property.
             ## @return a void
             ## 
             def percentage_complete=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceId property value. The unique identifier for the result.
-            ## @param value Value to set for the resource_id property.
+            ## @param value Value to set for the resourceId property.
             ## @return a void
             ## 
             def resource_id=(value)

@@ -40,7 +40,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clickAction property value. The clickAction property
-            ## @param value Value to set for the click_action property.
+            ## @param value Value to set for the clickAction property.
             ## @return a void
             ## 
             def click_action=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clickDateTime property value. The clickDateTime property
-            ## @param value Value to set for the click_date_time property.
+            ## @param value Value to set for the clickDateTime property.
             ## @return a void
             ## 
             def click_date_time=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -162,7 +162,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sourceId property value. The sourceId property
-            ## @param value Value to set for the source_id property.
+            ## @param value Value to set for the sourceId property.
             ## @return a void
             ## 
             def source_id=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the uriDomain property value. The uriDomain property
-            ## @param value Value to set for the uri_domain property.
+            ## @param value Value to set for the uriDomain property.
             ## @return a void
             ## 
             def uri_domain=(value)

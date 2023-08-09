@@ -1,13 +1,14 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
 require_relative '../../../../../../../models/document_set_version'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../list'
 require_relative '../../../items'
 require_relative '../../item'
 require_relative '../document_set_versions'
+require_relative './fields/fields_request_builder'
 require_relative './item'
 require_relative './restore/restore_request_builder'
 
@@ -24,6 +25,11 @@ module MicrosoftGraph
                                 class DocumentSetVersionItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                     
                                     ## 
+                                    # Provides operations to manage the fields property of the microsoft.graph.listItemVersion entity.
+                                    def fields()
+                                        return MicrosoftGraph::Drives::Item::List::Items::Item::DocumentSetVersions::Item::Fields::FieldsRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
                                     # Provides operations to call the restore method.
                                     def restore()
                                         return MicrosoftGraph::Drives::Item::List::Items::Item::DocumentSetVersions::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
@@ -38,7 +44,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/documentSetVersions/{documentSetVersion%2Did}{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Delete navigation property documentSetVersions for drives
+                                    ## Delete a version of a document set in a list.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -47,12 +53,12 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Version information for a document set version created by a user.
+                                    ## Read the properties and relationships of a documentSetVersion object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of document_set_version
                                     ## 
@@ -61,8 +67,8 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DocumentSetVersion.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
@@ -77,12 +83,12 @@ module MicrosoftGraph
                                             body, request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DocumentSetVersion.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Delete navigation property documentSetVersions for drives
+                                    ## Delete a version of a document set in a list.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -98,7 +104,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Version information for a document set version created by a user.
+                                    ## Read the properties and relationships of a documentSetVersion object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -137,7 +143,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Version information for a document set version created by a user.
+                                    # Read the properties and relationships of a documentSetVersion object.
                                     class DocumentSetVersionItemRequestBuilderGetQueryParameters
                                         
                                         ## 

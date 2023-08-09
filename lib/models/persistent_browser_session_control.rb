@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Possible values are: always, never.
             @mode
             ## 
-            ## Instantiates a new PersistentBrowserSessionControl and sets the default values.
+            ## Instantiates a new persistentBrowserSessionControl and sets the default values.
             ## @return a void
             ## 
             def initialize()

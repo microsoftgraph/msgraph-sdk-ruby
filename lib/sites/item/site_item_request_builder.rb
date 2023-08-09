@@ -1,36 +1,28 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/site'
 require_relative '../sites'
 require_relative './analytics/analytics_request_builder'
 require_relative './columns/columns_request_builder'
-require_relative './columns/item/column_definition_item_request_builder'
 require_relative './content_types/content_types_request_builder'
-require_relative './content_types/item/content_type_item_request_builder'
+require_relative './created_by_user/created_by_user_request_builder'
 require_relative './drive/drive_request_builder'
 require_relative './drives/drives_request_builder'
-require_relative './drives/item/drive_item_request_builder'
 require_relative './external_columns/external_columns_request_builder'
-require_relative './external_columns/item/column_definition_item_request_builder'
 require_relative './get_activities_by_interval/get_activities_by_interval_request_builder'
 require_relative './get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval_request_builder'
 require_relative './get_applicable_content_types_for_list_with_list_id/get_applicable_content_types_for_list_with_list_id_request_builder'
 require_relative './get_by_path_with_path/get_by_path_with_path_request_builder'
 require_relative './item'
-require_relative './items/item/base_item_item_request_builder'
 require_relative './items/items_request_builder'
-require_relative './lists/item/list_item_request_builder'
+require_relative './last_modified_by_user/last_modified_by_user_request_builder'
 require_relative './lists/lists_request_builder'
 require_relative './onenote/onenote_request_builder'
-require_relative './operations/item/rich_long_running_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
-require_relative './permissions/item/permission_item_request_builder'
 require_relative './permissions/permissions_request_builder'
-require_relative './sites/item/site_item_request_builder'
 require_relative './sites/sites_request_builder'
 require_relative './term_store/term_store_request_builder'
-require_relative './term_stores/item/store_item_request_builder'
 require_relative './term_stores/term_stores_request_builder'
 
 module MicrosoftGraph
@@ -56,6 +48,11 @@ module MicrosoftGraph
                     return MicrosoftGraph::Sites::Item::ContentTypes::ContentTypesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+                def created_by_user()
+                    return MicrosoftGraph::Sites::Item::CreatedByUser::CreatedByUserRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the drive property of the microsoft.graph.site entity.
                 def drive()
                     return MicrosoftGraph::Sites::Item::Drive::DriveRequestBuilder.new(@path_parameters, @request_adapter)
@@ -79,6 +76,11 @@ module MicrosoftGraph
                 # Provides operations to manage the items property of the microsoft.graph.site entity.
                 def items()
                     return MicrosoftGraph::Sites::Item::Items::ItemsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+                def last_modified_by_user()
+                    return MicrosoftGraph::Sites::Item::LastModifiedByUser::LastModifiedByUserRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the lists property of the microsoft.graph.site entity.
@@ -116,17 +118,6 @@ module MicrosoftGraph
                     return MicrosoftGraph::Sites::Item::TermStores::TermStoresRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                ## Provides operations to manage the columns property of the microsoft.graph.site entity.
-                ## @param id Unique identifier of the item
-                ## @return a column_definition_item_request_builder
-                ## 
-                def columns_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["columnDefinition%2Did"] = id
-                    return MicrosoftGraph::Sites::Item::Columns::Item::ColumnDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Instantiates a new SiteItemRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -136,40 +127,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/sites/{site%2Did}{?%24select,%24expand}")
                 end
                 ## 
-                ## Provides operations to manage the contentTypes property of the microsoft.graph.site entity.
-                ## @param id Unique identifier of the item
-                ## @return a content_type_item_request_builder
-                ## 
-                def content_types_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["contentType%2Did"] = id
-                    return MicrosoftGraph::Sites::Item::ContentTypes::Item::ContentTypeItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the drives property of the microsoft.graph.site entity.
-                ## @param id Unique identifier of the item
-                ## @return a drive_item_request_builder
-                ## 
-                def drives_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["drive%2Did"] = id
-                    return MicrosoftGraph::Sites::Item::Drives::Item::DriveItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the externalColumns property of the microsoft.graph.site entity.
-                ## @param id Unique identifier of the item
-                ## @return a column_definition_item_request_builder
-                ## 
-                def external_columns_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["columnDefinition%2Did"] = id
-                    return MicrosoftGraph::Sites::Item::ExternalColumns::Item::ColumnDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
+                ## Retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of site
                 ## 
@@ -178,8 +136,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Site.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -214,39 +172,6 @@ module MicrosoftGraph
                     return GetByPathWithPathRequestBuilder.new(@path_parameters, @request_adapter, path)
                 end
                 ## 
-                ## Provides operations to manage the items property of the microsoft.graph.site entity.
-                ## @param id Unique identifier of the item
-                ## @return a base_item_item_request_builder
-                ## 
-                def items_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["baseItem%2Did"] = id
-                    return MicrosoftGraph::Sites::Item::Items::Item::BaseItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the lists property of the microsoft.graph.site entity.
-                ## @param id Unique identifier of the item
-                ## @return a list_item_request_builder
-                ## 
-                def lists_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["list%2Did"] = id
-                    return MicrosoftGraph::Sites::Item::Lists::Item::ListItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the operations property of the microsoft.graph.site entity.
-                ## @param id Unique identifier of the item
-                ## @return a rich_long_running_operation_item_request_builder
-                ## 
-                def operations_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["richLongRunningOperation%2Did"] = id
-                    return MicrosoftGraph::Sites::Item::Operations::Item::RichLongRunningOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Update entity in sites
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
@@ -258,45 +183,12 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Site.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the permissions property of the microsoft.graph.site entity.
-                ## @param id Unique identifier of the item
-                ## @return a permission_item_request_builder
-                ## 
-                def permissions_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["permission%2Did"] = id
-                    return MicrosoftGraph::Sites::Item::Permissions::Item::PermissionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the sites property of the microsoft.graph.site entity.
-                ## @param id Unique identifier of the item
-                ## @return a site_item_request_builder
-                ## 
-                def sites_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["site%2Did1"] = id
-                    return MicrosoftGraph::Sites::Item::Sites::Item::SiteItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the termStores property of the microsoft.graph.site entity.
-                ## @param id Unique identifier of the item
-                ## @return a store_item_request_builder
-                ## 
-                def term_stores_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["store%2Did"] = id
-                    return MicrosoftGraph::Sites::Item::TermStores::Item::StoreItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
+                ## Retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -335,7 +227,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
+                # Retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
                 class SiteItemRequestBuilderGetQueryParameters
                     
                     ## 

@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../models/todo_task'
 require_relative '../../../../../models/todo_task_collection_response'
 require_relative '../../../../me'
@@ -9,6 +9,7 @@ require_relative '../../lists'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/todo_task_item_request_builder'
 require_relative './tasks'
 
 module MicrosoftGraph
@@ -32,6 +33,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Me::Todo::Lists::Item::Tasks::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
+                            ## @param todo_task_id The unique identifier of todoTask
+                            ## @return a todo_task_item_request_builder
+                            ## 
+                            def by_todo_task_id(todo_task_id)
+                                raise StandardError, 'todo_task_id cannot be null' if todo_task_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["todoTask%2Did"] = todo_task_id
+                                return MicrosoftGraph::Me::Todo::Lists::Item::Tasks::Item::TodoTaskItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new TasksRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -41,7 +53,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/me/todo/lists/{todoTaskList%2Did}/tasks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Get the **todoTask** resources from the **tasks** navigation property of a specified todoTaskList.
+                            ## Get the todoTask resources from the tasks navigation property of a specified todoTaskList.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of todo_task_collection_response
                             ## 
@@ -50,8 +62,8 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TodoTaskCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
@@ -66,12 +78,12 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TodoTask.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get the **todoTask** resources from the **tasks** navigation property of a specified todoTaskList.
+                            ## Get the todoTask resources from the tasks navigation property of a specified todoTaskList.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -110,7 +122,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get the **todoTask** resources from the **tasks** navigation property of a specified todoTaskList.
+                            # Get the todoTask resources from the tasks navigation property of a specified todoTaskList.
                             class TasksRequestBuilderGetQueryParameters
                                 
                                 ## 

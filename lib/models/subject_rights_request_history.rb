@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -52,7 +52,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the changedBy property value. Identity of the user who changed the  subject rights request.
-            ## @param value Value to set for the changed_by property.
+            ## @param value Value to set for the changedBy property.
             ## @return a void
             ## 
             def changed_by=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the eventDateTime property value. Data and time when the entity was changed.
-            ## @param value Value to set for the event_date_time property.
+            ## @param value Value to set for the eventDateTime property.
             ## @return a void
             ## 
             def event_date_time=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
-            ## @param value Value to set for the stage_status property.
+            ## @param value Value to set for the stageStatus property.
             ## @return a void
             ## 
             def stage_status=(value)

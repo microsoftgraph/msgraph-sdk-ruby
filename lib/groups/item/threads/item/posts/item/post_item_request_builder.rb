@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../models/post'
 require_relative '../../../../../groups'
 require_relative '../../../../item'
@@ -8,17 +8,11 @@ require_relative '../../../threads'
 require_relative '../../item'
 require_relative '../posts'
 require_relative './attachments/attachments_request_builder'
-require_relative './attachments/item/attachment_item_request_builder'
 require_relative './extensions/extensions_request_builder'
-require_relative './extensions/item/extension_item_request_builder'
 require_relative './forward/forward_request_builder'
 require_relative './in_reply_to/in_reply_to_request_builder'
 require_relative './item'
-require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
-require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
 require_relative './reply/reply_request_builder'
-require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
-require_relative './single_value_extended_properties/single_value_extended_properties_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -52,30 +46,9 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::InReplyTo::InReplyToRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
-                                def multi_value_extended_properties()
-                                    return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::MultiValueExtendedProperties::MultiValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
                                 # Provides operations to call the reply method.
                                 def reply()
                                     return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::Reply::ReplyRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
-                                def single_value_extended_properties()
-                                    return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::SingleValueExtendedProperties::SingleValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the attachments property of the microsoft.graph.post entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a attachment_item_request_builder
-                                ## 
-                                def attachments_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["attachment%2Did"] = id
-                                    return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::Attachments::Item::AttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new PostItemRequestBuilder and sets the default values.
@@ -87,17 +60,6 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}{?%24select,%24expand}")
                                 end
                                 ## 
-                                ## Provides operations to manage the extensions property of the microsoft.graph.post entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a extension_item_request_builder
-                                ## 
-                                def extensions_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["extension%2Did"] = id
-                                    return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
                                 ## Get posts from groups
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of post
@@ -107,31 +69,9 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Post.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a multi_value_legacy_extended_property_item_request_builder
-                                ## 
-                                def multi_value_extended_properties_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["multiValueLegacyExtendedProperty%2Did"] = id
-                                    return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::MultiValueExtendedProperties::Item::MultiValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.post entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a single_value_legacy_extended_property_item_request_builder
-                                ## 
-                                def single_value_extended_properties_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["singleValueLegacyExtendedProperty%2Did"] = id
-                                    return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::SingleValueExtendedProperties::Item::SingleValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Get posts from groups

@@ -1,12 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative '../models/o_data_errors/o_data_error'
+require_relative '../models/o_data_errors_o_data_error'
 require_relative '../models/teamwork'
 require_relative './deleted_teams/deleted_teams_request_builder'
-require_relative './deleted_teams/item/deleted_team_item_request_builder'
 require_relative './send_activity_notification_to_recipients/send_activity_notification_to_recipients_request_builder'
+require_relative './teams_app_settings/teams_app_settings_request_builder'
 require_relative './teamwork'
-require_relative './workforce_integrations/item/workforce_integration_item_request_builder'
 require_relative './workforce_integrations/workforce_integrations_request_builder'
 
 module MicrosoftGraph
@@ -26,6 +25,11 @@ module MicrosoftGraph
                 return MicrosoftGraph::Teamwork::SendActivityNotificationToRecipients::SendActivityNotificationToRecipientsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the teamsAppSettings property of the microsoft.graph.teamwork entity.
+            def teams_app_settings()
+                return MicrosoftGraph::Teamwork::TeamsAppSettings::TeamsAppSettingsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
             def workforce_integrations()
                 return MicrosoftGraph::Teamwork::WorkforceIntegrations::WorkforceIntegrationsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -40,17 +44,6 @@ module MicrosoftGraph
                 super(path_parameters, request_adapter, "{+baseurl}/teamwork{?%24select,%24expand}")
             end
             ## 
-            ## Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
-            ## @param id Unique identifier of the item
-            ## @return a deleted_team_item_request_builder
-            ## 
-            def deleted_teams_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["deletedTeam%2Did"] = id
-                return MicrosoftGraph::Teamwork::DeletedTeams::Item::DeletedTeamItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Get teamwork
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of teamwork
@@ -60,8 +53,8 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Teamwork.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -76,8 +69,8 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Teamwork.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -117,17 +110,6 @@ module MicrosoftGraph
                 end
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
-            end
-            ## 
-            ## Provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
-            ## @param id Unique identifier of the item
-            ## @return a workforce_integration_item_request_builder
-            ## 
-            def workforce_integrations_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["workforceIntegration%2Did"] = id
-                return MicrosoftGraph::Teamwork::WorkforceIntegrations::Item::WorkforceIntegrationItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
 
             ## 

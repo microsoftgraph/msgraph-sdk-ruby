@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../../../../../../../../models/term_store/relation'
+require_relative '../../../../../../../../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../../../../../../../../models/term_store_relation'
 require_relative '../../../../../../../../../../../../groups'
 require_relative '../../../../../../../../../../../item'
 require_relative '../../../../../../../../../../sites'
@@ -71,29 +71,29 @@ module MicrosoftGraph
                                                                     request_configuration
                                                                 )
                                                                 error_mapping = Hash.new
-                                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                                             end
                                                             ## 
                                                             ## Indicates which terms have been pinned or reused directly under the set.
                                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                                            ## @return a Fiber of relation
+                                                            ## @return a Fiber of term_store_relation
                                                             ## 
                                                             def get(request_configuration=nil)
                                                                 request_info = self.to_get_request_information(
                                                                     request_configuration
                                                                 )
                                                                 error_mapping = Hash.new
-                                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Relation.create_from_discriminator_value(pn) }, error_mapping)
+                                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreRelation.create_from_discriminator_value(pn) }, error_mapping)
                                                             end
                                                             ## 
                                                             ## Update the navigation property relations in groups
                                                             ## @param body The request body
                                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                                            ## @return a Fiber of relation
+                                                            ## @return a Fiber of term_store_relation
                                                             ## 
                                                             def patch(body, request_configuration=nil)
                                                                 raise StandardError, 'body cannot be null' if body.nil?
@@ -101,9 +101,9 @@ module MicrosoftGraph
                                                                     body, request_configuration
                                                                 )
                                                                 error_mapping = Hash.new
-                                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Relation.create_from_discriminator_value(pn) }, error_mapping)
+                                                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreRelation.create_from_discriminator_value(pn) }, error_mapping)
                                                             end
                                                             ## 
                                                             ## Delete navigation property relations for groups

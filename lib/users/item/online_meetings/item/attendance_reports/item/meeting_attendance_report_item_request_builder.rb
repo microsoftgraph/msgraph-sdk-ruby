@@ -1,14 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
 require_relative '../../../../../../models/meeting_attendance_report'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../users'
 require_relative '../../../../item'
 require_relative '../../../online_meetings'
 require_relative '../../item'
 require_relative '../attendance_reports'
 require_relative './attendance_records/attendance_records_request_builder'
-require_relative './attendance_records/item/attendance_record_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -26,17 +25,6 @@ module MicrosoftGraph
                                 # Provides operations to manage the attendanceRecords property of the microsoft.graph.meetingAttendanceReport entity.
                                 def attendance_records()
                                     return MicrosoftGraph::Users::Item::OnlineMeetings::Item::AttendanceReports::Item::AttendanceRecords::AttendanceRecordsRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the attendanceRecords property of the microsoft.graph.meetingAttendanceReport entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a attendance_record_item_request_builder
-                                ## 
-                                def attendance_records_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["attendanceRecord%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::OnlineMeetings::Item::AttendanceReports::Item::AttendanceRecords::Item::AttendanceRecordItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new MeetingAttendanceReportItemRequestBuilder and sets the default values.
@@ -57,12 +45,12 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## The attendance reports of an online meeting. Read-only.
+                                ## Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of meeting_attendance_report
                                 ## 
@@ -71,8 +59,8 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MeetingAttendanceReport.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
@@ -87,8 +75,8 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MeetingAttendanceReport.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
@@ -108,7 +96,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## The attendance reports of an online meeting. Read-only.
+                                ## Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -147,7 +135,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # The attendance reports of an online meeting. Read-only.
+                                # Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
                                 class MeetingAttendanceReportItemRequestBuilderGetQueryParameters
                                     
                                     ## 

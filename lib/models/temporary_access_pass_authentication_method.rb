@@ -29,7 +29,7 @@ module MicrosoftGraph
             # The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.
             @temporary_access_pass
             ## 
-            ## Instantiates a new TemporaryAccessPassAuthenticationMethod and sets the default values.
+            ## Instantiates a new temporaryAccessPassAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The date and time when the Temporary Access Pass was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isUsable property value. The state of the authentication method that indicates whether it's currently usable by the user.
-            ## @param value Value to set for the is_usable property.
+            ## @param value Value to set for the isUsable property.
             ## @return a void
             ## 
             def is_usable=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isUsableOnce property value. Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.
-            ## @param value Value to set for the is_usable_once property.
+            ## @param value Value to set for the isUsableOnce property.
             ## @return a void
             ## 
             def is_usable_once=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lifetimeInMinutes property value. The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).
-            ## @param value Value to set for the lifetime_in_minutes property.
+            ## @param value Value to set for the lifetimeInMinutes property.
             ## @return a void
             ## 
             def lifetime_in_minutes=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the methodUsabilityReason property value. Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.
-            ## @param value Value to set for the method_usability_reason property.
+            ## @param value Value to set for the methodUsabilityReason property.
             ## @return a void
             ## 
             def method_usability_reason=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDateTime property value. The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.
-            ## @param value Value to set for the start_date_time property.
+            ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
             def start_date_time=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the temporaryAccessPass property value. The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.
-            ## @param value Value to set for the temporary_access_pass property.
+            ## @param value Value to set for the temporaryAccessPass property.
             ## @return a void
             ## 
             def temporary_access_pass=(value)

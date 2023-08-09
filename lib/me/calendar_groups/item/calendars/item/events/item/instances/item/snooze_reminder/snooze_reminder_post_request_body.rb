@@ -40,7 +40,7 @@ module MicrosoftGraph
                                                 end
                                                 ## 
                                                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                                ## @param value Value to set for the AdditionalData property.
+                                                ## @param value Value to set for the additionalData property.
                                                 ## @return a void
                                                 ## 
                                                 def additional_data=(value)
@@ -72,15 +72,15 @@ module MicrosoftGraph
                                                     }
                                                 end
                                                 ## 
-                                                ## Gets the newReminderTime property value. The NewReminderTime property
+                                                ## Gets the NewReminderTime property value. The NewReminderTime property
                                                 ## @return a date_time_time_zone
                                                 ## 
                                                 def new_reminder_time
                                                     return @new_reminder_time
                                                 end
                                                 ## 
-                                                ## Sets the newReminderTime property value. The NewReminderTime property
-                                                ## @param value Value to set for the new_reminder_time property.
+                                                ## Sets the NewReminderTime property value. The NewReminderTime property
+                                                ## @param value Value to set for the NewReminderTime property.
                                                 ## @return a void
                                                 ## 
                                                 def new_reminder_time=(value)

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The errorInformation property
+            # If status is not success/ skipped details for the error are contained in this.
             @error_information
             ## 
             # The OdataType property
@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -50,15 +50,15 @@ module MicrosoftGraph
                 return ProvisioningStatusInfo.new
             end
             ## 
-            ## Gets the errorInformation property value. The errorInformation property
+            ## Gets the errorInformation property value. If status is not success/ skipped details for the error are contained in this.
             ## @return a provisioning_error_info
             ## 
             def error_information
                 return @error_information
             end
             ## 
-            ## Sets the errorInformation property value. The errorInformation property
-            ## @param value Value to set for the error_information property.
+            ## Sets the errorInformation property value. If status is not success/ skipped details for the error are contained in this.
+            ## @param value Value to set for the errorInformation property.
             ## @return a void
             ## 
             def error_information=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

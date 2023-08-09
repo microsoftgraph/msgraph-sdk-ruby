@@ -2,12 +2,13 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/booking_appointment'
 require_relative '../../../../models/booking_appointment_collection_response'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../solutions'
 require_relative '../../booking_businesses'
 require_relative '../item'
 require_relative './calendar_view'
 require_relative './count/count_request_builder'
+require_relative './item/booking_appointment_item_request_builder'
 
 module MicrosoftGraph
     module Solutions
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Solutions::BookingBusinesses::Item::CalendarView::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
+                        ## @param booking_appointment_id The unique identifier of bookingAppointment
+                        ## @return a booking_appointment_item_request_builder
+                        ## 
+                        def by_booking_appointment_id(booking_appointment_id)
+                            raise StandardError, 'booking_appointment_id cannot be null' if booking_appointment_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["bookingAppointment%2Did"] = booking_appointment_id
+                            return MicrosoftGraph::Solutions::BookingBusinesses::Item::CalendarView::Item::BookingAppointmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new CalendarViewRequestBuilder and sets the default values.
@@ -42,8 +54,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BookingAppointmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -58,8 +70,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BookingAppointment.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -145,6 +157,8 @@ module MicrosoftGraph
                                 case original_name
                                     when "count"
                                         return "%24count"
+                                    when "end_escaped"
+                                        return "end"
                                     when "expand"
                                         return "%24expand"
                                     when "filter"
@@ -157,6 +171,8 @@ module MicrosoftGraph
                                         return "%24select"
                                     when "skip"
                                         return "%24skip"
+                                    when "start"
+                                        return "start"
                                     when "top"
                                         return "%24top"
                                     else

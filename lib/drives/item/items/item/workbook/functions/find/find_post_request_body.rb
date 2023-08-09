@@ -40,7 +40,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the findText property value. The findText property
-                                    ## @param value Value to set for the find_text property.
+                                    ## @param value Value to set for the findText property.
                                     ## @return a void
                                     ## 
                                     def find_text=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the startNum property value. The startNum property
-                                    ## @param value Value to set for the start_num property.
+                                    ## @param value Value to set for the startNum property.
                                     ## @return a void
                                     ## 
                                     def start_num=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the withinText property value. The withinText property
-                                    ## @param value Value to set for the within_text property.
+                                    ## @param value Value to set for the withinText property.
                                     ## @return a void
                                     ## 
                                     def within_text=(value)

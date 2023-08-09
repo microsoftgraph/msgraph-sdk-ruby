@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The passcode used to join the meeting. Optional.
             @passcode
             ## 
-            ## Instantiates a new JoinMeetingIdMeetingInfo and sets the default values.
+            ## Instantiates a new joinMeetingIdMeetingInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the joinMeetingId property value. The ID used to join the meeting.
-            ## @param value Value to set for the join_meeting_id property.
+            ## @param value Value to set for the joinMeetingId property.
             ## @return a void
             ## 
             def join_meeting_id=(value)

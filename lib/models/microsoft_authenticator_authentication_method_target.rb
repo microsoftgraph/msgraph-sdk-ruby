@@ -18,14 +18,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the authenticationMode property value. The authenticationMode property
-            ## @param value Value to set for the authentication_mode property.
+            ## @param value Value to set for the authenticationMode property.
             ## @return a void
             ## 
             def authentication_mode=(value)
                 @authentication_mode = value
             end
             ## 
-            ## Instantiates a new MicrosoftAuthenticatorAuthenticationMethodTarget and sets the default values.
+            ## Instantiates a new microsoftAuthenticatorAuthenticationMethodTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

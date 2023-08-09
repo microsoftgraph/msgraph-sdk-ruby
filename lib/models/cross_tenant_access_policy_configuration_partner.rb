@@ -10,6 +10,9 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
+            @automatic_user_consent_settings
+            ## 
             # Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
             @b2b_collaboration_inbound
             ## 
@@ -21,6 +24,9 @@ module MicrosoftGraph
             ## 
             # Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
             @b2b_direct_connect_outbound
+            ## 
+            # Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
+            @identity_synchronization
             ## 
             # Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
             @inbound_trust
@@ -42,11 +48,26 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
+            end
+            ## 
+            ## Gets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
+            ## @return a inbound_outbound_policy_configuration
+            ## 
+            def automatic_user_consent_settings
+                return @automatic_user_consent_settings
+            end
+            ## 
+            ## Sets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
+            ## @param value Value to set for the automaticUserConsentSettings property.
+            ## @return a void
+            ## 
+            def automatic_user_consent_settings=(value)
+                @automatic_user_consent_settings = value
             end
             ## 
             ## Gets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
@@ -57,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
-            ## @param value Value to set for the b2b_collaboration_inbound property.
+            ## @param value Value to set for the b2bCollaborationInbound property.
             ## @return a void
             ## 
             def b2b_collaboration_inbound=(value)
@@ -72,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
-            ## @param value Value to set for the b2b_collaboration_outbound property.
+            ## @param value Value to set for the b2bCollaborationOutbound property.
             ## @return a void
             ## 
             def b2b_collaboration_outbound=(value)
@@ -87,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the b2bDirectConnectInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.
-            ## @param value Value to set for the b2b_direct_connect_inbound property.
+            ## @param value Value to set for the b2bDirectConnectInbound property.
             ## @return a void
             ## 
             def b2b_direct_connect_inbound=(value)
@@ -102,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
-            ## @param value Value to set for the b2b_direct_connect_outbound property.
+            ## @param value Value to set for the b2bDirectConnectOutbound property.
             ## @return a void
             ## 
             def b2b_direct_connect_outbound=(value)
@@ -130,15 +151,32 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "automaticUserConsentSettings" => lambda {|n| @automatic_user_consent_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::InboundOutboundPolicyConfiguration.create_from_discriminator_value(pn) }) },
                     "b2bCollaborationInbound" => lambda {|n| @b2b_collaboration_inbound = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "b2bCollaborationOutbound" => lambda {|n| @b2b_collaboration_outbound = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "b2bDirectConnectInbound" => lambda {|n| @b2b_direct_connect_inbound = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "b2bDirectConnectOutbound" => lambda {|n| @b2b_direct_connect_outbound = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
+                    "identitySynchronization" => lambda {|n| @identity_synchronization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantIdentitySyncPolicyPartner.create_from_discriminator_value(pn) }) },
                     "inboundTrust" => lambda {|n| @inbound_trust = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyInboundTrust.create_from_discriminator_value(pn) }) },
                     "isServiceProvider" => lambda {|n| @is_service_provider = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "tenantId" => lambda {|n| @tenant_id = n.get_string_value() },
                 }
+            end
+            ## 
+            ## Gets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
+            ## @return a cross_tenant_identity_sync_policy_partner
+            ## 
+            def identity_synchronization
+                return @identity_synchronization
+            end
+            ## 
+            ## Sets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
+            ## @param value Value to set for the identitySynchronization property.
+            ## @return a void
+            ## 
+            def identity_synchronization=(value)
+                @identity_synchronization = value
             end
             ## 
             ## Gets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
@@ -149,7 +187,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
-            ## @param value Value to set for the inbound_trust property.
+            ## @param value Value to set for the inboundTrust property.
             ## @return a void
             ## 
             def inbound_trust=(value)
@@ -164,7 +202,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isServiceProvider property value. Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
-            ## @param value Value to set for the is_service_provider property.
+            ## @param value Value to set for the isServiceProvider property.
             ## @return a void
             ## 
             def is_service_provider=(value)
@@ -179,7 +217,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -192,10 +230,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("automaticUserConsentSettings", @automatic_user_consent_settings)
                 writer.write_object_value("b2bCollaborationInbound", @b2b_collaboration_inbound)
                 writer.write_object_value("b2bCollaborationOutbound", @b2b_collaboration_outbound)
                 writer.write_object_value("b2bDirectConnectInbound", @b2b_direct_connect_inbound)
                 writer.write_object_value("b2bDirectConnectOutbound", @b2b_direct_connect_outbound)
+                writer.write_object_value("identitySynchronization", @identity_synchronization)
                 writer.write_object_value("inboundTrust", @inbound_trust)
                 writer.write_boolean_value("isServiceProvider", @is_service_provider)
                 writer.write_string_value("@odata.type", @odata_type)
@@ -211,7 +251,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.
-            ## @param value Value to set for the tenant_id property.
+            ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
             def tenant_id=(value)

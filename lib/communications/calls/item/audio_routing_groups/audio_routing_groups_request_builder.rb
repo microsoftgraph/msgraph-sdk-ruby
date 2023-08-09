@@ -2,12 +2,13 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/audio_routing_group'
 require_relative '../../../../models/audio_routing_group_collection_response'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../communications'
 require_relative '../../calls'
 require_relative '../item'
 require_relative './audio_routing_groups'
 require_relative './count/count_request_builder'
+require_relative './item/audio_routing_group_item_request_builder'
 
 module MicrosoftGraph
     module Communications
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Communications::Calls::Item::AudioRoutingGroups::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
+                        ## @param audio_routing_group_id The unique identifier of audioRoutingGroup
+                        ## @return a audio_routing_group_item_request_builder
+                        ## 
+                        def by_audio_routing_group_id(audio_routing_group_id)
+                            raise StandardError, 'audio_routing_group_id cannot be null' if audio_routing_group_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["audioRoutingGroup%2Did"] = audio_routing_group_id
+                            return MicrosoftGraph::Communications::Calls::Item::AudioRoutingGroups::Item::AudioRoutingGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new AudioRoutingGroupsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/communications/calls/{call%2Did}/audioRoutingGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get audioRoutingGroups from communications
+                        ## Retrieve a list of audioRoutingGroup objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of audio_routing_group_collection_response
                         ## 
@@ -42,12 +54,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AudioRoutingGroupCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create new navigation property to audioRoutingGroups for communications
+                        ## Create a new audioRoutingGroup.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of audio_routing_group
@@ -58,12 +70,12 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AudioRoutingGroup.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get audioRoutingGroups from communications
+                        ## Retrieve a list of audioRoutingGroup objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create new navigation property to audioRoutingGroups for communications
+                        ## Create a new audioRoutingGroup.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get audioRoutingGroups from communications
+                        # Retrieve a list of audioRoutingGroup objects.
                         class AudioRoutingGroupsRequestBuilderGetQueryParameters
                             
                             ## 

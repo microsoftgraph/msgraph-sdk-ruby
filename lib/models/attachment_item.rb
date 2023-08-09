@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attachmentType property value. The type of attachment. Possible values are: file, item, reference. Required.
-            ## @param value Value to set for the attachment_type property.
+            ## @param value Value to set for the attachmentType property.
             ## @return a void
             ## 
             def attachment_type=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
-            ## @param value Value to set for the content_id property.
+            ## @param value Value to set for the contentId property.
             ## @return a void
             ## 
             def content_id=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentType property value. The nature of the data in the attachment. Optional.
-            ## @param value Value to set for the content_type property.
+            ## @param value Value to set for the contentType property.
             ## @return a void
             ## 
             def content_type=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isInline property value. true if the attachment is an inline attachment; otherwise, false. Optional.
-            ## @param value Value to set for the is_inline property.
+            ## @param value Value to set for the isInline property.
             ## @return a void
             ## 
             def is_inline=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

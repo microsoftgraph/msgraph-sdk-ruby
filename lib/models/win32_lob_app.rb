@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for Win32 apps.
         class Win32LobApp < MicrosoftGraph::Models::MobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -54,14 +56,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicableArchitectures property value. Contains properties for Windows architecture.
-            ## @param value Value to set for the applicable_architectures property.
+            ## @param value Value to set for the applicableArchitectures property.
             ## @return a void
             ## 
             def applicable_architectures=(value)
                 @applicable_architectures = value
             end
             ## 
-            ## Instantiates a new Win32LobApp and sets the default values.
+            ## Instantiates a new win32LobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -107,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installCommandLine property value. The command line to install this app
-            ## @param value Value to set for the install_command_line property.
+            ## @param value Value to set for the installCommandLine property.
             ## @return a void
             ## 
             def install_command_line=(value)
@@ -122,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installExperience property value. The install experience for this app.
-            ## @param value Value to set for the install_experience property.
+            ## @param value Value to set for the installExperience property.
             ## @return a void
             ## 
             def install_experience=(value)
@@ -137,7 +139,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumCpuSpeedInMHz property value. The value for the minimum CPU speed which is required to install this app.
-            ## @param value Value to set for the minimum_cpu_speed_in_m_hz property.
+            ## @param value Value to set for the minimumCpuSpeedInMHz property.
             ## @return a void
             ## 
             def minimum_cpu_speed_in_m_hz=(value)
@@ -152,7 +154,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumFreeDiskSpaceInMB property value. The value for the minimum free disk space which is required to install this app.
-            ## @param value Value to set for the minimum_free_disk_space_in_m_b property.
+            ## @param value Value to set for the minimumFreeDiskSpaceInMB property.
             ## @return a void
             ## 
             def minimum_free_disk_space_in_m_b=(value)
@@ -167,7 +169,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumMemoryInMB property value. The value for the minimum physical memory which is required to install this app.
-            ## @param value Value to set for the minimum_memory_in_m_b property.
+            ## @param value Value to set for the minimumMemoryInMB property.
             ## @return a void
             ## 
             def minimum_memory_in_m_b=(value)
@@ -182,7 +184,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumNumberOfProcessors property value. The value for the minimum number of processors which is required to install this app.
-            ## @param value Value to set for the minimum_number_of_processors property.
+            ## @param value Value to set for the minimumNumberOfProcessors property.
             ## @return a void
             ## 
             def minimum_number_of_processors=(value)
@@ -197,7 +199,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumSupportedWindowsRelease property value. The value for the minimum supported windows release.
-            ## @param value Value to set for the minimum_supported_windows_release property.
+            ## @param value Value to set for the minimumSupportedWindowsRelease property.
             ## @return a void
             ## 
             def minimum_supported_windows_release=(value)
@@ -212,7 +214,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the msiInformation property value. The MSI details if this Win32 app is an MSI app.
-            ## @param value Value to set for the msi_information property.
+            ## @param value Value to set for the msiInformation property.
             ## @return a void
             ## 
             def msi_information=(value)
@@ -227,7 +229,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the returnCodes property value. The return codes for post installation behavior.
-            ## @param value Value to set for the return_codes property.
+            ## @param value Value to set for the returnCodes property.
             ## @return a void
             ## 
             def return_codes=(value)
@@ -279,7 +281,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the setupFilePath property value. The relative path of the setup file in the encrypted Win32LobApp package.
-            ## @param value Value to set for the setup_file_path property.
+            ## @param value Value to set for the setupFilePath property.
             ## @return a void
             ## 
             def setup_file_path=(value)
@@ -294,7 +296,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the uninstallCommandLine property value. The command line to uninstall this app
-            ## @param value Value to set for the uninstall_command_line property.
+            ## @param value Value to set for the uninstallCommandLine property.
             ## @return a void
             ## 
             def uninstall_command_line=(value)

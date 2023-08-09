@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attendeeAvailability property value. An array that shows the availability status of each attendee for this meeting suggestion.
-            ## @param value Value to set for the attendee_availability property.
+            ## @param value Value to set for the attendeeAvailability property.
             ## @return a void
             ## 
             def attendee_availability=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the meetingTimeSlot property value. A time period suggested for the meeting.
-            ## @param value Value to set for the meeting_time_slot property.
+            ## @param value Value to set for the meetingTimeSlot property.
             ## @return a void
             ## 
             def meeting_time_slot=(value)
@@ -149,7 +149,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -179,7 +179,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-            ## @param value Value to set for the organizer_availability property.
+            ## @param value Value to set for the organizerAvailability property.
             ## @return a void
             ## 
             def organizer_availability=(value)
@@ -211,7 +211,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the suggestionReason property value. Reason for suggesting the meeting time.
-            ## @param value Value to set for the suggestion_reason property.
+            ## @param value Value to set for the suggestionReason property.
             ## @return a void
             ## 
             def suggestion_reason=(value)

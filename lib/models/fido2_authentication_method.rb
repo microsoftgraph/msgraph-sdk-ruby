@@ -34,7 +34,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
-            ## @param value Value to set for the aa_guid property.
+            ## @param value Value to set for the aaGuid property.
             ## @return a void
             ## 
             def aa_guid=(value)
@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
-            ## @param value Value to set for the attestation_certificates property.
+            ## @param value Value to set for the attestationCertificates property.
             ## @return a void
             ## 
             def attestation_certificates=(value)
@@ -64,14 +64,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
-            ## @param value Value to set for the attestation_level property.
+            ## @param value Value to set for the attestationLevel property.
             ## @return a void
             ## 
             def attestation_level=(value)
                 @attestation_level = value
             end
             ## 
-            ## Instantiates a new Fido2AuthenticationMethod and sets the default values.
+            ## Instantiates a new fido2AuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -87,7 +87,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The timestamp when this key was registered to the user.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name of the key as given by the user.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)

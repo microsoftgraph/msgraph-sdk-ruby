@@ -19,6 +19,9 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
+            # The servicePrincipalFilter property
+            @service_principal_filter
+            ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
@@ -27,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -58,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the excludeServicePrincipals property value. Service principal IDs excluded from the policy scope.
-            ## @param value Value to set for the exclude_service_principals property.
+            ## @param value Value to set for the excludeServicePrincipals property.
             ## @return a void
             ## 
             def exclude_service_principals=(value)
@@ -73,6 +76,7 @@ module MicrosoftGraph
                     "excludeServicePrincipals" => lambda {|n| @exclude_service_principals = n.get_collection_of_primitive_values(String) },
                     "includeServicePrincipals" => lambda {|n| @include_service_principals = n.get_collection_of_primitive_values(String) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "servicePrincipalFilter" => lambda {|n| @service_principal_filter = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessFilter.create_from_discriminator_value(pn) }) },
                 }
             end
             ## 
@@ -84,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeServicePrincipals property value. Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
-            ## @param value Value to set for the include_service_principals property.
+            ## @param value Value to set for the includeServicePrincipals property.
             ## @return a void
             ## 
             def include_service_principals=(value)
@@ -99,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -115,7 +119,23 @@ module MicrosoftGraph
                 writer.write_collection_of_primitive_values("excludeServicePrincipals", @exclude_service_principals)
                 writer.write_collection_of_primitive_values("includeServicePrincipals", @include_service_principals)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_object_value("servicePrincipalFilter", @service_principal_filter)
                 writer.write_additional_data(@additional_data)
+            end
+            ## 
+            ## Gets the servicePrincipalFilter property value. The servicePrincipalFilter property
+            ## @return a conditional_access_filter
+            ## 
+            def service_principal_filter
+                return @service_principal_filter
+            end
+            ## 
+            ## Sets the servicePrincipalFilter property value. The servicePrincipalFilter property
+            ## @param value Value to set for the servicePrincipalFilter property.
+            ## @return a void
+            ## 
+            def service_principal_filter=(value)
+                @service_principal_filter = value
             end
         end
     end

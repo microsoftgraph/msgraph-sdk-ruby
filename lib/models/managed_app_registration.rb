@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
         class ManagedAppRegistration < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -61,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appIdentifier property value. The app package Identifier
-            ## @param value Value to set for the app_identifier property.
+            ## @param value Value to set for the appIdentifier property.
             ## @return a void
             ## 
             def app_identifier=(value)
@@ -76,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationVersion property value. App version
-            ## @param value Value to set for the application_version property.
+            ## @param value Value to set for the applicationVersion property.
             ## @return a void
             ## 
             def application_version=(value)
@@ -91,14 +93,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appliedPolicies property value. Zero or more policys already applied on the registered app when it last synchronized with managment service.
-            ## @param value Value to set for the applied_policies property.
+            ## @param value Value to set for the appliedPolicies property.
             ## @return a void
             ## 
             def applied_policies=(value)
                 @applied_policies = value
             end
             ## 
-            ## Instantiates a new ManagedAppRegistration and sets the default values.
+            ## Instantiates a new managedAppRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -113,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Date and time of creation
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -147,7 +149,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceName property value. Host device name
-            ## @param value Value to set for the device_name property.
+            ## @param value Value to set for the deviceName property.
             ## @return a void
             ## 
             def device_name=(value)
@@ -162,7 +164,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceTag property value. App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
-            ## @param value Value to set for the device_tag property.
+            ## @param value Value to set for the deviceTag property.
             ## @return a void
             ## 
             def device_tag=(value)
@@ -177,7 +179,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceType property value. Host device type
-            ## @param value Value to set for the device_type property.
+            ## @param value Value to set for the deviceType property.
             ## @return a void
             ## 
             def device_type=(value)
@@ -192,7 +194,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the flaggedReasons property value. Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-            ## @param value Value to set for the flagged_reasons property.
+            ## @param value Value to set for the flaggedReasons property.
             ## @return a void
             ## 
             def flagged_reasons=(value)
@@ -230,7 +232,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the intendedPolicies property value. Zero or more policies admin intended for the app as of now.
-            ## @param value Value to set for the intended_policies property.
+            ## @param value Value to set for the intendedPolicies property.
             ## @return a void
             ## 
             def intended_policies=(value)
@@ -245,7 +247,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastSyncDateTime property value. Date and time of last the app synced with management service.
-            ## @param value Value to set for the last_sync_date_time property.
+            ## @param value Value to set for the lastSyncDateTime property.
             ## @return a void
             ## 
             def last_sync_date_time=(value)
@@ -260,7 +262,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managementSdkVersion property value. App management SDK version
-            ## @param value Value to set for the management_sdk_version property.
+            ## @param value Value to set for the managementSdkVersion property.
             ## @return a void
             ## 
             def management_sdk_version=(value)
@@ -290,7 +292,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the platformVersion property value. Operating System version
-            ## @param value Value to set for the platform_version property.
+            ## @param value Value to set for the platformVersion property.
             ## @return a void
             ## 
             def platform_version=(value)
@@ -329,7 +331,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userId property value. The user Id to who this app registration belongs.
-            ## @param value Value to set for the user_id property.
+            ## @param value Value to set for the userId property.
             ## @return a void
             ## 
             def user_id=(value)

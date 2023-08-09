@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The responseType property
             @response_type
             ## 
-            ## Instantiates a new EventMessageResponse and sets the default values.
+            ## Instantiates a new eventMessageResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the proposedNewTime property value. The proposedNewTime property
-            ## @param value Value to set for the proposed_new_time property.
+            ## @param value Value to set for the proposedNewTime property.
             ## @return a void
             ## 
             def proposed_new_time=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the responseType property value. The responseType property
-            ## @param value Value to set for the response_type property.
+            ## @param value Value to set for the responseType property.
             ## @return a void
             ## 
             def response_type=(value)

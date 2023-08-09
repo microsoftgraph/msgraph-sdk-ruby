@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../microsoft_graph'
 require_relative '../../../../../../../../models/attachment_session_collection_response'
-require_relative '../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../users'
 require_relative '../../../../../../item'
 require_relative '../../../../../todo'
@@ -11,6 +11,7 @@ require_relative '../../tasks'
 require_relative '../item'
 require_relative './attachment_sessions'
 require_relative './count/count_request_builder'
+require_relative './item/attachment_session_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -31,6 +32,17 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::AttachmentSessions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        ## Provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
+                                        ## @param attachment_session_id The unique identifier of attachmentSession
+                                        ## @return a attachment_session_item_request_builder
+                                        ## 
+                                        def by_attachment_session_id(attachment_session_id)
+                                            raise StandardError, 'attachment_session_id cannot be null' if attachment_session_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["attachmentSession%2Did"] = attachment_session_id
+                                            return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::AttachmentSessions::Item::AttachmentSessionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new AttachmentSessionsRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -49,8 +61,8 @@ module MicrosoftGraph
                                                 request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AttachmentSessionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 

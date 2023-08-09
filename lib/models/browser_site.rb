@@ -10,28 +10,28 @@ module MicrosoftGraph
         class BrowserSite < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Boolean attribute that controls the behavior of redirected sites
+            # Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
             @allow_redirect
             ## 
-            # The comment for the site
+            # The comment for the site.
             @comment
             ## 
             # The compatibilityMode property
             @compatibility_mode
             ## 
-            # The datetime that the site is created
+            # The date and time when the site was created.
             @created_date_time
             ## 
-            # The datetime that the admin deleted the site
+            # The date and time when the site was deleted.
             @deleted_date_time
             ## 
-            # The collection stores site revision metadata and audit logs.
+            # The history of modifications applied to the site.
             @history
             ## 
-            # The admin who made the last update on the site.
+            # The user who last modified the site.
             @last_modified_by
             ## 
-            # The datetime that the admin updated the site.
+            # The date and time when the site was last modified.
             @last_modified_date_time
             ## 
             # The mergeType property
@@ -43,32 +43,32 @@ module MicrosoftGraph
             # The targetEnvironment property
             @target_environment
             ## 
-            # The URL of the site
+            # The URL of the site.
             @web_url
             ## 
-            ## Gets the allowRedirect property value. Boolean attribute that controls the behavior of redirected sites
+            ## Gets the allowRedirect property value. Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
             ## @return a boolean
             ## 
             def allow_redirect
                 return @allow_redirect
             end
             ## 
-            ## Sets the allowRedirect property value. Boolean attribute that controls the behavior of redirected sites
-            ## @param value Value to set for the allow_redirect property.
+            ## Sets the allowRedirect property value. Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
+            ## @param value Value to set for the allowRedirect property.
             ## @return a void
             ## 
             def allow_redirect=(value)
                 @allow_redirect = value
             end
             ## 
-            ## Gets the comment property value. The comment for the site
+            ## Gets the comment property value. The comment for the site.
             ## @return a string
             ## 
             def comment
                 return @comment
             end
             ## 
-            ## Sets the comment property value. The comment for the site
+            ## Sets the comment property value. The comment for the site.
             ## @param value Value to set for the comment property.
             ## @return a void
             ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compatibilityMode property value. The compatibilityMode property
-            ## @param value Value to set for the compatibility_mode property.
+            ## @param value Value to set for the compatibilityMode property.
             ## @return a void
             ## 
             def compatibility_mode=(value)
@@ -98,15 +98,15 @@ module MicrosoftGraph
                 super
             end
             ## 
-            ## Gets the createdDateTime property value. The datetime that the site is created
+            ## Gets the createdDateTime property value. The date and time when the site was created.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The datetime that the site is created
-            ## @param value Value to set for the created_date_time property.
+            ## Sets the createdDateTime property value. The date and time when the site was created.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -122,15 +122,15 @@ module MicrosoftGraph
                 return BrowserSite.new
             end
             ## 
-            ## Gets the deletedDateTime property value. The datetime that the admin deleted the site
+            ## Gets the deletedDateTime property value. The date and time when the site was deleted.
             ## @return a date_time
             ## 
             def deleted_date_time
                 return @deleted_date_time
             end
             ## 
-            ## Sets the deletedDateTime property value. The datetime that the admin deleted the site
-            ## @param value Value to set for the deleted_date_time property.
+            ## Sets the deletedDateTime property value. The date and time when the site was deleted.
+            ## @param value Value to set for the deletedDateTime property.
             ## @return a void
             ## 
             def deleted_date_time=(value)
@@ -157,14 +157,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the history property value. The collection stores site revision metadata and audit logs.
+            ## Gets the history property value. The history of modifications applied to the site.
             ## @return a browser_site_history
             ## 
             def history
                 return @history
             end
             ## 
-            ## Sets the history property value. The collection stores site revision metadata and audit logs.
+            ## Sets the history property value. The history of modifications applied to the site.
             ## @param value Value to set for the history property.
             ## @return a void
             ## 
@@ -172,30 +172,30 @@ module MicrosoftGraph
                 @history = value
             end
             ## 
-            ## Gets the lastModifiedBy property value. The admin who made the last update on the site.
+            ## Gets the lastModifiedBy property value. The user who last modified the site.
             ## @return a identity_set
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. The admin who made the last update on the site.
-            ## @param value Value to set for the last_modified_by property.
+            ## Sets the lastModifiedBy property value. The user who last modified the site.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The datetime that the admin updated the site.
+            ## Gets the lastModifiedDateTime property value. The date and time when the site was last modified.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The datetime that the admin updated the site.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## Sets the lastModifiedDateTime property value. The date and time when the site was last modified.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mergeType property value. The mergeType property
-            ## @param value Value to set for the merge_type property.
+            ## @param value Value to set for the mergeType property.
             ## @return a void
             ## 
             def merge_type=(value)
@@ -261,22 +261,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the targetEnvironment property value. The targetEnvironment property
-            ## @param value Value to set for the target_environment property.
+            ## @param value Value to set for the targetEnvironment property.
             ## @return a void
             ## 
             def target_environment=(value)
                 @target_environment = value
             end
             ## 
-            ## Gets the webUrl property value. The URL of the site
+            ## Gets the webUrl property value. The URL of the site.
             ## @return a string
             ## 
             def web_url
                 return @web_url
             end
             ## 
-            ## Sets the webUrl property value. The URL of the site
-            ## @param value Value to set for the web_url property.
+            ## Sets the webUrl property value. The URL of the site.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

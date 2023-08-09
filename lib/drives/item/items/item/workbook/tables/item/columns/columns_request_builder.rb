@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../../models/workbook_table_column'
 require_relative '../../../../../../../../models/workbook_table_column_collection_response'
 require_relative '../../../../../../../drives'
@@ -13,6 +13,7 @@ require_relative '../item'
 require_relative './add/add_request_builder'
 require_relative './columns'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_table_column_item_request_builder'
 require_relative './item_at_with_index/item_at_with_index_request_builder'
 
 module MicrosoftGraph
@@ -39,6 +40,17 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        ## Provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
+                                        ## @param workbook_table_column_id The unique identifier of workbookTableColumn
+                                        ## @return a workbook_table_column_item_request_builder
+                                        ## 
+                                        def by_workbook_table_column_id(workbook_table_column_id)
+                                            raise StandardError, 'workbook_table_column_id cannot be null' if workbook_table_column_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["workbookTableColumn%2Did"] = workbook_table_column_id
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::WorkbookTableColumnItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new ColumnsRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -57,8 +69,8 @@ module MicrosoftGraph
                                                 request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookTableColumnCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
@@ -82,8 +94,8 @@ module MicrosoftGraph
                                                 body, request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookTableColumn.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 

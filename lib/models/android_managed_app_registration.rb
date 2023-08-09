@@ -4,10 +4,12 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Represents the synchronization details of an android app, with management capabilities, for a specific user.
         class AndroidManagedAppRegistration < MicrosoftGraph::Models::ManagedAppRegistration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new AndroidManagedAppRegistration and sets the default values.
+            ## Instantiates a new androidManagedAppRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()

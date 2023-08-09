@@ -35,7 +35,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the osMaximumVersion property value. Max OS version supported
-            ## @param value Value to set for the os_maximum_version property.
+            ## @param value Value to set for the osMaximumVersion property.
             ## @return a void
             ## 
             def os_maximum_version=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the osMinimumVersion property value. Min OS version supported
-            ## @param value Value to set for the os_minimum_version property.
+            ## @param value Value to set for the osMinimumVersion property.
             ## @return a void
             ## 
             def os_minimum_version=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the personalDeviceEnrollmentBlocked property value. Block personally owned devices from enrolling
-            ## @param value Value to set for the personal_device_enrollment_blocked property.
+            ## @param value Value to set for the personalDeviceEnrollmentBlocked property.
             ## @return a void
             ## 
             def personal_device_enrollment_blocked=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the platformBlocked property value. Block the platform from enrolling
-            ## @param value Value to set for the platform_blocked property.
+            ## @param value Value to set for the platformBlocked property.
             ## @return a void
             ## 
             def platform_blocked=(value)

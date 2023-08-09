@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../models/service_announcement_attachment'
 require_relative '../../../../../models/service_announcement_attachment_collection_response'
 require_relative '../../../../admin'
@@ -9,6 +9,7 @@ require_relative '../../messages'
 require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
+require_relative './item/service_announcement_attachment_item_request_builder'
 
 module MicrosoftGraph
     module Admin
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Item::Attachments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the attachments property of the microsoft.graph.serviceUpdateMessage entity.
+                            ## @param service_announcement_attachment_id The unique identifier of serviceAnnouncementAttachment
+                            ## @return a service_announcement_attachment_item_request_builder
+                            ## 
+                            def by_service_announcement_attachment_id(service_announcement_attachment_id)
+                                raise StandardError, 'service_announcement_attachment_id cannot be null' if service_announcement_attachment_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["serviceAnnouncementAttachment%2Did"] = service_announcement_attachment_id
+                                return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Item::Attachments::Item::ServiceAnnouncementAttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new AttachmentsRequestBuilder and sets the default values.
@@ -44,8 +56,8 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServiceAnnouncementAttachmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
@@ -60,8 +72,8 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServiceAnnouncementAttachment.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 

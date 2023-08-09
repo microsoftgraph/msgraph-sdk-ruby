@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display name for the policy.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the effectiveRules property value. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.
-            ## @param value Value to set for the effective_rules property.
+            ## @param value Value to set for the effectiveRules property.
             ## @return a void
             ## 
             def effective_rules=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isOrganizationDefault property value. This can only be set to true for a single tenant-wide policy which will apply to all scopes and roles. Set the scopeId to / and scopeType to Directory. Supports $filter (eq, ne).
-            ## @param value Value to set for the is_organization_default property.
+            ## @param value Value to set for the isOrganizationDefault property.
             ## @return a void
             ## 
             def is_organization_default=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedBy property value. The identity who last modified the role setting.
-            ## @param value Value to set for the last_modified_by property.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The time when the role setting was last modified.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -181,7 +181,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scopeId property value. The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
-            ## @param value Value to set for the scope_id property.
+            ## @param value Value to set for the scopeId property.
             ## @return a void
             ## 
             def scope_id=(value)
@@ -196,7 +196,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
-            ## @param value Value to set for the scope_type property.
+            ## @param value Value to set for the scopeType property.
             ## @return a void
             ## 
             def scope_type=(value)

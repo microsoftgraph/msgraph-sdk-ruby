@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for iOS web apps.
         class IosiPadOSWebClip < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -21,14 +23,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appUrl property value. Indicates iOS/iPadOS web clip app URL. Example: 'https://www.contoso.com'
-            ## @param value Value to set for the app_url property.
+            ## @param value Value to set for the appUrl property.
             ## @return a void
             ## 
             def app_url=(value)
                 @app_url = value
             end
             ## 
-            ## Instantiates a new IosiPadOSWebClip and sets the default values.
+            ## Instantiates a new iosiPadOSWebClip and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the useManagedBrowser property value. Whether or not to use managed browser. When TRUE, the app will be required to be opened in Microsoft Edge. When FALSE, the app will not be required to be opened in Microsoft Edge. By default, this property is set to FALSE.
-            ## @param value Value to set for the use_managed_browser property.
+            ## @param value Value to set for the useManagedBrowser property.
             ## @return a void
             ## 
             def use_managed_browser=(value)

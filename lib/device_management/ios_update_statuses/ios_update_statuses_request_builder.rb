@@ -2,10 +2,11 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
 require_relative '../../models/ios_update_device_status'
 require_relative '../../models/ios_update_device_status_collection_response'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
 require_relative './ios_update_statuses'
+require_relative './item/ios_update_device_status_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::DeviceManagement::IosUpdateStatuses::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.
+                ## @param ios_update_device_status_id The unique identifier of iosUpdateDeviceStatus
+                ## @return a ios_update_device_status_item_request_builder
+                ## 
+                def by_ios_update_device_status_id(ios_update_device_status_id)
+                    raise StandardError, 'ios_update_device_status_id cannot be null' if ios_update_device_status_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["iosUpdateDeviceStatus%2Did"] = ios_update_device_status_id
+                    return MicrosoftGraph::DeviceManagement::IosUpdateStatuses::Item::IosUpdateDeviceStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new IosUpdateStatusesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/iosUpdateStatuses{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## The IOS software update installation statuses for this account.
+                ## List properties and relationships of the iosUpdateDeviceStatus objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of ios_update_device_status_collection_response
                 ## 
@@ -38,12 +50,12 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IosUpdateDeviceStatusCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create new navigation property to iosUpdateStatuses for deviceManagement
+                ## Create a new iosUpdateDeviceStatus object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of ios_update_device_status
@@ -54,12 +66,12 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IosUpdateDeviceStatus.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## The IOS software update installation statuses for this account.
+                ## List properties and relationships of the iosUpdateDeviceStatus objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create new navigation property to iosUpdateStatuses for deviceManagement
+                ## Create a new iosUpdateDeviceStatus object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The IOS software update installation statuses for this account.
+                # List properties and relationships of the iosUpdateDeviceStatus objects.
                 class IosUpdateStatusesRequestBuilderGetQueryParameters
                     
                     ## 

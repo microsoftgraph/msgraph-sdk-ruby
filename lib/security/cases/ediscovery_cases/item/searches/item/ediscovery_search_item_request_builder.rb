@@ -1,23 +1,20 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../models/security/ediscovery_search'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../models/security_ediscovery_search'
 require_relative '../../../../../security'
 require_relative '../../../../cases'
 require_relative '../../../ediscovery_cases'
 require_relative '../../item'
 require_relative '../searches'
 require_relative './additional_sources/additional_sources_request_builder'
-require_relative './additional_sources/item/data_source_item_request_builder'
 require_relative './add_to_review_set_operation/add_to_review_set_operation_request_builder'
 require_relative './custodian_sources/custodian_sources_request_builder'
-require_relative './custodian_sources/item/data_source_item_request_builder'
 require_relative './item'
 require_relative './last_estimate_statistics_operation/last_estimate_statistics_operation_request_builder'
-require_relative './noncustodial_sources/item/ediscovery_noncustodial_data_source_item_request_builder'
+require_relative './microsoft_graph_security_estimate_statistics/microsoft_graph_security_estimate_statistics_request_builder'
+require_relative './microsoft_graph_security_purge_data/microsoft_graph_security_purge_data_request_builder'
 require_relative './noncustodial_sources/noncustodial_sources_request_builder'
-require_relative './security_estimate_statistics/security_estimate_statistics_request_builder'
-require_relative './security_purge_data/security_purge_data_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -51,30 +48,19 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::LastEstimateStatisticsOperation::LastEstimateStatisticsOperationRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                # Provides operations to manage the noncustodialSources property of the microsoft.graph.security.ediscoverySearch entity.
-                                def noncustodial_sources()
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::NoncustodialSources::NoncustodialSourcesRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
                                 # Provides operations to call the estimateStatistics method.
-                                def security_estimate_statistics()
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::SecurityEstimateStatistics::SecurityEstimateStatisticsRequestBuilder.new(@path_parameters, @request_adapter)
+                                def microsoft_graph_security_estimate_statistics()
+                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::MicrosoftGraphSecurityEstimateStatistics::MicrosoftGraphSecurityEstimateStatisticsRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the purgeData method.
-                                def security_purge_data()
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::SecurityPurgeData::SecurityPurgeDataRequestBuilder.new(@path_parameters, @request_adapter)
+                                def microsoft_graph_security_purge_data()
+                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::MicrosoftGraphSecurityPurgeData::MicrosoftGraphSecurityPurgeDataRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                ## Provides operations to manage the additionalSources property of the microsoft.graph.security.ediscoverySearch entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a data_source_item_request_builder
-                                ## 
-                                def additional_sources_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["dataSource%2Did"] = id
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::AdditionalSources::Item::DataSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                # Provides operations to manage the noncustodialSources property of the microsoft.graph.security.ediscoverySearch entity.
+                                def noncustodial_sources()
+                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::NoncustodialSources::NoncustodialSourcesRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new EdiscoverySearchItemRequestBuilder and sets the default values.
@@ -86,18 +72,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches/{ediscoverySearch%2Did}{?%24select,%24expand}")
                                 end
                                 ## 
-                                ## Provides operations to manage the custodianSources property of the microsoft.graph.security.ediscoverySearch entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a data_source_item_request_builder
-                                ## 
-                                def custodian_sources_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["dataSource%2Did"] = id
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::CustodianSources::Item::DataSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Delete navigation property searches for security
+                                ## Delete an ediscoverySearch object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
                                 ## 
@@ -106,40 +81,29 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Returns a list of eDiscoverySearch objects associated with this case.
+                                ## Read the properties and relationships of an ediscoverySearch object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a Fiber of ediscovery_search
+                                ## @return a Fiber of security_ediscovery_search
                                 ## 
                                 def get(request_configuration=nil)
                                     request_info = self.to_get_request_information(
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoverySearch.create_from_discriminator_value(pn) }, error_mapping)
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoverySearch.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Provides operations to manage the noncustodialSources property of the microsoft.graph.security.ediscoverySearch entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a ediscovery_noncustodial_data_source_item_request_builder
-                                ## 
-                                def noncustodial_sources_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["ediscoveryNoncustodialDataSource%2Did"] = id
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::NoncustodialSources::Item::EdiscoveryNoncustodialDataSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Update the navigation property searches in security
+                                ## Update the properties of an ediscoverySearch object.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a Fiber of ediscovery_search
+                                ## @return a Fiber of security_ediscovery_search
                                 ## 
                                 def patch(body, request_configuration=nil)
                                     raise StandardError, 'body cannot be null' if body.nil?
@@ -147,12 +111,12 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoverySearch.create_from_discriminator_value(pn) }, error_mapping)
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoverySearch.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Delete navigation property searches for security
+                                ## Delete an ediscoverySearch object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -168,7 +132,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Returns a list of eDiscoverySearch objects associated with this case.
+                                ## Read the properties and relationships of an ediscoverySearch object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -186,7 +150,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Update the navigation property searches in security
+                                ## Update the properties of an ediscoverySearch object.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -207,7 +171,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Returns a list of eDiscoverySearch objects associated with this case.
+                                # Read the properties and relationships of an ediscoverySearch object.
                                 class EdiscoverySearchItemRequestBuilderGetQueryParameters
                                     
                                     ## 

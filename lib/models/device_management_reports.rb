@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Singleton entity that acts as a container for all reports functionality.
         class DeviceManagementReports < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -34,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the exportJobs property value. Entity representing a job to export a report
-            ## @param value Value to set for the export_jobs property.
+            ## @param value Value to set for the exportJobs property.
             ## @return a void
             ## 
             def export_jobs=(value)

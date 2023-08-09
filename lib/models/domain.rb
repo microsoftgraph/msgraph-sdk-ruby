@@ -7,7 +7,7 @@ module MicrosoftGraph
         class Domain < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
+            # Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.
             @authentication_type
             ## 
             # This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
@@ -58,15 +58,15 @@ module MicrosoftGraph
             # DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
             @verification_dns_records
             ## 
-            ## Gets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
+            ## Gets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.
             ## @return a string
             ## 
             def authentication_type
                 return @authentication_type
             end
             ## 
-            ## Sets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.
-            ## @param value Value to set for the authentication_type property.
+            ## Sets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.
+            ## @param value Value to set for the authenticationType property.
             ## @return a void
             ## 
             def authentication_type=(value)
@@ -81,14 +81,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the availabilityStatus property value. This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
-            ## @param value Value to set for the availability_status property.
+            ## @param value Value to set for the availabilityStatus property.
             ## @return a void
             ## 
             def availability_status=(value)
                 @availability_status = value
             end
             ## 
-            ## Instantiates a new Domain and sets the default values.
+            ## Instantiates a new domain and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -112,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
-            ## @param value Value to set for the domain_name_references property.
+            ## @param value Value to set for the domainNameReferences property.
             ## @return a void
             ## 
             def domain_name_references=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the federationConfiguration property value. Domain settings configured by a customer when federated with Azure AD. Supports $expand.
-            ## @param value Value to set for the federation_configuration property.
+            ## @param value Value to set for the federationConfiguration property.
             ## @return a void
             ## 
             def federation_configuration=(value)
@@ -167,7 +167,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
-            ## @param value Value to set for the is_admin_managed property.
+            ## @param value Value to set for the isAdminManaged property.
             ## @return a void
             ## 
             def is_admin_managed=(value)
@@ -182,7 +182,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isDefault property value. true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
-            ## @param value Value to set for the is_default property.
+            ## @param value Value to set for the isDefault property.
             ## @return a void
             ## 
             def is_default=(value)
@@ -197,7 +197,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
-            ## @param value Value to set for the is_initial property.
+            ## @param value Value to set for the isInitial property.
             ## @return a void
             ## 
             def is_initial=(value)
@@ -212,7 +212,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
-            ## @param value Value to set for the is_root property.
+            ## @param value Value to set for the isRoot property.
             ## @return a void
             ## 
             def is_root=(value)
@@ -227,7 +227,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isVerified property value. true if the domain has completed domain ownership verification. Not nullable
-            ## @param value Value to set for the is_verified property.
+            ## @param value Value to set for the isVerified property.
             ## @return a void
             ## 
             def is_verified=(value)
@@ -272,7 +272,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
-            ## @param value Value to set for the password_notification_window_in_days property.
+            ## @param value Value to set for the passwordNotificationWindowInDays property.
             ## @return a void
             ## 
             def password_notification_window_in_days=(value)
@@ -287,7 +287,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
-            ## @param value Value to set for the password_validity_period_in_days property.
+            ## @param value Value to set for the passwordValidityPeriodInDays property.
             ## @return a void
             ## 
             def password_validity_period_in_days=(value)
@@ -328,7 +328,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
-            ## @param value Value to set for the service_configuration_records property.
+            ## @param value Value to set for the serviceConfigurationRecords property.
             ## @return a void
             ## 
             def service_configuration_records=(value)
@@ -358,7 +358,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
-            ## @param value Value to set for the supported_services property.
+            ## @param value Value to set for the supportedServices property.
             ## @return a void
             ## 
             def supported_services=(value)
@@ -373,7 +373,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
-            ## @param value Value to set for the verification_dns_records property.
+            ## @param value Value to set for the verificationDnsRecords property.
             ## @return a void
             ## 
             def verification_dns_records=(value)

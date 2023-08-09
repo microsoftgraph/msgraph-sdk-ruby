@@ -49,7 +49,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the AdditionalData property.
+                    ## @param value Value to set for the additionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the isOrganizerOptional property value. The isOrganizerOptional property
-                    ## @param value Value to set for the is_organizer_optional property.
+                    ## @param value Value to set for the isOrganizerOptional property.
                     ## @return a void
                     ## 
                     def is_organizer_optional=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the locationConstraint property value. The locationConstraint property
-                    ## @param value Value to set for the location_constraint property.
+                    ## @param value Value to set for the locationConstraint property.
                     ## @return a void
                     ## 
                     def location_constraint=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the maxCandidates property value. The maxCandidates property
-                    ## @param value Value to set for the max_candidates property.
+                    ## @param value Value to set for the maxCandidates property.
                     ## @return a void
                     ## 
                     def max_candidates=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the meetingDuration property value. The meetingDuration property
-                    ## @param value Value to set for the meeting_duration property.
+                    ## @param value Value to set for the meetingDuration property.
                     ## @return a void
                     ## 
                     def meeting_duration=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the minimumAttendeePercentage property value. The minimumAttendeePercentage property
-                    ## @param value Value to set for the minimum_attendee_percentage property.
+                    ## @param value Value to set for the minimumAttendeePercentage property.
                     ## @return a void
                     ## 
                     def minimum_attendee_percentage=(value)
@@ -186,7 +186,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the returnSuggestionReasons property value. The returnSuggestionReasons property
-                    ## @param value Value to set for the return_suggestion_reasons property.
+                    ## @param value Value to set for the returnSuggestionReasons property.
                     ## @return a void
                     ## 
                     def return_suggestion_reasons=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the timeConstraint property value. The timeConstraint property
-                    ## @param value Value to set for the time_constraint property.
+                    ## @param value Value to set for the timeConstraint property.
                     ## @return a void
                     ## 
                     def time_constraint=(value)

@@ -8,25 +8,25 @@ module MicrosoftGraph
         class DirectoryAudit < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            # Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.
             @activity_date_time
             ## 
-            # Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
+            # Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).
             @activity_display_name
             ## 
             # Indicates additional details on the activity.
             @additional_details
             ## 
-            # Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
+            # Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
             @category
             ## 
-            # Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
+            # Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports $filter (eq).
             @correlation_id
             ## 
             # The initiatedBy property
             @initiated_by
             ## 
-            # Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
+            # Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management. Supports $filter (eq).
             @logged_by_service
             ## 
             # Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
@@ -38,33 +38,33 @@ module MicrosoftGraph
             # Indicates the reason for failure if the result is failure or timeout.
             @result_reason
             ## 
-            # Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
+            # Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.
             @target_resources
             ## 
-            ## Gets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## Gets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.
             ## @return a date_time
             ## 
             def activity_date_time
                 return @activity_date_time
             end
             ## 
-            ## Sets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            ## @param value Value to set for the activity_date_time property.
+            ## Sets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.
+            ## @param value Value to set for the activityDateTime property.
             ## @return a void
             ## 
             def activity_date_time=(value)
                 @activity_date_time = value
             end
             ## 
-            ## Gets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
+            ## Gets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).
             ## @return a string
             ## 
             def activity_display_name
                 return @activity_display_name
             end
             ## 
-            ## Sets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
-            ## @param value Value to set for the activity_display_name property.
+            ## Sets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).
+            ## @param value Value to set for the activityDisplayName property.
             ## @return a void
             ## 
             def activity_display_name=(value)
@@ -79,21 +79,21 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalDetails property value. Indicates additional details on the activity.
-            ## @param value Value to set for the additional_details property.
+            ## @param value Value to set for the additionalDetails property.
             ## @return a void
             ## 
             def additional_details=(value)
                 @additional_details = value
             end
             ## 
-            ## Gets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
+            ## Gets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
             ## @return a string
             ## 
             def category
                 return @category
             end
             ## 
-            ## Sets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
+            ## Sets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
             ## @param value Value to set for the category property.
             ## @return a void
             ## 
@@ -108,15 +108,15 @@ module MicrosoftGraph
                 super
             end
             ## 
-            ## Gets the correlationId property value. Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
+            ## Gets the correlationId property value. Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports $filter (eq).
             ## @return a string
             ## 
             def correlation_id
                 return @correlation_id
             end
             ## 
-            ## Sets the correlationId property value. Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
-            ## @param value Value to set for the correlation_id property.
+            ## Sets the correlationId property value. Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports $filter (eq).
+            ## @param value Value to set for the correlationId property.
             ## @return a void
             ## 
             def correlation_id=(value)
@@ -159,22 +159,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the initiatedBy property value. The initiatedBy property
-            ## @param value Value to set for the initiated_by property.
+            ## @param value Value to set for the initiatedBy property.
             ## @return a void
             ## 
             def initiated_by=(value)
                 @initiated_by = value
             end
             ## 
-            ## Gets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
+            ## Gets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management. Supports $filter (eq).
             ## @return a string
             ## 
             def logged_by_service
                 return @logged_by_service
             end
             ## 
-            ## Sets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
-            ## @param value Value to set for the logged_by_service property.
+            ## Sets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management. Supports $filter (eq).
+            ## @param value Value to set for the loggedByService property.
             ## @return a void
             ## 
             def logged_by_service=(value)
@@ -189,7 +189,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the operationType property value. Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
-            ## @param value Value to set for the operation_type property.
+            ## @param value Value to set for the operationType property.
             ## @return a void
             ## 
             def operation_type=(value)
@@ -219,7 +219,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resultReason property value. Indicates the reason for failure if the result is failure or timeout.
-            ## @param value Value to set for the result_reason property.
+            ## @param value Value to set for the resultReason property.
             ## @return a void
             ## 
             def result_reason=(value)
@@ -246,15 +246,15 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("targetResources", @target_resources)
             end
             ## 
-            ## Gets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
+            ## Gets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.
             ## @return a target_resource
             ## 
             def target_resources
                 return @target_resources
             end
             ## 
-            ## Sets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
-            ## @param value Value to set for the target_resources property.
+            ## Sets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.
+            ## @param value Value to set for the targetResources property.
             ## @return a void
             ## 
             def target_resources=(value)

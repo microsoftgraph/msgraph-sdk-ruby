@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Do not use this property as it is not supported.
             @content_location
             ## 
-            ## Instantiates a new FileAttachment and sets the default values.
+            ## Instantiates a new fileAttachment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,7 +32,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentBytes property value. The base64-encoded contents of the file.
-            ## @param value Value to set for the content_bytes property.
+            ## @param value Value to set for the contentBytes property.
             ## @return a void
             ## 
             def content_bytes=(value)
@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentId property value. The ID of the attachment in the Exchange store.
-            ## @param value Value to set for the content_id property.
+            ## @param value Value to set for the contentId property.
             ## @return a void
             ## 
             def content_id=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentLocation property value. Do not use this property as it is not supported.
-            ## @param value Value to set for the content_location property.
+            ## @param value Value to set for the contentLocation property.
             ## @return a void
             ## 
             def content_location=(value)

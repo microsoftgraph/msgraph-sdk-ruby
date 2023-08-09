@@ -1,13 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/terms_and_conditions'
 require_relative '../../device_management'
 require_relative '../terms_and_conditions'
 require_relative './acceptance_statuses/acceptance_statuses_request_builder'
-require_relative './acceptance_statuses/item/terms_and_conditions_acceptance_status_item_request_builder'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/terms_and_conditions_assignment_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -29,28 +27,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::Assignments::AssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a terms_and_conditions_acceptance_status_item_request_builder
-                    ## 
-                    def acceptance_statuses_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["termsAndConditionsAcceptanceStatus%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::AcceptanceStatuses::Item::TermsAndConditionsAcceptanceStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a terms_and_conditions_assignment_item_request_builder
-                    ## 
-                    def assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["termsAndConditionsAssignment%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::Assignments::Item::TermsAndConditionsAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new TermsAndConditionsItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -60,7 +36,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/termsAndConditions/{termsAndConditions%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property termsAndConditions for deviceManagement
+                    ## Deletes a termsAndConditions.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -69,12 +45,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The terms and conditions associated with device management of the company.
+                    ## Read properties and relationships of the termsAndConditions object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of terms_and_conditions
                     ## 
@@ -83,12 +59,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermsAndConditions.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property termsAndConditions in deviceManagement
+                    ## Update the properties of a termsAndConditions object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of terms_and_conditions
@@ -99,12 +75,12 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermsAndConditions.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property termsAndConditions for deviceManagement
+                    ## Deletes a termsAndConditions.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -120,7 +96,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The terms and conditions associated with device management of the company.
+                    ## Read properties and relationships of the termsAndConditions object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -138,7 +114,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property termsAndConditions in deviceManagement
+                    ## Update the properties of a termsAndConditions object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -159,7 +135,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The terms and conditions associated with device management of the company.
+                    # Read properties and relationships of the termsAndConditions object.
                     class TermsAndConditionsItemRequestBuilderGetQueryParameters
                         
                         ## 

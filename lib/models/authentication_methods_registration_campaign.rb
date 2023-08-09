@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the excludeTargets property value. Users and groups of users that are excluded from being prompted to set up the authentication method.
-            ## @param value Value to set for the exclude_targets property.
+            ## @param value Value to set for the excludeTargets property.
             ## @return a void
             ## 
             def exclude_targets=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeTargets property value. Users and groups of users that are prompted to set up the authentication method.
-            ## @param value Value to set for the include_targets property.
+            ## @param value Value to set for the includeTargets property.
             ## @return a void
             ## 
             def include_targets=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
-            ## @param value Value to set for the snooze_duration_in_days property.
+            ## @param value Value to set for the snoozeDurationInDays property.
             ## @return a void
             ## 
             def snooze_duration_in_days=(value)

@@ -31,7 +31,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the durationInSeconds property value. Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
-            ## @param value Value to set for the duration_in_seconds property.
+            ## @param value Value to set for the durationInSeconds property.
             ## @return a void
             ## 
             def duration_in_seconds=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the joinDateTime property value. The time the attendee joined in UTC.
-            ## @param value Value to set for the join_date_time property.
+            ## @param value Value to set for the joinDateTime property.
             ## @return a void
             ## 
             def join_date_time=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the leaveDateTime property value. The time the attendee left in UTC.
-            ## @param value Value to set for the leave_date_time property.
+            ## @param value Value to set for the leaveDateTime property.
             ## @return a void
             ## 
             def leave_date_time=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

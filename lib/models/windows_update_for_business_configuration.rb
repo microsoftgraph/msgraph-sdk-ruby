@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Windows Update for business configuration, allows you to specify how and when Windows as a Service updates your Windows 10/11 devices with feature and quality updates. Supports ODATA clauses that DeviceConfiguration entity supports: $filter by types of DeviceConfiguration, $top, $select only DeviceConfiguration base properties, $orderby only DeviceConfiguration base properties, and $skip. The query parameter '$search' is not supported.
         class WindowsUpdateForBusinessConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -124,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowWindows11Upgrade property value. When TRUE, allows eligible Windows 10 devices to upgrade to Windows 11. When FALSE, implies the device stays on the existing operating system. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the allow_windows11_upgrade property.
+            ## @param value Value to set for the allowWindows11Upgrade property.
             ## @return a void
             ## 
             def allow_windows11_upgrade=(value)
@@ -139,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the autoRestartNotificationDismissal property value. Auto restart required notification dismissal method
-            ## @param value Value to set for the auto_restart_notification_dismissal property.
+            ## @param value Value to set for the autoRestartNotificationDismissal property.
             ## @return a void
             ## 
             def auto_restart_notification_dismissal=(value)
@@ -154,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the automaticUpdateMode property value. Possible values for automatic update mode.
-            ## @param value Value to set for the automatic_update_mode property.
+            ## @param value Value to set for the automaticUpdateMode property.
             ## @return a void
             ## 
             def automatic_update_mode=(value)
@@ -169,14 +171,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the businessReadyUpdatesOnly property value. Which branch devices will receive their updates from
-            ## @param value Value to set for the business_ready_updates_only property.
+            ## @param value Value to set for the businessReadyUpdatesOnly property.
             ## @return a void
             ## 
             def business_ready_updates_only=(value)
                 @business_ready_updates_only = value
             end
             ## 
-            ## Instantiates a new WindowsUpdateForBusinessConfiguration and sets the default values.
+            ## Instantiates a new windowsUpdateForBusinessConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -201,7 +203,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deadlineForFeatureUpdatesInDays property value. Number of days before feature updates are installed automatically with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the deadline_for_feature_updates_in_days property.
+            ## @param value Value to set for the deadlineForFeatureUpdatesInDays property.
             ## @return a void
             ## 
             def deadline_for_feature_updates_in_days=(value)
@@ -216,7 +218,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deadlineForQualityUpdatesInDays property value. Number of days before quality updates are installed automatically with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the deadline_for_quality_updates_in_days property.
+            ## @param value Value to set for the deadlineForQualityUpdatesInDays property.
             ## @return a void
             ## 
             def deadline_for_quality_updates_in_days=(value)
@@ -231,7 +233,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deadlineGracePeriodInDays property value. Number of days after deadline until restarts occur automatically with valid range from 0 to 7 days. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the deadline_grace_period_in_days property.
+            ## @param value Value to set for the deadlineGracePeriodInDays property.
             ## @return a void
             ## 
             def deadline_grace_period_in_days=(value)
@@ -246,7 +248,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
-            ## @param value Value to set for the delivery_optimization_mode property.
+            ## @param value Value to set for the deliveryOptimizationMode property.
             ## @return a void
             ## 
             def delivery_optimization_mode=(value)
@@ -261,7 +263,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the driversExcluded property value. When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the drivers_excluded property.
+            ## @param value Value to set for the driversExcluded property.
             ## @return a void
             ## 
             def drivers_excluded=(value)
@@ -276,7 +278,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the engagedRestartDeadlineInDays property value. Deadline in days before automatically scheduling and executing a pending restart outside of active hours, with valid range from 2 to 30 days. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the engaged_restart_deadline_in_days property.
+            ## @param value Value to set for the engagedRestartDeadlineInDays property.
             ## @return a void
             ## 
             def engaged_restart_deadline_in_days=(value)
@@ -291,7 +293,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the engagedRestartSnoozeScheduleInDays property value. Number of days a user can snooze Engaged Restart reminder notifications with valid range from 1 to 3 days. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the engaged_restart_snooze_schedule_in_days property.
+            ## @param value Value to set for the engagedRestartSnoozeScheduleInDays property.
             ## @return a void
             ## 
             def engaged_restart_snooze_schedule_in_days=(value)
@@ -306,7 +308,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the engagedRestartTransitionScheduleInDays property value. Number of days before transitioning from Auto Restarts scheduled outside of active hours to Engaged Restart, which requires the user to schedule, with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the engaged_restart_transition_schedule_in_days property.
+            ## @param value Value to set for the engagedRestartTransitionScheduleInDays property.
             ## @return a void
             ## 
             def engaged_restart_transition_schedule_in_days=(value)
@@ -321,7 +323,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the featureUpdatesDeferralPeriodInDays property value. Defer Feature Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the feature_updates_deferral_period_in_days property.
+            ## @param value Value to set for the featureUpdatesDeferralPeriodInDays property.
             ## @return a void
             ## 
             def feature_updates_deferral_period_in_days=(value)
@@ -336,7 +338,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the featureUpdatesPauseExpiryDateTime property value. The Feature Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the feature_updates_pause_expiry_date_time property.
+            ## @param value Value to set for the featureUpdatesPauseExpiryDateTime property.
             ## @return a void
             ## 
             def feature_updates_pause_expiry_date_time=(value)
@@ -351,7 +353,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the featureUpdatesPauseStartDate property value. The Feature Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.
-            ## @param value Value to set for the feature_updates_pause_start_date property.
+            ## @param value Value to set for the featureUpdatesPauseStartDate property.
             ## @return a void
             ## 
             def feature_updates_pause_start_date=(value)
@@ -366,7 +368,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the featureUpdatesPaused property value. When TRUE, assigned devices are paused from receiving feature updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Feature Updates. Returned by default. Query parameters are not supported.s
-            ## @param value Value to set for the feature_updates_paused property.
+            ## @param value Value to set for the featureUpdatesPaused property.
             ## @return a void
             ## 
             def feature_updates_paused=(value)
@@ -381,7 +383,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the featureUpdatesRollbackStartDateTime property value. The Feature Updates Rollback Start datetime.This value is the time when the admin rolled back the Feature update for the ring.Returned by default.Query parameters are not supported.
-            ## @param value Value to set for the feature_updates_rollback_start_date_time property.
+            ## @param value Value to set for the featureUpdatesRollbackStartDateTime property.
             ## @return a void
             ## 
             def feature_updates_rollback_start_date_time=(value)
@@ -396,7 +398,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the featureUpdatesRollbackWindowInDays property value. The number of days after a Feature Update for which a rollback is valid with valid range from 2 to 60 days. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the feature_updates_rollback_window_in_days property.
+            ## @param value Value to set for the featureUpdatesRollbackWindowInDays property.
             ## @return a void
             ## 
             def feature_updates_rollback_window_in_days=(value)
@@ -411,7 +413,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the featureUpdatesWillBeRolledBack property value. When TRUE, rollback Feature Updates on the next device check in. When FALSE, do not rollback Feature Updates on the next device check in. Returned by default.Query parameters are not supported.
-            ## @param value Value to set for the feature_updates_will_be_rolled_back property.
+            ## @param value Value to set for the featureUpdatesWillBeRolledBack property.
             ## @return a void
             ## 
             def feature_updates_will_be_rolled_back=(value)
@@ -470,7 +472,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installationSchedule property value. The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the installation_schedule property.
+            ## @param value Value to set for the installationSchedule property.
             ## @return a void
             ## 
             def installation_schedule=(value)
@@ -485,7 +487,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the microsoftUpdateServiceAllowed property value. When TRUE, allows Microsoft Update Service. When FALSE, does not allow Microsoft Update Service. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the microsoft_update_service_allowed property.
+            ## @param value Value to set for the microsoftUpdateServiceAllowed property.
             ## @return a void
             ## 
             def microsoft_update_service_allowed=(value)
@@ -500,7 +502,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the postponeRebootUntilAfterDeadline property value. When TRUE the device should wait until deadline for rebooting outside of active hours. When FALSE the device should not wait until deadline for rebooting outside of active hours. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the postpone_reboot_until_after_deadline property.
+            ## @param value Value to set for the postponeRebootUntilAfterDeadline property.
             ## @return a void
             ## 
             def postpone_reboot_until_after_deadline=(value)
@@ -515,7 +517,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the prereleaseFeatures property value. Possible values for pre-release features.
-            ## @param value Value to set for the prerelease_features property.
+            ## @param value Value to set for the prereleaseFeatures property.
             ## @return a void
             ## 
             def prerelease_features=(value)
@@ -530,7 +532,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the qualityUpdatesDeferralPeriodInDays property value. Defer Quality Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the quality_updates_deferral_period_in_days property.
+            ## @param value Value to set for the qualityUpdatesDeferralPeriodInDays property.
             ## @return a void
             ## 
             def quality_updates_deferral_period_in_days=(value)
@@ -545,7 +547,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the qualityUpdatesPauseExpiryDateTime property value. The Quality Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the quality_updates_pause_expiry_date_time property.
+            ## @param value Value to set for the qualityUpdatesPauseExpiryDateTime property.
             ## @return a void
             ## 
             def quality_updates_pause_expiry_date_time=(value)
@@ -560,7 +562,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the qualityUpdatesPauseStartDate property value. The Quality Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.
-            ## @param value Value to set for the quality_updates_pause_start_date property.
+            ## @param value Value to set for the qualityUpdatesPauseStartDate property.
             ## @return a void
             ## 
             def quality_updates_pause_start_date=(value)
@@ -575,7 +577,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the qualityUpdatesPaused property value. When TRUE, assigned devices are paused from receiving quality updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Quality Updates. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the quality_updates_paused property.
+            ## @param value Value to set for the qualityUpdatesPaused property.
             ## @return a void
             ## 
             def quality_updates_paused=(value)
@@ -590,7 +592,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the qualityUpdatesRollbackStartDateTime property value. The Quality Updates Rollback Start datetime. This value is the time when the admin rolled back the Quality update for the ring. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the quality_updates_rollback_start_date_time property.
+            ## @param value Value to set for the qualityUpdatesRollbackStartDateTime property.
             ## @return a void
             ## 
             def quality_updates_rollback_start_date_time=(value)
@@ -605,7 +607,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the qualityUpdatesWillBeRolledBack property value. When TRUE, rollback Quality Updates on the next device check in. When FALSE, do not rollback Quality Updates on the next device check in. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the quality_updates_will_be_rolled_back property.
+            ## @param value Value to set for the qualityUpdatesWillBeRolledBack property.
             ## @return a void
             ## 
             def quality_updates_will_be_rolled_back=(value)
@@ -620,7 +622,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduleImminentRestartWarningInMinutes property value. Specify the period for auto-restart imminent warning notifications. Supported values: 15, 30 or 60 (minutes). Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the schedule_imminent_restart_warning_in_minutes property.
+            ## @param value Value to set for the scheduleImminentRestartWarningInMinutes property.
             ## @return a void
             ## 
             def schedule_imminent_restart_warning_in_minutes=(value)
@@ -635,7 +637,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduleRestartWarningInHours property value. Specify the period for auto-restart warning reminder notifications. Supported values: 2, 4, 8, 12 or 24 (hours). Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the schedule_restart_warning_in_hours property.
+            ## @param value Value to set for the scheduleRestartWarningInHours property.
             ## @return a void
             ## 
             def schedule_restart_warning_in_hours=(value)
@@ -693,7 +695,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the skipChecksBeforeRestart property value. When TRUE, skips all checks before restart: Battery level = 40%, User presence, Display Needed, Presentation mode, Full screen mode, phone call state, game mode etc. When FALSE, does not skip all checks before restart. Returned by default. Query parameters are not supported.
-            ## @param value Value to set for the skip_checks_before_restart property.
+            ## @param value Value to set for the skipChecksBeforeRestart property.
             ## @return a void
             ## 
             def skip_checks_before_restart=(value)
@@ -708,7 +710,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the updateNotificationLevel property value. Windows Update Notification Display Options
-            ## @param value Value to set for the update_notification_level property.
+            ## @param value Value to set for the updateNotificationLevel property.
             ## @return a void
             ## 
             def update_notification_level=(value)
@@ -723,7 +725,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the updateWeeks property value. Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
-            ## @param value Value to set for the update_weeks property.
+            ## @param value Value to set for the updateWeeks property.
             ## @return a void
             ## 
             def update_weeks=(value)
@@ -738,7 +740,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPauseAccess property value. Possible values of a property
-            ## @param value Value to set for the user_pause_access property.
+            ## @param value Value to set for the userPauseAccess property.
             ## @return a void
             ## 
             def user_pause_access=(value)
@@ -753,7 +755,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userWindowsUpdateScanAccess property value. Possible values of a property
-            ## @param value Value to set for the user_windows_update_scan_access property.
+            ## @param value Value to set for the userWindowsUpdateScanAccess property.
             ## @return a void
             ## 
             def user_windows_update_scan_access=(value)

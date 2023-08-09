@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../models/workbook_comment'
 require_relative '../../../../../../models/workbook_comment_collection_response'
 require_relative '../../../../../drives'
@@ -10,6 +10,7 @@ require_relative '../../item'
 require_relative '../workbook'
 require_relative './comments'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_comment_item_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Comments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the comments property of the microsoft.graph.workbook entity.
+                                ## @param workbook_comment_id The unique identifier of workbookComment
+                                ## @return a workbook_comment_item_request_builder
+                                ## 
+                                def by_workbook_comment_id(workbook_comment_id)
+                                    raise StandardError, 'workbook_comment_id cannot be null' if workbook_comment_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["workbookComment%2Did"] = workbook_comment_id
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Comments::Item::WorkbookCommentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new CommentsRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/comments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Get comments from drives
+                                ## Represents a collection of comments in a workbook.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of workbook_comment_collection_response
                                 ## 
@@ -46,8 +58,8 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookCommentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
@@ -62,12 +74,12 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookComment.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Get comments from drives
+                                ## Represents a collection of comments in a workbook.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -106,7 +118,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Get comments from drives
+                                # Represents a collection of comments in a workbook.
                                 class CommentsRequestBuilderGetQueryParameters
                                     
                                     ## 

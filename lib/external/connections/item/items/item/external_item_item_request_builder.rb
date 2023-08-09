@@ -1,12 +1,14 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/external_connectors/external_item'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/external_connectors_external_item'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../external'
 require_relative '../../../connections'
 require_relative '../../item'
 require_relative '../items'
+require_relative './activities/activities_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_external_connectors_add_activities/microsoft_graph_external_connectors_add_activities_request_builder'
 
 module MicrosoftGraph
     module External
@@ -19,6 +21,16 @@ module MicrosoftGraph
                         class ExternalItemItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
                             ## 
+                            # Provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.
+                            def activities()
+                                return MicrosoftGraph::External::Connections::Item::Items::Item::Activities::ActivitiesRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to call the addActivities method.
+                            def microsoft_graph_external_connectors_add_activities()
+                                return MicrosoftGraph::External::Connections::Item::Items::Item::MicrosoftGraphExternalConnectorsAddActivities::MicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new ExternalItemItemRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -28,7 +40,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/external/connections/{externalConnection%2Did}/items/{externalItem%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property items for external
+                            ## Delete an externalItem object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -37,29 +49,29 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get items from external
+                            ## Read the properties and relationships of an externalItem object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of external_item
+                            ## @return a Fiber of external_connectors_external_item
                             ## 
                             def get(request_configuration=nil)
                                 request_info = self.to_get_request_information(
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalItem.create_from_discriminator_value(pn) }, error_mapping)
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectorsExternalItem.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## Update the navigation property items in external
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of external_item
+                            ## @return a Fiber of external_connectors_external_item
                             ## 
                             def put(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
@@ -67,12 +79,12 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalItem.create_from_discriminator_value(pn) }, error_mapping)
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectorsExternalItem.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property items for external
+                            ## Delete an externalItem object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +100,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get items from external
+                            ## Read the properties and relationships of an externalItem object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +139,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get items from external
+                            # Read the properties and relationships of an externalItem object.
                             class ExternalItemItemRequestBuilderGetQueryParameters
                                 
                                 ## 

@@ -24,14 +24,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
-            ## @param value Value to set for the cloud_instance property.
+            ## @param value Value to set for the cloudInstance property.
             ## @return a void
             ## 
             def cloud_instance=(value)
                 @cloud_instance = value
             end
             ## 
-            ## Instantiates a new CrossCloudAzureActiveDirectoryTenant and sets the default values.
+            ## Instantiates a new crossCloudAzureActiveDirectoryTenant and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the Azure Active Directory tenant. Read only.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
-            ## @param value Value to set for the tenant_id property.
+            ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
             def tenant_id=(value)

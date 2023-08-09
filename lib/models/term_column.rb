@@ -1,8 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './term_store/set'
-require_relative './term_store/term'
 
 module MicrosoftGraph
     module Models
@@ -35,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -50,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
-            ## @param value Value to set for the allow_multiple_values property.
+            ## @param value Value to set for the allowMultipleValues property.
             ## @return a void
             ## 
             def allow_multiple_values=(value)
@@ -80,9 +78,9 @@ module MicrosoftGraph
                 return {
                     "allowMultipleValues" => lambda {|n| @allow_multiple_values = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "parentTerm" => lambda {|n| @parent_term = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermStore::Term.create_from_discriminator_value(pn) }) },
+                    "parentTerm" => lambda {|n| @parent_term = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermStoreTerm.create_from_discriminator_value(pn) }) },
                     "showFullyQualifiedName" => lambda {|n| @show_fully_qualified_name = n.get_boolean_value() },
-                    "termSet" => lambda {|n| @term_set = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermStore::Set.create_from_discriminator_value(pn) }) },
+                    "termSet" => lambda {|n| @term_set = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermStoreSet.create_from_discriminator_value(pn) }) },
                 }
             end
             ## 
@@ -94,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -102,14 +100,14 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the parentTerm property value. The parentTerm property
-            ## @return a term
+            ## @return a term_store_term
             ## 
             def parent_term
                 return @parent_term
             end
             ## 
             ## Sets the parentTerm property value. The parentTerm property
-            ## @param value Value to set for the parent_term property.
+            ## @param value Value to set for the parentTerm property.
             ## @return a void
             ## 
             def parent_term=(value)
@@ -138,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showFullyQualifiedName property value. Specifies whether to display the entire term path or only the term label.
-            ## @param value Value to set for the show_fully_qualified_name property.
+            ## @param value Value to set for the showFullyQualifiedName property.
             ## @return a void
             ## 
             def show_fully_qualified_name=(value)
@@ -146,14 +144,14 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the termSet property value. The termSet property
-            ## @return a set
+            ## @return a term_store_set
             ## 
             def term_set
                 return @term_set
             end
             ## 
             ## Sets the termSet property value. The termSet property
-            ## @param value Value to set for the term_set property.
+            ## @param value Value to set for the termSet property.
             ## @return a void
             ## 
             def term_set=(value)

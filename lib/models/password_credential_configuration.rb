@@ -31,7 +31,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maxLifetime property value. The maxLifetime property
-            ## @param value Value to set for the max_lifetime property.
+            ## @param value Value to set for the maxLifetime property.
             ## @return a void
             ## 
             def max_lifetime=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the restrictForAppsCreatedAfterDateTime property value. Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
-            ## @param value Value to set for the restrict_for_apps_created_after_date_time property.
+            ## @param value Value to set for the restrictForAppsCreatedAfterDateTime property.
             ## @return a void
             ## 
             def restrict_for_apps_created_after_date_time=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
-            ## @param value Value to set for the restriction_type property.
+            ## @param value Value to set for the restrictionType property.
             ## @return a void
             ## 
             def restriction_type=(value)

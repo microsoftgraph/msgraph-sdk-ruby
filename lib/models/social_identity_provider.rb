@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The identifier for the client application obtained when registering the application with the identity provider. Required.
             @client_id
             ## 
-            # The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns ****. Required.
+            # The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns . Required.
             @client_secret
             ## 
             # For a B2B scenario, possible values: Google, Facebook. For a B2C scenario, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat. Required.
@@ -24,29 +24,29 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clientId property value. The identifier for the client application obtained when registering the application with the identity provider. Required.
-            ## @param value Value to set for the client_id property.
+            ## @param value Value to set for the clientId property.
             ## @return a void
             ## 
             def client_id=(value)
                 @client_id = value
             end
             ## 
-            ## Gets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns ****. Required.
+            ## Gets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns . Required.
             ## @return a string
             ## 
             def client_secret
                 return @client_secret
             end
             ## 
-            ## Sets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns ****. Required.
-            ## @param value Value to set for the client_secret property.
+            ## Sets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns . Required.
+            ## @param value Value to set for the clientSecret property.
             ## @return a void
             ## 
             def client_secret=(value)
                 @client_secret = value
             end
             ## 
-            ## Instantiates a new SocialIdentityProvider and sets the default values.
+            ## Instantiates a new socialIdentityProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the identityProviderType property value. For a B2B scenario, possible values: Google, Facebook. For a B2C scenario, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat. Required.
-            ## @param value Value to set for the identity_provider_type property.
+            ## @param value Value to set for the identityProviderType property.
             ## @return a void
             ## 
             def identity_provider_type=(value)

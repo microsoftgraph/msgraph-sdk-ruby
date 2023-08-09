@@ -21,14 +21,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the connectedOrganizationId property value. The ID of the connected organization in entitlement management.
-            ## @param value Value to set for the connected_organization_id property.
+            ## @param value Value to set for the connectedOrganizationId property.
             ## @return a void
             ## 
             def connected_organization_id=(value)
                 @connected_organization_id = value
             end
             ## 
-            ## Instantiates a new ConnectedOrganizationMembers and sets the default values.
+            ## Instantiates a new connectedOrganizationMembers and sets the default values.
             ## @return a void
             ## 
             def initialize()

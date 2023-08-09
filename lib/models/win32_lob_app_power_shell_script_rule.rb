@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A complex type to store the PowerShell script rule data for a Win32 LOB app.
         class Win32LobAppPowerShellScriptRule < MicrosoftGraph::Models::Win32LobAppRule
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -39,14 +41,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the comparisonValue property value. The script output comparison value. Do not specify a value if the rule is used for detection.
-            ## @param value Value to set for the comparison_value property.
+            ## @param value Value to set for the comparisonValue property.
             ## @return a void
             ## 
             def comparison_value=(value)
                 @comparison_value = value
             end
             ## 
-            ## Instantiates a new Win32LobAppPowerShellScriptRule and sets the default values.
+            ## Instantiates a new win32LobAppPowerShellScriptRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name for the rule. Do not specify this value if the rule is used for detection.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -86,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enforceSignatureCheck property value. A value indicating whether a signature check is enforced.
-            ## @param value Value to set for the enforce_signature_check property.
+            ## @param value Value to set for the enforceSignatureCheck property.
             ## @return a void
             ## 
             def enforce_signature_check=(value)
@@ -117,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the operationType property value. Contains all supported Powershell Script output detection type.
-            ## @param value Value to set for the operation_type property.
+            ## @param value Value to set for the operationType property.
             ## @return a void
             ## 
             def operation_type=(value)
@@ -147,7 +149,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
-            ## @param value Value to set for the run_as_account property.
+            ## @param value Value to set for the runAsAccount property.
             ## @return a void
             ## 
             def run_as_account=(value)
@@ -162,7 +164,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the runAs32Bit property value. A value indicating whether the script should run as 32-bit.
-            ## @param value Value to set for the run_as32_bit property.
+            ## @param value Value to set for the runAs32Bit property.
             ## @return a void
             ## 
             def run_as32_bit=(value)
@@ -177,7 +179,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scriptContent property value. The base64-encoded script content.
-            ## @param value Value to set for the script_content property.
+            ## @param value Value to set for the scriptContent property.
             ## @return a void
             ## 
             def script_content=(value)

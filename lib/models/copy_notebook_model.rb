@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. The createdBy property
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdByIdentity property value. The createdByIdentity property
-            ## @param value Value to set for the created_by_identity property.
+            ## @param value Value to set for the createdByIdentity property.
             ## @return a void
             ## 
             def created_by_identity=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdTime property value. The createdTime property
-            ## @param value Value to set for the created_time property.
+            ## @param value Value to set for the createdTime property.
             ## @return a void
             ## 
             def created_time=(value)
@@ -182,7 +182,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isDefault property value. The isDefault property
-            ## @param value Value to set for the is_default property.
+            ## @param value Value to set for the isDefault property.
             ## @return a void
             ## 
             def is_default=(value)
@@ -197,7 +197,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isShared property value. The isShared property
-            ## @param value Value to set for the is_shared property.
+            ## @param value Value to set for the isShared property.
             ## @return a void
             ## 
             def is_shared=(value)
@@ -212,7 +212,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedBy property value. The lastModifiedBy property
-            ## @param value Value to set for the last_modified_by property.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
@@ -227,7 +227,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedByIdentity property value. The lastModifiedByIdentity property
-            ## @param value Value to set for the last_modified_by_identity property.
+            ## @param value Value to set for the lastModifiedByIdentity property.
             ## @return a void
             ## 
             def last_modified_by_identity=(value)
@@ -242,7 +242,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedTime property value. The lastModifiedTime property
-            ## @param value Value to set for the last_modified_time property.
+            ## @param value Value to set for the lastModifiedTime property.
             ## @return a void
             ## 
             def last_modified_time=(value)
@@ -287,7 +287,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -302,7 +302,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sectionGroupsUrl property value. The sectionGroupsUrl property
-            ## @param value Value to set for the section_groups_url property.
+            ## @param value Value to set for the sectionGroupsUrl property.
             ## @return a void
             ## 
             def section_groups_url=(value)
@@ -317,7 +317,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sectionsUrl property value. The sectionsUrl property
-            ## @param value Value to set for the sections_url property.
+            ## @param value Value to set for the sectionsUrl property.
             ## @return a void
             ## 
             def sections_url=(value)
@@ -372,7 +372,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userRole property value. The userRole property
-            ## @param value Value to set for the user_role property.
+            ## @param value Value to set for the userRole property.
             ## @return a void
             ## 
             def user_role=(value)

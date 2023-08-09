@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A class containing the properties for iOS Vpp eBook.
         class IosVppEBook < MicrosoftGraph::Models::ManagedEBook
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -39,14 +41,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appleId property value. The Apple ID associated with Vpp token.
-            ## @param value Value to set for the apple_id property.
+            ## @param value Value to set for the appleId property.
             ## @return a void
             ## 
             def apple_id=(value)
                 @apple_id = value
             end
             ## 
-            ## Instantiates a new IosVppEBook and sets the default values.
+            ## Instantiates a new iosVppEBook and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -149,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the totalLicenseCount property value. Total license count.
-            ## @param value Value to set for the total_license_count property.
+            ## @param value Value to set for the totalLicenseCount property.
             ## @return a void
             ## 
             def total_license_count=(value)
@@ -164,7 +166,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the usedLicenseCount property value. Used license count.
-            ## @param value Value to set for the used_license_count property.
+            ## @param value Value to set for the usedLicenseCount property.
             ## @return a void
             ## 
             def used_license_count=(value)
@@ -179,7 +181,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the vppOrganizationName property value. The Vpp token's organization name.
-            ## @param value Value to set for the vpp_organization_name property.
+            ## @param value Value to set for the vppOrganizationName property.
             ## @return a void
             ## 
             def vpp_organization_name=(value)
@@ -194,7 +196,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the vppTokenId property value. The Vpp token ID.
-            ## @param value Value to set for the vpp_token_id property.
+            ## @param value Value to set for the vppTokenId property.
             ## @return a void
             ## 
             def vpp_token_id=(value)

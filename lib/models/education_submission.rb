@@ -32,7 +32,7 @@ module MicrosoftGraph
             # Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @returned_date_time
             ## 
-            # Read-only. Possible values are: working, submitted, released, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
+            # Read-only. Possible values are: working, submitted, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
             @status
             ## 
             # User who moved the resource into the submitted state.
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reassignedBy property value. User who moved the status of this submission to reassigned.
-            ## @param value Value to set for the reassigned_by property.
+            ## @param value Value to set for the reassignedBy property.
             ## @return a void
             ## 
             def reassigned_by=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reassignedDateTime property value. Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the reassigned_date_time property.
+            ## @param value Value to set for the reassignedDateTime property.
             ## @return a void
             ## 
             def reassigned_date_time=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourcesFolderUrl property value. Folder where all file resources for this submission need to be stored.
-            ## @param value Value to set for the resources_folder_url property.
+            ## @param value Value to set for the resourcesFolderUrl property.
             ## @return a void
             ## 
             def resources_folder_url=(value)
@@ -186,7 +186,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the returnedBy property value. User who moved the status of this submission to returned.
-            ## @param value Value to set for the returned_by property.
+            ## @param value Value to set for the returnedBy property.
             ## @return a void
             ## 
             def returned_by=(value)
@@ -201,7 +201,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the returnedDateTime property value. Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the returned_date_time property.
+            ## @param value Value to set for the returnedDateTime property.
             ## @return a void
             ## 
             def returned_date_time=(value)
@@ -221,14 +221,14 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("submittedResources", @submitted_resources)
             end
             ## 
-            ## Gets the status property value. Read-only. Possible values are: working, submitted, released, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
+            ## Gets the status property value. Read-only. Possible values are: working, submitted, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
             ## @return a education_submission_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. Read-only. Possible values are: working, submitted, released, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
+            ## Sets the status property value. Read-only. Possible values are: working, submitted, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -244,7 +244,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the submittedBy property value. User who moved the resource into the submitted state.
-            ## @param value Value to set for the submitted_by property.
+            ## @param value Value to set for the submittedBy property.
             ## @return a void
             ## 
             def submitted_by=(value)
@@ -259,7 +259,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the submittedDateTime property value. Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the submitted_date_time property.
+            ## @param value Value to set for the submittedDateTime property.
             ## @return a void
             ## 
             def submitted_date_time=(value)
@@ -274,7 +274,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the submittedResources property value. The submittedResources property
-            ## @param value Value to set for the submitted_resources property.
+            ## @param value Value to set for the submittedResources property.
             ## @return a void
             ## 
             def submitted_resources=(value)
@@ -289,7 +289,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the unsubmittedBy property value. User who moved the resource from submitted into the working state.
-            ## @param value Value to set for the unsubmitted_by property.
+            ## @param value Value to set for the unsubmittedBy property.
             ## @return a void
             ## 
             def unsubmitted_by=(value)
@@ -304,7 +304,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the unsubmitted_date_time property.
+            ## @param value Value to set for the unsubmittedDateTime property.
             ## @return a void
             ## 
             def unsubmitted_date_time=(value)

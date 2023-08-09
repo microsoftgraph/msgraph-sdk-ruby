@@ -1,14 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../models/term_store/store'
+require_relative '../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../models/term_store_store'
 require_relative '../../../../groups'
 require_relative '../../../item'
 require_relative '../../sites'
 require_relative '../item'
 require_relative './groups/groups_request_builder'
-require_relative './groups/item/group_item_request_builder'
-require_relative './sets/item/set_item_request_builder'
 require_relative './sets/sets_request_builder'
 require_relative './term_store'
 
@@ -51,40 +49,29 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
                             ## Read the properties and relationships of a store object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of store
+                            ## @return a Fiber of term_store_store
                             ## 
                             def get(request_configuration=nil)
                                 request_info = self.to_get_request_information(
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Store.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a group_item_request_builder
-                            ## 
-                            def groups_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["group%2Did1"] = id
-                                return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Groups::Item::GroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreStore.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## Update the properties of a store object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of store
+                            ## @return a Fiber of term_store_store
                             ## 
                             def patch(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
@@ -92,20 +79,9 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Store.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a set_item_request_builder
-                            ## 
-                            def sets_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["set%2Did"] = id
-                                return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Sets::Item::SetItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreStore.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## Delete navigation property termStore for groups

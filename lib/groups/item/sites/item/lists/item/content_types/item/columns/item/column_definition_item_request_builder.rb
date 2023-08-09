@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../../microsoft_graph'
 require_relative '../../../../../../../../../../models/column_definition'
-require_relative '../../../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../../../groups'
 require_relative '../../../../../../../../item'
 require_relative '../../../../../../../sites'
@@ -44,7 +44,7 @@ module MicrosoftGraph
                                                     super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/columns/{columnDefinition%2Did}{?%24select,%24expand}")
                                                 end
                                                 ## 
-                                                ## Delete navigation property columns for groups
+                                                ## Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of void
                                                 ## 
@@ -53,12 +53,12 @@ module MicrosoftGraph
                                                         request_configuration
                                                     )
                                                     error_mapping = Hash.new
-                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                                 end
                                                 ## 
-                                                ## The collection of column definitions for this contentType.
+                                                ## Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of column_definition
                                                 ## 
@@ -67,12 +67,12 @@ module MicrosoftGraph
                                                         request_configuration
                                                     )
                                                     error_mapping = Hash.new
-                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ColumnDefinition.create_from_discriminator_value(pn) }, error_mapping)
                                                 end
                                                 ## 
-                                                ## Update the navigation property columns in groups
+                                                ## Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
                                                 ## @param body The request body
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of column_definition
@@ -83,12 +83,12 @@ module MicrosoftGraph
                                                         body, request_configuration
                                                     )
                                                     error_mapping = Hash.new
-                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ColumnDefinition.create_from_discriminator_value(pn) }, error_mapping)
                                                 end
                                                 ## 
-                                                ## Delete navigation property columns for groups
+                                                ## Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
                                                 ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
                                                     return request_info
                                                 end
                                                 ## 
-                                                ## The collection of column definitions for this contentType.
+                                                ## Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
                                                 ## 
@@ -122,7 +122,7 @@ module MicrosoftGraph
                                                     return request_info
                                                 end
                                                 ## 
-                                                ## Update the navigation property columns in groups
+                                                ## Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
                                                 ## @param body The request body
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
@@ -143,7 +143,7 @@ module MicrosoftGraph
                                                 end
 
                                                 ## 
-                                                # The collection of column definitions for this contentType.
+                                                # Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
                                                 class ColumnDefinitionItemRequestBuilderGetQueryParameters
                                                     
                                                     ## 
