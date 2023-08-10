@@ -56,3 +56,5 @@ Gemfile.lock
 # .rubocop-https?--*
 
 .rspec_status
+
+*.log
