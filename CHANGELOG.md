@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.22.1] - 2023-08-10
+
+### Changed
+
+- Removed resume and time operations that have a file name longer than what gem build allows.
+
 ## [0.22.0] - 2023-08-10
 
 ### Changed
