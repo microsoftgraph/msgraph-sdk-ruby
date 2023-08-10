@@ -11,7 +11,6 @@ require_relative '../../../user_processing_results'
 require_relative '../../item'
 require_relative '../task_processing_results'
 require_relative './item'
-require_relative './microsoft_graph_identity_governance_resume/5e1b08eee2b49ca4c46c68fd4793ffe53f9b2b07136fa4efa46fe7e75977d333'
 require_relative './subject/subject_request_builder'
 require_relative './task/task_request_builder'
 
@@ -29,11 +28,6 @@ module MicrosoftGraph
                                         # Provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.userProcessingResult entity.
                                         class TaskProcessingResultItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                             
-                                            ## 
-                                            # Provides operations to call the resume method.
-                                            def microsoft_graph_identity_governance_resume()
-                                                return MicrosoftGraph::IdentityGovernance::LifecycleWorkflows::DeletedItems::Workflows::Item::UserProcessingResults::Item::TaskProcessingResults::Item::MicrosoftGraphIdentityGovernanceResume::MicrosoftGraphIdentityGovernanceResumeRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
                                             ## 
                                             # Provides operations to manage the subject property of the microsoft.graph.identityGovernance.taskProcessingResult entity.
                                             def subject()

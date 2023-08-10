@@ -1,1 +1,0 @@
-require_relative 'resume_post_request_body'
