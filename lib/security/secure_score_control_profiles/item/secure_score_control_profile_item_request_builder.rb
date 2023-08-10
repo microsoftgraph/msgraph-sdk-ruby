@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/secure_score_control_profile'
 require_relative '../../security'
 require_relative '../secure_score_control_profiles'
@@ -33,12 +33,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get secureScoreControlProfiles from security
+                    ## Retrieve the properties and relationships of an securescorecontrolprofile object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of secure_score_control_profile
                     ## 
@@ -47,12 +47,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecureScoreControlProfile.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property secureScoreControlProfiles in security
+                    ## Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of secure_score_control_profile
@@ -63,8 +63,8 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecureScoreControlProfile.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Get secureScoreControlProfiles from security
+                    ## Retrieve the properties and relationships of an securescorecontrolprofile object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property secureScoreControlProfiles in security
+                    ## Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get secureScoreControlProfiles from security
+                    # Retrieve the properties and relationships of an securescorecontrolprofile object.
                     class SecureScoreControlProfileItemRequestBuilderGetQueryParameters
                         
                         ## 

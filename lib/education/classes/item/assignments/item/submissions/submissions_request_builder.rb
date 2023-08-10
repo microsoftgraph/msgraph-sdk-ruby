@@ -2,13 +2,14 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
 require_relative '../../../../../../models/education_submission'
 require_relative '../../../../../../models/education_submission_collection_response'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../education'
 require_relative '../../../../classes'
 require_relative '../../../item'
 require_relative '../../assignments'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/education_submission_item_request_builder'
 require_relative './submissions'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
+                                ## @param education_submission_id The unique identifier of educationSubmission
+                                ## @return a education_submission_item_request_builder
+                                ## 
+                                def by_education_submission_id(education_submission_id)
+                                    raise StandardError, 'education_submission_id cannot be null' if education_submission_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["educationSubmission%2Did"] = education_submission_id
+                                    return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::EducationSubmissionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new SubmissionsRequestBuilder and sets the default values.
@@ -46,8 +58,8 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationSubmissionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
@@ -62,8 +74,8 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationSubmission.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 

@@ -1,11 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/simulation_automation'
 require_relative '../../../models/simulation_automation_collection_response'
 require_relative '../../security'
 require_relative '../attack_simulation'
 require_relative './count/count_request_builder'
+require_relative './item/simulation_automation_item_request_builder'
 require_relative './simulation_automations'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Security::AttackSimulation::SimulationAutomations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
+                    ## @param simulation_automation_id The unique identifier of simulationAutomation
+                    ## @return a simulation_automation_item_request_builder
+                    ## 
+                    def by_simulation_automation_id(simulation_automation_id)
+                        raise StandardError, 'simulation_automation_id cannot be null' if simulation_automation_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["simulationAutomation%2Did"] = simulation_automation_id
+                        return MicrosoftGraph::Security::AttackSimulation::SimulationAutomations::Item::SimulationAutomationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new SimulationAutomationsRequestBuilder and sets the default values.
@@ -40,8 +52,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SimulationAutomationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -56,8 +68,8 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SimulationAutomation.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

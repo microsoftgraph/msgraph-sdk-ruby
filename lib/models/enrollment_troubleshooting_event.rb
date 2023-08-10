@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Event representing an enrollment failure.
         class EnrollmentTroubleshootingEvent < MicrosoftGraph::Models::DeviceManagementTroubleshootingEvent
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -31,7 +33,7 @@ module MicrosoftGraph
             # Identifier for the user that tried to enroll the device.
             @user_id
             ## 
-            ## Instantiates a new EnrollmentTroubleshootingEvent and sets the default values.
+            ## Instantiates a new enrollmentTroubleshootingEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -55,7 +57,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceId property value. Azure AD device identifier.
-            ## @param value Value to set for the device_id property.
+            ## @param value Value to set for the deviceId property.
             ## @return a void
             ## 
             def device_id=(value)
@@ -70,7 +72,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enrollmentType property value. Possible ways of adding a mobile device to management.
-            ## @param value Value to set for the enrollment_type property.
+            ## @param value Value to set for the enrollmentType property.
             ## @return a void
             ## 
             def enrollment_type=(value)
@@ -85,7 +87,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the failureCategory property value. Top level failure categories for enrollment.
-            ## @param value Value to set for the failure_category property.
+            ## @param value Value to set for the failureCategory property.
             ## @return a void
             ## 
             def failure_category=(value)
@@ -100,7 +102,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the failureReason property value. Detailed failure reason.
-            ## @param value Value to set for the failure_reason property.
+            ## @param value Value to set for the failureReason property.
             ## @return a void
             ## 
             def failure_reason=(value)
@@ -131,7 +133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
-            ## @param value Value to set for the managed_device_identifier property.
+            ## @param value Value to set for the managedDeviceIdentifier property.
             ## @return a void
             ## 
             def managed_device_identifier=(value)
@@ -146,7 +148,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the operatingSystem property value. Operating System.
-            ## @param value Value to set for the operating_system property.
+            ## @param value Value to set for the operatingSystem property.
             ## @return a void
             ## 
             def operating_system=(value)
@@ -161,7 +163,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the osVersion property value. OS Version.
-            ## @param value Value to set for the os_version property.
+            ## @param value Value to set for the osVersion property.
             ## @return a void
             ## 
             def os_version=(value)
@@ -193,7 +195,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userId property value. Identifier for the user that tried to enroll the device.
-            ## @param value Value to set for the user_id property.
+            ## @param value Value to set for the userId property.
             ## @return a void
             ## 
             def user_id=(value)

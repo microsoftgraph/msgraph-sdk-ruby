@@ -6,7 +6,7 @@ require_relative './models'
 module MicrosoftGraph
     module Models
         ## 
-        # An abstract class containing the base properties for Intune mobile apps.
+        # An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
         class MobileApp < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -100,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The date and time the app was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -131,6 +131,8 @@ module MicrosoftGraph
                             return IosVppApp.new
                         when "#microsoft.graph.macOSLobApp"
                             return MacOSLobApp.new
+                        when "#microsoft.graph.macOSMicrosoftDefenderApp"
+                            return MacOSMicrosoftDefenderApp.new
                         when "#microsoft.graph.macOSMicrosoftEdgeApp"
                             return MacOSMicrosoftEdgeApp.new
                         when "#microsoft.graph.macOSOfficeSuiteApp"
@@ -208,7 +210,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The admin provided or imported title of the app.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -246,7 +248,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the informationUrl property value. The more information Url.
-            ## @param value Value to set for the information_url property.
+            ## @param value Value to set for the informationUrl property.
             ## @return a void
             ## 
             def information_url=(value)
@@ -261,7 +263,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isFeatured property value. The value indicating whether the app is marked as featured by the admin.
-            ## @param value Value to set for the is_featured property.
+            ## @param value Value to set for the isFeatured property.
             ## @return a void
             ## 
             def is_featured=(value)
@@ -276,7 +278,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the largeIcon property value. The large icon, to be displayed in the app details and used for upload of the icon.
-            ## @param value Value to set for the large_icon property.
+            ## @param value Value to set for the largeIcon property.
             ## @return a void
             ## 
             def large_icon=(value)
@@ -291,7 +293,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The date and time the app was last modified.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -336,7 +338,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the privacyInformationUrl property value. The privacy statement Url.
-            ## @param value Value to set for the privacy_information_url property.
+            ## @param value Value to set for the privacyInformationUrl property.
             ## @return a void
             ## 
             def privacy_information_url=(value)
@@ -366,7 +368,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the publishingState property value. Indicates the publishing state of an app.
-            ## @param value Value to set for the publishing_state property.
+            ## @param value Value to set for the publishingState property.
             ## @return a void
             ## 
             def publishing_state=(value)

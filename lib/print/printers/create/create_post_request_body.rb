@@ -44,7 +44,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the AdditionalData property.
+                    ## @param value Value to set for the additionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the certificateSigningRequest property value. The certificateSigningRequest property
-                    ## @param value Value to set for the certificate_signing_request property.
+                    ## @param value Value to set for the certificateSigningRequest property.
                     ## @return a void
                     ## 
                     def certificate_signing_request=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the connectorId property value. The connectorId property
-                    ## @param value Value to set for the connector_id property.
+                    ## @param value Value to set for the connectorId property.
                     ## @return a void
                     ## 
                     def connector_id=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the displayName property value. The displayName property
-                    ## @param value Value to set for the display_name property.
+                    ## @param value Value to set for the displayName property.
                     ## @return a void
                     ## 
                     def display_name=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the hasPhysicalDevice property value. The hasPhysicalDevice property
-                    ## @param value Value to set for the has_physical_device property.
+                    ## @param value Value to set for the hasPhysicalDevice property.
                     ## @return a void
                     ## 
                     def has_physical_device=(value)
@@ -180,7 +180,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the physicalDeviceId property value. The physicalDeviceId property
-                    ## @param value Value to set for the physical_device_id property.
+                    ## @param value Value to set for the physicalDeviceId property.
                     ## @return a void
                     ## 
                     def physical_device_id=(value)

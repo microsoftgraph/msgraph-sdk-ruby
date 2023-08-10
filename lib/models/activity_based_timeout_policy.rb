@@ -7,7 +7,7 @@ module MicrosoftGraph
         class ActivityBasedTimeoutPolicy < MicrosoftGraph::Models::StsPolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new ActivityBasedTimeoutPolicy and sets the default values.
+            ## Instantiates a new activityBasedTimeoutPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

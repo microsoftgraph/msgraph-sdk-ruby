@@ -2,9 +2,10 @@ require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative '../models/data_policy_operation'
 require_relative '../models/data_policy_operation_collection_response'
-require_relative '../models/o_data_errors/o_data_error'
+require_relative '../models/o_data_errors_o_data_error'
 require_relative './count/count_request_builder'
 require_relative './data_policy_operations'
+require_relative './item/data_policy_operation_item_request_builder'
 
 module MicrosoftGraph
     module DataPolicyOperations
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 return MicrosoftGraph::DataPolicyOperations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            ## Provides operations to manage the collection of dataPolicyOperation entities.
+            ## @param data_policy_operation_id The unique identifier of dataPolicyOperation
+            ## @return a data_policy_operation_item_request_builder
+            ## 
+            def by_data_policy_operation_id(data_policy_operation_id)
+                raise StandardError, 'data_policy_operation_id cannot be null' if data_policy_operation_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["dataPolicyOperation%2Did"] = data_policy_operation_id
+                return MicrosoftGraph::DataPolicyOperations::Item::DataPolicyOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            end
+            ## 
             ## Instantiates a new DataPolicyOperationsRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
             ## @param request_adapter The request adapter to use to execute the requests.
@@ -27,7 +39,7 @@ module MicrosoftGraph
                 super(path_parameters, request_adapter, "{+baseurl}/dataPolicyOperations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
             end
             ## 
-            ## Retrieve the properties of a **dataPolicyOperation** object.
+            ## Retrieve the properties of a dataPolicyOperation object.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of data_policy_operation_collection_response
             ## 
@@ -36,8 +48,8 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DataPolicyOperationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -52,12 +64,12 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DataPolicyOperation.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Retrieve the properties of a **dataPolicyOperation** object.
+            ## Retrieve the properties of a dataPolicyOperation object.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -96,7 +108,7 @@ module MicrosoftGraph
             end
 
             ## 
-            # Retrieve the properties of a **dataPolicyOperation** object.
+            # Retrieve the properties of a dataPolicyOperation object.
             class DataPolicyOperationsRequestBuilderGetQueryParameters
                 
                 ## 

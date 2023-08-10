@@ -10,6 +10,9 @@ module MicrosoftGraph
             # Read-only. Nullable. Returns a collection of the specified authentication context class references.
             @authentication_context_class_references
             ## 
+            # The authenticationStrength property
+            @authentication_strength
+            ## 
             # Read-only. Nullable. Returns a collection of the specified named locations.
             @named_locations
             ## 
@@ -27,11 +30,26 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the authenticationContextClassReferences property value. Read-only. Nullable. Returns a collection of the specified authentication context class references.
-            ## @param value Value to set for the authentication_context_class_references property.
+            ## @param value Value to set for the authenticationContextClassReferences property.
             ## @return a void
             ## 
             def authentication_context_class_references=(value)
                 @authentication_context_class_references = value
+            end
+            ## 
+            ## Gets the authenticationStrength property value. The authenticationStrength property
+            ## @return a authentication_strength_root
+            ## 
+            def authentication_strength
+                return @authentication_strength
+            end
+            ## 
+            ## Sets the authenticationStrength property value. The authenticationStrength property
+            ## @param value Value to set for the authenticationStrength property.
+            ## @return a void
+            ## 
+            def authentication_strength=(value)
+                @authentication_strength = value
             end
             ## 
             ## Instantiates a new conditionalAccessRoot and sets the default values.
@@ -56,6 +74,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "authenticationContextClassReferences" => lambda {|n| @authentication_context_class_references = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AuthenticationContextClassReference.create_from_discriminator_value(pn) }) },
+                    "authenticationStrength" => lambda {|n| @authentication_strength = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthenticationStrengthRoot.create_from_discriminator_value(pn) }) },
                     "namedLocations" => lambda {|n| @named_locations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::NamedLocation.create_from_discriminator_value(pn) }) },
                     "policies" => lambda {|n| @policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessPolicy.create_from_discriminator_value(pn) }) },
                     "templates" => lambda {|n| @templates = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessTemplate.create_from_discriminator_value(pn) }) },
@@ -70,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
-            ## @param value Value to set for the named_locations property.
+            ## @param value Value to set for the namedLocations property.
             ## @return a void
             ## 
             def named_locations=(value)
@@ -100,6 +119,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_collection_of_object_values("authenticationContextClassReferences", @authentication_context_class_references)
+                writer.write_object_value("authenticationStrength", @authentication_strength)
                 writer.write_collection_of_object_values("namedLocations", @named_locations)
                 writer.write_collection_of_object_values("policies", @policies)
                 writer.write_collection_of_object_values("templates", @templates)

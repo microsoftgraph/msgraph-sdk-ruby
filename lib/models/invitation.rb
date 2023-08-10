@@ -37,7 +37,7 @@ module MicrosoftGraph
             # The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.
             @status
             ## 
-            ## Instantiates a new Invitation and sets the default values.
+            ## Instantiates a new invitation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inviteRedeemUrl property value. The URL the user can use to redeem their invitation. Read-only.
-            ## @param value Value to set for the invite_redeem_url property.
+            ## @param value Value to set for the inviteRedeemUrl property.
             ## @return a void
             ## 
             def invite_redeem_url=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inviteRedirectUrl property value. The URL the user should be redirected to once the invitation is redeemed. Required.
-            ## @param value Value to set for the invite_redirect_url property.
+            ## @param value Value to set for the inviteRedirectUrl property.
             ## @return a void
             ## 
             def invite_redirect_url=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the invitedUser property value. The user created as part of the invitation creation. Read-Only
-            ## @param value Value to set for the invited_user property.
+            ## @param value Value to set for the invitedUser property.
             ## @return a void
             ## 
             def invited_user=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the invitedUserDisplayName property value. The display name of the user being invited.
-            ## @param value Value to set for the invited_user_display_name property.
+            ## @param value Value to set for the invitedUserDisplayName property.
             ## @return a void
             ## 
             def invited_user_display_name=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the invitedUserEmailAddress property value. The email address of the user being invited. Required. The following special characters are not permitted in the email address:Tilde (~)Exclamation point (!)Number sign (#)Dollar sign ($)Percent (%)Circumflex (^)Ampersand (&)Asterisk (*)Parentheses (( ))Plus sign (+)Equal sign (=)Brackets ([ ])Braces ({ })Backslash (/)Slash mark (/)Pipe (/|)Semicolon (;)Colon (:)Quotation marks (')Angle brackets (< >)Question mark (?)Comma (,)However, the following exceptions apply:A period (.) or a hyphen (-) is permitted anywhere in the user name, except at the beginning or end of the name.An underscore (_) is permitted anywhere in the user name. This includes at the beginning or end of the name.
-            ## @param value Value to set for the invited_user_email_address property.
+            ## @param value Value to set for the invitedUserEmailAddress property.
             ## @return a void
             ## 
             def invited_user_email_address=(value)
@@ -154,7 +154,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the invitedUserMessageInfo property value. Additional configuration for the message being sent to the invited user, including customizing message text, language and cc recipient list.
-            ## @param value Value to set for the invited_user_message_info property.
+            ## @param value Value to set for the invitedUserMessageInfo property.
             ## @return a void
             ## 
             def invited_user_message_info=(value)
@@ -169,7 +169,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the invitedUserType property value. The userType of the user being invited. By default, this is Guest. You can invite as Member if you are a company administrator.
-            ## @param value Value to set for the invited_user_type property.
+            ## @param value Value to set for the invitedUserType property.
             ## @return a void
             ## 
             def invited_user_type=(value)
@@ -184,7 +184,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resetRedemption property value. Reset the user's redemption status and reinvite a user while retaining their user identifier, group memberships, and app assignments. This property allows you to enable a user to sign-in using a different email address from the one in the previous invitation. For more information about using this property, see Reset redemption status for a guest user.
-            ## @param value Value to set for the reset_redemption property.
+            ## @param value Value to set for the resetRedemption property.
             ## @return a void
             ## 
             def reset_redemption=(value)
@@ -199,7 +199,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sendInvitationMessage property value. Indicates whether an email should be sent to the user being invited. The default is false.
-            ## @param value Value to set for the send_invitation_message property.
+            ## @param value Value to set for the sendInvitationMessage property.
             ## @return a void
             ## 
             def send_invitation_message=(value)

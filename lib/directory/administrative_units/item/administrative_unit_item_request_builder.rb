@@ -1,15 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/administrative_unit'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../directory'
 require_relative '../administrative_units'
 require_relative './extensions/extensions_request_builder'
-require_relative './extensions/item/extension_item_request_builder'
 require_relative './item'
-require_relative './members/item/directory_object_item_request_builder'
 require_relative './members/members_request_builder'
-require_relative './scoped_role_members/item/scoped_role_membership_item_request_builder'
 require_relative './scoped_role_members/scoped_role_members_request_builder'
 
 module MicrosoftGraph
@@ -45,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property administrativeUnits for directory
+                    ## Delete an administrativeUnit.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -54,23 +51,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a extension_item_request_builder
-                    ## 
-                    def extensions_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["extension%2Did"] = id
-                        return MicrosoftGraph::Directory::AdministrativeUnits::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Conceptual container for user and group directory objects.
+                    ## Retrieve the properties and relationships of an administrativeUnit object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of administrative_unit
                     ## 
@@ -79,23 +65,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AdministrativeUnit.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Gets an item from the MicrosoftGraph.directory.administrativeUnits.item.members.item collection
-                    ## @param id Unique identifier of the item
-                    ## @return a directory_object_item_request_builder
-                    ## 
-                    def members_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["directoryObject%2Did"] = id
-                        return MicrosoftGraph::Directory::AdministrativeUnits::Item::Members::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Update the navigation property administrativeUnits in directory
+                    ## Update the properties of an administrativeUnit object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of administrative_unit
@@ -106,23 +81,12 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AdministrativeUnit.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a scoped_role_membership_item_request_builder
-                    ## 
-                    def scoped_role_members_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["scopedRoleMembership%2Did"] = id
-                        return MicrosoftGraph::Directory::AdministrativeUnits::Item::ScopedRoleMembers::Item::ScopedRoleMembershipItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Delete navigation property administrativeUnits for directory
+                    ## Delete an administrativeUnit.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -138,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Conceptual container for user and group directory objects.
+                    ## Retrieve the properties and relationships of an administrativeUnit object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -156,7 +120,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property administrativeUnits in directory
+                    ## Update the properties of an administrativeUnit object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -177,7 +141,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Conceptual container for user and group directory objects.
+                    # Retrieve the properties and relationships of an administrativeUnit object.
                     class AdministrativeUnitItemRequestBuilderGetQueryParameters
                         
                         ## 

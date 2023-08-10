@@ -2,12 +2,13 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/enrollment_configuration_assignment'
 require_relative '../../../../models/enrollment_configuration_assignment_collection_response'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../device_management'
 require_relative '../../device_enrollment_configurations'
 require_relative '../item'
 require_relative './assignments'
 require_relative './count/count_request_builder'
+require_relative './item/enrollment_configuration_assignment_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item::Assignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
+                        ## @param enrollment_configuration_assignment_id The unique identifier of enrollmentConfigurationAssignment
+                        ## @return a enrollment_configuration_assignment_item_request_builder
+                        ## 
+                        def by_enrollment_configuration_assignment_id(enrollment_configuration_assignment_id)
+                            raise StandardError, 'enrollment_configuration_assignment_id cannot be null' if enrollment_configuration_assignment_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["enrollmentConfigurationAssignment%2Did"] = enrollment_configuration_assignment_id
+                            return MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item::Assignments::Item::EnrollmentConfigurationAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new AssignmentsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration%2Did}/assignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## The list of group assignments for the device configuration profile
+                        ## List properties and relationships of the enrollmentConfigurationAssignment objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of enrollment_configuration_assignment_collection_response
                         ## 
@@ -42,12 +54,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EnrollmentConfigurationAssignmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create new navigation property to assignments for deviceManagement
+                        ## Create a new enrollmentConfigurationAssignment object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of enrollment_configuration_assignment
@@ -58,12 +70,12 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EnrollmentConfigurationAssignment.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## The list of group assignments for the device configuration profile
+                        ## List properties and relationships of the enrollmentConfigurationAssignment objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create new navigation property to assignments for deviceManagement
+                        ## Create a new enrollmentConfigurationAssignment object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The list of group assignments for the device configuration profile
+                        # List properties and relationships of the enrollmentConfigurationAssignment objects.
                         class AssignmentsRequestBuilderGetQueryParameters
                             
                             ## 

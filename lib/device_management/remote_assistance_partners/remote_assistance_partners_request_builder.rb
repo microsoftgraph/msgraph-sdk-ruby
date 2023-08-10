@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/remote_assistance_partner'
 require_relative '../../models/remote_assistance_partner_collection_response'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
+require_relative './item/remote_assistance_partner_item_request_builder'
 require_relative './remote_assistance_partners'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.
+                ## @param remote_assistance_partner_id The unique identifier of remoteAssistancePartner
+                ## @return a remote_assistance_partner_item_request_builder
+                ## 
+                def by_remote_assistance_partner_id(remote_assistance_partner_id)
+                    raise StandardError, 'remote_assistance_partner_id cannot be null' if remote_assistance_partner_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["remoteAssistancePartner%2Did"] = remote_assistance_partner_id
+                    return MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item::RemoteAssistancePartnerItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new RemoteAssistancePartnersRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/remoteAssistancePartners{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## The remote assist partners.
+                ## List properties and relationships of the remoteAssistancePartner objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of remote_assistance_partner_collection_response
                 ## 
@@ -38,12 +50,12 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RemoteAssistancePartnerCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create new navigation property to remoteAssistancePartners for deviceManagement
+                ## Create a new remoteAssistancePartner object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of remote_assistance_partner
@@ -54,12 +66,12 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RemoteAssistancePartner.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## The remote assist partners.
+                ## List properties and relationships of the remoteAssistancePartner objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create new navigation property to remoteAssistancePartners for deviceManagement
+                ## Create a new remoteAssistancePartner object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The remote assist partners.
+                # List properties and relationships of the remoteAssistancePartner objects.
                 class RemoteAssistancePartnersRequestBuilderGetQueryParameters
                     
                     ## 

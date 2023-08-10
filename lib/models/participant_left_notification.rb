@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @call = value
             end
             ## 
-            ## Instantiates a new ParticipantLeftNotification and sets the default values.
+            ## Instantiates a new participantLeftNotification and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the participantId property value. ID of the participant under the policy who has left the meeting.
-            ## @param value Value to set for the participant_id property.
+            ## @param value Value to set for the participantId property.
             ## @return a void
             ## 
             def participant_id=(value)

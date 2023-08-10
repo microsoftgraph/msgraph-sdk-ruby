@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
 require_relative '../../../../../models/microsoft_authenticator_authentication_method'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../users'
 require_relative '../../../item'
 require_relative '../../authentication'
@@ -34,7 +34,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/authentication/microsoftAuthenticatorMethods/{microsoftAuthenticatorAuthenticationMethod%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property microsoftAuthenticatorMethods for users
+                            ## Deletes a microsoftAuthenticatorAuthenticationMethod object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -43,12 +43,12 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The details of the Microsoft Authenticator app registered to a user for authentication.
+                            ## Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of microsoft_authenticator_authentication_method
                             ## 
@@ -57,12 +57,12 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MicrosoftAuthenticatorAuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property microsoftAuthenticatorMethods for users
+                            ## Deletes a microsoftAuthenticatorAuthenticationMethod object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -78,7 +78,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The details of the Microsoft Authenticator app registered to a user for authentication.
+                            ## Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -97,7 +97,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The details of the Microsoft Authenticator app registered to a user for authentication.
+                            # Read the properties and relationships of a microsoftAuthenticatorAuthenticationMethod object.
                             class MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters
                                 
                                 ## 

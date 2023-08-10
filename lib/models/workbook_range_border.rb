@@ -83,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sideIndex property value. Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
-            ## @param value Value to set for the side_index property.
+            ## @param value Value to set for the sideIndex property.
             ## @return a void
             ## 
             def side_index=(value)

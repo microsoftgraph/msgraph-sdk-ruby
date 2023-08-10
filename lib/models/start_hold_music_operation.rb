@@ -7,7 +7,7 @@ module MicrosoftGraph
         class StartHoldMusicOperation < MicrosoftGraph::Models::CommsOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new StartHoldMusicOperation and sets the default values.
+            ## Instantiates a new startHoldMusicOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

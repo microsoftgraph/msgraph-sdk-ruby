@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../models/user_collection_response'
 require_relative '../../../me'
 require_relative '../../managed_devices'
@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/me/managedDevices/{managedDevice%2Did}/users{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## The primary users associated with the managed device.
+                        ## List properties and relationships of the user objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of user_collection_response
                         ## 
@@ -35,12 +35,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## The primary users associated with the managed device.
+                        ## List properties and relationships of the user objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -59,7 +59,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The primary users associated with the managed device.
+                        # List properties and relationships of the user objects.
                         class UsersRequestBuilderGetQueryParameters
                             
                             ## 

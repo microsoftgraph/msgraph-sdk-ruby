@@ -1,11 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/planner_plan'
 require_relative '../../../models/planner_plan_collection_response'
 require_relative '../../me'
 require_relative '../planner'
 require_relative './count/count_request_builder'
+require_relative './item/planner_plan_item_request_builder'
 require_relative './plans'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::Planner::Plans::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the plans property of the microsoft.graph.plannerUser entity.
+                    ## @param planner_plan_id The unique identifier of plannerPlan
+                    ## @return a planner_plan_item_request_builder
+                    ## 
+                    def by_planner_plan_id(planner_plan_id)
+                        raise StandardError, 'planner_plan_id cannot be null' if planner_plan_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["plannerPlan%2Did"] = planner_plan_id
+                        return MicrosoftGraph::Me::Planner::Plans::Item::PlannerPlanItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new PlansRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/planner/plans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve a list of **plannerplan** objects shared with a user object.
+                    ## Retrieve a list of plannerplan objects shared with a user object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of planner_plan_collection_response
                     ## 
@@ -40,8 +52,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerPlanCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -56,12 +68,12 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerPlan.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve a list of **plannerplan** objects shared with a user object.
+                    ## Retrieve a list of plannerplan objects shared with a user object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve a list of **plannerplan** objects shared with a user object.
+                    # Retrieve a list of plannerplan objects shared with a user object.
                     class PlansRequestBuilderGetQueryParameters
                         
                         ## 

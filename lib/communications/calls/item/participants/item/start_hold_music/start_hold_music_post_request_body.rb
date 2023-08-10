@@ -35,7 +35,7 @@ module MicrosoftGraph
                                 end
                                 ## 
                                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                ## @param value Value to set for the AdditionalData property.
+                                ## @param value Value to set for the additionalData property.
                                 ## @return a void
                                 ## 
                                 def additional_data=(value)
@@ -50,7 +50,7 @@ module MicrosoftGraph
                                 end
                                 ## 
                                 ## Sets the clientContext property value. The clientContext property
-                                ## @param value Value to set for the client_context property.
+                                ## @param value Value to set for the clientContext property.
                                 ## @return a void
                                 ## 
                                 def client_context=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
                                 end
                                 ## 
                                 ## Sets the customPrompt property value. The customPrompt property
-                                ## @param value Value to set for the custom_prompt property.
+                                ## @param value Value to set for the customPrompt property.
                                 ## @return a void
                                 ## 
                                 def custom_prompt=(value)

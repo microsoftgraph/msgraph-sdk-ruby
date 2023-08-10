@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
-            ## @param value Value to set for the recommended_actions property.
+            ## @param value Value to set for the recommendedActions property.
             ## @return a void
             ## 
             def recommended_actions=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
-            ## @param value Value to set for the resolved_targets_count property.
+            ## @param value Value to set for the resolvedTargetsCount property.
             ## @return a void
             ## 
             def resolved_targets_count=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
-            ## @param value Value to set for the simulation_events_content property.
+            ## @param value Value to set for the simulationEventsContent property.
             ## @return a void
             ## 
             def simulation_events_content=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
-            ## @param value Value to set for the training_events_content property.
+            ## @param value Value to set for the trainingEventsContent property.
             ## @return a void
             ## 
             def training_events_content=(value)

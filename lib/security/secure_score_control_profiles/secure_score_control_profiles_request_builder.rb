@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/secure_score_control_profile'
 require_relative '../../models/secure_score_control_profile_collection_response'
 require_relative '../security'
 require_relative './count/count_request_builder'
+require_relative './item/secure_score_control_profile_item_request_builder'
 require_relative './secure_score_control_profiles'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Security::SecureScoreControlProfiles::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
+                ## @param secure_score_control_profile_id The unique identifier of secureScoreControlProfile
+                ## @return a secure_score_control_profile_item_request_builder
+                ## 
+                def by_secure_score_control_profile_id(secure_score_control_profile_id)
+                    raise StandardError, 'secure_score_control_profile_id cannot be null' if secure_score_control_profile_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["secureScoreControlProfile%2Did"] = secure_score_control_profile_id
+                    return MicrosoftGraph::Security::SecureScoreControlProfiles::Item::SecureScoreControlProfileItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new SecureScoreControlProfilesRequestBuilder and sets the default values.
@@ -38,8 +50,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecureScoreControlProfileCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -54,8 +66,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecureScoreControlProfile.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 

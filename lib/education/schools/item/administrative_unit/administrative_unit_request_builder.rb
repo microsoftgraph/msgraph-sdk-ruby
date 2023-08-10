@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/administrative_unit'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../education'
 require_relative '../../schools'
 require_relative '../item'
@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/education/schools/{educationSchool%2Did}/administrativeUnit{?%24select,%24expand}")
                         end
                         ## 
-                        ## Get a list of **administrativeUnits** associated with an educationSchool object.
+                        ## Get a list of administrativeUnits associated with an educationSchool object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of administrative_unit
                         ## 
@@ -35,8 +35,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AdministrativeUnit.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -51,12 +51,12 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AdministrativeUnit.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get a list of **administrativeUnits** associated with an educationSchool object.
+                        ## Get a list of administrativeUnits associated with an educationSchool object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -95,7 +95,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get a list of **administrativeUnits** associated with an educationSchool object.
+                        # Get a list of administrativeUnits associated with an educationSchool object.
                         class AdministrativeUnitRequestBuilderGetQueryParameters
                             
                             ## 

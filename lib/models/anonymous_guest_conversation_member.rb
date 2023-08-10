@@ -18,14 +18,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the anonymousGuestId property value. Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.
-            ## @param value Value to set for the anonymous_guest_id property.
+            ## @param value Value to set for the anonymousGuestId property.
             ## @return a void
             ## 
             def anonymous_guest_id=(value)
                 @anonymous_guest_id = value
             end
             ## 
-            ## Instantiates a new AnonymousGuestConversationMember and sets the default values.
+            ## Instantiates a new anonymousGuestConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()

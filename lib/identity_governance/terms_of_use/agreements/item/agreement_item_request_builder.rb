@@ -1,15 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/agreement'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../identity_governance'
 require_relative '../../terms_of_use'
 require_relative '../agreements'
 require_relative './acceptances/acceptances_request_builder'
-require_relative './acceptances/item/agreement_acceptance_item_request_builder'
 require_relative './file/file_request_builder'
 require_relative './files/files_request_builder'
-require_relative './files/item/agreement_file_localization_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -37,17 +35,6 @@ module MicrosoftGraph
                             return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::Files::FilesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        ## Provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a agreement_acceptance_item_request_builder
-                        ## 
-                        def acceptances_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["agreementAcceptance%2Did"] = id
-                            return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::Acceptances::Item::AgreementAcceptanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## Instantiates a new AgreementItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -57,7 +44,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property agreements for identityGovernance
+                        ## Delete an agreement object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -66,23 +53,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the files property of the microsoft.graph.agreement entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a agreement_file_localization_item_request_builder
-                        ## 
-                        def files_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["agreementFileLocalization%2Did"] = id
-                            return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::Files::Item::AgreementFileLocalizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+                        ## Retrieve the properties and relationships of an agreement object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of agreement
                         ## 
@@ -91,12 +67,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Agreement.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property agreements in identityGovernance
+                        ## Update the properties of an agreement object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of agreement
@@ -107,12 +83,12 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Agreement.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property agreements for identityGovernance
+                        ## Delete an agreement object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -128,7 +104,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+                        ## Retrieve the properties and relationships of an agreement object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -146,7 +122,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property agreements in identityGovernance
+                        ## Update the properties of an agreement object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -167,7 +143,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+                        # Retrieve the properties and relationships of an agreement object.
                         class AgreementItemRequestBuilderGetQueryParameters
                             
                             ## 

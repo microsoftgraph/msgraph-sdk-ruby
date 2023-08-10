@@ -1,18 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
 require_relative '../../models/education_user'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../education'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/education_assignment_item_request_builder'
 require_relative './classes/classes_request_builder'
-require_relative './classes/item/education_class_item_request_builder'
 require_relative './me'
-require_relative './rubrics/item/education_rubric_item_request_builder'
 require_relative './rubrics/rubrics_request_builder'
-require_relative './schools/item/education_school_item_request_builder'
 require_relative './schools/schools_request_builder'
-require_relative './taught_classes/item/education_class_item_request_builder'
 require_relative './taught_classes/taught_classes_request_builder'
 require_relative './user/user_request_builder'
 
@@ -54,28 +49,6 @@ module MicrosoftGraph
                     return MicrosoftGraph::Education::Me::User::UserRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                ## Provides operations to manage the assignments property of the microsoft.graph.educationUser entity.
-                ## @param id Unique identifier of the item
-                ## @return a education_assignment_item_request_builder
-                ## 
-                def assignments_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["educationAssignment%2Did"] = id
-                    return MicrosoftGraph::Education::Me::Assignments::Item::EducationAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the classes property of the microsoft.graph.educationUser entity.
-                ## @param id Unique identifier of the item
-                ## @return a education_class_item_request_builder
-                ## 
-                def classes_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["educationClass%2Did"] = id
-                    return MicrosoftGraph::Education::Me::Classes::Item::EducationClassItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Instantiates a new MeRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -94,8 +67,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
@@ -108,8 +81,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationUser.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -124,42 +97,9 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationUser.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the rubrics property of the microsoft.graph.educationUser entity.
-                ## @param id Unique identifier of the item
-                ## @return a education_rubric_item_request_builder
-                ## 
-                def rubrics_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["educationRubric%2Did"] = id
-                    return MicrosoftGraph::Education::Me::Rubrics::Item::EducationRubricItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the schools property of the microsoft.graph.educationUser entity.
-                ## @param id Unique identifier of the item
-                ## @return a education_school_item_request_builder
-                ## 
-                def schools_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["educationSchool%2Did"] = id
-                    return MicrosoftGraph::Education::Me::Schools::Item::EducationSchoolItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.
-                ## @param id Unique identifier of the item
-                ## @return a education_class_item_request_builder
-                ## 
-                def taught_classes_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["educationClass%2Did"] = id
-                    return MicrosoftGraph::Education::Me::TaughtClasses::Item::EducationClassItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Delete navigation property me for education

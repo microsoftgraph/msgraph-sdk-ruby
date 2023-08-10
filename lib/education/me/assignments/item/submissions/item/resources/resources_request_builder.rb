@@ -2,7 +2,7 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
 require_relative '../../../../../../../models/education_submission_resource'
 require_relative '../../../../../../../models/education_submission_resource_collection_response'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../education'
 require_relative '../../../../../me'
 require_relative '../../../../assignments'
@@ -10,6 +10,7 @@ require_relative '../../../item'
 require_relative '../../submissions'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/education_submission_resource_item_request_builder'
 require_relative './resources'
 
 module MicrosoftGraph
@@ -30,6 +31,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::Resources::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the resources property of the microsoft.graph.educationSubmission entity.
+                                    ## @param education_submission_resource_id The unique identifier of educationSubmissionResource
+                                    ## @return a education_submission_resource_item_request_builder
+                                    ## 
+                                    def by_education_submission_resource_id(education_submission_resource_id)
+                                        raise StandardError, 'education_submission_resource_id cannot be null' if education_submission_resource_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["educationSubmissionResource%2Did"] = education_submission_resource_id
+                                        return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::Resources::Item::EducationSubmissionResourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new ResourcesRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -39,7 +51,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
-                                    ## List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The **submittedResources** are the resources that have officially been submitted to be graded.
+                                    ## List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that have officially been submitted to be graded.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of education_submission_resource_collection_response
                                     ## 
@@ -48,12 +60,12 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationSubmissionResourceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Add an educationSubmissionResource to a submission resource list. Only teachers and students can perform this operation. The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`. To create a new file-based resource, upload the file to the resources folder associated with the submission. If the file doesn't exist or is not in that folder, the POST request will fail.
+                                    ## Add an educationSubmissionResource to a submission resource list. Only teachers and students can perform this operation. The operation will not succeed if the allowStudentsToAddResources flag is not set to true. To create a new file-based resource, upload the file to the resources folder associated with the submission. If the file doesn't exist or is not in that folder, the POST request will fail.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of education_submission_resource
@@ -64,12 +76,12 @@ module MicrosoftGraph
                                             body, request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationSubmissionResource.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The **submittedResources** are the resources that have officially been submitted to be graded.
+                                    ## List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that have officially been submitted to be graded.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -87,7 +99,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Add an educationSubmissionResource to a submission resource list. Only teachers and students can perform this operation. The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`. To create a new file-based resource, upload the file to the resources folder associated with the submission. If the file doesn't exist or is not in that folder, the POST request will fail.
+                                    ## Add an educationSubmissionResource to a submission resource list. Only teachers and students can perform this operation. The operation will not succeed if the allowStudentsToAddResources flag is not set to true. To create a new file-based resource, upload the file to the resources folder associated with the submission. If the file doesn't exist or is not in that folder, the POST request will fail.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -108,7 +120,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The **submittedResources** are the resources that have officially been submitted to be graded.
+                                    # List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The submittedResources are the resources that have officially been submitted to be graded.
                                     class ResourcesRequestBuilderGetQueryParameters
                                         
                                         ## 

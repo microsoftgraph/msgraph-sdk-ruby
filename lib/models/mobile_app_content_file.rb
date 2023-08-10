@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the azureStorageUri property value. The Azure Storage URI.
-            ## @param value Value to set for the azure_storage_uri property.
+            ## @param value Value to set for the azureStorageUri property.
             ## @return a void
             ## 
             def azure_storage_uri=(value)
@@ -60,7 +60,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the azureStorageUriExpirationDateTime property value. The time the Azure storage Uri expires.
-            ## @param value Value to set for the azure_storage_uri_expiration_date_time property.
+            ## @param value Value to set for the azureStorageUriExpirationDateTime property.
             ## @return a void
             ## 
             def azure_storage_uri_expiration_date_time=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The time the file was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isCommitted property value. A value indicating whether the file is committed.
-            ## @param value Value to set for the is_committed property.
+            ## @param value Value to set for the isCommitted property.
             ## @return a void
             ## 
             def is_committed=(value)
@@ -201,7 +201,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sizeEncrypted property value. The size of the file after encryption.
-            ## @param value Value to set for the size_encrypted property.
+            ## @param value Value to set for the sizeEncrypted property.
             ## @return a void
             ## 
             def size_encrypted=(value)
@@ -216,7 +216,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the uploadState property value. Contains properties for upload request states.
-            ## @param value Value to set for the upload_state property.
+            ## @param value Value to set for the uploadState property.
             ## @return a void
             ## 
             def upload_state=(value)

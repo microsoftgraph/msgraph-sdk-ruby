@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the conferenceId property value. The ID of the conference.
-            ## @param value Value to set for the conference_id property.
+            ## @param value Value to set for the conferenceId property.
             ## @return a void
             ## 
             def conference_id=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-            ## @param value Value to set for the join_url property.
+            ## @param value Value to set for the joinUrl property.
             ## @return a void
             ## 
             def join_url=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the quickDial property value. The pre-formatted quickdial for this call.
-            ## @param value Value to set for the quick_dial property.
+            ## @param value Value to set for the quickDial property.
             ## @return a void
             ## 
             def quick_dial=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tollFreeNumbers property value. The toll free numbers that can be used to join the conference.
-            ## @param value Value to set for the toll_free_numbers property.
+            ## @param value Value to set for the tollFreeNumbers property.
             ## @return a void
             ## 
             def toll_free_numbers=(value)
@@ -191,7 +191,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tollNumber property value. The toll number that can be used to join the conference.
-            ## @param value Value to set for the toll_number property.
+            ## @param value Value to set for the tollNumber property.
             ## @return a void
             ## 
             def toll_number=(value)

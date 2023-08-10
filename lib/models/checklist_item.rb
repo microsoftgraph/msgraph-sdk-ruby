@@ -28,7 +28,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the checkedDateTime property value. The date and time when the checklistItem was finished.
-            ## @param value Value to set for the checked_date_time property.
+            ## @param value Value to set for the checkedDateTime property.
             ## @return a void
             ## 
             def checked_date_time=(value)
@@ -50,7 +50,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The date and time when the checklistItem was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Field indicating the title of checklistItem.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isChecked property value. State indicating whether the item is checked off or not.
-            ## @param value Value to set for the is_checked property.
+            ## @param value Value to set for the isChecked property.
             ## @return a void
             ## 
             def is_checked=(value)

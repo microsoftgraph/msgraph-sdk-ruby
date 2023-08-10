@@ -1,12 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../models/teams_async_operation'
 require_relative '../../../../models/teams_async_operation_collection_response'
 require_relative '../../../groups'
 require_relative '../../item'
 require_relative '../team'
 require_relative './count/count_request_builder'
+require_relative './item/teams_async_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Groups::Item::Team::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the operations property of the microsoft.graph.team entity.
+                        ## @param teams_async_operation_id The unique identifier of teamsAsyncOperation
+                        ## @return a teams_async_operation_item_request_builder
+                        ## 
+                        def by_teams_async_operation_id(teams_async_operation_id)
+                            raise StandardError, 'teams_async_operation_id cannot be null' if teams_async_operation_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["teamsAsyncOperation%2Did"] = teams_async_operation_id
+                            return MicrosoftGraph::Groups::Item::Team::Operations::Item::TeamsAsyncOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new OperationsRequestBuilder and sets the default values.
@@ -42,8 +54,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsAsyncOperationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -58,8 +70,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsAsyncOperation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 

@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../models/security/ediscovery_custodian'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../models/security_ediscovery_custodian'
 require_relative '../../../../../security'
 require_relative '../../../../cases'
 require_relative '../../../ediscovery_cases'
@@ -9,16 +9,13 @@ require_relative '../../item'
 require_relative '../custodians'
 require_relative './item'
 require_relative './last_index_operation/last_index_operation_request_builder'
-require_relative './security_activate/security_activate_request_builder'
-require_relative './security_apply_hold/security_apply_hold_request_builder'
-require_relative './security_release/security_release_request_builder'
-require_relative './security_remove_hold/security_remove_hold_request_builder'
-require_relative './security_update_index/security_update_index_request_builder'
-require_relative './site_sources/item/site_source_item_request_builder'
+require_relative './microsoft_graph_security_activate/microsoft_graph_security_activate_request_builder'
+require_relative './microsoft_graph_security_apply_hold/microsoft_graph_security_apply_hold_request_builder'
+require_relative './microsoft_graph_security_release/microsoft_graph_security_release_request_builder'
+require_relative './microsoft_graph_security_remove_hold/microsoft_graph_security_remove_hold_request_builder'
+require_relative './microsoft_graph_security_update_index/microsoft_graph_security_update_index_request_builder'
 require_relative './site_sources/site_sources_request_builder'
-require_relative './unified_group_sources/item/unified_group_source_item_request_builder'
 require_relative './unified_group_sources/unified_group_sources_request_builder'
-require_relative './user_sources/item/user_source_item_request_builder'
 require_relative './user_sources/user_sources_request_builder'
 
 module MicrosoftGraph
@@ -39,28 +36,28 @@ module MicrosoftGraph
                                 end
                                 ## 
                                 # Provides operations to call the activate method.
-                                def security_activate()
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::SecurityActivate::SecurityActivateRequestBuilder.new(@path_parameters, @request_adapter)
+                                def microsoft_graph_security_activate()
+                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::MicrosoftGraphSecurityActivate::MicrosoftGraphSecurityActivateRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the applyHold method.
-                                def security_apply_hold()
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::SecurityApplyHold::SecurityApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
+                                def microsoft_graph_security_apply_hold()
+                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::MicrosoftGraphSecurityApplyHold::MicrosoftGraphSecurityApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the release method.
-                                def security_release()
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::SecurityRelease::SecurityReleaseRequestBuilder.new(@path_parameters, @request_adapter)
+                                def microsoft_graph_security_release()
+                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::MicrosoftGraphSecurityRelease::MicrosoftGraphSecurityReleaseRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the removeHold method.
-                                def security_remove_hold()
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::SecurityRemoveHold::SecurityRemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
+                                def microsoft_graph_security_remove_hold()
+                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::MicrosoftGraphSecurityRemoveHold::MicrosoftGraphSecurityRemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the updateIndex method.
-                                def security_update_index()
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::SecurityUpdateIndex::SecurityUpdateIndexRequestBuilder.new(@path_parameters, @request_adapter)
+                                def microsoft_graph_security_update_index()
+                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::MicrosoftGraphSecurityUpdateIndex::MicrosoftGraphSecurityUpdateIndexRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryCustodian entity.
@@ -96,29 +93,29 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Returns a list of case ediscoveryCustodian objects for this case.
+                                ## Read the properties and relationships of an ediscoveryCustodian object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a Fiber of ediscovery_custodian
+                                ## @return a Fiber of security_ediscovery_custodian
                                 ## 
                                 def get(request_configuration=nil)
                                     request_info = self.to_get_request_information(
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryCustodian.create_from_discriminator_value(pn) }, error_mapping)
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryCustodian.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
                                 ## Update the navigation property custodians in security
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                ## @return a Fiber of ediscovery_custodian
+                                ## @return a Fiber of security_ediscovery_custodian
                                 ## 
                                 def patch(body, request_configuration=nil)
                                     raise StandardError, 'body cannot be null' if body.nil?
@@ -126,20 +123,9 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryCustodian.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryCustodian entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a site_source_item_request_builder
-                                ## 
-                                def site_sources_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["siteSource%2Did"] = id
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::SiteSources::Item::SiteSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryCustodian.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
                                 ## Delete navigation property custodians for security
@@ -158,7 +144,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Returns a list of case ediscoveryCustodian objects for this case.
+                                ## Read the properties and relationships of an ediscoveryCustodian object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -195,31 +181,9 @@ module MicrosoftGraph
                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                     return request_info
                                 end
-                                ## 
-                                ## Provides operations to manage the unifiedGroupSources property of the microsoft.graph.security.ediscoveryCustodian entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a unified_group_source_item_request_builder
-                                ## 
-                                def unified_group_sources_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["unifiedGroupSource%2Did"] = id
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::UnifiedGroupSources::Item::UnifiedGroupSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the userSources property of the microsoft.graph.security.ediscoveryCustodian entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a user_source_item_request_builder
-                                ## 
-                                def user_sources_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["userSource%2Did"] = id
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::UserSources::Item::UserSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
 
                                 ## 
-                                # Returns a list of case ediscoveryCustodian objects for this case.
+                                # Read the properties and relationships of an ediscoveryCustodian object.
                                 class EdiscoveryCustodianItemRequestBuilderGetQueryParameters
                                     
                                     ## 

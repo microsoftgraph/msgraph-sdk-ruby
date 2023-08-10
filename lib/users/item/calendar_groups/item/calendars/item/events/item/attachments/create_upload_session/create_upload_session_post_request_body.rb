@@ -40,22 +40,22 @@ module MicrosoftGraph
                                                 end
                                                 ## 
                                                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                                ## @param value Value to set for the AdditionalData property.
+                                                ## @param value Value to set for the additionalData property.
                                                 ## @return a void
                                                 ## 
                                                 def additional_data=(value)
                                                     @additional_data = value
                                                 end
                                                 ## 
-                                                ## Gets the attachmentItem property value. The AttachmentItem property
+                                                ## Gets the AttachmentItem property value. The AttachmentItem property
                                                 ## @return a attachment_item
                                                 ## 
                                                 def attachment_item
                                                     return @attachment_item
                                                 end
                                                 ## 
-                                                ## Sets the attachmentItem property value. The AttachmentItem property
-                                                ## @param value Value to set for the attachment_item property.
+                                                ## Sets the AttachmentItem property value. The AttachmentItem property
+                                                ## @param value Value to set for the AttachmentItem property.
                                                 ## @return a void
                                                 ## 
                                                 def attachment_item=(value)

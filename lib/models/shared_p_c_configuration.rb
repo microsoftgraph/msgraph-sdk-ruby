@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the sharedPCConfiguration resource.
         class SharedPCConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -52,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accountManagerPolicy property value. Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.
-            ## @param value Value to set for the account_manager_policy property.
+            ## @param value Value to set for the accountManagerPolicy property.
             ## @return a void
             ## 
             def account_manager_policy=(value)
@@ -67,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowLocalStorage property value. Specifies whether local storage is allowed on a shared PC.
-            ## @param value Value to set for the allow_local_storage property.
+            ## @param value Value to set for the allowLocalStorage property.
             ## @return a void
             ## 
             def allow_local_storage=(value)
@@ -82,14 +84,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedAccounts property value. Type of accounts that are allowed to share the PC.
-            ## @param value Value to set for the allowed_accounts property.
+            ## @param value Value to set for the allowedAccounts property.
             ## @return a void
             ## 
             def allowed_accounts=(value)
                 @allowed_accounts = value
             end
             ## 
-            ## Instantiates a new SharedPCConfiguration and sets the default values.
+            ## Instantiates a new sharedPCConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -114,7 +116,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the disableAccountManager property value. Disables the account manager for shared PC mode.
-            ## @param value Value to set for the disable_account_manager property.
+            ## @param value Value to set for the disableAccountManager property.
             ## @return a void
             ## 
             def disable_account_manager=(value)
@@ -129,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the disableEduPolicies property value. Specifies whether the default shared PC education environment policies should be disabled. For Windows 10 RS2 and later, this policy will be applied without setting Enabled to true.
-            ## @param value Value to set for the disable_edu_policies property.
+            ## @param value Value to set for the disableEduPolicies property.
             ## @return a void
             ## 
             def disable_edu_policies=(value)
@@ -144,7 +146,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the disablePowerPolicies property value. Specifies whether the default shared PC power policies should be disabled.
-            ## @param value Value to set for the disable_power_policies property.
+            ## @param value Value to set for the disablePowerPolicies property.
             ## @return a void
             ## 
             def disable_power_policies=(value)
@@ -159,7 +161,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the disableSignInOnResume property value. Disables the requirement to sign in whenever the device wakes up from sleep mode.
-            ## @param value Value to set for the disable_sign_in_on_resume property.
+            ## @param value Value to set for the disableSignInOnResume property.
             ## @return a void
             ## 
             def disable_sign_in_on_resume=(value)
@@ -209,7 +211,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the idleTimeBeforeSleepInSeconds property value. Specifies the time in seconds that a device must sit idle before the PC goes to sleep. Setting this value to 0 prevents the sleep timeout from occurring.
-            ## @param value Value to set for the idle_time_before_sleep_in_seconds property.
+            ## @param value Value to set for the idleTimeBeforeSleepInSeconds property.
             ## @return a void
             ## 
             def idle_time_before_sleep_in_seconds=(value)
@@ -224,7 +226,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskAppDisplayName property value. Specifies the display text for the account shown on the sign-in screen which launches the app specified by SetKioskAppUserModelId. Only applies when KioskAppUserModelId is set.
-            ## @param value Value to set for the kiosk_app_display_name property.
+            ## @param value Value to set for the kioskAppDisplayName property.
             ## @return a void
             ## 
             def kiosk_app_display_name=(value)
@@ -239,7 +241,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskAppUserModelId property value. Specifies the application user model ID of the app to use with assigned access.
-            ## @param value Value to set for the kiosk_app_user_model_id property.
+            ## @param value Value to set for the kioskAppUserModelId property.
             ## @return a void
             ## 
             def kiosk_app_user_model_id=(value)
@@ -254,7 +256,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maintenanceStartTime property value. Specifies the daily start time of maintenance hour.
-            ## @param value Value to set for the maintenance_start_time property.
+            ## @param value Value to set for the maintenanceStartTime property.
             ## @return a void
             ## 
             def maintenance_start_time=(value)

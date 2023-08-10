@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/subject_rights_request'
 require_relative '../../models/subject_rights_request_collection_response'
 require_relative '../privacy'
 require_relative './count/count_request_builder'
+require_relative './item/subject_rights_request_item_request_builder'
 require_relative './subject_rights_requests'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Privacy::SubjectRightsRequests::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
+                ## @param subject_rights_request_id The unique identifier of subjectRightsRequest
+                ## @return a subject_rights_request_item_request_builder
+                ## 
+                def by_subject_rights_request_id(subject_rights_request_id)
+                    raise StandardError, 'subject_rights_request_id cannot be null' if subject_rights_request_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["subjectRightsRequest%2Did"] = subject_rights_request_id
+                    return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::SubjectRightsRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new SubjectRightsRequestsRequestBuilder and sets the default values.
@@ -38,8 +50,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SubjectRightsRequestCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -54,8 +66,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SubjectRightsRequest.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 

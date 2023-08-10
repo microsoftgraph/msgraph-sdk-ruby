@@ -10,7 +10,7 @@ module MicrosoftGraph
             # If set to true, Azure Active Directory security defaults is enabled for the tenant.
             @is_enabled
             ## 
-            ## Instantiates a new IdentitySecurityDefaultsEnforcementPolicy and sets the default values.
+            ## Instantiates a new identitySecurityDefaultsEnforcementPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
-            ## @param value Value to set for the is_enabled property.
+            ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
             def is_enabled=(value)

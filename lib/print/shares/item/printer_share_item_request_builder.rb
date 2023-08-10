@@ -1,14 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/printer_share'
 require_relative '../../print'
 require_relative '../shares'
 require_relative './allowed_groups/allowed_groups_request_builder'
-require_relative './allowed_groups/item/group_item_request_builder'
 require_relative './allowed_users/allowed_users_request_builder'
-require_relative './allowed_users/item/user_item_request_builder'
 require_relative './item'
+require_relative './jobs/jobs_request_builder'
 require_relative './printer/printer_request_builder'
 
 module MicrosoftGraph
@@ -30,31 +29,14 @@ module MicrosoftGraph
                         return MicrosoftGraph::Print::Shares::Item::AllowedUsers::AllowedUsersRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
+                    def jobs()
+                        return MicrosoftGraph::Print::Shares::Item::Jobs::JobsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to manage the printer property of the microsoft.graph.printerShare entity.
                     def printer()
                         return MicrosoftGraph::Print::Shares::Item::Printer::PrinterRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Gets an item from the MicrosoftGraph.print.shares.item.allowedGroups.item collection
-                    ## @param id Unique identifier of the item
-                    ## @return a group_item_request_builder
-                    ## 
-                    def allowed_groups_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["group%2Did"] = id
-                        return MicrosoftGraph::Print::Shares::Item::AllowedGroups::Item::GroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Gets an item from the MicrosoftGraph.print.shares.item.allowedUsers.item collection
-                    ## @param id Unique identifier of the item
-                    ## @return a user_item_request_builder
-                    ## 
-                    def allowed_users_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["user%2Did"] = id
-                        return MicrosoftGraph::Print::Shares::Item::AllowedUsers::Item::UserItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new PrinterShareItemRequestBuilder and sets the default values.
@@ -66,7 +48,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/print/shares/{printerShare%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property shares for print
+                    ## Delete a printer share (unshare the associated printer). This action cannot be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer will need to discover and reinstall it.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -75,12 +57,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The list of printer shares registered in the tenant.
+                    ## Retrieve the properties and relationships of a printer share.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of printer_share
                     ## 
@@ -89,12 +71,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrinterShare.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property shares in print
+                    ## Update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of printer_share
@@ -105,12 +87,12 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrinterShare.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property shares for print
+                    ## Delete a printer share (unshare the associated printer). This action cannot be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer will need to discover and reinstall it.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -126,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The list of printer shares registered in the tenant.
+                    ## Retrieve the properties and relationships of a printer share.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -144,7 +126,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property shares in print
+                    ## Update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -165,7 +147,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The list of printer shares registered in the tenant.
+                    # Retrieve the properties and relationships of a printer share.
                     class PrinterShareItemRequestBuilderGetQueryParameters
                         
                         ## 

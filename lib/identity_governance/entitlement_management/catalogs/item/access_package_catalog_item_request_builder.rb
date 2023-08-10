@@ -1,13 +1,16 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/access_package_catalog'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../identity_governance'
 require_relative '../../entitlement_management'
 require_relative '../catalogs'
 require_relative './access_packages/access_packages_request_builder'
-require_relative './access_packages/item/access_package_item_request_builder'
+require_relative './custom_workflow_extensions/custom_workflow_extensions_request_builder'
 require_relative './item'
+require_relative './resource_roles/resource_roles_request_builder'
+require_relative './resources/resources_request_builder'
+require_relative './resource_scopes/resource_scopes_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -24,15 +27,24 @@ module MicrosoftGraph
                             return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::AccessPackagesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        ## Provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a access_package_item_request_builder
+                        # Provides operations to manage the customWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
+                        def custom_workflow_extensions()
+                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::CustomWorkflowExtensions::CustomWorkflowExtensionsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
                         ## 
-                        def access_packages_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["accessPackage%2Did"] = id
-                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::AccessPackageItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        # Provides operations to manage the resourceRoles property of the microsoft.graph.accessPackageCatalog entity.
+                        def resource_roles()
+                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::ResourceRoles::ResourceRolesRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the resources property of the microsoft.graph.accessPackageCatalog entity.
+                        def resources()
+                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::Resources::ResourcesRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the resourceScopes property of the microsoft.graph.accessPackageCatalog entity.
+                        def resource_scopes()
+                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::ResourceScopes::ResourceScopesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AccessPackageCatalogItemRequestBuilder and sets the default values.
@@ -44,7 +56,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property catalogs for identityGovernance
+                        ## Delete an accessPackageCatalog.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -53,12 +65,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## A container for access packages.
+                        ## Retrieve the properties and relationships of an accessPackageCatalog object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of access_package_catalog
                         ## 
@@ -67,12 +79,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property catalogs in identityGovernance
+                        ## Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of access_package_catalog
@@ -83,12 +95,12 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property catalogs for identityGovernance
+                        ## Delete an accessPackageCatalog.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## A container for access packages.
+                        ## Retrieve the properties and relationships of an accessPackageCatalog object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -122,7 +134,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property catalogs in identityGovernance
+                        ## Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -143,7 +155,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # A container for access packages.
+                        # Retrieve the properties and relationships of an accessPackageCatalog object.
                         class AccessPackageCatalogItemRequestBuilderGetQueryParameters
                             
                             ## 

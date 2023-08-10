@@ -2,7 +2,7 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
 require_relative '../../../../../../../models/message'
 require_relative '../../../../../../../models/message_collection_response'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../users'
 require_relative '../../../../../item'
 require_relative '../../../../mail_folders'
@@ -11,6 +11,7 @@ require_relative '../../child_folders'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/message_item_request_builder'
 require_relative './messages'
 
 module MicrosoftGraph
@@ -36,6 +37,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Messages::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
+                                    ## @param message_id The unique identifier of message
+                                    ## @return a message_item_request_builder
+                                    ## 
+                                    def by_message_id(message_id)
+                                        raise StandardError, 'message_id cannot be null' if message_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["message%2Did"] = message_id
+                                        return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Messages::Item::MessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new MessagesRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -54,8 +66,8 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MessageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
@@ -70,8 +82,8 @@ module MicrosoftGraph
                                             body, request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Message.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 

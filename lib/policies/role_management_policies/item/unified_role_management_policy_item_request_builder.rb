@@ -1,13 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/unified_role_management_policy'
 require_relative '../../policies'
 require_relative '../role_management_policies'
 require_relative './effective_rules/effective_rules_request_builder'
-require_relative './effective_rules/item/unified_role_management_policy_rule_item_request_builder'
 require_relative './item'
-require_relative './rules/item/unified_role_management_policy_rule_item_request_builder'
 require_relative './rules/rules_request_builder'
 
 module MicrosoftGraph
@@ -47,23 +45,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the effectiveRules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a unified_role_management_policy_rule_item_request_builder
-                    ## 
-                    def effective_rules_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["unifiedRoleManagementPolicyRule%2Did"] = id
-                        return MicrosoftGraph::Policies::RoleManagementPolicies::Item::EffectiveRules::Item::UnifiedRoleManagementPolicyRuleItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Specifies the various policies associated with scopes and roles.
+                    ## Retrieve the details of a role management policy.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of unified_role_management_policy
                     ## 
@@ -72,8 +59,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleManagementPolicy.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -88,20 +75,9 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleManagementPolicy.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the rules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a unified_role_management_policy_rule_item_request_builder
-                    ## 
-                    def rules_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["unifiedRoleManagementPolicyRule%2Did"] = id
-                        return MicrosoftGraph::Policies::RoleManagementPolicies::Item::Rules::Item::UnifiedRoleManagementPolicyRuleItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property roleManagementPolicies for policies
@@ -120,7 +96,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Specifies the various policies associated with scopes and roles.
+                    ## Retrieve the details of a role management policy.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -159,7 +135,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Specifies the various policies associated with scopes and roles.
+                    # Retrieve the details of a role management policy.
                     class UnifiedRoleManagementPolicyItemRequestBuilderGetQueryParameters
                         
                         ## 

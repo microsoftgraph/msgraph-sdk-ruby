@@ -2,11 +2,12 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/endpoint'
 require_relative '../../../models/endpoint_collection_response'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../service_principals'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './endpoints'
+require_relative './item/endpoint_item_request_builder'
 
 module MicrosoftGraph
     module ServicePrincipals
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::ServicePrincipals::Item::Endpoints::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the endpoints property of the microsoft.graph.servicePrincipal entity.
+                    ## @param endpoint_id The unique identifier of endpoint
+                    ## @return a endpoint_item_request_builder
+                    ## 
+                    def by_endpoint_id(endpoint_id)
+                        raise StandardError, 'endpoint_id cannot be null' if endpoint_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["endpoint%2Did"] = endpoint_id
+                        return MicrosoftGraph::ServicePrincipals::Item::Endpoints::Item::EndpointItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new EndpointsRequestBuilder and sets the default values.
@@ -40,8 +52,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EndpointCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -56,8 +68,8 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Endpoint.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

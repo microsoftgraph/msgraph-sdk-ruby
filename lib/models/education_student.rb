@@ -40,7 +40,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the birthDate property value. Birth date of the student.
-            ## @param value Value to set for the birth_date property.
+            ## @param value Value to set for the birthDate property.
             ## @return a void
             ## 
             def birth_date=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalId property value. ID of the student in the source system.
-            ## @param value Value to set for the external_id property.
+            ## @param value Value to set for the externalId property.
             ## @return a void
             ## 
             def external_id=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the graduationYear property value. Year the student is graduating from the school.
-            ## @param value Value to set for the graduation_year property.
+            ## @param value Value to set for the graduationYear property.
             ## @return a void
             ## 
             def graduation_year=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the studentNumber property value. Student Number.
-            ## @param value Value to set for the student_number property.
+            ## @param value Value to set for the studentNumber property.
             ## @return a void
             ## 
             def student_number=(value)

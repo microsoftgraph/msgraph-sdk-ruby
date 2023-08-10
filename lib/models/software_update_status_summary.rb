@@ -60,7 +60,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compliantDeviceCount property value. Number of compliant devices.
-            ## @param value Value to set for the compliant_device_count property.
+            ## @param value Value to set for the compliantDeviceCount property.
             ## @return a void
             ## 
             def compliant_device_count=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compliantUserCount property value. Number of compliant users.
-            ## @param value Value to set for the compliant_user_count property.
+            ## @param value Value to set for the compliantUserCount property.
             ## @return a void
             ## 
             def compliant_user_count=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the conflictDeviceCount property value. Number of conflict devices.
-            ## @param value Value to set for the conflict_device_count property.
+            ## @param value Value to set for the conflictDeviceCount property.
             ## @return a void
             ## 
             def conflict_device_count=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the conflictUserCount property value. Number of conflict users.
-            ## @param value Value to set for the conflict_user_count property.
+            ## @param value Value to set for the conflictUserCount property.
             ## @return a void
             ## 
             def conflict_user_count=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the policy.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the errorDeviceCount property value. Number of devices had error.
-            ## @param value Value to set for the error_device_count property.
+            ## @param value Value to set for the errorDeviceCount property.
             ## @return a void
             ## 
             def error_device_count=(value)
@@ -166,7 +166,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the errorUserCount property value. Number of users had error.
-            ## @param value Value to set for the error_user_count property.
+            ## @param value Value to set for the errorUserCount property.
             ## @return a void
             ## 
             def error_user_count=(value)
@@ -204,7 +204,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the nonCompliantDeviceCount property value. Number of non compliant devices.
-            ## @param value Value to set for the non_compliant_device_count property.
+            ## @param value Value to set for the nonCompliantDeviceCount property.
             ## @return a void
             ## 
             def non_compliant_device_count=(value)
@@ -219,7 +219,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the nonCompliantUserCount property value. Number of non compliant users.
-            ## @param value Value to set for the non_compliant_user_count property.
+            ## @param value Value to set for the nonCompliantUserCount property.
             ## @return a void
             ## 
             def non_compliant_user_count=(value)
@@ -234,7 +234,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notApplicableDeviceCount property value. Number of not applicable devices.
-            ## @param value Value to set for the not_applicable_device_count property.
+            ## @param value Value to set for the notApplicableDeviceCount property.
             ## @return a void
             ## 
             def not_applicable_device_count=(value)
@@ -249,7 +249,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notApplicableUserCount property value. Number of not applicable users.
-            ## @param value Value to set for the not_applicable_user_count property.
+            ## @param value Value to set for the notApplicableUserCount property.
             ## @return a void
             ## 
             def not_applicable_user_count=(value)
@@ -264,7 +264,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the remediatedDeviceCount property value. Number of remediated devices.
-            ## @param value Value to set for the remediated_device_count property.
+            ## @param value Value to set for the remediatedDeviceCount property.
             ## @return a void
             ## 
             def remediated_device_count=(value)
@@ -279,7 +279,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the remediatedUserCount property value. Number of remediated users.
-            ## @param value Value to set for the remediated_user_count property.
+            ## @param value Value to set for the remediatedUserCount property.
             ## @return a void
             ## 
             def remediated_user_count=(value)
@@ -318,7 +318,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the unknownDeviceCount property value. Number of unknown devices.
-            ## @param value Value to set for the unknown_device_count property.
+            ## @param value Value to set for the unknownDeviceCount property.
             ## @return a void
             ## 
             def unknown_device_count=(value)
@@ -333,7 +333,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the unknownUserCount property value. Number of unknown users.
-            ## @param value Value to set for the unknown_user_count property.
+            ## @param value Value to set for the unknownUserCount property.
             ## @return a void
             ## 
             def unknown_user_count=(value)

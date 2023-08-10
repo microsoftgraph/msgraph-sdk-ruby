@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new PresenceCollectionResponse and sets the default values.
+            ## Instantiates a new presenceCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

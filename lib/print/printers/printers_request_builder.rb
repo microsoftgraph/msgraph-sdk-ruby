@@ -1,11 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/printer'
 require_relative '../../models/printer_collection_response'
 require_relative '../print'
 require_relative './count/count_request_builder'
 require_relative './create/create_request_builder'
+require_relative './item/printer_item_request_builder'
 require_relative './printers'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Print::Printers::Create::CreateRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the printers property of the microsoft.graph.print entity.
+                ## @param printer_id The unique identifier of printer
+                ## @return a printer_item_request_builder
+                ## 
+                def by_printer_id(printer_id)
+                    raise StandardError, 'printer_id cannot be null' if printer_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["printer%2Did"] = printer_id
+                    return MicrosoftGraph::Print::Printers::Item::PrinterItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new PrintersRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/print/printers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve the list of **printers** that are registered in the tenant.
+                ## Retrieve the list of printers that are registered in the tenant.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of printer_collection_response
                 ## 
@@ -44,8 +56,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrinterCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -60,12 +72,12 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Printer.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve the list of **printers** that are registered in the tenant.
+                ## Retrieve the list of printers that are registered in the tenant.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve the list of **printers** that are registered in the tenant.
+                # Retrieve the list of printers that are registered in the tenant.
                 class PrintersRequestBuilderGetQueryParameters
                     
                     ## 

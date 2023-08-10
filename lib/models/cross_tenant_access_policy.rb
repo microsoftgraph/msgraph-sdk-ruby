@@ -24,14 +24,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedCloudEndpoints property value. Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
-            ## @param value Value to set for the allowed_cloud_endpoints property.
+            ## @param value Value to set for the allowedCloudEndpoints property.
             ## @return a void
             ## 
             def allowed_cloud_endpoints=(value)
                 @allowed_cloud_endpoints = value
             end
             ## 
-            ## Instantiates a new CrossTenantAccessPolicy and sets the default values.
+            ## Instantiates a new crossTenantAccessPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

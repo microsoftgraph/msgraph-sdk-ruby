@@ -1,26 +1,17 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/rbac_application'
 require_relative '../role_management'
 require_relative './entitlement_management'
-require_relative './resource_namespaces/item/unified_rbac_resource_namespace_item_request_builder'
 require_relative './resource_namespaces/resource_namespaces_request_builder'
-require_relative './role_assignments/item/unified_role_assignment_item_request_builder'
 require_relative './role_assignments/role_assignments_request_builder'
-require_relative './role_assignment_schedule_instances/item/unified_role_assignment_schedule_instance_item_request_builder'
 require_relative './role_assignment_schedule_instances/role_assignment_schedule_instances_request_builder'
-require_relative './role_assignment_schedule_requests/item/unified_role_assignment_schedule_request_item_request_builder'
 require_relative './role_assignment_schedule_requests/role_assignment_schedule_requests_request_builder'
-require_relative './role_assignment_schedules/item/unified_role_assignment_schedule_item_request_builder'
 require_relative './role_assignment_schedules/role_assignment_schedules_request_builder'
-require_relative './role_definitions/item/unified_role_definition_item_request_builder'
 require_relative './role_definitions/role_definitions_request_builder'
-require_relative './role_eligibility_schedule_instances/item/unified_role_eligibility_schedule_instance_item_request_builder'
 require_relative './role_eligibility_schedule_instances/role_eligibility_schedule_instances_request_builder'
-require_relative './role_eligibility_schedule_requests/item/unified_role_eligibility_schedule_request_item_request_builder'
 require_relative './role_eligibility_schedule_requests/role_eligibility_schedule_requests_request_builder'
-require_relative './role_eligibility_schedules/item/unified_role_eligibility_schedule_item_request_builder'
 require_relative './role_eligibility_schedules/role_eligibility_schedules_request_builder'
 
 module MicrosoftGraph
@@ -94,8 +85,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
@@ -108,8 +99,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RbacApplication.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -124,108 +115,9 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RbacApplication.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
-                ## @param id Unique identifier of the item
-                ## @return a unified_rbac_resource_namespace_item_request_builder
-                ## 
-                def resource_namespaces_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["unifiedRbacResourceNamespace%2Did"] = id
-                    return MicrosoftGraph::RoleManagement::EntitlementManagement::ResourceNamespaces::Item::UnifiedRbacResourceNamespaceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
-                ## @param id Unique identifier of the item
-                ## @return a unified_role_assignment_item_request_builder
-                ## 
-                def role_assignments_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["unifiedRoleAssignment%2Did"] = id
-                    return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignments::Item::UnifiedRoleAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.
-                ## @param id Unique identifier of the item
-                ## @return a unified_role_assignment_schedule_instance_item_request_builder
-                ## 
-                def role_assignment_schedule_instances_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["unifiedRoleAssignmentScheduleInstance%2Did"] = id
-                    return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentScheduleInstances::Item::UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.
-                ## @param id Unique identifier of the item
-                ## @return a unified_role_assignment_schedule_request_item_request_builder
-                ## 
-                def role_assignment_schedule_requests_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["unifiedRoleAssignmentScheduleRequest%2Did"] = id
-                    return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentScheduleRequests::Item::UnifiedRoleAssignmentScheduleRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the roleAssignmentSchedules property of the microsoft.graph.rbacApplication entity.
-                ## @param id Unique identifier of the item
-                ## @return a unified_role_assignment_schedule_item_request_builder
-                ## 
-                def role_assignment_schedules_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["unifiedRoleAssignmentSchedule%2Did"] = id
-                    return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentSchedules::Item::UnifiedRoleAssignmentScheduleItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplication entity.
-                ## @param id Unique identifier of the item
-                ## @return a unified_role_definition_item_request_builder
-                ## 
-                def role_definitions_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["unifiedRoleDefinition%2Did"] = id
-                    return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleDefinitions::Item::UnifiedRoleDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.
-                ## @param id Unique identifier of the item
-                ## @return a unified_role_eligibility_schedule_instance_item_request_builder
-                ## 
-                def role_eligibility_schedule_instances_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["unifiedRoleEligibilityScheduleInstance%2Did"] = id
-                    return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleEligibilityScheduleInstances::Item::UnifiedRoleEligibilityScheduleInstanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the roleEligibilityScheduleRequests property of the microsoft.graph.rbacApplication entity.
-                ## @param id Unique identifier of the item
-                ## @return a unified_role_eligibility_schedule_request_item_request_builder
-                ## 
-                def role_eligibility_schedule_requests_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["unifiedRoleEligibilityScheduleRequest%2Did"] = id
-                    return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleEligibilityScheduleRequests::Item::UnifiedRoleEligibilityScheduleRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the roleEligibilitySchedules property of the microsoft.graph.rbacApplication entity.
-                ## @param id Unique identifier of the item
-                ## @return a unified_role_eligibility_schedule_item_request_builder
-                ## 
-                def role_eligibility_schedules_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["unifiedRoleEligibilitySchedule%2Did"] = id
-                    return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleEligibilitySchedules::Item::UnifiedRoleEligibilityScheduleItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Delete navigation property entitlementManagement for roleManagement

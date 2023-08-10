@@ -58,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serviceManagementUrl property value. The URL of the management portal for the managed service. Read-only.
-            ## @param value Value to set for the service_management_url property.
+            ## @param value Value to set for the serviceManagementUrl property.
             ## @return a void
             ## 
             def service_management_url=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serviceName property value. The name of a managed service. Read-only.
-            ## @param value Value to set for the service_name property.
+            ## @param value Value to set for the serviceName property.
             ## @return a void
             ## 
             def service_name=(value)

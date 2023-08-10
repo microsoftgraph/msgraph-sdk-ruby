@@ -2,13 +2,14 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/education_category'
 require_relative '../../../../models/education_category_collection_response'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../education'
 require_relative '../../classes'
 require_relative '../item'
 require_relative './assignment_categories'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/education_category_item_request_builder'
 
 module MicrosoftGraph
     module Education
@@ -30,6 +31,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Education::Classes::Item::AssignmentCategories::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.
+                        ## @param education_category_id The unique identifier of educationCategory
+                        ## @return a education_category_item_request_builder
+                        ## 
+                        def by_education_category_id(education_category_id)
+                            raise StandardError, 'education_category_id cannot be null' if education_category_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["educationCategory%2Did"] = education_category_id
+                            return MicrosoftGraph::Education::Classes::Item::AssignmentCategories::Item::EducationCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new AssignmentCategoriesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -48,8 +60,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationCategoryCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -64,8 +76,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationCategory.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 

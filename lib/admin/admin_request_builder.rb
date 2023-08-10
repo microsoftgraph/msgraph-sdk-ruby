@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative '../models/admin'
-require_relative '../models/o_data_errors/o_data_error'
+require_relative '../models/o_data_errors_o_data_error'
 require_relative './admin'
 require_relative './edge/edge_request_builder'
 require_relative './service_announcement/service_announcement_request_builder'
+require_relative './sharepoint/sharepoint_request_builder'
 
 module MicrosoftGraph
     module Admin
@@ -21,6 +22,11 @@ module MicrosoftGraph
             # Provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
             def service_announcement()
                 return MicrosoftGraph::Admin::ServiceAnnouncement::ServiceAnnouncementRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the sharepoint property of the microsoft.graph.admin entity.
+            def sharepoint()
+                return MicrosoftGraph::Admin::Sharepoint::SharepointRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             ## Instantiates a new AdminRequestBuilder and sets the default values.
@@ -41,8 +47,8 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Admin.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -57,8 +63,8 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Admin.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 

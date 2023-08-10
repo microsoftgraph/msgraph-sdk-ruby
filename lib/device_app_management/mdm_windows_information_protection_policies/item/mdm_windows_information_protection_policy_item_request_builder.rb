@@ -1,10 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/mdm_windows_information_protection_policy'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../device_app_management'
 require_relative '../mdm_windows_information_protection_policies'
+require_relative './assignments/assignments_request_builder'
+require_relative './exempt_app_locker_files/exempt_app_locker_files_request_builder'
 require_relative './item'
+require_relative './protected_app_locker_files/protected_app_locker_files_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -15,6 +18,21 @@ module MicrosoftGraph
                 class MdmWindowsInformationProtectionPolicyItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
+                    # Provides operations to manage the assignments property of the microsoft.graph.windowsInformationProtection entity.
+                    def assignments()
+                        return MicrosoftGraph::DeviceAppManagement::MdmWindowsInformationProtectionPolicies::Item::Assignments::AssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the exemptAppLockerFiles property of the microsoft.graph.windowsInformationProtection entity.
+                    def exempt_app_locker_files()
+                        return MicrosoftGraph::DeviceAppManagement::MdmWindowsInformationProtectionPolicies::Item::ExemptAppLockerFiles::ExemptAppLockerFilesRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the protectedAppLockerFiles property of the microsoft.graph.windowsInformationProtection entity.
+                    def protected_app_locker_files()
+                        return MicrosoftGraph::DeviceAppManagement::MdmWindowsInformationProtectionPolicies::Item::ProtectedAppLockerFiles::ProtectedAppLockerFilesRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new MdmWindowsInformationProtectionPolicyItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -24,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/mdmWindowsInformationProtectionPolicies/{mdmWindowsInformationProtectionPolicy%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
+                    ## Deletes a mdmWindowsInformationProtectionPolicy.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -33,12 +51,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Windows information protection for apps running on devices which are MDM enrolled.
+                    ## Read properties and relationships of the mdmWindowsInformationProtectionPolicy object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of mdm_windows_information_protection_policy
                     ## 
@@ -47,12 +65,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MdmWindowsInformationProtectionPolicy.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+                    ## Update the properties of a mdmWindowsInformationProtectionPolicy object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of mdm_windows_information_protection_policy
@@ -63,12 +81,12 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MdmWindowsInformationProtectionPolicy.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
+                    ## Deletes a mdmWindowsInformationProtectionPolicy.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -84,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Windows information protection for apps running on devices which are MDM enrolled.
+                    ## Read properties and relationships of the mdmWindowsInformationProtectionPolicy object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +120,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+                    ## Update the properties of a mdmWindowsInformationProtectionPolicy object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +141,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Windows information protection for apps running on devices which are MDM enrolled.
+                    # Read properties and relationships of the mdmWindowsInformationProtectionPolicy object.
                     class MdmWindowsInformationProtectionPolicyItemRequestBuilderGetQueryParameters
                         
                         ## 

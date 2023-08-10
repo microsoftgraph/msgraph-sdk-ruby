@@ -37,7 +37,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the lowerLimit property value. The lowerLimit property
-                                    ## @param value Value to set for the lower_limit property.
+                                    ## @param value Value to set for the lowerLimit property.
                                     ## @return a void
                                     ## 
                                     def lower_limit=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the upperLimit property value. The upperLimit property
-                                    ## @param value Value to set for the upper_limit property.
+                                    ## @param value Value to set for the upperLimit property.
                                     ## @return a void
                                     ## 
                                     def upper_limit=(value)

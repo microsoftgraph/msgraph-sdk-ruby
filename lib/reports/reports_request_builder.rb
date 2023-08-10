@@ -1,12 +1,11 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative '../models/o_data_errors/o_data_error'
+require_relative '../models/o_data_errors_o_data_error'
 require_relative '../models/report_root'
+require_relative './authentication_methods/authentication_methods_request_builder'
 require_relative './daily_print_usage_by_printer/daily_print_usage_by_printer_request_builder'
-require_relative './daily_print_usage_by_printer/item/print_usage_by_printer_item_request_builder'
 require_relative './daily_print_usage_by_user/daily_print_usage_by_user_request_builder'
-require_relative './daily_print_usage_by_user/item/print_usage_by_user_item_request_builder'
 require_relative './device_configuration_device_activity/device_configuration_device_activity_request_builder'
 require_relative './device_configuration_user_activity/device_configuration_user_activity_request_builder'
 require_relative './get_email_activity_counts_with_period/get_email_activity_counts_with_period_request_builder'
@@ -82,6 +81,11 @@ require_relative './get_teams_device_usage_distribution_user_counts_with_period/
 require_relative './get_teams_device_usage_user_counts_with_period/get_teams_device_usage_user_counts_with_period_request_builder'
 require_relative './get_teams_device_usage_user_detail_with_date/get_teams_device_usage_user_detail_with_date_request_builder'
 require_relative './get_teams_device_usage_user_detail_with_period/get_teams_device_usage_user_detail_with_period_request_builder'
+require_relative './get_teams_team_activity_counts_with_period/get_teams_team_activity_counts_with_period_request_builder'
+require_relative './get_teams_team_activity_detail_with_date/get_teams_team_activity_detail_with_date_request_builder'
+require_relative './get_teams_team_activity_detail_with_period/get_teams_team_activity_detail_with_period_request_builder'
+require_relative './get_teams_team_activity_distribution_counts_with_period/get_teams_team_activity_distribution_counts_with_period_request_builder'
+require_relative './get_teams_team_counts_with_period/get_teams_team_counts_with_period_request_builder'
 require_relative './get_teams_user_activity_counts_with_period/get_teams_user_activity_counts_with_period_request_builder'
 require_relative './get_teams_user_activity_user_counts_with_period/get_teams_user_activity_user_counts_with_period_request_builder'
 require_relative './get_teams_user_activity_user_detail_with_date/get_teams_user_activity_user_detail_with_date_request_builder'
@@ -103,9 +107,7 @@ require_relative './managed_device_enrollment_failure_details/managed_device_enr
 require_relative './managed_device_enrollment_failure_details_with_skip_with_top_with_filter_with_skip_token/54eee1926ea81dba1a95277923eee079ffc56a067bd10f19cfc481c67bf020bd'
 require_relative './managed_device_enrollment_top_failures/managed_device_enrollment_top_failures_request_builder'
 require_relative './managed_device_enrollment_top_failures_with_period/managed_device_enrollment_top_failures_with_period_request_builder'
-require_relative './monthly_print_usage_by_printer/item/print_usage_by_printer_item_request_builder'
 require_relative './monthly_print_usage_by_printer/monthly_print_usage_by_printer_request_builder'
-require_relative './monthly_print_usage_by_user/item/print_usage_by_user_item_request_builder'
 require_relative './monthly_print_usage_by_user/monthly_print_usage_by_user_request_builder'
 require_relative './reports'
 require_relative './security/security_request_builder'
@@ -116,6 +118,11 @@ module MicrosoftGraph
         # Provides operations to manage the reportRoot singleton.
         class ReportsRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
             
+            ## 
+            # Provides operations to manage the authenticationMethods property of the microsoft.graph.reportRoot entity.
+            def authentication_methods()
+                return MicrosoftGraph::Reports::AuthenticationMethods::AuthenticationMethodsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
             ## 
             # Provides operations to manage the dailyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
             def daily_print_usage_by_printer()
@@ -186,29 +193,7 @@ module MicrosoftGraph
                 super(path_parameters, request_adapter, "{+baseurl}/reports{?%24select,%24expand}")
             end
             ## 
-            ## Provides operations to manage the dailyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_usage_by_printer_item_request_builder
-            ## 
-            def daily_print_usage_by_printer_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printUsageByPrinter%2Did"] = id
-                return MicrosoftGraph::Reports::DailyPrintUsageByPrinter::Item::PrintUsageByPrinterItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_usage_by_user_item_request_builder
-            ## 
-            def daily_print_usage_by_user_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printUsageByUser%2Did"] = id
-                return MicrosoftGraph::Reports::DailyPrintUsageByUser::Item::PrintUsageByUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Get reports
+            ## Read properties and relationships of the reportRoot object.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of report_root
             ## 
@@ -217,8 +202,8 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ReportRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -860,6 +845,51 @@ module MicrosoftGraph
                 return GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
             end
             ## 
+            ## Provides operations to call the getTeamsTeamActivityCounts method.
+            ## @param period Usage: period='{period}'
+            ## @return a get_teams_team_activity_counts_with_period_request_builder
+            ## 
+            def get_teams_team_activity_counts_with_period(period)
+                raise StandardError, 'period cannot be null' if period.nil?
+                return GetTeamsTeamActivityCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
+            end
+            ## 
+            ## Provides operations to call the getTeamsTeamActivityDetail method.
+            ## @param date Usage: date={date}
+            ## @return a get_teams_team_activity_detail_with_date_request_builder
+            ## 
+            def get_teams_team_activity_detail_with_date(date)
+                raise StandardError, 'date cannot be null' if date.nil?
+                return GetTeamsTeamActivityDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
+            end
+            ## 
+            ## Provides operations to call the getTeamsTeamActivityDetail method.
+            ## @param period Usage: period='{period}'
+            ## @return a get_teams_team_activity_detail_with_period_request_builder
+            ## 
+            def get_teams_team_activity_detail_with_period(period)
+                raise StandardError, 'period cannot be null' if period.nil?
+                return GetTeamsTeamActivityDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
+            end
+            ## 
+            ## Provides operations to call the getTeamsTeamActivityDistributionCounts method.
+            ## @param period Usage: period='{period}'
+            ## @return a get_teams_team_activity_distribution_counts_with_period_request_builder
+            ## 
+            def get_teams_team_activity_distribution_counts_with_period(period)
+                raise StandardError, 'period cannot be null' if period.nil?
+                return GetTeamsTeamActivityDistributionCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
+            end
+            ## 
+            ## Provides operations to call the getTeamsTeamCounts method.
+            ## @param period Usage: period='{period}'
+            ## @return a get_teams_team_counts_with_period_request_builder
+            ## 
+            def get_teams_team_counts_with_period(period)
+                raise StandardError, 'period cannot be null' if period.nil?
+                return GetTeamsTeamCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
+            end
+            ## 
             ## Provides operations to call the getTeamsUserActivityCounts method.
             ## @param period Usage: period='{period}'
             ## @return a get_teams_user_activity_counts_with_period_request_builder
@@ -1041,29 +1071,7 @@ module MicrosoftGraph
                 return ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
             end
             ## 
-            ## Provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_usage_by_printer_item_request_builder
-            ## 
-            def monthly_print_usage_by_printer_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printUsageByPrinter%2Did"] = id
-                return MicrosoftGraph::Reports::MonthlyPrintUsageByPrinter::Item::PrintUsageByPrinterItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_usage_by_user_item_request_builder
-            ## 
-            def monthly_print_usage_by_user_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printUsageByUser%2Did"] = id
-                return MicrosoftGraph::Reports::MonthlyPrintUsageByUser::Item::PrintUsageByUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Update reports
+            ## Update the properties of a reportRoot object.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of report_root
@@ -1074,12 +1082,12 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ReportRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Get reports
+            ## Read properties and relationships of the reportRoot object.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -1097,7 +1105,7 @@ module MicrosoftGraph
                 return request_info
             end
             ## 
-            ## Update reports
+            ## Update the properties of a reportRoot object.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
@@ -1118,7 +1126,7 @@ module MicrosoftGraph
             end
 
             ## 
-            # Get reports
+            # Read properties and relationships of the reportRoot object.
             class ReportsRequestBuilderGetQueryParameters
                 
                 ## 

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new PrintTaskCollectionResponse and sets the default values.
+            ## Instantiates a new printTaskCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../models/service_health_issue'
 require_relative '../../../../../models/service_health_issue_collection_response'
 require_relative '../../../../admin'
@@ -9,6 +9,7 @@ require_relative '../../health_overviews'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './issues'
+require_relative './item/service_health_issue_item_request_builder'
 
 module MicrosoftGraph
     module Admin
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Admin::ServiceAnnouncement::HealthOverviews::Item::Issues::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
+                            ## @param service_health_issue_id The unique identifier of serviceHealthIssue
+                            ## @return a service_health_issue_item_request_builder
+                            ## 
+                            def by_service_health_issue_id(service_health_issue_id)
+                                raise StandardError, 'service_health_issue_id cannot be null' if service_health_issue_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["serviceHealthIssue%2Did"] = service_health_issue_id
+                                return MicrosoftGraph::Admin::ServiceAnnouncement::HealthOverviews::Item::Issues::Item::ServiceHealthIssueItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new IssuesRequestBuilder and sets the default values.
@@ -44,8 +56,8 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServiceHealthIssueCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
@@ -60,8 +72,8 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServiceHealthIssue.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 

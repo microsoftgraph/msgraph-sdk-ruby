@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
 require_relative '../../../../../../models/access_review_instance'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../identity_governance'
 require_relative '../../../../access_reviews'
 require_relative '../../../definitions'
@@ -11,13 +11,10 @@ require_relative './accept_recommendations/accept_recommendations_request_builde
 require_relative './apply_decisions/apply_decisions_request_builder'
 require_relative './batch_record_decisions/batch_record_decisions_request_builder'
 require_relative './contacted_reviewers/contacted_reviewers_request_builder'
-require_relative './contacted_reviewers/item/access_review_reviewer_item_request_builder'
 require_relative './decisions/decisions_request_builder'
-require_relative './decisions/item/access_review_instance_decision_item_item_request_builder'
 require_relative './item'
 require_relative './reset_decisions/reset_decisions_request_builder'
 require_relative './send_reminder/send_reminder_request_builder'
-require_relative './stages/item/access_review_stage_item_request_builder'
 require_relative './stages/stages_request_builder'
 require_relative './stop/stop_request_builder'
 
@@ -87,28 +84,6 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}{?%24select,%24expand}")
                                 end
                                 ## 
-                                ## Provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a access_review_reviewer_item_request_builder
-                                ## 
-                                def contacted_reviewers_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["accessReviewReviewer%2Did"] = id
-                                    return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::ContactedReviewers::Item::AccessReviewReviewerItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a access_review_instance_decision_item_item_request_builder
-                                ## 
-                                def decisions_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["accessReviewInstanceDecisionItem%2Did"] = id
-                                    return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Decisions::Item::AccessReviewInstanceDecisionItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
                                 ## Delete navigation property instances for identityGovernance
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
@@ -118,12 +93,12 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
+                                ## Read the properties and relationships of an accessReviewInstance object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of access_review_instance
                                 ## 
@@ -132,12 +107,12 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewInstance.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Update the navigation property instances in identityGovernance
+                                ## Update the properties of an accessReviewInstance object. Only the reviewers and fallbackReviewers properties can be updated but the scope property is also required in the request body. You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers. To update an accessReviewInstance, it's status must be InProgress.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of access_review_instance
@@ -148,20 +123,9 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewInstance.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a access_review_stage_item_request_builder
-                                ## 
-                                def stages_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["accessReviewStage%2Did"] = id
-                                    return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::AccessReviewStageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Delete navigation property instances for identityGovernance
@@ -180,7 +144,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
+                                ## Read the properties and relationships of an accessReviewInstance object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -198,7 +162,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Update the navigation property instances in identityGovernance
+                                ## Update the properties of an accessReviewInstance object. Only the reviewers and fallbackReviewers properties can be updated but the scope property is also required in the request body. You can only add reviewers to the fallbackReviewers property but can't remove existing fallbackReviewers. To update an accessReviewInstance, it's status must be InProgress.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -219,7 +183,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
+                                # Read the properties and relationships of an accessReviewInstance object.
                                 class AccessReviewInstanceItemRequestBuilderGetQueryParameters
                                     
                                     ## 

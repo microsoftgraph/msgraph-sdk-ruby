@@ -28,7 +28,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-            ## @param value Value to set for the add_to_calendar_action property.
+            ## @param value Value to set for the addToCalendarAction property.
             ## @return a void
             ## 
             def add_to_calendar_action=(value)
@@ -43,14 +43,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
-            ## @param value Value to set for the added_student_action property.
+            ## @param value Value to set for the addedStudentAction property.
             ## @return a void
             ## 
             def added_student_action=(value)
                 @added_student_action = value
             end
             ## 
-            ## Instantiates a new EducationAssignmentDefaults and sets the default values.
+            ## Instantiates a new educationAssignmentDefaults and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dueTime property value. Class-level default value for due time field. Default value is 23:59:00.
-            ## @param value Value to set for the due_time property.
+            ## @param value Value to set for the dueTime property.
             ## @return a void
             ## 
             def due_time=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
-            ## @param value Value to set for the notification_channel_url property.
+            ## @param value Value to set for the notificationChannelUrl property.
             ## @return a void
             ## 
             def notification_channel_url=(value)

@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -52,7 +52,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the certificationDetailsUrl property value. URL that shows certification details for the application.
-            ## @param value Value to set for the certification_details_url property.
+            ## @param value Value to set for the certificationDetailsUrl property.
             ## @return a void
             ## 
             def certification_details_url=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the certificationExpirationDateTime property value. The timestamp when the current certification for the application will expire.
-            ## @param value Value to set for the certification_expiration_date_time property.
+            ## @param value Value to set for the certificationExpirationDateTime property.
             ## @return a void
             ## 
             def certification_expiration_date_time=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isCertifiedByMicrosoft property value. Indicates whether the application is certified by Microsoft.
-            ## @param value Value to set for the is_certified_by_microsoft property.
+            ## @param value Value to set for the isCertifiedByMicrosoft property.
             ## @return a void
             ## 
             def is_certified_by_microsoft=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isPublisherAttested property value. Indicates whether the application has been self-attested by the application developer or the publisher.
-            ## @param value Value to set for the is_publisher_attested property.
+            ## @param value Value to set for the isPublisherAttested property.
             ## @return a void
             ## 
             def is_publisher_attested=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastCertificationDateTime property value. The timestamp when the certification for the application was most recently added or updated.
-            ## @param value Value to set for the last_certification_date_time property.
+            ## @param value Value to set for the lastCertificationDateTime property.
             ## @return a void
             ## 
             def last_certification_date_time=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

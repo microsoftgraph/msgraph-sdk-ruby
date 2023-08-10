@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The list of user IDs that are a member of the schedulingGroup. Required.
             @user_ids
             ## 
-            ## Instantiates a new SchedulingGroup and sets the default values.
+            ## Instantiates a new schedulingGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -41,7 +41,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name for the schedulingGroup. Required.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isActive property value. Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
-            ## @param value Value to set for the is_active property.
+            ## @param value Value to set for the isActive property.
             ## @return a void
             ## 
             def is_active=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userIds property value. The list of user IDs that are a member of the schedulingGroup. Required.
-            ## @param value Value to set for the user_ids property.
+            ## @param value Value to set for the userIds property.
             ## @return a void
             ## 
             def user_ids=(value)

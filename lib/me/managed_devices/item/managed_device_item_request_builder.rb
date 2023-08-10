@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/managed_device'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../me'
 require_relative '../managed_devices'
 require_relative './bypass_activation_lock/bypass_activation_lock_request_builder'
@@ -9,12 +9,11 @@ require_relative './clean_windows_device/clean_windows_device_request_builder'
 require_relative './delete_user_from_shared_apple_device/delete_user_from_shared_apple_device_request_builder'
 require_relative './device_category/device_category_request_builder'
 require_relative './device_compliance_policy_states/device_compliance_policy_states_request_builder'
-require_relative './device_compliance_policy_states/item/device_compliance_policy_state_item_request_builder'
 require_relative './device_configuration_states/device_configuration_states_request_builder'
-require_relative './device_configuration_states/item/device_configuration_state_item_request_builder'
 require_relative './disable_lost_mode/disable_lost_mode_request_builder'
 require_relative './item'
 require_relative './locate_device/locate_device_request_builder'
+require_relative './log_collection_requests/log_collection_requests_request_builder'
 require_relative './logout_shared_apple_device_active_user/logout_shared_apple_device_active_user_request_builder'
 require_relative './reboot_now/reboot_now_request_builder'
 require_relative './recover_passcode/recover_passcode_request_builder'
@@ -28,6 +27,7 @@ require_relative './update_windows_device_account/update_windows_device_account_
 require_relative './users/users_request_builder'
 require_relative './windows_defender_scan/windows_defender_scan_request_builder'
 require_relative './windows_defender_update_signatures/windows_defender_update_signatures_request_builder'
+require_relative './windows_protection_state/windows_protection_state_request_builder'
 require_relative './wipe/wipe_request_builder'
 
 module MicrosoftGraph
@@ -77,6 +77,11 @@ module MicrosoftGraph
                     # Provides operations to call the locateDevice method.
                     def locate_device()
                         return MicrosoftGraph::Me::ManagedDevices::Item::LocateDevice::LocateDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.
+                    def log_collection_requests()
+                        return MicrosoftGraph::Me::ManagedDevices::Item::LogCollectionRequests::LogCollectionRequestsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the logoutSharedAppleDeviceActiveUser method.
@@ -144,6 +149,11 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::ManagedDevices::Item::WindowsDefenderUpdateSignatures::WindowsDefenderUpdateSignaturesRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to manage the windowsProtectionState property of the microsoft.graph.managedDevice entity.
+                    def windows_protection_state()
+                        return MicrosoftGraph::Me::ManagedDevices::Item::WindowsProtectionState::WindowsProtectionStateRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to call the wipe method.
                     def wipe()
                         return MicrosoftGraph::Me::ManagedDevices::Item::Wipe::WipeRequestBuilder.new(@path_parameters, @request_adapter)
@@ -167,31 +177,9 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_compliance_policy_state_item_request_builder
-                    ## 
-                    def device_compliance_policy_states_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceCompliancePolicyState%2Did"] = id
-                        return MicrosoftGraph::Me::ManagedDevices::Item::DeviceCompliancePolicyStates::Item::DeviceCompliancePolicyStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_configuration_state_item_request_builder
-                    ## 
-                    def device_configuration_states_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceConfigurationState%2Did"] = id
-                        return MicrosoftGraph::Me::ManagedDevices::Item::DeviceConfigurationStates::Item::DeviceConfigurationStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## The managed devices associated with the user.
@@ -203,8 +191,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedDevice.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -219,8 +207,8 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedDevice.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

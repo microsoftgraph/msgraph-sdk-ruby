@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute1 property value. First customizable extension attribute.
-            ## @param value Value to set for the extension_attribute1 property.
+            ## @param value Value to set for the extensionAttribute1 property.
             ## @return a void
             ## 
             def extension_attribute1=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute10 property value. Tenth customizable extension attribute.
-            ## @param value Value to set for the extension_attribute10 property.
+            ## @param value Value to set for the extensionAttribute10 property.
             ## @return a void
             ## 
             def extension_attribute10=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute11 property value. Eleventh customizable extension attribute.
-            ## @param value Value to set for the extension_attribute11 property.
+            ## @param value Value to set for the extensionAttribute11 property.
             ## @return a void
             ## 
             def extension_attribute11=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute12 property value. Twelfth customizable extension attribute.
-            ## @param value Value to set for the extension_attribute12 property.
+            ## @param value Value to set for the extensionAttribute12 property.
             ## @return a void
             ## 
             def extension_attribute12=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute13 property value. Thirteenth customizable extension attribute.
-            ## @param value Value to set for the extension_attribute13 property.
+            ## @param value Value to set for the extensionAttribute13 property.
             ## @return a void
             ## 
             def extension_attribute13=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute14 property value. Fourteenth customizable extension attribute.
-            ## @param value Value to set for the extension_attribute14 property.
+            ## @param value Value to set for the extensionAttribute14 property.
             ## @return a void
             ## 
             def extension_attribute14=(value)
@@ -187,7 +187,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute15 property value. Fifteenth customizable extension attribute.
-            ## @param value Value to set for the extension_attribute15 property.
+            ## @param value Value to set for the extensionAttribute15 property.
             ## @return a void
             ## 
             def extension_attribute15=(value)
@@ -202,7 +202,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute2 property value. Second customizable extension attribute.
-            ## @param value Value to set for the extension_attribute2 property.
+            ## @param value Value to set for the extensionAttribute2 property.
             ## @return a void
             ## 
             def extension_attribute2=(value)
@@ -217,7 +217,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute3 property value. Third customizable extension attribute.
-            ## @param value Value to set for the extension_attribute3 property.
+            ## @param value Value to set for the extensionAttribute3 property.
             ## @return a void
             ## 
             def extension_attribute3=(value)
@@ -232,7 +232,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute4 property value. Fourth customizable extension attribute.
-            ## @param value Value to set for the extension_attribute4 property.
+            ## @param value Value to set for the extensionAttribute4 property.
             ## @return a void
             ## 
             def extension_attribute4=(value)
@@ -247,7 +247,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute5 property value. Fifth customizable extension attribute.
-            ## @param value Value to set for the extension_attribute5 property.
+            ## @param value Value to set for the extensionAttribute5 property.
             ## @return a void
             ## 
             def extension_attribute5=(value)
@@ -262,7 +262,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute6 property value. Sixth customizable extension attribute.
-            ## @param value Value to set for the extension_attribute6 property.
+            ## @param value Value to set for the extensionAttribute6 property.
             ## @return a void
             ## 
             def extension_attribute6=(value)
@@ -277,7 +277,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute7 property value. Seventh customizable extension attribute.
-            ## @param value Value to set for the extension_attribute7 property.
+            ## @param value Value to set for the extensionAttribute7 property.
             ## @return a void
             ## 
             def extension_attribute7=(value)
@@ -292,7 +292,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute8 property value. Eighth customizable extension attribute.
-            ## @param value Value to set for the extension_attribute8 property.
+            ## @param value Value to set for the extensionAttribute8 property.
             ## @return a void
             ## 
             def extension_attribute8=(value)
@@ -307,7 +307,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the extensionAttribute9 property value. Ninth customizable extension attribute.
-            ## @param value Value to set for the extension_attribute9 property.
+            ## @param value Value to set for the extensionAttribute9 property.
             ## @return a void
             ## 
             def extension_attribute9=(value)
@@ -346,7 +346,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

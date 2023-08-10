@@ -51,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the audioBitsPerSample property value. Number of audio bits per sample.
-            ## @param value Value to set for the audio_bits_per_sample property.
+            ## @param value Value to set for the audioBitsPerSample property.
             ## @return a void
             ## 
             def audio_bits_per_sample=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the audioChannels property value. Number of audio channels.
-            ## @param value Value to set for the audio_channels property.
+            ## @param value Value to set for the audioChannels property.
             ## @return a void
             ## 
             def audio_channels=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the audioFormat property value. Name of the audio format (AAC, MP3, etc.).
-            ## @param value Value to set for the audio_format property.
+            ## @param value Value to set for the audioFormat property.
             ## @return a void
             ## 
             def audio_format=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the audioSamplesPerSecond property value. Number of audio samples per second.
-            ## @param value Value to set for the audio_samples_per_second property.
+            ## @param value Value to set for the audioSamplesPerSecond property.
             ## @return a void
             ## 
             def audio_samples_per_second=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fourCC property value. 'Four character code' name of the video format.
-            ## @param value Value to set for the four_c_c property.
+            ## @param value Value to set for the fourCC property.
             ## @return a void
             ## 
             def four_c_c=(value)
@@ -187,7 +187,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the frameRate property value. Frame rate of the video.
-            ## @param value Value to set for the frame_rate property.
+            ## @param value Value to set for the frameRate property.
             ## @return a void
             ## 
             def frame_rate=(value)
@@ -236,7 +236,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

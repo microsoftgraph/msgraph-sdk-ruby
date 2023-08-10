@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the windowsPhone81GeneralConfiguration resource.
         class WindowsPhone81GeneralConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -102,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.
-            ## @param value Value to set for the apply_only_to_windows_phone81 property.
+            ## @param value Value to set for the applyOnlyToWindowsPhone81 property.
             ## @return a void
             ## 
             def apply_only_to_windows_phone81=(value)
@@ -117,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appsBlockCopyPaste property value. Indicates whether or not to block copy paste.
-            ## @param value Value to set for the apps_block_copy_paste property.
+            ## @param value Value to set for the appsBlockCopyPaste property.
             ## @return a void
             ## 
             def apps_block_copy_paste=(value)
@@ -132,7 +134,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bluetoothBlocked property value. Indicates whether or not to block bluetooth.
-            ## @param value Value to set for the bluetooth_blocked property.
+            ## @param value Value to set for the bluetoothBlocked property.
             ## @return a void
             ## 
             def bluetooth_blocked=(value)
@@ -147,7 +149,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cameraBlocked property value. Indicates whether or not to block camera.
-            ## @param value Value to set for the camera_blocked property.
+            ## @param value Value to set for the cameraBlocked property.
             ## @return a void
             ## 
             def camera_blocked=(value)
@@ -162,7 +164,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularBlockWifiTethering property value. Indicates whether or not to block Wi-Fi tethering. Has no impact if Wi-Fi is blocked.
-            ## @param value Value to set for the cellular_block_wifi_tethering property.
+            ## @param value Value to set for the cellularBlockWifiTethering property.
             ## @return a void
             ## 
             def cellular_block_wifi_tethering=(value)
@@ -177,7 +179,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compliantAppListType property value. Possible values of the compliance app list.
-            ## @param value Value to set for the compliant_app_list_type property.
+            ## @param value Value to set for the compliantAppListType property.
             ## @return a void
             ## 
             def compliant_app_list_type=(value)
@@ -192,14 +194,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
-            ## @param value Value to set for the compliant_apps_list property.
+            ## @param value Value to set for the compliantAppsList property.
             ## @return a void
             ## 
             def compliant_apps_list=(value)
                 @compliant_apps_list = value
             end
             ## 
-            ## Instantiates a new WindowsPhone81GeneralConfiguration and sets the default values.
+            ## Instantiates a new windowsPhone81GeneralConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -224,7 +226,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
-            ## @param value Value to set for the diagnostic_data_block_submission property.
+            ## @param value Value to set for the diagnosticDataBlockSubmission property.
             ## @return a void
             ## 
             def diagnostic_data_block_submission=(value)
@@ -239,7 +241,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the emailBlockAddingAccounts property value. Indicates whether or not to block custom email accounts.
-            ## @param value Value to set for the email_block_adding_accounts property.
+            ## @param value Value to set for the emailBlockAddingAccounts property.
             ## @return a void
             ## 
             def email_block_adding_accounts=(value)
@@ -291,7 +293,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the locationServicesBlocked property value. Indicates whether or not to block location services.
-            ## @param value Value to set for the location_services_blocked property.
+            ## @param value Value to set for the locationServicesBlocked property.
             ## @return a void
             ## 
             def location_services_blocked=(value)
@@ -306,7 +308,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the microsoftAccountBlocked property value. Indicates whether or not to block using a Microsoft Account.
-            ## @param value Value to set for the microsoft_account_blocked property.
+            ## @param value Value to set for the microsoftAccountBlocked property.
             ## @return a void
             ## 
             def microsoft_account_blocked=(value)
@@ -321,7 +323,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the nfcBlocked property value. Indicates whether or not to block Near-Field Communication.
-            ## @param value Value to set for the nfc_blocked property.
+            ## @param value Value to set for the nfcBlocked property.
             ## @return a void
             ## 
             def nfc_blocked=(value)
@@ -336,7 +338,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordBlockSimple property value. Indicates whether or not to block syncing the calendar.
-            ## @param value Value to set for the password_block_simple property.
+            ## @param value Value to set for the passwordBlockSimple property.
             ## @return a void
             ## 
             def password_block_simple=(value)
@@ -351,7 +353,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordExpirationDays property value. Number of days before the password expires.
-            ## @param value Value to set for the password_expiration_days property.
+            ## @param value Value to set for the passwordExpirationDays property.
             ## @return a void
             ## 
             def password_expiration_days=(value)
@@ -366,7 +368,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumCharacterSetCount property value. Number of character sets a password must contain.
-            ## @param value Value to set for the password_minimum_character_set_count property.
+            ## @param value Value to set for the passwordMinimumCharacterSetCount property.
             ## @return a void
             ## 
             def password_minimum_character_set_count=(value)
@@ -381,7 +383,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumLength property value. Minimum length of passwords.
-            ## @param value Value to set for the password_minimum_length property.
+            ## @param value Value to set for the passwordMinimumLength property.
             ## @return a void
             ## 
             def password_minimum_length=(value)
@@ -396,7 +398,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before screen timeout.
-            ## @param value Value to set for the password_minutes_of_inactivity_before_screen_timeout property.
+            ## @param value Value to set for the passwordMinutesOfInactivityBeforeScreenTimeout property.
             ## @return a void
             ## 
             def password_minutes_of_inactivity_before_screen_timeout=(value)
@@ -411,7 +413,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
-            ## @param value Value to set for the password_previous_password_block_count property.
+            ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
             ## @return a void
             ## 
             def password_previous_password_block_count=(value)
@@ -426,7 +428,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequired property value. Indicates whether or not to require a password.
-            ## @param value Value to set for the password_required property.
+            ## @param value Value to set for the passwordRequired property.
             ## @return a void
             ## 
             def password_required=(value)
@@ -441,7 +443,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequiredType property value. Possible values of required passwords.
-            ## @param value Value to set for the password_required_type property.
+            ## @param value Value to set for the passwordRequiredType property.
             ## @return a void
             ## 
             def password_required_type=(value)
@@ -456,7 +458,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset.
-            ## @param value Value to set for the password_sign_in_failure_count_before_factory_reset property.
+            ## @param value Value to set for the passwordSignInFailureCountBeforeFactoryReset property.
             ## @return a void
             ## 
             def password_sign_in_failure_count_before_factory_reset=(value)
@@ -471,7 +473,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the screenCaptureBlocked property value. Indicates whether or not to block screenshots.
-            ## @param value Value to set for the screen_capture_blocked property.
+            ## @param value Value to set for the screenCaptureBlocked property.
             ## @return a void
             ## 
             def screen_capture_blocked=(value)
@@ -523,7 +525,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the storageBlockRemovableStorage property value. Indicates whether or not to block removable storage.
-            ## @param value Value to set for the storage_block_removable_storage property.
+            ## @param value Value to set for the storageBlockRemovableStorage property.
             ## @return a void
             ## 
             def storage_block_removable_storage=(value)
@@ -538,7 +540,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the storageRequireEncryption property value. Indicates whether or not to require encryption.
-            ## @param value Value to set for the storage_require_encryption property.
+            ## @param value Value to set for the storageRequireEncryption property.
             ## @return a void
             ## 
             def storage_require_encryption=(value)
@@ -553,7 +555,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
-            ## @param value Value to set for the web_browser_blocked property.
+            ## @param value Value to set for the webBrowserBlocked property.
             ## @return a void
             ## 
             def web_browser_blocked=(value)
@@ -568,7 +570,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wifiBlockAutomaticConnectHotspots property value. Indicates whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
-            ## @param value Value to set for the wifi_block_automatic_connect_hotspots property.
+            ## @param value Value to set for the wifiBlockAutomaticConnectHotspots property.
             ## @return a void
             ## 
             def wifi_block_automatic_connect_hotspots=(value)
@@ -583,7 +585,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wifiBlockHotspotReporting property value. Indicates whether or not to block Wi-Fi hotspot reporting. Has no impact if Wi-Fi is blocked.
-            ## @param value Value to set for the wifi_block_hotspot_reporting property.
+            ## @param value Value to set for the wifiBlockHotspotReporting property.
             ## @return a void
             ## 
             def wifi_block_hotspot_reporting=(value)
@@ -598,7 +600,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wifiBlocked property value. Indicates whether or not to block Wi-Fi.
-            ## @param value Value to set for the wifi_blocked property.
+            ## @param value Value to set for the wifiBlocked property.
             ## @return a void
             ## 
             def wifi_blocked=(value)
@@ -613,7 +615,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsStoreBlocked property value. Indicates whether or not to block the Windows Store.
-            ## @param value Value to set for the windows_store_blocked property.
+            ## @param value Value to set for the windowsStoreBlocked property.
             ## @return a void
             ## 
             def windows_store_blocked=(value)

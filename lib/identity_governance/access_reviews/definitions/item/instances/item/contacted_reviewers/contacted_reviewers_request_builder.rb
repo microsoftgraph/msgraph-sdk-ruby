@@ -2,7 +2,7 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
 require_relative '../../../../../../../models/access_review_reviewer'
 require_relative '../../../../../../../models/access_review_reviewer_collection_response'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../identity_governance'
 require_relative '../../../../../access_reviews'
 require_relative '../../../../definitions'
@@ -11,6 +11,7 @@ require_relative '../../instances'
 require_relative '../item'
 require_relative './contacted_reviewers'
 require_relative './count/count_request_builder'
+require_relative './item/access_review_reviewer_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::ContactedReviewers::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
+                                    ## @param access_review_reviewer_id The unique identifier of accessReviewReviewer
+                                    ## @return a access_review_reviewer_item_request_builder
+                                    ## 
+                                    def by_access_review_reviewer_id(access_review_reviewer_id)
+                                        raise StandardError, 'access_review_reviewer_id cannot be null' if access_review_reviewer_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["accessReviewReviewer%2Did"] = access_review_reviewer_id
+                                        return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::ContactedReviewers::Item::AccessReviewReviewerItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new ContactedReviewersRequestBuilder and sets the default values.
@@ -48,8 +60,8 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewReviewerCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
@@ -64,8 +76,8 @@ module MicrosoftGraph
                                             body, request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewReviewer.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 

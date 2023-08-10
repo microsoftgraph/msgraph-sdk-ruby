@@ -1,15 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative '../models/identity_protection_root'
-require_relative '../models/o_data_errors/o_data_error'
+require_relative '../models/o_data_errors_o_data_error'
 require_relative './identity_protection'
-require_relative './risk_detections/item/risk_detection_item_request_builder'
 require_relative './risk_detections/risk_detections_request_builder'
-require_relative './risky_service_principals/item/risky_service_principal_item_request_builder'
 require_relative './risky_service_principals/risky_service_principals_request_builder'
-require_relative './risky_users/item/risky_user_item_request_builder'
 require_relative './risky_users/risky_users_request_builder'
-require_relative './service_principal_risk_detections/item/service_principal_risk_detection_item_request_builder'
 require_relative './service_principal_risk_detections/service_principal_risk_detections_request_builder'
 
 module MicrosoftGraph
@@ -57,8 +53,8 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityProtectionRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -73,53 +69,9 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityProtectionRoot.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a risk_detection_item_request_builder
-            ## 
-            def risk_detections_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["riskDetection%2Did"] = id
-                return MicrosoftGraph::IdentityProtection::RiskDetections::Item::RiskDetectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a risky_service_principal_item_request_builder
-            ## 
-            def risky_service_principals_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["riskyServicePrincipal%2Did"] = id
-                return MicrosoftGraph::IdentityProtection::RiskyServicePrincipals::Item::RiskyServicePrincipalItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a risky_user_item_request_builder
-            ## 
-            def risky_users_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["riskyUser%2Did"] = id
-                return MicrosoftGraph::IdentityProtection::RiskyUsers::Item::RiskyUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a service_principal_risk_detection_item_request_builder
-            ## 
-            def service_principal_risk_detections_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["servicePrincipalRiskDetection%2Did"] = id
-                return MicrosoftGraph::IdentityProtection::ServicePrincipalRiskDetections::Item::ServicePrincipalRiskDetectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get identityProtection

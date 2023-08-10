@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.
-            ## @param value Value to set for the allow_auto_filter property.
+            ## @param value Value to set for the allowAutoFilter property.
             ## @return a void
             ## 
             def allow_auto_filter=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowDeleteColumns property value. Represents the worksheet protection option of allowing deleting columns.
-            ## @param value Value to set for the allow_delete_columns property.
+            ## @param value Value to set for the allowDeleteColumns property.
             ## @return a void
             ## 
             def allow_delete_columns=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowDeleteRows property value. Represents the worksheet protection option of allowing deleting rows.
-            ## @param value Value to set for the allow_delete_rows property.
+            ## @param value Value to set for the allowDeleteRows property.
             ## @return a void
             ## 
             def allow_delete_rows=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowFormatCells property value. Represents the worksheet protection option of allowing formatting cells.
-            ## @param value Value to set for the allow_format_cells property.
+            ## @param value Value to set for the allowFormatCells property.
             ## @return a void
             ## 
             def allow_format_cells=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowFormatColumns property value. Represents the worksheet protection option of allowing formatting columns.
-            ## @param value Value to set for the allow_format_columns property.
+            ## @param value Value to set for the allowFormatColumns property.
             ## @return a void
             ## 
             def allow_format_columns=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowFormatRows property value. Represents the worksheet protection option of allowing formatting rows.
-            ## @param value Value to set for the allow_format_rows property.
+            ## @param value Value to set for the allowFormatRows property.
             ## @return a void
             ## 
             def allow_format_rows=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowInsertColumns property value. Represents the worksheet protection option of allowing inserting columns.
-            ## @param value Value to set for the allow_insert_columns property.
+            ## @param value Value to set for the allowInsertColumns property.
             ## @return a void
             ## 
             def allow_insert_columns=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowInsertHyperlinks property value. Represents the worksheet protection option of allowing inserting hyperlinks.
-            ## @param value Value to set for the allow_insert_hyperlinks property.
+            ## @param value Value to set for the allowInsertHyperlinks property.
             ## @return a void
             ## 
             def allow_insert_hyperlinks=(value)
@@ -189,7 +189,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowInsertRows property value. Represents the worksheet protection option of allowing inserting rows.
-            ## @param value Value to set for the allow_insert_rows property.
+            ## @param value Value to set for the allowInsertRows property.
             ## @return a void
             ## 
             def allow_insert_rows=(value)
@@ -204,7 +204,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowPivotTables property value. Represents the worksheet protection option of allowing using pivot table feature.
-            ## @param value Value to set for the allow_pivot_tables property.
+            ## @param value Value to set for the allowPivotTables property.
             ## @return a void
             ## 
             def allow_pivot_tables=(value)
@@ -219,7 +219,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowSort property value. Represents the worksheet protection option of allowing using sort feature.
-            ## @param value Value to set for the allow_sort property.
+            ## @param value Value to set for the allowSort property.
             ## @return a void
             ## 
             def allow_sort=(value)
@@ -270,7 +270,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

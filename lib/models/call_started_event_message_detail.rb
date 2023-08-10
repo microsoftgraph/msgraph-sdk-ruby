@@ -24,7 +24,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
-            ## @param value Value to set for the call_event_type property.
+            ## @param value Value to set for the callEventType property.
             ## @return a void
             ## 
             def call_event_type=(value)
@@ -39,14 +39,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the callId property value. Unique identifier of the call.
-            ## @param value Value to set for the call_id property.
+            ## @param value Value to set for the callId property.
             ## @return a void
             ## 
             def call_id=(value)
                 @call_id = value
             end
             ## 
-            ## Instantiates a new CallStartedEventMessageDetail and sets the default values.
+            ## Instantiates a new callStartedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

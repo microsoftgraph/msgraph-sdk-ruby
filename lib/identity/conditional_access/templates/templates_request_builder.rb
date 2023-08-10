@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/conditional_access_template_collection_response'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../identity'
 require_relative '../conditional_access'
 require_relative './count/count_request_builder'
+require_relative './item/conditional_access_template_item_request_builder'
 require_relative './templates'
 
 module MicrosoftGraph
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Identity::ConditionalAccess::Templates::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
+                    ## @param conditional_access_template_id The unique identifier of conditionalAccessTemplate
+                    ## @return a conditional_access_template_item_request_builder
+                    ## 
+                    def by_conditional_access_template_id(conditional_access_template_id)
+                        raise StandardError, 'conditional_access_template_id cannot be null' if conditional_access_template_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["conditionalAccessTemplate%2Did"] = conditional_access_template_id
+                        return MicrosoftGraph::Identity::ConditionalAccess::Templates::Item::ConditionalAccessTemplateItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new TemplatesRequestBuilder and sets the default values.
@@ -39,8 +51,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConditionalAccessTemplateCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

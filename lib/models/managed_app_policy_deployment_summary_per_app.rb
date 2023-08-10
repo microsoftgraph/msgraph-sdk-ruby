@@ -29,7 +29,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the configurationAppliedUserCount property value. Number of users the policy is applied.
-            ## @param value Value to set for the configuration_applied_user_count property.
+            ## @param value Value to set for the configurationAppliedUserCount property.
             ## @return a void
             ## 
             def configuration_applied_user_count=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mobileAppIdentifier property value. Deployment of an app.
-            ## @param value Value to set for the mobile_app_identifier property.
+            ## @param value Value to set for the mobileAppIdentifier property.
             ## @return a void
             ## 
             def mobile_app_identifier=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

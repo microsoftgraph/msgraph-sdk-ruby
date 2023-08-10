@@ -32,7 +32,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the AdditionalData property.
+                    ## @param value Value to set for the additionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -66,15 +66,15 @@ module MicrosoftGraph
                         }
                     end
                     ## 
-                    ## Gets the inputIds property value. The InputIds property
+                    ## Gets the InputIds property value. The InputIds property
                     ## @return a string
                     ## 
                     def input_ids
                         return @input_ids
                     end
                     ## 
-                    ## Sets the inputIds property value. The InputIds property
-                    ## @param value Value to set for the input_ids property.
+                    ## Sets the InputIds property value. The InputIds property
+                    ## @param value Value to set for the InputIds property.
                     ## @return a void
                     ## 
                     def input_ids=(value)
@@ -93,30 +93,30 @@ module MicrosoftGraph
                         writer.write_additional_data(@additional_data)
                     end
                     ## 
-                    ## Gets the sourceIdType property value. The SourceIdType property
+                    ## Gets the SourceIdType property value. The SourceIdType property
                     ## @return a exchange_id_format
                     ## 
                     def source_id_type
                         return @source_id_type
                     end
                     ## 
-                    ## Sets the sourceIdType property value. The SourceIdType property
-                    ## @param value Value to set for the source_id_type property.
+                    ## Sets the SourceIdType property value. The SourceIdType property
+                    ## @param value Value to set for the SourceIdType property.
                     ## @return a void
                     ## 
                     def source_id_type=(value)
                         @source_id_type = value
                     end
                     ## 
-                    ## Gets the targetIdType property value. The TargetIdType property
+                    ## Gets the TargetIdType property value. The TargetIdType property
                     ## @return a exchange_id_format
                     ## 
                     def target_id_type
                         return @target_id_type
                     end
                     ## 
-                    ## Sets the targetIdType property value. The TargetIdType property
-                    ## @param value Value to set for the target_id_type property.
+                    ## Sets the TargetIdType property value. The TargetIdType property
+                    ## @param value Value to set for the TargetIdType property.
                     ## @return a void
                     ## 
                     def target_id_type=(value)

@@ -1,15 +1,18 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/directory_object'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../directory'
 require_relative '../deleted_items'
 require_relative './check_member_groups/check_member_groups_request_builder'
 require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './get_member_groups/get_member_groups_request_builder'
 require_relative './get_member_objects/get_member_objects_request_builder'
+require_relative './graph_administrative_unit/graph_administrative_unit_request_builder'
 require_relative './graph_application/graph_application_request_builder'
+require_relative './graph_device/graph_device_request_builder'
 require_relative './graph_group/graph_group_request_builder'
+require_relative './graph_service_principal/graph_service_principal_request_builder'
 require_relative './graph_user/graph_user_request_builder'
 require_relative './item'
 require_relative './restore/restore_request_builder'
@@ -43,14 +46,29 @@ module MicrosoftGraph
                         return MicrosoftGraph::Directory::DeletedItems::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Casts the previous resource to administrativeUnit.
+                    def graph_administrative_unit()
+                        return MicrosoftGraph::Directory::DeletedItems::Item::GraphAdministrativeUnit::GraphAdministrativeUnitRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Casts the previous resource to application.
                     def graph_application()
                         return MicrosoftGraph::Directory::DeletedItems::Item::GraphApplication::GraphApplicationRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Casts the previous resource to device.
+                    def graph_device()
+                        return MicrosoftGraph::Directory::DeletedItems::Item::GraphDevice::GraphDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Casts the previous resource to group.
                     def graph_group()
                         return MicrosoftGraph::Directory::DeletedItems::Item::GraphGroup::GraphGroupRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Casts the previous resource to servicePrincipal.
+                    def graph_service_principal()
+                        return MicrosoftGraph::Directory::DeletedItems::Item::GraphServicePrincipal::GraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Casts the previous resource to user.
@@ -72,7 +90,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/directory/deletedItems/{directoryObject%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property deletedItems for directory
+                    ## Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -81,12 +99,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Recently deleted items. Read-only. Nullable.
+                    ## Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of directory_object
                     ## 
@@ -95,8 +113,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -111,12 +129,12 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property deletedItems for directory
+                    ## Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -132,7 +150,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Recently deleted items. Read-only. Nullable.
+                    ## Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -171,7 +189,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Recently deleted items. Read-only. Nullable.
+                    # Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
                     class DirectoryObjectItemRequestBuilderGetQueryParameters
                         
                         ## 

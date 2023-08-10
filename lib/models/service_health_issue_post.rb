@@ -31,7 +31,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -53,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The published time of the post.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
-            ## @param value Value to set for the post_type property.
+            ## @param value Value to set for the postType property.
             ## @return a void
             ## 
             def post_type=(value)

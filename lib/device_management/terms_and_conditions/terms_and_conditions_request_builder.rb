@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/terms_and_conditions'
 require_relative '../../models/terms_and_conditions_collection_response'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
+require_relative './item/terms_and_conditions_item_request_builder'
 require_relative './terms_and_conditions'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::DeviceManagement::TermsAndConditions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.
+                ## @param terms_and_conditions_id The unique identifier of termsAndConditions
+                ## @return a terms_and_conditions_item_request_builder
+                ## 
+                def by_terms_and_conditions_id(terms_and_conditions_id)
+                    raise StandardError, 'terms_and_conditions_id cannot be null' if terms_and_conditions_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["termsAndConditions%2Did"] = terms_and_conditions_id
+                    return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::TermsAndConditionsItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new TermsAndConditionsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/termsAndConditions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## The terms and conditions associated with device management of the company.
+                ## List properties and relationships of the termsAndConditions objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of terms_and_conditions_collection_response
                 ## 
@@ -38,12 +50,12 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermsAndConditionsCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create new navigation property to termsAndConditions for deviceManagement
+                ## Create a new termsAndConditions object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of terms_and_conditions
@@ -54,12 +66,12 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermsAndConditions.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## The terms and conditions associated with device management of the company.
+                ## List properties and relationships of the termsAndConditions objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create new navigation property to termsAndConditions for deviceManagement
+                ## Create a new termsAndConditions object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The terms and conditions associated with device management of the company.
+                # List properties and relationships of the termsAndConditions objects.
                 class TermsAndConditionsRequestBuilderGetQueryParameters
                     
                     ## 

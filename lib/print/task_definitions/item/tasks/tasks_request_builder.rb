@@ -1,12 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../models/print_task'
 require_relative '../../../../models/print_task_collection_response'
 require_relative '../../../print'
 require_relative '../../task_definitions'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/print_task_item_request_builder'
 require_relative './tasks'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Print::TaskDefinitions::Item::Tasks::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
+                        ## @param print_task_id The unique identifier of printTask
+                        ## @return a print_task_item_request_builder
+                        ## 
+                        def by_print_task_id(print_task_id)
+                            raise StandardError, 'print_task_id cannot be null' if print_task_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["printTask%2Did"] = print_task_id
+                            return MicrosoftGraph::Print::TaskDefinitions::Item::Tasks::Item::PrintTaskItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new TasksRequestBuilder and sets the default values.
@@ -42,8 +54,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintTaskCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -58,8 +70,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintTask.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 

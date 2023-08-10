@@ -1,11 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/managed_device_collection_response'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../device_management'
 require_relative '../../detected_apps'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/managed_device_item_request_builder'
 require_relative './managed_devices'
 
 module MicrosoftGraph
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceManagement::DetectedApps::Item::ManagedDevices::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.
+                        ## @param managed_device_id The unique identifier of managedDevice
+                        ## @return a managed_device_item_request_builder
+                        ## 
+                        def by_managed_device_id(managed_device_id)
+                            raise StandardError, 'managed_device_id cannot be null' if managed_device_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["managedDevice%2Did"] = managed_device_id
+                            return MicrosoftGraph::DeviceManagement::DetectedApps::Item::ManagedDevices::Item::ManagedDeviceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ManagedDevicesRequestBuilder and sets the default values.
@@ -41,8 +53,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedDeviceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 

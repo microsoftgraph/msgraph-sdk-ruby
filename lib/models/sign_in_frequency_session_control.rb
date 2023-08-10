@@ -27,14 +27,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
-            ## @param value Value to set for the authentication_type property.
+            ## @param value Value to set for the authenticationType property.
             ## @return a void
             ## 
             def authentication_type=(value)
                 @authentication_type = value
             end
             ## 
-            ## Instantiates a new SignInFrequencySessionControl and sets the default values.
+            ## Instantiates a new signInFrequencySessionControl and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,7 +59,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
-            ## @param value Value to set for the frequency_interval property.
+            ## @param value Value to set for the frequencyInterval property.
             ## @return a void
             ## 
             def frequency_interval=(value)

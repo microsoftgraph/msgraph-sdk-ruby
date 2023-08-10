@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
 require_relative '../../../../../../../models/attachment'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../me'
 require_relative '../../../../../mail_folders'
 require_relative '../../../../item'
@@ -41,12 +41,12 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## The fileAttachment and itemAttachment attachments for the message.
+                                    ## Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of attachment
                                     ## 
@@ -55,8 +55,8 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Attachment.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
@@ -76,7 +76,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## The fileAttachment and itemAttachment attachments for the message.
+                                    ## Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -95,7 +95,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # The fileAttachment and itemAttachment attachments for the message.
+                                    # Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
                                     class AttachmentItemRequestBuilderGetQueryParameters
                                         
                                         ## 

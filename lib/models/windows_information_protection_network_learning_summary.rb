@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceCount property value. Device Count
-            ## @param value Value to set for the device_count property.
+            ## @param value Value to set for the deviceCount property.
             ## @return a void
             ## 
             def device_count=(value)

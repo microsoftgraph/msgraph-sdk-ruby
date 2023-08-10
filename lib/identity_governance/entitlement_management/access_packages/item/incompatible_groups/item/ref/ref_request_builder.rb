@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../identity_governance'
 require_relative '../../../../../entitlement_management'
 require_relative '../../../../access_packages'
@@ -31,7 +31,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleGroups/{group%2Did}/$ref{?%40id*}")
                                     end
                                     ## 
-                                    ## Delete ref of navigation property incompatibleGroups for identityGovernance
+                                    ## Remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -40,12 +40,12 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Delete ref of navigation property incompatibleGroups for identityGovernance
+                                    ## Remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -63,7 +63,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Delete ref of navigation property incompatibleGroups for identityGovernance
+                                    # Remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
                                     class RefRequestBuilderDeleteQueryParameters
                                         
                                         ## 

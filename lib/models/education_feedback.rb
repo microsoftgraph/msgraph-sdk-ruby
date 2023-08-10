@@ -31,7 +31,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the feedbackBy property value. User who created the feedback.
-            ## @param value Value to set for the feedback_by property.
+            ## @param value Value to set for the feedbackBy property.
             ## @return a void
             ## 
             def feedback_by=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the feedbackDateTime property value. Moment in time when the feedback was given. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the feedback_date_time property.
+            ## @param value Value to set for the feedbackDateTime property.
             ## @return a void
             ## 
             def feedback_date_time=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

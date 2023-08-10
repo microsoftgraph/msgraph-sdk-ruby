@@ -2,7 +2,7 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
 require_relative '../../../../../models/directory_object'
 require_relative '../../../../../models/directory_object_collection_response'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../identity_governance'
 require_relative '../../../entitlement_management'
 require_relative '../../connected_organizations'
@@ -12,6 +12,7 @@ require_relative './delta/delta_request_builder'
 require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
 require_relative './get_by_ids/get_by_ids_request_builder'
 require_relative './internal_sponsors'
+require_relative './item/directory_object_item_request_builder'
 require_relative './ref/ref_request_builder'
 require_relative './validate_properties/validate_properties_request_builder'
 
@@ -56,6 +57,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::InternalSponsors::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.connectedOrganizations.item.internalSponsors.item collection
+                            ## @param directory_object_id Unique identifier of the item
+                            ## @return a directory_object_item_request_builder
+                            ## 
+                            def by_directory_object_id(directory_object_id)
+                                raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["directoryObject%2Did"] = directory_object_id
+                                return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::InternalSponsors::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new InternalSponsorsRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -74,12 +86,12 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObjectCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Create new navigation property to internalSponsors for identityGovernance
+                            ## Add a user or a group to the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of directory_object
@@ -90,8 +102,8 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
@@ -113,7 +125,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Create new navigation property to internalSponsors for identityGovernance
+                            ## Add a user or a group to the connected organization's internal sponsors. The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information

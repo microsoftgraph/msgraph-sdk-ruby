@@ -7,7 +7,7 @@ module MicrosoftGraph
         class PlayPromptOperation < MicrosoftGraph::Models::CommsOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new PlayPromptOperation and sets the default values.
+            ## Instantiates a new playPromptOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

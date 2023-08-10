@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../policies'
 require_relative '../../../../feature_rollout_policies'
 require_relative '../../../item'
@@ -29,7 +29,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/policies/featureRolloutPolicies/{featureRolloutPolicy%2Did}/appliesTo/{directoryObject%2Did}/$ref{?%40id*}")
                                 end
                                 ## 
-                                ## Delete ref of navigation property appliesTo for policies
+                                ## Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
                                 ## 
@@ -38,12 +38,12 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Delete ref of navigation property appliesTo for policies
+                                ## Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -61,7 +61,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Delete ref of navigation property appliesTo for policies
+                                # Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
                                 class RefRequestBuilderDeleteQueryParameters
                                     
                                     ## 

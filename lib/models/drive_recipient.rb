@@ -17,7 +17,7 @@ module MicrosoftGraph
             @email
             ## 
             # The unique identifier for the recipient in the directory.
-            @object_id
+            @object_id_escaped
             ## 
             # The OdataType property
             @odata_type
@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
                 return {
                     "alias" => lambda {|n| @alias_escaped = n.get_string_value() },
                     "email" => lambda {|n| @email = n.get_string_value() },
-                    "objectId" => lambda {|n| @object_id = n.get_string_value() },
+                    "objectId" => lambda {|n| @object_id_escaped = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
@@ -98,16 +98,16 @@ module MicrosoftGraph
             ## Gets the objectId property value. The unique identifier for the recipient in the directory.
             ## @return a string
             ## 
-            def object_id
-                return @object_id
+            def object_id_escaped
+                return @object_id_escaped
             end
             ## 
             ## Sets the objectId property value. The unique identifier for the recipient in the directory.
-            ## @param value Value to set for the object_id property.
+            ## @param value Value to set for the objectId property.
             ## @return a void
             ## 
-            def object_id=(value)
-                @object_id = value
+            def object_id_escaped=(value)
+                @object_id_escaped = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("alias", @alias_escaped)
                 writer.write_string_value("email", @email)
-                writer.write_string_value("objectId", @object_id)
+                writer.write_string_value("objectId", @object_id_escaped)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)
             end

@@ -10,10 +10,13 @@ module MicrosoftGraph
             # The deleted team.
             @deleted_teams
             ## 
+            # The teamsAppSettings property
+            @teams_app_settings
+            ## 
             # The workforceIntegrations property
             @workforce_integrations
             ## 
-            ## Instantiates a new Teamwork and sets the default values.
+            ## Instantiates a new teamwork and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -37,7 +40,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deletedTeams property value. The deleted team.
-            ## @param value Value to set for the deleted_teams property.
+            ## @param value Value to set for the deletedTeams property.
             ## @return a void
             ## 
             def deleted_teams=(value)
@@ -50,6 +53,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "deletedTeams" => lambda {|n| @deleted_teams = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeletedTeam.create_from_discriminator_value(pn) }) },
+                    "teamsAppSettings" => lambda {|n| @teams_app_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamsAppSettings.create_from_discriminator_value(pn) }) },
                     "workforceIntegrations" => lambda {|n| @workforce_integrations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WorkforceIntegration.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -62,7 +66,23 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_collection_of_object_values("deletedTeams", @deleted_teams)
+                writer.write_object_value("teamsAppSettings", @teams_app_settings)
                 writer.write_collection_of_object_values("workforceIntegrations", @workforce_integrations)
+            end
+            ## 
+            ## Gets the teamsAppSettings property value. The teamsAppSettings property
+            ## @return a teams_app_settings
+            ## 
+            def teams_app_settings
+                return @teams_app_settings
+            end
+            ## 
+            ## Sets the teamsAppSettings property value. The teamsAppSettings property
+            ## @param value Value to set for the teamsAppSettings property.
+            ## @return a void
+            ## 
+            def teams_app_settings=(value)
+                @teams_app_settings = value
             end
             ## 
             ## Gets the workforceIntegrations property value. The workforceIntegrations property
@@ -73,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the workforceIntegrations property value. The workforceIntegrations property
-            ## @param value Value to set for the workforce_integrations property.
+            ## @param value Value to set for the workforceIntegrations property.
             ## @return a void
             ## 
             def workforce_integrations=(value)

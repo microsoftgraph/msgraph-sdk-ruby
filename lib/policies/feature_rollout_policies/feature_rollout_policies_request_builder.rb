@@ -2,10 +2,11 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
 require_relative '../../models/feature_rollout_policy'
 require_relative '../../models/feature_rollout_policy_collection_response'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../policies'
 require_relative './count/count_request_builder'
 require_relative './feature_rollout_policies'
+require_relative './item/feature_rollout_policy_item_request_builder'
 
 module MicrosoftGraph
     module Policies
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Policies::FeatureRolloutPolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.
+                ## @param feature_rollout_policy_id The unique identifier of featureRolloutPolicy
+                ## @return a feature_rollout_policy_item_request_builder
+                ## 
+                def by_feature_rollout_policy_id(feature_rollout_policy_id)
+                    raise StandardError, 'feature_rollout_policy_id cannot be null' if feature_rollout_policy_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["featureRolloutPolicy%2Did"] = feature_rollout_policy_id
+                    return MicrosoftGraph::Policies::FeatureRolloutPolicies::Item::FeatureRolloutPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new FeatureRolloutPoliciesRequestBuilder and sets the default values.
@@ -38,8 +50,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::FeatureRolloutPolicyCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -54,8 +66,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::FeatureRolloutPolicy.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 

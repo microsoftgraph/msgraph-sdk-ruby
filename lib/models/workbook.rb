@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The application property
             @application
             ## 
-            # The comments property
+            # Represents a collection of comments in a workbook.
             @comments
             ## 
             # The functions property
@@ -43,14 +43,14 @@ module MicrosoftGraph
                 @application = value
             end
             ## 
-            ## Gets the comments property value. The comments property
+            ## Gets the comments property value. Represents a collection of comments in a workbook.
             ## @return a workbook_comment
             ## 
             def comments
                 return @comments
             end
             ## 
-            ## Sets the comments property value. The comments property
+            ## Sets the comments property value. Represents a collection of comments in a workbook.
             ## @param value Value to set for the comments property.
             ## @return a void
             ## 

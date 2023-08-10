@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isCaptionEnabled property value. Indicates whether captions are enabled for this Teams live event.
-            ## @param value Value to set for the is_caption_enabled property.
+            ## @param value Value to set for the isCaptionEnabled property.
             ## @return a void
             ## 
             def is_caption_enabled=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the spokenLanguage property value. The spoken language.
-            ## @param value Value to set for the spoken_language property.
+            ## @param value Value to set for the spokenLanguage property.
             ## @return a void
             ## 
             def spoken_language=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the translationLanguages property value. The translation languages (choose up to 6).
-            ## @param value Value to set for the translation_languages property.
+            ## @param value Value to set for the translationLanguages property.
             ## @return a void
             ## 
             def translation_languages=(value)

@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../microsoft_graph'
-require_relative '../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../models/teams_app_installation'
 require_relative '../../../../../users'
 require_relative '../../../../item'
@@ -48,7 +48,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/installedApps/{teamsAppInstallation%2Did}{?%24select,%24expand}")
                                 end
                                 ## 
-                                ## Delete navigation property installedApps for users
+                                ## Uninstalls an app from the specified team.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
                                 ## 
@@ -57,12 +57,12 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## The apps installed in this team.
+                                ## Retrieve the app installed in the specified team.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of teams_app_installation
                                 ## 
@@ -71,8 +71,8 @@ module MicrosoftGraph
                                         request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsAppInstallation.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
@@ -87,12 +87,12 @@ module MicrosoftGraph
                                         body, request_configuration
                                     )
                                     error_mapping = Hash.new
-                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsAppInstallation.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Delete navigation property installedApps for users
+                                ## Uninstalls an app from the specified team.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -108,7 +108,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## The apps installed in this team.
+                                ## Retrieve the app installed in the specified team.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -147,7 +147,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # The apps installed in this team.
+                                # Retrieve the app installed in the specified team.
                                 class TeamsAppInstallationItemRequestBuilderGetQueryParameters
                                     
                                     ## 

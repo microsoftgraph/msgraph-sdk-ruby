@@ -40,14 +40,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedTo property value. The assignedTo property
-            ## @param value Value to set for the assigned_to property.
+            ## @param value Value to set for the assignedTo property.
             ## @return a void
             ## 
             def assigned_to=(value)
                 @assigned_to = value
             end
             ## 
-            ## Instantiates a new ScheduleChangeRequest and sets the default values.
+            ## Instantiates a new scheduleChangeRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -102,7 +102,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managerActionDateTime property value. The managerActionDateTime property
-            ## @param value Value to set for the manager_action_date_time property.
+            ## @param value Value to set for the managerActionDateTime property.
             ## @return a void
             ## 
             def manager_action_date_time=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managerActionMessage property value. The managerActionMessage property
-            ## @param value Value to set for the manager_action_message property.
+            ## @param value Value to set for the managerActionMessage property.
             ## @return a void
             ## 
             def manager_action_message=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managerUserId property value. The managerUserId property
-            ## @param value Value to set for the manager_user_id property.
+            ## @param value Value to set for the managerUserId property.
             ## @return a void
             ## 
             def manager_user_id=(value)
@@ -147,7 +147,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the senderDateTime property value. The senderDateTime property
-            ## @param value Value to set for the sender_date_time property.
+            ## @param value Value to set for the senderDateTime property.
             ## @return a void
             ## 
             def sender_date_time=(value)
@@ -162,7 +162,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the senderMessage property value. The senderMessage property
-            ## @param value Value to set for the sender_message property.
+            ## @param value Value to set for the senderMessage property.
             ## @return a void
             ## 
             def sender_message=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the senderUserId property value. The senderUserId property
-            ## @param value Value to set for the sender_user_id property.
+            ## @param value Value to set for the senderUserId property.
             ## @return a void
             ## 
             def sender_user_id=(value)

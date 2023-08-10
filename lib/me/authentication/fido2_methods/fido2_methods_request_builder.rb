@@ -1,11 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/fido2_authentication_method_collection_response'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../me'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
 require_relative './fido2_methods'
+require_relative './item/fido2_authentication_method_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::Authentication::Fido2Methods::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
+                    ## @param fido2_authentication_method_id The unique identifier of fido2AuthenticationMethod
+                    ## @return a fido2_authentication_method_item_request_builder
+                    ## 
+                    def by_fido2_authentication_method_id(fido2_authentication_method_id)
+                        raise StandardError, 'fido2_authentication_method_id cannot be null' if fido2_authentication_method_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["fido2AuthenticationMethod%2Did"] = fido2_authentication_method_id
+                        return MicrosoftGraph::Me::Authentication::Fido2Methods::Item::Fido2AuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new Fido2MethodsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -30,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/authentication/fido2Methods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Represents the FIDO2 security keys registered to a user for authentication.
+                    ## Retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of fido2_authentication_method_collection_response
                     ## 
@@ -39,12 +51,12 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Fido2AuthenticationMethodCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Represents the FIDO2 security keys registered to a user for authentication.
+                    ## Retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Represents the FIDO2 security keys registered to a user for authentication.
+                    # Retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties.
                     class Fido2MethodsRequestBuilderGetQueryParameters
                         
                         ## 

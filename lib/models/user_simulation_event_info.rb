@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the eventDateTime property value. Date and time of the simulation event by a user in an attack simulation and training campaign.
-            ## @param value Value to set for the event_date_time property.
+            ## @param value Value to set for the eventDateTime property.
             ## @return a void
             ## 
             def event_date_time=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the eventName property value. Name of the simulation event by a user in an attack simulation and training campaign.
-            ## @param value Value to set for the event_name property.
+            ## @param value Value to set for the eventName property.
             ## @return a void
             ## 
             def event_name=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the ipAddress property value. IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
-            ## @param value Value to set for the ip_address property.
+            ## @param value Value to set for the ipAddress property.
             ## @return a void
             ## 
             def ip_address=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the osPlatformDeviceDetails property value. The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
-            ## @param value Value to set for the os_platform_device_details property.
+            ## @param value Value to set for the osPlatformDeviceDetails property.
             ## @return a void
             ## 
             def os_platform_device_details=(value)

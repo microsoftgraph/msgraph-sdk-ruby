@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the memberType property value. How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).
-            ## @param value Value to set for the member_type property.
+            ## @param value Value to set for the memberType property.
             ## @return a void
             ## 
             def member_type=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduleInfo property value. The period of the role eligibility.
-            ## @param value Value to set for the schedule_info property.
+            ## @param value Value to set for the scheduleInfo property.
             ## @return a void
             ## 
             def schedule_info=(value)

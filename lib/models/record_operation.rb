@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The location where the recording is located.
             @recording_location
             ## 
-            ## Instantiates a new RecordOperation and sets the default values.
+            ## Instantiates a new recordOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recordingAccessToken property value. The access token required to retrieve the recording.
-            ## @param value Value to set for the recording_access_token property.
+            ## @param value Value to set for the recordingAccessToken property.
             ## @return a void
             ## 
             def recording_access_token=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recordingLocation property value. The location where the recording is located.
-            ## @param value Value to set for the recording_location property.
+            ## @param value Value to set for the recordingLocation property.
             ## @return a void
             ## 
             def recording_location=(value)

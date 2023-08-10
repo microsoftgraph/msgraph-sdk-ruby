@@ -2,13 +2,14 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
 require_relative '../../../../../models/meeting_attendance_report'
 require_relative '../../../../../models/meeting_attendance_report_collection_response'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../users'
 require_relative '../../../item'
 require_relative '../../online_meetings'
 require_relative '../item'
 require_relative './attendance_reports'
 require_relative './count/count_request_builder'
+require_relative './item/meeting_attendance_report_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Users::Item::OnlineMeetings::Item::AttendanceReports::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
+                            ## @param meeting_attendance_report_id The unique identifier of meetingAttendanceReport
+                            ## @return a meeting_attendance_report_item_request_builder
+                            ## 
+                            def by_meeting_attendance_report_id(meeting_attendance_report_id)
+                                raise StandardError, 'meeting_attendance_report_id cannot be null' if meeting_attendance_report_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["meetingAttendanceReport%2Did"] = meeting_attendance_report_id
+                                return MicrosoftGraph::Users::Item::OnlineMeetings::Item::AttendanceReports::Item::MeetingAttendanceReportItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new AttendanceReportsRequestBuilder and sets the default values.
@@ -44,8 +56,8 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MeetingAttendanceReportCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
@@ -60,8 +72,8 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MeetingAttendanceReport.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 

@@ -4,10 +4,12 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for the MacOS Office Suite App.
         class MacOSOfficeSuiteApp < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new MacOSOfficeSuiteApp and sets the default values.
+            ## Instantiates a new macOSOfficeSuiteApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

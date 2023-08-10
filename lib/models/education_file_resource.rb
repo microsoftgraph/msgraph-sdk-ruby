@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Location on disk of the file resource.
             @file_url
             ## 
-            ## Instantiates a new EducationFileResource and sets the default values.
+            ## Instantiates a new educationFileResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,7 +35,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fileUrl property value. Location on disk of the file resource.
-            ## @param value Value to set for the file_url property.
+            ## @param value Value to set for the fileUrl property.
             ## @return a void
             ## 
             def file_url=(value)

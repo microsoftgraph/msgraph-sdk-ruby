@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the connectingIP property value. The connectingIP property
-            ## @param value Value to set for the connecting_i_p property.
+            ## @param value Value to set for the connectingIP property.
             ## @return a void
             ## 
             def connecting_i_p=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deliveryAction property value. The deliveryAction property
-            ## @param value Value to set for the delivery_action property.
+            ## @param value Value to set for the deliveryAction property.
             ## @return a void
             ## 
             def delivery_action=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deliveryLocation property value. The deliveryLocation property
-            ## @param value Value to set for the delivery_location property.
+            ## @param value Value to set for the deliveryLocation property.
             ## @return a void
             ## 
             def delivery_location=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the internetMessageId property value. The internetMessageId property
-            ## @param value Value to set for the internet_message_id property.
+            ## @param value Value to set for the internetMessageId property.
             ## @return a void
             ## 
             def internet_message_id=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the messageFingerprint property value. The messageFingerprint property
-            ## @param value Value to set for the message_fingerprint property.
+            ## @param value Value to set for the messageFingerprint property.
             ## @return a void
             ## 
             def message_fingerprint=(value)
@@ -188,7 +188,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the messageReceivedDateTime property value. The messageReceivedDateTime property
-            ## @param value Value to set for the message_received_date_time property.
+            ## @param value Value to set for the messageReceivedDateTime property.
             ## @return a void
             ## 
             def message_received_date_time=(value)
@@ -203,7 +203,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the messageSubject property value. The messageSubject property
-            ## @param value Value to set for the message_subject property.
+            ## @param value Value to set for the messageSubject property.
             ## @return a void
             ## 
             def message_subject=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the networkMessageId property value. The networkMessageId property
-            ## @param value Value to set for the network_message_id property.
+            ## @param value Value to set for the networkMessageId property.
             ## @return a void
             ## 
             def network_message_id=(value)
@@ -233,7 +233,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

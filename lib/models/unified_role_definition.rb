@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
-            ## @param value Value to set for the inherits_permissions_from property.
+            ## @param value Value to set for the inheritsPermissionsFrom property.
             ## @return a void
             ## 
             def inherits_permissions_from=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isBuiltIn property value. Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).
-            ## @param value Value to set for the is_built_in property.
+            ## @param value Value to set for the isBuiltIn property.
             ## @return a void
             ## 
             def is_built_in=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEnabled property value. Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
-            ## @param value Value to set for the is_enabled property.
+            ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
             def is_enabled=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceScopes property value. List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
-            ## @param value Value to set for the resource_scopes property.
+            ## @param value Value to set for the resourceScopes property.
             ## @return a void
             ## 
             def resource_scopes=(value)
@@ -165,7 +165,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the rolePermissions property value. List of permissions included in the role. Read-only when isBuiltIn is true. Required.
-            ## @param value Value to set for the role_permissions property.
+            ## @param value Value to set for the rolePermissions property.
             ## @return a void
             ## 
             def role_permissions=(value)
@@ -198,7 +198,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the templateId property value. Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
-            ## @param value Value to set for the template_id property.
+            ## @param value Value to set for the templateId property.
             ## @return a void
             ## 
             def template_id=(value)

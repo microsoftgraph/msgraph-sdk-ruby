@@ -27,14 +27,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the certificateData property value. The certificate data, which is a long string of text from the certificate. Can be null.
-            ## @param value Value to set for the certificate_data property.
+            ## @param value Value to set for the certificateData property.
             ## @return a void
             ## 
             def certificate_data=(value)
                 @certificate_data = value
             end
             ## 
-            ## Instantiates a new AppleManagedIdentityProvider and sets the default values.
+            ## Instantiates a new appleManagedIdentityProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,7 +59,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the developerId property value. The Apple developer identifier. Required.
-            ## @param value Value to set for the developer_id property.
+            ## @param value Value to set for the developerId property.
             ## @return a void
             ## 
             def developer_id=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyId property value. The Apple key identifier. Required.
-            ## @param value Value to set for the key_id property.
+            ## @param value Value to set for the keyId property.
             ## @return a void
             ## 
             def key_id=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serviceId property value. The Apple service identifier. Required.
-            ## @param value Value to set for the service_id property.
+            ## @param value Value to set for the serviceId property.
             ## @return a void
             ## 
             def service_id=(value)

@@ -1,6 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../models/targeted_managed_app_policy_assignment'
 require_relative '../../../../models/targeted_managed_app_policy_assignment_collection_response'
 require_relative '../../../device_app_management'
@@ -8,6 +8,7 @@ require_relative '../../targeted_managed_app_configurations'
 require_relative '../item'
 require_relative './assignments'
 require_relative './count/count_request_builder'
+require_relative './item/targeted_managed_app_policy_assignment_item_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Assignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
+                        ## @param targeted_managed_app_policy_assignment_id The unique identifier of targetedManagedAppPolicyAssignment
+                        ## @return a targeted_managed_app_policy_assignment_item_request_builder
+                        ## 
+                        def by_targeted_managed_app_policy_assignment_id(targeted_managed_app_policy_assignment_id)
+                            raise StandardError, 'targeted_managed_app_policy_assignment_id cannot be null' if targeted_managed_app_policy_assignment_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["targetedManagedAppPolicyAssignment%2Did"] = targeted_managed_app_policy_assignment_id
+                            return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Assignments::Item::TargetedManagedAppPolicyAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AssignmentsRequestBuilder and sets the default values.
@@ -42,8 +54,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TargetedManagedAppPolicyAssignmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -58,8 +70,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TargetedManagedAppPolicyAssignment.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 

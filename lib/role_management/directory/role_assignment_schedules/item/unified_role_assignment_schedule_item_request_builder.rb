@@ -1,12 +1,16 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../models/unified_role_assignment_schedule'
 require_relative '../../../role_management'
 require_relative '../../directory'
 require_relative '../role_assignment_schedules'
 require_relative './activated_using/activated_using_request_builder'
+require_relative './app_scope/app_scope_request_builder'
+require_relative './directory_scope/directory_scope_request_builder'
 require_relative './item'
+require_relative './principal/principal_request_builder'
+require_relative './role_definition/role_definition_request_builder'
 
 module MicrosoftGraph
     module RoleManagement
@@ -21,6 +25,26 @@ module MicrosoftGraph
                         # Provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentSchedule entity.
                         def activated_using()
                             return MicrosoftGraph::RoleManagement::Directory::RoleAssignmentSchedules::Item::ActivatedUsing::ActivatedUsingRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleScheduleBase entity.
+                        def app_scope()
+                            return MicrosoftGraph::RoleManagement::Directory::RoleAssignmentSchedules::Item::AppScope::AppScopeRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleScheduleBase entity.
+                        def directory_scope()
+                            return MicrosoftGraph::RoleManagement::Directory::RoleAssignmentSchedules::Item::DirectoryScope::DirectoryScopeRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the principal property of the microsoft.graph.unifiedRoleScheduleBase entity.
+                        def principal()
+                            return MicrosoftGraph::RoleManagement::Directory::RoleAssignmentSchedules::Item::Principal::PrincipalRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleScheduleBase entity.
+                        def role_definition()
+                            return MicrosoftGraph::RoleManagement::Directory::RoleAssignmentSchedules::Item::RoleDefinition::RoleDefinitionRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new UnifiedRoleAssignmentScheduleItemRequestBuilder and sets the default values.
@@ -41,12 +65,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Schedules for active role assignment operations.
+                        ## Retrieve the schedule for an active role assignment operation.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of unified_role_assignment_schedule
                         ## 
@@ -55,8 +79,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentSchedule.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -71,8 +95,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentSchedule.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -92,7 +116,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Schedules for active role assignment operations.
+                        ## Retrieve the schedule for an active role assignment operation.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -131,7 +155,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Schedules for active role assignment operations.
+                        # Retrieve the schedule for an active role assignment operation.
                         class UnifiedRoleAssignmentScheduleItemRequestBuilderGetQueryParameters
                             
                             ## 

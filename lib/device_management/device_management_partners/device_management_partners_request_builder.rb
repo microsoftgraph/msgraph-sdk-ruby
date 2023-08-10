@@ -2,10 +2,11 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
 require_relative '../../models/device_management_partner'
 require_relative '../../models/device_management_partner_collection_response'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
 require_relative './device_management_partners'
+require_relative './item/device_management_partner_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::DeviceManagement::DeviceManagementPartners::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the deviceManagementPartners property of the microsoft.graph.deviceManagement entity.
+                ## @param device_management_partner_id The unique identifier of deviceManagementPartner
+                ## @return a device_management_partner_item_request_builder
+                ## 
+                def by_device_management_partner_id(device_management_partner_id)
+                    raise StandardError, 'device_management_partner_id cannot be null' if device_management_partner_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["deviceManagementPartner%2Did"] = device_management_partner_id
+                    return MicrosoftGraph::DeviceManagement::DeviceManagementPartners::Item::DeviceManagementPartnerItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new DeviceManagementPartnersRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceManagementPartners{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## The list of Device Management Partners configured by the tenant.
+                ## List properties and relationships of the deviceManagementPartner objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device_management_partner_collection_response
                 ## 
@@ -38,12 +50,12 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceManagementPartnerCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create new navigation property to deviceManagementPartners for deviceManagement
+                ## Create a new deviceManagementPartner object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device_management_partner
@@ -54,12 +66,12 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceManagementPartner.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## The list of Device Management Partners configured by the tenant.
+                ## List properties and relationships of the deviceManagementPartner objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create new navigation property to deviceManagementPartners for deviceManagement
+                ## Create a new deviceManagementPartner object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The list of Device Management Partners configured by the tenant.
+                # List properties and relationships of the deviceManagementPartner objects.
                 class DeviceManagementPartnersRequestBuilderGetQueryParameters
                     
                     ## 

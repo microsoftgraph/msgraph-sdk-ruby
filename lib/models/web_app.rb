@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for web apps.
         class WebApp < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -21,14 +23,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appUrl property value. The web app URL. This property cannot be PATCHed.
-            ## @param value Value to set for the app_url property.
+            ## @param value Value to set for the appUrl property.
             ## @return a void
             ## 
             def app_url=(value)
                 @app_url = value
             end
             ## 
-            ## Instantiates a new WebApp and sets the default values.
+            ## Instantiates a new webApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the useManagedBrowser property value. Whether or not to use managed browser. This property is only applicable for Android and IOS.
-            ## @param value Value to set for the use_managed_browser property.
+            ## @param value Value to set for the useManagedBrowser property.
             ## @return a void
             ## 
             def use_managed_browser=(value)

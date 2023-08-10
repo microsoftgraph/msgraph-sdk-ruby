@@ -42,7 +42,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the acceptedModalities property value. The acceptedModalities property
-                        ## @param value Value to set for the accepted_modalities property.
+                        ## @param value Value to set for the acceptedModalities property.
                         ## @return a void
                         ## 
                         def accepted_modalities=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the AdditionalData property.
+                        ## @param value Value to set for the additionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the callOptions property value. The callOptions property
-                        ## @param value Value to set for the call_options property.
+                        ## @param value Value to set for the callOptions property.
                         ## @return a void
                         ## 
                         def call_options=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the callbackUri property value. The callbackUri property
-                        ## @param value Value to set for the callback_uri property.
+                        ## @param value Value to set for the callbackUri property.
                         ## @return a void
                         ## 
                         def callback_uri=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the mediaConfig property value. The mediaConfig property
-                        ## @param value Value to set for the media_config property.
+                        ## @param value Value to set for the mediaConfig property.
                         ## @return a void
                         ## 
                         def media_config=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the participantCapacity property value. The participantCapacity property
-                        ## @param value Value to set for the participant_capacity property.
+                        ## @param value Value to set for the participantCapacity property.
                         ## @return a void
                         ## 
                         def participant_capacity=(value)

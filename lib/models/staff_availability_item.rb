@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the availabilityItems property value. Each item in this collection indicates a slot and the status of the staff member.
-            ## @param value Value to set for the availability_items property.
+            ## @param value Value to set for the availabilityItems property.
             ## @return a void
             ## 
             def availability_items=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the staffId property value. The ID of the staff member.
-            ## @param value Value to set for the staff_id property.
+            ## @param value Value to set for the staffId property.
             ## @return a void
             ## 
             def staff_id=(value)

@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/access_package_assignment_request'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../identity_governance'
 require_relative '../../entitlement_management'
 require_relative '../assignment_requests'
@@ -11,6 +11,7 @@ require_relative './cancel/cancel_request_builder'
 require_relative './item'
 require_relative './reprocess/reprocess_request_builder'
 require_relative './requestor/requestor_request_builder'
+require_relative './resume/resume_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -47,6 +48,11 @@ module MicrosoftGraph
                             return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::Requestor::RequestorRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        # Provides operations to call the resume method.
+                        def resume()
+                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::Resume::ResumeRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new AccessPackageAssignmentRequestItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -56,7 +62,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property assignmentRequests for identityGovernance
+                        ## Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -65,12 +71,12 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Access package assignment requests created by or on behalf of a subject.
+                        ## In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of access_package_assignment_request
                         ## 
@@ -79,8 +85,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignmentRequest.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -95,12 +101,12 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignmentRequest.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property assignmentRequests for identityGovernance
+                        ## Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -116,7 +122,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Access package assignment requests created by or on behalf of a subject.
+                        ## In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -155,7 +161,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Access package assignment requests created by or on behalf of a subject.
+                        # In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
                         class AccessPackageAssignmentRequestItemRequestBuilderGetQueryParameters
                             
                             ## 

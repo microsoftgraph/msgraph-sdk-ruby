@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -51,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowChannelMentions property value. If set to true, @channel mentions are allowed.
-            ## @param value Value to set for the allow_channel_mentions property.
+            ## @param value Value to set for the allowChannelMentions property.
             ## @return a void
             ## 
             def allow_channel_mentions=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowOwnerDeleteMessages property value. If set to true, owners can delete any message.
-            ## @param value Value to set for the allow_owner_delete_messages property.
+            ## @param value Value to set for the allowOwnerDeleteMessages property.
             ## @return a void
             ## 
             def allow_owner_delete_messages=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowTeamMentions property value. If set to true, @team mentions are allowed.
-            ## @param value Value to set for the allow_team_mentions property.
+            ## @param value Value to set for the allowTeamMentions property.
             ## @return a void
             ## 
             def allow_team_mentions=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowUserDeleteMessages property value. If set to true, users can delete their messages.
-            ## @param value Value to set for the allow_user_delete_messages property.
+            ## @param value Value to set for the allowUserDeleteMessages property.
             ## @return a void
             ## 
             def allow_user_delete_messages=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowUserEditMessages property value. If set to true, users can edit their messages.
-            ## @param value Value to set for the allow_user_edit_messages property.
+            ## @param value Value to set for the allowUserEditMessages property.
             ## @return a void
             ## 
             def allow_user_edit_messages=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

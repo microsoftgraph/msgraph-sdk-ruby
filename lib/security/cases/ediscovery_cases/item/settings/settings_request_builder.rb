@@ -1,12 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../models/security/ediscovery_case_settings'
+require_relative '../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../models/security_ediscovery_case_settings'
 require_relative '../../../../security'
 require_relative '../../../cases'
 require_relative '../../ediscovery_cases'
 require_relative '../item'
-require_relative './security_reset_to_default/security_reset_to_default_request_builder'
+require_relative './microsoft_graph_security_reset_to_default/microsoft_graph_security_reset_to_default_request_builder'
 require_relative './settings'
 
 module MicrosoftGraph
@@ -21,8 +21,8 @@ module MicrosoftGraph
                             
                             ## 
                             # Provides operations to call the resetToDefault method.
-                            def security_reset_to_default()
-                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Settings::SecurityResetToDefault::SecurityResetToDefaultRequestBuilder.new(@path_parameters, @request_adapter)
+                            def microsoft_graph_security_reset_to_default()
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Settings::MicrosoftGraphSecurityResetToDefault::MicrosoftGraphSecurityResetToDefaultRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new SettingsRequestBuilder and sets the default values.
@@ -43,29 +43,29 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
                             ## Read the properties and relationships of an ediscoveryCaseSettings object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of ediscovery_case_settings
+                            ## @return a Fiber of security_ediscovery_case_settings
                             ## 
                             def get(request_configuration=nil)
                                 request_info = self.to_get_request_information(
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryCaseSettings.create_from_discriminator_value(pn) }, error_mapping)
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryCaseSettings.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## Update the properties of an ediscoveryCaseSettings object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of ediscovery_case_settings
+                            ## @return a Fiber of security_ediscovery_case_settings
                             ## 
                             def patch(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
@@ -73,9 +73,9 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryCaseSettings.create_from_discriminator_value(pn) }, error_mapping)
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryCaseSettings.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## Delete navigation property settings for security

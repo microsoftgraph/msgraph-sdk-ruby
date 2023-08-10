@@ -2,10 +2,11 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
 require_relative '../../models/extension'
 require_relative '../../models/extension_collection_response'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../me'
 require_relative './count/count_request_builder'
 require_relative './extensions'
+require_relative './item/extension_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Me::Extensions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the extensions property of the microsoft.graph.user entity.
+                ## @param extension_id The unique identifier of extension
+                ## @return a extension_item_request_builder
+                ## 
+                def by_extension_id(extension_id)
+                    raise StandardError, 'extension_id cannot be null' if extension_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["extension%2Did"] = extension_id
+                    return MicrosoftGraph::Me::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new ExtensionsRequestBuilder and sets the default values.
@@ -38,8 +50,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExtensionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -54,8 +66,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Extension.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 

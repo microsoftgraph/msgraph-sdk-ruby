@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Windows 10 Edition Upgrade configuration.
         class EditionUpgradeConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -19,7 +21,7 @@ module MicrosoftGraph
             # Windows 10 Edition type.
             @target_edition
             ## 
-            ## Instantiates a new EditionUpgradeConfiguration and sets the default values.
+            ## Instantiates a new editionUpgradeConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the licenseType property value. Edition Upgrade License type
-            ## @param value Value to set for the license_type property.
+            ## @param value Value to set for the licenseType property.
             ## @return a void
             ## 
             def license_type=(value)
@@ -86,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the productKey property value. Edition Upgrade Product Key.
-            ## @param value Value to set for the product_key property.
+            ## @param value Value to set for the productKey property.
             ## @return a void
             ## 
             def product_key=(value)
@@ -114,7 +116,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the targetEdition property value. Windows 10 Edition type.
-            ## @param value Value to set for the target_edition property.
+            ## @param value Value to set for the targetEdition property.
             ## @return a void
             ## 
             def target_edition=(value)

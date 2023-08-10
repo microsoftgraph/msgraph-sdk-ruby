@@ -1,12 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/shared_drive_item'
 require_relative '../shares'
+require_relative './created_by_user/created_by_user_request_builder'
 require_relative './drive_item/drive_item_request_builder'
 require_relative './item'
-require_relative './items/item/drive_item_item_request_builder'
 require_relative './items/items_request_builder'
+require_relative './last_modified_by_user/last_modified_by_user_request_builder'
 require_relative './list/list_request_builder'
 require_relative './list_item/list_item_request_builder'
 require_relative './permission/permission_request_builder'
@@ -21,6 +22,11 @@ module MicrosoftGraph
             class SharedDriveItemItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                 
                 ## 
+                # Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+                def created_by_user()
+                    return MicrosoftGraph::Shares::Item::CreatedByUser::CreatedByUserRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the driveItem property of the microsoft.graph.sharedDriveItem entity.
                 def drive_item()
                     return MicrosoftGraph::Shares::Item::DriveItem::DriveItemRequestBuilder.new(@path_parameters, @request_adapter)
@@ -29,6 +35,11 @@ module MicrosoftGraph
                 # Provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.
                 def items()
                     return MicrosoftGraph::Shares::Item::Items::ItemsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+                def last_modified_by_user()
+                    return MicrosoftGraph::Shares::Item::LastModifiedByUser::LastModifiedByUserRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the list property of the microsoft.graph.sharedDriveItem entity.
@@ -74,12 +85,12 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
+                ## Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of shared_drive_item
                 ## 
@@ -88,20 +99,9 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SharedDriveItem.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.
-                ## @param id Unique identifier of the item
-                ## @return a drive_item_item_request_builder
-                ## 
-                def items_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["driveItem%2Did"] = id
-                    return MicrosoftGraph::Shares::Item::Items::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Update entity in shares
@@ -115,8 +115,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SharedDriveItem.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -136,7 +136,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
+                ## Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -175,7 +175,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
+                # Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
                 class SharedDriveItemItemRequestBuilderGetQueryParameters
                     
                     ## 

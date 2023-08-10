@@ -29,7 +29,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                            ## @param value Value to set for the AdditionalData property.
+                            ## @param value Value to set for the additionalData property.
                             ## @return a void
                             ## 
                             def additional_data=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the isSyncedFromOnPremises property value. The isSyncedFromOnPremises property
-                            ## @param value Value to set for the is_synced_from_on_premises property.
+                            ## @param value Value to set for the isSyncedFromOnPremises property.
                             ## @return a void
                             ## 
                             def is_synced_from_on_premises=(value)

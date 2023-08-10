@@ -2,10 +2,11 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
 require_relative '../../models/calendar'
 require_relative '../../models/calendar_collection_response'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../me'
 require_relative './calendars'
 require_relative './count/count_request_builder'
+require_relative './item/calendar_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::Calendars::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the calendars property of the microsoft.graph.user entity.
+                ## @param calendar_id The unique identifier of calendar
+                ## @return a calendar_item_request_builder
+                ## 
+                def by_calendar_id(calendar_id)
+                    raise StandardError, 'calendar_id cannot be null' if calendar_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["calendar%2Did"] = calendar_id
+                    return MicrosoftGraph::Me::Calendars::Item::CalendarItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new CalendarsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/me/calendars{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get all the user's calendars (`/calendars` navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+                ## Get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of calendar_collection_response
                 ## 
@@ -38,8 +50,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CalendarCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -54,12 +66,12 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Calendar.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get all the user's calendars (`/calendars` navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+                ## Get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get all the user's calendars (`/calendars` navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+                # Get all the user's calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
                 class CalendarsRequestBuilderGetQueryParameters
                     
                     ## 

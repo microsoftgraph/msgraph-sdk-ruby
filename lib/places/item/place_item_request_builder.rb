@@ -1,9 +1,10 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/place'
 require_relative '../places'
 require_relative './graph_room/graph_room_request_builder'
+require_relative './graph_room_list/graph_room_list_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -17,6 +18,11 @@ module MicrosoftGraph
                 # Casts the previous resource to room.
                 def graph_room()
                     return MicrosoftGraph::Places::Item::GraphRoom::GraphRoomRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Casts the previous resource to roomList.
+                def graph_room_list()
+                    return MicrosoftGraph::Places::Item::GraphRoomList::GraphRoomListRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new PlaceItemRequestBuilder and sets the default values.
@@ -37,12 +43,12 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Update the properties of place object, which can be a room or roomList. You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
+                ## Update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of place
@@ -53,8 +59,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Place.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -74,7 +80,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the properties of place object, which can be a room or roomList. You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
+                ## Update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information

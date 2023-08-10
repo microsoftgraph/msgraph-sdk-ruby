@@ -72,7 +72,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
-            ## @param value Value to set for the associated_hubs_urls property.
+            ## @param value Value to set for the associatedHubsUrls property.
             ## @return a void
             ## 
             def associated_hubs_urls=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the baseTypes property value. The collection of content types that are ancestors of this content type.
-            ## @param value Value to set for the base_types property.
+            ## @param value Value to set for the baseTypes property.
             ## @return a void
             ## 
             def base_types=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the columnLinks property value. The collection of columns that are required by this content type.
-            ## @param value Value to set for the column_links property.
+            ## @param value Value to set for the columnLinks property.
             ## @return a void
             ## 
             def column_links=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the columnPositions property value. Column order information in a content type.
-            ## @param value Value to set for the column_positions property.
+            ## @param value Value to set for the columnPositions property.
             ## @return a void
             ## 
             def column_positions=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the documentSet property value. Document Set metadata.
-            ## @param value Value to set for the document_set property.
+            ## @param value Value to set for the documentSet property.
             ## @return a void
             ## 
             def document_set=(value)
@@ -208,7 +208,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the documentTemplate property value. Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.
-            ## @param value Value to set for the document_template property.
+            ## @param value Value to set for the documentTemplate property.
             ## @return a void
             ## 
             def document_template=(value)
@@ -280,7 +280,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inheritedFrom property value. If this content type is inherited from another scope (like a site), provides a reference to the item where the content type is defined.
-            ## @param value Value to set for the inherited_from property.
+            ## @param value Value to set for the inheritedFrom property.
             ## @return a void
             ## 
             def inherited_from=(value)
@@ -295,7 +295,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isBuiltIn property value. Specifies if a content type is a built-in content type.
-            ## @param value Value to set for the is_built_in property.
+            ## @param value Value to set for the isBuiltIn property.
             ## @return a void
             ## 
             def is_built_in=(value)
@@ -340,7 +340,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the parentId property value. The unique identifier of the content type.
-            ## @param value Value to set for the parent_id property.
+            ## @param value Value to set for the parentId property.
             ## @return a void
             ## 
             def parent_id=(value)
@@ -355,7 +355,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
-            ## @param value Value to set for the propagate_changes property.
+            ## @param value Value to set for the propagateChanges property.
             ## @return a void
             ## 
             def propagate_changes=(value)
@@ -370,7 +370,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the readOnly property value. If true, the content type can't be modified unless this value is first set to false.
-            ## @param value Value to set for the read_only property.
+            ## @param value Value to set for the readOnly property.
             ## @return a void
             ## 
             def read_only=(value)

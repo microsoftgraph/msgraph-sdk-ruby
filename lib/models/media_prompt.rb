@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The mediaInfo property
             @media_info
             ## 
-            ## Instantiates a new MediaPrompt and sets the default values.
+            ## Instantiates a new mediaPrompt and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaInfo property value. The mediaInfo property
-            ## @param value Value to set for the media_info property.
+            ## @param value Value to set for the mediaInfo property.
             ## @return a void
             ## 
             def media_info=(value)

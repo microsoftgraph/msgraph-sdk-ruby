@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Indicates the type of query. Allowed value is MicrosoftGraph.
             @query_type
             ## 
-            ## Instantiates a new AccessReviewNotificationRecipientQueryScope and sets the default values.
+            ## Instantiates a new accessReviewNotificationRecipientQueryScope and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, indicates the relative source of the query. This property is only required if a relative query (that is, ./manager) is specified.
-            ## @param value Value to set for the query_root property.
+            ## @param value Value to set for the queryRoot property.
             ## @return a void
             ## 
             def query_root=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the queryType property value. Indicates the type of query. Allowed value is MicrosoftGraph.
-            ## @param value Value to set for the query_type property.
+            ## @param value Value to set for the queryType property.
             ## @return a void
             ## 
             def query_type=(value)

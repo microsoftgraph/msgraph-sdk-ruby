@@ -2,12 +2,13 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/access_package'
 require_relative '../../../models/access_package_collection_response'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../identity_governance'
 require_relative '../entitlement_management'
 require_relative './access_packages'
 require_relative './count/count_request_builder'
 require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './item/access_package_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -21,6 +22,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
+                    ## @param access_package_id The unique identifier of accessPackage
+                    ## @return a access_package_item_request_builder
+                    ## 
+                    def by_access_package_id(access_package_id)
+                        raise StandardError, 'access_package_id cannot be null' if access_package_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["accessPackage%2Did"] = access_package_id
+                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackages::Item::AccessPackageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AccessPackagesRequestBuilder and sets the default values.
@@ -50,8 +62,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -66,8 +78,8 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackage.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

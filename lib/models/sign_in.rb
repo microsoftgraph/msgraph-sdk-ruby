@@ -8,99 +8,99 @@ module MicrosoftGraph
         class SignIn < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
+            # App name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
             @app_display_name
             ## 
-            # Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
+            # Unique GUID representing the app ID in the Azure Active Directory.  Supports $filter (eq).
             @app_id
             ## 
             # Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
             @applied_conditional_access_policies
             ## 
-            # Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
+            # Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).
             @client_app_used
             ## 
-            # Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).
+            # Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).
             @conditional_access_status
             ## 
-            # The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).
+            # The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.  Supports $filter (eq).
             @correlation_id
             ## 
-            # Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
+            # Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).
             @created_date_time
             ## 
-            # Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.
+            # Device information from where the sign-in occurred; includes device ID, operating system, and browser.  Supports $filter (eq, startsWith) on browser and operatingSytem properties.
             @device_detail
             ## 
-            # IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
+            # IP address of the client used to sign in.  Supports $filter (eq, startsWith).
             @ip_address
             ## 
             # Indicates if a sign-in is interactive or not.
             @is_interactive
             ## 
-            # Provides the city, state, and country code where the sign-in originated. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
+            # Provides the city, state, and country code where the sign-in originated.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
             @location
             ## 
-            # Name of the resource the user signed into. Supports $filter (eq operator only).
+            # Name of the resource the user signed into.  Supports $filter (eq).
             @resource_display_name
             ## 
-            # ID of the resource that the user signed into. Supports $filter (eq operator only).
+            # ID of the resource that the user signed into.  Supports $filter (eq).
             @resource_id
             ## 
-            # Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
+            # Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
             @risk_detail
             ## 
-            # Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue. Supports $filter (eq operator only).
+            # Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.  Supports $filter (eq).
             @risk_event_types
             ## 
-            # The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
+            # The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
             @risk_event_types_v2
             ## 
-            # Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+            # Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
             @risk_level_aggregated
             ## 
-            # Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+            # Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
             @risk_level_during_sign_in
             ## 
-            # Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq operator only).
+            # Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq).
             @risk_state
             ## 
-            # Sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
+            # Sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
             @status
             ## 
-            # Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
+            # Display name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).
             @user_display_name
             ## 
-            # ID of the user that initiated the sign-in. Supports $filter (eq operator only).
+            # ID of the user that initiated the sign-in.  Supports $filter (eq).
             @user_id
             ## 
-            # User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
+            # User principal name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).
             @user_principal_name
             ## 
-            ## Gets the appDisplayName property value. App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
+            ## Gets the appDisplayName property value. App name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
             ## @return a string
             ## 
             def app_display_name
                 return @app_display_name
             end
             ## 
-            ## Sets the appDisplayName property value. App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
-            ## @param value Value to set for the app_display_name property.
+            ## Sets the appDisplayName property value. App name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
+            ## @param value Value to set for the appDisplayName property.
             ## @return a void
             ## 
             def app_display_name=(value)
                 @app_display_name = value
             end
             ## 
-            ## Gets the appId property value. Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
+            ## Gets the appId property value. Unique GUID representing the app ID in the Azure Active Directory.  Supports $filter (eq).
             ## @return a string
             ## 
             def app_id
                 return @app_id
             end
             ## 
-            ## Sets the appId property value. Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
-            ## @param value Value to set for the app_id property.
+            ## Sets the appId property value. Unique GUID representing the app ID in the Azure Active Directory.  Supports $filter (eq).
+            ## @param value Value to set for the appId property.
             ## @return a void
             ## 
             def app_id=(value)
@@ -115,37 +115,37 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
-            ## @param value Value to set for the applied_conditional_access_policies property.
+            ## @param value Value to set for the appliedConditionalAccessPolicies property.
             ## @return a void
             ## 
             def applied_conditional_access_policies=(value)
                 @applied_conditional_access_policies = value
             end
             ## 
-            ## Gets the clientAppUsed property value. Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
+            ## Gets the clientAppUsed property value. Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).
             ## @return a string
             ## 
             def client_app_used
                 return @client_app_used
             end
             ## 
-            ## Sets the clientAppUsed property value. Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
-            ## @param value Value to set for the client_app_used property.
+            ## Sets the clientAppUsed property value. Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).
+            ## @param value Value to set for the clientAppUsed property.
             ## @return a void
             ## 
             def client_app_used=(value)
                 @client_app_used = value
             end
             ## 
-            ## Gets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).
+            ## Gets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).
             ## @return a conditional_access_status
             ## 
             def conditional_access_status
                 return @conditional_access_status
             end
             ## 
-            ## Sets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).
-            ## @param value Value to set for the conditional_access_status property.
+            ## Sets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).
+            ## @param value Value to set for the conditionalAccessStatus property.
             ## @return a void
             ## 
             def conditional_access_status=(value)
@@ -159,30 +159,30 @@ module MicrosoftGraph
                 super
             end
             ## 
-            ## Gets the correlationId property value. The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).
+            ## Gets the correlationId property value. The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.  Supports $filter (eq).
             ## @return a string
             ## 
             def correlation_id
                 return @correlation_id
             end
             ## 
-            ## Sets the correlationId property value. The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).
-            ## @param value Value to set for the correlation_id property.
+            ## Sets the correlationId property value. The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.  Supports $filter (eq).
+            ## @param value Value to set for the correlationId property.
             ## @return a void
             ## 
             def correlation_id=(value)
                 @correlation_id = value
             end
             ## 
-            ## Gets the createdDateTime property value. Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
+            ## Gets the createdDateTime property value. Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
-            ## @param value Value to set for the created_date_time property.
+            ## Sets the createdDateTime property value. Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -198,15 +198,15 @@ module MicrosoftGraph
                 return SignIn.new
             end
             ## 
-            ## Gets the deviceDetail property value. Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.
+            ## Gets the deviceDetail property value. Device information from where the sign-in occurred; includes device ID, operating system, and browser.  Supports $filter (eq, startsWith) on browser and operatingSytem properties.
             ## @return a device_detail
             ## 
             def device_detail
                 return @device_detail
             end
             ## 
-            ## Sets the deviceDetail property value. Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.
-            ## @param value Value to set for the device_detail property.
+            ## Sets the deviceDetail property value. Device information from where the sign-in occurred; includes device ID, operating system, and browser.  Supports $filter (eq, startsWith) on browser and operatingSytem properties.
+            ## @param value Value to set for the deviceDetail property.
             ## @return a void
             ## 
             def device_detail=(value)
@@ -244,15 +244,15 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the ipAddress property value. IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
+            ## Gets the ipAddress property value. IP address of the client used to sign in.  Supports $filter (eq, startsWith).
             ## @return a string
             ## 
             def ip_address
                 return @ip_address
             end
             ## 
-            ## Sets the ipAddress property value. IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
-            ## @param value Value to set for the ip_address property.
+            ## Sets the ipAddress property value. IP address of the client used to sign in.  Supports $filter (eq, startsWith).
+            ## @param value Value to set for the ipAddress property.
             ## @return a void
             ## 
             def ip_address=(value)
@@ -267,21 +267,21 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isInteractive property value. Indicates if a sign-in is interactive or not.
-            ## @param value Value to set for the is_interactive property.
+            ## @param value Value to set for the isInteractive property.
             ## @return a void
             ## 
             def is_interactive=(value)
                 @is_interactive = value
             end
             ## 
-            ## Gets the location property value. Provides the city, state, and country code where the sign-in originated. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
+            ## Gets the location property value. Provides the city, state, and country code where the sign-in originated.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
             ## @return a sign_in_location
             ## 
             def location
                 return @location
             end
             ## 
-            ## Sets the location property value. Provides the city, state, and country code where the sign-in originated. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
+            ## Sets the location property value. Provides the city, state, and country code where the sign-in originated.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
             ## @param value Value to set for the location property.
             ## @return a void
             ## 
@@ -289,120 +289,120 @@ module MicrosoftGraph
                 @location = value
             end
             ## 
-            ## Gets the resourceDisplayName property value. Name of the resource the user signed into. Supports $filter (eq operator only).
+            ## Gets the resourceDisplayName property value. Name of the resource the user signed into.  Supports $filter (eq).
             ## @return a string
             ## 
             def resource_display_name
                 return @resource_display_name
             end
             ## 
-            ## Sets the resourceDisplayName property value. Name of the resource the user signed into. Supports $filter (eq operator only).
-            ## @param value Value to set for the resource_display_name property.
+            ## Sets the resourceDisplayName property value. Name of the resource the user signed into.  Supports $filter (eq).
+            ## @param value Value to set for the resourceDisplayName property.
             ## @return a void
             ## 
             def resource_display_name=(value)
                 @resource_display_name = value
             end
             ## 
-            ## Gets the resourceId property value. ID of the resource that the user signed into. Supports $filter (eq operator only).
+            ## Gets the resourceId property value. ID of the resource that the user signed into.  Supports $filter (eq).
             ## @return a string
             ## 
             def resource_id
                 return @resource_id
             end
             ## 
-            ## Sets the resourceId property value. ID of the resource that the user signed into. Supports $filter (eq operator only).
-            ## @param value Value to set for the resource_id property.
+            ## Sets the resourceId property value. ID of the resource that the user signed into.  Supports $filter (eq).
+            ## @param value Value to set for the resourceId property.
             ## @return a void
             ## 
             def resource_id=(value)
                 @resource_id = value
             end
             ## 
-            ## Gets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
+            ## Gets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
             ## @return a risk_detail
             ## 
             def risk_detail
                 return @risk_detail
             end
             ## 
-            ## Sets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
-            ## @param value Value to set for the risk_detail property.
+            ## Sets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
+            ## @param value Value to set for the riskDetail property.
             ## @return a void
             ## 
             def risk_detail=(value)
                 @risk_detail = value
             end
             ## 
-            ## Gets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue. Supports $filter (eq operator only).
+            ## Gets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.  Supports $filter (eq).
             ## @return a risk_event_type
             ## 
             def risk_event_types
                 return @risk_event_types
             end
             ## 
-            ## Sets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue. Supports $filter (eq operator only).
-            ## @param value Value to set for the risk_event_types property.
+            ## Sets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.  Supports $filter (eq).
+            ## @param value Value to set for the riskEventTypes property.
             ## @return a void
             ## 
             def risk_event_types=(value)
                 @risk_event_types = value
             end
             ## 
-            ## Gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
+            ## Gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
             ## @return a string
             ## 
             def risk_event_types_v2
                 return @risk_event_types_v2
             end
             ## 
-            ## Sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
-            ## @param value Value to set for the risk_event_types_v2 property.
+            ## Sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
+            ## @param value Value to set for the riskEventTypes_v2 property.
             ## @return a void
             ## 
             def risk_event_types_v2=(value)
                 @risk_event_types_v2 = value
             end
             ## 
-            ## Gets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+            ## Gets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
             ## @return a risk_level
             ## 
             def risk_level_aggregated
                 return @risk_level_aggregated
             end
             ## 
-            ## Sets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
-            ## @param value Value to set for the risk_level_aggregated property.
+            ## Sets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+            ## @param value Value to set for the riskLevelAggregated property.
             ## @return a void
             ## 
             def risk_level_aggregated=(value)
                 @risk_level_aggregated = value
             end
             ## 
-            ## Gets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+            ## Gets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
             ## @return a risk_level
             ## 
             def risk_level_during_sign_in
                 return @risk_level_during_sign_in
             end
             ## 
-            ## Sets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
-            ## @param value Value to set for the risk_level_during_sign_in property.
+            ## Sets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+            ## @param value Value to set for the riskLevelDuringSignIn property.
             ## @return a void
             ## 
             def risk_level_during_sign_in=(value)
                 @risk_level_during_sign_in = value
             end
             ## 
-            ## Gets the riskState property value. Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq operator only).
+            ## Gets the riskState property value. Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq).
             ## @return a risk_state
             ## 
             def risk_state
                 return @risk_state
             end
             ## 
-            ## Sets the riskState property value. Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq operator only).
-            ## @param value Value to set for the risk_state property.
+            ## Sets the riskState property value. Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq).
+            ## @param value Value to set for the riskState property.
             ## @return a void
             ## 
             def risk_state=(value)
@@ -441,14 +441,14 @@ module MicrosoftGraph
                 writer.write_string_value("userPrincipalName", @user_principal_name)
             end
             ## 
-            ## Gets the status property value. Sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
+            ## Gets the status property value. Sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
             ## @return a sign_in_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. Sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
+            ## Sets the status property value. Sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 
@@ -456,45 +456,45 @@ module MicrosoftGraph
                 @status = value
             end
             ## 
-            ## Gets the userDisplayName property value. Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
+            ## Gets the userDisplayName property value. Display name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).
             ## @return a string
             ## 
             def user_display_name
                 return @user_display_name
             end
             ## 
-            ## Sets the userDisplayName property value. Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
-            ## @param value Value to set for the user_display_name property.
+            ## Sets the userDisplayName property value. Display name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).
+            ## @param value Value to set for the userDisplayName property.
             ## @return a void
             ## 
             def user_display_name=(value)
                 @user_display_name = value
             end
             ## 
-            ## Gets the userId property value. ID of the user that initiated the sign-in. Supports $filter (eq operator only).
+            ## Gets the userId property value. ID of the user that initiated the sign-in.  Supports $filter (eq).
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. ID of the user that initiated the sign-in. Supports $filter (eq operator only).
-            ## @param value Value to set for the user_id property.
+            ## Sets the userId property value. ID of the user that initiated the sign-in.  Supports $filter (eq).
+            ## @param value Value to set for the userId property.
             ## @return a void
             ## 
             def user_id=(value)
                 @user_id = value
             end
             ## 
-            ## Gets the userPrincipalName property value. User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
+            ## Gets the userPrincipalName property value. User principal name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
-            ## @param value Value to set for the user_principal_name property.
+            ## Sets the userPrincipalName property value. User principal name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).
+            ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
             def user_principal_name=(value)

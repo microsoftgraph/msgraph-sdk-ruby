@@ -28,6 +28,18 @@ module MicrosoftGraph
             # References to a directory or domain of another organization whose users can request access.
             @connected_organizations
             ## 
+            # A reference to the geolocation environments in which a resource is located.
+            @resource_environments
+            ## 
+            # Represents a request to add or remove a resource to or from a catalog respectively.
+            @resource_requests
+            ## 
+            # The resourceRoleScopes property
+            @resource_role_scopes
+            ## 
+            # The resources associated with the catalogs.
+            @resources
+            ## 
             # The settings that control the behavior of Azure AD entitlement management.
             @settings
             ## 
@@ -39,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessPackageAssignmentApprovals property value. Approval stages for decisions associated with access package assignment requests.
-            ## @param value Value to set for the access_package_assignment_approvals property.
+            ## @param value Value to set for the accessPackageAssignmentApprovals property.
             ## @return a void
             ## 
             def access_package_assignment_approvals=(value)
@@ -54,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessPackages property value. Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
-            ## @param value Value to set for the access_packages property.
+            ## @param value Value to set for the accessPackages property.
             ## @return a void
             ## 
             def access_packages=(value)
@@ -69,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignmentPolicies property value. Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
-            ## @param value Value to set for the assignment_policies property.
+            ## @param value Value to set for the assignmentPolicies property.
             ## @return a void
             ## 
             def assignment_policies=(value)
@@ -84,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignmentRequests property value. Access package assignment requests created by or on behalf of a subject.
-            ## @param value Value to set for the assignment_requests property.
+            ## @param value Value to set for the assignmentRequests property.
             ## @return a void
             ## 
             def assignment_requests=(value)
@@ -129,14 +141,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the connectedOrganizations property value. References to a directory or domain of another organization whose users can request access.
-            ## @param value Value to set for the connected_organizations property.
+            ## @param value Value to set for the connectedOrganizations property.
             ## @return a void
             ## 
             def connected_organizations=(value)
                 @connected_organizations = value
             end
             ## 
-            ## Instantiates a new EntitlementManagement and sets the default values.
+            ## Instantiates a new entitlementManagement and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -164,8 +176,72 @@ module MicrosoftGraph
                     "assignments" => lambda {|n| @assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignment.create_from_discriminator_value(pn) }) },
                     "catalogs" => lambda {|n| @catalogs = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }) },
                     "connectedOrganizations" => lambda {|n| @connected_organizations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConnectedOrganization.create_from_discriminator_value(pn) }) },
+                    "resourceEnvironments" => lambda {|n| @resource_environments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResourceEnvironment.create_from_discriminator_value(pn) }) },
+                    "resourceRequests" => lambda {|n| @resource_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResourceRequest.create_from_discriminator_value(pn) }) },
+                    "resourceRoleScopes" => lambda {|n| @resource_role_scopes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResourceRoleScope.create_from_discriminator_value(pn) }) },
+                    "resources" => lambda {|n| @resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResource.create_from_discriminator_value(pn) }) },
                     "settings" => lambda {|n| @settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EntitlementManagementSettings.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the resourceEnvironments property value. A reference to the geolocation environments in which a resource is located.
+            ## @return a access_package_resource_environment
+            ## 
+            def resource_environments
+                return @resource_environments
+            end
+            ## 
+            ## Sets the resourceEnvironments property value. A reference to the geolocation environments in which a resource is located.
+            ## @param value Value to set for the resourceEnvironments property.
+            ## @return a void
+            ## 
+            def resource_environments=(value)
+                @resource_environments = value
+            end
+            ## 
+            ## Gets the resourceRequests property value. Represents a request to add or remove a resource to or from a catalog respectively.
+            ## @return a access_package_resource_request
+            ## 
+            def resource_requests
+                return @resource_requests
+            end
+            ## 
+            ## Sets the resourceRequests property value. Represents a request to add or remove a resource to or from a catalog respectively.
+            ## @param value Value to set for the resourceRequests property.
+            ## @return a void
+            ## 
+            def resource_requests=(value)
+                @resource_requests = value
+            end
+            ## 
+            ## Gets the resourceRoleScopes property value. The resourceRoleScopes property
+            ## @return a access_package_resource_role_scope
+            ## 
+            def resource_role_scopes
+                return @resource_role_scopes
+            end
+            ## 
+            ## Sets the resourceRoleScopes property value. The resourceRoleScopes property
+            ## @param value Value to set for the resourceRoleScopes property.
+            ## @return a void
+            ## 
+            def resource_role_scopes=(value)
+                @resource_role_scopes = value
+            end
+            ## 
+            ## Gets the resources property value. The resources associated with the catalogs.
+            ## @return a access_package_resource
+            ## 
+            def resources
+                return @resources
+            end
+            ## 
+            ## Sets the resources property value. The resources associated with the catalogs.
+            ## @param value Value to set for the resources property.
+            ## @return a void
+            ## 
+            def resources=(value)
+                @resources = value
             end
             ## 
             ## Serializes information the current object
@@ -182,6 +258,10 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("assignments", @assignments)
                 writer.write_collection_of_object_values("catalogs", @catalogs)
                 writer.write_collection_of_object_values("connectedOrganizations", @connected_organizations)
+                writer.write_collection_of_object_values("resourceEnvironments", @resource_environments)
+                writer.write_collection_of_object_values("resourceRequests", @resource_requests)
+                writer.write_collection_of_object_values("resourceRoleScopes", @resource_role_scopes)
+                writer.write_collection_of_object_values("resources", @resources)
                 writer.write_object_value("settings", @settings)
             end
             ## 

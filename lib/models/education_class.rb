@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignmentCategories property value. All categories associated with this class. Nullable.
-            ## @param value Value to set for the assignment_categories property.
+            ## @param value Value to set for the assignmentCategories property.
             ## @return a void
             ## 
             def assignment_categories=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignmentDefaults property value. Specifies class-level defaults respected by new assignments created in the class.
-            ## @param value Value to set for the assignment_defaults property.
+            ## @param value Value to set for the assignmentDefaults property.
             ## @return a void
             ## 
             def assignment_defaults=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignmentSettings property value. Specifies class-level assignments settings.
-            ## @param value Value to set for the assignment_settings property.
+            ## @param value Value to set for the assignmentSettings property.
             ## @return a void
             ## 
             def assignment_settings=(value)
@@ -135,14 +135,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the classCode property value. Class code used by the school to identify the class.
-            ## @param value Value to set for the class_code property.
+            ## @param value Value to set for the classCode property.
             ## @return a void
             ## 
             def class_code=(value)
                 @class_code = value
             end
             ## 
-            ## Instantiates a new EducationClass and sets the default values.
+            ## Instantiates a new educationClass and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -172,7 +172,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. Entity who created the class
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -211,7 +211,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Name of the class.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -226,7 +226,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalId property value. ID of the class from the syncing system.
-            ## @param value Value to set for the external_id property.
+            ## @param value Value to set for the externalId property.
             ## @return a void
             ## 
             def external_id=(value)
@@ -241,7 +241,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalName property value. Name of the class in the syncing system.
-            ## @param value Value to set for the external_name property.
+            ## @param value Value to set for the externalName property.
             ## @return a void
             ## 
             def external_name=(value)
@@ -256,7 +256,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalSource property value. How this class was created. Possible values are: sis, manual.
-            ## @param value Value to set for the external_source property.
+            ## @param value Value to set for the externalSource property.
             ## @return a void
             ## 
             def external_source=(value)
@@ -271,7 +271,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalSourceDetail property value. The name of the external source this resources was generated from.
-            ## @param value Value to set for the external_source_detail property.
+            ## @param value Value to set for the externalSourceDetail property.
             ## @return a void
             ## 
             def external_source_detail=(value)
@@ -344,7 +344,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mailNickname property value. Mail name for sending email to all members, if this is enabled.
-            ## @param value Value to set for the mail_nickname property.
+            ## @param value Value to set for the mailNickname property.
             ## @return a void
             ## 
             def mail_nickname=(value)

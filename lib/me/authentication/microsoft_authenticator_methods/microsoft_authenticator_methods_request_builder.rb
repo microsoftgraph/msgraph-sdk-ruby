@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/microsoft_authenticator_authentication_method_collection_response'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../me'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
+require_relative './item/microsoft_authenticator_authentication_method_item_request_builder'
 require_relative './microsoft_authenticator_methods'
 
 module MicrosoftGraph
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Me::Authentication::MicrosoftAuthenticatorMethods::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
+                    ## @param microsoft_authenticator_authentication_method_id The unique identifier of microsoftAuthenticatorAuthenticationMethod
+                    ## @return a microsoft_authenticator_authentication_method_item_request_builder
+                    ## 
+                    def by_microsoft_authenticator_authentication_method_id(microsoft_authenticator_authentication_method_id)
+                        raise StandardError, 'microsoft_authenticator_authentication_method_id cannot be null' if microsoft_authenticator_authentication_method_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["microsoftAuthenticatorAuthenticationMethod%2Did"] = microsoft_authenticator_authentication_method_id
+                        return MicrosoftGraph::Me::Authentication::MicrosoftAuthenticatorMethods::Item::MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new MicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
@@ -39,8 +51,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MicrosoftAuthenticatorAuthenticationMethodCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

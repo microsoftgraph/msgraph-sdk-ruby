@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Windows Defender AdvancedThreatProtection Configuration.
         class WindowsDefenderAdvancedThreatProtectionConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -21,14 +23,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowSampleSharing property value. Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule
-            ## @param value Value to set for the allow_sample_sharing property.
+            ## @param value Value to set for the allowSampleSharing property.
             ## @return a void
             ## 
             def allow_sample_sharing=(value)
                 @allow_sample_sharing = value
             end
             ## 
-            ## Instantiates a new WindowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
+            ## Instantiates a new windowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,7 +55,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enableExpeditedTelemetryReporting property value. Expedite Windows Defender Advanced Threat Protection telemetry reporting frequency.
-            ## @param value Value to set for the enable_expedited_telemetry_reporting property.
+            ## @param value Value to set for the enableExpeditedTelemetryReporting property.
             ## @return a void
             ## 
             def enable_expedited_telemetry_reporting=(value)

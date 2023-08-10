@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
             @client_id
             ## 
-            # The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
+            # The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return .  Required. Not nullable.
             @client_secret
             ## 
             # The display name of the identity provider. Not nullable.
@@ -27,22 +27,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clientId property value. The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
-            ## @param value Value to set for the client_id property.
+            ## @param value Value to set for the clientId property.
             ## @return a void
             ## 
             def client_id=(value)
                 @client_id = value
             end
             ## 
-            ## Gets the clientSecret property value. The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
+            ## Gets the clientSecret property value. The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return .  Required. Not nullable.
             ## @return a string
             ## 
             def client_secret
                 return @client_secret
             end
             ## 
-            ## Sets the clientSecret property value. The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
-            ## @param value Value to set for the client_secret property.
+            ## Sets the clientSecret property value. The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return .  Required. Not nullable.
+            ## @param value Value to set for the clientSecret property.
             ## @return a void
             ## 
             def client_secret=(value)

@@ -1,8 +1,8 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../../models/security/data_source'
-require_relative '../../../../../../../models/security/data_source_collection_response'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../../models/security_data_source'
+require_relative '../../../../../../../models/security_data_source_collection_response'
 require_relative '../../../../../../security'
 require_relative '../../../../../cases'
 require_relative '../../../../ediscovery_cases'
@@ -11,6 +11,7 @@ require_relative '../../searches'
 require_relative '../item'
 require_relative './additional_sources'
 require_relative './count/count_request_builder'
+require_relative './item/data_source_item_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -30,6 +31,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::AdditionalSources::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the additionalSources property of the microsoft.graph.security.ediscoverySearch entity.
+                                    ## @param data_source_id The unique identifier of dataSource
+                                    ## @return a data_source_item_request_builder
+                                    ## 
+                                    def by_data_source_id(data_source_id)
+                                        raise StandardError, 'data_source_id cannot be null' if data_source_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["dataSource%2Did"] = data_source_id
+                                        return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::AdditionalSources::Item::DataSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new AdditionalSourcesRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -41,22 +53,22 @@ module MicrosoftGraph
                                     ## 
                                     ## Get the list of additional sources associated with an eDiscovery search.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                    ## @return a Fiber of data_source_collection_response
+                                    ## @return a Fiber of security_data_source_collection_response
                                     ## 
                                     def get(request_configuration=nil)
                                         request_info = self.to_get_request_information(
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::DataSourceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityDataSourceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
                                     ## Create a new additional source associated with an eDiscovery search.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                    ## @return a Fiber of data_source
+                                    ## @return a Fiber of security_data_source
                                     ## 
                                     def post(body, request_configuration=nil)
                                         raise StandardError, 'body cannot be null' if body.nil?
@@ -64,9 +76,9 @@ module MicrosoftGraph
                                             body, request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::DataSource.create_from_discriminator_value(pn) }, error_mapping)
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityDataSource.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
                                     ## Get the list of additional sources associated with an eDiscovery search.

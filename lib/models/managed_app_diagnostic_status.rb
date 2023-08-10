@@ -32,7 +32,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mitigationInstruction property value. Instruction on how to mitigate a failed validation
-            ## @param value Value to set for the mitigation_instruction property.
+            ## @param value Value to set for the mitigationInstruction property.
             ## @return a void
             ## 
             def mitigation_instruction=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the validationName property value. The validation friendly name
-            ## @param value Value to set for the validation_name property.
+            ## @param value Value to set for the validationName property.
             ## @return a void
             ## 
             def validation_name=(value)

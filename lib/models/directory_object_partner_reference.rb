@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The type of the referenced object in the partner tenant. Read-only.
             @object_type
             ## 
-            ## Instantiates a new DirectoryObjectPartnerReference and sets the default values.
+            ## Instantiates a new directoryObjectPartnerReference and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,7 +59,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Name of directory object being returned, like group or application. Read-only.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalPartnerTenantId property value. The tenant identifier for the partner tenant. Read-only.
-            ## @param value Value to set for the external_partner_tenant_id property.
+            ## @param value Value to set for the externalPartnerTenantId property.
             ## @return a void
             ## 
             def external_partner_tenant_id=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the objectType property value. The type of the referenced object in the partner tenant. Read-only.
-            ## @param value Value to set for the object_type property.
+            ## @param value Value to set for the objectType property.
             ## @return a void
             ## 
             def object_type=(value)

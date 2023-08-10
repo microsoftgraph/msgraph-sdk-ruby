@@ -1,29 +1,19 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/authentication'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../users'
 require_relative '../item'
 require_relative './authentication'
 require_relative './email_methods/email_methods_request_builder'
-require_relative './email_methods/item/email_authentication_method_item_request_builder'
 require_relative './fido2_methods/fido2_methods_request_builder'
-require_relative './fido2_methods/item/fido2_authentication_method_item_request_builder'
-require_relative './methods/item/authentication_method_item_request_builder'
 require_relative './methods/methods_request_builder'
-require_relative './microsoft_authenticator_methods/item/microsoft_authenticator_authentication_method_item_request_builder'
 require_relative './microsoft_authenticator_methods/microsoft_authenticator_methods_request_builder'
-require_relative './operations/item/long_running_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
-require_relative './password_methods/item/password_authentication_method_item_request_builder'
 require_relative './password_methods/password_methods_request_builder'
-require_relative './phone_methods/item/phone_authentication_method_item_request_builder'
 require_relative './phone_methods/phone_methods_request_builder'
-require_relative './software_oath_methods/item/software_oath_authentication_method_item_request_builder'
 require_relative './software_oath_methods/software_oath_methods_request_builder'
-require_relative './temporary_access_pass_methods/item/temporary_access_pass_authentication_method_item_request_builder'
 require_relative './temporary_access_pass_methods/temporary_access_pass_methods_request_builder'
-require_relative './windows_hello_for_business_methods/item/windows_hello_for_business_authentication_method_item_request_builder'
 require_relative './windows_hello_for_business_methods/windows_hello_for_business_methods_request_builder'
 
 module MicrosoftGraph
@@ -103,31 +93,9 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a email_authentication_method_item_request_builder
-                    ## 
-                    def email_methods_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["emailAuthenticationMethod%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Authentication::EmailMethods::Item::EmailAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a fido2_authentication_method_item_request_builder
-                    ## 
-                    def fido2_methods_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["fido2AuthenticationMethod%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Authentication::Fido2Methods::Item::Fido2AuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## The authentication methods that are supported for the user.
@@ -139,53 +107,9 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Authentication.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the methods property of the microsoft.graph.authentication entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a authentication_method_item_request_builder
-                    ## 
-                    def methods_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["authenticationMethod%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Authentication::Methods::Item::AuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a microsoft_authenticator_authentication_method_item_request_builder
-                    ## 
-                    def microsoft_authenticator_methods_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["microsoftAuthenticatorAuthenticationMethod%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Authentication::MicrosoftAuthenticatorMethods::Item::MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the operations property of the microsoft.graph.authentication entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a long_running_operation_item_request_builder
-                    ## 
-                    def operations_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["longRunningOperation%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Authentication::Operations::Item::LongRunningOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a password_authentication_method_item_request_builder
-                    ## 
-                    def password_methods_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["passwordAuthenticationMethod%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Authentication::PasswordMethods::Item::PasswordAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property authentication in users
@@ -199,42 +123,9 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Authentication.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a phone_authentication_method_item_request_builder
-                    ## 
-                    def phone_methods_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["phoneAuthenticationMethod%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item::PhoneAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a software_oath_authentication_method_item_request_builder
-                    ## 
-                    def software_oath_methods_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["softwareOathAuthenticationMethod%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Authentication::SoftwareOathMethods::Item::SoftwareOathAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a temporary_access_pass_authentication_method_item_request_builder
-                    ## 
-                    def temporary_access_pass_methods_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["temporaryAccessPassAuthenticationMethod%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Authentication::TemporaryAccessPassMethods::Item::TemporaryAccessPassAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property authentication for users
@@ -289,17 +180,6 @@ module MicrosoftGraph
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
-                    end
-                    ## 
-                    ## Provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a windows_hello_for_business_authentication_method_item_request_builder
-                    ## 
-                    def windows_hello_for_business_methods_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["windowsHelloForBusinessAuthenticationMethod%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Authentication::WindowsHelloForBusinessMethods::Item::WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
 
                     ## 

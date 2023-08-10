@@ -37,7 +37,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the numberTimes property value. The numberTimes property
-                                    ## @param value Value to set for the number_times property.
+                                    ## @param value Value to set for the numberTimes property.
                                     ## @return a void
                                     ## 
                                     def number_times=(value)

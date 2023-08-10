@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the itemId property value. The itemId property
-            ## @param value Value to set for the item_id property.
+            ## @param value Value to set for the itemId property.
             ## @return a void
             ## 
             def item_id=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the relevanceScore property value. The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
-            ## @param value Value to set for the relevance_score property.
+            ## @param value Value to set for the relevanceScore property.
             ## @return a void
             ## 
             def relevance_score=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the selectionLikelihood property value. The selectionLikelihood property
-            ## @param value Value to set for the selection_likelihood property.
+            ## @param value Value to set for the selectionLikelihood property.
             ## @return a void
             ## 
             def selection_likelihood=(value)

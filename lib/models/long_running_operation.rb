@@ -38,7 +38,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastActionDateTime property value. The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            ## @param value Value to set for the last_action_date_time property.
+            ## @param value Value to set for the lastActionDateTime property.
             ## @return a void
             ## 
             def last_action_date_time=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceLocation property value. URI of the resource that the operation is performed on.
-            ## @param value Value to set for the resource_location property.
+            ## @param value Value to set for the resourceLocation property.
             ## @return a void
             ## 
             def resource_location=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the statusDetail property value. Details about the status of the operation.
-            ## @param value Value to set for the status_detail property.
+            ## @param value Value to set for the statusDetail property.
             ## @return a void
             ## 
             def status_detail=(value)

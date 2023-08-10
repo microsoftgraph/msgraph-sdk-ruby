@@ -70,7 +70,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the parentUrl property value. The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
-            ## @param value Value to set for the parent_url property.
+            ## @param value Value to set for the parentUrl property.
             ## @return a void
             ## 
             def parent_url=(value)

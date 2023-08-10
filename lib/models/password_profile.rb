@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
+            # The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user's passwordPolicies property. By default, a strong password is required.
             @password
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false.
-            ## @param value Value to set for the force_change_password_next_sign_in property.
+            ## @param value Value to set for the forceChangePasswordNextSignIn property.
             ## @return a void
             ## 
             def force_change_password_next_sign_in=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the forceChangePasswordNextSignInWithMfa property value. If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
-            ## @param value Value to set for the force_change_password_next_sign_in_with_mfa property.
+            ## @param value Value to set for the forceChangePasswordNextSignInWithMfa property.
             ## @return a void
             ## 
             def force_change_password_next_sign_in_with_mfa=(value)
@@ -103,21 +103,21 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
                 @odata_type = value
             end
             ## 
-            ## Gets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
+            ## Gets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user's passwordPolicies property. By default, a strong password is required.
             ## @return a string
             ## 
             def password
                 return @password
             end
             ## 
-            ## Sets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
+            ## Sets the password property value. The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user's passwordPolicies property. By default, a strong password is required.
             ## @param value Value to set for the password property.
             ## @return a void
             ## 

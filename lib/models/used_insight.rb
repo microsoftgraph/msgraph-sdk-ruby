@@ -55,7 +55,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastUsed property value. Information about when the item was last viewed or modified by the user. Read only.
-            ## @param value Value to set for the last_used property.
+            ## @param value Value to set for the lastUsed property.
             ## @return a void
             ## 
             def last_used=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceReference property value. Reference properties of the used document, such as the url and type of the document. Read-only
-            ## @param value Value to set for the resource_reference property.
+            ## @param value Value to set for the resourceReference property.
             ## @return a void
             ## 
             def resource_reference=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
-            ## @param value Value to set for the resource_visualization property.
+            ## @param value Value to set for the resourceVisualization property.
             ## @return a void
             ## 
             def resource_visualization=(value)

@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the emptySuggestionsReason property value. A reason for not returning any meeting suggestions. The possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.
-            ## @param value Value to set for the empty_suggestions_reason property.
+            ## @param value Value to set for the emptySuggestionsReason property.
             ## @return a void
             ## 
             def empty_suggestions_reason=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the meetingTimeSuggestions property value. An array of meeting suggestions.
-            ## @param value Value to set for the meeting_time_suggestions property.
+            ## @param value Value to set for the meetingTimeSuggestions property.
             ## @return a void
             ## 
             def meeting_time_suggestions=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

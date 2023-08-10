@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # IOS Update Configuration, allows you to configure time window within week to install iOS updates
         class IosUpdateConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -28,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activeHoursEnd property value. Active Hours End (active hours mean the time window when updates install should not happen)
-            ## @param value Value to set for the active_hours_end property.
+            ## @param value Value to set for the activeHoursEnd property.
             ## @return a void
             ## 
             def active_hours_end=(value)
@@ -43,14 +45,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activeHoursStart property value. Active Hours Start (active hours mean the time window when updates install should not happen)
-            ## @param value Value to set for the active_hours_start property.
+            ## @param value Value to set for the activeHoursStart property.
             ## @return a void
             ## 
             def active_hours_start=(value)
                 @active_hours_start = value
             end
             ## 
-            ## Instantiates a new IosUpdateConfiguration and sets the default values.
+            ## Instantiates a new iosUpdateConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -87,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
-            ## @param value Value to set for the scheduled_install_days property.
+            ## @param value Value to set for the scheduledInstallDays property.
             ## @return a void
             ## 
             def scheduled_install_days=(value)
@@ -115,7 +117,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the utcTimeOffsetInMinutes property value. UTC Time Offset indicated in minutes
-            ## @param value Value to set for the utc_time_offset_in_minutes property.
+            ## @param value Value to set for the utcTimeOffsetInMinutes property.
             ## @return a void
             ## 
             def utc_time_offset_in_minutes=(value)

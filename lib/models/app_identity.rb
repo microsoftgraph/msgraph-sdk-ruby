@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appId property value. Refers to the Unique GUID representing Application Id in the Azure Active Directory.
-            ## @param value Value to set for the app_id property.
+            ## @param value Value to set for the appId property.
             ## @return a void
             ## 
             def app_id=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipalId property value. Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
-            ## @param value Value to set for the service_principal_id property.
+            ## @param value Value to set for the servicePrincipalId property.
             ## @return a void
             ## 
             def service_principal_id=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipalName property value. Refers to the Service Principal Name is the Application name in the tenant.
-            ## @param value Value to set for the service_principal_name property.
+            ## @param value Value to set for the servicePrincipalName property.
             ## @return a void
             ## 
             def service_principal_name=(value)

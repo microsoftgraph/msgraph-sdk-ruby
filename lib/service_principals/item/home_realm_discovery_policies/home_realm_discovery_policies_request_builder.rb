@@ -1,11 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
 require_relative '../../../models/home_realm_discovery_policy_collection_response'
-require_relative '../../../models/o_data_errors/o_data_error'
+require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../service_principals'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './home_realm_discovery_policies'
+require_relative './item/home_realm_discovery_policy_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -27,6 +28,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::ServicePrincipals::Item::HomeRealmDiscoveryPolicies::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Gets an item from the MicrosoftGraph.servicePrincipals.item.homeRealmDiscoveryPolicies.item collection
+                    ## @param home_realm_discovery_policy_id Unique identifier of the item
+                    ## @return a home_realm_discovery_policy_item_request_builder
+                    ## 
+                    def by_home_realm_discovery_policy_id(home_realm_discovery_policy_id)
+                        raise StandardError, 'home_realm_discovery_policy_id cannot be null' if home_realm_discovery_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["homeRealmDiscoveryPolicy%2Did"] = home_realm_discovery_policy_id
+                        return MicrosoftGraph::ServicePrincipals::Item::HomeRealmDiscoveryPolicies::Item::HomeRealmDiscoveryPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new HomeRealmDiscoveryPoliciesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -45,8 +57,8 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::HomeRealmDiscoveryPolicyCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 

@@ -18,7 +18,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the calculationMode property value. Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
-            ## @param value Value to set for the calculation_mode property.
+            ## @param value Value to set for the calculationMode property.
             ## @return a void
             ## 
             def calculation_mode=(value)

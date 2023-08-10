@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -68,7 +68,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the endDate property value. The date to stop applying the recurrence pattern. Depending on the recurrence pattern of the event, the last occurrence of the meeting may not be this date. Required if type is endDate.
-            ## @param value Value to set for the end_date property.
+            ## @param value Value to set for the endDate property.
             ## @return a void
             ## 
             def end_date=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the numberOfOccurrences property value. The number of times to repeat the event. Required and must be positive if type is numbered.
-            ## @param value Value to set for the number_of_occurrences property.
+            ## @param value Value to set for the numberOfOccurrences property.
             ## @return a void
             ## 
             def number_of_occurrences=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recurrenceTimeZone property value. Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
-            ## @param value Value to set for the recurrence_time_zone property.
+            ## @param value Value to set for the recurrenceTimeZone property.
             ## @return a void
             ## 
             def recurrence_time_zone=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDate property value. The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.
-            ## @param value Value to set for the start_date property.
+            ## @param value Value to set for the startDate property.
             ## @return a void
             ## 
             def start_date=(value)

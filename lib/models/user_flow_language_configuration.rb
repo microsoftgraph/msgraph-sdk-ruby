@@ -43,7 +43,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
-            ## @param value Value to set for the default_pages property.
+            ## @param value Value to set for the defaultPages property.
             ## @return a void
             ## 
             def default_pages=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The language name to display. This property is read-only.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEnabled property value. Indicates whether the language is enabled within the user flow.
-            ## @param value Value to set for the is_enabled property.
+            ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
             def is_enabled=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
-            ## @param value Value to set for the overrides_pages property.
+            ## @param value Value to set for the overridesPages property.
             ## @return a void
             ## 
             def overrides_pages=(value)

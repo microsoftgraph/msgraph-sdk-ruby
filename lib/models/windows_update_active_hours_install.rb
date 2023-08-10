@@ -22,7 +22,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activeHoursEnd property value. Active Hours End
-            ## @param value Value to set for the active_hours_end property.
+            ## @param value Value to set for the activeHoursEnd property.
             ## @return a void
             ## 
             def active_hours_end=(value)
@@ -37,14 +37,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activeHoursStart property value. Active Hours Start
-            ## @param value Value to set for the active_hours_start property.
+            ## @param value Value to set for the activeHoursStart property.
             ## @return a void
             ## 
             def active_hours_start=(value)
                 @active_hours_start = value
             end
             ## 
-            ## Instantiates a new WindowsUpdateActiveHoursInstall and sets the default values.
+            ## Instantiates a new windowsUpdateActiveHoursInstall and sets the default values.
             ## @return a void
             ## 
             def initialize()

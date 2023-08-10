@@ -17,7 +17,7 @@ module MicrosoftGraph
             # The reason for the time off.
             @time_off_reason_id
             ## 
-            ## Instantiates a new TimeOffRequest and sets the default values.
+            ## Instantiates a new timeOffRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the endDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the end_date_time property.
+            ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
             def end_date_time=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the start_date_time property.
+            ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
             def start_date_time=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeOffReasonId property value. The reason for the time off.
-            ## @param value Value to set for the time_off_reason_id property.
+            ## @param value Value to set for the timeOffReasonId property.
             ## @return a void
             ## 
             def time_off_reason_id=(value)

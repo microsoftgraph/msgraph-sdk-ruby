@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isDefault property value. Flag to indicate whether or not this is the default locale for language fallback. This flag can only be set. To unset, set this property to true on another Localized Notification Message.
-            ## @param value Value to set for the is_default property.
+            ## @param value Value to set for the isDefault property.
             ## @return a void
             ## 
             def is_default=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. DateTime the object was last modified.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the messageTemplate property value. The Message Template content.
-            ## @param value Value to set for the message_template property.
+            ## @param value Value to set for the messageTemplate property.
             ## @return a void
             ## 
             def message_template=(value)

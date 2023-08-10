@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
         class AndroidManagedAppProtection < MicrosoftGraph::Models::TargetedManagedAppProtection
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -52,7 +54,7 @@ module MicrosoftGraph
                 @apps = value
             end
             ## 
-            ## Instantiates a new AndroidManagedAppProtection and sets the default values.
+            ## Instantiates a new androidManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -77,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-            ## @param value Value to set for the custom_browser_display_name property.
+            ## @param value Value to set for the customBrowserDisplayName property.
             ## @return a void
             ## 
             def custom_browser_display_name=(value)
@@ -92,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customBrowserPackageId property value. Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-            ## @param value Value to set for the custom_browser_package_id property.
+            ## @param value Value to set for the customBrowserPackageId property.
             ## @return a void
             ## 
             def custom_browser_package_id=(value)
@@ -107,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
-            ## @param value Value to set for the deployed_app_count property.
+            ## @param value Value to set for the deployedAppCount property.
             ## @return a void
             ## 
             def deployed_app_count=(value)
@@ -122,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-            ## @param value Value to set for the deployment_summary property.
+            ## @param value Value to set for the deploymentSummary property.
             ## @return a void
             ## 
             def deployment_summary=(value)
@@ -137,7 +139,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled
-            ## @param value Value to set for the disable_app_encryption_if_device_encryption_is_enabled property.
+            ## @param value Value to set for the disableAppEncryptionIfDeviceEncryptionIsEnabled property.
             ## @return a void
             ## 
             def disable_app_encryption_if_device_encryption_is_enabled=(value)
@@ -152,7 +154,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the encryptAppData property value. Indicates whether application data for managed apps should be encrypted
-            ## @param value Value to set for the encrypt_app_data property.
+            ## @param value Value to set for the encryptAppData property.
             ## @return a void
             ## 
             def encrypt_app_data=(value)
@@ -185,7 +187,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app.
-            ## @param value Value to set for the minimum_required_patch_version property.
+            ## @param value Value to set for the minimumRequiredPatchVersion property.
             ## @return a void
             ## 
             def minimum_required_patch_version=(value)
@@ -200,7 +202,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app.
-            ## @param value Value to set for the minimum_warning_patch_version property.
+            ## @param value Value to set for the minimumWarningPatchVersion property.
             ## @return a void
             ## 
             def minimum_warning_patch_version=(value)
@@ -215,7 +217,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the screenCaptureBlocked property value. Indicates whether a managed user can take screen captures of managed apps
-            ## @param value Value to set for the screen_capture_blocked property.
+            ## @param value Value to set for the screenCaptureBlocked property.
             ## @return a void
             ## 
             def screen_capture_blocked=(value)

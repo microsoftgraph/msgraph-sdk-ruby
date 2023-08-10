@@ -18,14 +18,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationIdentityType property value. Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
-            ## @param value Value to set for the application_identity_type property.
+            ## @param value Value to set for the applicationIdentityType property.
             ## @return a void
             ## 
             def application_identity_type=(value)
                 @application_identity_type = value
             end
             ## 
-            ## Instantiates a new TeamworkApplicationIdentity and sets the default values.
+            ## Instantiates a new teamworkApplicationIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

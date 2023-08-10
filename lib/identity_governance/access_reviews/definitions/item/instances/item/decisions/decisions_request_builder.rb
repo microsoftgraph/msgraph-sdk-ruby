@@ -2,7 +2,7 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
 require_relative '../../../../../../../models/access_review_instance_decision_item'
 require_relative '../../../../../../../models/access_review_instance_decision_item_collection_response'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../identity_governance'
 require_relative '../../../../../access_reviews'
 require_relative '../../../../definitions'
@@ -12,6 +12,7 @@ require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './decisions'
 require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './item/access_review_instance_decision_item_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -29,6 +30,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Decisions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.
+                                    ## @param access_review_instance_decision_item_id The unique identifier of accessReviewInstanceDecisionItem
+                                    ## @return a access_review_instance_decision_item_item_request_builder
+                                    ## 
+                                    def by_access_review_instance_decision_item_id(access_review_instance_decision_item_id)
+                                        raise StandardError, 'access_review_instance_decision_item_id cannot be null' if access_review_instance_decision_item_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["accessReviewInstanceDecisionItem%2Did"] = access_review_instance_decision_item_id
+                                        return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Decisions::Item::AccessReviewInstanceDecisionItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new DecisionsRequestBuilder and sets the default values.
@@ -49,7 +61,7 @@ module MicrosoftGraph
                                         return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
                                     end
                                     ## 
-                                    ## Get the accessReviewInstanceDecisionItem resources from the decisions navigation property on a given accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
+                                    ## Retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of access_review_instance_decision_item_collection_response
                                     ## 
@@ -58,8 +70,8 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewInstanceDecisionItemCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
@@ -74,12 +86,12 @@ module MicrosoftGraph
                                             body, request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewInstanceDecisionItem.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Get the accessReviewInstanceDecisionItem resources from the decisions navigation property on a given accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
+                                    ## Retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -118,7 +130,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Get the accessReviewInstanceDecisionItem resources from the decisions navigation property on a given accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
+                                    # Retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
                                     class DecisionsRequestBuilderGetQueryParameters
                                         
                                         ## 

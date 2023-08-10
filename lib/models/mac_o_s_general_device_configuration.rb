@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.
         class MacOSGeneralDeviceConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -51,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compliantAppListType property value. Possible values of the compliance app list.
-            ## @param value Value to set for the compliant_app_list_type property.
+            ## @param value Value to set for the compliantAppListType property.
             ## @return a void
             ## 
             def compliant_app_list_type=(value)
@@ -66,14 +68,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
-            ## @param value Value to set for the compliant_apps_list property.
+            ## @param value Value to set for the compliantAppsList property.
             ## @return a void
             ## 
             def compliant_apps_list=(value)
                 @compliant_apps_list = value
             end
             ## 
-            ## Instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -98,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the emailInDomainSuffixes property value. An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
-            ## @param value Value to set for the email_in_domain_suffixes property.
+            ## @param value Value to set for the emailInDomainSuffixes property.
             ## @return a void
             ## 
             def email_in_domain_suffixes=(value)
@@ -133,7 +135,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordBlockSimple property value. Block simple passwords.
-            ## @param value Value to set for the password_block_simple property.
+            ## @param value Value to set for the passwordBlockSimple property.
             ## @return a void
             ## 
             def password_block_simple=(value)
@@ -148,7 +150,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordExpirationDays property value. Number of days before the password expires.
-            ## @param value Value to set for the password_expiration_days property.
+            ## @param value Value to set for the passwordExpirationDays property.
             ## @return a void
             ## 
             def password_expiration_days=(value)
@@ -163,7 +165,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumCharacterSetCount property value. Number of character sets a password must contain. Valid values 0 to 4
-            ## @param value Value to set for the password_minimum_character_set_count property.
+            ## @param value Value to set for the passwordMinimumCharacterSetCount property.
             ## @return a void
             ## 
             def password_minimum_character_set_count=(value)
@@ -178,7 +180,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumLength property value. Minimum length of passwords.
-            ## @param value Value to set for the password_minimum_length property.
+            ## @param value Value to set for the passwordMinimumLength property.
             ## @return a void
             ## 
             def password_minimum_length=(value)
@@ -193,7 +195,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity required before a password is required.
-            ## @param value Value to set for the password_minutes_of_inactivity_before_lock property.
+            ## @param value Value to set for the passwordMinutesOfInactivityBeforeLock property.
             ## @return a void
             ## 
             def password_minutes_of_inactivity_before_lock=(value)
@@ -208,7 +210,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity required before the screen times out.
-            ## @param value Value to set for the password_minutes_of_inactivity_before_screen_timeout property.
+            ## @param value Value to set for the passwordMinutesOfInactivityBeforeScreenTimeout property.
             ## @return a void
             ## 
             def password_minutes_of_inactivity_before_screen_timeout=(value)
@@ -223,7 +225,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block.
-            ## @param value Value to set for the password_previous_password_block_count property.
+            ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
             ## @return a void
             ## 
             def password_previous_password_block_count=(value)
@@ -238,7 +240,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequired property value. Whether or not to require a password.
-            ## @param value Value to set for the password_required property.
+            ## @param value Value to set for the passwordRequired property.
             ## @return a void
             ## 
             def password_required=(value)
@@ -253,7 +255,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequiredType property value. Possible values of required passwords.
-            ## @param value Value to set for the password_required_type property.
+            ## @param value Value to set for the passwordRequiredType property.
             ## @return a void
             ## 
             def password_required_type=(value)

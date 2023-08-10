@@ -1,11 +1,12 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/identity_provider_base_collection_response'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../identity'
 require_relative '../../b2x_user_flows'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/identity_provider_base_item_request_builder'
 require_relative './ref/ref_request_builder'
 require_relative './user_flow_identity_providers'
 
@@ -29,6 +30,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Identity::B2xUserFlows::Item::UserFlowIdentityProviders::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Gets an item from the MicrosoftGraph.identity.b2xUserFlows.item.userFlowIdentityProviders.item collection
+                        ## @param identity_provider_base_id Unique identifier of the item
+                        ## @return a identity_provider_base_item_request_builder
+                        ## 
+                        def by_identity_provider_base_id(identity_provider_base_id)
+                            raise StandardError, 'identity_provider_base_id cannot be null' if identity_provider_base_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["identityProviderBase%2Did"] = identity_provider_base_id
+                            return MicrosoftGraph::Identity::B2xUserFlows::Item::UserFlowIdentityProviders::Item::IdentityProviderBaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new UserFlowIdentityProvidersRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -47,8 +59,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityProviderBaseCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 

@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @choices = value
             end
             ## 
-            ## Instantiates a new AccessPackageMultipleChoiceQuestion and sets the default values.
+            ## Instantiates a new accessPackageMultipleChoiceQuestion and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isMultipleSelectionAllowed property value. Indicates whether requestor can select multiple choices as their answer.
-            ## @param value Value to set for the is_multiple_selection_allowed property.
+            ## @param value Value to set for the isMultipleSelectionAllowed property.
             ## @return a void
             ## 
             def is_multiple_selection_allowed=(value)

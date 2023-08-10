@@ -34,7 +34,7 @@ module MicrosoftGraph
             # Schedules for role eligibility operations.
             @role_eligibility_schedules
             ## 
-            ## Instantiates a new RbacApplication and sets the default values.
+            ## Instantiates a new rbacApplication and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceNamespaces property value. The resourceNamespaces property
-            ## @param value Value to set for the resource_namespaces property.
+            ## @param value Value to set for the resourceNamespaces property.
             ## @return a void
             ## 
             def resource_namespaces=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleAssignmentScheduleInstances property value. Instances for active role assignments.
-            ## @param value Value to set for the role_assignment_schedule_instances property.
+            ## @param value Value to set for the roleAssignmentScheduleInstances property.
             ## @return a void
             ## 
             def role_assignment_schedule_instances=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleAssignmentScheduleRequests property value. Requests for active role assignments to principals through PIM.
-            ## @param value Value to set for the role_assignment_schedule_requests property.
+            ## @param value Value to set for the roleAssignmentScheduleRequests property.
             ## @return a void
             ## 
             def role_assignment_schedule_requests=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleAssignmentSchedules property value. Schedules for active role assignment operations.
-            ## @param value Value to set for the role_assignment_schedules property.
+            ## @param value Value to set for the roleAssignmentSchedules property.
             ## @return a void
             ## 
             def role_assignment_schedules=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleAssignments property value. Resource to grant access to users or groups.
-            ## @param value Value to set for the role_assignments property.
+            ## @param value Value to set for the roleAssignments property.
             ## @return a void
             ## 
             def role_assignments=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleDefinitions property value. Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-            ## @param value Value to set for the role_definitions property.
+            ## @param value Value to set for the roleDefinitions property.
             ## @return a void
             ## 
             def role_definitions=(value)
@@ -165,7 +165,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleEligibilityScheduleInstances property value. Instances for role eligibility requests.
-            ## @param value Value to set for the role_eligibility_schedule_instances property.
+            ## @param value Value to set for the roleEligibilityScheduleInstances property.
             ## @return a void
             ## 
             def role_eligibility_schedule_instances=(value)
@@ -180,7 +180,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleEligibilityScheduleRequests property value. Requests for role eligibilities for principals through PIM.
-            ## @param value Value to set for the role_eligibility_schedule_requests property.
+            ## @param value Value to set for the roleEligibilityScheduleRequests property.
             ## @return a void
             ## 
             def role_eligibility_schedule_requests=(value)
@@ -195,7 +195,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleEligibilitySchedules property value. Schedules for role eligibility operations.
-            ## @param value Value to set for the role_eligibility_schedules property.
+            ## @param value Value to set for the roleEligibilitySchedules property.
             ## @return a void
             ## 
             def role_eligibility_schedules=(value)

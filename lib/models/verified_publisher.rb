@@ -31,7 +31,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the addedDateTime property value. The timestamp when the verified publisher was first added or most recently updated.
-            ## @param value Value to set for the added_date_time property.
+            ## @param value Value to set for the addedDateTime property.
             ## @return a void
             ## 
             def added_date_time=(value)
@@ -46,7 +46,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The verified publisher name from the app publisher's Partner Center account.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the verifiedPublisherId property value. The ID of the verified publisher from the app publisher's Partner Center account.
-            ## @param value Value to set for the verified_publisher_id property.
+            ## @param value Value to set for the verifiedPublisherId property.
             ## @return a void
             ## 
             def verified_publisher_id=(value)

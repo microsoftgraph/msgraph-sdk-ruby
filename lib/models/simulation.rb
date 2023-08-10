@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attackTechnique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
-            ## @param value Value to set for the attack_technique property.
+            ## @param value Value to set for the attackTechnique property.
             ## @return a void
             ## 
             def attack_technique=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attackType property value. Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
-            ## @param value Value to set for the attack_type property.
+            ## @param value Value to set for the attackType property.
             ## @return a void
             ## 
             def attack_type=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the automationId property value. Unique identifier for the attack simulation automation.
-            ## @param value Value to set for the automation_id property.
+            ## @param value Value to set for the automationId property.
             ## @return a void
             ## 
             def automation_id=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the completionDateTime property value. Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
-            ## @param value Value to set for the completion_date_time property.
+            ## @param value Value to set for the completionDateTime property.
             ## @return a void
             ## 
             def completion_date_time=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. Identity of the user who created the attack simulation and training campaign.
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Date and time of creation of the attack simulation and training campaign.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -182,7 +182,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display name of the attack simulation and training campaign. Supports $filter and $orderby.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -220,7 +220,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isAutomated property value. Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
-            ## @param value Value to set for the is_automated property.
+            ## @param value Value to set for the isAutomated property.
             ## @return a void
             ## 
             def is_automated=(value)
@@ -235,7 +235,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation and training campaign.
-            ## @param value Value to set for the last_modified_by property.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
@@ -250,7 +250,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. Date and time of the most recent modification of the attack simulation and training campaign.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -265,7 +265,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the launchDateTime property value. Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
-            ## @param value Value to set for the launch_date_time property.
+            ## @param value Value to set for the launchDateTime property.
             ## @return a void
             ## 
             def launch_date_time=(value)
@@ -280,7 +280,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the payloadDeliveryPlatform property value. Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
-            ## @param value Value to set for the payload_delivery_platform property.
+            ## @param value Value to set for the payloadDeliveryPlatform property.
             ## @return a void
             ## 
             def payload_delivery_platform=(value)

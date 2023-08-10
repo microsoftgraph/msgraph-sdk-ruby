@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the actionVerb property value. The actionVerb property
-            ## @param value Value to set for the action_verb property.
+            ## @param value Value to set for the actionVerb property.
             ## @return a void
             ## 
             def action_verb=(value)
@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the authenticationContextId property value. The authenticationContextId property
-            ## @param value Value to set for the authentication_context_id property.
+            ## @param value Value to set for the authenticationContextId property.
             ## @return a void
             ## 
             def authentication_context_id=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isAuthenticationContextSettable property value. The isAuthenticationContextSettable property
-            ## @param value Value to set for the is_authentication_context_settable property.
+            ## @param value Value to set for the isAuthenticationContextSettable property.
             ## @return a void
             ## 
             def is_authentication_context_settable=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceScopeId property value. The resourceScopeId property
-            ## @param value Value to set for the resource_scope_id property.
+            ## @param value Value to set for the resourceScopeId property.
             ## @return a void
             ## 
             def resource_scope_id=(value)

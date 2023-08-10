@@ -27,14 +27,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the canAccept property value. The canAccept property
-            ## @param value Value to set for the can_accept property.
+            ## @param value Value to set for the canAccept property.
             ## @return a void
             ## 
             def can_accept=(value)
                 @can_accept = value
             end
             ## 
-            ## Instantiates a new CalendarSharingMessage and sets the default values.
+            ## Instantiates a new calendarSharingMessage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharingMessageAction property value. The sharingMessageAction property
-            ## @param value Value to set for the sharing_message_action property.
+            ## @param value Value to set for the sharingMessageAction property.
             ## @return a void
             ## 
             def sharing_message_action=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharingMessageActions property value. The sharingMessageActions property
-            ## @param value Value to set for the sharing_message_actions property.
+            ## @param value Value to set for the sharingMessageActions property.
             ## @return a void
             ## 
             def sharing_message_actions=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the suggestedCalendarName property value. The suggestedCalendarName property
-            ## @param value Value to set for the suggested_calendar_name property.
+            ## @param value Value to set for the suggestedCalendarName property.
             ## @return a void
             ## 
             def suggested_calendar_name=(value)

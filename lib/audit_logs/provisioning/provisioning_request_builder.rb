@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../microsoft_graph'
-require_relative '../../models/o_data_errors/o_data_error'
+require_relative '../../models/o_data_errors_o_data_error'
 require_relative '../../models/provisioning_object_summary'
 require_relative '../../models/provisioning_object_summary_collection_response'
 require_relative '../audit_logs'
 require_relative './count/count_request_builder'
+require_relative './item/provisioning_object_summary_item_request_builder'
 require_relative './provisioning'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::AuditLogs::Provisioning::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
+                ## @param provisioning_object_summary_id The unique identifier of provisioningObjectSummary
+                ## @return a provisioning_object_summary_item_request_builder
+                ## 
+                def by_provisioning_object_summary_id(provisioning_object_summary_id)
+                    raise StandardError, 'provisioning_object_summary_id cannot be null' if provisioning_object_summary_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["provisioningObjectSummary%2Did"] = provisioning_object_summary_id
+                    return MicrosoftGraph::AuditLogs::Provisioning::Item::ProvisioningObjectSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new ProvisioningRequestBuilder and sets the default values.
@@ -38,8 +50,8 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ProvisioningObjectSummaryCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -54,8 +66,8 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ProvisioningObjectSummary.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 

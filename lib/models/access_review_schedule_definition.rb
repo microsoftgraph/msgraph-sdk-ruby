@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalNotificationRecipients property value. Defines the list of additional users or group members to be notified of the access review progress.
-            ## @param value Value to set for the additional_notification_recipients property.
+            ## @param value Value to set for the additionalNotificationRecipients property.
             ## @return a void
             ## 
             def additional_notification_recipients=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. User who created this review. Read-only.
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Timestamp when the access review series was created. Supports $select. Read-only.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the descriptionForAdmins property value. Description provided by review creators to provide more context of the review to admins. Supports $select.
-            ## @param value Value to set for the description_for_admins property.
+            ## @param value Value to set for the descriptionForAdmins property.
             ## @return a void
             ## 
             def description_for_admins=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the descriptionForReviewers property value. Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports $select.
-            ## @param value Value to set for the description_for_reviewers property.
+            ## @param value Value to set for the descriptionForReviewers property.
             ## @return a void
             ## 
             def description_for_reviewers=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Name of the access review series. Supports $select and $orderBy. Required on create.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -167,7 +167,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select. NOTE: The value of this property will be ignored if fallback reviewers are assigned through the stageSettings property.
-            ## @param value Value to set for the fallback_reviewers property.
+            ## @param value Value to set for the fallbackReviewers property.
             ## @return a void
             ## 
             def fallback_reviewers=(value)
@@ -205,7 +205,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the instanceEnumerationScope property value. This property is required when scoping a review to guest users' access across all Microsoft 365 groups and determines which Microsoft 365 groups are reviewed. Each group will become a unique accessReviewInstance of the access review series.  For supported scopes, see accessReviewScope. Supports $select. For examples of options for configuring instanceEnumerationScope, see Configure the scope of your access review definition using the Microsoft Graph API.
-            ## @param value Value to set for the instance_enumeration_scope property.
+            ## @param value Value to set for the instanceEnumerationScope property.
             ## @return a void
             ## 
             def instance_enumeration_scope=(value)
@@ -235,7 +235,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. Timestamp when the access review series was last modified. Supports $select. Read-only.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -319,7 +319,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the stageSettings property value. Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.
-            ## @param value Value to set for the stage_settings property.
+            ## @param value Value to set for the stageSettings property.
             ## @return a void
             ## 
             def stage_settings=(value)

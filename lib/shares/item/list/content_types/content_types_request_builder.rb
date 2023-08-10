@@ -2,7 +2,7 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/content_type'
 require_relative '../../../../models/content_type_collection_response'
-require_relative '../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../shares'
 require_relative '../../item'
 require_relative '../list'
@@ -11,6 +11,7 @@ require_relative './add_copy_from_content_type_hub/add_copy_from_content_type_hu
 require_relative './content_types'
 require_relative './count/count_request_builder'
 require_relative './get_compatible_hub_content_types/get_compatible_hub_content_types_request_builder'
+require_relative './item/content_type_item_request_builder'
 
 module MicrosoftGraph
     module Shares
@@ -42,6 +43,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Shares::Item::List::ContentTypes::GetCompatibleHubContentTypes::GetCompatibleHubContentTypesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the contentTypes property of the microsoft.graph.list entity.
+                        ## @param content_type_id The unique identifier of contentType
+                        ## @return a content_type_item_request_builder
+                        ## 
+                        def by_content_type_id(content_type_id)
+                            raise StandardError, 'content_type_id cannot be null' if content_type_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["contentType%2Did"] = content_type_id
+                            return MicrosoftGraph::Shares::Item::List::ContentTypes::Item::ContentTypeItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new ContentTypesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -60,8 +72,8 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContentTypeCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -76,8 +88,8 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContentType.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 

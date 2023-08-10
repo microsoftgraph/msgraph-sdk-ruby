@@ -24,14 +24,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationRestrictions property value. Restrictions that apply as default to all application objects in the tenant.
-            ## @param value Value to set for the application_restrictions property.
+            ## @param value Value to set for the applicationRestrictions property.
             ## @return a void
             ## 
             def application_restrictions=(value)
                 @application_restrictions = value
             end
             ## 
-            ## Instantiates a new TenantAppManagementPolicy and sets the default values.
+            ## Instantiates a new tenantAppManagementPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEnabled property value. Denotes whether the policy is enabled. Default value is false.
-            ## @param value Value to set for the is_enabled property.
+            ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
             def is_enabled=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipalRestrictions property value. Restrictions that apply as default to all service principal objects in the tenant.
-            ## @param value Value to set for the service_principal_restrictions property.
+            ## @param value Value to set for the servicePrincipalRestrictions property.
             ## @return a void
             ## 
             def service_principal_restrictions=(value)

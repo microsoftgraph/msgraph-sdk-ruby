@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../../microsoft_graph'
 require_relative '../../../../../../../../../../models/access_review_instance_decision_item'
-require_relative '../../../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../../../../../../identity_governance'
 require_relative '../../../../../../../../access_reviews'
 require_relative '../../../../../../../definitions'
@@ -11,6 +11,7 @@ require_relative '../../../../item'
 require_relative '../../../stages'
 require_relative '../../item'
 require_relative '../decisions'
+require_relative './insights/insights_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -28,6 +29,11 @@ module MicrosoftGraph
                                             # Provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.
                                             class AccessReviewInstanceDecisionItemItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                                 
+                                                ## 
+                                                # Provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
+                                                def insights()
+                                                    return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::Decisions::Item::Insights::InsightsRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
                                                 ## 
                                                 ## Instantiates a new AccessReviewInstanceDecisionItemItemRequestBuilder and sets the default values.
                                                 ## @param path_parameters Path parameters for the request
@@ -47,12 +53,12 @@ module MicrosoftGraph
                                                         request_configuration
                                                     )
                                                     error_mapping = Hash.new
-                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                                 end
                                                 ## 
-                                                ## Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+                                                ## Read the properties and relationships of an accessReviewInstanceDecisionItem object.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of access_review_instance_decision_item
                                                 ## 
@@ -61,12 +67,12 @@ module MicrosoftGraph
                                                         request_configuration
                                                     )
                                                     error_mapping = Hash.new
-                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewInstanceDecisionItem.create_from_discriminator_value(pn) }, error_mapping)
                                                 end
                                                 ## 
-                                                ## Update the navigation property decisions in identityGovernance
+                                                ## Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
                                                 ## @param body The request body
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of access_review_instance_decision_item
@@ -77,8 +83,8 @@ module MicrosoftGraph
                                                         body, request_configuration
                                                     )
                                                     error_mapping = Hash.new
-                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewInstanceDecisionItem.create_from_discriminator_value(pn) }, error_mapping)
                                                 end
                                                 ## 
@@ -98,7 +104,7 @@ module MicrosoftGraph
                                                     return request_info
                                                 end
                                                 ## 
-                                                ## Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+                                                ## Read the properties and relationships of an accessReviewInstanceDecisionItem object.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
                                                 ## 
@@ -116,7 +122,7 @@ module MicrosoftGraph
                                                     return request_info
                                                 end
                                                 ## 
-                                                ## Update the navigation property decisions in identityGovernance
+                                                ## Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
                                                 ## @param body The request body
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
@@ -137,7 +143,7 @@ module MicrosoftGraph
                                                 end
 
                                                 ## 
-                                                # Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+                                                # Read the properties and relationships of an accessReviewInstanceDecisionItem object.
                                                 class AccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters
                                                     
                                                     ## 

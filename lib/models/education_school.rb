@@ -72,7 +72,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the administrativeUnit property value. The underlying administrativeUnit for this school.
-            ## @param value Value to set for the administrative_unit property.
+            ## @param value Value to set for the administrativeUnit property.
             ## @return a void
             ## 
             def administrative_unit=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
                 @classes = value
             end
             ## 
-            ## Instantiates a new EducationSchool and sets the default values.
+            ## Instantiates a new educationSchool and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -110,7 +110,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. Entity who created the school.
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalId property value. ID of school in syncing system.
-            ## @param value Value to set for the external_id property.
+            ## @param value Value to set for the externalId property.
             ## @return a void
             ## 
             def external_id=(value)
@@ -149,7 +149,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalPrincipalId property value. ID of principal in syncing system.
-            ## @param value Value to set for the external_principal_id property.
+            ## @param value Value to set for the externalPrincipalId property.
             ## @return a void
             ## 
             def external_principal_id=(value)
@@ -201,7 +201,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the highestGrade property value. Highest grade taught.
-            ## @param value Value to set for the highest_grade property.
+            ## @param value Value to set for the highestGrade property.
             ## @return a void
             ## 
             def highest_grade=(value)
@@ -216,7 +216,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lowestGrade property value. Lowest grade taught.
-            ## @param value Value to set for the lowest_grade property.
+            ## @param value Value to set for the lowestGrade property.
             ## @return a void
             ## 
             def lowest_grade=(value)
@@ -246,7 +246,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the principalEmail property value. Email address of the principal.
-            ## @param value Value to set for the principal_email property.
+            ## @param value Value to set for the principalEmail property.
             ## @return a void
             ## 
             def principal_email=(value)
@@ -261,7 +261,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the principalName property value. Name of the principal.
-            ## @param value Value to set for the principal_name property.
+            ## @param value Value to set for the principalName property.
             ## @return a void
             ## 
             def principal_name=(value)
@@ -276,7 +276,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the schoolNumber property value. School Number.
-            ## @param value Value to set for the school_number property.
+            ## @param value Value to set for the schoolNumber property.
             ## @return a void
             ## 
             def school_number=(value)

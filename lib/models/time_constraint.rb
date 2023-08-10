@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
-            ## @param value Value to set for the activity_domain property.
+            ## @param value Value to set for the activityDomain property.
             ## @return a void
             ## 
             def activity_domain=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeSlots property value. The timeSlots property
-            ## @param value Value to set for the time_slots property.
+            ## @param value Value to set for the timeSlots property.
             ## @return a void
             ## 
             def time_slots=(value)

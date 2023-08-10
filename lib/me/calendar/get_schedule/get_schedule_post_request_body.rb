@@ -35,22 +35,22 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the AdditionalData property.
+                    ## @param value Value to set for the additionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
                         @additional_data = value
                     end
                     ## 
-                    ## Gets the availabilityViewInterval property value. The AvailabilityViewInterval property
+                    ## Gets the AvailabilityViewInterval property value. The AvailabilityViewInterval property
                     ## @return a integer
                     ## 
                     def availability_view_interval
                         return @availability_view_interval
                     end
                     ## 
-                    ## Sets the availabilityViewInterval property value. The AvailabilityViewInterval property
-                    ## @param value Value to set for the availability_view_interval property.
+                    ## Sets the AvailabilityViewInterval property value. The AvailabilityViewInterval property
+                    ## @param value Value to set for the AvailabilityViewInterval property.
                     ## @return a void
                     ## 
                     def availability_view_interval=(value)
@@ -73,15 +73,15 @@ module MicrosoftGraph
                         return GetSchedulePostRequestBody.new
                     end
                     ## 
-                    ## Gets the endTime property value. The EndTime property
+                    ## Gets the EndTime property value. The EndTime property
                     ## @return a date_time_time_zone
                     ## 
                     def end_time
                         return @end_time
                     end
                     ## 
-                    ## Sets the endTime property value. The EndTime property
-                    ## @param value Value to set for the end_time property.
+                    ## Sets the EndTime property value. The EndTime property
+                    ## @param value Value to set for the EndTime property.
                     ## @return a void
                     ## 
                     def end_time=(value)
@@ -100,14 +100,14 @@ module MicrosoftGraph
                         }
                     end
                     ## 
-                    ## Gets the schedules property value. The Schedules property
+                    ## Gets the Schedules property value. The Schedules property
                     ## @return a string
                     ## 
                     def schedules
                         return @schedules
                     end
                     ## 
-                    ## Sets the schedules property value. The Schedules property
+                    ## Sets the Schedules property value. The Schedules property
                     ## @param value Value to set for the Schedules property.
                     ## @return a void
                     ## 
@@ -128,15 +128,15 @@ module MicrosoftGraph
                         writer.write_additional_data(@additional_data)
                     end
                     ## 
-                    ## Gets the startTime property value. The StartTime property
+                    ## Gets the StartTime property value. The StartTime property
                     ## @return a date_time_time_zone
                     ## 
                     def start_time
                         return @start_time
                     end
                     ## 
-                    ## Sets the startTime property value. The StartTime property
-                    ## @param value Value to set for the start_time property.
+                    ## Sets the StartTime property value. The StartTime property
+                    ## @param value Value to set for the StartTime property.
                     ## @return a void
                     ## 
                     def start_time=(value)

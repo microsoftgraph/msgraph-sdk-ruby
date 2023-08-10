@@ -46,7 +46,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activeUserCount property value. Active user count of the given tenant.
-            ## @param value Value to set for the active_user_count property.
+            ## @param value Value to set for the activeUserCount property.
             ## @return a void
             ## 
             def active_user_count=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the averageComparativeScores property value. Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
-            ## @param value Value to set for the average_comparative_scores property.
+            ## @param value Value to set for the averageComparativeScores property.
             ## @return a void
             ## 
             def average_comparative_scores=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the azureTenantId property value. GUID string for tenant ID.
-            ## @param value Value to set for the azure_tenant_id property.
+            ## @param value Value to set for the azureTenantId property.
             ## @return a void
             ## 
             def azure_tenant_id=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the controlScores property value. Contains tenant scores for a set of controls.
-            ## @param value Value to set for the control_scores property.
+            ## @param value Value to set for the controlScores property.
             ## @return a void
             ## 
             def control_scores=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The date when the entity is created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the currentScore property value. Tenant current attained score on specified date.
-            ## @param value Value to set for the current_score property.
+            ## @param value Value to set for the currentScore property.
             ## @return a void
             ## 
             def current_score=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enabledServices property value. Microsoft-provided services for the tenant (for example, Exchange online, Skype, Sharepoint).
-            ## @param value Value to set for the enabled_services property.
+            ## @param value Value to set for the enabledServices property.
             ## @return a void
             ## 
             def enabled_services=(value)
@@ -185,7 +185,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the licensedUserCount property value. Licensed user count of the given tenant.
-            ## @param value Value to set for the licensed_user_count property.
+            ## @param value Value to set for the licensedUserCount property.
             ## @return a void
             ## 
             def licensed_user_count=(value)
@@ -200,7 +200,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maxScore property value. Tenant maximum possible score on specified date.
-            ## @param value Value to set for the max_score property.
+            ## @param value Value to set for the maxScore property.
             ## @return a void
             ## 
             def max_score=(value)
@@ -234,7 +234,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
-            ## @param value Value to set for the vendor_information property.
+            ## @param value Value to set for the vendorInformation property.
             ## @return a void
             ## 
             def vendor_information=(value)

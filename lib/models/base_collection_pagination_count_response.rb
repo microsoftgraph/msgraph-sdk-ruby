@@ -24,7 +24,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.count property value. The OdataCount property
-            ## @param value Value to set for the odata_count property.
+            ## @param value Value to set for the @odata.count property.
             ## @return a void
             ## 
             def odata_count=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.nextLink property value. The OdataNextLink property
-            ## @param value Value to set for the odata_next_link property.
+            ## @param value Value to set for the @odata.nextLink property.
             ## @return a void
             ## 
             def odata_next_link=(value)

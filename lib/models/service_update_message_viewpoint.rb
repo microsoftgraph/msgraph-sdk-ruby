@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isArchived property value. Indicates whether the user archived the message.
-            ## @param value Value to set for the is_archived property.
+            ## @param value Value to set for the isArchived property.
             ## @return a void
             ## 
             def is_archived=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isFavorited property value. Indicates whether the user marked the message as favorite.
-            ## @param value Value to set for the is_favorited property.
+            ## @param value Value to set for the isFavorited property.
             ## @return a void
             ## 
             def is_favorited=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isRead property value. Indicates whether the user read the message.
-            ## @param value Value to set for the is_read property.
+            ## @param value Value to set for the isRead property.
             ## @return a void
             ## 
             def is_read=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

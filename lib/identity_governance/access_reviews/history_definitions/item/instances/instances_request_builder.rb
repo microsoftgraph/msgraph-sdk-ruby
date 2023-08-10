@@ -2,13 +2,14 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
 require_relative '../../../../../models/access_review_history_instance'
 require_relative '../../../../../models/access_review_history_instance_collection_response'
-require_relative '../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../models/o_data_errors_o_data_error'
 require_relative '../../../../identity_governance'
 require_relative '../../../access_reviews'
 require_relative '../../history_definitions'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './instances'
+require_relative './item/access_review_history_instance_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::Item::Instances::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the instances property of the microsoft.graph.accessReviewHistoryDefinition entity.
+                            ## @param access_review_history_instance_id The unique identifier of accessReviewHistoryInstance
+                            ## @return a access_review_history_instance_item_request_builder
+                            ## 
+                            def by_access_review_history_instance_id(access_review_history_instance_id)
+                                raise StandardError, 'access_review_history_instance_id cannot be null' if access_review_history_instance_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["accessReviewHistoryInstance%2Did"] = access_review_history_instance_id
+                                return MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::Item::Instances::Item::AccessReviewHistoryInstanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new InstancesRequestBuilder and sets the default values.
@@ -44,8 +56,8 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewHistoryInstanceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
@@ -60,8 +72,8 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewHistoryInstance.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 

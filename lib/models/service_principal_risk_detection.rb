@@ -91,7 +91,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activityDateTime property value. Date and time when the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the activity_date_time property.
+            ## @param value Value to set for the activityDateTime property.
             ## @return a void
             ## 
             def activity_date_time=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalInfo property value. Additional information associated with the risk detection. This string value is represented as a JSON object with the quotations escaped.
-            ## @param value Value to set for the additional_info property.
+            ## @param value Value to set for the additionalInfo property.
             ## @return a void
             ## 
             def additional_info=(value)
@@ -121,14 +121,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appId property value. The unique identifier for the associated application.
-            ## @param value Value to set for the app_id property.
+            ## @param value Value to set for the appId property.
             ## @return a void
             ## 
             def app_id=(value)
                 @app_id = value
             end
             ## 
-            ## Instantiates a new ServicePrincipalRiskDetection and sets the default values.
+            ## Instantiates a new servicePrincipalRiskDetection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -143,7 +143,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the correlationId property value. Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.
-            ## @param value Value to set for the correlation_id property.
+            ## @param value Value to set for the correlationId property.
             ## @return a void
             ## 
             def correlation_id=(value)
@@ -167,7 +167,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the detectedDateTime property value. Date and time when the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            ## @param value Value to set for the detected_date_time property.
+            ## @param value Value to set for the detectedDateTime property.
             ## @return a void
             ## 
             def detected_date_time=(value)
@@ -182,7 +182,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the detectionTimingType property value. Timing of the detected risk , whether real-time or offline. The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
-            ## @param value Value to set for the detection_timing_type property.
+            ## @param value Value to set for the detectionTimingType property.
             ## @return a void
             ## 
             def detection_timing_type=(value)
@@ -225,7 +225,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the ipAddress property value. Provides the IP address of the client from where the risk occurred.
-            ## @param value Value to set for the ip_address property.
+            ## @param value Value to set for the ipAddress property.
             ## @return a void
             ## 
             def ip_address=(value)
@@ -240,7 +240,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyIds property value. The unique identifier for the key credential associated with the risk detection.
-            ## @param value Value to set for the key_ids property.
+            ## @param value Value to set for the keyIds property.
             ## @return a void
             ## 
             def key_ids=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastUpdatedDateTime property value. Date and time when the risk detection was last updated.
-            ## @param value Value to set for the last_updated_date_time property.
+            ## @param value Value to set for the lastUpdatedDateTime property.
             ## @return a void
             ## 
             def last_updated_date_time=(value)
@@ -285,7 +285,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
-            ## @param value Value to set for the request_id property.
+            ## @param value Value to set for the requestId property.
             ## @return a void
             ## 
             def request_id=(value)
@@ -300,7 +300,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-            ## @param value Value to set for the risk_detail property.
+            ## @param value Value to set for the riskDetail property.
             ## @return a void
             ## 
             def risk_detail=(value)
@@ -315,7 +315,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
-            ## @param value Value to set for the risk_event_type property.
+            ## @param value Value to set for the riskEventType property.
             ## @return a void
             ## 
             def risk_event_type=(value)
@@ -330,7 +330,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
-            ## @param value Value to set for the risk_level property.
+            ## @param value Value to set for the riskLevel property.
             ## @return a void
             ## 
             def risk_level=(value)
@@ -345,7 +345,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskState property value. The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised.
-            ## @param value Value to set for the risk_state property.
+            ## @param value Value to set for the riskState property.
             ## @return a void
             ## 
             def risk_state=(value)
@@ -389,7 +389,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipalDisplayName property value. The display name for the service principal.
-            ## @param value Value to set for the service_principal_display_name property.
+            ## @param value Value to set for the servicePrincipalDisplayName property.
             ## @return a void
             ## 
             def service_principal_display_name=(value)
@@ -404,7 +404,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipalId property value. The unique identifier for the service principal. Supports $filter (eq).
-            ## @param value Value to set for the service_principal_id property.
+            ## @param value Value to set for the servicePrincipalId property.
             ## @return a void
             ## 
             def service_principal_id=(value)
@@ -434,7 +434,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
-            ## @param value Value to set for the token_issuer_type property.
+            ## @param value Value to set for the tokenIssuerType property.
             ## @return a void
             ## 
             def token_issuer_type=(value)

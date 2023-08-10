@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isRequired property value. The ID of the custom question.
-            ## @param value Value to set for the is_required property.
+            ## @param value Value to set for the isRequired property.
             ## @return a void
             ## 
             def is_required=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the questionId property value. Indicates whether it is mandatory to answer the custom question.
-            ## @param value Value to set for the question_id property.
+            ## @param value Value to set for the questionId property.
             ## @return a void
             ## 
             def question_id=(value)

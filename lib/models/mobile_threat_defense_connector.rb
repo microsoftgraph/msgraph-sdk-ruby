@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowPartnerToCollectIOSApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
-            ## @param value Value to set for the allow_partner_to_collect_i_o_s_application_metadata property.
+            ## @param value Value to set for the allowPartnerToCollectIOSApplicationMetadata property.
             ## @return a void
             ## 
             def allow_partner_to_collect_i_o_s_application_metadata=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
-            ## @param value Value to set for the allow_partner_to_collect_i_o_s_personal_application_metadata property.
+            ## @param value Value to set for the allowPartnerToCollectIOSPersonalApplicationMetadata property.
             ## @return a void
             ## 
             def allow_partner_to_collect_i_o_s_personal_application_metadata=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the androidDeviceBlockedOnMissingPartnerData property value. For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
-            ## @param value Value to set for the android_device_blocked_on_missing_partner_data property.
+            ## @param value Value to set for the androidDeviceBlockedOnMissingPartnerData property.
             ## @return a void
             ## 
             def android_device_blocked_on_missing_partner_data=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the androidEnabled property value. For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
-            ## @param value Value to set for the android_enabled property.
+            ## @param value Value to set for the androidEnabled property.
             ## @return a void
             ## 
             def android_enabled=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the androidMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
-            ## @param value Value to set for the android_mobile_application_management_enabled property.
+            ## @param value Value to set for the androidMobileApplicationManagementEnabled property.
             ## @return a void
             ## 
             def android_mobile_application_management_enabled=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iosDeviceBlockedOnMissingPartnerData property value. For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
-            ## @param value Value to set for the ios_device_blocked_on_missing_partner_data property.
+            ## @param value Value to set for the iosDeviceBlockedOnMissingPartnerData property.
             ## @return a void
             ## 
             def ios_device_blocked_on_missing_partner_data=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iosEnabled property value. For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
-            ## @param value Value to set for the ios_enabled property.
+            ## @param value Value to set for the iosEnabled property.
             ## @return a void
             ## 
             def ios_enabled=(value)
@@ -207,7 +207,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iosMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
-            ## @param value Value to set for the ios_mobile_application_management_enabled property.
+            ## @param value Value to set for the iosMobileApplicationManagementEnabled property.
             ## @return a void
             ## 
             def ios_mobile_application_management_enabled=(value)
@@ -222,7 +222,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
-            ## @param value Value to set for the last_heartbeat_date_time property.
+            ## @param value Value to set for the lastHeartbeatDateTime property.
             ## @return a void
             ## 
             def last_heartbeat_date_time=(value)
@@ -237,7 +237,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the microsoftDefenderForEndpointAttachEnabled property value. When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.
-            ## @param value Value to set for the microsoft_defender_for_endpoint_attach_enabled property.
+            ## @param value Value to set for the microsoftDefenderForEndpointAttachEnabled property.
             ## @return a void
             ## 
             def microsoft_defender_for_endpoint_attach_enabled=(value)
@@ -252,7 +252,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the partnerState property value. Partner state of this tenant.
-            ## @param value Value to set for the partner_state property.
+            ## @param value Value to set for the partnerState property.
             ## @return a void
             ## 
             def partner_state=(value)
@@ -267,7 +267,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the partnerUnresponsivenessThresholdInDays property value. Get or Set days the per tenant tolerance to unresponsiveness for this partner integration
-            ## @param value Value to set for the partner_unresponsiveness_threshold_in_days property.
+            ## @param value Value to set for the partnerUnresponsivenessThresholdInDays property.
             ## @return a void
             ## 
             def partner_unresponsiveness_threshold_in_days=(value)
@@ -282,7 +282,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the partnerUnsupportedOsVersionBlocked property value. Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner
-            ## @param value Value to set for the partner_unsupported_os_version_blocked property.
+            ## @param value Value to set for the partnerUnsupportedOsVersionBlocked property.
             ## @return a void
             ## 
             def partner_unsupported_os_version_blocked=(value)
@@ -321,7 +321,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.
-            ## @param value Value to set for the windows_device_blocked_on_missing_partner_data property.
+            ## @param value Value to set for the windowsDeviceBlockedOnMissingPartnerData property.
             ## @return a void
             ## 
             def windows_device_blocked_on_missing_partner_data=(value)
@@ -336,7 +336,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows. Default value is FALSE.
-            ## @param value Value to set for the windows_enabled property.
+            ## @param value Value to set for the windowsEnabled property.
             ## @return a void
             ## 
             def windows_enabled=(value)

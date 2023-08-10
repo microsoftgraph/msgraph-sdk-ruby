@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isAnswerEditable property value. Specifies whether the requestor is allowed to edit answers to questions for an assignment by posting an update to accessPackageAssignmentRequest.
-            ## @param value Value to set for the is_answer_editable property.
+            ## @param value Value to set for the isAnswerEditable property.
             ## @return a void
             ## 
             def is_answer_editable=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isRequired property value. Whether the requestor is required to supply an answer or not.
-            ## @param value Value to set for the is_required property.
+            ## @param value Value to set for the isRequired property.
             ## @return a void
             ## 
             def is_required=(value)

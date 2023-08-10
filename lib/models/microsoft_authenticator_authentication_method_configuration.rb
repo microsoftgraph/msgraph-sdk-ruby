@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The isSoftwareOathEnabled property
             @is_software_oath_enabled
             ## 
-            ## Instantiates a new MicrosoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new microsoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -41,7 +41,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the featureSettings property value. A collection of Microsoft Authenticator settings such as application context and location context, and whether they are enabled for all users or specific users only.
-            ## @param value Value to set for the feature_settings property.
+            ## @param value Value to set for the featureSettings property.
             ## @return a void
             ## 
             def feature_settings=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
-            ## @param value Value to set for the include_targets property.
+            ## @param value Value to set for the includeTargets property.
             ## @return a void
             ## 
             def include_targets=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isSoftwareOathEnabled property value. The isSoftwareOathEnabled property
-            ## @param value Value to set for the is_software_oath_enabled property.
+            ## @param value Value to set for the isSoftwareOathEnabled property.
             ## @return a void
             ## 
             def is_software_oath_enabled=(value)

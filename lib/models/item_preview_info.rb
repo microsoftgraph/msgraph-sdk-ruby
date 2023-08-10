@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the getUrl property value. The getUrl property
-            ## @param value Value to set for the get_url property.
+            ## @param value Value to set for the getUrl property.
             ## @return a void
             ## 
             def get_url=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the postParameters property value. The postParameters property
-            ## @param value Value to set for the post_parameters property.
+            ## @param value Value to set for the postParameters property.
             ## @return a void
             ## 
             def post_parameters=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the postUrl property value. The postUrl property
-            ## @param value Value to set for the post_url property.
+            ## @param value Value to set for the postUrl property.
             ## @return a void
             ## 
             def post_url=(value)

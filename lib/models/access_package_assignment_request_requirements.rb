@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -60,7 +60,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowCustomAssignmentSchedule property value. Indicates whether the requestor is allowed to set a custom schedule.
-            ## @param value Value to set for the allow_custom_assignment_schedule property.
+            ## @param value Value to set for the allowCustomAssignmentSchedule property.
             ## @return a void
             ## 
             def allow_custom_assignment_schedule=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isApprovalRequiredForAdd property value. Indicates whether a request to add must be approved by an approver.
-            ## @param value Value to set for the is_approval_required_for_add property.
+            ## @param value Value to set for the isApprovalRequiredForAdd property.
             ## @return a void
             ## 
             def is_approval_required_for_add=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isApprovalRequiredForUpdate property value. Indicates whether a request to update must be approved by an approver.
-            ## @param value Value to set for the is_approval_required_for_update property.
+            ## @param value Value to set for the isApprovalRequiredForUpdate property.
             ## @return a void
             ## 
             def is_approval_required_for_update=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the policyDescription property value. The description of the policy that the user is trying to request access using.
-            ## @param value Value to set for the policy_description property.
+            ## @param value Value to set for the policyDescription property.
             ## @return a void
             ## 
             def policy_description=(value)
@@ -168,7 +168,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the policyDisplayName property value. The display name of the policy that the user is trying to request access using.
-            ## @param value Value to set for the policy_display_name property.
+            ## @param value Value to set for the policyDisplayName property.
             ## @return a void
             ## 
             def policy_display_name=(value)
@@ -183,7 +183,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the policyId property value. The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
-            ## @param value Value to set for the policy_id property.
+            ## @param value Value to set for the policyId property.
             ## @return a void
             ## 
             def policy_id=(value)

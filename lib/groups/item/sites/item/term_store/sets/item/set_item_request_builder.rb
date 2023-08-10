@@ -1,7 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/o_data_errors/o_data_error'
-require_relative '../../../../../../../models/term_store/set'
+require_relative '../../../../../../../models/o_data_errors_o_data_error'
+require_relative '../../../../../../../models/term_store_set'
 require_relative '../../../../../../groups'
 require_relative '../../../../../item'
 require_relative '../../../../sites'
@@ -9,12 +9,9 @@ require_relative '../../../item'
 require_relative '../../term_store'
 require_relative '../sets'
 require_relative './children/children_request_builder'
-require_relative './children/item/term_item_request_builder'
 require_relative './item'
 require_relative './parent_group/parent_group_request_builder'
-require_relative './relations/item/relation_item_request_builder'
 require_relative './relations/relations_request_builder'
-require_relative './terms/item/term_item_request_builder'
 require_relative './terms/terms_request_builder'
 
 module MicrosoftGraph
@@ -50,17 +47,6 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Sets::Item::Terms::TermsRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
-                                    ## Provides operations to manage the children property of the microsoft.graph.termStore.set entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a term_item_request_builder
-                                    ## 
-                                    def children_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["term%2Did"] = id
-                                        return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Sets::Item::Children::Item::TermItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
                                     ## Instantiates a new SetItemRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -70,7 +56,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/sets/{set%2Did}{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Delete navigation property sets for groups
+                                    ## Delete a set object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -79,29 +65,29 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+                                    ## Read the properties and relationships of a set object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                    ## @return a Fiber of set
+                                    ## @return a Fiber of term_store_set
                                     ## 
                                     def get(request_configuration=nil)
                                         request_info = self.to_get_request_information(
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Set.create_from_discriminator_value(pn) }, error_mapping)
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreSet.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Update the navigation property sets in groups
+                                    ## Update the properties of a set object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                    ## @return a Fiber of set
+                                    ## @return a Fiber of term_store_set
                                     ## 
                                     def patch(body, request_configuration=nil)
                                         raise StandardError, 'body cannot be null' if body.nil?
@@ -109,34 +95,12 @@ module MicrosoftGraph
                                             body, request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Set.create_from_discriminator_value(pn) }, error_mapping)
+                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStoreSet.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Provides operations to manage the relations property of the microsoft.graph.termStore.set entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a relation_item_request_builder
-                                    ## 
-                                    def relations_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["relation%2Did"] = id
-                                        return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Sets::Item::Relations::Item::RelationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
-                                    ## Provides operations to manage the terms property of the microsoft.graph.termStore.set entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a term_item_request_builder
-                                    ## 
-                                    def terms_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["term%2Did"] = id
-                                        return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Sets::Item::Terms::Item::TermItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
-                                    ## Delete navigation property sets for groups
+                                    ## Delete a set object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -152,7 +116,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+                                    ## Read the properties and relationships of a set object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -170,7 +134,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Update the navigation property sets in groups
+                                    ## Update the properties of a set object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -191,7 +155,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+                                    # Read the properties and relationships of a set object.
                                     class SetItemRequestBuilderGetQueryParameters
                                         
                                         ## 

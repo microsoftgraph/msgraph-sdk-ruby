@@ -83,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display name for this policy. Required.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)

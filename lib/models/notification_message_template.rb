@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
-            ## @param value Value to set for the branding_options property.
+            ## @param value Value to set for the brandingOptions property.
             ## @return a void
             ## 
             def branding_options=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultLocale property value. The default locale to fallback onto when the requested locale is not available.
-            ## @param value Value to set for the default_locale property.
+            ## @param value Value to set for the defaultLocale property.
             ## @return a void
             ## 
             def default_locale=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display name for the Notification Message Template.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. DateTime the object was last modified.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the localizedNotificationMessages property value. The list of localized messages for this Notification Message Template.
-            ## @param value Value to set for the localized_notification_messages property.
+            ## @param value Value to set for the localizedNotificationMessages property.
             ## @return a void
             ## 
             def localized_notification_messages=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
-            ## @param value Value to set for the role_scope_tag_ids property.
+            ## @param value Value to set for the roleScopeTagIds property.
             ## @return a void
             ## 
             def role_scope_tag_ids=(value)

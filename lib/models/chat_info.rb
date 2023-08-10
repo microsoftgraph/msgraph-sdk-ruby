@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the messageId property value. The unique identifier of a message in a Microsoft Teams channel.
-            ## @param value Value to set for the message_id property.
+            ## @param value Value to set for the messageId property.
             ## @return a void
             ## 
             def message_id=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the replyChainMessageId property value. The ID of the reply message.
-            ## @param value Value to set for the reply_chain_message_id property.
+            ## @param value Value to set for the replyChainMessageId property.
             ## @return a void
             ## 
             def reply_chain_message_id=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the threadId property value. The unique identifier for a thread in Microsoft Teams.
-            ## @param value Value to set for the thread_id property.
+            ## @param value Value to set for the threadId property.
             ## @return a void
             ## 
             def thread_id=(value)

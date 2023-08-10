@@ -24,7 +24,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the chatDisplayName property value. The updated name of the chat.
-            ## @param value Value to set for the chat_display_name property.
+            ## @param value Value to set for the chatDisplayName property.
             ## @return a void
             ## 
             def chat_display_name=(value)
@@ -39,14 +39,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the chatId property value. Unique identifier of the chat.
-            ## @param value Value to set for the chat_id property.
+            ## @param value Value to set for the chatId property.
             ## @return a void
             ## 
             def chat_id=(value)
                 @chat_id = value
             end
             ## 
-            ## Instantiates a new ChatRenamedEventMessageDetail and sets the default values.
+            ## Instantiates a new chatRenamedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

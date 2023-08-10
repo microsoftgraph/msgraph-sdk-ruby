@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The userFlowTypeVersion property
             @user_flow_type_version
             ## 
-            ## Instantiates a new IdentityUserFlow and sets the default values.
+            ## Instantiates a new identityUserFlow and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userFlowType property value. The userFlowType property
-            ## @param value Value to set for the user_flow_type property.
+            ## @param value Value to set for the userFlowType property.
             ## @return a void
             ## 
             def user_flow_type=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userFlowTypeVersion property value. The userFlowTypeVersion property
-            ## @param value Value to set for the user_flow_type_version property.
+            ## @param value Value to set for the userFlowTypeVersion property.
             ## @return a void
             ## 
             def user_flow_type_version=(value)
