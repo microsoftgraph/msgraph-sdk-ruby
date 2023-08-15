@@ -82,7 +82,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+                        ## Retrieve the properties and relationships of an accessPackage object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of access_package
                         ## 
@@ -128,7 +128,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+                        ## Retrieve the properties and relationships of an accessPackage object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -167,7 +167,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
+                        # Retrieve the properties and relationships of an accessPackage object.
                         class AccessPackageItemRequestBuilderGetQueryParameters
                             
                             ## 

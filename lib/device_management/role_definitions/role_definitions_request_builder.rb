@@ -41,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/roleDefinitions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+                ## List properties and relationships of the roleDefinition objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of role_definition_collection_response
                 ## 
@@ -71,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RoleDefinition.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+                ## List properties and relationships of the roleDefinition objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -110,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # List properties and relationships of the deviceAndAppManagementRoleDefinition objects.
+                # List properties and relationships of the roleDefinition objects.
                 class RoleDefinitionsRequestBuilderGetQueryParameters
                     
                     ## 

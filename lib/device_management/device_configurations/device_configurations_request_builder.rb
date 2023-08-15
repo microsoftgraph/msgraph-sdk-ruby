@@ -41,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## List properties and relationships of the windows10SecureAssessmentConfiguration objects.
+                ## List properties and relationships of the androidCustomConfiguration objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device_configuration_collection_response
                 ## 
@@ -55,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceConfigurationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new windows10SecureAssessmentConfiguration object.
+                ## Create a new windows81GeneralConfiguration object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device_configuration
@@ -71,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceConfiguration.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## List properties and relationships of the windows10SecureAssessmentConfiguration objects.
+                ## List properties and relationships of the androidCustomConfiguration objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -89,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a new windows10SecureAssessmentConfiguration object.
+                ## Create a new windows81GeneralConfiguration object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -110,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # List properties and relationships of the windows10SecureAssessmentConfiguration objects.
+                # List properties and relationships of the androidCustomConfiguration objects.
                 class DeviceConfigurationsRequestBuilderGetQueryParameters
                     
                     ## 

@@ -92,7 +92,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Returns the metadata for a [list][].
+                                ## Get a list of rich long-running operations associated with a list.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of list
                                 ## 
@@ -138,7 +138,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Returns the metadata for a [list][].
+                                ## Get a list of rich long-running operations associated with a list.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -177,7 +177,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Returns the metadata for a [list][].
+                                # Get a list of rich long-running operations associated with a list.
                                 class ListItemRequestBuilderGetQueryParameters
                                     
                                     ## 

@@ -44,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read properties and relationships of the managedAppPolicy object.
+                    ## Read properties and relationships of the targetedManagedAppProtection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of managed_app_policy
                     ## 
@@ -90,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Read properties and relationships of the managedAppPolicy object.
+                    ## Read properties and relationships of the targetedManagedAppProtection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -129,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Read properties and relationships of the managedAppPolicy object.
+                    # Read properties and relationships of the targetedManagedAppProtection object.
                     class ManagedAppPolicyItemRequestBuilderGetQueryParameters
                         
                         ## 

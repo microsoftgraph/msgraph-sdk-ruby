@@ -10,6 +10,9 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The checkedOutBy property
+            @checked_out_by
+            ## 
             # The state of publication for this document. Either published or checkout. Read-only.
             @level
             ## 
@@ -34,6 +37,21 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
+            ## Gets the checkedOutBy property value. The checkedOutBy property
+            ## @return a identity_set
+            ## 
+            def checked_out_by
+                return @checked_out_by
+            end
+            ## 
+            ## Sets the checkedOutBy property value. The checkedOutBy property
+            ## @param value Value to set for the checkedOutBy property.
+            ## @return a void
+            ## 
+            def checked_out_by=(value)
+                @checked_out_by = value
+            end
+            ## 
             ## Instantiates a new publicationFacet and sets the default values.
             ## @return a void
             ## 
@@ -55,6 +73,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "checkedOutBy" => lambda {|n| @checked_out_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "level" => lambda {|n| @level = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "versionId" => lambda {|n| @version_id = n.get_string_value() },
@@ -97,6 +116,7 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("checkedOutBy", @checked_out_by)
                 writer.write_string_value("level", @level)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("versionId", @version_id)

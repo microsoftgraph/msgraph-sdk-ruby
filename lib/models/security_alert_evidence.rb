@@ -120,8 +120,6 @@ module MicrosoftGraph
                             return SecurityKubernetesSecretEvidence.new
                         when "#microsoft.graph.security.kubernetesServiceAccountEvidence"
                             return SecurityKubernetesServiceAccountEvidence.new
-                        when "#microsoft.graph.security.kubernetesServiceEvidence"
-                            return SecurityKubernetesServiceEvidence.new
                         when "#microsoft.graph.security.mailboxEvidence"
                             return SecurityMailboxEvidence.new
                         when "#microsoft.graph.security.mailClusterEvidence"

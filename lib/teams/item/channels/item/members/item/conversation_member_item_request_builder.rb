@@ -58,7 +58,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationMember.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Update the role of a conversationMember in a team or channel.
+                                ## Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of conversation_member
@@ -108,7 +108,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Update the role of a conversationMember in a team or channel.
+                                ## Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
