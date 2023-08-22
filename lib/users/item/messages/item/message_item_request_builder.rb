@@ -98,7 +98,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/messages/{message%2Did}{?includeHiddenMessages*,%24select,%24expand}")
                         end
                         ## 
-                        ## Delete a message in the specified user's mailbox, or delete a relationship of the message.
+                        ## Delete eventMessage.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -126,7 +126,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Message.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the properties of an eventMessage object.
+                        ## Update the properties of a message object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of message
@@ -142,7 +142,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Message.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete a message in the specified user's mailbox, or delete a relationship of the message.
+                        ## Delete eventMessage.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -176,7 +176,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the properties of an eventMessage object.
+                        ## Update the properties of a message object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

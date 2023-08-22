@@ -55,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceEnrollmentConfigurationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+                ## Create a new deviceEnrollmentLimitConfiguration object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device_enrollment_configuration
@@ -89,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a new deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+                ## Create a new deviceEnrollmentLimitConfiguration object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information

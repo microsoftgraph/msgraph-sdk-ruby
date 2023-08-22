@@ -78,7 +78,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Deletes a androidWorkProfileCompliancePolicy.
+                    ## Deletes a iosCompliancePolicy.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceCompliancePolicy.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the properties of a androidWorkProfileCompliancePolicy object.
+                    ## Update the properties of a macOSCompliancePolicy object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_compliance_policy
@@ -122,7 +122,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceCompliancePolicy.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Deletes a androidWorkProfileCompliancePolicy.
+                    ## Deletes a iosCompliancePolicy.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -156,7 +156,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the properties of a androidWorkProfileCompliancePolicy object.
+                    ## Update the properties of a macOSCompliancePolicy object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information

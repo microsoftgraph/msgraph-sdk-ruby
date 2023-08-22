@@ -176,6 +176,9 @@ module MicrosoftGraph
             # Security identifier of the group, used in Windows scenarios. Returned by default.
             @security_identifier
             ## 
+            # The serviceProvisioningErrors property
+            @service_provisioning_errors
+            ## 
             # Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
             @settings
             ## 
@@ -200,7 +203,7 @@ module MicrosoftGraph
             # Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
             @unseen_count
             ## 
-            # Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+            # Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
             @visibility
             ## 
             ## Gets the acceptedSenders property value. The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
@@ -566,6 +569,7 @@ module MicrosoftGraph
                     "renewedDateTime" => lambda {|n| @renewed_date_time = n.get_date_time_value() },
                     "securityEnabled" => lambda {|n| @security_enabled = n.get_boolean_value() },
                     "securityIdentifier" => lambda {|n| @security_identifier = n.get_string_value() },
+                    "serviceProvisioningErrors" => lambda {|n| @service_provisioning_errors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ServiceProvisioningError.create_from_discriminator_value(pn) }) },
                     "settings" => lambda {|n| @settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::GroupSetting.create_from_discriminator_value(pn) }) },
                     "sites" => lambda {|n| @sites = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Site.create_from_discriminator_value(pn) }) },
                     "team" => lambda {|n| @team = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Team.create_from_discriminator_value(pn) }) },
@@ -1196,6 +1200,7 @@ module MicrosoftGraph
                 writer.write_date_time_value("renewedDateTime", @renewed_date_time)
                 writer.write_boolean_value("securityEnabled", @security_enabled)
                 writer.write_string_value("securityIdentifier", @security_identifier)
+                writer.write_collection_of_object_values("serviceProvisioningErrors", @service_provisioning_errors)
                 writer.write_collection_of_object_values("settings", @settings)
                 writer.write_collection_of_object_values("sites", @sites)
                 writer.write_object_value("team", @team)
@@ -1205,6 +1210,21 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("transitiveMembers", @transitive_members)
                 writer.write_number_value("unseenCount", @unseen_count)
                 writer.write_string_value("visibility", @visibility)
+            end
+            ## 
+            ## Gets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+            ## @return a service_provisioning_error
+            ## 
+            def service_provisioning_errors
+                return @service_provisioning_errors
+            end
+            ## 
+            ## Sets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+            ## @param value Value to set for the serviceProvisioningErrors property.
+            ## @return a void
+            ## 
+            def service_provisioning_errors=(value)
+                @service_provisioning_errors = value
             end
             ## 
             ## Gets the settings property value. Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
@@ -1327,14 +1347,14 @@ module MicrosoftGraph
                 @unseen_count = value
             end
             ## 
-            ## Gets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+            ## Gets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
             ## @return a string
             ## 
             def visibility
                 return @visibility
             end
             ## 
-            ## Sets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+            ## Sets the visibility property value. Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
             ## @param value Value to set for the visibility property.
             ## @return a void
             ## 

@@ -30,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/roleDefinitions/{roleDefinition%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Deletes a deviceAndAppManagementRoleDefinition.
+                    ## Deletes a roleDefinition.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -44,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read properties and relationships of the roleDefinition object.
+                    ## Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of role_definition
                     ## 
@@ -74,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RoleDefinition.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Deletes a deviceAndAppManagementRoleDefinition.
+                    ## Deletes a roleDefinition.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -90,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Read properties and relationships of the roleDefinition object.
+                    ## Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -129,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Read properties and relationships of the roleDefinition object.
+                    # Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
                     class RoleDefinitionItemRequestBuilderGetQueryParameters
                         
                         ## 

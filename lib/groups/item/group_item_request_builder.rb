@@ -36,6 +36,7 @@ require_relative './remove_favorite/remove_favorite_request_builder'
 require_relative './renew/renew_request_builder'
 require_relative './reset_unseen_count/reset_unseen_count_request_builder'
 require_relative './restore/restore_request_builder'
+require_relative './retry_service_provisioning/retry_service_provisioning_request_builder'
 require_relative './settings/settings_request_builder'
 require_relative './sites/sites_request_builder'
 require_relative './subscribe_by_mail/subscribe_by_mail_request_builder'
@@ -212,6 +213,11 @@ module MicrosoftGraph
                 # Provides operations to call the restore method.
                 def restore()
                     return MicrosoftGraph::Groups::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the retryServiceProvisioning method.
+                def retry_service_provisioning()
+                    return MicrosoftGraph::Groups::Item::RetryServiceProvisioning::RetryServiceProvisioningRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the settings property of the microsoft.graph.group entity.

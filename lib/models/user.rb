@@ -86,7 +86,7 @@ module MicrosoftGraph
             # Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
             @creation_type
             ## 
-            # The customSecurityAttributes property
+            # An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.
             @custom_security_attributes
             ## 
             # The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
@@ -272,7 +272,7 @@ module MicrosoftGraph
             # Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             @owned_devices
             ## 
-            # Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+            # Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             @owned_objects
             ## 
             # Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
@@ -334,6 +334,9 @@ module MicrosoftGraph
             ## 
             # Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
             @security_identifier
+            ## 
+            # The serviceProvisioningErrors property
+            @service_provisioning_errors
             ## 
             # The settings property
             @settings
@@ -784,14 +787,14 @@ module MicrosoftGraph
                 @creation_type = value
             end
             ## 
-            ## Gets the customSecurityAttributes property value. The customSecurityAttributes property
+            ## Gets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.
             ## @return a custom_security_attribute_value
             ## 
             def custom_security_attributes
                 return @custom_security_attributes
             end
             ## 
-            ## Sets the customSecurityAttributes property value. The customSecurityAttributes property
+            ## Sets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.
             ## @param value Value to set for the customSecurityAttributes property.
             ## @return a void
             ## 
@@ -1198,6 +1201,7 @@ module MicrosoftGraph
                     "schools" => lambda {|n| @schools = n.get_collection_of_primitive_values(String) },
                     "scopedRoleMemberOf" => lambda {|n| @scoped_role_member_of = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ScopedRoleMembership.create_from_discriminator_value(pn) }) },
                     "securityIdentifier" => lambda {|n| @security_identifier = n.get_string_value() },
+                    "serviceProvisioningErrors" => lambda {|n| @service_provisioning_errors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ServiceProvisioningError.create_from_discriminator_value(pn) }) },
                     "settings" => lambda {|n| @settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserSettings.create_from_discriminator_value(pn) }) },
                     "showInAddressList" => lambda {|n| @show_in_address_list = n.get_boolean_value() },
                     "signInActivity" => lambda {|n| @sign_in_activity = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SignInActivity.create_from_discriminator_value(pn) }) },
@@ -1845,14 +1849,14 @@ module MicrosoftGraph
                 @owned_devices = value
             end
             ## 
-            ## Gets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+            ## Gets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             ## @return a directory_object
             ## 
             def owned_objects
                 return @owned_objects
             end
             ## 
-            ## Sets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+            ## Sets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
             ## @param value Value to set for the ownedObjects property.
             ## @return a void
             ## 
@@ -2276,6 +2280,7 @@ module MicrosoftGraph
                 writer.write_collection_of_primitive_values("schools", @schools)
                 writer.write_collection_of_object_values("scopedRoleMemberOf", @scoped_role_member_of)
                 writer.write_string_value("securityIdentifier", @security_identifier)
+                writer.write_collection_of_object_values("serviceProvisioningErrors", @service_provisioning_errors)
                 writer.write_object_value("settings", @settings)
                 writer.write_boolean_value("showInAddressList", @show_in_address_list)
                 writer.write_object_value("signInActivity", @sign_in_activity)
@@ -2290,6 +2295,21 @@ module MicrosoftGraph
                 writer.write_string_value("usageLocation", @usage_location)
                 writer.write_string_value("userPrincipalName", @user_principal_name)
                 writer.write_string_value("userType", @user_type)
+            end
+            ## 
+            ## Gets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+            ## @return a service_provisioning_error
+            ## 
+            def service_provisioning_errors
+                return @service_provisioning_errors
+            end
+            ## 
+            ## Sets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+            ## @param value Value to set for the serviceProvisioningErrors property.
+            ## @return a void
+            ## 
+            def service_provisioning_errors=(value)
+                @service_provisioning_errors = value
             end
             ## 
             ## Gets the settings property value. The settings property

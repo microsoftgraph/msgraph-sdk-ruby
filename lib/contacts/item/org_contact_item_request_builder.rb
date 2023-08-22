@@ -12,6 +12,7 @@ require_relative './item'
 require_relative './manager/manager_request_builder'
 require_relative './member_of/member_of_request_builder'
 require_relative './restore/restore_request_builder'
+require_relative './retry_service_provisioning/retry_service_provisioning_request_builder'
 require_relative './transitive_member_of/transitive_member_of_request_builder'
 
 module MicrosoftGraph
@@ -60,6 +61,11 @@ module MicrosoftGraph
                 # Provides operations to call the restore method.
                 def restore()
                     return MicrosoftGraph::Contacts::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the retryServiceProvisioning method.
+                def retry_service_provisioning()
+                    return MicrosoftGraph::Contacts::Item::RetryServiceProvisioning::RetryServiceProvisioningRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.

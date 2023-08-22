@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Retrieve a conversationMember from a chat.
+                            ## Retrieve a conversationMember from a chat or channel.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of conversation_member
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Retrieve a conversationMember from a chat.
+                            ## Retrieve a conversationMember from a chat or channel.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Retrieve a conversationMember from a chat.
+                            # Retrieve a conversationMember from a chat or channel.
                             class ConversationMemberItemRequestBuilderGetQueryParameters
                                 
                                 ## 
