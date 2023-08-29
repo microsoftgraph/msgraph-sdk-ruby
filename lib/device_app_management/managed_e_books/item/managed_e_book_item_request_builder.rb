@@ -68,7 +68,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read properties and relationships of the iosVppEBook object.
+                    ## Read properties and relationships of the managedEBook object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of managed_e_book
                     ## 
@@ -114,7 +114,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Read properties and relationships of the iosVppEBook object.
+                    ## Read properties and relationships of the managedEBook object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -153,7 +153,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Read properties and relationships of the iosVppEBook object.
+                    # Read properties and relationships of the managedEBook object.
                     class ManagedEBookItemRequestBuilderGetQueryParameters
                         
                         ## 

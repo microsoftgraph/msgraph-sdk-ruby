@@ -53,7 +53,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/mobileApps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## List properties and relationships of the androidLobApp objects.
+                ## List properties and relationships of the win32LobApp objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of mobile_app_collection_response
                 ## 
@@ -67,7 +67,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MobileAppCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new microsoftStoreForBusinessApp object.
+                ## Create a new webApp object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of mobile_app
@@ -83,7 +83,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MobileApp.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## List properties and relationships of the androidLobApp objects.
+                ## List properties and relationships of the win32LobApp objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -101,7 +101,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a new microsoftStoreForBusinessApp object.
+                ## Create a new webApp object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -122,7 +122,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # List properties and relationships of the androidLobApp objects.
+                # List properties and relationships of the win32LobApp objects.
                 class MobileAppsRequestBuilderGetQueryParameters
                     
                     ## 

@@ -52,7 +52,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
+                        ## Get a thread object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of conversation_thread
                         ## 
@@ -98,7 +98,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
+                        ## Get a thread object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -137,7 +137,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
+                        # Get a thread object.
                         class ConversationThreadItemRequestBuilderGetQueryParameters
                             
                             ## 

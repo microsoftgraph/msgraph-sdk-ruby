@@ -69,7 +69,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationMemberCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+                                ## Add a conversationMember to a channel.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of conversation_member
@@ -103,7 +103,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Add a conversationMember to a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+                                ## Add a conversationMember to a channel.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information

@@ -56,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read properties and relationships of the deviceEnrollmentConfiguration object.
+                    ## Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_enrollment_configuration
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Read properties and relationships of the deviceEnrollmentConfiguration object.
+                    ## Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -141,7 +141,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Read properties and relationships of the deviceEnrollmentConfiguration object.
+                    # Read properties and relationships of the deviceEnrollmentLimitConfiguration object.
                     class DeviceEnrollmentConfigurationItemRequestBuilderGetQueryParameters
                         
                         ## 

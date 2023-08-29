@@ -58,7 +58,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/me/ownedObjects{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+                ## Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of directory_object_collection_response
                 ## 
@@ -72,7 +72,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObjectCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+                ## Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -91,7 +91,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+                # Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
                 class OwnedObjectsRequestBuilderGetQueryParameters
                     
                     ## 

@@ -70,7 +70,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## The permission that has been granted for a group to a specific application. Supports $expand.
+                        ## Get permissionGrants from groups
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of resource_specific_permission_grant
                         ## 
@@ -116,7 +116,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## The permission that has been granted for a group to a specific application. Supports $expand.
+                        ## Get permissionGrants from groups
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -155,7 +155,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The permission that has been granted for a group to a specific application. Supports $expand.
+                        # Get permissionGrants from groups
                         class ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters
                             
                             ## 

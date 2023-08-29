@@ -36,6 +36,7 @@ require_relative './remove_favorite/remove_favorite_request_builder'
 require_relative './renew/renew_request_builder'
 require_relative './reset_unseen_count/reset_unseen_count_request_builder'
 require_relative './restore/restore_request_builder'
+require_relative './retry_service_provisioning/retry_service_provisioning_request_builder'
 require_relative './settings/settings_request_builder'
 require_relative './sites/sites_request_builder'
 require_relative './subscribe_by_mail/subscribe_by_mail_request_builder'
@@ -214,6 +215,11 @@ module MicrosoftGraph
                     return MicrosoftGraph::Groups::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to call the retryServiceProvisioning method.
+                def retry_service_provisioning()
+                    return MicrosoftGraph::Groups::Item::RetryServiceProvisioning::RetryServiceProvisioningRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the settings property of the microsoft.graph.group entity.
                 def settings()
                     return MicrosoftGraph::Groups::Item::Settings::SettingsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -296,7 +302,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Group.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the properties of a group object.
+                ## Add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of group
@@ -346,7 +352,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the properties of a group object.
+                ## Add a member to a security or Microsoft 365 group through the members navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information

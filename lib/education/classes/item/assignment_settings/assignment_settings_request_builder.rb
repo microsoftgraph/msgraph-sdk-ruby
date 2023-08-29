@@ -54,7 +54,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationAssignmentSettings.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the properties of an educationAssignmentSettings object. Only Teachers can update these settings.
+                        ## Update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of education_assignment_settings
@@ -104,7 +104,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the properties of an educationAssignmentSettings object. Only Teachers can update these settings.
+                        ## Update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
