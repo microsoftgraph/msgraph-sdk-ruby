@@ -56,6 +56,9 @@ module MicrosoftGraph
             # For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0).
             @proxy_addresses
             ## 
+            # The serviceProvisioningErrors property
+            @service_provisioning_errors
+            ## 
             # Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
             @surname
             ## 
@@ -175,6 +178,7 @@ module MicrosoftGraph
                     "onPremisesSyncEnabled" => lambda {|n| @on_premises_sync_enabled = n.get_boolean_value() },
                     "phones" => lambda {|n| @phones = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Phone.create_from_discriminator_value(pn) }) },
                     "proxyAddresses" => lambda {|n| @proxy_addresses = n.get_collection_of_primitive_values(String) },
+                    "serviceProvisioningErrors" => lambda {|n| @service_provisioning_errors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ServiceProvisioningError.create_from_discriminator_value(pn) }) },
                     "surname" => lambda {|n| @surname = n.get_string_value() },
                     "transitiveMemberOf" => lambda {|n| @transitive_member_of = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
                 })
@@ -368,8 +372,24 @@ module MicrosoftGraph
                 writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
                 writer.write_collection_of_object_values("phones", @phones)
                 writer.write_collection_of_primitive_values("proxyAddresses", @proxy_addresses)
+                writer.write_collection_of_object_values("serviceProvisioningErrors", @service_provisioning_errors)
                 writer.write_string_value("surname", @surname)
                 writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of)
+            end
+            ## 
+            ## Gets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+            ## @return a service_provisioning_error
+            ## 
+            def service_provisioning_errors
+                return @service_provisioning_errors
+            end
+            ## 
+            ## Sets the serviceProvisioningErrors property value. The serviceProvisioningErrors property
+            ## @param value Value to set for the serviceProvisioningErrors property.
+            ## @return a void
+            ## 
+            def service_provisioning_errors=(value)
+                @service_provisioning_errors = value
             end
             ## 
             ## Gets the surname property value. Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).

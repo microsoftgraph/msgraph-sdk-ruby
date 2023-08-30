@@ -120,6 +120,15 @@ module MicrosoftGraph
                                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                             return request_info
                                         end
+                                        ## 
+                                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                        ## @param raw_url The raw URL to use for the request builder.
+                                        ## @return a submitted_resources_request_builder
+                                        ## 
+                                        def with_url(raw_url)
+                                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                            return SubmittedResourcesRequestBuilder.new(raw_url, @request_adapter)
+                                        end
 
                                         ## 
                                         # List the educationSubmissionResource objects that have officially been submitted for grading. Only teachers, students, and applications with application permissions can perform this operation. The student who owns the submission cannot change the submitted list without resubmitting the assignment. This is a wrapper around the real resource and can contain a pointer back to the actual assignment resource if this resource was copied from the assignment.

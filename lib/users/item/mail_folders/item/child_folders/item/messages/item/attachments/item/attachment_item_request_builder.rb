@@ -99,6 +99,15 @@ module MicrosoftGraph
                                                     end
                                                     return request_info
                                                 end
+                                                ## 
+                                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                                ## @param raw_url The raw URL to use for the request builder.
+                                                ## @return a attachment_item_request_builder
+                                                ## 
+                                                def with_url(raw_url)
+                                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                                    return AttachmentItemRequestBuilder.new(raw_url, @request_adapter)
+                                                end
 
                                                 ## 
                                                 # Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 

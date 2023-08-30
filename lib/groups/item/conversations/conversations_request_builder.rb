@@ -57,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Use reply thread or reply post to further post to that conversation.
+                    ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of conversation
@@ -91,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Use reply thread or reply post to further post to that conversation.
+                    ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -109,6 +109,15 @@ module MicrosoftGraph
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a conversations_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return ConversationsRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

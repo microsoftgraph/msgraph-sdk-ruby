@@ -112,6 +112,15 @@ module MicrosoftGraph
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a effective_rules_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return EffectiveRulesRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
                         # The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.

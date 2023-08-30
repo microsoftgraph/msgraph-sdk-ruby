@@ -67,7 +67,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Deletes a sharedPCConfiguration.
+                    ## Deletes a macOSGeneralDeviceConfiguration.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -81,7 +81,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read properties and relationships of the iosGeneralDeviceConfiguration object.
+                    ## Read properties and relationships of the iosDeviceFeaturesConfiguration object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_configuration
                     ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
                         return GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder.new(@path_parameters, @request_adapter, secretReferenceValueId)
                     end
                     ## 
-                    ## Update the properties of a androidWorkProfileGeneralDeviceConfiguration object.
+                    ## Update the properties of a androidWorkProfileCustomConfiguration object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_configuration
@@ -120,7 +120,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceConfiguration.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Deletes a sharedPCConfiguration.
+                    ## Deletes a macOSGeneralDeviceConfiguration.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -136,7 +136,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Read properties and relationships of the iosGeneralDeviceConfiguration object.
+                    ## Read properties and relationships of the iosDeviceFeaturesConfiguration object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -154,7 +154,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the properties of a androidWorkProfileGeneralDeviceConfiguration object.
+                    ## Update the properties of a androidWorkProfileCustomConfiguration object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -173,9 +173,18 @@ module MicrosoftGraph
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a device_configuration_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return DeviceConfigurationItemRequestBuilder.new(raw_url, @request_adapter)
+                    end
 
                     ## 
-                    # Read properties and relationships of the iosGeneralDeviceConfiguration object.
+                    # Read properties and relationships of the iosDeviceFeaturesConfiguration object.
                     class DeviceConfigurationItemRequestBuilderGetQueryParameters
                         
                         ## 

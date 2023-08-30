@@ -120,6 +120,15 @@ module MicrosoftGraph
                                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                             return request_info
                                         end
+                                        ## 
+                                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                        ## @param raw_url The raw URL to use for the request builder.
+                                        ## @return a outcomes_request_builder
+                                        ## 
+                                        def with_url(raw_url)
+                                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                            return OutcomesRequestBuilder.new(raw_url, @request_adapter)
+                                        end
 
                                         ## 
                                         # Retrieve a list of educationOutcome objects. There are four types of outcomes: educationPointsOutcome, educationFeedbackOutcome, educationRubricOutcome, and educationFeedbackResourceOutcome. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) will have an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) will have both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), will have an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, will have an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource will have an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, points and publishedPoints, feedback and publishedFeedback. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.

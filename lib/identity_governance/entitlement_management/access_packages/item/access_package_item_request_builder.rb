@@ -165,6 +165,15 @@ module MicrosoftGraph
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a access_package_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return AccessPackageItemRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
                         # Retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.

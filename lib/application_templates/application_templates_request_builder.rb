@@ -69,6 +69,15 @@ module MicrosoftGraph
                 end
                 return request_info
             end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a application_templates_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return ApplicationTemplatesRequestBuilder.new(raw_url, @request_adapter)
+            end
 
             ## 
             # Retrieve a list of applicationTemplate objects from the Azure AD application gallery.

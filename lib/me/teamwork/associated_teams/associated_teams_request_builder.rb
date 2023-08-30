@@ -110,6 +110,15 @@ module MicrosoftGraph
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a associated_teams_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return AssociatedTeamsRequestBuilder.new(raw_url, @request_adapter)
+                    end
 
                     ## 
                     # Get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
