@@ -71,7 +71,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "externalTenants" => lambda {|n| @external_tenants = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessExternalTenants.create_from_discriminator_value(pn) }) },
-                    "guestOrExternalUserTypes" => lambda {|n| @guest_or_external_user_types = n.get_enum_value(MicrosoftGraph::Models::ConditionalAccessGuestOrExternalUserTypes) },
+                    "guestOrExternalUserTypes" => lambda {|n| @guest_or_external_user_types = n.get_enum_values(MicrosoftGraph::Models::ConditionalAccessGuestOrExternalUserTypes) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end

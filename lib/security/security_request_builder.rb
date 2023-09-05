@@ -11,6 +11,7 @@ require_relative './microsoft_graph_security_run_hunting_query/microsoft_graph_s
 require_relative './secure_score_control_profiles/secure_score_control_profiles_request_builder'
 require_relative './secure_scores/secure_scores_request_builder'
 require_relative './security'
+require_relative './subject_rights_requests/subject_rights_requests_request_builder'
 require_relative './threat_intelligence/threat_intelligence_request_builder'
 require_relative './triggers/triggers_request_builder'
 require_relative './trigger_types/trigger_types_request_builder'
@@ -60,6 +61,11 @@ module MicrosoftGraph
             # Provides operations to manage the secureScores property of the microsoft.graph.security entity.
             def secure_scores()
                 return MicrosoftGraph::Security::SecureScores::SecureScoresRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
+            def subject_rights_requests()
+                return MicrosoftGraph::Security::SubjectRightsRequests::SubjectRightsRequestsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the threatIntelligence property of the microsoft.graph.security entity.
@@ -152,6 +158,15 @@ module MicrosoftGraph
                 end
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a security_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return SecurityRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

@@ -9,6 +9,7 @@ require_relative '../../workflows'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './item/user_processing_result_item_request_builder'
+require_relative './microsoft_graph_identity_governance_summary_with_start_date_time_with_end_date_time/36c018190cb6abe4c63d851569a210559aeb9b9bde4779989f2d89224122762b'
 require_relative './user_processing_results'
 
 module MicrosoftGraph
@@ -61,6 +62,17 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityGovernanceUserProcessingResultCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
+                            ## Provides operations to call the summary method.
+                            ## @param end_date_time Usage: endDateTime={endDateTime}
+                            ## @param start_date_time Usage: startDateTime={startDateTime}
+                            ## @return a microsoft_graph_identity_governance_summary_with_start_date_time_with_end_date_time_request_builder
+                            ## 
+                            def microsoft_graph_identity_governance_summary_with_start_date_time_with_end_date_time(end_date_time, start_date_time)
+                                raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
+                                raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
+                                return MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, startDateTime)
+                            end
+                            ## 
                             ## Get the userProcessingResult resources for a workflow.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -77,6 +89,15 @@ module MicrosoftGraph
                                     request_info.add_request_options(request_configuration.options)
                                 end
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a user_processing_results_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return UserProcessingResultsRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 

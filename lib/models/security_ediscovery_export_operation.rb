@@ -111,7 +111,7 @@ module MicrosoftGraph
                 return super.merge({
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "exportFileMetadata" => lambda {|n| @export_file_metadata = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecurityExportFileMetadata.create_from_discriminator_value(pn) }) },
-                    "exportOptions" => lambda {|n| @export_options = n.get_enum_value(MicrosoftGraph::Models::SecurityExportOptions) },
+                    "exportOptions" => lambda {|n| @export_options = n.get_enum_values(MicrosoftGraph::Models::SecurityExportOptions) },
                     "exportStructure" => lambda {|n| @export_structure = n.get_enum_value(MicrosoftGraph::Models::SecurityExportFileStructure) },
                     "outputName" => lambda {|n| @output_name = n.get_string_value() },
                     "reviewSet" => lambda {|n| @review_set = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryReviewSet.create_from_discriminator_value(pn) }) },

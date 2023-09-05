@@ -103,8 +103,8 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_value(MicrosoftGraph::Models::WindowsArchitecture) },
-                    "applicableDeviceTypes" => lambda {|n| @applicable_device_types = n.get_enum_value(MicrosoftGraph::Models::WindowsDeviceType) },
+                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_values(MicrosoftGraph::Models::WindowsArchitecture) },
+                    "applicableDeviceTypes" => lambda {|n| @applicable_device_types = n.get_enum_values(MicrosoftGraph::Models::WindowsDeviceType) },
                     "committedContainedApps" => lambda {|n| @committed_contained_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MobileContainedApp.create_from_discriminator_value(pn) }) },
                     "identityName" => lambda {|n| @identity_name = n.get_string_value() },
                     "identityPublisherHash" => lambda {|n| @identity_publisher_hash = n.get_string_value() },

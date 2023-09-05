@@ -113,6 +113,9 @@ module MicrosoftGraph
             # References application or service contact information from a Service or Asset Management database. Nullable.
             @service_management_reference
             ## 
+            # Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+            @service_principal_lock_configuration
+            ## 
             # Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
             @sign_in_audience
             ## 
@@ -422,6 +425,7 @@ module MicrosoftGraph
                     "requiredResourceAccess" => lambda {|n| @required_resource_access = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::RequiredResourceAccess.create_from_discriminator_value(pn) }) },
                     "samlMetadataUrl" => lambda {|n| @saml_metadata_url = n.get_string_value() },
                     "serviceManagementReference" => lambda {|n| @service_management_reference = n.get_string_value() },
+                    "servicePrincipalLockConfiguration" => lambda {|n| @service_principal_lock_configuration = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ServicePrincipalLockConfiguration.create_from_discriminator_value(pn) }) },
                     "signInAudience" => lambda {|n| @sign_in_audience = n.get_string_value() },
                     "spa" => lambda {|n| @spa = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SpaApplication.create_from_discriminator_value(pn) }) },
                     "synchronization" => lambda {|n| @synchronization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Synchronization.create_from_discriminator_value(pn) }) },
@@ -761,6 +765,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("requiredResourceAccess", @required_resource_access)
                 writer.write_string_value("samlMetadataUrl", @saml_metadata_url)
                 writer.write_string_value("serviceManagementReference", @service_management_reference)
+                writer.write_object_value("servicePrincipalLockConfiguration", @service_principal_lock_configuration)
                 writer.write_string_value("signInAudience", @sign_in_audience)
                 writer.write_object_value("spa", @spa)
                 writer.write_object_value("synchronization", @synchronization)
@@ -785,6 +790,21 @@ module MicrosoftGraph
             ## 
             def service_management_reference=(value)
                 @service_management_reference = value
+            end
+            ## 
+            ## Gets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+            ## @return a service_principal_lock_configuration
+            ## 
+            def service_principal_lock_configuration
+                return @service_principal_lock_configuration
+            end
+            ## 
+            ## Sets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+            ## @param value Value to set for the servicePrincipalLockConfiguration property.
+            ## @return a void
+            ## 
+            def service_principal_lock_configuration=(value)
+                @service_principal_lock_configuration = value
             end
             ## 
             ## Gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).

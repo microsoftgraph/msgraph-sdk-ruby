@@ -185,7 +185,7 @@ module MicrosoftGraph
                     "mailboxFull" => lambda {|n| @mailbox_full = n.get_boolean_value() },
                     "maxMessageSize" => lambda {|n| @max_message_size = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "recipientScope" => lambda {|n| @recipient_scope = n.get_enum_value(MicrosoftGraph::Models::RecipientScopeType) },
+                    "recipientScope" => lambda {|n| @recipient_scope = n.get_enum_values(MicrosoftGraph::Models::RecipientScopeType) },
                     "recipientSuggestions" => lambda {|n| @recipient_suggestions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Recipient.create_from_discriminator_value(pn) }) },
                     "totalMemberCount" => lambda {|n| @total_member_count = n.get_number_value() },
                 }

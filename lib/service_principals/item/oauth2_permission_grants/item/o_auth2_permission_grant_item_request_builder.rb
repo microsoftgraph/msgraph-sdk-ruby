@@ -57,6 +57,15 @@ module MicrosoftGraph
                             end
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a o_auth2_permission_grant_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return OAuth2PermissionGrantItemRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
                         # Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.

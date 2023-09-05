@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CrossTenantIdentitySyncPolicyPartner.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the user synchronization policy of a partner-specific configuration.
+                            ## Create a cross-tenant user synchronization policy for a partner-specific configuration.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of cross_tenant_identity_sync_policy_partner
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the user synchronization policy of a partner-specific configuration.
+                            ## Create a cross-tenant user synchronization policy for a partner-specific configuration.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -124,6 +124,15 @@ module MicrosoftGraph
                                 end
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a identity_synchronization_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return IdentitySynchronizationRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 

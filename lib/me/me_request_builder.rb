@@ -64,6 +64,7 @@ require_relative './reminder_view_with_start_date_time_with_end_date_time/remind
 require_relative './remove_all_devices_from_management/remove_all_devices_from_management_request_builder'
 require_relative './reprocess_license_assignment/reprocess_license_assignment_request_builder'
 require_relative './restore/restore_request_builder'
+require_relative './retry_service_provisioning/retry_service_provisioning_request_builder'
 require_relative './revoke_sign_in_sessions/revoke_sign_in_sessions_request_builder'
 require_relative './scoped_role_member_of/scoped_role_member_of_request_builder'
 require_relative './send_mail/send_mail_request_builder'
@@ -376,6 +377,11 @@ module MicrosoftGraph
                 return MicrosoftGraph::Me::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to call the retryServiceProvisioning method.
+            def retry_service_provisioning()
+                return MicrosoftGraph::Me::RetryServiceProvisioning::RetryServiceProvisioningRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to call the revokeSignInSessions method.
             def revoke_sign_in_sessions()
                 return MicrosoftGraph::Me::RevokeSignInSessions::RevokeSignInSessionsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -518,6 +524,15 @@ module MicrosoftGraph
                 end
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a me_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return MeRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 
