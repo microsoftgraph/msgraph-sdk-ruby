@@ -13,6 +13,9 @@ module MicrosoftGraph
             # The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
             @availability
             ## 
+            # The statusMessage property
+            @status_message
+            ## 
             ## Gets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
             ## @return a string
             ## 
@@ -66,6 +69,7 @@ module MicrosoftGraph
                 return super.merge({
                     "activity" => lambda {|n| @activity = n.get_string_value() },
                     "availability" => lambda {|n| @availability = n.get_string_value() },
+                    "statusMessage" => lambda {|n| @status_message = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PresenceStatusMessage.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -78,6 +82,22 @@ module MicrosoftGraph
                 super
                 writer.write_string_value("activity", @activity)
                 writer.write_string_value("availability", @availability)
+                writer.write_object_value("statusMessage", @status_message)
+            end
+            ## 
+            ## Gets the statusMessage property value. The statusMessage property
+            ## @return a presence_status_message
+            ## 
+            def status_message
+                return @status_message
+            end
+            ## 
+            ## Sets the statusMessage property value. The statusMessage property
+            ## @param value Value to set for the statusMessage property.
+            ## @return a void
+            ## 
+            def status_message=(value)
+                @status_message = value
             end
         end
     end

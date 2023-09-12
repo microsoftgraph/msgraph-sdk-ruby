@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The unique idenfier for an entity. Read-only.
+            # The unique identifier for an entity. Read-only.
             @id
             ## 
             # The OdataType property
@@ -728,6 +728,8 @@ module MicrosoftGraph
                             return MacOSCustomConfiguration.new
                         when "#microsoft.graph.macOSDeviceFeaturesConfiguration"
                             return MacOSDeviceFeaturesConfiguration.new
+                        when "#microsoft.graph.macOSDmgApp"
+                            return MacOSDmgApp.new
                         when "#microsoft.graph.macOSGeneralDeviceConfiguration"
                             return MacOSGeneralDeviceConfiguration.new
                         when "#microsoft.graph.macOSLobApp"
@@ -1400,6 +1402,8 @@ module MicrosoftGraph
                             return UserExperienceAnalyticsDeviceStartupHistory.new
                         when "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcess"
                             return UserExperienceAnalyticsDeviceStartupProcess.new
+                        when "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcessPerformance"
+                            return UserExperienceAnalyticsDeviceStartupProcessPerformance.new
                         when "#microsoft.graph.userExperienceAnalyticsMetric"
                             return UserExperienceAnalyticsMetric.new
                         when "#microsoft.graph.userExperienceAnalyticsMetricHistory"
@@ -1615,14 +1619,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the id property value. The unique idenfier for an entity. Read-only.
+            ## Gets the id property value. The unique identifier for an entity. Read-only.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The unique idenfier for an entity. Read-only.
+            ## Sets the id property value. The unique identifier for an entity. Read-only.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

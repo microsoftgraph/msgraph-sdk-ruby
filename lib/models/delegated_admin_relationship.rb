@@ -41,7 +41,7 @@ module MicrosoftGraph
             # The requests associated with the delegated admin relationship.
             @requests
             ## 
-            # The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
+            # The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
             @status
             ## 
             ## Gets the accessAssignments property value. The access assignments associated with the delegated admin relationship.
@@ -266,14 +266,14 @@ module MicrosoftGraph
                 writer.write_enum_value("status", @status)
             end
             ## 
-            ## Gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
+            ## Gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
             ## @return a delegated_admin_relationship_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
+            ## Sets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

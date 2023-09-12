@@ -81,7 +81,7 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "additionalDataOptions" => lambda {|n| @additional_data_options = n.get_enum_value(MicrosoftGraph::Models::SecurityAdditionalDataOptions) },
+                                            "additionalDataOptions" => lambda {|n| @additional_data_options = n.get_enum_values(MicrosoftGraph::Models::SecurityAdditionalDataOptions) },
                                             "search" => lambda {|n| @search = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoverySearch.create_from_discriminator_value(pn) }) },
                                         }
                                     end

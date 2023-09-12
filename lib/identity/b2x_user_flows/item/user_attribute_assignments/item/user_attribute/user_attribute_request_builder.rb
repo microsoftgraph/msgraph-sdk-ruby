@@ -61,6 +61,15 @@ module MicrosoftGraph
                                     end
                                     return request_info
                                 end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a user_attribute_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return UserAttributeRequestBuilder.new(raw_url, @request_adapter)
+                                end
 
                                 ## 
                                 # The user attribute that you want to add to your user flow.

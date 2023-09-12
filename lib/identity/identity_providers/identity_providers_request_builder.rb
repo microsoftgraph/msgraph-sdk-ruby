@@ -114,6 +114,15 @@ module MicrosoftGraph
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
                 end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a identity_providers_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return IdentityProvidersRequestBuilder.new(raw_url, @request_adapter)
+                end
 
                 ## 
                 # Get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For an Azure AD tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, or appleManagedIdentityProvider objects.

@@ -120,6 +120,15 @@ module MicrosoftGraph
                                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                             return request_info
                                         end
+                                        ## 
+                                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                        ## @param raw_url The raw URL to use for the request builder.
+                                        ## @return a linked_resources_request_builder
+                                        ## 
+                                        def with_url(raw_url)
+                                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                            return LinkedResourcesRequestBuilder.new(raw_url, @request_adapter)
+                                        end
 
                                         ## 
                                         # Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.

@@ -135,6 +135,15 @@ module MicrosoftGraph
                                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                         return request_info
                                     end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a onenote_resource_item_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return OnenoteResourceItemRequestBuilder.new(raw_url, @request_adapter)
+                                    end
 
                                     ## 
                                     # The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.

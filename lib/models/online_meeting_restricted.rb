@@ -70,9 +70,9 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "contentSharingDisabled" => lambda {|n| @content_sharing_disabled = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingContentSharingDisabledReason) },
+                    "contentSharingDisabled" => lambda {|n| @content_sharing_disabled = n.get_enum_values(MicrosoftGraph::Models::OnlineMeetingContentSharingDisabledReason) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "videoDisabled" => lambda {|n| @video_disabled = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingVideoDisabledReason) },
+                    "videoDisabled" => lambda {|n| @video_disabled = n.get_enum_values(MicrosoftGraph::Models::OnlineMeetingVideoDisabledReason) },
                 }
             end
             ## 

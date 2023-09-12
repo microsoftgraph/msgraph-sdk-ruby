@@ -79,12 +79,12 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "dlpAction" => lambda {|n| @dlp_action = n.get_enum_value(MicrosoftGraph::Models::ChatMessagePolicyViolationDlpActionTypes) },
+                    "dlpAction" => lambda {|n| @dlp_action = n.get_enum_values(MicrosoftGraph::Models::ChatMessagePolicyViolationDlpActionTypes) },
                     "justificationText" => lambda {|n| @justification_text = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "policyTip" => lambda {|n| @policy_tip = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ChatMessagePolicyViolationPolicyTip.create_from_discriminator_value(pn) }) },
-                    "userAction" => lambda {|n| @user_action = n.get_enum_value(MicrosoftGraph::Models::ChatMessagePolicyViolationUserActionTypes) },
-                    "verdictDetails" => lambda {|n| @verdict_details = n.get_enum_value(MicrosoftGraph::Models::ChatMessagePolicyViolationVerdictDetailsTypes) },
+                    "userAction" => lambda {|n| @user_action = n.get_enum_values(MicrosoftGraph::Models::ChatMessagePolicyViolationUserActionTypes) },
+                    "verdictDetails" => lambda {|n| @verdict_details = n.get_enum_values(MicrosoftGraph::Models::ChatMessagePolicyViolationVerdictDetailsTypes) },
                 }
             end
             ## 

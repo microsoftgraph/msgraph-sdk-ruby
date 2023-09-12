@@ -7,6 +7,7 @@ require_relative './clear_presence/clear_presence_request_builder'
 require_relative './clear_user_preferred_presence/clear_user_preferred_presence_request_builder'
 require_relative './presence'
 require_relative './set_presence/set_presence_request_builder'
+require_relative './set_status_message/set_status_message_request_builder'
 require_relative './set_user_preferred_presence/set_user_preferred_presence_request_builder'
 
 module MicrosoftGraph
@@ -30,6 +31,11 @@ module MicrosoftGraph
                 # Provides operations to call the setPresence method.
                 def set_presence()
                     return MicrosoftGraph::Me::Presence::SetPresence::SetPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the setStatusMessage method.
+                def set_status_message()
+                    return MicrosoftGraph::Me::Presence::SetStatusMessage::SetStatusMessageRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to call the setUserPreferredPresence method.
@@ -142,6 +148,15 @@ module MicrosoftGraph
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a presence_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return PresenceRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

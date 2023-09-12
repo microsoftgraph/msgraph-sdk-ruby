@@ -59,6 +59,15 @@ module MicrosoftGraph
                                 end
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a password_authentication_method_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return PasswordAuthenticationMethodItemRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
                             # Retrieve a password that's registered to a user, represented by a passwordAuthenticationMethod object. For security, the password itself will never be returned in the object and the password property is always null.

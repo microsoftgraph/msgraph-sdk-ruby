@@ -108,6 +108,15 @@ module MicrosoftGraph
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
                 end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a booking_businesses_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return BookingBusinessesRequestBuilder.new(raw_url, @request_adapter)
+                end
 
                 ## 
                 # Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.
