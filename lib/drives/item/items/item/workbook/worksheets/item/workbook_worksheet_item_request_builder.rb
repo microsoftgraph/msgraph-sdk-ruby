@@ -203,6 +203,15 @@ module MicrosoftGraph
                                         raise StandardError, 'values_only cannot be null' if values_only.nil?
                                         return UsedRangeWithValuesOnlyRequestBuilder.new(@path_parameters, @request_adapter, valuesOnly)
                                     end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a workbook_worksheet_item_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return WorkbookWorksheetItemRequestBuilder.new(raw_url, @request_adapter)
+                                    end
 
                                     ## 
                                     # Retrieve the properties and relationships of worksheet object.

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The error if the status is not successful.
+            # The error if the status isn't successful.
             @error
             ## 
             # The OdataType property
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 return SecurityRetentionEventStatus.new
             end
             ## 
-            ## Gets the error property value. The error if the status is not successful.
+            ## Gets the error property value. The error if the status isn't successful.
             ## @return a public_error
             ## 
             def error
                 return @error
             end
             ## 
-            ## Sets the error property value. The error if the status is not successful.
+            ## Sets the error property value. The error if the status isn't successful.
             ## @param value Value to set for the error property.
             ## @return a void
             ## 

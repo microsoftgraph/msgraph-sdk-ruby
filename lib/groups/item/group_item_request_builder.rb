@@ -36,6 +36,7 @@ require_relative './remove_favorite/remove_favorite_request_builder'
 require_relative './renew/renew_request_builder'
 require_relative './reset_unseen_count/reset_unseen_count_request_builder'
 require_relative './restore/restore_request_builder'
+require_relative './retry_service_provisioning/retry_service_provisioning_request_builder'
 require_relative './settings/settings_request_builder'
 require_relative './sites/sites_request_builder'
 require_relative './subscribe_by_mail/subscribe_by_mail_request_builder'
@@ -214,6 +215,11 @@ module MicrosoftGraph
                     return MicrosoftGraph::Groups::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to call the retryServiceProvisioning method.
+                def retry_service_provisioning()
+                    return MicrosoftGraph::Groups::Item::RetryServiceProvisioning::RetryServiceProvisioningRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the settings property of the microsoft.graph.group entity.
                 def settings()
                     return MicrosoftGraph::Groups::Item::Settings::SettingsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -364,6 +370,15 @@ module MicrosoftGraph
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a group_item_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return GroupItemRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

@@ -98,6 +98,8 @@ module MicrosoftGraph
                             return RemoteLockActionResult.new
                         when "#microsoft.graph.resetPasscodeActionResult"
                             return ResetPasscodeActionResult.new
+                        when "#microsoft.graph.rotateBitLockerKeysDeviceActionResult"
+                            return RotateBitLockerKeysDeviceActionResult.new
                         when "#microsoft.graph.windowsDefenderScanActionResult"
                             return WindowsDefenderScanActionResult.new
                     end

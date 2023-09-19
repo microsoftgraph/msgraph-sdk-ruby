@@ -31,7 +31,7 @@ module MicrosoftGraph
             # Link speed in bits per second reported by the network adapter used by the media endpoint.
             @link_speed
             ## 
-            # The media access control (MAC) address of the media endpoint's network device.
+            # The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
             @mac_address
             ## 
             # The networkTransportProtocol property
@@ -262,14 +262,14 @@ module MicrosoftGraph
                 @link_speed = value
             end
             ## 
-            ## Gets the macAddress property value. The media access control (MAC) address of the media endpoint's network device.
+            ## Gets the macAddress property value. The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
             ## @return a string
             ## 
             def mac_address
                 return @mac_address
             end
             ## 
-            ## Sets the macAddress property value. The media access control (MAC) address of the media endpoint's network device.
+            ## Sets the macAddress property value. The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
             ## @param value Value to set for the macAddress property.
             ## @return a void
             ## 

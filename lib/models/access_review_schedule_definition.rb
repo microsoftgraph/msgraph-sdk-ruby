@@ -23,7 +23,7 @@ module MicrosoftGraph
             # Description provided  by review creators to provide more context of the review to reviewers. Reviewers will see this description in the email sent to them requesting their review. Email notifications support up to 256 characters. Supports $select.
             @description_for_reviewers
             ## 
-            # Name of the access review series. Supports $select and $orderBy. Required on create.
+            # Name of the access review series. Supports $select and $orderby. Required on create.
             @display_name
             ## 
             # This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. See accessReviewReviewerScope. Replaces backupReviewers. Supports $select. NOTE: The value of this property will be ignored if fallback reviewers are assigned through the stageSettings property.
@@ -144,14 +144,14 @@ module MicrosoftGraph
                 @description_for_reviewers = value
             end
             ## 
-            ## Gets the displayName property value. Name of the access review series. Supports $select and $orderBy. Required on create.
+            ## Gets the displayName property value. Name of the access review series. Supports $select and $orderby. Required on create.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Name of the access review series. Supports $select and $orderBy. Required on create.
+            ## Sets the displayName property value. Name of the access review series. Supports $select and $orderby. Required on create.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

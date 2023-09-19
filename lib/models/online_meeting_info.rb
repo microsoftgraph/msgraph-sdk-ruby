@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The ID of the conference.
             @conference_id
             ## 
-            # The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+            # The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
             @join_url
             ## 
             # The OdataType property
@@ -22,7 +22,7 @@ module MicrosoftGraph
             # All of the phone numbers associated with this conference.
             @phones
             ## 
-            # The pre-formatted quickdial for this call.
+            # The preformatted quick dial for this call.
             @quick_dial
             ## 
             # The toll free numbers that can be used to join the conference.
@@ -92,14 +92,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+            ## Gets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
             ## @return a string
             ## 
             def join_url
                 return @join_url
             end
             ## 
-            ## Sets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
+            ## Sets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.
             ## @param value Value to set for the joinUrl property.
             ## @return a void
             ## 
@@ -137,14 +137,14 @@ module MicrosoftGraph
                 @phones = value
             end
             ## 
-            ## Gets the quickDial property value. The pre-formatted quickdial for this call.
+            ## Gets the quickDial property value. The preformatted quick dial for this call.
             ## @return a string
             ## 
             def quick_dial
                 return @quick_dial
             end
             ## 
-            ## Sets the quickDial property value. The pre-formatted quickdial for this call.
+            ## Sets the quickDial property value. The preformatted quick dial for this call.
             ## @param value Value to set for the quickDial property.
             ## @return a void
             ## 

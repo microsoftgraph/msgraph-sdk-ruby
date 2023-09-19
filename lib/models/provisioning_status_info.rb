@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # If status is not success/ skipped details for the error are contained in this.
+            # If status isn't success/ skipped details for the error are contained in this.
             @error_information
             ## 
             # The OdataType property
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 return ProvisioningStatusInfo.new
             end
             ## 
-            ## Gets the errorInformation property value. If status is not success/ skipped details for the error are contained in this.
+            ## Gets the errorInformation property value. If status isn't success/ skipped details for the error are contained in this.
             ## @return a provisioning_error_info
             ## 
             def error_information
                 return @error_information
             end
             ## 
-            ## Sets the errorInformation property value. If status is not success/ skipped details for the error are contained in this.
+            ## Sets the errorInformation property value. If status isn't success/ skipped details for the error are contained in this.
             ## @param value Value to set for the errorInformation property.
             ## @return a void
             ## 

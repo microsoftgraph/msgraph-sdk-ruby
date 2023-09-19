@@ -10,10 +10,10 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+            # Provides the city where the sign-in originated and is determined using latitude/longitude information from the sign-in activity.
             @city
             ## 
-            # Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+            # Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
             @country_or_region
             ## 
             # Provides the latitude, longitude and altitude where the sign-in originated.
@@ -40,14 +40,14 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Gets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+            ## Gets the city property value. Provides the city where the sign-in originated and is determined using latitude/longitude information from the sign-in activity.
             ## @return a string
             ## 
             def city
                 return @city
             end
             ## 
-            ## Sets the city property value. Provides the city where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
+            ## Sets the city property value. Provides the city where the sign-in originated and is determined using latitude/longitude information from the sign-in activity.
             ## @param value Value to set for the city property.
             ## @return a void
             ## 
@@ -62,14 +62,14 @@ module MicrosoftGraph
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+            ## Gets the countryOrRegion property value. Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
             ## @return a string
             ## 
             def country_or_region
                 return @country_or_region
             end
             ## 
-            ## Sets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
+            ## Sets the countryOrRegion property value. Provides the country code info (two letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
             ## @param value Value to set for the countryOrRegion property.
             ## @return a void
             ## 

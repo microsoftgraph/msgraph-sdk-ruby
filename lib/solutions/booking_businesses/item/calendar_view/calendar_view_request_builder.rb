@@ -112,6 +112,15 @@ module MicrosoftGraph
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a calendar_view_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return CalendarViewRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
                         # The set of appointments of this business in a specified date range. Read-only. Nullable.
@@ -157,8 +166,6 @@ module MicrosoftGraph
                                 case original_name
                                     when "count"
                                         return "%24count"
-                                    when "end_escaped"
-                                        return "end"
                                     when "expand"
                                         return "%24expand"
                                     when "filter"
@@ -171,8 +178,6 @@ module MicrosoftGraph
                                         return "%24select"
                                     when "skip"
                                         return "%24skip"
-                                    when "start"
-                                        return "start"
                                     when "top"
                                         return "%24top"
                                     else
