@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Refers to the Unique GUID representing Application Id in the Azure Active Directory.
             @app_id
             ## 
-            # Refers to the Application Name displayed in the Azure Portal.
+            # Refers to the application name displayed in the Microsoft Entra admin center.
             @display_name
             ## 
             # The OdataType property
@@ -71,14 +71,14 @@ module MicrosoftGraph
                 return AppIdentity.new
             end
             ## 
-            ## Gets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
+            ## Gets the displayName property value. Refers to the application name displayed in the Microsoft Entra admin center.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
+            ## Sets the displayName property value. Refers to the application name displayed in the Microsoft Entra admin center.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

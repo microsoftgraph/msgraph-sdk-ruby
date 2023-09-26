@@ -6,6 +6,7 @@ require_relative '../../../education'
 require_relative '../../users'
 require_relative '../item'
 require_relative './mailbox_settings/mailbox_settings_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 require_relative './user'
 
 module MicrosoftGraph
@@ -21,6 +22,11 @@ module MicrosoftGraph
                         # The mailboxSettings property
                         def mailbox_settings()
                             return MicrosoftGraph::Education::Users::Item::User::MailboxSettings::MailboxSettingsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # The serviceProvisioningErrors property
+                        def service_provisioning_errors()
+                            return MicrosoftGraph::Education::Users::Item::User::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new UserRequestBuilder and sets the default values.
@@ -62,6 +68,15 @@ module MicrosoftGraph
                                 request_info.add_request_options(request_configuration.options)
                             end
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a user_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return UserRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 

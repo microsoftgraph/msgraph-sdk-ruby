@@ -10,16 +10,16 @@ module MicrosoftGraph
             # List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
             @allowed_roles
             ## 
-            # Represents a sharee or delegate who has access to the calendar. For the 'My Organization' sharee, the address property is null. Read-only.
+            # Represents a share recipient or delegate who has access to the calendar. For the 'My Organization' share recipient, the address property is null. Read-only.
             @email_address
             ## 
-            # True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
+            # True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
             @is_inside_organization
             ## 
-            # True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
+            # True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You can't remove 'My organization' as a share recipient to a calendar.
             @is_removable
             ## 
-            # Current permission level of the calendar sharee or delegate.
+            # Current permission level of the calendar share recipient or delegate.
             @role
             ## 
             ## Gets the allowedRoles property value. List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
@@ -53,14 +53,14 @@ module MicrosoftGraph
                 return CalendarPermission.new
             end
             ## 
-            ## Gets the emailAddress property value. Represents a sharee or delegate who has access to the calendar. For the 'My Organization' sharee, the address property is null. Read-only.
+            ## Gets the emailAddress property value. Represents a share recipient or delegate who has access to the calendar. For the 'My Organization' share recipient, the address property is null. Read-only.
             ## @return a email_address
             ## 
             def email_address
                 return @email_address
             end
             ## 
-            ## Sets the emailAddress property value. Represents a sharee or delegate who has access to the calendar. For the 'My Organization' sharee, the address property is null. Read-only.
+            ## Sets the emailAddress property value. Represents a share recipient or delegate who has access to the calendar. For the 'My Organization' share recipient, the address property is null. Read-only.
             ## @param value Value to set for the emailAddress property.
             ## @return a void
             ## 
@@ -81,14 +81,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isInsideOrganization property value. True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
+            ## Gets the isInsideOrganization property value. True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
             ## @return a boolean
             ## 
             def is_inside_organization
                 return @is_inside_organization
             end
             ## 
-            ## Sets the isInsideOrganization property value. True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
+            ## Sets the isInsideOrganization property value. True if the user in context (recipient or delegate) is inside the same organization as the calendar owner.
             ## @param value Value to set for the isInsideOrganization property.
             ## @return a void
             ## 
@@ -96,14 +96,14 @@ module MicrosoftGraph
                 @is_inside_organization = value
             end
             ## 
-            ## Gets the isRemovable property value. True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
+            ## Gets the isRemovable property value. True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You can't remove 'My organization' as a share recipient to a calendar.
             ## @return a boolean
             ## 
             def is_removable
                 return @is_removable
             end
             ## 
-            ## Sets the isRemovable property value. True if the user can be removed from the list of sharees or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You cannot remove 'My organization' as a sharee to a calendar.
+            ## Sets the isRemovable property value. True if the user can be removed from the list of recipients or delegates for the specified calendar, false otherwise. The 'My organization' user determines the permissions other people within your organization have to the given calendar. You can't remove 'My organization' as a share recipient to a calendar.
             ## @param value Value to set for the isRemovable property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraph
                 @is_removable = value
             end
             ## 
-            ## Gets the role property value. Current permission level of the calendar sharee or delegate.
+            ## Gets the role property value. Current permission level of the calendar share recipient or delegate.
             ## @return a calendar_role_type
             ## 
             def role
                 return @role
             end
             ## 
-            ## Sets the role property value. Current permission level of the calendar sharee or delegate.
+            ## Sets the role property value. Current permission level of the calendar share recipient or delegate.
             ## @param value Value to set for the role property.
             ## @return a void
             ## 

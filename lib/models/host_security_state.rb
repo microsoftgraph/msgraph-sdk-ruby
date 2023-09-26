@@ -28,7 +28,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
+            # Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).
             @os
             ## 
             # Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
@@ -179,14 +179,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
+            ## Gets the os property value. Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).
             ## @return a string
             ## 
             def os
                 return @os
             end
             ## 
-            ## Sets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
+            ## Sets the os property value. Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).
             ## @param value Value to set for the os property.
             ## @return a void
             ## 

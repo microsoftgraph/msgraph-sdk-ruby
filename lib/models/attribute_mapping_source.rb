@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
+            # If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type isn't Function, this property is null/empty array.
             @parameters
             ## 
             # The type property
@@ -114,14 +114,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the parameters property value. If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
+            ## Gets the parameters property value. If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type isn't Function, this property is null/empty array.
             ## @return a string_key_attribute_mapping_source_value_pair
             ## 
             def parameters
                 return @parameters
             end
             ## 
-            ## Sets the parameters property value. If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
+            ## Sets the parameters property value. If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type isn't Function, this property is null/empty array.
             ## @param value Value to set for the parameters property.
             ## @return a void
             ## 

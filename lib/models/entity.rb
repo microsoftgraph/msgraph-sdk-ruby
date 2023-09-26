@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The unique idenfier for an entity. Read-only.
+            # The unique identifier for an entity. Read-only.
             @id
             ## 
             # The OdataType property
@@ -728,6 +728,8 @@ module MicrosoftGraph
                             return MacOSCustomConfiguration.new
                         when "#microsoft.graph.macOSDeviceFeaturesConfiguration"
                             return MacOSDeviceFeaturesConfiguration.new
+                        when "#microsoft.graph.macOSDmgApp"
+                            return MacOSDmgApp.new
                         when "#microsoft.graph.macOSGeneralDeviceConfiguration"
                             return MacOSGeneralDeviceConfiguration.new
                         when "#microsoft.graph.macOSLobApp"
@@ -982,6 +984,28 @@ module MicrosoftGraph
                             return PrintUsageByPrinter.new
                         when "#microsoft.graph.printUsageByUser"
                             return PrintUsageByUser.new
+                        when "#microsoft.graph.privilegedAccessGroup"
+                            return PrivilegedAccessGroup.new
+                        when "#microsoft.graph.privilegedAccessGroupAssignmentSchedule"
+                            return PrivilegedAccessGroupAssignmentSchedule.new
+                        when "#microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance"
+                            return PrivilegedAccessGroupAssignmentScheduleInstance.new
+                        when "#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest"
+                            return PrivilegedAccessGroupAssignmentScheduleRequest.new
+                        when "#microsoft.graph.privilegedAccessGroupEligibilitySchedule"
+                            return PrivilegedAccessGroupEligibilitySchedule.new
+                        when "#microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance"
+                            return PrivilegedAccessGroupEligibilityScheduleInstance.new
+                        when "#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest"
+                            return PrivilegedAccessGroupEligibilityScheduleRequest.new
+                        when "#microsoft.graph.privilegedAccessRoot"
+                            return PrivilegedAccessRoot.new
+                        when "#microsoft.graph.privilegedAccessSchedule"
+                            return PrivilegedAccessSchedule.new
+                        when "#microsoft.graph.privilegedAccessScheduleInstance"
+                            return PrivilegedAccessScheduleInstance.new
+                        when "#microsoft.graph.privilegedAccessScheduleRequest"
+                            return PrivilegedAccessScheduleRequest.new
                         when "#microsoft.graph.profilePhoto"
                             return ProfilePhoto.new
                         when "#microsoft.graph.provisioningObjectSummary"
@@ -996,6 +1020,8 @@ module MicrosoftGraph
                             return RemoteAssistancePartner.new
                         when "#microsoft.graph.request"
                             return Request.new
+                        when "#microsoft.graph.resellerDelegatedAdminRelationship"
+                            return ResellerDelegatedAdminRelationship.new
                         when "#microsoft.graph.resourceOperation"
                             return ResourceOperation.new
                         when "#microsoft.graph.resourceSpecificPermissionGrant"
@@ -1400,6 +1426,8 @@ module MicrosoftGraph
                             return UserExperienceAnalyticsDeviceStartupHistory.new
                         when "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcess"
                             return UserExperienceAnalyticsDeviceStartupProcess.new
+                        when "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcessPerformance"
+                            return UserExperienceAnalyticsDeviceStartupProcessPerformance.new
                         when "#microsoft.graph.userExperienceAnalyticsMetric"
                             return UserExperienceAnalyticsMetric.new
                         when "#microsoft.graph.userExperienceAnalyticsMetricHistory"
@@ -1615,14 +1643,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the id property value. The unique idenfier for an entity. Read-only.
+            ## Gets the id property value. The unique identifier for an entity. Read-only.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The unique idenfier for an entity. Read-only.
+            ## Sets the id property value. The unique identifier for an entity. Read-only.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

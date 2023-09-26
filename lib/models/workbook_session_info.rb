@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Id of the workbook session.
+            # ID of the workbook session.
             @id
             ## 
             # The OdataType property
@@ -61,14 +61,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the id property value. Id of the workbook session.
+            ## Gets the id property value. ID of the workbook session.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. Id of the workbook session.
+            ## Sets the id property value. ID of the workbook session.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

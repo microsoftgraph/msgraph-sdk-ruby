@@ -7,6 +7,7 @@ require_relative './app_consent/app_consent_request_builder'
 require_relative './entitlement_management/entitlement_management_request_builder'
 require_relative './identity_governance'
 require_relative './lifecycle_workflows/lifecycle_workflows_request_builder'
+require_relative './privileged_access/privileged_access_request_builder'
 require_relative './terms_of_use/terms_of_use_request_builder'
 
 module MicrosoftGraph
@@ -34,6 +35,11 @@ module MicrosoftGraph
             # Provides operations to manage the lifecycleWorkflows property of the microsoft.graph.identityGovernance entity.
             def lifecycle_workflows()
                 return MicrosoftGraph::IdentityGovernance::LifecycleWorkflows::LifecycleWorkflowsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the privilegedAccess property of the microsoft.graph.identityGovernance entity.
+            def privileged_access()
+                return MicrosoftGraph::IdentityGovernance::PrivilegedAccess::PrivilegedAccessRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.
@@ -116,6 +122,15 @@ module MicrosoftGraph
                 end
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a identity_governance_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return IdentityGovernanceRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

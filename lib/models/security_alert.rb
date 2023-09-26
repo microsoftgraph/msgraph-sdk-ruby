@@ -23,7 +23,7 @@ module MicrosoftGraph
             # The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
             @category
             ## 
-            # Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
+            # Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
             @classification
             ## 
             # Array of comments created by the Security Operations (SecOps) team during the alert management process.
@@ -170,14 +170,14 @@ module MicrosoftGraph
                 @category = value
             end
             ## 
-            ## Gets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
+            ## Gets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
             ## @return a security_alert_classification
             ## 
             def classification
                 return @classification
             end
             ## 
-            ## Sets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
+            ## Sets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
             ## @param value Value to set for the classification property.
             ## @return a void
             ## 

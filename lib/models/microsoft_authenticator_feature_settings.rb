@@ -10,10 +10,10 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Determines whether the user's Authenticator app will show them the client app they are signing into.
+            # Determines whether the user's Authenticator app shows them the client app they're signing into.
             @display_app_information_required_state
             ## 
-            # Determines whether the user's Authenticator app will show them the geographic location of where the authentication request originated from.
+            # Determines whether the user's Authenticator app shows them the geographic location of where the authentication request originated from.
             @display_location_information_required_state
             ## 
             # The OdataType property
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 return MicrosoftAuthenticatorFeatureSettings.new
             end
             ## 
-            ## Gets the displayAppInformationRequiredState property value. Determines whether the user's Authenticator app will show them the client app they are signing into.
+            ## Gets the displayAppInformationRequiredState property value. Determines whether the user's Authenticator app shows them the client app they're signing into.
             ## @return a authentication_method_feature_configuration
             ## 
             def display_app_information_required_state
                 return @display_app_information_required_state
             end
             ## 
-            ## Sets the displayAppInformationRequiredState property value. Determines whether the user's Authenticator app will show them the client app they are signing into.
+            ## Sets the displayAppInformationRequiredState property value. Determines whether the user's Authenticator app shows them the client app they're signing into.
             ## @param value Value to set for the displayAppInformationRequiredState property.
             ## @return a void
             ## 
@@ -65,14 +65,14 @@ module MicrosoftGraph
                 @display_app_information_required_state = value
             end
             ## 
-            ## Gets the displayLocationInformationRequiredState property value. Determines whether the user's Authenticator app will show them the geographic location of where the authentication request originated from.
+            ## Gets the displayLocationInformationRequiredState property value. Determines whether the user's Authenticator app shows them the geographic location of where the authentication request originated from.
             ## @return a authentication_method_feature_configuration
             ## 
             def display_location_information_required_state
                 return @display_location_information_required_state
             end
             ## 
-            ## Sets the displayLocationInformationRequiredState property value. Determines whether the user's Authenticator app will show them the geographic location of where the authentication request originated from.
+            ## Sets the displayLocationInformationRequiredState property value. Determines whether the user's Authenticator app shows them the geographic location of where the authentication request originated from.
             ## @param value Value to set for the displayLocationInformationRequiredState property.
             ## @return a void
             ## 
