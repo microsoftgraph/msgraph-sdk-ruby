@@ -8,6 +8,7 @@ require_relative './attendance_reports/attendance_reports_request_builder'
 require_relative './attendee_report/attendee_report_request_builder'
 require_relative './get_virtual_appointment_join_web_url/get_virtual_appointment_join_web_url_request_builder'
 require_relative './item'
+require_relative './transcripts/transcripts_request_builder'
 
 module MicrosoftGraph
     module Communications
@@ -31,6 +32,11 @@ module MicrosoftGraph
                     # Provides operations to call the getVirtualAppointmentJoinWebUrl method.
                     def get_virtual_appointment_join_web_url()
                         return MicrosoftGraph::Communications::OnlineMeetings::Item::GetVirtualAppointmentJoinWebUrl::GetVirtualAppointmentJoinWebUrlRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
+                    def transcripts()
+                        return MicrosoftGraph::Communications::OnlineMeetings::Item::Transcripts::TranscriptsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.
@@ -138,6 +144,15 @@ module MicrosoftGraph
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a online_meeting_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return OnlineMeetingItemRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

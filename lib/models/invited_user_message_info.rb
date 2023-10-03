@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
+            # Additional recipients the invitation message should be sent to. Currently only one additional recipient is supported.
             @cc_recipients
             ## 
             # Customized message body you want to send if you don't want the default message.
@@ -37,14 +37,14 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Gets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
+            ## Gets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only one additional recipient is supported.
             ## @return a recipient
             ## 
             def cc_recipients
                 return @cc_recipients
             end
             ## 
-            ## Sets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
+            ## Sets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only one additional recipient is supported.
             ## @param value Value to set for the ccRecipients property.
             ## @return a void
             ## 

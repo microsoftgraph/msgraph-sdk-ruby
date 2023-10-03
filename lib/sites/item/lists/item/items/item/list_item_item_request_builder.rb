@@ -79,7 +79,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}{?%24select,%24expand}")
                                 end
                                 ## 
-                                ## Removes an item from a [list][].
+                                ## Removes an item from a list][]. This API is supported in the following [national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
                                 ## 
@@ -93,7 +93,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Returns the metadata for an [item][] in a [list][].
+                                ## Returns the metadata for an item][] in a [list][]. This API is supported in the following [national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of list_item
                                 ## 
@@ -136,7 +136,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ListItem.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Removes an item from a [list][].
+                                ## Removes an item from a list][]. This API is supported in the following [national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -152,7 +152,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Returns the metadata for an [item][] in a [list][].
+                                ## Returns the metadata for an item][] in a [list][]. This API is supported in the following [national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -189,9 +189,18 @@ module MicrosoftGraph
                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                     return request_info
                                 end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a list_item_item_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return ListItemItemRequestBuilder.new(raw_url, @request_adapter)
+                                end
 
                                 ## 
-                                # Returns the metadata for an [item][] in a [list][].
+                                # Returns the metadata for an item][] in a [list][]. This API is supported in the following [national cloud deployments.
                                 class ListItemItemRequestBuilderGetQueryParameters
                                     
                                     ## 

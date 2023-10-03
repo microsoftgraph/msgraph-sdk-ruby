@@ -30,7 +30,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/messageRules/{messageRule%2Did}{?%24select}")
                                 end
                                 ## 
-                                ## Delete the specified messageRule object.
+                                ## Delete the specified messageRule object. This API is supported in the following national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
                                 ## 
@@ -44,7 +44,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Get the properties and relationships of a messageRule object.
+                                ## Get the properties and relationships of a messageRule object. This API is supported in the following national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of message_rule
                                 ## 
@@ -58,7 +58,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MessageRule.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Change writable properties on a messageRule object and save the changes.
+                                ## Change writable properties on a messageRule object and save the changes. This API is supported in the following national cloud deployments.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of message_rule
@@ -74,7 +74,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MessageRule.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Delete the specified messageRule object.
+                                ## Delete the specified messageRule object. This API is supported in the following national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -90,7 +90,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Get the properties and relationships of a messageRule object.
+                                ## Get the properties and relationships of a messageRule object. This API is supported in the following national cloud deployments.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -108,7 +108,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Change writable properties on a messageRule object and save the changes.
+                                ## Change writable properties on a messageRule object and save the changes. This API is supported in the following national cloud deployments.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -127,9 +127,18 @@ module MicrosoftGraph
                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                     return request_info
                                 end
+                                ## 
+                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                ## @param raw_url The raw URL to use for the request builder.
+                                ## @return a message_rule_item_request_builder
+                                ## 
+                                def with_url(raw_url)
+                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                    return MessageRuleItemRequestBuilder.new(raw_url, @request_adapter)
+                                end
 
                                 ## 
-                                # Get the properties and relationships of a messageRule object.
+                                # Get the properties and relationships of a messageRule object. This API is supported in the following national cloud deployments.
                                 class MessageRuleItemRequestBuilderGetQueryParameters
                                     
                                     ## 

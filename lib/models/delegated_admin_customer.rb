@@ -7,7 +7,7 @@ module MicrosoftGraph
         class DelegatedAdminCustomer < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
+            # The Azure AD display name of the customer tenant. Read-only. Supports $orderby.
             @display_name
             ## 
             # Contains the management details of a service in the customer tenant that's managed by delegated administration.
@@ -32,14 +32,14 @@ module MicrosoftGraph
                 return DelegatedAdminCustomer.new
             end
             ## 
-            ## Gets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
+            ## Gets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderby.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
+            ## Sets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderby.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The details about the autonomous system to which this IP address belongs.
             @autonomous_system
             ## 
-            # The country or region for this IP address.
+            # The country/region for this IP address.
             @country_or_region
             ## 
             # The hosting company listed for this host.
@@ -42,14 +42,14 @@ module MicrosoftGraph
                 @odata_type = "#microsoft.graph.security.ipAddress"
             end
             ## 
-            ## Gets the countryOrRegion property value. The country or region for this IP address.
+            ## Gets the countryOrRegion property value. The country/region for this IP address.
             ## @return a string
             ## 
             def country_or_region
                 return @country_or_region
             end
             ## 
-            ## Sets the countryOrRegion property value. The country or region for this IP address.
+            ## Sets the countryOrRegion property value. The country/region for this IP address.
             ## @param value Value to set for the countryOrRegion property.
             ## @return a void
             ## 

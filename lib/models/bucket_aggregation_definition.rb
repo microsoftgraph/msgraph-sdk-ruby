@@ -22,7 +22,7 @@ module MicrosoftGraph
             # A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
             @prefix_filter
             ## 
-            # Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
+            # Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.
             @ranges
             ## 
             # The sortBy property
@@ -133,14 +133,14 @@ module MicrosoftGraph
                 @prefix_filter = value
             end
             ## 
-            ## Gets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
+            ## Gets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.
             ## @return a bucket_aggregation_range
             ## 
             def ranges
                 return @ranges
             end
             ## 
-            ## Sets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
+            ## Sets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.
             ## @param value Value to set for the ranges property.
             ## @return a void
             ## 

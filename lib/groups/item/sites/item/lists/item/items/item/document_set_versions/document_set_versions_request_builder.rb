@@ -55,7 +55,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/documentSetVersions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                             end
                                             ## 
-                                            ## Get a list of the versions of a document set item in a list.
+                                            ## Get a list of the versions of a document set item in a list. This API is supported in the following national cloud deployments.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of document_set_version_collection_response
                                             ## 
@@ -69,7 +69,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DocumentSetVersionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Create a new version of a document set item in a list.
+                                            ## Create a new version of a document set item in a list. This API is supported in the following national cloud deployments.
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of document_set_version
@@ -85,7 +85,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DocumentSetVersion.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Get a list of the versions of a document set item in a list.
+                                            ## Get a list of the versions of a document set item in a list. This API is supported in the following national cloud deployments.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -103,7 +103,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## Create a new version of a document set item in a list.
+                                            ## Create a new version of a document set item in a list. This API is supported in the following national cloud deployments.
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
@@ -122,9 +122,18 @@ module MicrosoftGraph
                                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                                 return request_info
                                             end
+                                            ## 
+                                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                            ## @param raw_url The raw URL to use for the request builder.
+                                            ## @return a document_set_versions_request_builder
+                                            ## 
+                                            def with_url(raw_url)
+                                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                                return DocumentSetVersionsRequestBuilder.new(raw_url, @request_adapter)
+                                            end
 
                                             ## 
-                                            # Get a list of the versions of a document set item in a list.
+                                            # Get a list of the versions of a document set item in a list. This API is supported in the following national cloud deployments.
                                             class DocumentSetVersionsRequestBuilderGetQueryParameters
                                                 
                                                 ## 

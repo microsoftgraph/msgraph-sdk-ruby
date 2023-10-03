@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/communications/calls/{call%2Did}/playPrompt")
                         end
                         ## 
-                        ## Play a prompt in the call. For more information about how to handle operations, see commsOperation
+                        ## Play a prompt in the call. For more information about how to handle operations, see commsOperation This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of play_prompt_operation
@@ -42,7 +42,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlayPromptOperation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Play a prompt in the call. For more information about how to handle operations, see commsOperation
+                        ## Play a prompt in the call. For more information about how to handle operations, see commsOperation This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -60,6 +60,15 @@ module MicrosoftGraph
                             end
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a play_prompt_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return PlayPromptRequestBuilder.new(raw_url, @request_adapter)
                         end
                     end
                 end

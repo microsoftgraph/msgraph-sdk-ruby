@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # False indicates that the requestor is not permitted to include a schedule in their request.
+            # False indicates that the requestor isn't permitted to include a schedule in their request.
             @allow_custom_assignment_schedule
             ## 
             # True allows on-behalf-of requestors to create a request to add access for another principal.
@@ -52,14 +52,14 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Gets the allowCustomAssignmentSchedule property value. False indicates that the requestor is not permitted to include a schedule in their request.
+            ## Gets the allowCustomAssignmentSchedule property value. False indicates that the requestor isn't permitted to include a schedule in their request.
             ## @return a boolean
             ## 
             def allow_custom_assignment_schedule
                 return @allow_custom_assignment_schedule
             end
             ## 
-            ## Sets the allowCustomAssignmentSchedule property value. False indicates that the requestor is not permitted to include a schedule in their request.
+            ## Sets the allowCustomAssignmentSchedule property value. False indicates that the requestor isn't permitted to include a schedule in their request.
             ## @param value Value to set for the allowCustomAssignmentSchedule property.
             ## @return a void
             ## 

@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
+            # Indicates the service ID for 1:n appointments. If the appointment is of type 1:n, this field is present, otherwise, null.
             @service_id
             ## 
             # The startDateTime property
@@ -113,14 +113,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the serviceId property value. Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
+            ## Gets the serviceId property value. Indicates the service ID for 1:n appointments. If the appointment is of type 1:n, this field is present, otherwise, null.
             ## @return a string
             ## 
             def service_id
                 return @service_id
             end
             ## 
-            ## Sets the serviceId property value. Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
+            ## Sets the serviceId property value. Indicates the service ID for 1:n appointments. If the appointment is of type 1:n, this field is present, otherwise, null.
             ## @param value Value to set for the serviceId property.
             ## @return a void
             ## 

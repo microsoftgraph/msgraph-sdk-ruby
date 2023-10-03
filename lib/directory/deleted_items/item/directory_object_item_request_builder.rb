@@ -4,10 +4,6 @@ require_relative '../../../models/directory_object'
 require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../directory'
 require_relative '../deleted_items'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './graph_administrative_unit/graph_administrative_unit_request_builder'
 require_relative './graph_application/graph_application_request_builder'
 require_relative './graph_device/graph_device_request_builder'
@@ -15,7 +11,6 @@ require_relative './graph_group/graph_group_request_builder'
 require_relative './graph_service_principal/graph_service_principal_request_builder'
 require_relative './graph_user/graph_user_request_builder'
 require_relative './item'
-require_relative './restore/restore_request_builder'
 
 module MicrosoftGraph
     module Directory
@@ -25,26 +20,6 @@ module MicrosoftGraph
                 # Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
                 class DirectoryObjectItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
-                    ## 
-                    # Provides operations to call the checkMemberGroups method.
-                    def check_member_groups()
-                        return MicrosoftGraph::Directory::DeletedItems::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the checkMemberObjects method.
-                    def check_member_objects()
-                        return MicrosoftGraph::Directory::DeletedItems::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the getMemberGroups method.
-                    def get_member_groups()
-                        return MicrosoftGraph::Directory::DeletedItems::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the getMemberObjects method.
-                    def get_member_objects()
-                        return MicrosoftGraph::Directory::DeletedItems::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
                     ## 
                     # Casts the previous resource to administrativeUnit.
                     def graph_administrative_unit()
@@ -76,11 +51,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Directory::DeletedItems::Item::GraphUser::GraphUserRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    # Provides operations to call the restore method.
-                    def restore()
-                        return MicrosoftGraph::Directory::DeletedItems::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -90,7 +60,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/directory/deletedItems/{directoryObject%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
+                    ## Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -104,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
+                    ## Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of directory_object
                     ## 
@@ -118,23 +88,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property deletedItems in directory
-                    ## @param body The request body
-                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                    ## @return a Fiber of directory_object
-                    ## 
-                    def patch(body, request_configuration=nil)
-                        raise StandardError, 'body cannot be null' if body.nil?
-                        request_info = self.to_patch_request_information(
-                            body, request_configuration
-                        )
-                        error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
+                    ## Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -150,7 +104,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
+                    ## Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -168,28 +122,17 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property deletedItems in directory
-                    ## @param body The request body
-                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                    ## @return a request_information
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a directory_object_item_request_builder
                     ## 
-                    def to_patch_request_information(body, request_configuration=nil)
-                        raise StandardError, 'body cannot be null' if body.nil?
-                        request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :PATCH
-                        request_info.headers.add('Accept', 'application/json')
-                        unless request_configuration.nil?
-                            request_info.add_headers_from_raw_object(request_configuration.headers)
-                            request_info.add_request_options(request_configuration.options)
-                        end
-                        request_info.set_content_from_parsable(@request_adapter, "application/json", body)
-                        return request_info
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return DirectoryObjectItemRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 
-                    # Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
+                    # Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. This API is supported in the following national cloud deployments.
                     class DirectoryObjectItemRequestBuilderGetQueryParameters
                         
                         ## 

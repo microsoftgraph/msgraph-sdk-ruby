@@ -45,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## List the synchronization templates associated with a given application or service principal.
+                        ## List the synchronization templates associated with a given application or service principal. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of synchronization_template_collection_response
                         ## 
@@ -75,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SynchronizationTemplate.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## List the synchronization templates associated with a given application or service principal.
+                        ## List the synchronization templates associated with a given application or service principal. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -112,9 +112,18 @@ module MicrosoftGraph
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a templates_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return TemplatesRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
-                        # List the synchronization templates associated with a given application or service principal.
+                        # List the synchronization templates associated with a given application or service principal. This API is supported in the following national cloud deployments.
                         class TemplatesRequestBuilderGetQueryParameters
                             
                             ## 

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Indicates whether the answer will be in single or multiple line format.
             @is_single_line_question
             ## 
-            # The regular expression pattern which any answer to this question must match.
+            # The regular expression pattern that any answer to this question must match.
             @regex_pattern
             ## 
             ## Instantiates a new accessPackageTextInputQuestion and sets the default values.
@@ -55,14 +55,14 @@ module MicrosoftGraph
                 @is_single_line_question = value
             end
             ## 
-            ## Gets the regexPattern property value. The regular expression pattern which any answer to this question must match.
+            ## Gets the regexPattern property value. The regular expression pattern that any answer to this question must match.
             ## @return a string
             ## 
             def regex_pattern
                 return @regex_pattern
             end
             ## 
-            ## Sets the regexPattern property value. The regular expression pattern which any answer to this question must match.
+            ## Sets the regexPattern property value. The regular expression pattern that any answer to this question must match.
             ## @param value Value to set for the regexPattern property.
             ## @return a void
             ## 

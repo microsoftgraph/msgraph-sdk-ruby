@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The nature of the data in the attachment. Optional.
             @content_type
             ## 
-            # The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+            # The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
             @name
             ## 
             # The OdataType property
@@ -99,14 +99,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+            ## Gets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+            ## Sets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 

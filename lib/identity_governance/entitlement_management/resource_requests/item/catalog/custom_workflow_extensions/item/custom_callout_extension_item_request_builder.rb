@@ -32,7 +32,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/resourceRequests/{accessPackageResourceRequest%2Did}/catalog/customWorkflowExtensions/{customCalloutExtension%2Did}{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Delete navigation property customWorkflowExtensions for identityGovernance
+                                    ## Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies: This API is supported in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -46,7 +46,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Get customWorkflowExtensions from identityGovernance
+                                    ## Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object. This API is supported in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of custom_callout_extension
                                     ## 
@@ -60,7 +60,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CustomCalloutExtension.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Update the navigation property customWorkflowExtensions in identityGovernance
+                                    ## Update the properties of an accessPackageAssignmentWorkflowExtension object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of custom_callout_extension
@@ -76,7 +76,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CustomCalloutExtension.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Delete navigation property customWorkflowExtensions for identityGovernance
+                                    ## Delete an accessPackageAssignmentRequestWorkflowExtension object. The custom workflow extension must first be removed from any associated policies before it can be deleted. Follow these steps to remove the custom workflow extension from any associated policies: This API is supported in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -92,7 +92,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Get customWorkflowExtensions from identityGovernance
+                                    ## Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object. This API is supported in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -110,7 +110,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Update the navigation property customWorkflowExtensions in identityGovernance
+                                    ## Update the properties of an accessPackageAssignmentWorkflowExtension object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -129,9 +129,18 @@ module MicrosoftGraph
                                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                         return request_info
                                     end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a custom_callout_extension_item_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return CustomCalloutExtensionItemRequestBuilder.new(raw_url, @request_adapter)
+                                    end
 
                                     ## 
-                                    # Get customWorkflowExtensions from identityGovernance
+                                    # Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object. This API is supported in the following national cloud deployments.
                                     class CustomCalloutExtensionItemRequestBuilderGetQueryParameters
                                         
                                         ## 

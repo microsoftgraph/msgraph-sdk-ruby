@@ -14,7 +14,7 @@ module MicrosoftGraph
             # URL that shows certification details for the application.
             @certification_details_url
             ## 
-            # The timestamp when the current certification for the application will expire.
+            # The timestamp when the current certification for the application expires.
             @certification_expiration_date_time
             ## 
             # Indicates whether the application is certified by Microsoft.
@@ -59,14 +59,14 @@ module MicrosoftGraph
                 @certification_details_url = value
             end
             ## 
-            ## Gets the certificationExpirationDateTime property value. The timestamp when the current certification for the application will expire.
+            ## Gets the certificationExpirationDateTime property value. The timestamp when the current certification for the application expires.
             ## @return a date_time
             ## 
             def certification_expiration_date_time
                 return @certification_expiration_date_time
             end
             ## 
-            ## Sets the certificationExpirationDateTime property value. The timestamp when the current certification for the application will expire.
+            ## Sets the certificationExpirationDateTime property value. The timestamp when the current certification for the application expires.
             ## @param value Value to set for the certificationExpirationDateTime property.
             ## @return a void
             ## 

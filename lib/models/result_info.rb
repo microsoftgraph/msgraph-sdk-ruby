@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The result sub-code.
+            # The result subcode.
             @subcode
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -123,14 +123,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the subcode property value. The result sub-code.
+            ## Gets the subcode property value. The result subcode.
             ## @return a integer
             ## 
             def subcode
                 return @subcode
             end
             ## 
-            ## Sets the subcode property value. The result sub-code.
+            ## Sets the subcode property value. The result subcode.
             ## @param value Value to set for the subcode property.
             ## @return a void
             ## 

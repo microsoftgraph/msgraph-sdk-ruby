@@ -7,13 +7,19 @@ require_relative './article_indicators/article_indicators_request_builder'
 require_relative './articles/articles_request_builder'
 require_relative './host_components/host_components_request_builder'
 require_relative './host_cookies/host_cookies_request_builder'
+require_relative './host_pairs/host_pairs_request_builder'
 require_relative './hosts/hosts_request_builder'
+require_relative './host_ssl_certificates/host_ssl_certificates_request_builder'
 require_relative './host_trackers/host_trackers_request_builder'
 require_relative './intelligence_profile_indicators/intelligence_profile_indicators_request_builder'
 require_relative './intel_profiles/intel_profiles_request_builder'
 require_relative './passive_dns_records/passive_dns_records_request_builder'
+require_relative './ssl_certificates/ssl_certificates_request_builder'
+require_relative './subdomains/subdomains_request_builder'
 require_relative './threat_intelligence'
 require_relative './vulnerabilities/vulnerabilities_request_builder'
+require_relative './whois_history_records/whois_history_records_request_builder'
+require_relative './whois_records/whois_records_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -43,9 +49,19 @@ module MicrosoftGraph
                     return MicrosoftGraph::Security::ThreatIntelligence::HostCookies::HostCookiesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the hostPairs property of the microsoft.graph.security.threatIntelligence entity.
+                def host_pairs()
+                    return MicrosoftGraph::Security::ThreatIntelligence::HostPairs::HostPairsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.
                 def hosts()
                     return MicrosoftGraph::Security::ThreatIntelligence::Hosts::HostsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the hostSslCertificates property of the microsoft.graph.security.threatIntelligence entity.
+                def host_ssl_certificates()
+                    return MicrosoftGraph::Security::ThreatIntelligence::HostSslCertificates::HostSslCertificatesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the hostTrackers property of the microsoft.graph.security.threatIntelligence entity.
@@ -68,9 +84,29 @@ module MicrosoftGraph
                     return MicrosoftGraph::Security::ThreatIntelligence::PassiveDnsRecords::PassiveDnsRecordsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the sslCertificates property of the microsoft.graph.security.threatIntelligence entity.
+                def ssl_certificates()
+                    return MicrosoftGraph::Security::ThreatIntelligence::SslCertificates::SslCertificatesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the subdomains property of the microsoft.graph.security.threatIntelligence entity.
+                def subdomains()
+                    return MicrosoftGraph::Security::ThreatIntelligence::Subdomains::SubdomainsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the vulnerabilities property of the microsoft.graph.security.threatIntelligence entity.
                 def vulnerabilities()
                     return MicrosoftGraph::Security::ThreatIntelligence::Vulnerabilities::VulnerabilitiesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the whoisHistoryRecords property of the microsoft.graph.security.threatIntelligence entity.
+                def whois_history_records()
+                    return MicrosoftGraph::Security::ThreatIntelligence::WhoisHistoryRecords::WhoisHistoryRecordsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the whoisRecords property of the microsoft.graph.security.threatIntelligence entity.
+                def whois_records()
+                    return MicrosoftGraph::Security::ThreatIntelligence::WhoisRecords::WhoisRecordsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new ThreatIntelligenceRequestBuilder and sets the default values.
@@ -178,6 +214,15 @@ module MicrosoftGraph
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a threat_intelligence_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return ThreatIntelligenceRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

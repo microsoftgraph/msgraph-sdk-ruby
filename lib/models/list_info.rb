@@ -13,7 +13,7 @@ module MicrosoftGraph
             # If true, indicates that content types are enabled for this list.
             @content_types_enabled
             ## 
-            # If true, indicates that the list is not normally visible in the SharePoint user experience.
+            # If true, indicates that the list isn't normally visible in the SharePoint user experience.
             @hidden
             ## 
             # The OdataType property
@@ -80,14 +80,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the hidden property value. If true, indicates that the list is not normally visible in the SharePoint user experience.
+            ## Gets the hidden property value. If true, indicates that the list isn't normally visible in the SharePoint user experience.
             ## @return a boolean
             ## 
             def hidden
                 return @hidden
             end
             ## 
-            ## Sets the hidden property value. If true, indicates that the list is not normally visible in the SharePoint user experience.
+            ## Sets the hidden property value. If true, indicates that the list isn't normally visible in the SharePoint user experience.
             ## @param value Value to set for the hidden property.
             ## @return a void
             ## 

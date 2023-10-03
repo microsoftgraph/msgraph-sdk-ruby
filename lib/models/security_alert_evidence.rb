@@ -26,7 +26,7 @@ module MicrosoftGraph
             # Details about the remediation status.
             @remediation_status_details
             ## 
-            # The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+            # The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
             @roles
             ## 
             # Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
@@ -104,8 +104,6 @@ module MicrosoftGraph
                             return SecurityDeviceEvidence.new
                         when "#microsoft.graph.security.fileEvidence"
                             return SecurityFileEvidence.new
-                        when "#microsoft.graph.security.googleCloudResourceEvidence"
-                            return SecurityGoogleCloudResourceEvidence.new
                         when "#microsoft.graph.security.ipEvidence"
                             return SecurityIpEvidence.new
                         when "#microsoft.graph.security.kubernetesClusterEvidence"
@@ -221,14 +219,14 @@ module MicrosoftGraph
                 @remediation_status_details = value
             end
             ## 
-            ## Gets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+            ## Gets the roles property value. The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
             ## @return a security_evidence_role
             ## 
             def roles
                 return @roles
             end
             ## 
-            ## Sets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+            ## Sets the roles property value. The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
             ## @param value Value to set for the roles property.
             ## @return a void
             ## 

@@ -37,7 +37,7 @@ module MicrosoftGraph
                                                     super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/primaryChannel/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/softDelete")
                                                 end
                                                 ## 
-                                                ## Delete a single chatMessage or a chat message reply in a channel or a chat.
+                                                ## Delete a single chatMessage or a chat message reply in a channel or a chat. This API is supported in the following national cloud deployments.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of void
                                                 ## 
@@ -51,7 +51,7 @@ module MicrosoftGraph
                                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                                 end
                                                 ## 
-                                                ## Delete a single chatMessage or a chat message reply in a channel or a chat.
+                                                ## Delete a single chatMessage or a chat message reply in a channel or a chat. This API is supported in the following national cloud deployments.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
                                                 ## 
@@ -65,6 +65,15 @@ module MicrosoftGraph
                                                         request_info.add_request_options(request_configuration.options)
                                                     end
                                                     return request_info
+                                                end
+                                                ## 
+                                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                                ## @param raw_url The raw URL to use for the request builder.
+                                                ## @return a soft_delete_request_builder
+                                                ## 
+                                                def with_url(raw_url)
+                                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                                    return SoftDeleteRequestBuilder.new(raw_url, @request_adapter)
                                                 end
                                             end
                                         end

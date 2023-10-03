@@ -30,7 +30,7 @@ module MicrosoftGraph
                             ## 
                             ## Invoke function search
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of search_with_q_response
+                            ## @return a Fiber of search_with_q_get_response
                             ## 
                             def get(request_configuration=nil)
                                 request_info = self.to_get_request_information(
@@ -39,7 +39,7 @@ module MicrosoftGraph
                                 error_mapping = Hash.new
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Drives::Item::Items::Item::SearchWithQ::SearchWithQResponse.create_from_discriminator_value(pn) }, error_mapping)
+                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Drives::Item::Items::Item::SearchWithQ::SearchWithQGetResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## Invoke function search
@@ -58,6 +58,15 @@ module MicrosoftGraph
                                     request_info.add_request_options(request_configuration.options)
                                 end
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a search_with_q_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return SearchWithQRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 

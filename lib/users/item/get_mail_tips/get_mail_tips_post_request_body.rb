@@ -73,7 +73,7 @@ module MicrosoftGraph
                     def get_field_deserializers()
                         return {
                             "EmailAddresses" => lambda {|n| @email_addresses = n.get_collection_of_primitive_values(String) },
-                            "MailTipsOptions" => lambda {|n| @mail_tips_options = n.get_enum_value(MicrosoftGraph::Models::MailTipsType) },
+                            "MailTipsOptions" => lambda {|n| @mail_tips_options = n.get_enum_values(MicrosoftGraph::Models::MailTipsType) },
                         }
                     end
                     ## 

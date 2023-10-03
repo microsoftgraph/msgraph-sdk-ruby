@@ -7,7 +7,7 @@ module MicrosoftGraph
         class ProvisioningErrorInfo
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Additional details in case of error.
+            # Additional details if there's error.
             @additional_details
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -43,14 +43,14 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Gets the additionalDetails property value. Additional details in case of error.
+            ## Gets the additionalDetails property value. Additional details if there's error.
             ## @return a string
             ## 
             def additional_details
                 return @additional_details
             end
             ## 
-            ## Sets the additionalDetails property value. Additional details in case of error.
+            ## Sets the additionalDetails property value. Additional details if there's error.
             ## @param value Value to set for the additionalDetails property.
             ## @return a void
             ## 

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The unique idenfier for an entity. Read-only.
+            # The unique identifier for an entity. Read-only.
             @id
             ## 
             # The OdataType property
@@ -184,6 +184,8 @@ module MicrosoftGraph
                             return AttachmentBase.new
                         when "#microsoft.graph.attachmentSession"
                             return AttachmentSession.new
+                        when "#microsoft.graph.attackSimulationOperation"
+                            return AttackSimulationOperation.new
                         when "#microsoft.graph.attackSimulationRoot"
                             return AttackSimulationRoot.new
                         when "#microsoft.graph.attendanceRecord"
@@ -280,6 +282,8 @@ module MicrosoftGraph
                             return CallRecordsSegment.new
                         when "#microsoft.graph.callRecords.session"
                             return CallRecordsSession.new
+                        when "#microsoft.graph.callTranscript"
+                            return CallTranscript.new
                         when "#microsoft.graph.cancelMediaProcessingOperation"
                             return CancelMediaProcessingOperation.new
                         when "#microsoft.graph.certificateBasedAuthConfiguration"
@@ -528,6 +532,10 @@ module MicrosoftGraph
                             return EmployeeExperienceUser.new
                         when "#microsoft.graph.endpoint"
                             return Endpoint.new
+                        when "#microsoft.graph.endUserNotification"
+                            return EndUserNotification.new
+                        when "#microsoft.graph.endUserNotificationDetail"
+                            return EndUserNotificationDetail.new
                         when "#microsoft.graph.enrollmentConfigurationAssignment"
                             return EnrollmentConfigurationAssignment.new
                         when "#microsoft.graph.enrollmentTroubleshootingEvent"
@@ -698,6 +706,10 @@ module MicrosoftGraph
                             return ItemAnalytics.new
                         when "#microsoft.graph.itemAttachment"
                             return ItemAttachment.new
+                        when "#microsoft.graph.landingPage"
+                            return LandingPage.new
+                        when "#microsoft.graph.landingPageDetail"
+                            return LandingPageDetail.new
                         when "#microsoft.graph.learningAssignment"
                             return LearningAssignment.new
                         when "#microsoft.graph.learningContent"
@@ -720,6 +732,8 @@ module MicrosoftGraph
                             return ListItemVersion.new
                         when "#microsoft.graph.localizedNotificationMessage"
                             return LocalizedNotificationMessage.new
+                        when "#microsoft.graph.loginPage"
+                            return LoginPage.new
                         when "#microsoft.graph.longRunningOperation"
                             return LongRunningOperation.new
                         when "#microsoft.graph.macOSCompliancePolicy"
@@ -728,6 +742,8 @@ module MicrosoftGraph
                             return MacOSCustomConfiguration.new
                         when "#microsoft.graph.macOSDeviceFeaturesConfiguration"
                             return MacOSDeviceFeaturesConfiguration.new
+                        when "#microsoft.graph.macOSDmgApp"
+                            return MacOSDmgApp.new
                         when "#microsoft.graph.macOSGeneralDeviceConfiguration"
                             return MacOSGeneralDeviceConfiguration.new
                         when "#microsoft.graph.macOSLobApp"
@@ -904,6 +920,8 @@ module MicrosoftGraph
                             return ParticipantLeftNotification.new
                         when "#microsoft.graph.passwordAuthenticationMethod"
                             return PasswordAuthenticationMethod.new
+                        when "#microsoft.graph.payload"
+                            return Payload.new
                         when "#microsoft.graph.permission"
                             return Permission.new
                         when "#microsoft.graph.permissionGrantConditionSet"
@@ -982,6 +1000,28 @@ module MicrosoftGraph
                             return PrintUsageByPrinter.new
                         when "#microsoft.graph.printUsageByUser"
                             return PrintUsageByUser.new
+                        when "#microsoft.graph.privilegedAccessGroup"
+                            return PrivilegedAccessGroup.new
+                        when "#microsoft.graph.privilegedAccessGroupAssignmentSchedule"
+                            return PrivilegedAccessGroupAssignmentSchedule.new
+                        when "#microsoft.graph.privilegedAccessGroupAssignmentScheduleInstance"
+                            return PrivilegedAccessGroupAssignmentScheduleInstance.new
+                        when "#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest"
+                            return PrivilegedAccessGroupAssignmentScheduleRequest.new
+                        when "#microsoft.graph.privilegedAccessGroupEligibilitySchedule"
+                            return PrivilegedAccessGroupEligibilitySchedule.new
+                        when "#microsoft.graph.privilegedAccessGroupEligibilityScheduleInstance"
+                            return PrivilegedAccessGroupEligibilityScheduleInstance.new
+                        when "#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest"
+                            return PrivilegedAccessGroupEligibilityScheduleRequest.new
+                        when "#microsoft.graph.privilegedAccessRoot"
+                            return PrivilegedAccessRoot.new
+                        when "#microsoft.graph.privilegedAccessSchedule"
+                            return PrivilegedAccessSchedule.new
+                        when "#microsoft.graph.privilegedAccessScheduleInstance"
+                            return PrivilegedAccessScheduleInstance.new
+                        when "#microsoft.graph.privilegedAccessScheduleRequest"
+                            return PrivilegedAccessScheduleRequest.new
                         when "#microsoft.graph.profilePhoto"
                             return ProfilePhoto.new
                         when "#microsoft.graph.provisioningObjectSummary"
@@ -996,6 +1036,8 @@ module MicrosoftGraph
                             return RemoteAssistancePartner.new
                         when "#microsoft.graph.request"
                             return Request.new
+                        when "#microsoft.graph.resellerDelegatedAdminRelationship"
+                            return ResellerDelegatedAdminRelationship.new
                         when "#microsoft.graph.resourceOperation"
                             return ResourceOperation.new
                         when "#microsoft.graph.resourceSpecificPermissionGrant"
@@ -1102,8 +1144,12 @@ module MicrosoftGraph
                             return SecurityHostCookie.new
                         when "#microsoft.graph.security.hostname"
                             return SecurityHostname.new
+                        when "#microsoft.graph.security.hostPair"
+                            return SecurityHostPair.new
                         when "#microsoft.graph.security.hostReputation"
                             return SecurityHostReputation.new
+                        when "#microsoft.graph.security.hostSslCertificate"
+                            return SecurityHostSslCertificate.new
                         when "#microsoft.graph.security.hostTracker"
                             return SecurityHostTracker.new
                         when "#microsoft.graph.security.incident"
@@ -1126,6 +1172,10 @@ module MicrosoftGraph
                             return SecuritySearch.new
                         when "#microsoft.graph.security.siteSource"
                             return SecuritySiteSource.new
+                        when "#microsoft.graph.security.sslCertificate"
+                            return SecuritySslCertificate.new
+                        when "#microsoft.graph.security.subdomain"
+                            return SecuritySubdomain.new
                         when "#microsoft.graph.security.tag"
                             return SecurityTag.new
                         when "#microsoft.graph.security.threatIntelligence"
@@ -1144,6 +1194,12 @@ module MicrosoftGraph
                             return SecurityVulnerability.new
                         when "#microsoft.graph.security.vulnerabilityComponent"
                             return SecurityVulnerabilityComponent.new
+                        when "#microsoft.graph.security.whoisBaseRecord"
+                            return SecurityWhoisBaseRecord.new
+                        when "#microsoft.graph.security.whoisHistoryRecord"
+                            return SecurityWhoisHistoryRecord.new
+                        when "#microsoft.graph.security.whoisRecord"
+                            return SecurityWhoisRecord.new
                         when "#microsoft.graph.securityReportsRoot"
                             return SecurityReportsRoot.new
                         when "#microsoft.graph.serviceAnnouncement"
@@ -1316,6 +1372,10 @@ module MicrosoftGraph
                             return TokenIssuancePolicy.new
                         when "#microsoft.graph.tokenLifetimePolicy"
                             return TokenLifetimePolicy.new
+                        when "#microsoft.graph.training"
+                            return Training.new
+                        when "#microsoft.graph.trainingLanguageDetail"
+                            return TrainingLanguageDetail.new
                         when "#microsoft.graph.trending"
                             return Trending.new
                         when "#microsoft.graph.unifiedRbacResourceAction"
@@ -1400,6 +1460,8 @@ module MicrosoftGraph
                             return UserExperienceAnalyticsDeviceStartupHistory.new
                         when "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcess"
                             return UserExperienceAnalyticsDeviceStartupProcess.new
+                        when "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcessPerformance"
+                            return UserExperienceAnalyticsDeviceStartupProcessPerformance.new
                         when "#microsoft.graph.userExperienceAnalyticsMetric"
                             return UserExperienceAnalyticsMetric.new
                         when "#microsoft.graph.userExperienceAnalyticsMetricHistory"
@@ -1615,14 +1677,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the id property value. The unique idenfier for an entity. Read-only.
+            ## Gets the id property value. The unique identifier for an entity. Read-only.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The unique idenfier for an entity. Read-only.
+            ## Sets the id property value. The unique identifier for an entity. Read-only.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

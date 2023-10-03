@@ -4,6 +4,8 @@ require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/subject_rights_request'
 require_relative '../../privacy'
 require_relative '../subject_rights_requests'
+require_relative './approvers/approvers_request_builder'
+require_relative './collaborators/collaborators_request_builder'
 require_relative './get_final_attachment/get_final_attachment_request_builder'
 require_relative './get_final_report/get_final_report_request_builder'
 require_relative './item'
@@ -18,6 +20,16 @@ module MicrosoftGraph
                 # Provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
                 class SubjectRightsRequestItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
+                    ## 
+                    # Provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+                    def approvers()
+                        return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::Approvers::ApproversRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+                    def collaborators()
+                        return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::Collaborators::CollaboratorsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     # Provides operations to call the getFinalAttachment method.
                     def get_final_attachment()
@@ -62,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read the properties and relationships of a subjectRightsRequest object.
+                    ## Read the properties and relationships of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of subject_rights_request
                     ## 
@@ -76,7 +88,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SubjectRightsRequest.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the properties of a subjectRightsRequest object.
+                    ## Update the properties of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of subject_rights_request
@@ -108,7 +120,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Read the properties and relationships of a subjectRightsRequest object.
+                    ## Read the properties and relationships of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -126,7 +138,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the properties of a subjectRightsRequest object.
+                    ## Update the properties of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -145,9 +157,18 @@ module MicrosoftGraph
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a subject_rights_request_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return SubjectRightsRequestItemRequestBuilder.new(raw_url, @request_adapter)
+                    end
 
                     ## 
-                    # Read the properties and relationships of a subjectRightsRequest object.
+                    # Read the properties and relationships of a subjectRightsRequest object. This API is supported in the following national cloud deployments.
                     class SubjectRightsRequestItemRequestBuilderGetQueryParameters
                         
                         ## 

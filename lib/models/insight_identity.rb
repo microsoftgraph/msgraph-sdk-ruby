@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The display name of the user who shared the item.
             @display_name
             ## 
-            # The id of the user who shared the item.
+            # The ID of the user who shared the item.
             @id
             ## 
             # The OdataType property
@@ -95,14 +95,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the id property value. The id of the user who shared the item.
+            ## Gets the id property value. The ID of the user who shared the item.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The id of the user who shared the item.
+            ## Sets the id property value. The ID of the user who shared the item.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

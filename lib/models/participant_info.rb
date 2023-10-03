@@ -28,7 +28,7 @@ module MicrosoftGraph
             # The participant ID of the participant. Read-only.
             @participant_id
             ## 
-            # The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+            # The home region of the participant. This can be a country, a continent, or a larger geographic region. This doesn't change based on the participant's current physical location. Read-only.
             @region
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -167,14 +167,14 @@ module MicrosoftGraph
                 @participant_id = value
             end
             ## 
-            ## Gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+            ## Gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This doesn't change based on the participant's current physical location. Read-only.
             ## @return a string
             ## 
             def region
                 return @region
             end
             ## 
-            ## Sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+            ## Sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This doesn't change based on the participant's current physical location. Read-only.
             ## @param value Value to set for the region property.
             ## @return a void
             ## 

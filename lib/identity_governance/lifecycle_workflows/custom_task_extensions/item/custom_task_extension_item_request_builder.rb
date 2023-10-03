@@ -38,7 +38,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/customTaskExtensions/{customTaskExtension%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
+                        ## Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Read the properties and relationships of a customTaskExtension object.
+                        ## Read the properties and relationships of a customTaskExtension object. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of identity_governance_custom_task_extension
                         ## 
@@ -66,7 +66,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityGovernanceCustomTaskExtension.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the properties of a customTaskExtension object.
+                        ## Update the properties of a customTaskExtension object. This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of identity_governance_custom_task_extension
@@ -82,7 +82,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityGovernanceCustomTaskExtension.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
+                        ## Delete a customTaskExtension object. A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -98,7 +98,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Read the properties and relationships of a customTaskExtension object.
+                        ## Read the properties and relationships of a customTaskExtension object. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -116,7 +116,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the properties of a customTaskExtension object.
+                        ## Update the properties of a customTaskExtension object. This API is supported in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -135,9 +135,18 @@ module MicrosoftGraph
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a custom_task_extension_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return CustomTaskExtensionItemRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
-                        # Read the properties and relationships of a customTaskExtension object.
+                        # Read the properties and relationships of a customTaskExtension object. This API is supported in the following national cloud deployments.
                         class CustomTaskExtensionItemRequestBuilderGetQueryParameters
                             
                             ## 

@@ -62,7 +62,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
+                        ## Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -76,7 +76,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
+                        ## In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of access_package_assignment_request
                         ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignmentRequest.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects.
+                        ## Delete an accessPackageAssignmentRequest object. This request can be made to remove a denied or completed request.  You cannot delete an access package assignment request if it has any accessPackageAssignment objects. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -122,7 +122,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
+                        ## In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object. This API is supported in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -159,9 +159,18 @@ module MicrosoftGraph
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a access_package_assignment_request_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return AccessPackageAssignmentRequestItemRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
-                        # In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object.
+                        # In Azure AD entitlement management, retrieve the properties and relationships of an  accessPackageAssignmentRequest object. This API is supported in the following national cloud deployments.
                         class AccessPackageAssignmentRequestItemRequestBuilderGetQueryParameters
                             
                             ## 

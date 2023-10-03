@@ -60,7 +60,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/education/users/{educationUser%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete a user.
+                    ## Delete a user. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -74,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read the properties and relationships of an educationUser object.
+                    ## Read the properties and relationships of an educationUser object. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of education_user
                     ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationUser.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the properties of an educationUser object.
+                    ## Update the properties of an educationUser object. This API is supported in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of education_user
@@ -104,7 +104,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationUser.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete a user.
+                    ## Delete a user. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -120,7 +120,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Read the properties and relationships of an educationUser object.
+                    ## Read the properties and relationships of an educationUser object. This API is supported in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -138,7 +138,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the properties of an educationUser object.
+                    ## Update the properties of an educationUser object. This API is supported in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -157,9 +157,18 @@ module MicrosoftGraph
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a education_user_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return EducationUserItemRequestBuilder.new(raw_url, @request_adapter)
+                    end
 
                     ## 
-                    # Read the properties and relationships of an educationUser object.
+                    # Read the properties and relationships of an educationUser object. This API is supported in the following national cloud deployments.
                     class EducationUserItemRequestBuilderGetQueryParameters
                         
                         ## 

@@ -83,6 +83,9 @@ module MicrosoftGraph
             # The subject of the online meeting.
             @subject
             ## 
+            # The transcripts property
+            @transcripts
+            ## 
             # The video teleconferencing ID. Read-only.
             @video_teleconference_id
             ## 
@@ -345,6 +348,7 @@ module MicrosoftGraph
                     "shareMeetingChatHistoryDefault" => lambda {|n| @share_meeting_chat_history_default = n.get_enum_value(MicrosoftGraph::Models::MeetingChatHistoryDefaultMode) },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "subject" => lambda {|n| @subject = n.get_string_value() },
+                    "transcripts" => lambda {|n| @transcripts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CallTranscript.create_from_discriminator_value(pn) }) },
                     "videoTeleconferenceId" => lambda {|n| @video_teleconference_id = n.get_string_value() },
                     "watermarkProtection" => lambda {|n| @watermark_protection = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WatermarkProtectionValues.create_from_discriminator_value(pn) }) },
                 })
@@ -502,6 +506,7 @@ module MicrosoftGraph
                 writer.write_enum_value("shareMeetingChatHistoryDefault", @share_meeting_chat_history_default)
                 writer.write_date_time_value("startDateTime", @start_date_time)
                 writer.write_string_value("subject", @subject)
+                writer.write_collection_of_object_values("transcripts", @transcripts)
                 writer.write_string_value("videoTeleconferenceId", @video_teleconference_id)
                 writer.write_object_value("watermarkProtection", @watermark_protection)
             end
@@ -549,6 +554,21 @@ module MicrosoftGraph
             ## 
             def subject=(value)
                 @subject = value
+            end
+            ## 
+            ## Gets the transcripts property value. The transcripts property
+            ## @return a call_transcript
+            ## 
+            def transcripts
+                return @transcripts
+            end
+            ## 
+            ## Sets the transcripts property value. The transcripts property
+            ## @param value Value to set for the transcripts property.
+            ## @return a void
+            ## 
+            def transcripts=(value)
+                @transcripts = value
             end
             ## 
             ## Gets the videoTeleconferenceId property value. The video teleconferencing ID. Read-only.
