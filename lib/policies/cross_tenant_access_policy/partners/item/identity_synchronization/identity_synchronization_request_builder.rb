@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}/identitySynchronization{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete the user synchronization policy for a partner-specific configuration.
+                            ## Delete the user synchronization policy for a partner-specific configuration. This API is available in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get the user synchronization policy of a partner-specific configuration.
+                            ## Get the user synchronization policy of a partner-specific configuration. This API is available in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of cross_tenant_identity_sync_policy_partner
                             ## 
@@ -56,14 +56,14 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CrossTenantIdentitySyncPolicyPartner.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the user synchronization policy of a partner-specific configuration.
+                            ## Update the navigation property identitySynchronization in policies
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of cross_tenant_identity_sync_policy_partner
                             ## 
-                            def patch(body, request_configuration=nil)
+                            def put(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
-                                request_info = self.to_patch_request_information(
+                                request_info = self.to_put_request_information(
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CrossTenantIdentitySyncPolicyPartner.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete the user synchronization policy for a partner-specific configuration.
+                            ## Delete the user synchronization policy for a partner-specific configuration. This API is available in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get the user synchronization policy of a partner-specific configuration.
+                            ## Get the user synchronization policy of a partner-specific configuration. This API is available in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,17 +106,17 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the user synchronization policy of a partner-specific configuration.
+                            ## Update the navigation property identitySynchronization in policies
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
-                            def to_patch_request_information(body, request_configuration=nil)
+                            def to_put_request_information(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
                                 request_info.url_template = @url_template
                                 request_info.path_parameters = @path_parameters
-                                request_info.http_method = :PATCH
+                                request_info.http_method = :PUT
                                 request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
@@ -125,9 +125,18 @@ module MicrosoftGraph
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a identity_synchronization_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return IdentitySynchronizationRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
-                            # Get the user synchronization policy of a partner-specific configuration.
+                            # Get the user synchronization policy of a partner-specific configuration. This API is available in the following national cloud deployments.
                             class IdentitySynchronizationRequestBuilderGetQueryParameters
                                 
                                 ## 

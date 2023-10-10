@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Refers to the Unique GUID representing Application Id in the Azure Active Directory.
             @app_id
             ## 
-            # Refers to the Application Name displayed in the Azure Portal.
+            # Refers to the application name displayed in the Microsoft Entra admin center.
             @display_name
             ## 
             # The OdataType property
@@ -25,15 +25,15 @@ module MicrosoftGraph
             # Refers to the Service Principal Name is the Application name in the tenant.
             @service_principal_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -71,14 +71,14 @@ module MicrosoftGraph
                 return AppIdentity.new
             end
             ## 
-            ## Gets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
+            ## Gets the displayName property value. Refers to the application name displayed in the Microsoft Entra admin center.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
+            ## Sets the displayName property value. Refers to the application name displayed in the Microsoft Entra admin center.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

@@ -26,6 +26,9 @@ module MicrosoftGraph
             # Array of custom tags associated with an incident.
             @custom_tags
             ## 
+            # The description property
+            @description
+            ## 
             # Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
             @determination
             ## 
@@ -49,6 +52,9 @@ module MicrosoftGraph
             ## 
             # The status property
             @status
+            ## 
+            # The systemTags property
+            @system_tags
             ## 
             # The Azure Active Directory tenant in which the alert was created.
             @tenant_id
@@ -159,6 +165,21 @@ module MicrosoftGraph
                 @custom_tags = value
             end
             ## 
+            ## Gets the description property value. The description property
+            ## @return a string
+            ## 
+            def description
+                return @description
+            end
+            ## 
+            ## Sets the description property value. The description property
+            ## @param value Value to set for the description property.
+            ## @return a void
+            ## 
+            def description=(value)
+                @description = value
+            end
+            ## 
             ## Gets the determination property value. Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
             ## @return a security_alert_determination
             ## 
@@ -200,6 +221,7 @@ module MicrosoftGraph
                     "comments" => lambda {|n| @comments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecurityAlertComment.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "customTags" => lambda {|n| @custom_tags = n.get_collection_of_primitive_values(String) },
+                    "description" => lambda {|n| @description = n.get_string_value() },
                     "determination" => lambda {|n| @determination = n.get_enum_value(MicrosoftGraph::Models::SecurityAlertDetermination) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "incidentWebUrl" => lambda {|n| @incident_web_url = n.get_string_value() },
@@ -208,6 +230,7 @@ module MicrosoftGraph
                     "redirectIncidentId" => lambda {|n| @redirect_incident_id = n.get_string_value() },
                     "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraph::Models::SecurityAlertSeverity) },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::SecurityIncidentStatus) },
+                    "systemTags" => lambda {|n| @system_tags = n.get_collection_of_primitive_values(String) },
                     "tenantId" => lambda {|n| @tenant_id = n.get_string_value() },
                 })
             end
@@ -285,6 +308,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("comments", @comments)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_collection_of_primitive_values("customTags", @custom_tags)
+                writer.write_string_value("description", @description)
                 writer.write_enum_value("determination", @determination)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("incidentWebUrl", @incident_web_url)
@@ -293,6 +317,7 @@ module MicrosoftGraph
                 writer.write_string_value("redirectIncidentId", @redirect_incident_id)
                 writer.write_enum_value("severity", @severity)
                 writer.write_enum_value("status", @status)
+                writer.write_collection_of_primitive_values("systemTags", @system_tags)
                 writer.write_string_value("tenantId", @tenant_id)
             end
             ## 
@@ -324,6 +349,21 @@ module MicrosoftGraph
             ## 
             def status=(value)
                 @status = value
+            end
+            ## 
+            ## Gets the systemTags property value. The systemTags property
+            ## @return a string
+            ## 
+            def system_tags
+                return @system_tags
+            end
+            ## 
+            ## Sets the systemTags property value. The systemTags property
+            ## @param value Value to set for the systemTags property.
+            ## @return a void
+            ## 
+            def system_tags=(value)
+                @system_tags = value
             end
             ## 
             ## Gets the tenantId property value. The Azure Active Directory tenant in which the alert was created.

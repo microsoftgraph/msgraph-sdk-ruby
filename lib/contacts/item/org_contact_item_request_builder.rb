@@ -12,6 +12,8 @@ require_relative './item'
 require_relative './manager/manager_request_builder'
 require_relative './member_of/member_of_request_builder'
 require_relative './restore/restore_request_builder'
+require_relative './retry_service_provisioning/retry_service_provisioning_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 require_relative './transitive_member_of/transitive_member_of_request_builder'
 
 module MicrosoftGraph
@@ -62,6 +64,16 @@ module MicrosoftGraph
                     return MicrosoftGraph::Contacts::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to call the retryServiceProvisioning method.
+                def retry_service_provisioning()
+                    return MicrosoftGraph::Contacts::Item::RetryServiceProvisioning::RetryServiceProvisioningRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # The serviceProvisioningErrors property
+                def service_provisioning_errors()
+                    return MicrosoftGraph::Contacts::Item::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.
                 def transitive_member_of()
                     return MicrosoftGraph::Contacts::Item::TransitiveMemberOf::TransitiveMemberOfRequestBuilder.new(@path_parameters, @request_adapter)
@@ -90,7 +102,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Get the properties and relationships of an organizational contact.
+                ## Get the properties and relationships of an organizational contact. This API is available in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of org_contact
                 ## 
@@ -136,7 +148,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Get the properties and relationships of an organizational contact.
+                ## Get the properties and relationships of an organizational contact. This API is available in the following national cloud deployments.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -173,9 +185,18 @@ module MicrosoftGraph
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
                 end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a org_contact_item_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return OrgContactItemRequestBuilder.new(raw_url, @request_adapter)
+                end
 
                 ## 
-                # Get the properties and relationships of an organizational contact.
+                # Get the properties and relationships of an organizational contact. This API is available in the following national cloud deployments.
                 class OrgContactItemRequestBuilderGetQueryParameters
                     
                     ## 

@@ -11,6 +11,7 @@ require_relative '../../../item'
 require_relative '../../unified_group_sources'
 require_relative '../item'
 require_relative './group'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -26,6 +27,11 @@ module MicrosoftGraph
                                         # Provides operations to manage the group property of the microsoft.graph.security.unifiedGroupSource entity.
                                         class GroupRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                             
+                                            ## 
+                                            # The serviceProvisioningErrors property
+                                            def service_provisioning_errors()
+                                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::UnifiedGroupSources::Item::Group::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
                                             ## 
                                             ## Instantiates a new GroupRequestBuilder and sets the default values.
                                             ## @param path_parameters Path parameters for the request
@@ -66,6 +72,15 @@ module MicrosoftGraph
                                                     request_info.add_request_options(request_configuration.options)
                                                 end
                                                 return request_info
+                                            end
+                                            ## 
+                                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                            ## @param raw_url The raw URL to use for the request builder.
+                                            ## @return a group_request_builder
+                                            ## 
+                                            def with_url(raw_url)
+                                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                                return GroupRequestBuilder.new(raw_url, @request_adapter)
                                             end
 
                                             ## 

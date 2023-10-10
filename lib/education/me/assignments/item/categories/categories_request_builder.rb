@@ -59,7 +59,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                            ## List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of education_category_collection_response
                             ## 
@@ -73,7 +73,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationCategoryCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+                            ## Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation. This API is available in the following national cloud deployments.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of education_category
@@ -89,7 +89,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationCategory.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                            ## List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -107,7 +107,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
+                            ## Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation. This API is available in the following national cloud deployments.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -126,9 +126,18 @@ module MicrosoftGraph
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a categories_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return CategoriesRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
-                            # List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                            # List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
                             class CategoriesRequestBuilderGetQueryParameters
                                 
                                 ## 

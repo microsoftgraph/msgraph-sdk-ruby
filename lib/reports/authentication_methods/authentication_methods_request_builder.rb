@@ -161,6 +161,15 @@ module MicrosoftGraph
                     raise StandardError, 'included_user_types cannot be null' if included_user_types.nil?
                     return UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder.new(@path_parameters, @request_adapter, includedUserRoles, includedUserTypes)
                 end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a authentication_methods_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return AuthenticationMethodsRequestBuilder.new(raw_url, @request_adapter)
+                end
 
                 ## 
                 # Container for navigation properties for Azure AD authentication methods resources.

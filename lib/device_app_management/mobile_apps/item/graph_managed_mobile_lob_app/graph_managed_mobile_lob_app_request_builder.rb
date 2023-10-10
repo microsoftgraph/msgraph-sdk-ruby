@@ -5,6 +5,9 @@ require_relative '../../../../models/o_data_errors_o_data_error'
 require_relative '../../../device_app_management'
 require_relative '../../mobile_apps'
 require_relative '../item'
+require_relative './assignments/assignments_request_builder'
+require_relative './categories/categories_request_builder'
+require_relative './content_versions/content_versions_request_builder'
 require_relative './graph_managed_mobile_lob_app'
 
 module MicrosoftGraph
@@ -16,6 +19,21 @@ module MicrosoftGraph
                     # Casts the previous resource to managedMobileLobApp.
                     class GraphManagedMobileLobAppRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                         
+                        ## 
+                        # Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+                        def assignments()
+                            return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::GraphManagedMobileLobApp::Assignments::AssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+                        def categories()
+                            return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::GraphManagedMobileLobApp::Categories::CategoriesRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the contentVersions property of the microsoft.graph.managedMobileLobApp entity.
+                        def content_versions()
+                            return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::GraphManagedMobileLobApp::ContentVersions::ContentVersionsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
                         ## 
                         ## Instantiates a new GraphManagedMobileLobAppRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
@@ -56,6 +74,15 @@ module MicrosoftGraph
                                 request_info.add_request_options(request_configuration.options)
                             end
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a graph_managed_mobile_lob_app_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return GraphManagedMobileLobAppRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 

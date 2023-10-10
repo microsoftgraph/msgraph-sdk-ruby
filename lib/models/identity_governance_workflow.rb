@@ -17,7 +17,7 @@ module MicrosoftGraph
             # Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.
             @id
             ## 
-            # The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.
+            # The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
             @next_schedule_run_date_time
             ## 
             # Workflow runs.
@@ -114,14 +114,14 @@ module MicrosoftGraph
                 @id = value
             end
             ## 
-            ## Gets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.
+            ## Gets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
             ## @return a date_time
             ## 
             def next_schedule_run_date_time
                 return @next_schedule_run_date_time
             end
             ## 
-            ## Sets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.
+            ## Sets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
             ## @param value Value to set for the nextScheduleRunDateTime property.
             ## @return a void
             ## 
