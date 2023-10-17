@@ -7,12 +7,8 @@ require_relative '../../../me'
 require_relative '../../joined_teams'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
-require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
 require_relative './item/resource_specific_permission_grant_item_request_builder'
 require_relative './permission_grants'
-require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -27,26 +23,6 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Me::JoinedTeams::Item::PermissionGrants::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Provides operations to call the delta method.
-                        def delta()
-                            return MicrosoftGraph::Me::JoinedTeams::Item::PermissionGrants::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Provides operations to call the getAvailableExtensionProperties method.
-                        def get_available_extension_properties()
-                            return MicrosoftGraph::Me::JoinedTeams::Item::PermissionGrants::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Provides operations to call the getByIds method.
-                        def get_by_ids()
-                            return MicrosoftGraph::Me::JoinedTeams::Item::PermissionGrants::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Provides operations to call the validateProperties method.
-                        def validate_properties()
-                            return MicrosoftGraph::Me::JoinedTeams::Item::PermissionGrants::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         ## Provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
@@ -69,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/me/joinedTeams/{team%2Did}/permissionGrants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get permissionGrants from me
+                        ## List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app's corresponding type of resource-specific access. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of resource_specific_permission_grant_collection_response
                         ## 
@@ -99,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ResourceSpecificPermissionGrant.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get permissionGrants from me
+                        ## List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app's corresponding type of resource-specific access. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -136,9 +112,18 @@ module MicrosoftGraph
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a permission_grants_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return PermissionGrantsRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
-                        # Get permissionGrants from me
+                        # List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with each app's corresponding type of resource-specific access. This API is available in the following national cloud deployments.
                         class PermissionGrantsRequestBuilderGetQueryParameters
                             
                             ## 

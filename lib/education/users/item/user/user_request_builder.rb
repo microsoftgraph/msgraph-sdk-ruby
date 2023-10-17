@@ -6,6 +6,7 @@ require_relative '../../../education'
 require_relative '../../users'
 require_relative '../item'
 require_relative './mailbox_settings/mailbox_settings_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 require_relative './user'
 
 module MicrosoftGraph
@@ -23,6 +24,11 @@ module MicrosoftGraph
                             return MicrosoftGraph::Education::Users::Item::User::MailboxSettings::MailboxSettingsRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        # The serviceProvisioningErrors property
+                        def service_provisioning_errors()
+                            return MicrosoftGraph::Education::Users::Item::User::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new UserRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -32,7 +38,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/education/users/{educationUser%2Did}/user{?%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve the simple directory user that corresponds to this educationUser.
+                        ## Retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of user
                         ## 
@@ -46,7 +52,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::User.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve the simple directory user that corresponds to this educationUser.
+                        ## Retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -63,9 +69,18 @@ module MicrosoftGraph
                             end
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a user_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return UserRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
-                        # Retrieve the simple directory user that corresponds to this educationUser.
+                        # Retrieve the simple directory user that corresponds to this educationUser. This API is available in the following national cloud deployments.
                         class UserRequestBuilderGetQueryParameters
                             
                             ## 

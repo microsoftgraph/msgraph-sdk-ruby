@@ -30,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}{?%24select}")
                     end
                     ## 
-                    ## Delete a calendar group other than the default calendar group.
+                    ## Delete a calendar group other than the default calendar group. This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -44,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties and relationships of a calendar group object.
+                    ## Retrieve the properties and relationships of a calendar group object. This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of calendar_group
                     ## 
@@ -58,7 +58,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CalendarGroup.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the properties of calendargroup object.
+                    ## Update the properties of calendargroup object. This API is available in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of calendar_group
@@ -74,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CalendarGroup.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete a calendar group other than the default calendar group.
+                    ## Delete a calendar group other than the default calendar group. This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -90,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Retrieve the properties and relationships of a calendar group object.
+                    ## Retrieve the properties and relationships of a calendar group object. This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -108,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the properties of calendargroup object.
+                    ## Update the properties of calendargroup object. This API is available in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -127,9 +127,18 @@ module MicrosoftGraph
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a calendar_group_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return CalendarGroupItemRequestBuilder.new(raw_url, @request_adapter)
+                    end
 
                     ## 
-                    # Retrieve the properties and relationships of a calendar group object.
+                    # Retrieve the properties and relationships of a calendar group object. This API is available in the following national cloud deployments.
                     class CalendarGroupItemRequestBuilderGetQueryParameters
                         
                         ## 

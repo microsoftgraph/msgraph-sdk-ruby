@@ -31,7 +31,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories/{educationCategory%2Did}/$ref{?%40id*}")
                                     end
                                     ## 
-                                    ## Remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+                                    ## Remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is available in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -45,7 +45,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+                                    ## Remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is available in the following national cloud deployments.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -61,9 +61,18 @@ module MicrosoftGraph
                                         end
                                         return request_info
                                     end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a ref_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return RefRequestBuilder.new(raw_url, @request_adapter)
+                                    end
 
                                     ## 
-                                    # Remove an educationCategory from an educationAssignment. Only teachers can perform this operation.
+                                    # Remove an educationCategory from an educationAssignment. Only teachers can perform this operation. This API is available in the following national cloud deployments.
                                     class RefRequestBuilderDeleteQueryParameters
                                         
                                         ## 

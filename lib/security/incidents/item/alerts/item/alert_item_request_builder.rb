@@ -6,6 +6,7 @@ require_relative '../../../../security'
 require_relative '../../../incidents'
 require_relative '../../item'
 require_relative '../alerts'
+require_relative './comments/comments_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -18,6 +19,11 @@ module MicrosoftGraph
                         # Provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
                         class AlertItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
+                            ## 
+                            # The comments property
+                            def comments()
+                                return MicrosoftGraph::Security::Incidents::Item::Alerts::Item::Comments::CommentsRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
                             ## 
                             ## Instantiates a new AlertItemRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
@@ -58,6 +64,15 @@ module MicrosoftGraph
                                     request_info.add_request_options(request_configuration.options)
                                 end
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a alert_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return AlertItemRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 

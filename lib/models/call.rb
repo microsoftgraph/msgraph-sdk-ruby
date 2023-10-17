@@ -28,7 +28,7 @@ module MicrosoftGraph
             # The contentSharingSessions property
             @content_sharing_sessions
             ## 
-            # The direction of the call. The possible value are incoming or outgoing. Read-only.
+            # The direction of the call. The possible values are incoming or outgoing. Read-only.
             @direction
             ## 
             # Call context associated with an incoming call.
@@ -55,7 +55,7 @@ module MicrosoftGraph
             # The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
             @requested_modalities
             ## 
-            # The result information. For example can hold termination reason. Read-only.
+            # The result information. For example, the result can hold termination reason. Read-only.
             @result_info
             ## 
             # The originator of the call.
@@ -200,14 +200,14 @@ module MicrosoftGraph
                 return Call.new
             end
             ## 
-            ## Gets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Gets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @return a call_direction
             ## 
             def direction
                 return @direction
             end
             ## 
-            ## Sets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Sets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @param value Value to set for the direction property.
             ## @return a void
             ## 
@@ -367,14 +367,14 @@ module MicrosoftGraph
                 @requested_modalities = value
             end
             ## 
-            ## Gets the resultInfo property value. The result information. For example can hold termination reason. Read-only.
+            ## Gets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
             ## @return a result_info
             ## 
             def result_info
                 return @result_info
             end
             ## 
-            ## Sets the resultInfo property value. The result information. For example can hold termination reason. Read-only.
+            ## Sets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
             ## @param value Value to set for the resultInfo property.
             ## @return a void
             ## 

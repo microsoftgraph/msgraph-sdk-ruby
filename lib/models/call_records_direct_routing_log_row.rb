@@ -17,10 +17,10 @@ module MicrosoftGraph
             # Call type and direction.
             @call_type
             ## 
-            # Number of the user or bot who received the call. E.164 format, but may include additional data.
+            # Number of the user or bot who received the call. E.164 format, but may include other data.
             @callee_number
             ## 
-            # Number of the user or bot who made the call. E.164 format, but may include additional data.
+            # Number of the user or bot who made the call. E.164 format, but may include other data.
             @caller_number
             ## 
             # Identifier for the call that you can use when calling Microsoft Support. GUID.
@@ -35,7 +35,7 @@ module MicrosoftGraph
             # Only exists for failed (not fully established) calls.
             @failure_date_time
             ## 
-            # The code with which the call ended, RFC 3261.
+            # The code with which the call ended, see RFC 3261.
             @final_sip_code
             ## 
             # Description of the SIP code and Microsoft subcode.
@@ -50,13 +50,13 @@ module MicrosoftGraph
             # Indicates if the trunk was enabled for media bypass or not.
             @media_bypass_enabled
             ## 
-            # The datacenter used for media path in non-bypass call.
+            # The datacenter used for media path in nonbypass call.
             @media_path_location
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The datacenter used for signaling for both bypass and non-bypass calls.
+            # The datacenter used for signaling for both bypass and nonbypass calls.
             @signaling_location
             ## 
             # Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
@@ -77,15 +77,15 @@ module MicrosoftGraph
             # UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
             @user_principal_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -122,14 +122,14 @@ module MicrosoftGraph
                 @call_type = value
             end
             ## 
-            ## Gets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
+            ## Gets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include other data.
             ## @return a string
             ## 
             def callee_number
                 return @callee_number
             end
             ## 
-            ## Sets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
+            ## Sets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include other data.
             ## @param value Value to set for the calleeNumber property.
             ## @return a void
             ## 
@@ -137,14 +137,14 @@ module MicrosoftGraph
                 @callee_number = value
             end
             ## 
-            ## Gets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include additional data.
+            ## Gets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include other data.
             ## @return a string
             ## 
             def caller_number
                 return @caller_number
             end
             ## 
-            ## Sets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include additional data.
+            ## Sets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include other data.
             ## @param value Value to set for the callerNumber property.
             ## @return a void
             ## 
@@ -228,14 +228,14 @@ module MicrosoftGraph
                 @failure_date_time = value
             end
             ## 
-            ## Gets the finalSipCode property value. The code with which the call ended, RFC 3261.
+            ## Gets the finalSipCode property value. The code with which the call ended, see RFC 3261.
             ## @return a integer
             ## 
             def final_sip_code
                 return @final_sip_code
             end
             ## 
-            ## Sets the finalSipCode property value. The code with which the call ended, RFC 3261.
+            ## Sets the finalSipCode property value. The code with which the call ended, see RFC 3261.
             ## @param value Value to set for the finalSipCode property.
             ## @return a void
             ## 
@@ -333,14 +333,14 @@ module MicrosoftGraph
                 @media_bypass_enabled = value
             end
             ## 
-            ## Gets the mediaPathLocation property value. The datacenter used for media path in non-bypass call.
+            ## Gets the mediaPathLocation property value. The datacenter used for media path in nonbypass call.
             ## @return a string
             ## 
             def media_path_location
                 return @media_path_location
             end
             ## 
-            ## Sets the mediaPathLocation property value. The datacenter used for media path in non-bypass call.
+            ## Sets the mediaPathLocation property value. The datacenter used for media path in nonbypass call.
             ## @param value Value to set for the mediaPathLocation property.
             ## @return a void
             ## 
@@ -394,14 +394,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.
+            ## Gets the signalingLocation property value. The datacenter used for signaling for both bypass and nonbypass calls.
             ## @return a string
             ## 
             def signaling_location
                 return @signaling_location
             end
             ## 
-            ## Sets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.
+            ## Sets the signalingLocation property value. The datacenter used for signaling for both bypass and nonbypass calls.
             ## @param value Value to set for the signalingLocation property.
             ## @return a void
             ## 

@@ -5,6 +5,7 @@ require_relative '../../../models/room_list'
 require_relative '../../places'
 require_relative '../item'
 require_relative './graph_room_list'
+require_relative './rooms/rooms_request_builder'
 
 module MicrosoftGraph
     module Places
@@ -14,6 +15,11 @@ module MicrosoftGraph
                 # Casts the previous resource to roomList.
                 class GraphRoomListRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
+                    ## 
+                    # Provides operations to manage the rooms property of the microsoft.graph.roomList entity.
+                    def rooms()
+                        return MicrosoftGraph::Places::Item::GraphRoomList::Rooms::RoomsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     ## Instantiates a new GraphRoomListRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
@@ -54,6 +60,15 @@ module MicrosoftGraph
                             request_info.add_request_options(request_configuration.options)
                         end
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a graph_room_list_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return GraphRoomListRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

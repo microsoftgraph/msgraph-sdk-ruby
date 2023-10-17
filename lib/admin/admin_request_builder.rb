@@ -4,6 +4,7 @@ require_relative '../models/admin'
 require_relative '../models/o_data_errors_o_data_error'
 require_relative './admin'
 require_relative './edge/edge_request_builder'
+require_relative './people/people_request_builder'
 require_relative './service_announcement/service_announcement_request_builder'
 require_relative './sharepoint/sharepoint_request_builder'
 
@@ -17,6 +18,11 @@ module MicrosoftGraph
             # Provides operations to manage the edge property of the microsoft.graph.admin entity.
             def edge()
                 return MicrosoftGraph::Admin::Edge::EdgeRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the people property of the microsoft.graph.admin entity.
+            def people()
+                return MicrosoftGraph::Admin::People::PeopleRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
@@ -104,6 +110,15 @@ module MicrosoftGraph
                 end
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a admin_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return AdminRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

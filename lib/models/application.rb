@@ -14,7 +14,7 @@ module MicrosoftGraph
             # Specifies settings for an application that implements a web API.
             @api
             ## 
-            # The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Supports $filter (eq).
+            # The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Alternate key. Supports $filter (eq).
             @app_id
             ## 
             # The appManagementPolicy applied to this application.
@@ -29,7 +29,7 @@ module MicrosoftGraph
             # Specifies the certification status of the application.
             @certification
             ## 
-            # The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
+            # The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.
             @created_date_time
             ## 
             # Supports $filter (/$count eq 0, /$count ne 0). Read-only.
@@ -44,7 +44,7 @@ module MicrosoftGraph
             # Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
             @disabled_by_microsoft_status
             ## 
-            # The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            # The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             @display_name
             ## 
             # Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
@@ -113,6 +113,9 @@ module MicrosoftGraph
             # References application or service contact information from a Service or Asset Management database. Nullable.
             @service_management_reference
             ## 
+            # Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+            @service_principal_lock_configuration
+            ## 
             # Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
             @sign_in_audience
             ## 
@@ -170,14 +173,14 @@ module MicrosoftGraph
                 @api = value
             end
             ## 
-            ## Gets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Supports $filter (eq).
+            ## Gets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Alternate key. Supports $filter (eq).
             ## @return a string
             ## 
             def app_id
                 return @app_id
             end
             ## 
-            ## Sets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Supports $filter (eq).
+            ## Sets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Alternate key. Supports $filter (eq).
             ## @param value Value to set for the appId property.
             ## @return a void
             ## 
@@ -253,14 +256,14 @@ module MicrosoftGraph
                 @odata_type = "#microsoft.graph.application"
             end
             ## 
-            ## Gets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
+            ## Gets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
+            ## Sets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -337,14 +340,14 @@ module MicrosoftGraph
                 @disabled_by_microsoft_status = value
             end
             ## 
-            ## Gets the displayName property value. The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Gets the displayName property value. The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Sets the displayName property value. The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -422,6 +425,7 @@ module MicrosoftGraph
                     "requiredResourceAccess" => lambda {|n| @required_resource_access = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::RequiredResourceAccess.create_from_discriminator_value(pn) }) },
                     "samlMetadataUrl" => lambda {|n| @saml_metadata_url = n.get_string_value() },
                     "serviceManagementReference" => lambda {|n| @service_management_reference = n.get_string_value() },
+                    "servicePrincipalLockConfiguration" => lambda {|n| @service_principal_lock_configuration = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ServicePrincipalLockConfiguration.create_from_discriminator_value(pn) }) },
                     "signInAudience" => lambda {|n| @sign_in_audience = n.get_string_value() },
                     "spa" => lambda {|n| @spa = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SpaApplication.create_from_discriminator_value(pn) }) },
                     "synchronization" => lambda {|n| @synchronization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Synchronization.create_from_discriminator_value(pn) }) },
@@ -761,6 +765,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("requiredResourceAccess", @required_resource_access)
                 writer.write_string_value("samlMetadataUrl", @saml_metadata_url)
                 writer.write_string_value("serviceManagementReference", @service_management_reference)
+                writer.write_object_value("servicePrincipalLockConfiguration", @service_principal_lock_configuration)
                 writer.write_string_value("signInAudience", @sign_in_audience)
                 writer.write_object_value("spa", @spa)
                 writer.write_object_value("synchronization", @synchronization)
@@ -785,6 +790,21 @@ module MicrosoftGraph
             ## 
             def service_management_reference=(value)
                 @service_management_reference = value
+            end
+            ## 
+            ## Gets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+            ## @return a service_principal_lock_configuration
+            ## 
+            def service_principal_lock_configuration
+                return @service_principal_lock_configuration
+            end
+            ## 
+            ## Sets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+            ## @param value Value to set for the servicePrincipalLockConfiguration property.
+            ## @return a void
+            ## 
+            def service_principal_lock_configuration=(value)
+                @service_principal_lock_configuration = value
             end
             ## 
             ## Gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).

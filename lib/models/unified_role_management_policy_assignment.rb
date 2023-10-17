@@ -13,13 +13,13 @@ module MicrosoftGraph
             # The id of the policy. Inherited from entity.
             @policy_id
             ## 
-            # The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).
+            # For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
             @role_definition_id
             ## 
             # The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
             @scope_id
             ## 
-            # The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
+            # The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group. Required.
             @scope_type
             ## 
             ## Instantiates a new unifiedRoleManagementPolicyAssignment and sets the default values.
@@ -81,14 +81,14 @@ module MicrosoftGraph
                 @policy_id = value
             end
             ## 
-            ## Gets the roleDefinitionId property value. The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).
+            ## Gets the roleDefinitionId property value. For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
             ## @return a string
             ## 
             def role_definition_id
                 return @role_definition_id
             end
             ## 
-            ## Sets the roleDefinitionId property value. The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).
+            ## Sets the roleDefinitionId property value. For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
             ## @param value Value to set for the roleDefinitionId property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraph
                 @scope_id = value
             end
             ## 
-            ## Gets the scopeType property value. The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
+            ## Gets the scopeType property value. The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group. Required.
             ## @return a string
             ## 
             def scope_type
                 return @scope_type
             end
             ## 
-            ## Sets the scopeType property value. The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
+            ## Sets the scopeType property value. The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group. Required.
             ## @param value Value to set for the scopeType property.
             ## @return a void
             ## 

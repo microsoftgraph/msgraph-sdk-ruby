@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The type of attachment. Possible values are: file, item, reference. Required.
             @attachment_type
             ## 
-            # The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
+            # The CID or Content-Id of the attachment for referencing for the in-line attachments using the <img src='cid:contentId'> tag in HTML messages. Optional.
             @content_id
             ## 
             # The nature of the data in the attachment. Optional.
@@ -22,7 +22,7 @@ module MicrosoftGraph
             # true if the attachment is an inline attachment; otherwise, false. Optional.
             @is_inline
             ## 
-            # The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+            # The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
             @name
             ## 
             # The OdataType property
@@ -31,15 +31,15 @@ module MicrosoftGraph
             # The length of the attachment in bytes. Required.
             @size
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -68,14 +68,14 @@ module MicrosoftGraph
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
+            ## Gets the contentId property value. The CID or Content-Id of the attachment for referencing for the in-line attachments using the <img src='cid:contentId'> tag in HTML messages. Optional.
             ## @return a string
             ## 
             def content_id
                 return @content_id
             end
             ## 
-            ## Sets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
+            ## Sets the contentId property value. The CID or Content-Id of the attachment for referencing for the in-line attachments using the <img src='cid:contentId'> tag in HTML messages. Optional.
             ## @param value Value to set for the contentId property.
             ## @return a void
             ## 
@@ -137,14 +137,14 @@ module MicrosoftGraph
                 @is_inline = value
             end
             ## 
-            ## Gets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+            ## Gets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+            ## Sets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 

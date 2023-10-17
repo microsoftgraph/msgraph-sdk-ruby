@@ -6,6 +6,9 @@ require_relative '../../../security'
 require_relative '../../attack_simulation'
 require_relative '../simulations'
 require_relative './item'
+require_relative './landing_page/landing_page_request_builder'
+require_relative './login_page/login_page_request_builder'
+require_relative './payload/payload_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -16,6 +19,21 @@ module MicrosoftGraph
                     # Provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
                     class SimulationItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                         
+                        ## 
+                        # Provides operations to manage the landingPage property of the microsoft.graph.simulation entity.
+                        def landing_page()
+                            return MicrosoftGraph::Security::AttackSimulation::Simulations::Item::LandingPage::LandingPageRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the loginPage property of the microsoft.graph.simulation entity.
+                        def login_page()
+                            return MicrosoftGraph::Security::AttackSimulation::Simulations::Item::LoginPage::LoginPageRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the payload property of the microsoft.graph.simulation entity.
+                        def payload()
+                            return MicrosoftGraph::Security::AttackSimulation::Simulations::Item::Payload::PayloadRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
                         ## 
                         ## Instantiates a new SimulationItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
@@ -40,7 +58,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Get an attack simulation campaign for a tenant.
+                        ## Get an attack simulation campaign for a tenant. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of simulation
                         ## 
@@ -86,7 +104,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Get an attack simulation campaign for a tenant.
+                        ## Get an attack simulation campaign for a tenant. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -123,9 +141,18 @@ module MicrosoftGraph
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a simulation_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return SimulationItemRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
-                        # Get an attack simulation campaign for a tenant.
+                        # Get an attack simulation campaign for a tenant. This API is available in the following national cloud deployments.
                         class SimulationItemRequestBuilderGetQueryParameters
                             
                             ## 

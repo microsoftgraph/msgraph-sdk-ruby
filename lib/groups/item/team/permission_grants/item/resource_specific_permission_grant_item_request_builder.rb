@@ -6,12 +6,7 @@ require_relative '../../../../groups'
 require_relative '../../../item'
 require_relative '../../team'
 require_relative '../permission_grants'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
-require_relative './restore/restore_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -23,31 +18,6 @@ module MicrosoftGraph
                         # Provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
                         class ResourceSpecificPermissionGrantItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
-                            ## 
-                            # Provides operations to call the checkMemberGroups method.
-                            def check_member_groups()
-                                return MicrosoftGraph::Groups::Item::Team::PermissionGrants::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to call the checkMemberObjects method.
-                            def check_member_objects()
-                                return MicrosoftGraph::Groups::Item::Team::PermissionGrants::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to call the getMemberGroups method.
-                            def get_member_groups()
-                                return MicrosoftGraph::Groups::Item::Team::PermissionGrants::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to call the getMemberObjects method.
-                            def get_member_objects()
-                                return MicrosoftGraph::Groups::Item::Team::PermissionGrants::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to call the restore method.
-                            def restore()
-                                return MicrosoftGraph::Groups::Item::Team::PermissionGrants::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
                             ## 
                             ## Instantiates a new ResourceSpecificPermissionGrantItemRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
@@ -72,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get permissionGrants from groups
+                            ## A collection of permissions granted to apps to access the team.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of resource_specific_permission_grant
                             ## 
@@ -118,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get permissionGrants from groups
+                            ## A collection of permissions granted to apps to access the team.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -155,9 +125,18 @@ module MicrosoftGraph
                                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a resource_specific_permission_grant_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return ResourceSpecificPermissionGrantItemRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
-                            # Get permissionGrants from groups
+                            # A collection of permissions granted to apps to access the team.
                             class ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters
                                 
                                 ## 

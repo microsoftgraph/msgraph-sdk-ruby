@@ -8,7 +8,7 @@ module MicrosoftGraph
         class LearningSelfInitiatedCourse < MicrosoftGraph::Models::LearningCourseActivity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The date time value on which the self-initiated course was started by the learner. Optional.
+            # The date and time on which the self-initiated course was started by the learner. Optional.
             @started_date_time
             ## 
             ## Instantiates a new learningSelfInitiatedCourse and sets the default values.
@@ -46,14 +46,14 @@ module MicrosoftGraph
                 writer.write_date_time_value("startedDateTime", @started_date_time)
             end
             ## 
-            ## Gets the startedDateTime property value. The date time value on which the self-initiated course was started by the learner. Optional.
+            ## Gets the startedDateTime property value. The date and time on which the self-initiated course was started by the learner. Optional.
             ## @return a date_time
             ## 
             def started_date_time
                 return @started_date_time
             end
             ## 
-            ## Sets the startedDateTime property value. The date time value on which the self-initiated course was started by the learner. Optional.
+            ## Sets the startedDateTime property value. The date and time on which the self-initiated course was started by the learner. Optional.
             ## @param value Value to set for the startedDateTime property.
             ## @return a void
             ## 

@@ -59,6 +59,15 @@ module MicrosoftGraph
                                 end
                                 return request_info
                             end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a target_schedule_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return TargetScheduleRequestBuilder.new(raw_url, @request_adapter)
+                            end
 
                             ## 
                             # The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.

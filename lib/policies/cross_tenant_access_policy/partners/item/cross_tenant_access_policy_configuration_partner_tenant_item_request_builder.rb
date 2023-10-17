@@ -32,7 +32,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
+                        ## Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -46,7 +46,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Read the properties and relationships of a partner-specific configuration.
+                        ## Read the properties and relationships of a partner-specific configuration. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of cross_tenant_access_policy_configuration_partner
                         ## 
@@ -60,7 +60,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyConfigurationPartner.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the properties of a partner-specific configuration.
+                        ## Update the properties of a partner-specific configuration. This API is available in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of cross_tenant_access_policy_configuration_partner
@@ -76,7 +76,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyConfigurationPartner.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
+                        ## Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -92,7 +92,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Read the properties and relationships of a partner-specific configuration.
+                        ## Read the properties and relationships of a partner-specific configuration. This API is available in the following national cloud deployments.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -110,7 +110,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the properties of a partner-specific configuration.
+                        ## Update the properties of a partner-specific configuration. This API is available in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -129,9 +129,18 @@ module MicrosoftGraph
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a cross_tenant_access_policy_configuration_partner_tenant_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder.new(raw_url, @request_adapter)
+                        end
 
                         ## 
-                        # Read the properties and relationships of a partner-specific configuration.
+                        # Read the properties and relationships of a partner-specific configuration. This API is available in the following national cloud deployments.
                         class CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderGetQueryParameters
                             
                             ## 

@@ -24,7 +24,7 @@ module MicrosoftGraph
                 ## Unfollow a user's site or multiple sites.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                ## @return a Fiber of remove_response
+                ## @return a Fiber of remove_post_response
                 ## 
                 def post(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
@@ -34,7 +34,7 @@ module MicrosoftGraph
                     error_mapping = Hash.new
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Sites::Remove::RemoveResponse.create_from_discriminator_value(pn) }, error_mapping)
+                    return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Sites::Remove::RemovePostResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
                 ## Unfollow a user's site or multiple sites.
@@ -55,6 +55,15 @@ module MicrosoftGraph
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a remove_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return RemoveRequestBuilder.new(raw_url, @request_adapter)
                 end
             end
         end
