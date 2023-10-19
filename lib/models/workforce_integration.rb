@@ -96,7 +96,7 @@ module MicrosoftGraph
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "encryption" => lambda {|n| @encryption = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkforceIntegrationEncryption.create_from_discriminator_value(pn) }) },
                     "isActive" => lambda {|n| @is_active = n.get_boolean_value() },
-                    "supportedEntities" => lambda {|n| @supported_entities = n.get_enum_value(MicrosoftGraph::Models::WorkforceIntegrationSupportedEntities) },
+                    "supportedEntities" => lambda {|n| @supported_entities = n.get_enum_values(MicrosoftGraph::Models::WorkforceIntegrationSupportedEntities) },
                     "url" => lambda {|n| @url = n.get_string_value() },
                 })
             end

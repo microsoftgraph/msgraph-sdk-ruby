@@ -30,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/createdObjects/{directoryObject%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Directory objects that were created by the user. Read-only. Nullable.
+                    ## Directory objects that the user created. Read-only. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of directory_object
                     ## 
@@ -44,26 +44,35 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Directory objects that were created by the user. Read-only. Nullable.
+                    ## Directory objects that the user created. Read-only. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a directory_object_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return DirectoryObjectItemRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 
-                    # Directory objects that were created by the user. Read-only. Nullable.
+                    # Directory objects that the user created. Read-only. Nullable.
                     class DirectoryObjectItemRequestBuilderGetQueryParameters
                         
                         ## 

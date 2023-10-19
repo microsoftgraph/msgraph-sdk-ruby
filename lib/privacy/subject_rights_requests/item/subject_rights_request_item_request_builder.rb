@@ -4,6 +4,8 @@ require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/subject_rights_request'
 require_relative '../../privacy'
 require_relative '../subject_rights_requests'
+require_relative './approvers/approvers_request_builder'
+require_relative './collaborators/collaborators_request_builder'
 require_relative './get_final_attachment/get_final_attachment_request_builder'
 require_relative './get_final_report/get_final_report_request_builder'
 require_relative './item'
@@ -18,6 +20,16 @@ module MicrosoftGraph
                 # Provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
                 class SubjectRightsRequestItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
+                    ## 
+                    # Provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+                    def approvers()
+                        return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::Approvers::ApproversRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+                    def collaborators()
+                        return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::Collaborators::CollaboratorsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     # Provides operations to call the getFinalAttachment method.
                     def get_final_attachment()
@@ -62,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read the properties and relationships of a subjectRightsRequest object.
+                    ## Read the properties and relationships of a subjectRightsRequest object. This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of subject_rights_request
                     ## 
@@ -76,7 +88,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SubjectRightsRequest.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the properties of a subjectRightsRequest object.
+                    ## Update the properties of a subjectRightsRequest object. This API is available in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of subject_rights_request
@@ -98,35 +110,35 @@ module MicrosoftGraph
                     ## 
                     def to_delete_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :DELETE
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :DELETE
                         return request_info
                     end
                     ## 
-                    ## Read the properties and relationships of a subjectRightsRequest object.
+                    ## Read the properties and relationships of a subjectRightsRequest object. This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
-                    ## Update the properties of a subjectRightsRequest object.
+                    ## Update the properties of a subjectRightsRequest object. This API is available in the following national cloud deployments.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -134,20 +146,29 @@ module MicrosoftGraph
                     def to_patch_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :PATCH
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :PATCH
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a subject_rights_request_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return SubjectRightsRequestItemRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 
-                    # Read the properties and relationships of a subjectRightsRequest object.
+                    # Read the properties and relationships of a subjectRightsRequest object. This API is available in the following national cloud deployments.
                     class SubjectRightsRequestItemRequestBuilderGetQueryParameters
                         
                         ## 

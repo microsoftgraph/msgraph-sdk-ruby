@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/setUpResourcesFolder")
                             end
                             ## 
-                            ## Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder. 
+                            ## Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder.  This API is available in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of education_assignment
                             ## 
@@ -42,21 +42,30 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationAssignment.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder. 
+                            ## Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder.  This API is available in the following national cloud deployments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_post_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :POST
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :POST
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a set_up_resources_folder_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return SetUpResourcesFolderRequestBuilder.new(raw_url, @request_adapter)
                             end
                         end
                     end

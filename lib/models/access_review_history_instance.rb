@@ -8,19 +8,19 @@ module MicrosoftGraph
         class AccessReviewHistoryInstance < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
+            # Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
             @download_uri
             ## 
             # Timestamp when this instance and associated data expires and the history is deleted. Required.
             @expiration_date_time
             ## 
-            # Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.
+            # Timestamp when all of the available data for this instance was collected and is set after this instance's status is set to done. Required.
             @fulfilled_date_time
             ## 
-            # Timestamp, reviews ending on or before this date will be included in the fetched history data.
+            # Timestamp reviews ending on or before this date will be included in the fetched history data.
             @review_history_period_end_date_time
             ## 
-            # Timestamp, reviews starting on or after this date will be included in the fetched history data.
+            # Timestamp reviews starting on or after this date will be included in the fetched history data.
             @review_history_period_start_date_time
             ## 
             # Timestamp when the instance's history data is scheduled to be generated.
@@ -45,14 +45,14 @@ module MicrosoftGraph
                 return AccessReviewHistoryInstance.new
             end
             ## 
-            ## Gets the downloadUri property value. Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
+            ## Gets the downloadUri property value. Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
             ## @return a string
             ## 
             def download_uri
                 return @download_uri
             end
             ## 
-            ## Sets the downloadUri property value. Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
+            ## Sets the downloadUri property value. Uri that can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
             ## @param value Value to set for the downloadUri property.
             ## @return a void
             ## 
@@ -75,14 +75,14 @@ module MicrosoftGraph
                 @expiration_date_time = value
             end
             ## 
-            ## Gets the fulfilledDateTime property value. Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.
+            ## Gets the fulfilledDateTime property value. Timestamp when all of the available data for this instance was collected and is set after this instance's status is set to done. Required.
             ## @return a date_time
             ## 
             def fulfilled_date_time
                 return @fulfilled_date_time
             end
             ## 
-            ## Sets the fulfilledDateTime property value. Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.
+            ## Sets the fulfilledDateTime property value. Timestamp when all of the available data for this instance was collected and is set after this instance's status is set to done. Required.
             ## @param value Value to set for the fulfilledDateTime property.
             ## @return a void
             ## 
@@ -105,14 +105,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews ending on or before this date will be included in the fetched history data.
+            ## Gets the reviewHistoryPeriodEndDateTime property value. Timestamp reviews ending on or before this date will be included in the fetched history data.
             ## @return a date_time
             ## 
             def review_history_period_end_date_time
                 return @review_history_period_end_date_time
             end
             ## 
-            ## Sets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews ending on or before this date will be included in the fetched history data.
+            ## Sets the reviewHistoryPeriodEndDateTime property value. Timestamp reviews ending on or before this date will be included in the fetched history data.
             ## @param value Value to set for the reviewHistoryPeriodEndDateTime property.
             ## @return a void
             ## 
@@ -120,14 +120,14 @@ module MicrosoftGraph
                 @review_history_period_end_date_time = value
             end
             ## 
-            ## Gets the reviewHistoryPeriodStartDateTime property value. Timestamp, reviews starting on or after this date will be included in the fetched history data.
+            ## Gets the reviewHistoryPeriodStartDateTime property value. Timestamp reviews starting on or after this date will be included in the fetched history data.
             ## @return a date_time
             ## 
             def review_history_period_start_date_time
                 return @review_history_period_start_date_time
             end
             ## 
-            ## Sets the reviewHistoryPeriodStartDateTime property value. Timestamp, reviews starting on or after this date will be included in the fetched history data.
+            ## Sets the reviewHistoryPeriodStartDateTime property value. Timestamp reviews starting on or after this date will be included in the fetched history data.
             ## @param value Value to set for the reviewHistoryPeriodStartDateTime property.
             ## @return a void
             ## 

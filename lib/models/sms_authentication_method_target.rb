@@ -7,7 +7,7 @@ module MicrosoftGraph
         class SmsAuthenticationMethodTarget < MicrosoftGraph::Models::AuthenticationMethodTarget
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
+            # Determines if users can use this authentication method to sign in to Microsoft Entra ID. true if users can use this method for primary authentication, otherwise false.
             @is_usable_for_sign_in
             ## 
             ## Instantiates a new smsAuthenticationMethodTarget and sets the default values.
@@ -35,14 +35,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isUsableForSignIn property value. Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
+            ## Gets the isUsableForSignIn property value. Determines if users can use this authentication method to sign in to Microsoft Entra ID. true if users can use this method for primary authentication, otherwise false.
             ## @return a boolean
             ## 
             def is_usable_for_sign_in
                 return @is_usable_for_sign_in
             end
             ## 
-            ## Sets the isUsableForSignIn property value. Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
+            ## Sets the isUsableForSignIn property value. Determines if users can use this authentication method to sign in to Microsoft Entra ID. true if users can use this method for primary authentication, otherwise false.
             ## @param value Value to set for the isUsableForSignIn property.
             ## @return a void
             ## 

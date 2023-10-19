@@ -7,7 +7,7 @@ module MicrosoftGraph
         class WorkbookChartPointFormat < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents the fill format of a chart, which includes background formating information. Read-only.
+            # Represents the fill format of a chart, which includes background formatting information. Read-only.
             @fill
             ## 
             ## Instantiates a new workbookChartPointFormat and sets the default values.
@@ -26,14 +26,14 @@ module MicrosoftGraph
                 return WorkbookChartPointFormat.new
             end
             ## 
-            ## Gets the fill property value. Represents the fill format of a chart, which includes background formating information. Read-only.
+            ## Gets the fill property value. Represents the fill format of a chart, which includes background formatting information. Read-only.
             ## @return a workbook_chart_fill
             ## 
             def fill
                 return @fill
             end
             ## 
-            ## Sets the fill property value. Represents the fill format of a chart, which includes background formating information. Read-only.
+            ## Sets the fill property value. Represents the fill format of a chart, which includes background formatting information. Read-only.
             ## @param value Value to set for the fill property.
             ## @return a void
             ## 

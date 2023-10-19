@@ -20,13 +20,13 @@ module MicrosoftGraph
             # The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
             @created_date_time
             ## 
-            # The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Cannot be changed by the customer.
+            # The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Can't be changed by the customer.
             @customer
             ## 
-            # The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
+            # The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner and is set by the partner only when the relationship is in the created status and can't be changed by the customer.
             @display_name
             ## 
-            # The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
+            # The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
             @duration
             ## 
             # The date and time in ISO 8601 format and in UTC time when the status of relationship changes to either terminated or expired. Calculated as endDateTime = activatedDateTime + duration. Read-only.
@@ -41,7 +41,7 @@ module MicrosoftGraph
             # The requests associated with the delegated admin relationship.
             @requests
             ## 
-            # The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
+            # The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
             @status
             ## 
             ## Gets the accessAssignments property value. The access assignments associated with the delegated admin relationship.
@@ -117,17 +117,25 @@ module MicrosoftGraph
             ## 
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                mapping_value_node = parse_node.get_child_node("@odata.type")
+                unless mapping_value_node.nil? then
+                    mapping_value = mapping_value_node.get_string_value
+                    case mapping_value
+                        when "#microsoft.graph.resellerDelegatedAdminRelationship"
+                            return ResellerDelegatedAdminRelationship.new
+                    end
+                end
                 return DelegatedAdminRelationship.new
             end
             ## 
-            ## Gets the customer property value. The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Cannot be changed by the customer.
+            ## Gets the customer property value. The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Can't be changed by the customer.
             ## @return a delegated_admin_relationship_customer_participant
             ## 
             def customer
                 return @customer
             end
             ## 
-            ## Sets the customer property value. The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Cannot be changed by the customer.
+            ## Sets the customer property value. The display name and unique identifier of the customer of the relationship. This is configured either by the partner at the time the relationship is created or by the system after the customer approves the relationship. Can't be changed by the customer.
             ## @param value Value to set for the customer property.
             ## @return a void
             ## 
@@ -135,14 +143,14 @@ module MicrosoftGraph
                 @customer = value
             end
             ## 
-            ## Gets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
+            ## Gets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner and is set by the partner only when the relationship is in the created status and can't be changed by the customer.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
+            ## Sets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner and is set by the partner only when the relationship is in the created status and can't be changed by the customer.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -150,14 +158,14 @@ module MicrosoftGraph
                 @display_name = value
             end
             ## 
-            ## Gets the duration property value. The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
+            ## Gets the duration property value. The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def duration
                 return @duration
             end
             ## 
-            ## Sets the duration property value. The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
+            ## Sets the duration property value. The duration of the relationship in ISO 8601 format. Must be a value between P1D and P2Y inclusive. This is set by the partner only when the relationship is in the created status and can't be changed by the customer.
             ## @param value Value to set for the duration property.
             ## @return a void
             ## 
@@ -266,14 +274,14 @@ module MicrosoftGraph
                 writer.write_enum_value("status", @status)
             end
             ## 
-            ## Gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
+            ## Gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
             ## @return a delegated_admin_relationship_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
+            ## Sets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

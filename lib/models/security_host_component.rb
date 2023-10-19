@@ -23,7 +23,7 @@ module MicrosoftGraph
             # A name running on the artifact, for example, Microsoft IIS.
             @name
             ## 
-            # The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.
+            # The component version running on the artifact, for example, v8.5. This shouldn't be assumed to be strictly numerical.
             @version
             ## 
             ## Gets the category property value. The type of component that was detected (for example, Operating System, Framework, Remote Access, or Server).
@@ -147,14 +147,14 @@ module MicrosoftGraph
                 writer.write_string_value("version", @version)
             end
             ## 
-            ## Gets the version property value. The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.
+            ## Gets the version property value. The component version running on the artifact, for example, v8.5. This shouldn't be assumed to be strictly numerical.
             ## @return a string
             ## 
             def version
                 return @version
             end
             ## 
-            ## Sets the version property value. The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.
+            ## Sets the version property value. The component version running on the artifact, for example, v8.5. This shouldn't be assumed to be strictly numerical.
             ## @param value Value to set for the version property.
             ## @return a void
             ## 
