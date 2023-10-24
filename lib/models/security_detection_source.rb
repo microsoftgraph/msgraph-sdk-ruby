@@ -20,6 +20,11 @@ module MicrosoftGraph
             AppGovernanceDetection: :AppGovernanceDetection,
             UnknownFutureValue: :UnknownFutureValue,
             MicrosoftDefenderForCloud: :MicrosoftDefenderForCloud,
+            NrtAlerts: :NrtAlerts,
+            ScheduledAlerts: :ScheduledAlerts,
+            MicrosoftDefenderThreatIntelligenceAnalytics: :MicrosoftDefenderThreatIntelligenceAnalytics,
+            BuiltInMl: :BuiltInMl,
+            MicrosoftSentinel: :MicrosoftSentinel,
         }
     end
 end

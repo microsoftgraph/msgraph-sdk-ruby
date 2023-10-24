@@ -8,6 +8,7 @@ require_relative '../../lists'
 require_relative '../item'
 require_relative './last_modified_by_user'
 require_relative './mailbox_settings/mailbox_settings_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 
 module MicrosoftGraph
     module Sites
@@ -23,6 +24,11 @@ module MicrosoftGraph
                             # The mailboxSettings property
                             def mailbox_settings()
                                 return MicrosoftGraph::Sites::Item::Lists::Item::LastModifiedByUser::MailboxSettings::MailboxSettingsRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # The serviceProvisioningErrors property
+                            def service_provisioning_errors()
+                                return MicrosoftGraph::Sites::Item::Lists::Item::LastModifiedByUser::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new LastModifiedByUserRequestBuilder and sets the default values.
@@ -54,16 +60,25 @@ module MicrosoftGraph
                             ## 
                             def to_get_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :GET
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :GET
+                                request_info.headers.try_add('Accept', 'application/json;q=1')
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a last_modified_by_user_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return LastModifiedByUserRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 

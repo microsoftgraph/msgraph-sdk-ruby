@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Represents the current status of a user's response to a company's customizable terms of use agreement.
             @agreement_acceptances
             ## 
-            # Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+            # Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID Governance.
             @agreements
             ## 
             ## Gets the agreementAcceptances property value. Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -28,14 +28,14 @@ module MicrosoftGraph
                 @agreement_acceptances = value
             end
             ## 
-            ## Gets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+            ## Gets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID Governance.
             ## @return a agreement
             ## 
             def agreements
                 return @agreements
             end
             ## 
-            ## Sets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
+            ## Sets the agreements property value. Represents a tenant's customizable terms of use agreement that's created and managed with Microsoft Entra ID Governance.
             ## @param value Value to set for the agreements property.
             ## @return a void
             ## 

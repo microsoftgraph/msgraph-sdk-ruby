@@ -7,7 +7,7 @@ module MicrosoftGraph
         class AuthenticationMethodsRoot < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
+            # Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multifactor authentication, self-service password reset, and passwordless authentication).
             @user_registration_details
             ## 
             ## Instantiates a new authenticationMethodsRoot and sets the default values.
@@ -45,14 +45,14 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("userRegistrationDetails", @user_registration_details)
             end
             ## 
-            ## Gets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
+            ## Gets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multifactor authentication, self-service password reset, and passwordless authentication).
             ## @return a user_registration_details
             ## 
             def user_registration_details
                 return @user_registration_details
             end
             ## 
-            ## Sets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
+            ## Sets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multifactor authentication, self-service password reset, and passwordless authentication).
             ## @param value Value to set for the userRegistrationDetails property.
             ## @return a void
             ## 

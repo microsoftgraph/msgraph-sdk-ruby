@@ -8,6 +8,7 @@ require_relative './attendance_reports/attendance_reports_request_builder'
 require_relative './attendee_report/attendee_report_request_builder'
 require_relative './get_virtual_appointment_join_web_url/get_virtual_appointment_join_web_url_request_builder'
 require_relative './item'
+require_relative './transcripts/transcripts_request_builder'
 
 module MicrosoftGraph
     module Communications
@@ -31,6 +32,11 @@ module MicrosoftGraph
                     # Provides operations to call the getVirtualAppointmentJoinWebUrl method.
                     def get_virtual_appointment_join_web_url()
                         return MicrosoftGraph::Communications::OnlineMeetings::Item::GetVirtualAppointmentJoinWebUrl::GetVirtualAppointmentJoinWebUrlRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.
+                    def transcripts()
+                        return MicrosoftGraph::Communications::OnlineMeetings::Item::Transcripts::TranscriptsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.
@@ -92,13 +98,14 @@ module MicrosoftGraph
                     ## 
                     def to_delete_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :DELETE
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :DELETE
+                        request_info.headers.try_add('Accept', 'application/json, application/json')
                         return request_info
                     end
                     ## 
@@ -108,15 +115,15 @@ module MicrosoftGraph
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json;q=1')
                         return request_info
                     end
                     ## 
@@ -128,16 +135,25 @@ module MicrosoftGraph
                     def to_patch_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :PATCH
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :PATCH
+                        request_info.headers.try_add('Accept', 'application/json;q=1')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a online_meeting_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return OnlineMeetingItemRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 

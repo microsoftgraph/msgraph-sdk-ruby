@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
             @display_name
             ## 
-            # Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
+            # Refers to the grant controls enforced by the conditional access policy (example: 'Require multifactor authentication').
             @enforced_grant_controls
             ## 
             # Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
@@ -25,18 +25,18 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
+            # Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions weren't met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
             @result
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -74,14 +74,14 @@ module MicrosoftGraph
                 @display_name = value
             end
             ## 
-            ## Gets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
+            ## Gets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multifactor authentication').
             ## @return a string
             ## 
             def enforced_grant_controls
                 return @enforced_grant_controls
             end
             ## 
-            ## Sets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
+            ## Sets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multifactor authentication').
             ## @param value Value to set for the enforcedGrantControls property.
             ## @return a void
             ## 
@@ -148,14 +148,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
+            ## Gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions weren't met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
             ## @return a applied_conditional_access_policy_result
             ## 
             def result
                 return @result
             end
             ## 
-            ## Sets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
+            ## Sets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions weren't met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue.
             ## @param value Value to set for the result property.
             ## @return a void
             ## 

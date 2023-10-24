@@ -17,7 +17,7 @@ module MicrosoftGraph
             # The display name of this object.
             @display_name
             ## 
-            # Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+            # Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
             @is_default_environment
             ## 
             # The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -109,14 +109,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+            ## Gets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
             ## @return a boolean
             ## 
             def is_default_environment
                 return @is_default_environment
             end
             ## 
-            ## Sets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+            ## Sets the isDefaultEnvironment property value. Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.
             ## @param value Value to set for the isDefaultEnvironment property.
             ## @return a void
             ## 

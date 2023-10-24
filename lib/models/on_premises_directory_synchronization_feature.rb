@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
             @block_soft_match_enabled
             ## 
-            # When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
+            # When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Microsoft Entra ID.
             @bypass_dir_sync_overrides_enabled
             ## 
             # Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
@@ -31,7 +31,7 @@ module MicrosoftGraph
             # Used to indicate that device write-back is enabled.
             @device_writeback_enabled
             ## 
-            # Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
+            # Used to indicate that directory extensions are being synced from on-premises AD to Microsoft Entra ID.
             @directory_extensions_enabled
             ## 
             # Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.
@@ -46,7 +46,7 @@ module MicrosoftGraph
             # Used to indicate on-premise password synchronization is enabled.
             @password_sync_enabled
             ## 
-            # Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
+            # Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.
             @password_writeback_enabled
             ## 
             # Used to indicate that we should quarantine objects with conflicting proxy address.
@@ -70,15 +70,15 @@ module MicrosoftGraph
             # Used to indicate that user writeback is enabled.
             @user_writeback_enabled
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -115,14 +115,14 @@ module MicrosoftGraph
                 @block_soft_match_enabled = value
             end
             ## 
-            ## Gets the bypassDirSyncOverridesEnabled property value. When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
+            ## Gets the bypassDirSyncOverridesEnabled property value. When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Microsoft Entra ID.
             ## @return a boolean
             ## 
             def bypass_dir_sync_overrides_enabled
                 return @bypass_dir_sync_overrides_enabled
             end
             ## 
-            ## Sets the bypassDirSyncOverridesEnabled property value. When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
+            ## Sets the bypassDirSyncOverridesEnabled property value. When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Microsoft Entra ID.
             ## @param value Value to set for the bypassDirSyncOverridesEnabled property.
             ## @return a void
             ## 
@@ -206,14 +206,14 @@ module MicrosoftGraph
                 @device_writeback_enabled = value
             end
             ## 
-            ## Gets the directoryExtensionsEnabled property value. Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
+            ## Gets the directoryExtensionsEnabled property value. Used to indicate that directory extensions are being synced from on-premises AD to Microsoft Entra ID.
             ## @return a boolean
             ## 
             def directory_extensions_enabled
                 return @directory_extensions_enabled
             end
             ## 
-            ## Sets the directoryExtensionsEnabled property value. Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
+            ## Sets the directoryExtensionsEnabled property value. Used to indicate that directory extensions are being synced from on-premises AD to Microsoft Entra ID.
             ## @param value Value to set for the directoryExtensionsEnabled property.
             ## @return a void
             ## 
@@ -309,14 +309,14 @@ module MicrosoftGraph
                 @password_sync_enabled = value
             end
             ## 
-            ## Gets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
+            ## Gets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.
             ## @return a boolean
             ## 
             def password_writeback_enabled
                 return @password_writeback_enabled
             end
             ## 
-            ## Sets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
+            ## Sets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.
             ## @param value Value to set for the passwordWritebackEnabled property.
             ## @return a void
             ## 

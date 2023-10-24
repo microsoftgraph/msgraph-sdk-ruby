@@ -32,10 +32,10 @@ module MicrosoftGraph
             # Whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.
             @is_enabled
             ## 
-            # If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).
+            # If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Can't be true for a disabled workflow (where isEnabled is false).
             @is_scheduling_enabled
             ## 
-            # The unique identifier of the AAD identity that last modified the workflow.
+            # The unique identifier of the Microsoft Entra identity that last modified the workflow.
             @last_modified_by
             ## 
             # When the workflow was last modified.
@@ -47,15 +47,15 @@ module MicrosoftGraph
             # The tasks in the workflow.
             @tasks
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -213,14 +213,14 @@ module MicrosoftGraph
                 @is_enabled = value
             end
             ## 
-            ## Gets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).
+            ## Gets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Can't be true for a disabled workflow (where isEnabled is false).
             ## @return a boolean
             ## 
             def is_scheduling_enabled
                 return @is_scheduling_enabled
             end
             ## 
-            ## Sets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).
+            ## Sets the isSchedulingEnabled property value. If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Can't be true for a disabled workflow (where isEnabled is false).
             ## @param value Value to set for the isSchedulingEnabled property.
             ## @return a void
             ## 
@@ -228,14 +228,14 @@ module MicrosoftGraph
                 @is_scheduling_enabled = value
             end
             ## 
-            ## Gets the lastModifiedBy property value. The unique identifier of the AAD identity that last modified the workflow.
+            ## Gets the lastModifiedBy property value. The unique identifier of the Microsoft Entra identity that last modified the workflow.
             ## @return a user
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. The unique identifier of the AAD identity that last modified the workflow.
+            ## Sets the lastModifiedBy property value. The unique identifier of the Microsoft Entra identity that last modified the workflow.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
