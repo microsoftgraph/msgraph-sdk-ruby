@@ -7,7 +7,7 @@ module MicrosoftGraph
         class PhoneAuthenticationMethod < MicrosoftGraph::Models::AuthenticationMethod
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.
+            # The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don't match the required format.
             @phone_number
             ## 
             # The type of this phone. Possible values are: mobile, alternateMobile, or office.
@@ -44,14 +44,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.
+            ## Gets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don't match the required format.
             ## @return a string
             ## 
             def phone_number
                 return @phone_number
             end
             ## 
-            ## Sets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.
+            ## Sets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don't match the required format.
             ## @param value Value to set for the phoneNumber property.
             ## @return a void
             ## 

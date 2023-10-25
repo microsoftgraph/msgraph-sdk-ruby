@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Indicates whether expiration is required or if it's a permanently active assignment or eligibility.
             @is_expiration_required
             ## 
-            # The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
+            # The maximum duration allowed for eligibility or assignment that isn't permanent. Required when isExpirationRequired is true.
             @maximum_duration
             ## 
             ## Instantiates a new unifiedRoleManagementPolicyExpirationRule and sets the default values.
@@ -55,14 +55,14 @@ module MicrosoftGraph
                 @is_expiration_required = value
             end
             ## 
-            ## Gets the maximumDuration property value. The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
+            ## Gets the maximumDuration property value. The maximum duration allowed for eligibility or assignment that isn't permanent. Required when isExpirationRequired is true.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def maximum_duration
                 return @maximum_duration
             end
             ## 
-            ## Sets the maximumDuration property value. The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
+            ## Sets the maximumDuration property value. The maximum duration allowed for eligibility or assignment that isn't permanent. Required when isExpirationRequired is true.
             ## @param value Value to set for the maximumDuration property.
             ## @return a void
             ## 
