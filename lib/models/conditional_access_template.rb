@@ -73,7 +73,7 @@ module MicrosoftGraph
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "details" => lambda {|n| @details = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessPolicyDetail.create_from_discriminator_value(pn) }) },
                     "name" => lambda {|n| @name = n.get_string_value() },
-                    "scenarios" => lambda {|n| @scenarios = n.get_enum_value(MicrosoftGraph::Models::TemplateScenarios) },
+                    "scenarios" => lambda {|n| @scenarios = n.get_enum_values(MicrosoftGraph::Models::TemplateScenarios) },
                 })
             end
             ## 

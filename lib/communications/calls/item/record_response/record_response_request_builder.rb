@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/communications/calls/{call%2Did}/recordResponse")
                         end
                         ## 
-                        ## Records a short audio response from the caller.A bot can utilize this to capture a voice response from a caller after they are prompted for a response. For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
+                        ## Records a short audio response from the caller.A bot can utilize this to capture a voice response from a caller after they are prompted for a response. For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification. This API is available in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of record_operation
@@ -42,7 +42,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RecordOperation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Records a short audio response from the caller.A bot can utilize this to capture a voice response from a caller after they are prompted for a response. For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
+                        ## Records a short audio response from the caller.A bot can utilize this to capture a voice response from a caller after they are prompted for a response. For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification. This API is available in the following national cloud deployments.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -50,16 +50,25 @@ module MicrosoftGraph
                         def to_post_request_information(body, request_configuration=nil)
                             raise StandardError, 'body cannot be null' if body.nil?
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :POST
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :POST
+                            request_info.headers.try_add('Accept', 'application/json;q=1')
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a record_response_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return RecordResponseRequestBuilder.new(raw_url, @request_adapter)
                         end
                     end
                 end

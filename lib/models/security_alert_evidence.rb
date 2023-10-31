@@ -26,7 +26,7 @@ module MicrosoftGraph
             # Details about the remediation status.
             @remediation_status_details
             ## 
-            # The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+            # The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
             @roles
             ## 
             # Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
@@ -35,15 +35,15 @@ module MicrosoftGraph
             # The verdict property
             @verdict
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -221,14 +221,14 @@ module MicrosoftGraph
                 @remediation_status_details = value
             end
             ## 
-            ## Gets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+            ## Gets the roles property value. The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
             ## @return a security_evidence_role
             ## 
             def roles
                 return @roles
             end
             ## 
-            ## Sets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+            ## Sets the roles property value. The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
             ## @param value Value to set for the roles property.
             ## @return a void
             ## 

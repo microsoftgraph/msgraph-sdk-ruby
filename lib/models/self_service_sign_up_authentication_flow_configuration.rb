@@ -10,21 +10,21 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
+            # Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property isn't a key. Required.
             @is_enabled
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,14 +57,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the isEnabled property value. Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
+            ## Gets the isEnabled property value. Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property isn't a key. Required.
             ## @return a boolean
             ## 
             def is_enabled
                 return @is_enabled
             end
             ## 
-            ## Sets the isEnabled property value. Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property is not a key. Required.
+            ## Sets the isEnabled property value. Indicates whether self-service sign-up flow is enabled or disabled. The default value is false. This property isn't a key. Required.
             ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
