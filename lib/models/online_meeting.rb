@@ -29,13 +29,13 @@ module MicrosoftGraph
             # The attendance reports of an online meeting. Read-only.
             @attendance_reports
             ## 
-            # The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+            # The attendeeReport property
             @attendee_report
             ## 
             # The phone access (dial-in) information for an online meeting. Read-only.
             @audio_conferencing
             ## 
-            # Settings related to a live event.
+            # The broadcastSettings property
             @broadcast_settings
             ## 
             # The chat information associated with this online meeting.
@@ -50,7 +50,7 @@ module MicrosoftGraph
             # The externalId property
             @external_id
             ## 
-            # Indicates if this is a Teams live event.
+            # The isBroadcast property
             @is_broadcast
             ## 
             # Indicates whether to announce when callers join or leave.
@@ -74,6 +74,9 @@ module MicrosoftGraph
             # Indicates whether to record the meeting automatically.
             @record_automatically
             ## 
+            # The recordings property
+            @recordings
+            ## 
             # Specifies whether meeting chat history is shared with participants. Possible values are: all, none, unknownFutureValue.
             @share_meeting_chat_history_default
             ## 
@@ -82,6 +85,9 @@ module MicrosoftGraph
             ## 
             # The subject of the online meeting.
             @subject
+            ## 
+            # The transcripts of an online meeting. Read-only.
+            @transcripts
             ## 
             # The video teleconferencing ID. Read-only.
             @video_teleconference_id
@@ -194,14 +200,14 @@ module MicrosoftGraph
                 @attendance_reports = value
             end
             ## 
-            ## Gets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+            ## Gets the attendeeReport property value. The attendeeReport property
             ## @return a base64url
             ## 
             def attendee_report
                 return @attendee_report
             end
             ## 
-            ## Sets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
+            ## Sets the attendeeReport property value. The attendeeReport property
             ## @param value Value to set for the attendeeReport property.
             ## @return a void
             ## 
@@ -224,14 +230,14 @@ module MicrosoftGraph
                 @audio_conferencing = value
             end
             ## 
-            ## Gets the broadcastSettings property value. Settings related to a live event.
+            ## Gets the broadcastSettings property value. The broadcastSettings property
             ## @return a broadcast_meeting_settings
             ## 
             def broadcast_settings
                 return @broadcast_settings
             end
             ## 
-            ## Sets the broadcastSettings property value. Settings related to a live event.
+            ## Sets the broadcastSettings property value. The broadcastSettings property
             ## @param value Value to set for the broadcastSettings property.
             ## @return a void
             ## 
@@ -342,22 +348,24 @@ module MicrosoftGraph
                     "lobbyBypassSettings" => lambda {|n| @lobby_bypass_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::LobbyBypassSettings.create_from_discriminator_value(pn) }) },
                     "participants" => lambda {|n| @participants = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::MeetingParticipants.create_from_discriminator_value(pn) }) },
                     "recordAutomatically" => lambda {|n| @record_automatically = n.get_boolean_value() },
+                    "recordings" => lambda {|n| @recordings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CallRecording.create_from_discriminator_value(pn) }) },
                     "shareMeetingChatHistoryDefault" => lambda {|n| @share_meeting_chat_history_default = n.get_enum_value(MicrosoftGraph::Models::MeetingChatHistoryDefaultMode) },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "subject" => lambda {|n| @subject = n.get_string_value() },
+                    "transcripts" => lambda {|n| @transcripts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CallTranscript.create_from_discriminator_value(pn) }) },
                     "videoTeleconferenceId" => lambda {|n| @video_teleconference_id = n.get_string_value() },
                     "watermarkProtection" => lambda {|n| @watermark_protection = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WatermarkProtectionValues.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the isBroadcast property value. Indicates if this is a Teams live event.
+            ## Gets the isBroadcast property value. The isBroadcast property
             ## @return a boolean
             ## 
             def is_broadcast
                 return @is_broadcast
             end
             ## 
-            ## Sets the isBroadcast property value. Indicates if this is a Teams live event.
+            ## Sets the isBroadcast property value. The isBroadcast property
             ## @param value Value to set for the isBroadcast property.
             ## @return a void
             ## 
@@ -470,6 +478,21 @@ module MicrosoftGraph
                 @record_automatically = value
             end
             ## 
+            ## Gets the recordings property value. The recordings property
+            ## @return a call_recording
+            ## 
+            def recordings
+                return @recordings
+            end
+            ## 
+            ## Sets the recordings property value. The recordings property
+            ## @param value Value to set for the recordings property.
+            ## @return a void
+            ## 
+            def recordings=(value)
+                @recordings = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -499,9 +522,11 @@ module MicrosoftGraph
                 writer.write_object_value("lobbyBypassSettings", @lobby_bypass_settings)
                 writer.write_object_value("participants", @participants)
                 writer.write_boolean_value("recordAutomatically", @record_automatically)
+                writer.write_collection_of_object_values("recordings", @recordings)
                 writer.write_enum_value("shareMeetingChatHistoryDefault", @share_meeting_chat_history_default)
                 writer.write_date_time_value("startDateTime", @start_date_time)
                 writer.write_string_value("subject", @subject)
+                writer.write_collection_of_object_values("transcripts", @transcripts)
                 writer.write_string_value("videoTeleconferenceId", @video_teleconference_id)
                 writer.write_object_value("watermarkProtection", @watermark_protection)
             end
@@ -549,6 +574,21 @@ module MicrosoftGraph
             ## 
             def subject=(value)
                 @subject = value
+            end
+            ## 
+            ## Gets the transcripts property value. The transcripts of an online meeting. Read-only.
+            ## @return a call_transcript
+            ## 
+            def transcripts
+                return @transcripts
+            end
+            ## 
+            ## Sets the transcripts property value. The transcripts of an online meeting. Read-only.
+            ## @param value Value to set for the transcripts property.
+            ## @return a void
+            ## 
+            def transcripts=(value)
+                @transcripts = value
             end
             ## 
             ## Gets the videoTeleconferenceId property value. The video teleconferencing ID. Read-only.

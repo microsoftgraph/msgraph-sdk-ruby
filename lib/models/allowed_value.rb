@@ -7,7 +7,7 @@ module MicrosoftGraph
         class AllowedValue < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
+            # Indicates whether the predefined value is active or deactivated. If set to false, this predefined value can't be assigned to any other supported directory objects.
             @is_active
             ## 
             ## Instantiates a new allowedValue and sets the default values.
@@ -35,14 +35,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isActive property value. Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
+            ## Gets the isActive property value. Indicates whether the predefined value is active or deactivated. If set to false, this predefined value can't be assigned to any other supported directory objects.
             ## @return a boolean
             ## 
             def is_active
                 return @is_active
             end
             ## 
-            ## Sets the isActive property value. Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
+            ## Sets the isActive property value. Indicates whether the predefined value is active or deactivated. If set to false, this predefined value can't be assigned to any other supported directory objects.
             ## @param value Value to set for the isActive property.
             ## @return a void
             ## 

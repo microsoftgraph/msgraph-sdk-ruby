@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Session control to apply cloud app security.
             @cloud_app_security
             ## 
-            # Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+            # Session control that determines whether it is acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
             @disable_resilience_defaults
             ## 
             # The OdataType property
@@ -28,15 +28,15 @@ module MicrosoftGraph
             # Session control to enforce signin frequency.
             @sign_in_frequency
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -89,14 +89,14 @@ module MicrosoftGraph
                 return ConditionalAccessSessionControls.new
             end
             ## 
-            ## Gets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+            ## Gets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
             ## @return a boolean
             ## 
             def disable_resilience_defaults
                 return @disable_resilience_defaults
             end
             ## 
-            ## Sets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
+            ## Sets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Microsoft Entra ID to extend existing sessions based on information collected prior to an outage or not.
             ## @param value Value to set for the disableResilienceDefaults property.
             ## @return a void
             ## 

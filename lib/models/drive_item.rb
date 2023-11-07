@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Bundle metadata, if the item is a bundle. Read-only.
             @bundle
             ## 
-            # An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+            # An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
             @c_tag
             ## 
             # Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
@@ -61,7 +61,7 @@ module MicrosoftGraph
             # Photo metadata, if the item is a photo. Read-only.
             @photo
             ## 
-            # Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
+            # Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.
             @publication
             ## 
             # Remote item data, if the item is shared from a drive other than the one being accessed. Read-only.
@@ -73,7 +73,7 @@ module MicrosoftGraph
             # Search metadata, if the item is from a search result. Read-only.
             @search_result
             ## 
-            # Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+            # Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.
             @shared
             ## 
             # Returns identifiers useful for SharePoint REST compatibility. Read-only.
@@ -88,7 +88,7 @@ module MicrosoftGraph
             # The set of subscriptions on the item. Only supported on the root of a drive.
             @subscriptions
             ## 
-            # Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+            # Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
             @thumbnails
             ## 
             # The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
@@ -100,7 +100,7 @@ module MicrosoftGraph
             # WebDAV compatible URL for the item.
             @web_dav_url
             ## 
-            # For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+            # For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet's contents. Nullable.
             @workbook
             ## 
             ## Gets the analytics property value. Analytics about the view activities that took place on this item.
@@ -148,14 +148,14 @@ module MicrosoftGraph
                 @bundle = value
             end
             ## 
-            ## Gets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+            ## Gets the cTag property value. An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
             ## @return a string
             ## 
             def c_tag
                 return @c_tag
             end
             ## 
-            ## Sets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+            ## Sets the cTag property value. An eTag for the content of the item. This eTag isn't changed if only the metadata is changed. Note This property isn't returned if the item is a folder. Read-only.
             ## @param value Value to set for the cTag property.
             ## @return a void
             ## 
@@ -430,14 +430,14 @@ module MicrosoftGraph
                 @photo = value
             end
             ## 
-            ## Gets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
+            ## Gets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.
             ## @return a publication_facet
             ## 
             def publication
                 return @publication
             end
             ## 
-            ## Sets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.
+            ## Sets the publication property value. Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn't returned by default. Read-only.
             ## @param value Value to set for the publication property.
             ## @return a void
             ## 
@@ -531,14 +531,14 @@ module MicrosoftGraph
                 writer.write_object_value("workbook", @workbook)
             end
             ## 
-            ## Gets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+            ## Gets the shared property value. Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.
             ## @return a shared
             ## 
             def shared
                 return @shared
             end
             ## 
-            ## Sets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.
+            ## Sets the shared property value. Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.
             ## @param value Value to set for the shared property.
             ## @return a void
             ## 
@@ -606,14 +606,14 @@ module MicrosoftGraph
                 @subscriptions = value
             end
             ## 
-            ## Gets the thumbnails property value. Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+            ## Gets the thumbnails property value. Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
             ## @return a thumbnail_set
             ## 
             def thumbnails
                 return @thumbnails
             end
             ## 
-            ## Sets the thumbnails property value. Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
+            ## Sets the thumbnails property value. Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.
             ## @param value Value to set for the thumbnails property.
             ## @return a void
             ## 
@@ -666,14 +666,14 @@ module MicrosoftGraph
                 @web_dav_url = value
             end
             ## 
-            ## Gets the workbook property value. For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+            ## Gets the workbook property value. For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet's contents. Nullable.
             ## @return a workbook
             ## 
             def workbook
                 return @workbook
             end
             ## 
-            ## Sets the workbook property value. For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet's contents. Nullable.
+            ## Sets the workbook property value. For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet's contents. Nullable.
             ## @param value Value to set for the workbook property.
             ## @return a void
             ## 

@@ -13,6 +13,9 @@ module MicrosoftGraph
             # Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
             @configuration
             ## 
+            # The Teams app ID. Optional.
+            @connector_id
+            ## 
             # Description of the connection displayed in the Microsoft 365 admin center. Optional.
             @description
             ## 
@@ -67,6 +70,21 @@ module MicrosoftGraph
                 @configuration = value
             end
             ## 
+            ## Gets the connectorId property value. The Teams app ID. Optional.
+            ## @return a string
+            ## 
+            def connector_id
+                return @connector_id
+            end
+            ## 
+            ## Sets the connectorId property value. The Teams app ID. Optional.
+            ## @param value Value to set for the connectorId property.
+            ## @return a void
+            ## 
+            def connector_id=(value)
+                @connector_id = value
+            end
+            ## 
             ## Instantiates a new externalConnectorsExternalConnection and sets the default values.
             ## @return a void
             ## 
@@ -105,6 +123,7 @@ module MicrosoftGraph
                 return super.merge({
                     "activitySettings" => lambda {|n| @activity_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ExternalConnectorsActivitySettings.create_from_discriminator_value(pn) }) },
                     "configuration" => lambda {|n| @configuration = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ExternalConnectorsConfiguration.create_from_discriminator_value(pn) }) },
+                    "connectorId" => lambda {|n| @connector_id = n.get_string_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "groups" => lambda {|n| @groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ExternalConnectorsExternalGroup.create_from_discriminator_value(pn) }) },
                     "items" => lambda {|n| @items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ExternalConnectorsExternalItem.create_from_discriminator_value(pn) }) },
@@ -215,6 +234,7 @@ module MicrosoftGraph
                 super
                 writer.write_object_value("activitySettings", @activity_settings)
                 writer.write_object_value("configuration", @configuration)
+                writer.write_string_value("connectorId", @connector_id)
                 writer.write_string_value("description", @description)
                 writer.write_collection_of_object_values("groups", @groups)
                 writer.write_collection_of_object_values("items", @items)

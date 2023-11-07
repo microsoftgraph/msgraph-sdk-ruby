@@ -8,7 +8,7 @@ module MicrosoftGraph
         class ServiceAnnouncementBase < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Additional details about service event. This property doesn't support filters.
+            # More details about service event. This property doesn't support filters.
             @details
             ## 
             # The end time of the service event.
@@ -49,14 +49,14 @@ module MicrosoftGraph
                 return ServiceAnnouncementBase.new
             end
             ## 
-            ## Gets the details property value. Additional details about service event. This property doesn't support filters.
+            ## Gets the details property value. More details about service event. This property doesn't support filters.
             ## @return a key_value_pair
             ## 
             def details
                 return @details
             end
             ## 
-            ## Sets the details property value. Additional details about service event. This property doesn't support filters.
+            ## Sets the details property value. More details about service event. This property doesn't support filters.
             ## @param value Value to set for the details property.
             ## @return a void
             ## 

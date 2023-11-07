@@ -1,1 +1,1 @@
-require_relative 'delta_response'
+require_relative 'delta_get_response'

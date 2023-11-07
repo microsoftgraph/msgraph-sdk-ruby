@@ -62,7 +62,7 @@ module MicrosoftGraph
             # The officeLocation property
             @office_location
             ## 
-            # Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
+            # Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
             @on_premises_info
             ## 
             # Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two can be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.
@@ -454,14 +454,14 @@ module MicrosoftGraph
                 @office_location = value
             end
             ## 
-            ## Gets the onPremisesInfo property value. Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
+            ## Gets the onPremisesInfo property value. Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
             ## @return a education_on_premises_info
             ## 
             def on_premises_info
                 return @on_premises_info
             end
             ## 
-            ## Sets the onPremisesInfo property value. Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
+            ## Sets the onPremisesInfo property value. Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
             ## @param value Value to set for the onPremisesInfo property.
             ## @return a void
             ## 

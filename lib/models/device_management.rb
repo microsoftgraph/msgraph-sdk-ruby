@@ -156,6 +156,9 @@ module MicrosoftGraph
             # User experience analytics device Startup History
             @user_experience_analytics_device_startup_history
             ## 
+            # User experience analytics device Startup Process Performance
+            @user_experience_analytics_device_startup_process_performance
+            ## 
             # User experience analytics device Startup Processes
             @user_experience_analytics_device_startup_processes
             ## 
@@ -493,6 +496,7 @@ module MicrosoftGraph
                     "userExperienceAnalyticsDevicePerformance" => lambda {|n| @user_experience_analytics_device_performance = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDevicePerformance.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsDeviceScores" => lambda {|n| @user_experience_analytics_device_scores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDeviceScores.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsDeviceStartupHistory" => lambda {|n| @user_experience_analytics_device_startup_history = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDeviceStartupHistory.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsDeviceStartupProcessPerformance" => lambda {|n| @user_experience_analytics_device_startup_process_performance = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDeviceStartupProcessPerformance.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsDeviceStartupProcesses" => lambda {|n| @user_experience_analytics_device_startup_processes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDeviceStartupProcess.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsMetricHistory" => lambda {|n| @user_experience_analytics_metric_history = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsMetricHistory.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsModelScores" => lambda {|n| @user_experience_analytics_model_scores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsModelScores.create_from_discriminator_value(pn) }) },
@@ -776,6 +780,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("userExperienceAnalyticsDevicePerformance", @user_experience_analytics_device_performance)
                 writer.write_collection_of_object_values("userExperienceAnalyticsDeviceScores", @user_experience_analytics_device_scores)
                 writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupHistory", @user_experience_analytics_device_startup_history)
+                writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupProcessPerformance", @user_experience_analytics_device_startup_process_performance)
                 writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupProcesses", @user_experience_analytics_device_startup_processes)
                 writer.write_collection_of_object_values("userExperienceAnalyticsMetricHistory", @user_experience_analytics_metric_history)
                 writer.write_collection_of_object_values("userExperienceAnalyticsModelScores", @user_experience_analytics_model_scores)
@@ -1090,6 +1095,21 @@ module MicrosoftGraph
             ## 
             def user_experience_analytics_device_startup_history=(value)
                 @user_experience_analytics_device_startup_history = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsDeviceStartupProcessPerformance property value. User experience analytics device Startup Process Performance
+            ## @return a user_experience_analytics_device_startup_process_performance
+            ## 
+            def user_experience_analytics_device_startup_process_performance
+                return @user_experience_analytics_device_startup_process_performance
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsDeviceStartupProcessPerformance property value. User experience analytics device Startup Process Performance
+            ## @param value Value to set for the userExperienceAnalyticsDeviceStartupProcessPerformance property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_device_startup_process_performance=(value)
+                @user_experience_analytics_device_startup_process_performance = value
             end
             ## 
             ## Gets the userExperienceAnalyticsDeviceStartupProcesses property value. User experience analytics device Startup Processes
