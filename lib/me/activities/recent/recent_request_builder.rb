@@ -23,9 +23,9 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/activities/recent(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}")
                     end
                     ## 
-                    ## Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a 'most recently used' API. The service will query for the most recent historyItems, and then pull those related activities. Activities will be sorted according to the most recent lastModified on the historyItem. This means that activities without historyItems will not be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application's activities, use the nextLink property to paginate.
+                    ## Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a 'most recently used' API. The service queries for the most recent historyItems, and then pull those related activities. Activities are sorted according to the most recent lastModified on the historyItem. This means that activities without historyItems won't be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities. To get your application's activities, use the nextLink property to paginate. This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                    ## @return a Fiber of recent_response
+                    ## @return a Fiber of recent_get_response
                     ## 
                     def get(request_configuration=nil)
                         request_info = self.to_get_request_information(
@@ -34,29 +34,38 @@ module MicrosoftGraph
                         error_mapping = Hash.new
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Me::Activities::Recent::RecentResponse.create_from_discriminator_value(pn) }, error_mapping)
+                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Me::Activities::Recent::RecentGetResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a 'most recently used' API. The service will query for the most recent historyItems, and then pull those related activities. Activities will be sorted according to the most recent lastModified on the historyItem. This means that activities without historyItems will not be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application's activities, use the nextLink property to paginate.
+                    ## Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a 'most recently used' API. The service queries for the most recent historyItems, and then pull those related activities. Activities are sorted according to the most recent lastModified on the historyItem. This means that activities without historyItems won't be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities. To get your application's activities, use the nextLink property to paginate. This API is available in the following national cloud deployments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a recent_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return RecentRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 
-                    # Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a 'most recently used' API. The service will query for the most recent historyItems, and then pull those related activities. Activities will be sorted according to the most recent lastModified on the historyItem. This means that activities without historyItems will not be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application's activities, use the nextLink property to paginate.
+                    # Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a 'most recently used' API. The service queries for the most recent historyItems, and then pull those related activities. Activities are sorted according to the most recent lastModified on the historyItem. This means that activities without historyItems won't be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities. To get your application's activities, use the nextLink property to paginate. This API is available in the following national cloud deployments.
                     class RecentRequestBuilderGetQueryParameters
                         
                         ## 

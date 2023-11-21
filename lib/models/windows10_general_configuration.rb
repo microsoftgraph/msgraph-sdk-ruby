@@ -2028,7 +2028,7 @@ module MicrosoftGraph
                     "smartScreenBlockPromptOverrideForFiles" => lambda {|n| @smart_screen_block_prompt_override_for_files = n.get_boolean_value() },
                     "smartScreenEnableAppInstallControl" => lambda {|n| @smart_screen_enable_app_install_control = n.get_boolean_value() },
                     "startBlockUnpinningAppsFromTaskbar" => lambda {|n| @start_block_unpinning_apps_from_taskbar = n.get_boolean_value() },
-                    "startMenuAppListVisibility" => lambda {|n| @start_menu_app_list_visibility = n.get_enum_value(MicrosoftGraph::Models::WindowsStartMenuAppListVisibilityType) },
+                    "startMenuAppListVisibility" => lambda {|n| @start_menu_app_list_visibility = n.get_enum_values(MicrosoftGraph::Models::WindowsStartMenuAppListVisibilityType) },
                     "startMenuHideChangeAccountSettings" => lambda {|n| @start_menu_hide_change_account_settings = n.get_boolean_value() },
                     "startMenuHideFrequentlyUsedApps" => lambda {|n| @start_menu_hide_frequently_used_apps = n.get_boolean_value() },
                     "startMenuHideHibernate" => lambda {|n| @start_menu_hide_hibernate = n.get_boolean_value() },

@@ -10,24 +10,24 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The display name of the customer tenant as set by Azure AD. Read-only
+            # The display name of the customer tenant as set by Microsoft Entra ID. Read-only
             @display_name
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The Azure AD-assigned tenant ID of the customer tenant.
+            # The Microsoft Entra ID-assigned tenant ID of the customer tenant.
             @tenant_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 return DelegatedAdminRelationshipCustomerParticipant.new
             end
             ## 
-            ## Gets the displayName property value. The display name of the customer tenant as set by Azure AD. Read-only
+            ## Gets the displayName property value. The display name of the customer tenant as set by Microsoft Entra ID. Read-only
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name of the customer tenant as set by Azure AD. Read-only
+            ## Sets the displayName property value. The display name of the customer tenant as set by Microsoft Entra ID. Read-only
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -103,14 +103,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the tenantId property value. The Azure AD-assigned tenant ID of the customer tenant.
+            ## Gets the tenantId property value. The Microsoft Entra ID-assigned tenant ID of the customer tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure AD-assigned tenant ID of the customer tenant.
+            ## Sets the tenantId property value. The Microsoft Entra ID-assigned tenant ID of the customer tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

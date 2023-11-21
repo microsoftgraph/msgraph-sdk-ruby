@@ -20,7 +20,7 @@ module MicrosoftGraph
             # How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
             @member_type
             ## 
-            # The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).
+            # The identifier of the role assignment in Microsoft Entra. Supports $filter (eq, ne).
             @role_assignment_origin_id
             ## 
             # The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).
@@ -120,14 +120,14 @@ module MicrosoftGraph
                 @member_type = value
             end
             ## 
-            ## Gets the roleAssignmentOriginId property value. The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).
+            ## Gets the roleAssignmentOriginId property value. The identifier of the role assignment in Microsoft Entra. Supports $filter (eq, ne).
             ## @return a string
             ## 
             def role_assignment_origin_id
                 return @role_assignment_origin_id
             end
             ## 
-            ## Sets the roleAssignmentOriginId property value. The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).
+            ## Sets the roleAssignmentOriginId property value. The identifier of the role assignment in Microsoft Entra. Supports $filter (eq, ne).
             ## @param value Value to set for the roleAssignmentOriginId property.
             ## @return a void
             ## 
