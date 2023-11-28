@@ -7,7 +7,7 @@ module MicrosoftGraph
         class IdentitySecurityDefaultsEnforcementPolicy < MicrosoftGraph::Models::PolicyBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # If set to true, Azure Active Directory security defaults is enabled for the tenant.
+            # If set to true, Microsoft Entra security defaults are enabled for the tenant.
             @is_enabled
             ## 
             ## Instantiates a new identitySecurityDefaultsEnforcementPolicy and sets the default values.
@@ -36,14 +36,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
+            ## Gets the isEnabled property value. If set to true, Microsoft Entra security defaults are enabled for the tenant.
             ## @return a boolean
             ## 
             def is_enabled
                 return @is_enabled
             end
             ## 
-            ## Sets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
+            ## Sets the isEnabled property value. If set to true, Microsoft Entra security defaults are enabled for the tenant.
             ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 

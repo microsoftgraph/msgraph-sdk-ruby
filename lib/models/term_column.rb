@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Specifies whether the column will allow more than one value.
+            # Specifies whether the column allows more than one value.
             @allow_multiple_values
             ## 
             # The OdataType property
@@ -25,29 +25,29 @@ module MicrosoftGraph
             # The termSet property
             @term_set
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
+            ## Gets the allowMultipleValues property value. Specifies whether the column allows more than one value.
             ## @return a boolean
             ## 
             def allow_multiple_values
                 return @allow_multiple_values
             end
             ## 
-            ## Sets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
+            ## Sets the allowMultipleValues property value. Specifies whether the column allows more than one value.
             ## @param value Value to set for the allowMultipleValues property.
             ## @return a void
             ## 

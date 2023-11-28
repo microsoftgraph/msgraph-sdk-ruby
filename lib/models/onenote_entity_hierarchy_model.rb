@@ -8,13 +8,13 @@ module MicrosoftGraph
         class OnenoteEntityHierarchyModel < MicrosoftGraph::Models::OnenoteEntitySchemaObjectModel
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Identity of the user, device, and application which created the item. Read-only.
+            # Identity of the user, device, and application that created the item. Read-only.
             @created_by
             ## 
             # The name of the notebook.
             @display_name
             ## 
-            # Identity of the user, device, and application which created the item. Read-only.
+            # Identity of the user, device, and application that created the item. Read-only.
             @last_modified_by
             ## 
             # The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -28,14 +28,14 @@ module MicrosoftGraph
                 @odata_type = "#microsoft.graph.onenoteEntityHierarchyModel"
             end
             ## 
-            ## Gets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
+            ## Gets the createdBy property value. Identity of the user, device, and application that created the item. Read-only.
             ## @return a identity_set
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
+            ## Sets the createdBy property value. Identity of the user, device, and application that created the item. Read-only.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -91,14 +91,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the lastModifiedBy property value. Identity of the user, device, and application which created the item. Read-only.
+            ## Gets the lastModifiedBy property value. Identity of the user, device, and application that created the item. Read-only.
             ## @return a identity_set
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. Identity of the user, device, and application which created the item. Read-only.
+            ## Sets the lastModifiedBy property value. Identity of the user, device, and application that created the item. Read-only.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 

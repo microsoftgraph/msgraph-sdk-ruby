@@ -7,10 +7,10 @@ module MicrosoftGraph
         class AccessPackageTextInputQuestion < MicrosoftGraph::Models::AccessPackageQuestion
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates whether the answer will be in single or multiple line format.
+            # Indicates whether the answer is in single or multiple line format.
             @is_single_line_question
             ## 
-            # The regular expression pattern which any answer to this question must match.
+            # The regular expression pattern that any answer to this question must match.
             @regex_pattern
             ## 
             ## Instantiates a new accessPackageTextInputQuestion and sets the default values.
@@ -40,14 +40,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isSingleLineQuestion property value. Indicates whether the answer will be in single or multiple line format.
+            ## Gets the isSingleLineQuestion property value. Indicates whether the answer is in single or multiple line format.
             ## @return a boolean
             ## 
             def is_single_line_question
                 return @is_single_line_question
             end
             ## 
-            ## Sets the isSingleLineQuestion property value. Indicates whether the answer will be in single or multiple line format.
+            ## Sets the isSingleLineQuestion property value. Indicates whether the answer is in single or multiple line format.
             ## @param value Value to set for the isSingleLineQuestion property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraph
                 @is_single_line_question = value
             end
             ## 
-            ## Gets the regexPattern property value. The regular expression pattern which any answer to this question must match.
+            ## Gets the regexPattern property value. The regular expression pattern that any answer to this question must match.
             ## @return a string
             ## 
             def regex_pattern
                 return @regex_pattern
             end
             ## 
-            ## Sets the regexPattern property value. The regular expression pattern which any answer to this question must match.
+            ## Sets the regexPattern property value. The regular expression pattern that any answer to this question must match.
             ## @param value Value to set for the regexPattern property.
             ## @return a void
             ## 

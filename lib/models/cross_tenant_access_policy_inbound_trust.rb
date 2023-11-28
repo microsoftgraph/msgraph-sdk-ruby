@@ -10,27 +10,27 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Specifies whether compliant devices from external Azure AD organizations are trusted.
+            # Specifies whether compliant devices from external Microsoft Entra organizations are trusted.
             @is_compliant_device_accepted
             ## 
-            # Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
+            # Specifies whether Microsoft Entra hybrid joined devices from external Microsoft Entra organizations are trusted.
             @is_hybrid_azure_a_d_joined_device_accepted
             ## 
-            # Specifies whether MFA from external Azure AD organizations is trusted.
+            # Specifies whether MFA from external Microsoft Entra organizations is trusted.
             @is_mfa_accepted
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,14 +65,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Azure AD organizations are trusted.
+            ## Gets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Microsoft Entra organizations are trusted.
             ## @return a boolean
             ## 
             def is_compliant_device_accepted
                 return @is_compliant_device_accepted
             end
             ## 
-            ## Sets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Azure AD organizations are trusted.
+            ## Sets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Microsoft Entra organizations are trusted.
             ## @param value Value to set for the isCompliantDeviceAccepted property.
             ## @return a void
             ## 
@@ -80,14 +80,14 @@ module MicrosoftGraph
                 @is_compliant_device_accepted = value
             end
             ## 
-            ## Gets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
+            ## Gets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether Microsoft Entra hybrid joined devices from external Microsoft Entra organizations are trusted.
             ## @return a boolean
             ## 
             def is_hybrid_azure_a_d_joined_device_accepted
                 return @is_hybrid_azure_a_d_joined_device_accepted
             end
             ## 
-            ## Sets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
+            ## Sets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether Microsoft Entra hybrid joined devices from external Microsoft Entra organizations are trusted.
             ## @param value Value to set for the isHybridAzureADJoinedDeviceAccepted property.
             ## @return a void
             ## 
@@ -95,14 +95,14 @@ module MicrosoftGraph
                 @is_hybrid_azure_a_d_joined_device_accepted = value
             end
             ## 
-            ## Gets the isMfaAccepted property value. Specifies whether MFA from external Azure AD organizations is trusted.
+            ## Gets the isMfaAccepted property value. Specifies whether MFA from external Microsoft Entra organizations is trusted.
             ## @return a boolean
             ## 
             def is_mfa_accepted
                 return @is_mfa_accepted
             end
             ## 
-            ## Sets the isMfaAccepted property value. Specifies whether MFA from external Azure AD organizations is trusted.
+            ## Sets the isMfaAccepted property value. Specifies whether MFA from external Microsoft Entra organizations is trusted.
             ## @param value Value to set for the isMfaAccepted property.
             ## @return a void
             ## 
