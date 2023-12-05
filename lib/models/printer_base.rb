@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The name of the printer/printerShare.
             @display_name
             ## 
-            # Whether the printer/printerShare is currently accepting new print jobs.
+            # Specifies whether the printer/printerShare is currently accepting new print jobs.
             @is_accepting_jobs
             ## 
             # The list of jobs that are queued for printing by the printer/printerShare.
@@ -122,14 +122,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isAcceptingJobs property value. Whether the printer/printerShare is currently accepting new print jobs.
+            ## Gets the isAcceptingJobs property value. Specifies whether the printer/printerShare is currently accepting new print jobs.
             ## @return a boolean
             ## 
             def is_accepting_jobs
                 return @is_accepting_jobs
             end
             ## 
-            ## Sets the isAcceptingJobs property value. Whether the printer/printerShare is currently accepting new print jobs.
+            ## Sets the isAcceptingJobs property value. Specifies whether the printer/printerShare is currently accepting new print jobs.
             ## @param value Value to set for the isAcceptingJobs property.
             ## @return a void
             ## 

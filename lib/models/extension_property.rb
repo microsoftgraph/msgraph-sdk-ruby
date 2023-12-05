@@ -13,7 +13,10 @@ module MicrosoftGraph
             # Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
             @data_type
             ## 
-            # Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+            # Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).
+            @is_multi_valued
+            ## 
+            # Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
             @is_synced_from_on_premises
             ## 
             # Name of the extension property. Not nullable. Supports $filter (eq).
@@ -76,20 +79,36 @@ module MicrosoftGraph
                 return super.merge({
                     "appDisplayName" => lambda {|n| @app_display_name = n.get_string_value() },
                     "dataType" => lambda {|n| @data_type = n.get_string_value() },
+                    "isMultiValued" => lambda {|n| @is_multi_valued = n.get_boolean_value() },
                     "isSyncedFromOnPremises" => lambda {|n| @is_synced_from_on_premises = n.get_boolean_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "targetObjects" => lambda {|n| @target_objects = n.get_collection_of_primitive_values(String) },
                 })
             end
             ## 
-            ## Gets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+            ## Gets the isMultiValued property value. Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).
+            ## @return a boolean
+            ## 
+            def is_multi_valued
+                return @is_multi_valued
+            end
+            ## 
+            ## Sets the isMultiValued property value. Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).
+            ## @param value Value to set for the isMultiValued property.
+            ## @return a void
+            ## 
+            def is_multi_valued=(value)
+                @is_multi_valued = value
+            end
+            ## 
+            ## Gets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
             ## @return a boolean
             ## 
             def is_synced_from_on_premises
                 return @is_synced_from_on_premises
             end
             ## 
-            ## Sets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
+            ## Sets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Microsoft Entra Connect. Read-only.
             ## @param value Value to set for the isSyncedFromOnPremises property.
             ## @return a void
             ## 
@@ -121,6 +140,7 @@ module MicrosoftGraph
                 super
                 writer.write_string_value("appDisplayName", @app_display_name)
                 writer.write_string_value("dataType", @data_type)
+                writer.write_boolean_value("isMultiValued", @is_multi_valued)
                 writer.write_boolean_value("isSyncedFromOnPremises", @is_synced_from_on_premises)
                 writer.write_string_value("name", @name)
                 writer.write_collection_of_primitive_values("targetObjects", @target_objects)

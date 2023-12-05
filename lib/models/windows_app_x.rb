@@ -67,7 +67,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_value(MicrosoftGraph::Models::WindowsArchitecture) },
+                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_values(MicrosoftGraph::Models::WindowsArchitecture) },
                     "identityName" => lambda {|n| @identity_name = n.get_string_value() },
                     "identityPublisherHash" => lambda {|n| @identity_publisher_hash = n.get_string_value() },
                     "identityResourceIdentifier" => lambda {|n| @identity_resource_identifier = n.get_string_value() },
