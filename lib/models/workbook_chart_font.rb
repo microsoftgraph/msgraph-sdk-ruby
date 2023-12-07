@@ -10,16 +10,16 @@ module MicrosoftGraph
             # Represents the bold status of font.
             @bold
             ## 
-            # HTML color code representation of the text color. E.g. #FF0000 represents Red.
+            # HTML color code representation of the text color. for example #FF0000 represents Red.
             @color
             ## 
             # Represents the italic status of the font.
             @italic
             ## 
-            # Font name (e.g. 'Calibri')
+            # Font name (for example 'Calibri')
             @name
             ## 
-            # Size of the font (e.g. 11)
+            # Size of the font (for example 11)
             @size
             ## 
             # Type of underline applied to the font. The possible values are: None, Single.
@@ -40,14 +40,14 @@ module MicrosoftGraph
                 @bold = value
             end
             ## 
-            ## Gets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
+            ## Gets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
             ## @return a string
             ## 
             def color
                 return @color
             end
             ## 
-            ## Sets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
+            ## Sets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
             ## @param value Value to set for the color property.
             ## @return a void
             ## 
@@ -100,14 +100,14 @@ module MicrosoftGraph
                 @italic = value
             end
             ## 
-            ## Gets the name property value. Font name (e.g. 'Calibri')
+            ## Gets the name property value. Font name (for example 'Calibri')
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. Font name (e.g. 'Calibri')
+            ## Sets the name property value. Font name (for example 'Calibri')
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -130,14 +130,14 @@ module MicrosoftGraph
                 writer.write_string_value("underline", @underline)
             end
             ## 
-            ## Gets the size property value. Size of the font (e.g. 11)
+            ## Gets the size property value. Size of the font (for example 11)
             ## @return a double
             ## 
             def size
                 return @size
             end
             ## 
-            ## Sets the size property value. Size of the font (e.g. 11)
+            ## Sets the size property value. Size of the font (for example 11)
             ## @param value Value to set for the size property.
             ## @return a void
             ## 

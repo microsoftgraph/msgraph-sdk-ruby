@@ -32,7 +32,7 @@ module MicrosoftGraph
             # The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
             @scope_id
             ## 
-            # The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
+            # The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.
             @scope_type
             ## 
             ## Instantiates a new unifiedRoleManagementPolicy and sets the default values.
@@ -188,14 +188,14 @@ module MicrosoftGraph
                 @scope_id = value
             end
             ## 
-            ## Gets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
+            ## Gets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.
             ## @return a string
             ## 
             def scope_type
                 return @scope_type
             end
             ## 
-            ## Sets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
+            ## Sets the scopeType property value. The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.
             ## @param value Value to set for the scopeType property.
             ## @return a void
             ## 

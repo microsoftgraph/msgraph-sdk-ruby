@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The object identifier of an Azure Active Directory user or group.
+            # The object identifier of a Microsoft Entra user or group.
             @id
             ## 
             # The OdataType property
@@ -22,15 +22,15 @@ module MicrosoftGraph
             # The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
             @targeted_authentication_method
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,14 +65,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the id property value. The object identifier of an Azure Active Directory user or group.
+            ## Gets the id property value. The object identifier of a Microsoft Entra user or group.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The object identifier of an Azure Active Directory user or group.
+            ## Sets the id property value. The object identifier of a Microsoft Entra user or group.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

@@ -85,7 +85,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_value(MicrosoftGraph::Models::WindowsArchitecture) },
+                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_values(MicrosoftGraph::Models::WindowsArchitecture) },
                     "installCommandLine" => lambda {|n| @install_command_line = n.get_string_value() },
                     "installExperience" => lambda {|n| @install_experience = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Win32LobAppInstallExperience.create_from_discriminator_value(pn) }) },
                     "minimumCpuSpeedInMHz" => lambda {|n| @minimum_cpu_speed_in_m_hz = n.get_number_value() },

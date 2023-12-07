@@ -20,7 +20,7 @@ module MicrosoftGraph
             # Azure subscription ID, present if this alert is related to an Azure resource.
             @azure_subscription_id
             ## 
-            # Azure Active Directory tenant ID. Required.
+            # Microsoft Entra tenant ID. Required.
             @azure_tenant_id
             ## 
             # Category of the alert (for example, credentialTheft, ransomware, etc.).
@@ -185,14 +185,14 @@ module MicrosoftGraph
                 @azure_subscription_id = value
             end
             ## 
-            ## Gets the azureTenantId property value. Azure Active Directory tenant ID. Required.
+            ## Gets the azureTenantId property value. Microsoft Entra tenant ID. Required.
             ## @return a string
             ## 
             def azure_tenant_id
                 return @azure_tenant_id
             end
             ## 
-            ## Sets the azureTenantId property value. Azure Active Directory tenant ID. Required.
+            ## Sets the azureTenantId property value. Microsoft Entra tenant ID. Required.
             ## @param value Value to set for the azureTenantId property.
             ## @return a void
             ## 

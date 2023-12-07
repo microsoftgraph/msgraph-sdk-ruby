@@ -20,6 +20,22 @@ module MicrosoftGraph
             AppGovernanceDetection: :AppGovernanceDetection,
             UnknownFutureValue: :UnknownFutureValue,
             MicrosoftDefenderForCloud: :MicrosoftDefenderForCloud,
+            MicrosoftDefenderForIoT: :MicrosoftDefenderForIoT,
+            MicrosoftDefenderForServers: :MicrosoftDefenderForServers,
+            MicrosoftDefenderForStorage: :MicrosoftDefenderForStorage,
+            MicrosoftDefenderForDNS: :MicrosoftDefenderForDNS,
+            MicrosoftDefenderForDatabases: :MicrosoftDefenderForDatabases,
+            MicrosoftDefenderForContainers: :MicrosoftDefenderForContainers,
+            MicrosoftDefenderForNetwork: :MicrosoftDefenderForNetwork,
+            MicrosoftDefenderForAppService: :MicrosoftDefenderForAppService,
+            MicrosoftDefenderForKeyVault: :MicrosoftDefenderForKeyVault,
+            MicrosoftDefenderForResourceManager: :MicrosoftDefenderForResourceManager,
+            MicrosoftDefenderForApiManagement: :MicrosoftDefenderForApiManagement,
+            NrtAlerts: :NrtAlerts,
+            ScheduledAlerts: :ScheduledAlerts,
+            MicrosoftDefenderThreatIntelligenceAnalytics: :MicrosoftDefenderThreatIntelligenceAnalytics,
+            BuiltInMl: :BuiltInMl,
+            MicrosoftSentinel: :MicrosoftSentinel,
         }
     end
 end
