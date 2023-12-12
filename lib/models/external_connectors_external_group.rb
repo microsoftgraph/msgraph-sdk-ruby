@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The friendly name of the external group. Optional.
             @display_name
             ## 
-            # A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+            # A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
             @members
             ## 
             ## Instantiates a new externalConnectorsExternalGroup and sets the default values.
@@ -73,14 +73,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+            ## Gets the members property value. A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
             ## @return a external_connectors_identity
             ## 
             def members
                 return @members
             end
             ## 
-            ## Sets the members property value. A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
+            ## Sets the members property value. A member added to an externalGroup. You can add Microsoft Entra users, Microsoft Entra groups, or an externalGroup as members.
             ## @param value Value to set for the members property.
             ## @return a void
             ## 
