@@ -7,7 +7,7 @@ module MicrosoftGraph
         class SecurityIpEvidence < MicrosoftGraph::Models::SecurityAlertEvidence
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+            # The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.
             @country_letter_code
             ## 
             # The value of the IP Address, can be either in V4 address or V6 address format.
@@ -21,14 +21,14 @@ module MicrosoftGraph
                 @odata_type = "#microsoft.graph.security.ipEvidence"
             end
             ## 
-            ## Gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+            ## Gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.
             ## @return a string
             ## 
             def country_letter_code
                 return @country_letter_code
             end
             ## 
-            ## Sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+            ## Sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.
             ## @param value Value to set for the countryLetterCode property.
             ## @return a void
             ## 

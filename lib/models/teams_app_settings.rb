@@ -7,17 +7,17 @@ module MicrosoftGraph
         class TeamsAppSettings < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The allowUserRequestsForAppAccess property
+            # Indicates whether users are allowed to request access to the unavailable Teams apps.
             @allow_user_requests_for_app_access
             ## 
-            ## Gets the allowUserRequestsForAppAccess property value. The allowUserRequestsForAppAccess property
+            ## Gets the allowUserRequestsForAppAccess property value. Indicates whether users are allowed to request access to the unavailable Teams apps.
             ## @return a boolean
             ## 
             def allow_user_requests_for_app_access
                 return @allow_user_requests_for_app_access
             end
             ## 
-            ## Sets the allowUserRequestsForAppAccess property value. The allowUserRequestsForAppAccess property
+            ## Sets the allowUserRequestsForAppAccess property value. Indicates whether users are allowed to request access to the unavailable Teams apps.
             ## @param value Value to set for the allowUserRequestsForAppAccess property.
             ## @return a void
             ## 

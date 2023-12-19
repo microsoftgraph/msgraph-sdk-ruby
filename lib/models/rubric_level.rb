@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The name of this rubric level.
             @display_name
             ## 
-            # Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
+            # Null if this is a no-points rubric; educationAssignmentPointsGradeType if it's a points rubric.
             @grading
             ## 
             # The ID of this resource.
@@ -25,15 +25,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -99,14 +99,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
+            ## Gets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it's a points rubric.
             ## @return a education_assignment_grade_type
             ## 
             def grading
                 return @grading
             end
             ## 
-            ## Sets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it is a points rubric.
+            ## Sets the grading property value. Null if this is a no-points rubric; educationAssignmentPointsGradeType if it's a points rubric.
             ## @param value Value to set for the grading property.
             ## @return a void
             ## 
