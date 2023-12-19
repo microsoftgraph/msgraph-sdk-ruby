@@ -1,1 +1,2 @@
+require_relative 'target_apps_post_request_body_app_group_type'
 require_relative 'target_apps_post_request_body'

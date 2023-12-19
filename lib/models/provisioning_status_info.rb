@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # If status is not success/ skipped details for the error are contained in this.
+            # If status isn't success/ skipped details for the error are contained in this.
             @error_information
             ## 
             # The OdataType property
@@ -19,15 +19,15 @@ module MicrosoftGraph
             # Possible values are: success, warning, failure, skipped, unknownFutureValue.
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 return ProvisioningStatusInfo.new
             end
             ## 
-            ## Gets the errorInformation property value. If status is not success/ skipped details for the error are contained in this.
+            ## Gets the errorInformation property value. If status isn't success/ skipped details for the error are contained in this.
             ## @return a provisioning_error_info
             ## 
             def error_information
                 return @error_information
             end
             ## 
-            ## Sets the errorInformation property value. If status is not success/ skipped details for the error are contained in this.
+            ## Sets the errorInformation property value. If status isn't success/ skipped details for the error are contained in this.
             ## @param value Value to set for the errorInformation property.
             ## @return a void
             ## 
@@ -72,7 +72,7 @@ module MicrosoftGraph
                 return {
                     "errorInformation" => lambda {|n| @error_information = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ProvisioningErrorInfo.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::ProvisioningResult) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::ProvisioningStatusInfoStatus) },
                 }
             end
             ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the status property value. Possible values are: success, warning, failure, skipped, unknownFutureValue.
-            ## @return a provisioning_result
+            ## @return a provisioning_status_info_status
             ## 
             def status
                 return @status

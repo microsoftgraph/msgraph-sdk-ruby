@@ -287,7 +287,7 @@ module MicrosoftGraph
                     "hasAttachments" => lambda {|n| @has_attachments = n.get_boolean_value() },
                     "hideAttendees" => lambda {|n| @hide_attendees = n.get_boolean_value() },
                     "iCalUId" => lambda {|n| @i_cal_u_id = n.get_string_value() },
-                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraph::Models::Importance) },
+                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraph::Models::EventImportance) },
                     "instances" => lambda {|n| @instances = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Event.create_from_discriminator_value(pn) }) },
                     "isAllDay" => lambda {|n| @is_all_day = n.get_boolean_value() },
                     "isCancelled" => lambda {|n| @is_cancelled = n.get_boolean_value() },
@@ -299,7 +299,7 @@ module MicrosoftGraph
                     "locations" => lambda {|n| @locations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Location.create_from_discriminator_value(pn) }) },
                     "multiValueExtendedProperties" => lambda {|n| @multi_value_extended_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MultiValueLegacyExtendedProperty.create_from_discriminator_value(pn) }) },
                     "onlineMeeting" => lambda {|n| @online_meeting = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::OnlineMeetingInfo.create_from_discriminator_value(pn) }) },
-                    "onlineMeetingProvider" => lambda {|n| @online_meeting_provider = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingProviderType) },
+                    "onlineMeetingProvider" => lambda {|n| @online_meeting_provider = n.get_enum_value(MicrosoftGraph::Models::EventOnlineMeetingProvider) },
                     "onlineMeetingUrl" => lambda {|n| @online_meeting_url = n.get_string_value() },
                     "organizer" => lambda {|n| @organizer = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Recipient.create_from_discriminator_value(pn) }) },
                     "originalEndTimeZone" => lambda {|n| @original_end_time_zone = n.get_string_value() },
@@ -309,9 +309,9 @@ module MicrosoftGraph
                     "reminderMinutesBeforeStart" => lambda {|n| @reminder_minutes_before_start = n.get_number_value() },
                     "responseRequested" => lambda {|n| @response_requested = n.get_boolean_value() },
                     "responseStatus" => lambda {|n| @response_status = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ResponseStatus.create_from_discriminator_value(pn) }) },
-                    "sensitivity" => lambda {|n| @sensitivity = n.get_enum_value(MicrosoftGraph::Models::Sensitivity) },
+                    "sensitivity" => lambda {|n| @sensitivity = n.get_enum_value(MicrosoftGraph::Models::EventSensitivity) },
                     "seriesMasterId" => lambda {|n| @series_master_id = n.get_string_value() },
-                    "showAs" => lambda {|n| @show_as = n.get_enum_value(MicrosoftGraph::Models::FreeBusyStatus) },
+                    "showAs" => lambda {|n| @show_as = n.get_enum_value(MicrosoftGraph::Models::EventShowAs) },
                     "singleValueExtendedProperties" => lambda {|n| @single_value_extended_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SingleValueLegacyExtendedProperty.create_from_discriminator_value(pn) }) },
                     "start" => lambda {|n| @start = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "subject" => lambda {|n| @subject = n.get_string_value() },
@@ -367,7 +367,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the importance property value. The importance property
-            ## @return a importance
+            ## @return a event_importance
             ## 
             def importance
                 return @importance
@@ -547,7 +547,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the onlineMeetingProvider property value. The onlineMeetingProvider property
-            ## @return a online_meeting_provider_type
+            ## @return a event_online_meeting_provider
             ## 
             def online_meeting_provider
                 return @online_meeting_provider
@@ -697,7 +697,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the sensitivity property value. The sensitivity property
-            ## @return a sensitivity
+            ## @return a event_sensitivity
             ## 
             def sensitivity
                 return @sensitivity
@@ -778,7 +778,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the showAs property value. The showAs property
-            ## @return a free_busy_status
+            ## @return a event_show_as
             ## 
             def show_as
                 return @show_as

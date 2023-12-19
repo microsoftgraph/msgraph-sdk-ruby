@@ -22,15 +22,15 @@ module MicrosoftGraph
             # Defines the type of the spelling correction. Possible values are: suggestion, modification.
             @query_alteration_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "originalQueryString" => lambda {|n| @original_query_string = n.get_string_value() },
                     "queryAlteration" => lambda {|n| @query_alteration = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SearchAlteration.create_from_discriminator_value(pn) }) },
-                    "queryAlterationType" => lambda {|n| @query_alteration_type = n.get_enum_value(MicrosoftGraph::Models::SearchAlterationType) },
+                    "queryAlterationType" => lambda {|n| @query_alteration_type = n.get_enum_value(MicrosoftGraph::Models::AlterationResponseQueryAlterationType) },
                 }
             end
             ## 
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are: suggestion, modification.
-            ## @return a search_alteration_type
+            ## @return a alteration_response_query_alteration_type
             ## 
             def query_alteration_type
                 return @query_alteration_type

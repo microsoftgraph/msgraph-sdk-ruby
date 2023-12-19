@@ -19,15 +19,15 @@ module MicrosoftGraph
             # Specifies the reason video from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.
             @video_disabled
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the contentSharingDisabled property value. Specifies the reason shared content from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.
-            ## @return a online_meeting_content_sharing_disabled_reason
+            ## @return a online_meeting_restricted_content_sharing_disabled
             ## 
             def content_sharing_disabled
                 return @content_sharing_disabled
@@ -70,9 +70,9 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "contentSharingDisabled" => lambda {|n| @content_sharing_disabled = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingContentSharingDisabledReason) },
+                    "contentSharingDisabled" => lambda {|n| @content_sharing_disabled = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingRestrictedContentSharingDisabled) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "videoDisabled" => lambda {|n| @video_disabled = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingVideoDisabledReason) },
+                    "videoDisabled" => lambda {|n| @video_disabled = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingRestrictedVideoDisabled) },
                 }
             end
             ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the videoDisabled property value. Specifies the reason video from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.
-            ## @return a online_meeting_video_disabled_reason
+            ## @return a online_meeting_restricted_video_disabled
             ## 
             def video_disabled
                 return @video_disabled

@@ -72,7 +72,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "excludeTargets" => lambda {|n| @exclude_targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ExcludeTarget.create_from_discriminator_value(pn) }) },
-                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::AuthenticationMethodState) },
+                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::AuthenticationMethodConfigurationState) },
                 })
             end
             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the state property value. The state of the policy. Possible values are: enabled, disabled.
-            ## @return a authentication_method_state
+            ## @return a authentication_method_configuration_state
             ## 
             def state
                 return @state

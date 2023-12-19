@@ -22,15 +22,15 @@ module MicrosoftGraph
             # The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
             @x509_certificate_rule_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -60,8 +60,8 @@ module MicrosoftGraph
                 return {
                     "identifier" => lambda {|n| @identifier = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "x509CertificateAuthenticationMode" => lambda {|n| @x509_certificate_authentication_mode = n.get_enum_value(MicrosoftGraph::Models::X509CertificateAuthenticationMode) },
-                    "x509CertificateRuleType" => lambda {|n| @x509_certificate_rule_type = n.get_enum_value(MicrosoftGraph::Models::X509CertificateRuleType) },
+                    "x509CertificateAuthenticationMode" => lambda {|n| @x509_certificate_authentication_mode = n.get_enum_value(MicrosoftGraph::Models::X509CertificateRuleX509CertificateAuthenticationMode) },
+                    "x509CertificateRuleType" => lambda {|n| @x509_certificate_rule_type = n.get_enum_value(MicrosoftGraph::Models::X509CertificateRuleX509CertificateRuleType) },
                 }
             end
             ## 
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the x509CertificateAuthenticationMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
-            ## @return a x509_certificate_authentication_mode
+            ## @return a x509_certificate_rule_x509_certificate_authentication_mode
             ## 
             def x509_certificate_authentication_mode
                 return @x509_certificate_authentication_mode
@@ -124,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
-            ## @return a x509_certificate_rule_type
+            ## @return a x509_certificate_rule_x509_certificate_rule_type
             ## 
             def x509_certificate_rule_type
                 return @x509_certificate_rule_type

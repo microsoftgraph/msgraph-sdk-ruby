@@ -106,7 +106,7 @@ module MicrosoftGraph
                     "openShiftChangeRequests" => lambda {|n| @open_shift_change_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::OpenShiftChangeRequest.create_from_discriminator_value(pn) }) },
                     "openShifts" => lambda {|n| @open_shifts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::OpenShift.create_from_discriminator_value(pn) }) },
                     "openShiftsEnabled" => lambda {|n| @open_shifts_enabled = n.get_boolean_value() },
-                    "provisionStatus" => lambda {|n| @provision_status = n.get_enum_value(MicrosoftGraph::Models::OperationStatus) },
+                    "provisionStatus" => lambda {|n| @provision_status = n.get_enum_value(MicrosoftGraph::Models::ScheduleProvisionStatus) },
                     "provisionStatusCode" => lambda {|n| @provision_status_code = n.get_string_value() },
                     "schedulingGroups" => lambda {|n| @scheduling_groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SchedulingGroup.create_from_discriminator_value(pn) }) },
                     "shifts" => lambda {|n| @shifts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Shift.create_from_discriminator_value(pn) }) },
@@ -198,7 +198,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the provisionStatus property value. The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
-            ## @return a operation_status
+            ## @return a schedule_provision_status
             ## 
             def provision_status
                 return @provision_status

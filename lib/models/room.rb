@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the bookingType property value. Type of room. Possible values are standard, and reserved.
-            ## @return a booking_type
+            ## @return a room_booking_type
             ## 
             def booking_type
                 return @booking_type
@@ -189,7 +189,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "audioDeviceName" => lambda {|n| @audio_device_name = n.get_string_value() },
-                    "bookingType" => lambda {|n| @booking_type = n.get_enum_value(MicrosoftGraph::Models::BookingType) },
+                    "bookingType" => lambda {|n| @booking_type = n.get_enum_value(MicrosoftGraph::Models::RoomBookingType) },
                     "building" => lambda {|n| @building = n.get_string_value() },
                     "capacity" => lambda {|n| @capacity = n.get_number_value() },
                     "displayDeviceName" => lambda {|n| @display_device_name = n.get_string_value() },

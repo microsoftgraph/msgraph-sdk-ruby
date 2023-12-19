@@ -20,7 +20,7 @@ module MicrosoftGraph
             @time_slots
             ## 
             ## Gets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
-            ## @return a activity_domain
+            ## @return a time_constraint_activity_domain
             ## 
             def activity_domain
                 return @activity_domain
@@ -34,15 +34,15 @@ module MicrosoftGraph
                 @activity_domain = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "activityDomain" => lambda {|n| @activity_domain = n.get_enum_value(MicrosoftGraph::Models::ActivityDomain) },
+                    "activityDomain" => lambda {|n| @activity_domain = n.get_enum_value(MicrosoftGraph::Models::TimeConstraintActivityDomain) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "timeSlots" => lambda {|n| @time_slots = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TimeSlot.create_from_discriminator_value(pn) }) },
                 }

@@ -31,15 +31,15 @@ module MicrosoftGraph
             # Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
-            ## @return a external_audience_scope
+            ## @return a automatic_replies_setting_external_audience
             ## 
             def external_audience
                 return @external_audience
@@ -97,13 +97,13 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "externalAudience" => lambda {|n| @external_audience = n.get_enum_value(MicrosoftGraph::Models::ExternalAudienceScope) },
+                    "externalAudience" => lambda {|n| @external_audience = n.get_enum_value(MicrosoftGraph::Models::AutomaticRepliesSettingExternalAudience) },
                     "externalReplyMessage" => lambda {|n| @external_reply_message = n.get_string_value() },
                     "internalReplyMessage" => lambda {|n| @internal_reply_message = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "scheduledEndDateTime" => lambda {|n| @scheduled_end_date_time = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "scheduledStartDateTime" => lambda {|n| @scheduled_start_date_time = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::AutomaticRepliesStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::AutomaticRepliesSettingStatus) },
                 }
             end
             ## 
@@ -184,7 +184,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
-            ## @return a automatic_replies_status
+            ## @return a automatic_replies_setting_status
             ## 
             def status
                 return @status

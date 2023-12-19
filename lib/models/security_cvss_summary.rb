@@ -22,15 +22,15 @@ module MicrosoftGraph
             # The CVSS vector string for this vulnerability.
             @vector_string
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -60,7 +60,7 @@ module MicrosoftGraph
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "score" => lambda {|n| @score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
-                    "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraph::Models::SecurityVulnerabilitySeverity) },
+                    "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraph::Models::SecurityCvssSummarySeverity) },
                     "vectorString" => lambda {|n| @vector_string = n.get_string_value() },
                 }
             end
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the severity property value. The CVSS severity rating for this vulnerability. The possible values are: none, low, medium, high, critical, unknownFutureValue.
-            ## @return a security_vulnerability_severity
+            ## @return a security_cvss_summary_severity
             ## 
             def severity
                 return @severity

@@ -19,15 +19,15 @@ module MicrosoftGraph
             # Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
             @scope
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph
                 return {
                     "isDialInBypassEnabled" => lambda {|n| @is_dial_in_bypass_enabled = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "scope" => lambda {|n| @scope = n.get_enum_value(MicrosoftGraph::Models::LobbyBypassScope) },
+                    "scope" => lambda {|n| @scope = n.get_enum_value(MicrosoftGraph::Models::LobbyBypassSettingsScope) },
                 }
             end
             ## 
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
-            ## @return a lobby_bypass_scope
+            ## @return a lobby_bypass_settings_scope
             ## 
             def scope
                 return @scope

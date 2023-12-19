@@ -67,10 +67,10 @@ module MicrosoftGraph
                     "history" => lambda {|n| @history = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::RiskyUserHistoryItem.create_from_discriminator_value(pn) }) },
                     "isDeleted" => lambda {|n| @is_deleted = n.get_boolean_value() },
                     "isProcessing" => lambda {|n| @is_processing = n.get_boolean_value() },
-                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraph::Models::RiskDetail) },
+                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraph::Models::RiskyUserRiskDetail) },
                     "riskLastUpdatedDateTime" => lambda {|n| @risk_last_updated_date_time = n.get_date_time_value() },
-                    "riskLevel" => lambda {|n| @risk_level = n.get_enum_value(MicrosoftGraph::Models::RiskLevel) },
-                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraph::Models::RiskState) },
+                    "riskLevel" => lambda {|n| @risk_level = n.get_enum_value(MicrosoftGraph::Models::RiskyUserRiskLevel) },
+                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraph::Models::RiskyUserRiskState) },
                     "userDisplayName" => lambda {|n| @user_display_name = n.get_string_value() },
                     "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
                 })
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-            ## @return a risk_detail
+            ## @return a risky_user_risk_detail
             ## 
             def risk_detail
                 return @risk_detail
@@ -152,7 +152,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-            ## @return a risk_level
+            ## @return a risky_user_risk_level
             ## 
             def risk_level
                 return @risk_level
@@ -167,7 +167,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-            ## @return a risk_state
+            ## @return a risky_user_risk_state
             ## 
             def risk_state
                 return @risk_state

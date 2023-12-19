@@ -13,13 +13,13 @@ module MicrosoftGraph
             # URI of the metadata exchange endpoint used for authentication from rich client applications.
             @metadata_exchange_uri
             ## 
-            # URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
+            # URI that web-based clients are directed to when signing in to Microsoft Entra services.
             @passive_sign_in_uri
             ## 
             # Preferred authentication protocol. The possible values are: wsFed, saml, unknownFutureValue.
             @preferred_authentication_protocol
             ## 
-            # Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
+            # Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Microsoft Entra ID updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Microsoft Entra ID monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
             @signing_certificate
             ## 
             ## Instantiates a new samlOrWsFedProvider and sets the default values.
@@ -57,7 +57,7 @@ module MicrosoftGraph
                     "issuerUri" => lambda {|n| @issuer_uri = n.get_string_value() },
                     "metadataExchangeUri" => lambda {|n| @metadata_exchange_uri = n.get_string_value() },
                     "passiveSignInUri" => lambda {|n| @passive_sign_in_uri = n.get_string_value() },
-                    "preferredAuthenticationProtocol" => lambda {|n| @preferred_authentication_protocol = n.get_enum_value(MicrosoftGraph::Models::AuthenticationProtocol) },
+                    "preferredAuthenticationProtocol" => lambda {|n| @preferred_authentication_protocol = n.get_enum_value(MicrosoftGraph::Models::SamlOrWsFedProviderPreferredAuthenticationProtocol) },
                     "signingCertificate" => lambda {|n| @signing_certificate = n.get_string_value() },
                 })
             end
@@ -92,14 +92,14 @@ module MicrosoftGraph
                 @metadata_exchange_uri = value
             end
             ## 
-            ## Gets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
+            ## Gets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Microsoft Entra services.
             ## @return a string
             ## 
             def passive_sign_in_uri
                 return @passive_sign_in_uri
             end
             ## 
-            ## Sets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
+            ## Sets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Microsoft Entra services.
             ## @param value Value to set for the passiveSignInUri property.
             ## @return a void
             ## 
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the preferredAuthenticationProtocol property value. Preferred authentication protocol. The possible values are: wsFed, saml, unknownFutureValue.
-            ## @return a authentication_protocol
+            ## @return a saml_or_ws_fed_provider_preferred_authentication_protocol
             ## 
             def preferred_authentication_protocol
                 return @preferred_authentication_protocol
@@ -136,14 +136,14 @@ module MicrosoftGraph
                 writer.write_string_value("signingCertificate", @signing_certificate)
             end
             ## 
-            ## Gets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
+            ## Gets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Microsoft Entra ID updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Microsoft Entra ID monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
             ## @return a string
             ## 
             def signing_certificate
                 return @signing_certificate
             end
             ## 
-            ## Sets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
+            ## Sets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Microsoft Entra ID updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Microsoft Entra ID monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
             ## @param value Value to set for the signingCertificate property.
             ## @return a void
             ## 

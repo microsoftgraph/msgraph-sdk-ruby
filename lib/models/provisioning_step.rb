@@ -28,15 +28,15 @@ module MicrosoftGraph
             # Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -98,8 +98,8 @@ module MicrosoftGraph
                     "details" => lambda {|n| @details = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DetailsInfo.create_from_discriminator_value(pn) }) },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "provisioningStepType" => lambda {|n| @provisioning_step_type = n.get_enum_value(MicrosoftGraph::Models::ProvisioningStepType) },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::ProvisioningResult) },
+                    "provisioningStepType" => lambda {|n| @provisioning_step_type = n.get_enum_value(MicrosoftGraph::Models::ProvisioningStepProvisioningStepType) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::ProvisioningStepStatus) },
                 }
             end
             ## 
@@ -134,7 +134,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the provisioningStepType property value. Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.
-            ## @return a provisioning_step_type
+            ## @return a provisioning_step_provisioning_step_type
             ## 
             def provisioning_step_type
                 return @provisioning_step_type
@@ -164,7 +164,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the status property value. Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.
-            ## @return a provisioning_result
+            ## @return a provisioning_step_status
             ## 
             def status
                 return @status

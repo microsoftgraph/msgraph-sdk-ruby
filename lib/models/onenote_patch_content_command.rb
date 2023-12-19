@@ -40,15 +40,15 @@ module MicrosoftGraph
                 @action = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
                     "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraph::Models::OnenotePatchActionType) },
                     "content" => lambda {|n| @content = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "position" => lambda {|n| @position = n.get_enum_value(MicrosoftGraph::Models::OnenotePatchInsertPosition) },
+                    "position" => lambda {|n| @position = n.get_enum_value(MicrosoftGraph::Models::OnenotePatchContentCommandPosition) },
                     "target" => lambda {|n| @target = n.get_string_value() },
                 }
             end
@@ -115,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the position property value. The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
-            ## @return a onenote_patch_insert_position
+            ## @return a onenote_patch_content_command_position
             ## 
             def position
                 return @position

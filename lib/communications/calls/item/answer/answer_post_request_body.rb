@@ -2,7 +2,6 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/incoming_call_options'
 require_relative '../../../../models/media_config'
-require_relative '../../../../models/modality'
 require_relative '../../../communications'
 require_relative '../../calls'
 require_relative '../item'
@@ -35,7 +34,7 @@ module MicrosoftGraph
                         @participant_capacity
                         ## 
                         ## Gets the acceptedModalities property value. The acceptedModalities property
-                        ## @return a modality
+                        ## @return a answer_post_request_body_accepted_modalities
                         ## 
                         def accepted_modalities
                             return @accepted_modalities
@@ -49,15 +48,15 @@ module MicrosoftGraph
                             @accepted_modalities = value
                         end
                         ## 
-                        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                         ## @return a i_dictionary
                         ## 
                         def additional_data
                             return @additional_data
                         end
                         ## 
-                        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the additionalData property.
+                        ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @param value Value to set for the AdditionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -115,7 +114,7 @@ module MicrosoftGraph
                         ## 
                         def get_field_deserializers()
                             return {
-                                "acceptedModalities" => lambda {|n| @accepted_modalities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Modality.create_from_discriminator_value(pn) }) },
+                                "acceptedModalities" => lambda {|n| @accepted_modalities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Communications::Calls::Item::Answer::AnswerPostRequestBodyAcceptedModalities.create_from_discriminator_value(pn) }) },
                                 "callOptions" => lambda {|n| @call_options = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IncomingCallOptions.create_from_discriminator_value(pn) }) },
                                 "callbackUri" => lambda {|n| @callback_uri = n.get_string_value() },
                                 "mediaConfig" => lambda {|n| @media_config = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::MediaConfig.create_from_discriminator_value(pn) }) },

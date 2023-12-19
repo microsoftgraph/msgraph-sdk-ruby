@@ -19,15 +19,15 @@ module MicrosoftGraph
             # The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage, unknownFutureValue.
             @synchronization_prevention_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph
                 return {
                     "alertThreshold" => lambda {|n| @alert_threshold = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "synchronizationPreventionType" => lambda {|n| @synchronization_prevention_type = n.get_enum_value(MicrosoftGraph::Models::OnPremisesDirectorySynchronizationDeletionPreventionType) },
+                    "synchronizationPreventionType" => lambda {|n| @synchronization_prevention_type = n.get_enum_value(MicrosoftGraph::Models::OnPremisesAccidentalDeletionPreventionSynchronizationPreventionType) },
                 }
             end
             ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the synchronizationPreventionType property value. The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage, unknownFutureValue.
-            ## @return a on_premises_directory_synchronization_deletion_prevention_type
+            ## @return a on_premises_accidental_deletion_prevention_synchronization_prevention_type
             ## 
             def synchronization_prevention_type
                 return @synchronization_prevention_type

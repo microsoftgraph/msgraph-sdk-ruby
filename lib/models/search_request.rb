@@ -58,15 +58,15 @@ module MicrosoftGraph
             # Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
             @sort_properties
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -165,7 +165,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum:chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
-            ## @return a entity_type
+            ## @return a search_request_entity_types
             ## 
             def entity_types
                 return @entity_types
@@ -219,7 +219,7 @@ module MicrosoftGraph
                     "collapseProperties" => lambda {|n| @collapse_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CollapseProperty.create_from_discriminator_value(pn) }) },
                     "contentSources" => lambda {|n| @content_sources = n.get_collection_of_primitive_values(String) },
                     "enableTopResults" => lambda {|n| @enable_top_results = n.get_boolean_value() },
-                    "entityTypes" => lambda {|n| @entity_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EntityType.create_from_discriminator_value(pn) }) },
+                    "entityTypes" => lambda {|n| @entity_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SearchRequestEntityTypes.create_from_discriminator_value(pn) }) },
                     "fields" => lambda {|n| @fields = n.get_collection_of_primitive_values(String) },
                     "from" => lambda {|n| @from = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },

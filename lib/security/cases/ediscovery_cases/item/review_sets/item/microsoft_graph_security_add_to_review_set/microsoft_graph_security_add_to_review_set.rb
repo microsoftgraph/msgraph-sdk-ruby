@@ -1,1 +1,2 @@
+require_relative 'add_to_review_set_post_request_body_additional_data_options'
 require_relative 'add_to_review_set_post_request_body'

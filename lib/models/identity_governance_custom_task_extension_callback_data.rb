@@ -32,12 +32,12 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "operationStatus" => lambda {|n| @operation_status = n.get_enum_value(MicrosoftGraph::Models::IdentityGovernanceCustomTaskExtensionOperationStatus) },
+                    "operationStatus" => lambda {|n| @operation_status = n.get_enum_value(MicrosoftGraph::Models::IdentityGovernanceCustomTaskExtensionCallbackDataOperationStatus) },
                 })
             end
             ## 
             ## Gets the operationStatus property value. Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.
-            ## @return a identity_governance_custom_task_extension_operation_status
+            ## @return a identity_governance_custom_task_extension_callback_data_operation_status
             ## 
             def operation_status
                 return @operation_status

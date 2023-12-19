@@ -19,15 +19,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -35,7 +35,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the allowedWeakAlgorithms property value. Specifies which weak algorithms are allowed.  The possible values are: rsaSha1, unknownFutureValue.
-            ## @return a weak_algorithms
+            ## @return a request_signature_verification_allowed_weak_algorithms
             ## 
             def allowed_weak_algorithms
                 return @allowed_weak_algorithms
@@ -70,7 +70,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "allowedWeakAlgorithms" => lambda {|n| @allowed_weak_algorithms = n.get_enum_value(MicrosoftGraph::Models::WeakAlgorithms) },
+                    "allowedWeakAlgorithms" => lambda {|n| @allowed_weak_algorithms = n.get_enum_value(MicrosoftGraph::Models::RequestSignatureVerificationAllowedWeakAlgorithms) },
                     "isSignedRequestRequired" => lambda {|n| @is_signed_request_required = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }

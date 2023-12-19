@@ -63,7 +63,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "allowNewTimeProposals" => lambda {|n| @allow_new_time_proposals = n.get_boolean_value() },
-                    "meetingRequestType" => lambda {|n| @meeting_request_type = n.get_enum_value(MicrosoftGraph::Models::MeetingRequestType) },
+                    "meetingRequestType" => lambda {|n| @meeting_request_type = n.get_enum_value(MicrosoftGraph::Models::EventMessageRequestMeetingRequestType) },
                     "previousEndDateTime" => lambda {|n| @previous_end_date_time = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "previousLocation" => lambda {|n| @previous_location = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Location.create_from_discriminator_value(pn) }) },
                     "previousStartDateTime" => lambda {|n| @previous_start_date_time = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
@@ -72,7 +72,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the meetingRequestType property value. The meetingRequestType property
-            ## @return a meeting_request_type
+            ## @return a event_message_request_meeting_request_type
             ## 
             def meeting_request_type
                 return @meeting_request_type

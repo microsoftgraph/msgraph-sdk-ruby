@@ -19,13 +19,13 @@ module MicrosoftGraph
             # The policy configuration of the self-service sign-up experience of external users.
             @authentication_flows_policy
             ## 
-            # The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
+            # The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
             @authentication_methods_policy
             ## 
-            # The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            # The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
             @authentication_strength_policies
             ## 
-            # The policy that controls Azure AD authorization settings.
+            # The policy that controls Microsoft Entra authorization settings.
             @authorization_policy
             ## 
             # The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
@@ -34,7 +34,7 @@ module MicrosoftGraph
             # The custom rules that define an access scenario.
             @conditional_access_policies
             ## 
-            # The custom rules that define an access scenario when interacting with external Azure AD tenants.
+            # The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
             @cross_tenant_access_policy
             ## 
             # The tenant-wide policy that enforces app management restrictions for all applications and service principals.
@@ -43,7 +43,7 @@ module MicrosoftGraph
             # The feature rollout policy associated with a directory object.
             @feature_rollout_policies
             ## 
-            # The policy to control Azure AD authentication behavior for federated users.
+            # The policy to control Microsoft Entra authentication behavior for federated users.
             @home_realm_discovery_policies
             ## 
             # The policy that represents the security defaults that protect against common attacks.
@@ -58,10 +58,10 @@ module MicrosoftGraph
             # The assignment of a role management policy to a role definition object.
             @role_management_policy_assignments
             ## 
-            # The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+            # The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
             @token_issuance_policies
             ## 
-            # The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+            # The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
             @token_lifetime_policies
             ## 
             ## Gets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
@@ -124,14 +124,14 @@ module MicrosoftGraph
                 @authentication_flows_policy = value
             end
             ## 
-            ## Gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
+            ## Gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
             ## @return a authentication_methods_policy
             ## 
             def authentication_methods_policy
                 return @authentication_methods_policy
             end
             ## 
-            ## Sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
+            ## Sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
             ## @param value Value to set for the authenticationMethodsPolicy property.
             ## @return a void
             ## 
@@ -139,14 +139,14 @@ module MicrosoftGraph
                 @authentication_methods_policy = value
             end
             ## 
-            ## Gets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            ## Gets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
             ## @return a authentication_strength_policy
             ## 
             def authentication_strength_policies
                 return @authentication_strength_policies
             end
             ## 
-            ## Sets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            ## Sets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
             ## @param value Value to set for the authenticationStrengthPolicies property.
             ## @return a void
             ## 
@@ -154,14 +154,14 @@ module MicrosoftGraph
                 @authentication_strength_policies = value
             end
             ## 
-            ## Gets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
+            ## Gets the authorizationPolicy property value. The policy that controls Microsoft Entra authorization settings.
             ## @return a authorization_policy
             ## 
             def authorization_policy
                 return @authorization_policy
             end
             ## 
-            ## Sets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
+            ## Sets the authorizationPolicy property value. The policy that controls Microsoft Entra authorization settings.
             ## @param value Value to set for the authorizationPolicy property.
             ## @return a void
             ## 
@@ -215,14 +215,14 @@ module MicrosoftGraph
                 return PolicyRoot.new
             end
             ## 
-            ## Gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
+            ## Gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
             ## @return a cross_tenant_access_policy
             ## 
             def cross_tenant_access_policy
                 return @cross_tenant_access_policy
             end
             ## 
-            ## Sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
+            ## Sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
             ## @param value Value to set for the crossTenantAccessPolicy property.
             ## @return a void
             ## 
@@ -287,14 +287,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the homeRealmDiscoveryPolicies property value. The policy to control Azure AD authentication behavior for federated users.
+            ## Gets the homeRealmDiscoveryPolicies property value. The policy to control Microsoft Entra authentication behavior for federated users.
             ## @return a home_realm_discovery_policy
             ## 
             def home_realm_discovery_policies
                 return @home_realm_discovery_policies
             end
             ## 
-            ## Sets the homeRealmDiscoveryPolicies property value. The policy to control Azure AD authentication behavior for federated users.
+            ## Sets the homeRealmDiscoveryPolicies property value. The policy to control Microsoft Entra authentication behavior for federated users.
             ## @param value Value to set for the homeRealmDiscoveryPolicies property.
             ## @return a void
             ## 
@@ -390,14 +390,14 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("tokenLifetimePolicies", @token_lifetime_policies)
             end
             ## 
-            ## Gets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+            ## Gets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
             ## @return a token_issuance_policy
             ## 
             def token_issuance_policies
                 return @token_issuance_policies
             end
             ## 
-            ## Sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+            ## Sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
             ## @param value Value to set for the tokenIssuancePolicies property.
             ## @return a void
             ## 
@@ -405,14 +405,14 @@ module MicrosoftGraph
                 @token_issuance_policies = value
             end
             ## 
-            ## Gets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+            ## Gets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
             ## @return a token_lifetime_policy
             ## 
             def token_lifetime_policies
                 return @token_lifetime_policies
             end
             ## 
-            ## Sets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+            ## Sets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
             ## @param value Value to set for the tokenLifetimePolicies property.
             ## @return a void
             ## 

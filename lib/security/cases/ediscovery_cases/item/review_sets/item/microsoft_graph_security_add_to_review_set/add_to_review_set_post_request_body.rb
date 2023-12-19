@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/security_additional_data_options'
 require_relative '../../../../../../../models/security_ediscovery_search'
 require_relative '../../../../../../security'
 require_relative '../../../../../cases'
@@ -30,15 +29,15 @@ module MicrosoftGraph
                                     # The search property
                                     @search
                                     ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -46,7 +45,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Gets the additionalDataOptions property value. The additionalDataOptions property
-                                    ## @return a security_additional_data_options
+                                    ## @return a add_to_review_set_post_request_body_additional_data_options
                                     ## 
                                     def additional_data_options
                                         return @additional_data_options
@@ -81,7 +80,7 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "additionalDataOptions" => lambda {|n| @additional_data_options = n.get_enum_value(MicrosoftGraph::Models::SecurityAdditionalDataOptions) },
+                                            "additionalDataOptions" => lambda {|n| @additional_data_options = n.get_enum_value(MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::MicrosoftGraphSecurityAddToReviewSet::AddToReviewSetPostRequestBodyAdditionalDataOptions) },
                                             "search" => lambda {|n| @search = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoverySearch.create_from_discriminator_value(pn) }) },
                                         }
                                     end

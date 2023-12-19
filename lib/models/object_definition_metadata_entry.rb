@@ -19,15 +19,15 @@ module MicrosoftGraph
             # Value of the metadata property.
             @value
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,14 +55,14 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "key" => lambda {|n| @key = n.get_enum_value(MicrosoftGraph::Models::ObjectDefinitionMetadata) },
+                    "key" => lambda {|n| @key = n.get_enum_value(MicrosoftGraph::Models::ObjectDefinitionMetadataEntryKey) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "value" => lambda {|n| @value = n.get_string_value() },
                 }
             end
             ## 
             ## Gets the key property value. Possible values are: PropertyNameAccountEnabled, PropertyNameSoftDeleted, IsSoftDeletionSupported, IsSynchronizeAllSupported, ConnectorDataStorageRequired, Extensions, LinkTypeName.
-            ## @return a object_definition_metadata
+            ## @return a object_definition_metadata_entry_key
             ## 
             def key
                 return @key

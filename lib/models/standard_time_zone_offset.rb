@@ -29,15 +29,15 @@ module MicrosoftGraph
             # Represents how frequently in terms of years the change from daylight saving time to standard time occurs. For example, a value of 0 means every year.
             @year
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the dayOfWeek property value. Represents the day of the week when the transition from daylight saving time to standard time.
-            ## @return a day_of_week
+            ## @return a standard_time_zone_offset_day_of_week
             ## 
             def day_of_week
                 return @day_of_week
@@ -104,7 +104,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "dayOccurrence" => lambda {|n| @day_occurrence = n.get_number_value() },
-                    "dayOfWeek" => lambda {|n| @day_of_week = n.get_enum_value(MicrosoftGraph::Models::DayOfWeek) },
+                    "dayOfWeek" => lambda {|n| @day_of_week = n.get_enum_value(MicrosoftGraph::Models::StandardTimeZoneOffsetDayOfWeek) },
                     "month" => lambda {|n| @month = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "time" => lambda {|n| @time = n.get_time_value() },

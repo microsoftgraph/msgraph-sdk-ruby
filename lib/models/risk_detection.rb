@@ -66,7 +66,7 @@ module MicrosoftGraph
             @user_principal_name
             ## 
             ## Gets the activity property value. Indicates the activity type the detected risk is linked to. Possible values are: signin, user, unknownFutureValue.
-            ## @return a activity_type
+            ## @return a risk_detection_activity
             ## 
             def activity
                 return @activity
@@ -157,7 +157,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the detectionTimingType property value. Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
-            ## @return a risk_detection_timing_type
+            ## @return a risk_detection_detection_timing_type
             ## 
             def detection_timing_type
                 return @detection_timing_type
@@ -176,22 +176,22 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "activity" => lambda {|n| @activity = n.get_enum_value(MicrosoftGraph::Models::ActivityType) },
+                    "activity" => lambda {|n| @activity = n.get_enum_value(MicrosoftGraph::Models::RiskDetectionActivity) },
                     "activityDateTime" => lambda {|n| @activity_date_time = n.get_date_time_value() },
                     "additionalInfo" => lambda {|n| @additional_info = n.get_string_value() },
                     "correlationId" => lambda {|n| @correlation_id = n.get_string_value() },
                     "detectedDateTime" => lambda {|n| @detected_date_time = n.get_date_time_value() },
-                    "detectionTimingType" => lambda {|n| @detection_timing_type = n.get_enum_value(MicrosoftGraph::Models::RiskDetectionTimingType) },
+                    "detectionTimingType" => lambda {|n| @detection_timing_type = n.get_enum_value(MicrosoftGraph::Models::RiskDetectionDetectionTimingType) },
                     "ipAddress" => lambda {|n| @ip_address = n.get_string_value() },
                     "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "location" => lambda {|n| @location = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SignInLocation.create_from_discriminator_value(pn) }) },
                     "requestId" => lambda {|n| @request_id = n.get_string_value() },
-                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraph::Models::RiskDetail) },
+                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraph::Models::RiskDetectionRiskDetail) },
                     "riskEventType" => lambda {|n| @risk_event_type = n.get_string_value() },
-                    "riskLevel" => lambda {|n| @risk_level = n.get_enum_value(MicrosoftGraph::Models::RiskLevel) },
-                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraph::Models::RiskState) },
+                    "riskLevel" => lambda {|n| @risk_level = n.get_enum_value(MicrosoftGraph::Models::RiskDetectionRiskLevel) },
+                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraph::Models::RiskDetectionRiskState) },
                     "source" => lambda {|n| @source = n.get_string_value() },
-                    "tokenIssuerType" => lambda {|n| @token_issuer_type = n.get_enum_value(MicrosoftGraph::Models::TokenIssuerType) },
+                    "tokenIssuerType" => lambda {|n| @token_issuer_type = n.get_enum_value(MicrosoftGraph::Models::RiskDetectionTokenIssuerType) },
                     "userDisplayName" => lambda {|n| @user_display_name = n.get_string_value() },
                     "userId" => lambda {|n| @user_id = n.get_string_value() },
                     "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
@@ -259,7 +259,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskDetail property value. Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: m365DAdminDismissedDetection.
-            ## @return a risk_detail
+            ## @return a risk_detection_risk_detail
             ## 
             def risk_detail
                 return @risk_detail
@@ -289,7 +289,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskLevel property value. Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-            ## @return a risk_level
+            ## @return a risk_detection_risk_level
             ## 
             def risk_level
                 return @risk_level
@@ -304,7 +304,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskState property value. The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-            ## @return a risk_state
+            ## @return a risk_detection_risk_state
             ## 
             def risk_state
                 return @risk_state
@@ -362,7 +362,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
-            ## @return a token_issuer_type
+            ## @return a risk_detection_token_issuer_type
             ## 
             def token_issuer_type
                 return @token_issuer_type

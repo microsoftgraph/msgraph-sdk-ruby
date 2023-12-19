@@ -7,7 +7,7 @@ module MicrosoftGraph
         class EmailFileAssessmentRequest < MicrosoftGraph::Models::ThreatAssessmentRequest
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
+            # Base64 encoded .eml email file content. The file content can't fetch back because it isn't stored.
             @content_data
             ## 
             # The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
@@ -24,14 +24,14 @@ module MicrosoftGraph
                 @odata_type = "#microsoft.graph.emailFileAssessmentRequest"
             end
             ## 
-            ## Gets the contentData property value. Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
+            ## Gets the contentData property value. Base64 encoded .eml email file content. The file content can't fetch back because it isn't stored.
             ## @return a string
             ## 
             def content_data
                 return @content_data
             end
             ## 
-            ## Sets the contentData property value. Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
+            ## Sets the contentData property value. Base64 encoded .eml email file content. The file content can't fetch back because it isn't stored.
             ## @param value Value to set for the contentData property.
             ## @return a void
             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
-            ## @return a mail_destination_routing_reason
+            ## @return a email_file_assessment_request_destination_routing_reason
             ## 
             def destination_routing_reason
                 return @destination_routing_reason
@@ -69,7 +69,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "contentData" => lambda {|n| @content_data = n.get_string_value() },
-                    "destinationRoutingReason" => lambda {|n| @destination_routing_reason = n.get_enum_value(MicrosoftGraph::Models::MailDestinationRoutingReason) },
+                    "destinationRoutingReason" => lambda {|n| @destination_routing_reason = n.get_enum_value(MicrosoftGraph::Models::EmailFileAssessmentRequestDestinationRoutingReason) },
                     "recipientEmail" => lambda {|n| @recipient_email = n.get_string_value() },
                 })
             end

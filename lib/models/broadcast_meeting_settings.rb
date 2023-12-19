@@ -31,15 +31,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the allowedAudience property value. Defines who can join the Teams live event. Possible values are listed in the following table.
-            ## @return a broadcast_meeting_audience
+            ## @return a broadcast_meeting_settings_allowed_audience
             ## 
             def allowed_audience
                 return @allowed_audience
@@ -97,7 +97,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "allowedAudience" => lambda {|n| @allowed_audience = n.get_enum_value(MicrosoftGraph::Models::BroadcastMeetingAudience) },
+                    "allowedAudience" => lambda {|n| @allowed_audience = n.get_enum_value(MicrosoftGraph::Models::BroadcastMeetingSettingsAllowedAudience) },
                     "captions" => lambda {|n| @captions = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::BroadcastMeetingCaptionSettings.create_from_discriminator_value(pn) }) },
                     "isAttendeeReportEnabled" => lambda {|n| @is_attendee_report_enabled = n.get_boolean_value() },
                     "isQuestionAndAnswerEnabled" => lambda {|n| @is_question_and_answer_enabled = n.get_boolean_value() },

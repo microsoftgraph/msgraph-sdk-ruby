@@ -60,7 +60,7 @@ module MicrosoftGraph
                     "sectionGroupsUrl" => lambda {|n| @section_groups_url = n.get_string_value() },
                     "sections" => lambda {|n| @sections = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::OnenoteSection.create_from_discriminator_value(pn) }) },
                     "sectionsUrl" => lambda {|n| @sections_url = n.get_string_value() },
-                    "userRole" => lambda {|n| @user_role = n.get_enum_value(MicrosoftGraph::Models::OnenoteUserRole) },
+                    "userRole" => lambda {|n| @user_role = n.get_enum_value(MicrosoftGraph::Models::NotebookUserRole) },
                 })
             end
             ## 
@@ -187,7 +187,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the userRole property value. Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
-            ## @return a onenote_user_role
+            ## @return a notebook_user_role
             ## 
             def user_role
                 return @user_role

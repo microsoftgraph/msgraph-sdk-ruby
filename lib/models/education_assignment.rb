@@ -87,7 +87,7 @@ module MicrosoftGraph
             @web_url
             ## 
             ## Gets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-            ## @return a education_add_to_calendar_options
+            ## @return a education_assignment_add_to_calendar_action
             ## 
             def add_to_calendar_action
                 return @add_to_calendar_action
@@ -102,7 +102,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
-            ## @return a education_added_student_action
+            ## @return a education_assignment_added_student_action
             ## 
             def added_student_action
                 return @added_student_action
@@ -332,8 +332,8 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "addToCalendarAction" => lambda {|n| @add_to_calendar_action = n.get_enum_value(MicrosoftGraph::Models::EducationAddToCalendarOptions) },
-                    "addedStudentAction" => lambda {|n| @added_student_action = n.get_enum_value(MicrosoftGraph::Models::EducationAddedStudentAction) },
+                    "addToCalendarAction" => lambda {|n| @add_to_calendar_action = n.get_enum_value(MicrosoftGraph::Models::EducationAssignmentAddToCalendarAction) },
+                    "addedStudentAction" => lambda {|n| @added_student_action = n.get_enum_value(MicrosoftGraph::Models::EducationAssignmentAddedStudentAction) },
                     "allowLateSubmissions" => lambda {|n| @allow_late_submissions = n.get_boolean_value() },
                     "allowStudentsToAddResourcesToSubmission" => lambda {|n| @allow_students_to_add_resources_to_submission = n.get_boolean_value() },
                     "assignDateTime" => lambda {|n| @assign_date_time = n.get_date_time_value() },

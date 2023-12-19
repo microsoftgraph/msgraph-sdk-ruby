@@ -46,15 +46,15 @@ module MicrosoftGraph
             # Indicates whether subsequent rules should be evaluated.
             @stop_processing_rules
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph
                     "forwardAsAttachmentTo" => lambda {|n| @forward_as_attachment_to = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Recipient.create_from_discriminator_value(pn) }) },
                     "forwardTo" => lambda {|n| @forward_to = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Recipient.create_from_discriminator_value(pn) }) },
                     "markAsRead" => lambda {|n| @mark_as_read = n.get_boolean_value() },
-                    "markImportance" => lambda {|n| @mark_importance = n.get_enum_value(MicrosoftGraph::Models::Importance) },
+                    "markImportance" => lambda {|n| @mark_importance = n.get_enum_value(MicrosoftGraph::Models::MessageRuleActionsMarkImportance) },
                     "moveToFolder" => lambda {|n| @move_to_folder = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "permanentDelete" => lambda {|n| @permanent_delete = n.get_boolean_value() },
@@ -188,7 +188,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the markImportance property value. Sets the importance of the message, which can be: low, normal, high.
-            ## @return a importance
+            ## @return a message_rule_actions_mark_importance
             ## 
             def mark_importance
                 return @mark_importance

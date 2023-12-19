@@ -26,13 +26,13 @@ module MicrosoftGraph
             # Information about all the custom extension calls that were made during the access package assignment workflow.
             @custom_extension_callout_instances
             ## 
-            # The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
+            # The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property can't be changed once set.
             @request_type
             ## 
             # The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
             @requestor
             ## 
-            # The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
+            # The range of dates that access is to be assigned to the requestor. This property can't be changed once set.
             @schedule
             ## 
             # The state of the request. The possible values are: submitted, pendingApproval, delivering, delivered, deliveryFailed, denied, scheduled, canceled, partiallyDelivered, unknownFutureValue. Read-only. Supports $filter (eq).
@@ -158,22 +158,22 @@ module MicrosoftGraph
                     "completedDateTime" => lambda {|n| @completed_date_time = n.get_date_time_value() },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "customExtensionCalloutInstances" => lambda {|n| @custom_extension_callout_instances = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CustomExtensionCalloutInstance.create_from_discriminator_value(pn) }) },
-                    "requestType" => lambda {|n| @request_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageRequestType) },
+                    "requestType" => lambda {|n| @request_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageAssignmentRequestRequestType) },
                     "requestor" => lambda {|n| @requestor = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageSubject.create_from_discriminator_value(pn) }) },
                     "schedule" => lambda {|n| @schedule = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EntitlementManagementSchedule.create_from_discriminator_value(pn) }) },
-                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::AccessPackageRequestState) },
+                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::AccessPackageAssignmentRequestState) },
                     "status" => lambda {|n| @status = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
-            ## @return a access_package_request_type
+            ## Gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property can't be changed once set.
+            ## @return a access_package_assignment_request_request_type
             ## 
             def request_type
                 return @request_type
             end
             ## 
-            ## Sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
+            ## Sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property can't be changed once set.
             ## @param value Value to set for the requestType property.
             ## @return a void
             ## 
@@ -196,14 +196,14 @@ module MicrosoftGraph
                 @requestor = value
             end
             ## 
-            ## Gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
+            ## Gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set.
             ## @return a entitlement_management_schedule
             ## 
             def schedule
                 return @schedule
             end
             ## 
-            ## Sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
+            ## Sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set.
             ## @param value Value to set for the schedule property.
             ## @return a void
             ## 
@@ -232,7 +232,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the state property value. The state of the request. The possible values are: submitted, pendingApproval, delivering, delivered, deliveryFailed, denied, scheduled, canceled, partiallyDelivered, unknownFutureValue. Read-only. Supports $filter (eq).
-            ## @return a access_package_request_state
+            ## @return a access_package_assignment_request_state
             ## 
             def state
                 return @state

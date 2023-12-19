@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
 require_relative '../../../../models/managed_mobile_app'
-require_relative '../../../../models/targeted_managed_app_group_type'
 require_relative '../../../device_app_management'
 require_relative '../../targeted_managed_app_configurations'
 require_relative '../item'
@@ -24,15 +23,15 @@ module MicrosoftGraph
                         # The apps property
                         @apps
                         ## 
-                        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                         ## @return a i_dictionary
                         ## 
                         def additional_data
                             return @additional_data
                         end
                         ## 
-                        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the additionalData property.
+                        ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @param value Value to set for the AdditionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -40,7 +39,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Gets the appGroupType property value. The appGroupType property
-                        ## @return a targeted_managed_app_group_type
+                        ## @return a target_apps_post_request_body_app_group_type
                         ## 
                         def app_group_type
                             return @app_group_type
@@ -90,7 +89,7 @@ module MicrosoftGraph
                         ## 
                         def get_field_deserializers()
                             return {
-                                "appGroupType" => lambda {|n| @app_group_type = n.get_enum_value(MicrosoftGraph::Models::TargetedManagedAppGroupType) },
+                                "appGroupType" => lambda {|n| @app_group_type = n.get_enum_value(MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::TargetApps::TargetAppsPostRequestBodyAppGroupType) },
                                 "apps" => lambda {|n| @apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ManagedMobileApp.create_from_discriminator_value(pn) }) },
                             }
                         end

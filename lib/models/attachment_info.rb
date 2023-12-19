@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The nature of the data in the attachment. Optional.
             @content_type
             ## 
-            # The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+            # The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
             @name
             ## 
             # The OdataType property
@@ -25,15 +25,15 @@ module MicrosoftGraph
             # The length of the attachment in bytes. Required.
             @size
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -41,7 +41,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the attachmentType property value. The type of the attachment. The possible values are: file, item, reference. Required.
-            ## @return a attachment_type
+            ## @return a attachment_info_attachment_type
             ## 
             def attachment_type
                 return @attachment_type
@@ -91,7 +91,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "attachmentType" => lambda {|n| @attachment_type = n.get_enum_value(MicrosoftGraph::Models::AttachmentType) },
+                    "attachmentType" => lambda {|n| @attachment_type = n.get_enum_value(MicrosoftGraph::Models::AttachmentInfoAttachmentType) },
                     "contentType" => lambda {|n| @content_type = n.get_string_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -99,14 +99,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+            ## Gets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
+            ## Sets the name property value. The display name of the attachment. This can be a descriptive string and doesn't have to be the actual file name. Required.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 

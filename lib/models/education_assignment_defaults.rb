@@ -21,7 +21,7 @@ module MicrosoftGraph
             @notification_channel_url
             ## 
             ## Gets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-            ## @return a education_add_to_calendar_options
+            ## @return a education_assignment_defaults_add_to_calendar_action
             ## 
             def add_to_calendar_action
                 return @add_to_calendar_action
@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
-            ## @return a education_added_student_action
+            ## @return a education_assignment_defaults_added_student_action
             ## 
             def added_student_action
                 return @added_student_action
@@ -86,8 +86,8 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "addToCalendarAction" => lambda {|n| @add_to_calendar_action = n.get_enum_value(MicrosoftGraph::Models::EducationAddToCalendarOptions) },
-                    "addedStudentAction" => lambda {|n| @added_student_action = n.get_enum_value(MicrosoftGraph::Models::EducationAddedStudentAction) },
+                    "addToCalendarAction" => lambda {|n| @add_to_calendar_action = n.get_enum_value(MicrosoftGraph::Models::EducationAssignmentDefaultsAddToCalendarAction) },
+                    "addedStudentAction" => lambda {|n| @added_student_action = n.get_enum_value(MicrosoftGraph::Models::EducationAssignmentDefaultsAddedStudentAction) },
                     "dueTime" => lambda {|n| @due_time = n.get_time_value() },
                     "notificationChannelUrl" => lambda {|n| @notification_channel_url = n.get_string_value() },
                 })

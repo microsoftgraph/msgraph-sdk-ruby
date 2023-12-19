@@ -26,15 +26,15 @@ module MicrosoftGraph
             # The time zone to which the working hours apply.
             @time_zone
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the daysOfWeek property value. The days of the week on which the user works.
-            ## @return a day_of_week
+            ## @return a working_hours_days_of_week
             ## 
             def days_of_week
                 return @days_of_week
@@ -92,7 +92,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "daysOfWeek" => lambda {|n| @days_of_week = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DayOfWeek.create_from_discriminator_value(pn) }) },
+                    "daysOfWeek" => lambda {|n| @days_of_week = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WorkingHoursDaysOfWeek.create_from_discriminator_value(pn) }) },
                     "endTime" => lambda {|n| @end_time = n.get_time_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "startTime" => lambda {|n| @start_time = n.get_time_value() },

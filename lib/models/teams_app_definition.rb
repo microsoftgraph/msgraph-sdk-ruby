@@ -26,7 +26,7 @@ module MicrosoftGraph
             # The lastModifiedDateTime property
             @last_modified_date_time
             ## 
-            # The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+            # The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected—The admin rejected the request to publish the specific version of the Teams app.
             @publishing_state
             ## 
             # Short description of the application.
@@ -140,7 +140,7 @@ module MicrosoftGraph
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
-                    "publishingState" => lambda {|n| @publishing_state = n.get_enum_value(MicrosoftGraph::Models::TeamsAppPublishingState) },
+                    "publishingState" => lambda {|n| @publishing_state = n.get_enum_value(MicrosoftGraph::Models::TeamsAppDefinitionPublishingState) },
                     "shortDescription" => lambda {|n| @short_description = n.get_string_value() },
                     "teamsAppId" => lambda {|n| @teams_app_id = n.get_string_value() },
                     "version" => lambda {|n| @version = n.get_string_value() },
@@ -162,14 +162,14 @@ module MicrosoftGraph
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
-            ## @return a teams_app_publishing_state
+            ## Gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected—The admin rejected the request to publish the specific version of the Teams app.
+            ## @return a teams_app_definition_publishing_state
             ## 
             def publishing_state
                 return @publishing_state
             end
             ## 
-            ## Sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+            ## Sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected—The admin rejected the request to publish the specific version of the Teams app.
             ## @param value Value to set for the publishingState property.
             ## @return a void
             ## 

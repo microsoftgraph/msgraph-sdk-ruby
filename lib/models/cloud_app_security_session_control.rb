@@ -11,7 +11,7 @@ module MicrosoftGraph
             @cloud_app_security_type
             ## 
             ## Gets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
-            ## @return a cloud_app_security_session_control_type
+            ## @return a cloud_app_security_session_control_cloud_app_security_type
             ## 
             def cloud_app_security_type
                 return @cloud_app_security_type
@@ -47,7 +47,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "cloudAppSecurityType" => lambda {|n| @cloud_app_security_type = n.get_enum_value(MicrosoftGraph::Models::CloudAppSecuritySessionControlType) },
+                    "cloudAppSecurityType" => lambda {|n| @cloud_app_security_type = n.get_enum_value(MicrosoftGraph::Models::CloudAppSecuritySessionControlCloudAppSecurityType) },
                 })
             end
             ## 

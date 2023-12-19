@@ -34,15 +34,15 @@ module MicrosoftGraph
             # The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
             @type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the daysOfWeek property value. A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.
-            ## @return a day_of_week
+            ## @return a recurrence_pattern_days_of_week
             ## 
             def days_of_week
                 return @days_of_week
@@ -96,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the firstDayOfWeek property value. The first day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. Default is sunday. Required if type is weekly.
-            ## @return a day_of_week
+            ## @return a recurrence_pattern_first_day_of_week
             ## 
             def first_day_of_week
                 return @first_day_of_week
@@ -116,9 +116,9 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "dayOfMonth" => lambda {|n| @day_of_month = n.get_number_value() },
-                    "daysOfWeek" => lambda {|n| @days_of_week = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DayOfWeek.create_from_discriminator_value(pn) }) },
-                    "firstDayOfWeek" => lambda {|n| @first_day_of_week = n.get_enum_value(MicrosoftGraph::Models::DayOfWeek) },
-                    "index" => lambda {|n| @index = n.get_enum_value(MicrosoftGraph::Models::WeekIndex) },
+                    "daysOfWeek" => lambda {|n| @days_of_week = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::RecurrencePatternDaysOfWeek.create_from_discriminator_value(pn) }) },
+                    "firstDayOfWeek" => lambda {|n| @first_day_of_week = n.get_enum_value(MicrosoftGraph::Models::RecurrencePatternFirstDayOfWeek) },
+                    "index" => lambda {|n| @index = n.get_enum_value(MicrosoftGraph::Models::RecurrencePatternIndex) },
                     "interval" => lambda {|n| @interval = n.get_number_value() },
                     "month" => lambda {|n| @month = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -127,7 +127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the index property value. Specifies on which instance of the allowed days specified in daysOfWeek the event occurs, counted from the first instance in the month. The possible values are: first, second, third, fourth, last. Default is first. Optional and used if type is relativeMonthly or relativeYearly.
-            ## @return a week_index
+            ## @return a recurrence_pattern_index
             ## 
             def index
                 return @index

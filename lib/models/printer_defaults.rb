@@ -64,15 +64,15 @@ module MicrosoftGraph
             # Specifies how the printer scales the document data to fit the requested media. Valid values are described in the following table.
             @scaling
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the colorMode property value. The default color mode to use when printing the document. Valid values are described in the following table.
-            ## @return a print_color_mode
+            ## @return a printer_defaults_color_mode
             ## 
             def color_mode
                 return @color_mode
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the duplexMode property value. The default duplex (double-sided) configuration to use when printing a document. Valid values are described in the following table.
-            ## @return a print_duplex_mode
+            ## @return a printer_defaults_duplex_mode
             ## 
             def duplex_mode
                 return @duplex_mode
@@ -171,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the finishings property value. The default set of finishings to apply to print jobs. Valid values are described in the following table.
-            ## @return a print_finishing
+            ## @return a printer_defaults_finishings
             ## 
             def finishings
                 return @finishings
@@ -205,24 +205,24 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "colorMode" => lambda {|n| @color_mode = n.get_enum_value(MicrosoftGraph::Models::PrintColorMode) },
+                    "colorMode" => lambda {|n| @color_mode = n.get_enum_value(MicrosoftGraph::Models::PrinterDefaultsColorMode) },
                     "contentType" => lambda {|n| @content_type = n.get_string_value() },
                     "copiesPerJob" => lambda {|n| @copies_per_job = n.get_number_value() },
                     "dpi" => lambda {|n| @dpi = n.get_number_value() },
-                    "duplexMode" => lambda {|n| @duplex_mode = n.get_enum_value(MicrosoftGraph::Models::PrintDuplexMode) },
-                    "finishings" => lambda {|n| @finishings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrintFinishing.create_from_discriminator_value(pn) }) },
+                    "duplexMode" => lambda {|n| @duplex_mode = n.get_enum_value(MicrosoftGraph::Models::PrinterDefaultsDuplexMode) },
+                    "finishings" => lambda {|n| @finishings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrinterDefaultsFinishings.create_from_discriminator_value(pn) }) },
                     "fitPdfToPage" => lambda {|n| @fit_pdf_to_page = n.get_boolean_value() },
                     "inputBin" => lambda {|n| @input_bin = n.get_string_value() },
                     "mediaColor" => lambda {|n| @media_color = n.get_string_value() },
                     "mediaSize" => lambda {|n| @media_size = n.get_string_value() },
                     "mediaType" => lambda {|n| @media_type = n.get_string_value() },
-                    "multipageLayout" => lambda {|n| @multipage_layout = n.get_enum_value(MicrosoftGraph::Models::PrintMultipageLayout) },
+                    "multipageLayout" => lambda {|n| @multipage_layout = n.get_enum_value(MicrosoftGraph::Models::PrinterDefaultsMultipageLayout) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "orientation" => lambda {|n| @orientation = n.get_enum_value(MicrosoftGraph::Models::PrintOrientation) },
+                    "orientation" => lambda {|n| @orientation = n.get_enum_value(MicrosoftGraph::Models::PrinterDefaultsOrientation) },
                     "outputBin" => lambda {|n| @output_bin = n.get_string_value() },
                     "pagesPerSheet" => lambda {|n| @pages_per_sheet = n.get_number_value() },
-                    "quality" => lambda {|n| @quality = n.get_enum_value(MicrosoftGraph::Models::PrintQuality) },
-                    "scaling" => lambda {|n| @scaling = n.get_enum_value(MicrosoftGraph::Models::PrintScaling) },
+                    "quality" => lambda {|n| @quality = n.get_enum_value(MicrosoftGraph::Models::PrinterDefaultsQuality) },
+                    "scaling" => lambda {|n| @scaling = n.get_enum_value(MicrosoftGraph::Models::PrinterDefaultsScaling) },
                 }
             end
             ## 
@@ -287,7 +287,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the multipageLayout property value. The default direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
-            ## @return a print_multipage_layout
+            ## @return a printer_defaults_multipage_layout
             ## 
             def multipage_layout
                 return @multipage_layout
@@ -317,7 +317,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the orientation property value. The default orientation to use when printing the document. Valid values are described in the following table.
-            ## @return a print_orientation
+            ## @return a printer_defaults_orientation
             ## 
             def orientation
                 return @orientation
@@ -362,7 +362,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the quality property value. The default quality to use when printing the document. Valid values are described in the following table.
-            ## @return a print_quality
+            ## @return a printer_defaults_quality
             ## 
             def quality
                 return @quality
@@ -377,7 +377,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the scaling property value. Specifies how the printer scales the document data to fit the requested media. Valid values are described in the following table.
-            ## @return a print_scaling
+            ## @return a printer_defaults_scaling
             ## 
             def scaling
                 return @scaling

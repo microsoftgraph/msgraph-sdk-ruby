@@ -19,15 +19,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the format property value. The format of the content. The possible values are: text, html, markdown, unknownFutureValue.
-            ## @return a security_content_format
+            ## @return a security_formatted_content_format
             ## 
             def format
                 return @format
@@ -86,7 +86,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "content" => lambda {|n| @content = n.get_string_value() },
-                    "format" => lambda {|n| @format = n.get_enum_value(MicrosoftGraph::Models::SecurityContentFormat) },
+                    "format" => lambda {|n| @format = n.get_enum_value(MicrosoftGraph::Models::SecurityFormattedContentFormat) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end

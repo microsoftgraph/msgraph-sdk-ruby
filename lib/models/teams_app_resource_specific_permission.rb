@@ -19,15 +19,15 @@ module MicrosoftGraph
             # The name of the resource-specific permission.
             @permission_value
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "permissionType" => lambda {|n| @permission_type = n.get_enum_value(MicrosoftGraph::Models::TeamsAppResourceSpecificPermissionType) },
+                    "permissionType" => lambda {|n| @permission_type = n.get_enum_value(MicrosoftGraph::Models::TeamsAppResourceSpecificPermissionPermissionType) },
                     "permissionValue" => lambda {|n| @permission_value = n.get_string_value() },
                 }
             end
@@ -77,7 +77,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the permissionType property value. The type of resource-specific permission.
-            ## @return a teams_app_resource_specific_permission_type
+            ## @return a teams_app_resource_specific_permission_permission_type
             ## 
             def permission_type
                 return @permission_type

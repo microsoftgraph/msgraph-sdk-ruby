@@ -37,15 +37,15 @@ module MicrosoftGraph
             # When the first review should start and how often it should recur.
             @schedule
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the expirationBehavior property value. The default decision to apply if the access is not reviewed. The possible values are: keepAccess, removeAccess, acceptAccessRecommendation, unknownFutureValue.
-            ## @return a access_review_expiration_behavior
+            ## @return a access_package_assignment_review_settings_expiration_behavior
             ## 
             def expiration_behavior
                 return @expiration_behavior
@@ -103,7 +103,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "expirationBehavior" => lambda {|n| @expiration_behavior = n.get_enum_value(MicrosoftGraph::Models::AccessReviewExpirationBehavior) },
+                    "expirationBehavior" => lambda {|n| @expiration_behavior = n.get_enum_value(MicrosoftGraph::Models::AccessPackageAssignmentReviewSettingsExpirationBehavior) },
                     "fallbackReviewers" => lambda {|n| @fallback_reviewers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SubjectSet.create_from_discriminator_value(pn) }) },
                     "isEnabled" => lambda {|n| @is_enabled = n.get_boolean_value() },
                     "isRecommendationEnabled" => lambda {|n| @is_recommendation_enabled = n.get_boolean_value() },

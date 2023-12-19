@@ -74,15 +74,15 @@ module MicrosoftGraph
             # Parameters (suffix) of the destination URL.
             @url_parameters
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -196,7 +196,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the direction property value. Network connection direction. Possible values are: unknown, inbound, outbound.
-            ## @return a connection_direction
+            ## @return a network_connection_direction
             ## 
             def direction
                 return @direction
@@ -236,7 +236,7 @@ module MicrosoftGraph
                     "destinationLocation" => lambda {|n| @destination_location = n.get_string_value() },
                     "destinationPort" => lambda {|n| @destination_port = n.get_string_value() },
                     "destinationUrl" => lambda {|n| @destination_url = n.get_string_value() },
-                    "direction" => lambda {|n| @direction = n.get_enum_value(MicrosoftGraph::Models::ConnectionDirection) },
+                    "direction" => lambda {|n| @direction = n.get_enum_value(MicrosoftGraph::Models::NetworkConnectionDirection) },
                     "domainRegisteredDateTime" => lambda {|n| @domain_registered_date_time = n.get_date_time_value() },
                     "localDnsName" => lambda {|n| @local_dns_name = n.get_string_value() },
                     "natDestinationAddress" => lambda {|n| @nat_destination_address = n.get_string_value() },
@@ -244,12 +244,12 @@ module MicrosoftGraph
                     "natSourceAddress" => lambda {|n| @nat_source_address = n.get_string_value() },
                     "natSourcePort" => lambda {|n| @nat_source_port = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "protocol" => lambda {|n| @protocol = n.get_enum_value(MicrosoftGraph::Models::SecurityNetworkProtocol) },
+                    "protocol" => lambda {|n| @protocol = n.get_enum_value(MicrosoftGraph::Models::NetworkConnectionProtocol) },
                     "riskScore" => lambda {|n| @risk_score = n.get_string_value() },
                     "sourceAddress" => lambda {|n| @source_address = n.get_string_value() },
                     "sourceLocation" => lambda {|n| @source_location = n.get_string_value() },
                     "sourcePort" => lambda {|n| @source_port = n.get_string_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::ConnectionStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::NetworkConnectionStatus) },
                     "urlParameters" => lambda {|n| @url_parameters = n.get_string_value() },
                 }
             end
@@ -345,7 +345,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the protocol property value. Network protocol. Possible values are: unknown, ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII.
-            ## @return a security_network_protocol
+            ## @return a network_connection_protocol
             ## 
             def protocol
                 return @protocol
@@ -450,7 +450,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the status property value. Network connection status. Possible values are: unknown, attempted, succeeded, blocked, failed.
-            ## @return a connection_status
+            ## @return a network_connection_status
             ## 
             def status
                 return @status

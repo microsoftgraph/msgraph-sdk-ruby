@@ -20,7 +20,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
+            # The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: approval.
             @stage
             ## 
             # The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
@@ -29,15 +29,15 @@ module MicrosoftGraph
             # Type of history.
             @type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -98,8 +98,8 @@ module MicrosoftGraph
                     "changedBy" => lambda {|n| @changed_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "eventDateTime" => lambda {|n| @event_date_time = n.get_date_time_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "stage" => lambda {|n| @stage = n.get_enum_value(MicrosoftGraph::Models::SubjectRightsRequestStage) },
-                    "stageStatus" => lambda {|n| @stage_status = n.get_enum_value(MicrosoftGraph::Models::SubjectRightsRequestStageStatus) },
+                    "stage" => lambda {|n| @stage = n.get_enum_value(MicrosoftGraph::Models::SubjectRightsRequestHistoryStage) },
+                    "stageStatus" => lambda {|n| @stage_status = n.get_enum_value(MicrosoftGraph::Models::SubjectRightsRequestHistoryStageStatus) },
                     "type" => lambda {|n| @type = n.get_string_value() },
                 }
             end
@@ -134,14 +134,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
-            ## @return a subject_rights_request_stage
+            ## Gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: approval.
+            ## @return a subject_rights_request_history_stage
             ## 
             def stage
                 return @stage
             end
             ## 
-            ## Sets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
+            ## Sets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: approval.
             ## @param value Value to set for the stage property.
             ## @return a void
             ## 
@@ -150,7 +150,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
-            ## @return a subject_rights_request_stage_status
+            ## @return a subject_rights_request_history_stage_status
             ## 
             def stage_status
                 return @stage_status

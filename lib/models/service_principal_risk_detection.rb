@@ -69,7 +69,7 @@ module MicrosoftGraph
             @token_issuer_type
             ## 
             ## Gets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
-            ## @return a activity_type
+            ## @return a service_principal_risk_detection_activity
             ## 
             def activity
                 return @activity
@@ -175,7 +175,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the detectionTimingType property value. Timing of the detected risk , whether real-time or offline. The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
-            ## @return a risk_detection_timing_type
+            ## @return a service_principal_risk_detection_detection_timing_type
             ## 
             def detection_timing_type
                 return @detection_timing_type
@@ -194,26 +194,26 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "activity" => lambda {|n| @activity = n.get_enum_value(MicrosoftGraph::Models::ActivityType) },
+                    "activity" => lambda {|n| @activity = n.get_enum_value(MicrosoftGraph::Models::ServicePrincipalRiskDetectionActivity) },
                     "activityDateTime" => lambda {|n| @activity_date_time = n.get_date_time_value() },
                     "additionalInfo" => lambda {|n| @additional_info = n.get_string_value() },
                     "appId" => lambda {|n| @app_id = n.get_string_value() },
                     "correlationId" => lambda {|n| @correlation_id = n.get_string_value() },
                     "detectedDateTime" => lambda {|n| @detected_date_time = n.get_date_time_value() },
-                    "detectionTimingType" => lambda {|n| @detection_timing_type = n.get_enum_value(MicrosoftGraph::Models::RiskDetectionTimingType) },
+                    "detectionTimingType" => lambda {|n| @detection_timing_type = n.get_enum_value(MicrosoftGraph::Models::ServicePrincipalRiskDetectionDetectionTimingType) },
                     "ipAddress" => lambda {|n| @ip_address = n.get_string_value() },
                     "keyIds" => lambda {|n| @key_ids = n.get_collection_of_primitive_values(String) },
                     "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "location" => lambda {|n| @location = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SignInLocation.create_from_discriminator_value(pn) }) },
                     "requestId" => lambda {|n| @request_id = n.get_string_value() },
-                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraph::Models::RiskDetail) },
+                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraph::Models::ServicePrincipalRiskDetectionRiskDetail) },
                     "riskEventType" => lambda {|n| @risk_event_type = n.get_string_value() },
-                    "riskLevel" => lambda {|n| @risk_level = n.get_enum_value(MicrosoftGraph::Models::RiskLevel) },
-                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraph::Models::RiskState) },
+                    "riskLevel" => lambda {|n| @risk_level = n.get_enum_value(MicrosoftGraph::Models::ServicePrincipalRiskDetectionRiskLevel) },
+                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraph::Models::ServicePrincipalRiskDetectionRiskState) },
                     "servicePrincipalDisplayName" => lambda {|n| @service_principal_display_name = n.get_string_value() },
                     "servicePrincipalId" => lambda {|n| @service_principal_id = n.get_string_value() },
                     "source" => lambda {|n| @source = n.get_string_value() },
-                    "tokenIssuerType" => lambda {|n| @token_issuer_type = n.get_enum_value(MicrosoftGraph::Models::TokenIssuerType) },
+                    "tokenIssuerType" => lambda {|n| @token_issuer_type = n.get_enum_value(MicrosoftGraph::Models::ServicePrincipalRiskDetectionTokenIssuerType) },
                 })
             end
             ## 
@@ -293,7 +293,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-            ## @return a risk_detail
+            ## @return a service_principal_risk_detection_risk_detail
             ## 
             def risk_detail
                 return @risk_detail
@@ -323,7 +323,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
-            ## @return a risk_level
+            ## @return a service_principal_risk_detection_risk_level
             ## 
             def risk_level
                 return @risk_level
@@ -338,7 +338,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskState property value. The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised.
-            ## @return a risk_state
+            ## @return a service_principal_risk_detection_risk_state
             ## 
             def risk_state
                 return @risk_state
@@ -427,7 +427,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
-            ## @return a token_issuer_type
+            ## @return a service_principal_risk_detection_token_issuer_type
             ## 
             def token_issuer_type
                 return @token_issuer_type

@@ -180,7 +180,7 @@ module MicrosoftGraph
                     "deletedUserPersonalSiteRetentionPeriodInDays" => lambda {|n| @deleted_user_personal_site_retention_period_in_days = n.get_number_value() },
                     "excludedFileExtensionsForSyncApp" => lambda {|n| @excluded_file_extensions_for_sync_app = n.get_collection_of_primitive_values(String) },
                     "idleSessionSignOut" => lambda {|n| @idle_session_sign_out = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdleSessionSignOut.create_from_discriminator_value(pn) }) },
-                    "imageTaggingOption" => lambda {|n| @image_tagging_option = n.get_enum_value(MicrosoftGraph::Models::ImageTaggingChoice) },
+                    "imageTaggingOption" => lambda {|n| @image_tagging_option = n.get_enum_value(MicrosoftGraph::Models::SharepointSettingsImageTaggingOption) },
                     "isCommentingOnSitePagesEnabled" => lambda {|n| @is_commenting_on_site_pages_enabled = n.get_boolean_value() },
                     "isFileActivityNotificationEnabled" => lambda {|n| @is_file_activity_notification_enabled = n.get_boolean_value() },
                     "isLegacyAuthProtocolsEnabled" => lambda {|n| @is_legacy_auth_protocols_enabled = n.get_boolean_value() },
@@ -199,8 +199,8 @@ module MicrosoftGraph
                     "personalSiteDefaultStorageLimitInMB" => lambda {|n| @personal_site_default_storage_limit_in_m_b = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "sharingAllowedDomainList" => lambda {|n| @sharing_allowed_domain_list = n.get_collection_of_primitive_values(String) },
                     "sharingBlockedDomainList" => lambda {|n| @sharing_blocked_domain_list = n.get_collection_of_primitive_values(String) },
-                    "sharingCapability" => lambda {|n| @sharing_capability = n.get_enum_value(MicrosoftGraph::Models::SharingCapabilities) },
-                    "sharingDomainRestrictionMode" => lambda {|n| @sharing_domain_restriction_mode = n.get_enum_value(MicrosoftGraph::Models::SharingDomainRestrictionMode) },
+                    "sharingCapability" => lambda {|n| @sharing_capability = n.get_enum_value(MicrosoftGraph::Models::SharepointSettingsSharingCapability) },
+                    "sharingDomainRestrictionMode" => lambda {|n| @sharing_domain_restriction_mode = n.get_enum_value(MicrosoftGraph::Models::SharepointSettingsSharingDomainRestrictionMode) },
                     "siteCreationDefaultManagedPath" => lambda {|n| @site_creation_default_managed_path = n.get_string_value() },
                     "siteCreationDefaultStorageLimitInMB" => lambda {|n| @site_creation_default_storage_limit_in_m_b = n.get_number_value() },
                     "tenantDefaultTimezone" => lambda {|n| @tenant_default_timezone = n.get_string_value() },
@@ -223,7 +223,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the imageTaggingOption property value. Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
-            ## @return a image_tagging_choice
+            ## @return a sharepoint_settings_image_tagging_option
             ## 
             def image_tagging_option
                 return @image_tagging_option
@@ -546,7 +546,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the sharingCapability property value. Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.
-            ## @return a sharing_capabilities
+            ## @return a sharepoint_settings_sharing_capability
             ## 
             def sharing_capability
                 return @sharing_capability
@@ -561,7 +561,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the sharingDomainRestrictionMode property value. Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.
-            ## @return a sharing_domain_restriction_mode
+            ## @return a sharepoint_settings_sharing_domain_restriction_mode
             ## 
             def sharing_domain_restriction_mode
                 return @sharing_domain_restriction_mode

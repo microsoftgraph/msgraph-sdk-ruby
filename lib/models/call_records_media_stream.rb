@@ -50,7 +50,7 @@ module MicrosoftGraph
             # Average fraction of packets lost, as specified in [RFC 3550][], computed over the duration of the session.
             @average_video_packet_loss_rate
             ## 
-            # UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             @end_date_time
             ## 
             # Indicates whether the forward error correction (FEC) was used at some point during the session. The default value is null.
@@ -89,7 +89,7 @@ module MicrosoftGraph
             # Average duration of the received freezing time in the video stream represented in root mean square.
             @rms_freeze_duration
             ## 
-            # UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             @start_date_time
             ## 
             # The streamDirection property
@@ -104,15 +104,15 @@ module MicrosoftGraph
             # True if the media stream bypassed the Mediation Server and went straight between client and PSTN Gateway/PBX, false otherwise.
             @was_media_bypassed
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the audioCodec property value. Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRta, unknownFutureValue.
-            ## @return a call_records_audio_codec
+            ## @return a call_records_media_stream_audio_codec
             ## 
             def audio_codec
                 return @audio_codec
@@ -330,14 +330,14 @@ module MicrosoftGraph
                 return CallRecordsMediaStream.new
             end
             ## 
-            ## Gets the endDateTime property value. UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the endDateTime property value. UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             ## @return a date_time
             ## 
             def end_date_time
                 return @end_date_time
             end
             ## 
-            ## Sets the endDateTime property value. UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the endDateTime property value. UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
@@ -350,7 +350,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "audioCodec" => lambda {|n| @audio_codec = n.get_enum_value(MicrosoftGraph::Models::CallRecordsAudioCodec) },
+                    "audioCodec" => lambda {|n| @audio_codec = n.get_enum_value(MicrosoftGraph::Models::CallRecordsMediaStreamAudioCodec) },
                     "averageAudioDegradation" => lambda {|n| @average_audio_degradation = n.get_float_value() },
                     "averageAudioNetworkJitter" => lambda {|n| @average_audio_network_jitter = n.get_duration_value() },
                     "averageBandwidthEstimate" => lambda {|n| @average_bandwidth_estimate = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
@@ -379,7 +379,7 @@ module MicrosoftGraph
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "streamDirection" => lambda {|n| @stream_direction = n.get_enum_value(MicrosoftGraph::Models::CallRecordsMediaStreamDirection) },
                     "streamId" => lambda {|n| @stream_id = n.get_string_value() },
-                    "videoCodec" => lambda {|n| @video_codec = n.get_enum_value(MicrosoftGraph::Models::CallRecordsVideoCodec) },
+                    "videoCodec" => lambda {|n| @video_codec = n.get_enum_value(MicrosoftGraph::Models::CallRecordsMediaStreamVideoCodec) },
                     "wasMediaBypassed" => lambda {|n| @was_media_bypassed = n.get_boolean_value() },
                 }
             end
@@ -604,14 +604,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the startDateTime property value. UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the startDateTime property value. UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             ## @return a date_time
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the startDateTime property value. UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
@@ -650,7 +650,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the videoCodec property value. Codec name used to encode video for transmission on the network. Possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.
-            ## @return a call_records_video_codec
+            ## @return a call_records_media_stream_video_codec
             ## 
             def video_codec
                 return @video_codec

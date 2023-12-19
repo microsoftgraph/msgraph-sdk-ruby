@@ -17,7 +17,7 @@ module MicrosoftGraph
             @initiator
             ## 
             ## Gets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
-            ## @return a teamwork_call_event_type
+            ## @return a call_started_event_message_detail_call_event_type
             ## 
             def call_event_type
                 return @call_event_type
@@ -68,7 +68,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "callEventType" => lambda {|n| @call_event_type = n.get_enum_value(MicrosoftGraph::Models::TeamworkCallEventType) },
+                    "callEventType" => lambda {|n| @call_event_type = n.get_enum_value(MicrosoftGraph::Models::CallStartedEventMessageDetailCallEventType) },
                     "callId" => lambda {|n| @call_id = n.get_string_value() },
                     "initiator" => lambda {|n| @initiator = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                 })

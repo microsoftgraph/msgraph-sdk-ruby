@@ -14,13 +14,13 @@ module MicrosoftGraph
             # The display name for the service principal.
             @display_name
             ## 
-            # Represents the risk history of Azure AD service principals.
+            # Represents the risk history of Microsoft Entra service principals.
             @history
             ## 
             # true if the service principal account is enabled; otherwise, false.
             @is_enabled
             ## 
-            # Indicates whether Azure AD is currently processing the service principal's risky state.
+            # Indicates whether Microsoft Entra ID is currently processing the service principal's risky state.
             @is_processing
             ## 
             # Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden,  unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
@@ -35,7 +35,7 @@ module MicrosoftGraph
             # State of the service principal's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
             @risk_state
             ## 
-            # Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
+            # Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.
             @service_principal_type
             ## 
             ## Gets the appId property value. The globally unique identifier for the associated application (its appId property), if any.
@@ -102,22 +102,22 @@ module MicrosoftGraph
                     "history" => lambda {|n| @history = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::RiskyServicePrincipalHistoryItem.create_from_discriminator_value(pn) }) },
                     "isEnabled" => lambda {|n| @is_enabled = n.get_boolean_value() },
                     "isProcessing" => lambda {|n| @is_processing = n.get_boolean_value() },
-                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraph::Models::RiskDetail) },
+                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraph::Models::RiskyServicePrincipalRiskDetail) },
                     "riskLastUpdatedDateTime" => lambda {|n| @risk_last_updated_date_time = n.get_date_time_value() },
-                    "riskLevel" => lambda {|n| @risk_level = n.get_enum_value(MicrosoftGraph::Models::RiskLevel) },
-                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraph::Models::RiskState) },
+                    "riskLevel" => lambda {|n| @risk_level = n.get_enum_value(MicrosoftGraph::Models::RiskyServicePrincipalRiskLevel) },
+                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraph::Models::RiskyServicePrincipalRiskState) },
                     "servicePrincipalType" => lambda {|n| @service_principal_type = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the history property value. Represents the risk history of Azure AD service principals.
+            ## Gets the history property value. Represents the risk history of Microsoft Entra service principals.
             ## @return a risky_service_principal_history_item
             ## 
             def history
                 return @history
             end
             ## 
-            ## Sets the history property value. Represents the risk history of Azure AD service principals.
+            ## Sets the history property value. Represents the risk history of Microsoft Entra service principals.
             ## @param value Value to set for the history property.
             ## @return a void
             ## 
@@ -140,14 +140,14 @@ module MicrosoftGraph
                 @is_enabled = value
             end
             ## 
-            ## Gets the isProcessing property value. Indicates whether Azure AD is currently processing the service principal's risky state.
+            ## Gets the isProcessing property value. Indicates whether Microsoft Entra ID is currently processing the service principal's risky state.
             ## @return a boolean
             ## 
             def is_processing
                 return @is_processing
             end
             ## 
-            ## Sets the isProcessing property value. Indicates whether Azure AD is currently processing the service principal's risky state.
+            ## Sets the isProcessing property value. Indicates whether Microsoft Entra ID is currently processing the service principal's risky state.
             ## @param value Value to set for the isProcessing property.
             ## @return a void
             ## 
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden,  unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
-            ## @return a risk_detail
+            ## @return a risky_service_principal_risk_detail
             ## 
             def risk_detail
                 return @risk_detail
@@ -186,7 +186,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskLevel property value. Level of the detected risky workload identity. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
-            ## @return a risk_level
+            ## @return a risky_service_principal_risk_level
             ## 
             def risk_level
                 return @risk_level
@@ -201,7 +201,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskState property value. State of the service principal's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-            ## @return a risk_state
+            ## @return a risky_service_principal_risk_state
             ## 
             def risk_state
                 return @risk_state
@@ -234,14 +234,14 @@ module MicrosoftGraph
                 writer.write_string_value("servicePrincipalType", @service_principal_type)
             end
             ## 
-            ## Gets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
+            ## Gets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.
             ## @return a string
             ## 
             def service_principal_type
                 return @service_principal_type
             end
             ## 
-            ## Sets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.
+            ## Sets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Microsoft Entra ID internally and is inherited from servicePrincipal.
             ## @param value Value to set for the servicePrincipalType property.
             ## @return a void
             ## 

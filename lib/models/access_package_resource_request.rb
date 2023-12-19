@@ -20,7 +20,7 @@ module MicrosoftGraph
             # The resource property
             @resource
             ## 
-            # The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed. Read-only.
+            # The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed, and deliveryFailed if it could not be added or removed. Read-only.
             @state
             ## 
             ## Gets the catalog property value. The catalog property
@@ -76,14 +76,14 @@ module MicrosoftGraph
                 return super.merge({
                     "catalog" => lambda {|n| @catalog = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
-                    "requestType" => lambda {|n| @request_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageRequestType) },
+                    "requestType" => lambda {|n| @request_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageResourceRequestRequestType) },
                     "resource" => lambda {|n| @resource = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageResource.create_from_discriminator_value(pn) }) },
-                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::AccessPackageRequestState) },
+                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::AccessPackageResourceRequestState) },
                 })
             end
             ## 
             ## Gets the requestType property value. The type of the request. Use adminAdd to add a resource, if the caller is an administrator or resource owner, adminUpdate to update a resource, or adminRemove to remove a resource.
-            ## @return a access_package_request_type
+            ## @return a access_package_resource_request_request_type
             ## 
             def request_type
                 return @request_type
@@ -126,14 +126,14 @@ module MicrosoftGraph
                 writer.write_enum_value("state", @state)
             end
             ## 
-            ## Gets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed. Read-only.
-            ## @return a access_package_request_state
+            ## Gets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed, and deliveryFailed if it could not be added or removed. Read-only.
+            ## @return a access_package_resource_request_state
             ## 
             def state
                 return @state
             end
             ## 
-            ## Sets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed. Read-only.
+            ## Sets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed, and deliveryFailed if it could not be added or removed. Read-only.
             ## @param value Value to set for the state property.
             ## @return a void
             ## 

@@ -31,15 +31,15 @@ module MicrosoftGraph
             # When type is set to User, this includes the user name that initiated the action; null for other types.
             @user_principal_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "groupType" => lambda {|n| @group_type = n.get_enum_value(MicrosoftGraph::Models::GroupType) },
+                    "groupType" => lambda {|n| @group_type = n.get_enum_value(MicrosoftGraph::Models::TargetResourceGroupType) },
                     "id" => lambda {|n| @id = n.get_string_value() },
                     "modifiedProperties" => lambda {|n| @modified_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ModifiedProperty.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
-            ## @return a group_type
+            ## @return a target_resource_group_type
             ## 
             def group_type
                 return @group_type

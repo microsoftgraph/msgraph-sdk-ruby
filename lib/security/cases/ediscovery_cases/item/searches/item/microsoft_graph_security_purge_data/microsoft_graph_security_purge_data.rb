@@ -1,1 +1,3 @@
+require_relative 'purge_data_post_request_body_purge_areas'
+require_relative 'purge_data_post_request_body_purge_type'
 require_relative 'purge_data_post_request_body'

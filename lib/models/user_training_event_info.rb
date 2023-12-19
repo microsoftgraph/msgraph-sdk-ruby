@@ -28,15 +28,15 @@ module MicrosoftGraph
             # Event details of the training when it was updated/in-progress by the user.
             @training_updated_properties
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "latestTrainingStatus" => lambda {|n| @latest_training_status = n.get_enum_value(MicrosoftGraph::Models::TrainingStatus) },
+                    "latestTrainingStatus" => lambda {|n| @latest_training_status = n.get_enum_value(MicrosoftGraph::Models::UserTrainingEventInfoLatestTrainingStatus) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "trainingAssignedProperties" => lambda {|n| @training_assigned_properties = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserTrainingContentEventInfo.create_from_discriminator_value(pn) }) },
                     "trainingCompletedProperties" => lambda {|n| @training_completed_properties = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserTrainingContentEventInfo.create_from_discriminator_value(pn) }) },
@@ -89,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
-            ## @return a training_status
+            ## @return a user_training_event_info_latest_training_status
             ## 
             def latest_training_status
                 return @latest_training_status

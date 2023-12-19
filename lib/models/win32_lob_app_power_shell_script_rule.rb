@@ -105,7 +105,7 @@ module MicrosoftGraph
                     "enforceSignatureCheck" => lambda {|n| @enforce_signature_check = n.get_boolean_value() },
                     "operationType" => lambda {|n| @operation_type = n.get_enum_value(MicrosoftGraph::Models::Win32LobAppPowerShellScriptRuleOperationType) },
                     "operator" => lambda {|n| @operator = n.get_enum_value(MicrosoftGraph::Models::Win32LobAppRuleOperator) },
-                    "runAsAccount" => lambda {|n| @run_as_account = n.get_enum_value(MicrosoftGraph::Models::RunAsAccountType) },
+                    "runAsAccount" => lambda {|n| @run_as_account = n.get_enum_value(MicrosoftGraph::Models::Win32LobAppPowerShellScriptRuleRunAsAccount) },
                     "runAs32Bit" => lambda {|n| @run_as32_bit = n.get_boolean_value() },
                     "scriptContent" => lambda {|n| @script_content = n.get_string_value() },
                 })
@@ -142,7 +142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
-            ## @return a run_as_account_type
+            ## @return a win32_lob_app_power_shell_script_rule_run_as_account
             ## 
             def run_as_account
                 return @run_as_account

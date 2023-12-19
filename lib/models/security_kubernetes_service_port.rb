@@ -31,15 +31,15 @@ module MicrosoftGraph
             # The name or number of the port to access on the pods targeted by the service. The port number must be in the range 1 to 65535. The name must be an IANASVCNAME.
             @target_port
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph
                     "nodePort" => lambda {|n| @node_port = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "port" => lambda {|n| @port = n.get_number_value() },
-                    "protocol" => lambda {|n| @protocol = n.get_enum_value(MicrosoftGraph::Models::SecurityContainerPortProtocol) },
+                    "protocol" => lambda {|n| @protocol = n.get_enum_value(MicrosoftGraph::Models::SecurityKubernetesServicePortProtocol) },
                     "targetPort" => lambda {|n| @target_port = n.get_string_value() },
                 }
             end
@@ -153,7 +153,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the protocol property value. The protocol name. Possible values are: udp, tcp, sctp, unknownFutureValue.
-            ## @return a security_container_port_protocol
+            ## @return a security_kubernetes_service_port_protocol
             ## 
             def protocol
                 return @protocol

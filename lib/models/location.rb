@@ -37,15 +37,15 @@ module MicrosoftGraph
             # For internal use only.
             @unique_id_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph
                     "coordinates" => lambda {|n| @coordinates = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::OutlookGeoCoordinates.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "locationEmailAddress" => lambda {|n| @location_email_address = n.get_string_value() },
-                    "locationType" => lambda {|n| @location_type = n.get_enum_value(MicrosoftGraph::Models::LocationType) },
+                    "locationType" => lambda {|n| @location_type = n.get_enum_value(MicrosoftGraph::Models::LocationLocationType) },
                     "locationUri" => lambda {|n| @location_uri = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "uniqueId" => lambda {|n| @unique_id = n.get_string_value() },
@@ -154,7 +154,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
-            ## @return a location_type
+            ## @return a location_location_type
             ## 
             def location_type
                 return @location_type

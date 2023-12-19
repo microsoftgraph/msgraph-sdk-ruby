@@ -37,15 +37,15 @@ module MicrosoftGraph
                 @aa_guids = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the enforcementType property value. Enforcement type. Possible values are: allow, block.
-            ## @return a fido2_restriction_enforcement_type
+            ## @return a fido2_key_restrictions_enforcement_type
             ## 
             def enforcement_type
                 return @enforcement_type
@@ -89,7 +89,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "aaGuids" => lambda {|n| @aa_guids = n.get_collection_of_primitive_values(String) },
-                    "enforcementType" => lambda {|n| @enforcement_type = n.get_enum_value(MicrosoftGraph::Models::Fido2RestrictionEnforcementType) },
+                    "enforcementType" => lambda {|n| @enforcement_type = n.get_enum_value(MicrosoftGraph::Models::Fido2KeyRestrictionsEnforcementType) },
                     "isEnforced" => lambda {|n| @is_enforced = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }

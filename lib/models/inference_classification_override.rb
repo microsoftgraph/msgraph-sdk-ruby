@@ -14,7 +14,7 @@ module MicrosoftGraph
             @sender_email_address
             ## 
             ## Gets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.
-            ## @return a inference_classification_type
+            ## @return a inference_classification_override_classify_as
             ## 
             def classify_as
                 return @classify_as
@@ -49,7 +49,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "classifyAs" => lambda {|n| @classify_as = n.get_enum_value(MicrosoftGraph::Models::InferenceClassificationType) },
+                    "classifyAs" => lambda {|n| @classify_as = n.get_enum_value(MicrosoftGraph::Models::InferenceClassificationOverrideClassifyAs) },
                     "senderEmailAddress" => lambda {|n| @sender_email_address = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EmailAddress.create_from_discriminator_value(pn) }) },
                 })
             end

@@ -8,13 +8,13 @@ module MicrosoftGraph
         class SignIn < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # App name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
+            # App name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).
             @app_display_name
             ## 
-            # Unique GUID representing the app ID in the Azure Active Directory.  Supports $filter (eq).
+            # Unique GUID representing the app ID in the Microsoft Entra ID.  Supports $filter (eq).
             @app_id
             ## 
-            # Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
+            # Provides a list of conditional access policies that are triggered by the corresponding sign-in activity. Apps need additional Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.
             @applied_conditional_access_policies
             ## 
             # Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).
@@ -47,7 +47,7 @@ module MicrosoftGraph
             # ID of the resource that the user signed into.  Supports $filter (eq).
             @resource_id
             ## 
-            # Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
+            # Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require a Microsoft Entra ID P2 license. Other licenses return the value hidden.
             @risk_detail
             ## 
             # Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.  Supports $filter (eq).
@@ -56,16 +56,16 @@ module MicrosoftGraph
             # The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
             @risk_event_types_v2
             ## 
-            # Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+            # Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
             @risk_level_aggregated
             ## 
-            # Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+            # Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
             @risk_level_during_sign_in
             ## 
             # Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq).
             @risk_state
             ## 
-            # Sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
+            # Sign-in status. Includes the error code and description of the error (if there's a sign-in failure).  Supports $filter (eq) on errorCode property.
             @status
             ## 
             # Display name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).
@@ -77,14 +77,14 @@ module MicrosoftGraph
             # User principal name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).
             @user_principal_name
             ## 
-            ## Gets the appDisplayName property value. App name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
+            ## Gets the appDisplayName property value. App name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).
             ## @return a string
             ## 
             def app_display_name
                 return @app_display_name
             end
             ## 
-            ## Sets the appDisplayName property value. App name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
+            ## Sets the appDisplayName property value. App name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).
             ## @param value Value to set for the appDisplayName property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraph
                 @app_display_name = value
             end
             ## 
-            ## Gets the appId property value. Unique GUID representing the app ID in the Azure Active Directory.  Supports $filter (eq).
+            ## Gets the appId property value. Unique GUID representing the app ID in the Microsoft Entra ID.  Supports $filter (eq).
             ## @return a string
             ## 
             def app_id
                 return @app_id
             end
             ## 
-            ## Sets the appId property value. Unique GUID representing the app ID in the Azure Active Directory.  Supports $filter (eq).
+            ## Sets the appId property value. Unique GUID representing the app ID in the Microsoft Entra ID.  Supports $filter (eq).
             ## @param value Value to set for the appId property.
             ## @return a void
             ## 
@@ -107,14 +107,14 @@ module MicrosoftGraph
                 @app_id = value
             end
             ## 
-            ## Gets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
+            ## Gets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity. Apps need additional Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.
             ## @return a applied_conditional_access_policy
             ## 
             def applied_conditional_access_policies
                 return @applied_conditional_access_policies
             end
             ## 
-            ## Sets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
+            ## Sets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity. Apps need additional Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.
             ## @param value Value to set for the appliedConditionalAccessPolicies property.
             ## @return a void
             ## 
@@ -138,7 +138,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).
-            ## @return a conditional_access_status
+            ## @return a sign_in_conditional_access_status
             ## 
             def conditional_access_status
                 return @conditional_access_status
@@ -222,7 +222,7 @@ module MicrosoftGraph
                     "appId" => lambda {|n| @app_id = n.get_string_value() },
                     "appliedConditionalAccessPolicies" => lambda {|n| @applied_conditional_access_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AppliedConditionalAccessPolicy.create_from_discriminator_value(pn) }) },
                     "clientAppUsed" => lambda {|n| @client_app_used = n.get_string_value() },
-                    "conditionalAccessStatus" => lambda {|n| @conditional_access_status = n.get_enum_value(MicrosoftGraph::Models::ConditionalAccessStatus) },
+                    "conditionalAccessStatus" => lambda {|n| @conditional_access_status = n.get_enum_value(MicrosoftGraph::Models::SignInConditionalAccessStatus) },
                     "correlationId" => lambda {|n| @correlation_id = n.get_string_value() },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "deviceDetail" => lambda {|n| @device_detail = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DeviceDetail.create_from_discriminator_value(pn) }) },
@@ -231,12 +231,12 @@ module MicrosoftGraph
                     "location" => lambda {|n| @location = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SignInLocation.create_from_discriminator_value(pn) }) },
                     "resourceDisplayName" => lambda {|n| @resource_display_name = n.get_string_value() },
                     "resourceId" => lambda {|n| @resource_id = n.get_string_value() },
-                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraph::Models::RiskDetail) },
-                    "riskEventTypes" => lambda {|n| @risk_event_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::RiskEventType.create_from_discriminator_value(pn) }) },
+                    "riskDetail" => lambda {|n| @risk_detail = n.get_enum_value(MicrosoftGraph::Models::SignInRiskDetail) },
+                    "riskEventTypes" => lambda {|n| @risk_event_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SignInRiskEventTypes.create_from_discriminator_value(pn) }) },
                     "riskEventTypes_v2" => lambda {|n| @risk_event_types_v2 = n.get_collection_of_primitive_values(String) },
-                    "riskLevelAggregated" => lambda {|n| @risk_level_aggregated = n.get_enum_value(MicrosoftGraph::Models::RiskLevel) },
-                    "riskLevelDuringSignIn" => lambda {|n| @risk_level_during_sign_in = n.get_enum_value(MicrosoftGraph::Models::RiskLevel) },
-                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraph::Models::RiskState) },
+                    "riskLevelAggregated" => lambda {|n| @risk_level_aggregated = n.get_enum_value(MicrosoftGraph::Models::SignInRiskLevelAggregated) },
+                    "riskLevelDuringSignIn" => lambda {|n| @risk_level_during_sign_in = n.get_enum_value(MicrosoftGraph::Models::SignInRiskLevelDuringSignIn) },
+                    "riskState" => lambda {|n| @risk_state = n.get_enum_value(MicrosoftGraph::Models::SignInRiskState) },
                     "status" => lambda {|n| @status = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SignInStatus.create_from_discriminator_value(pn) }) },
                     "userDisplayName" => lambda {|n| @user_display_name = n.get_string_value() },
                     "userId" => lambda {|n| @user_id = n.get_string_value() },
@@ -319,14 +319,14 @@ module MicrosoftGraph
                 @resource_id = value
             end
             ## 
-            ## Gets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
-            ## @return a risk_detail
+            ## Gets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require a Microsoft Entra ID P2 license. Other licenses return the value hidden.
+            ## @return a sign_in_risk_detail
             ## 
             def risk_detail
                 return @risk_detail
             end
             ## 
-            ## Sets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
+            ## Sets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq).Note: Details for this property require a Microsoft Entra ID P2 license. Other licenses return the value hidden.
             ## @param value Value to set for the riskDetail property.
             ## @return a void
             ## 
@@ -335,7 +335,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.  Supports $filter (eq).
-            ## @return a risk_event_type
+            ## @return a sign_in_risk_event_types
             ## 
             def risk_event_types
                 return @risk_event_types
@@ -364,14 +364,14 @@ module MicrosoftGraph
                 @risk_event_types_v2 = value
             end
             ## 
-            ## Gets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
-            ## @return a risk_level
+            ## Gets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
+            ## @return a sign_in_risk_level_aggregated
             ## 
             def risk_level_aggregated
                 return @risk_level_aggregated
             end
             ## 
-            ## Sets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+            ## Sets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
             ## @param value Value to set for the riskLevelAggregated property.
             ## @return a void
             ## 
@@ -379,14 +379,14 @@ module MicrosoftGraph
                 @risk_level_aggregated = value
             end
             ## 
-            ## Gets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
-            ## @return a risk_level
+            ## Gets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
+            ## @return a sign_in_risk_level_during_sign_in
             ## 
             def risk_level_during_sign_in
                 return @risk_level_during_sign_in
             end
             ## 
-            ## Sets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
+            ## Sets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq).  Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
             ## @param value Value to set for the riskLevelDuringSignIn property.
             ## @return a void
             ## 
@@ -395,7 +395,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the riskState property value. Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.  Supports $filter (eq).
-            ## @return a risk_state
+            ## @return a sign_in_risk_state
             ## 
             def risk_state
                 return @risk_state
@@ -441,14 +441,14 @@ module MicrosoftGraph
                 writer.write_string_value("userPrincipalName", @user_principal_name)
             end
             ## 
-            ## Gets the status property value. Sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
+            ## Gets the status property value. Sign-in status. Includes the error code and description of the error (if there's a sign-in failure).  Supports $filter (eq) on errorCode property.
             ## @return a sign_in_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. Sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
+            ## Sets the status property value. Sign-in status. Includes the error code and description of the error (if there's a sign-in failure).  Supports $filter (eq) on errorCode property.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

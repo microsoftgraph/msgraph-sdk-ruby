@@ -14,22 +14,22 @@ module MicrosoftGraph
             # Timestamp when the access review definition was created.
             @created_date_time
             ## 
-            # Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
+            # Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
             @decisions
             ## 
             # Name for the access review history data collection. Required.
             @display_name
             ## 
-            # If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
+            # If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that doesn't recur will have exactly one instance.
             @instances
             ## 
-            # A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
+            # A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings isn't defined.
             @review_history_period_end_date_time
             ## 
-            # A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
+            # A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings isn't defined.
             @review_history_period_start_date_time
             ## 
-            # The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined. Not supported yet.
+            # The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime aren't defined. Not supported yet.
             @schedule_settings
             ## 
             # Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
@@ -84,14 +84,14 @@ module MicrosoftGraph
                 return AccessReviewHistoryDefinition.new
             end
             ## 
-            ## Gets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
-            ## @return a access_review_history_decision_filter
+            ## Gets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
+            ## @return a access_review_history_definition_decisions
             ## 
             def decisions
                 return @decisions
             end
             ## 
-            ## Sets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
+            ## Sets the decisions property value. Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.
             ## @param value Value to set for the decisions property.
             ## @return a void
             ## 
@@ -121,25 +121,25 @@ module MicrosoftGraph
                 return super.merge({
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserIdentity.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
-                    "decisions" => lambda {|n| @decisions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessReviewHistoryDecisionFilter.create_from_discriminator_value(pn) }) },
+                    "decisions" => lambda {|n| @decisions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessReviewHistoryDefinitionDecisions.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "instances" => lambda {|n| @instances = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessReviewHistoryInstance.create_from_discriminator_value(pn) }) },
                     "reviewHistoryPeriodEndDateTime" => lambda {|n| @review_history_period_end_date_time = n.get_date_time_value() },
                     "reviewHistoryPeriodStartDateTime" => lambda {|n| @review_history_period_start_date_time = n.get_date_time_value() },
                     "scheduleSettings" => lambda {|n| @schedule_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessReviewHistoryScheduleSettings.create_from_discriminator_value(pn) }) },
                     "scopes" => lambda {|n| @scopes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessReviewScope.create_from_discriminator_value(pn) }) },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::AccessReviewHistoryStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::AccessReviewHistoryDefinitionStatus) },
                 })
             end
             ## 
-            ## Gets the instances property value. If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
+            ## Gets the instances property value. If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that doesn't recur will have exactly one instance.
             ## @return a access_review_history_instance
             ## 
             def instances
                 return @instances
             end
             ## 
-            ## Sets the instances property value. If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
+            ## Sets the instances property value. If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that doesn't recur will have exactly one instance.
             ## @param value Value to set for the instances property.
             ## @return a void
             ## 
@@ -147,14 +147,14 @@ module MicrosoftGraph
                 @instances = value
             end
             ## 
-            ## Gets the reviewHistoryPeriodEndDateTime property value. A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
+            ## Gets the reviewHistoryPeriodEndDateTime property value. A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings isn't defined.
             ## @return a date_time
             ## 
             def review_history_period_end_date_time
                 return @review_history_period_end_date_time
             end
             ## 
-            ## Sets the reviewHistoryPeriodEndDateTime property value. A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
+            ## Sets the reviewHistoryPeriodEndDateTime property value. A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings isn't defined.
             ## @param value Value to set for the reviewHistoryPeriodEndDateTime property.
             ## @return a void
             ## 
@@ -162,14 +162,14 @@ module MicrosoftGraph
                 @review_history_period_end_date_time = value
             end
             ## 
-            ## Gets the reviewHistoryPeriodStartDateTime property value. A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
+            ## Gets the reviewHistoryPeriodStartDateTime property value. A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings isn't defined.
             ## @return a date_time
             ## 
             def review_history_period_start_date_time
                 return @review_history_period_start_date_time
             end
             ## 
-            ## Sets the reviewHistoryPeriodStartDateTime property value. A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
+            ## Sets the reviewHistoryPeriodStartDateTime property value. A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings isn't defined.
             ## @param value Value to set for the reviewHistoryPeriodStartDateTime property.
             ## @return a void
             ## 
@@ -177,14 +177,14 @@ module MicrosoftGraph
                 @review_history_period_start_date_time = value
             end
             ## 
-            ## Gets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined. Not supported yet.
+            ## Gets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime aren't defined. Not supported yet.
             ## @return a access_review_history_schedule_settings
             ## 
             def schedule_settings
                 return @schedule_settings
             end
             ## 
-            ## Sets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined. Not supported yet.
+            ## Sets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime aren't defined. Not supported yet.
             ## @param value Value to set for the scheduleSettings property.
             ## @return a void
             ## 
@@ -227,7 +227,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
-            ## @return a access_review_history_status
+            ## @return a access_review_history_definition_status
             ## 
             def status
                 return @status

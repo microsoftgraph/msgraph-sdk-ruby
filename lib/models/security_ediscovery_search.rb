@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
-            ## @return a security_data_source_scopes
+            ## @return a security_ediscovery_search_data_source_scopes
             ## 
             def data_source_scopes
                 return @data_source_scopes
@@ -110,7 +110,7 @@ module MicrosoftGraph
                     "addToReviewSetOperation" => lambda {|n| @add_to_review_set_operation = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryAddToReviewSetOperation.create_from_discriminator_value(pn) }) },
                     "additionalSources" => lambda {|n| @additional_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecurityDataSource.create_from_discriminator_value(pn) }) },
                     "custodianSources" => lambda {|n| @custodian_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecurityDataSource.create_from_discriminator_value(pn) }) },
-                    "dataSourceScopes" => lambda {|n| @data_source_scopes = n.get_enum_value(MicrosoftGraph::Models::SecurityDataSourceScopes) },
+                    "dataSourceScopes" => lambda {|n| @data_source_scopes = n.get_enum_value(MicrosoftGraph::Models::SecurityEdiscoverySearchDataSourceScopes) },
                     "lastEstimateStatisticsOperation" => lambda {|n| @last_estimate_statistics_operation = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryEstimateOperation.create_from_discriminator_value(pn) }) },
                     "noncustodialSources" => lambda {|n| @noncustodial_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryNoncustodialDataSource.create_from_discriminator_value(pn) }) },
                 })

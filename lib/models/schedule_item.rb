@@ -31,15 +31,15 @@ module MicrosoftGraph
             # The corresponding event's subject line. Optional.
             @subject
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph
                     "location" => lambda {|n| @location = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "start" => lambda {|n| @start = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::FreeBusyStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::ScheduleItemStatus) },
                     "subject" => lambda {|n| @subject = n.get_string_value() },
                 }
             end
@@ -169,7 +169,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the status property value. The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-            ## @return a free_busy_status
+            ## @return a schedule_item_status
             ## 
             def status
                 return @status

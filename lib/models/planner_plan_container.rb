@@ -22,15 +22,15 @@ module MicrosoftGraph
             # The full canonical URL of the container. Optional.
             @url
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
                 return {
                     "containerId" => lambda {|n| @container_id = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraph::Models::PlannerContainerType) },
+                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraph::Models::PlannerPlanContainerType) },
                     "url" => lambda {|n| @url = n.get_string_value() },
                 }
             end
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.
-            ## @return a planner_container_type
+            ## @return a planner_plan_container_type
             ## 
             def type
                 return @type

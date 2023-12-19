@@ -24,15 +24,15 @@ module MicrosoftGraph
             # Indicates whether to block write access to devices configured in another organization.  If requireEncryptionForWriteAccess is false, this value does not affect.
             @require_encryption_for_write_access
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the encryptionMethod property value. Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
-            ## @return a bit_locker_encryption_method
+            ## @return a bit_locker_removable_drive_policy_encryption_method
             ## 
             def encryption_method
                 return @encryption_method
@@ -91,7 +91,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "blockCrossOrganizationWriteAccess" => lambda {|n| @block_cross_organization_write_access = n.get_boolean_value() },
-                    "encryptionMethod" => lambda {|n| @encryption_method = n.get_enum_value(MicrosoftGraph::Models::BitLockerEncryptionMethod) },
+                    "encryptionMethod" => lambda {|n| @encryption_method = n.get_enum_value(MicrosoftGraph::Models::BitLockerRemovableDrivePolicyEncryptionMethod) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "requireEncryptionForWriteAccess" => lambda {|n| @require_encryption_for_write_access = n.get_boolean_value() },
                 }

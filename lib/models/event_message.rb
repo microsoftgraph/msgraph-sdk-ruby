@@ -105,10 +105,10 @@ module MicrosoftGraph
                     "isDelegated" => lambda {|n| @is_delegated = n.get_boolean_value() },
                     "isOutOfDate" => lambda {|n| @is_out_of_date = n.get_boolean_value() },
                     "location" => lambda {|n| @location = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Location.create_from_discriminator_value(pn) }) },
-                    "meetingMessageType" => lambda {|n| @meeting_message_type = n.get_enum_value(MicrosoftGraph::Models::MeetingMessageType) },
+                    "meetingMessageType" => lambda {|n| @meeting_message_type = n.get_enum_value(MicrosoftGraph::Models::EventMessageMeetingMessageType) },
                     "recurrence" => lambda {|n| @recurrence = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PatternedRecurrence.create_from_discriminator_value(pn) }) },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
-                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraph::Models::EventType) },
+                    "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraph::Models::EventMessageType) },
                 })
             end
             ## 
@@ -173,7 +173,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the meetingMessageType property value. The meetingMessageType property
-            ## @return a meeting_message_type
+            ## @return a event_message_meeting_message_type
             ## 
             def meeting_message_type
                 return @meeting_message_type
@@ -237,7 +237,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the type property value. The type property
-            ## @return a event_type
+            ## @return a event_message_type
             ## 
             def type
                 return @type

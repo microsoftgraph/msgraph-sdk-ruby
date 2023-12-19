@@ -56,14 +56,14 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "fromTerm" => lambda {|n| @from_term = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermStoreTerm.create_from_discriminator_value(pn) }) },
-                    "relationship" => lambda {|n| @relationship = n.get_enum_value(MicrosoftGraph::Models::TermStoreRelationType) },
+                    "relationship" => lambda {|n| @relationship = n.get_enum_value(MicrosoftGraph::Models::TermStoreRelationRelationship) },
                     "set" => lambda {|n| @set = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermStoreSet.create_from_discriminator_value(pn) }) },
                     "toTerm" => lambda {|n| @to_term = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermStoreTerm.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
             ## Gets the relationship property value. The type of relation. Possible values are: pin, reuse.
-            ## @return a term_store_relation_type
+            ## @return a term_store_relation_relationship
             ## 
             def relationship
                 return @relationship

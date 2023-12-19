@@ -7,7 +7,7 @@ module MicrosoftGraph
         class ProvisioningErrorInfo
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Additional details in case of error.
+            # Additional details if there's error.
             @additional_details
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -28,29 +28,29 @@ module MicrosoftGraph
             # Provides the resolution for the corresponding error.
             @recommended_action
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the additionalDetails property value. Additional details in case of error.
+            ## Gets the additionalDetails property value. Additional details if there's error.
             ## @return a string
             ## 
             def additional_details
                 return @additional_details
             end
             ## 
-            ## Sets the additionalDetails property value. Additional details in case of error.
+            ## Sets the additionalDetails property value. Additional details if there's error.
             ## @param value Value to set for the additionalDetails property.
             ## @return a void
             ## 
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the errorCategory property value. Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
-            ## @return a provisioning_status_error_category
+            ## @return a provisioning_error_info_error_category
             ## 
             def error_category
                 return @error_category
@@ -110,7 +110,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "additionalDetails" => lambda {|n| @additional_details = n.get_string_value() },
-                    "errorCategory" => lambda {|n| @error_category = n.get_enum_value(MicrosoftGraph::Models::ProvisioningStatusErrorCategory) },
+                    "errorCategory" => lambda {|n| @error_category = n.get_enum_value(MicrosoftGraph::Models::ProvisioningErrorInfoErrorCategory) },
                     "errorCode" => lambda {|n| @error_code = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "reason" => lambda {|n| @reason = n.get_string_value() },

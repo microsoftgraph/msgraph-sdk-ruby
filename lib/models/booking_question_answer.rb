@@ -34,15 +34,15 @@ module MicrosoftGraph
             # The answers selected by the user.
             @selected_options
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
-            ## @return a answer_input_type
+            ## @return a booking_question_answer_answer_input_type
             ## 
             def answer_input_type
                 return @answer_input_type
@@ -116,7 +116,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "answer" => lambda {|n| @answer = n.get_string_value() },
-                    "answerInputType" => lambda {|n| @answer_input_type = n.get_enum_value(MicrosoftGraph::Models::AnswerInputType) },
+                    "answerInputType" => lambda {|n| @answer_input_type = n.get_enum_value(MicrosoftGraph::Models::BookingQuestionAnswerAnswerInputType) },
                     "answerOptions" => lambda {|n| @answer_options = n.get_collection_of_primitive_values(String) },
                     "isRequired" => lambda {|n| @is_required = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },

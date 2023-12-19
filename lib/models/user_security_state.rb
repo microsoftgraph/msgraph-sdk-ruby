@@ -86,15 +86,15 @@ module MicrosoftGraph
                 @account_name = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the emailRole property value. For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.
-            ## @return a email_role
+            ## @return a user_security_state_email_role
             ## 
             def email_role
                 return @email_role
@@ -155,17 +155,17 @@ module MicrosoftGraph
                     "aadUserId" => lambda {|n| @aad_user_id = n.get_string_value() },
                     "accountName" => lambda {|n| @account_name = n.get_string_value() },
                     "domainName" => lambda {|n| @domain_name = n.get_string_value() },
-                    "emailRole" => lambda {|n| @email_role = n.get_enum_value(MicrosoftGraph::Models::EmailRole) },
+                    "emailRole" => lambda {|n| @email_role = n.get_enum_value(MicrosoftGraph::Models::UserSecurityStateEmailRole) },
                     "isVpn" => lambda {|n| @is_vpn = n.get_boolean_value() },
                     "logonDateTime" => lambda {|n| @logon_date_time = n.get_date_time_value() },
                     "logonId" => lambda {|n| @logon_id = n.get_string_value() },
                     "logonIp" => lambda {|n| @logon_ip = n.get_string_value() },
                     "logonLocation" => lambda {|n| @logon_location = n.get_string_value() },
-                    "logonType" => lambda {|n| @logon_type = n.get_enum_value(MicrosoftGraph::Models::LogonType) },
+                    "logonType" => lambda {|n| @logon_type = n.get_enum_value(MicrosoftGraph::Models::UserSecurityStateLogonType) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "onPremisesSecurityIdentifier" => lambda {|n| @on_premises_security_identifier = n.get_string_value() },
                     "riskScore" => lambda {|n| @risk_score = n.get_string_value() },
-                    "userAccountType" => lambda {|n| @user_account_type = n.get_enum_value(MicrosoftGraph::Models::UserAccountSecurityType) },
+                    "userAccountType" => lambda {|n| @user_account_type = n.get_enum_value(MicrosoftGraph::Models::UserSecurityStateUserAccountType) },
                     "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
                 }
             end
@@ -246,7 +246,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the logonType property value. Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-            ## @return a logon_type
+            ## @return a user_security_state_logon_type
             ## 
             def logon_type
                 return @logon_type
@@ -330,7 +330,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the userAccountType property value. User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
-            ## @return a user_account_security_type
+            ## @return a user_security_state_user_account_type
             ## 
             def user_account_type
                 return @user_account_type

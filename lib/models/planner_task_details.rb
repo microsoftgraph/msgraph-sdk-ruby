@@ -72,13 +72,13 @@ module MicrosoftGraph
                 return super.merge({
                     "checklist" => lambda {|n| @checklist = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PlannerChecklistItems.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
-                    "previewType" => lambda {|n| @preview_type = n.get_enum_value(MicrosoftGraph::Models::PlannerPreviewType) },
+                    "previewType" => lambda {|n| @preview_type = n.get_enum_value(MicrosoftGraph::Models::PlannerTaskDetailsPreviewType) },
                     "references" => lambda {|n| @references = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PlannerExternalReferences.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
             ## Gets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
-            ## @return a planner_preview_type
+            ## @return a planner_task_details_preview_type
             ## 
             def preview_type
                 return @preview_type

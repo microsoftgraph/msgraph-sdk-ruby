@@ -25,15 +25,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -109,13 +109,13 @@ module MicrosoftGraph
                     "allowCustomMemes" => lambda {|n| @allow_custom_memes = n.get_boolean_value() },
                     "allowGiphy" => lambda {|n| @allow_giphy = n.get_boolean_value() },
                     "allowStickersAndMemes" => lambda {|n| @allow_stickers_and_memes = n.get_boolean_value() },
-                    "giphyContentRating" => lambda {|n| @giphy_content_rating = n.get_enum_value(MicrosoftGraph::Models::GiphyRatingType) },
+                    "giphyContentRating" => lambda {|n| @giphy_content_rating = n.get_enum_value(MicrosoftGraph::Models::TeamFunSettingsGiphyContentRating) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
             ## 
             ## Gets the giphyContentRating property value. Giphy content rating. Possible values are: moderate, strict.
-            ## @return a giphy_rating_type
+            ## @return a team_fun_settings_giphy_content_rating
             ## 
             def giphy_content_rating
                 return @giphy_content_rating

@@ -23,7 +23,7 @@ module MicrosoftGraph
             # The set of assignees the task is assigned to.
             @assignments
             ## 
-            # Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+            # Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
             @bucket_id
             ## 
             # Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
@@ -47,13 +47,13 @@ module MicrosoftGraph
             # Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @created_date_time
             ## 
-            # Read-only. Nullable. Additional details about the task.
+            # Read-only. Nullable. More details about the task.
             @details
             ## 
             # Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @due_date_time
             ## 
-            # Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            # Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             @has_description
             ## 
             # Hint used to order items of this type in a list view. The format is defined as outlined here.
@@ -158,14 +158,14 @@ module MicrosoftGraph
                 @assignments = value
             end
             ## 
-            ## Gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+            ## Gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
             ## @return a string
             ## 
             def bucket_id
                 return @bucket_id
             end
             ## 
-            ## Sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+            ## Sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
             ## @param value Value to set for the bucketId property.
             ## @return a void
             ## 
@@ -294,14 +294,14 @@ module MicrosoftGraph
                 return PlannerTask.new
             end
             ## 
-            ## Gets the details property value. Read-only. Nullable. Additional details about the task.
+            ## Gets the details property value. Read-only. Nullable. More details about the task.
             ## @return a planner_task_details
             ## 
             def details
                 return @details
             end
             ## 
-            ## Sets the details property value. Read-only. Nullable. Additional details about the task.
+            ## Sets the details property value. Read-only. Nullable. More details about the task.
             ## @param value Value to set for the details property.
             ## @return a void
             ## 
@@ -348,7 +348,7 @@ module MicrosoftGraph
                     "orderHint" => lambda {|n| @order_hint = n.get_string_value() },
                     "percentComplete" => lambda {|n| @percent_complete = n.get_number_value() },
                     "planId" => lambda {|n| @plan_id = n.get_string_value() },
-                    "previewType" => lambda {|n| @preview_type = n.get_enum_value(MicrosoftGraph::Models::PlannerPreviewType) },
+                    "previewType" => lambda {|n| @preview_type = n.get_enum_value(MicrosoftGraph::Models::PlannerTaskPreviewType) },
                     "priority" => lambda {|n| @priority = n.get_number_value() },
                     "progressTaskBoardFormat" => lambda {|n| @progress_task_board_format = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PlannerProgressTaskBoardTaskFormat.create_from_discriminator_value(pn) }) },
                     "referenceCount" => lambda {|n| @reference_count = n.get_number_value() },
@@ -357,14 +357,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            ## Gets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             ## @return a boolean
             ## 
             def has_description
                 return @has_description
             end
             ## 
-            ## Sets the hasDescription property value. Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.
+            ## Sets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
             ## @param value Value to set for the hasDescription property.
             ## @return a void
             ## 
@@ -418,7 +418,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
-            ## @return a planner_preview_type
+            ## @return a planner_task_preview_type
             ## 
             def preview_type
                 return @preview_type

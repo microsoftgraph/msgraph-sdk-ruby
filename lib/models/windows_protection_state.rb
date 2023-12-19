@@ -120,7 +120,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the deviceState property value. Indicates device's health state. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical. Possible values are: clean, fullScanPending, rebootPending, manualStepsPending, offlineScanPending, critical.
-            ## @return a windows_device_health_state
+            ## @return a windows_protection_state_device_state
             ## 
             def device_state
                 return @device_state
@@ -186,7 +186,7 @@ module MicrosoftGraph
                 return super.merge({
                     "antiMalwareVersion" => lambda {|n| @anti_malware_version = n.get_string_value() },
                     "detectedMalwareState" => lambda {|n| @detected_malware_state = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsDeviceMalwareState.create_from_discriminator_value(pn) }) },
-                    "deviceState" => lambda {|n| @device_state = n.get_enum_value(MicrosoftGraph::Models::WindowsDeviceHealthState) },
+                    "deviceState" => lambda {|n| @device_state = n.get_enum_value(MicrosoftGraph::Models::WindowsProtectionStateDeviceState) },
                     "engineVersion" => lambda {|n| @engine_version = n.get_string_value() },
                     "fullScanOverdue" => lambda {|n| @full_scan_overdue = n.get_boolean_value() },
                     "fullScanRequired" => lambda {|n| @full_scan_required = n.get_boolean_value() },
@@ -198,7 +198,7 @@ module MicrosoftGraph
                     "lastReportedDateTime" => lambda {|n| @last_reported_date_time = n.get_date_time_value() },
                     "malwareProtectionEnabled" => lambda {|n| @malware_protection_enabled = n.get_boolean_value() },
                     "networkInspectionSystemEnabled" => lambda {|n| @network_inspection_system_enabled = n.get_boolean_value() },
-                    "productStatus" => lambda {|n| @product_status = n.get_enum_value(MicrosoftGraph::Models::WindowsDefenderProductStatus) },
+                    "productStatus" => lambda {|n| @product_status = n.get_enum_value(MicrosoftGraph::Models::WindowsProtectionStateProductStatus) },
                     "quickScanOverdue" => lambda {|n| @quick_scan_overdue = n.get_boolean_value() },
                     "realTimeProtectionEnabled" => lambda {|n| @real_time_protection_enabled = n.get_boolean_value() },
                     "rebootRequired" => lambda {|n| @reboot_required = n.get_boolean_value() },
@@ -329,7 +329,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the productStatus property value. Product Status of Windows Defender Antivirus. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall. Possible values are: noStatus, serviceNotRunning, serviceStartedWithoutMalwareProtection, pendingFullScanDueToThreatAction, pendingRebootDueToThreatAction, pendingManualStepsDueToThreatAction, avSignaturesOutOfDate, asSignaturesOutOfDate, noQuickScanHappenedForSpecifiedPeriod, noFullScanHappenedForSpecifiedPeriod, systemInitiatedScanInProgress, systemInitiatedCleanInProgress, samplesPendingSubmission, productRunningInEvaluationMode, productRunningInNonGenuineMode, productExpired, offlineScanRequired, serviceShutdownAsPartOfSystemShutdown, threatRemediationFailedCritically, threatRemediationFailedNonCritically, noStatusFlagsSet, platformOutOfDate, platformUpdateInProgress, platformAboutToBeOutdated, signatureOrPlatformEndOfLifeIsPastOrIsImpending, windowsSModeSignaturesInUseOnNonWin10SInstall.
-            ## @return a windows_defender_product_status
+            ## @return a windows_protection_state_product_status
             ## 
             def product_status
                 return @product_status

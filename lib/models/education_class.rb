@@ -249,7 +249,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the externalSource property value. How this class was created. Possible values are: sis, manual.
-            ## @return a education_external_source
+            ## @return a education_class_external_source
             ## 
             def external_source
                 return @external_source
@@ -294,7 +294,7 @@ module MicrosoftGraph
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "externalId" => lambda {|n| @external_id = n.get_string_value() },
                     "externalName" => lambda {|n| @external_name = n.get_string_value() },
-                    "externalSource" => lambda {|n| @external_source = n.get_enum_value(MicrosoftGraph::Models::EducationExternalSource) },
+                    "externalSource" => lambda {|n| @external_source = n.get_enum_value(MicrosoftGraph::Models::EducationClassExternalSource) },
                     "externalSourceDetail" => lambda {|n| @external_source_detail = n.get_string_value() },
                     "grade" => lambda {|n| @grade = n.get_string_value() },
                     "group" => lambda {|n| @group = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Group.create_from_discriminator_value(pn) }) },

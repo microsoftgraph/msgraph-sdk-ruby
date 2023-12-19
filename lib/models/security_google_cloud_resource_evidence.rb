@@ -48,7 +48,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "location" => lambda {|n| @location = n.get_string_value() },
-                    "locationType" => lambda {|n| @location_type = n.get_enum_value(MicrosoftGraph::Models::SecurityGoogleCloudLocationType) },
+                    "locationType" => lambda {|n| @location_type = n.get_enum_value(MicrosoftGraph::Models::SecurityGoogleCloudResourceEvidenceLocationType) },
                     "projectId" => lambda {|n| @project_id = n.get_string_value() },
                     "projectNumber" => lambda {|n| @project_number = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "resourceName" => lambda {|n| @resource_name = n.get_string_value() },
@@ -72,7 +72,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the locationType property value. The type of location. Possible values are: unknown, regional, zonal, global, unknownFutureValue.
-            ## @return a security_google_cloud_location_type
+            ## @return a security_google_cloud_resource_evidence_location_type
             ## 
             def location_type
                 return @location_type

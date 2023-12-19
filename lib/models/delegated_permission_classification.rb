@@ -7,23 +7,23 @@ module MicrosoftGraph
         class DelegatedPermissionClassification < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The classification value being given. Possible value: low. Does not support $filter.
+            # The classification value being given. Possible value: low. Doesn't support $filter.
             @classification
             ## 
-            # The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+            # The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Doesn't support $filter.
             @permission_id
             ## 
-            # The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
+            # The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Doesn't support $filter.
             @permission_name
             ## 
-            ## Gets the classification property value. The classification value being given. Possible value: low. Does not support $filter.
-            ## @return a permission_classification_type
+            ## Gets the classification property value. The classification value being given. Possible value: low. Doesn't support $filter.
+            ## @return a delegated_permission_classification_classification
             ## 
             def classification
                 return @classification
             end
             ## 
-            ## Sets the classification property value. The classification value being given. Possible value: low. Does not support $filter.
+            ## Sets the classification property value. The classification value being given. Possible value: low. Doesn't support $filter.
             ## @param value Value to set for the classification property.
             ## @return a void
             ## 
@@ -52,20 +52,20 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "classification" => lambda {|n| @classification = n.get_enum_value(MicrosoftGraph::Models::PermissionClassificationType) },
+                    "classification" => lambda {|n| @classification = n.get_enum_value(MicrosoftGraph::Models::DelegatedPermissionClassificationClassification) },
                     "permissionId" => lambda {|n| @permission_id = n.get_string_value() },
                     "permissionName" => lambda {|n| @permission_name = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+            ## Gets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Doesn't support $filter.
             ## @return a string
             ## 
             def permission_id
                 return @permission_id
             end
             ## 
-            ## Sets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+            ## Sets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Doesn't support $filter.
             ## @param value Value to set for the permissionId property.
             ## @return a void
             ## 
@@ -73,14 +73,14 @@ module MicrosoftGraph
                 @permission_id = value
             end
             ## 
-            ## Gets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
+            ## Gets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Doesn't support $filter.
             ## @return a string
             ## 
             def permission_name
                 return @permission_name
             end
             ## 
-            ## Sets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
+            ## Sets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Doesn't support $filter.
             ## @param value Value to set for the permissionName property.
             ## @return a void
             ## 

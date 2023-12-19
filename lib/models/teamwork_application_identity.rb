@@ -11,7 +11,7 @@ module MicrosoftGraph
             @application_identity_type
             ## 
             ## Gets the applicationIdentityType property value. Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
-            ## @return a teamwork_application_identity_type
+            ## @return a teamwork_application_identity_application_identity_type
             ## 
             def application_identity_type
                 return @application_identity_type
@@ -47,7 +47,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "applicationIdentityType" => lambda {|n| @application_identity_type = n.get_enum_value(MicrosoftGraph::Models::TeamworkApplicationIdentityType) },
+                    "applicationIdentityType" => lambda {|n| @application_identity_type = n.get_enum_value(MicrosoftGraph::Models::TeamworkApplicationIdentityApplicationIdentityType) },
                 })
             end
             ## 

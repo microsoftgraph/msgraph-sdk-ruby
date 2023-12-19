@@ -34,15 +34,15 @@ module MicrosoftGraph
             # Reason for suggesting the meeting time.
             @suggestion_reason
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph
                     "meetingTimeSlot" => lambda {|n| @meeting_time_slot = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TimeSlot.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "order" => lambda {|n| @order = n.get_number_value() },
-                    "organizerAvailability" => lambda {|n| @organizer_availability = n.get_enum_value(MicrosoftGraph::Models::FreeBusyStatus) },
+                    "organizerAvailability" => lambda {|n| @organizer_availability = n.get_enum_value(MicrosoftGraph::Models::MeetingTimeSuggestionOrganizerAvailability) },
                     "suggestionReason" => lambda {|n| @suggestion_reason = n.get_string_value() },
                 }
             end
@@ -172,7 +172,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-            ## @return a free_busy_status
+            ## @return a meeting_time_suggestion_organizer_availability
             ## 
             def organizer_availability
                 return @organizer_availability

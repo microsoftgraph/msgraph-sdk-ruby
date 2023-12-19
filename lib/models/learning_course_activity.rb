@@ -111,7 +111,7 @@ module MicrosoftGraph
                     "learnerUserId" => lambda {|n| @learner_user_id = n.get_string_value() },
                     "learningContentId" => lambda {|n| @learning_content_id = n.get_string_value() },
                     "learningProviderId" => lambda {|n| @learning_provider_id = n.get_string_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::CourseStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::LearningCourseActivityStatus) },
                 })
             end
             ## 
@@ -177,7 +177,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the status property value. The status of the course activity. Possible values are: notStarted, inProgress, completed. Required.
-            ## @return a course_status
+            ## @return a learning_course_activity_status
             ## 
             def status
                 return @status

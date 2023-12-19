@@ -19,15 +19,15 @@ module MicrosoftGraph
             # The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
             @x509_certificate_authentication_default_mode
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "rules" => lambda {|n| @rules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::X509CertificateRule.create_from_discriminator_value(pn) }) },
-                    "x509CertificateAuthenticationDefaultMode" => lambda {|n| @x509_certificate_authentication_default_mode = n.get_enum_value(MicrosoftGraph::Models::X509CertificateAuthenticationMode) },
+                    "x509CertificateAuthenticationDefaultMode" => lambda {|n| @x509_certificate_authentication_default_mode = n.get_enum_value(MicrosoftGraph::Models::X509CertificateAuthenticationModeConfigurationX509CertificateAuthenticationDefaultMode) },
                 }
             end
             ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the x509CertificateAuthenticationDefaultMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
-            ## @return a x509_certificate_authentication_mode
+            ## @return a x509_certificate_authentication_mode_configuration_x509_certificate_authentication_default_mode
             ## 
             def x509_certificate_authentication_default_mode
                 return @x509_certificate_authentication_default_mode

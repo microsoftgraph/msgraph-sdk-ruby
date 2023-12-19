@@ -19,7 +19,7 @@ module MicrosoftGraph
             @display_name
             ## 
             ## Gets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
-            ## @return a answer_input_type
+            ## @return a booking_custom_question_answer_input_type
             ## 
             def answer_input_type
                 return @answer_input_type
@@ -84,7 +84,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "answerInputType" => lambda {|n| @answer_input_type = n.get_enum_value(MicrosoftGraph::Models::AnswerInputType) },
+                    "answerInputType" => lambda {|n| @answer_input_type = n.get_enum_value(MicrosoftGraph::Models::BookingCustomQuestionAnswerInputType) },
                     "answerOptions" => lambda {|n| @answer_options = n.get_collection_of_primitive_values(String) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                 })

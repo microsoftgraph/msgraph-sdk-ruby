@@ -1,1 +1,2 @@
+require_relative 'assign_sensitivity_label_post_request_body_assignment_method'
 require_relative 'assign_sensitivity_label_post_request_body'

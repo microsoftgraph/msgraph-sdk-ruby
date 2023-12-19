@@ -7,7 +7,7 @@ module MicrosoftGraph
         class EducationAssignmentSettings < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
+            # Indicates whether turn-in celebration animation is shown. A value of true indicates that the animation isn't shown. Default value is false.
             @submission_animation_disabled
             ## 
             ## Instantiates a new educationAssignmentSettings and sets the default values.
@@ -45,14 +45,14 @@ module MicrosoftGraph
                 writer.write_boolean_value("submissionAnimationDisabled", @submission_animation_disabled)
             end
             ## 
-            ## Gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
+            ## Gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation is shown. A value of true indicates that the animation isn't shown. Default value is false.
             ## @return a boolean
             ## 
             def submission_animation_disabled
                 return @submission_animation_disabled
             end
             ## 
-            ## Sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
+            ## Sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation is shown. A value of true indicates that the animation isn't shown. Default value is false.
             ## @param value Value to set for the submissionAnimationDisabled property.
             ## @return a void
             ## 

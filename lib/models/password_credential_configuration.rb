@@ -23,15 +23,15 @@ module MicrosoftGraph
             # The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
             @restriction_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
                     "maxLifetime" => lambda {|n| @max_lifetime = n.get_duration_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "restrictForAppsCreatedAfterDateTime" => lambda {|n| @restrict_for_apps_created_after_date_time = n.get_date_time_value() },
-                    "restrictionType" => lambda {|n| @restriction_type = n.get_enum_value(MicrosoftGraph::Models::AppCredentialRestrictionType) },
+                    "restrictionType" => lambda {|n| @restriction_type = n.get_enum_value(MicrosoftGraph::Models::PasswordCredentialConfigurationRestrictionType) },
                 }
             end
             ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
-            ## @return a app_credential_restriction_type
+            ## @return a password_credential_configuration_restriction_type
             ## 
             def restriction_type
                 return @restriction_type

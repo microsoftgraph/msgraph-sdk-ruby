@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
-require_relative '../../../../models/reject_reason'
 require_relative '../../../communications'
 require_relative '../../calls'
 require_relative '../item'
@@ -23,15 +22,15 @@ module MicrosoftGraph
                         # The reason property
                         @reason
                         ## 
-                        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                         ## @return a i_dictionary
                         ## 
                         def additional_data
                             return @additional_data
                         end
                         ## 
-                        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the additionalData property.
+                        ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @param value Value to set for the AdditionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -75,12 +74,12 @@ module MicrosoftGraph
                         def get_field_deserializers()
                             return {
                                 "callbackUri" => lambda {|n| @callback_uri = n.get_string_value() },
-                                "reason" => lambda {|n| @reason = n.get_enum_value(MicrosoftGraph::Models::RejectReason) },
+                                "reason" => lambda {|n| @reason = n.get_enum_value(MicrosoftGraph::Communications::Calls::Item::Reject::RejectPostRequestBodyReason) },
                             }
                         end
                         ## 
                         ## Gets the reason property value. The reason property
-                        ## @return a reject_reason
+                        ## @return a reject_post_request_body_reason
                         ## 
                         def reason
                             return @reason

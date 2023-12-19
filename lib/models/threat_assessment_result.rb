@@ -55,7 +55,7 @@ module MicrosoftGraph
                 return super.merge({
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "message" => lambda {|n| @message = n.get_string_value() },
-                    "resultType" => lambda {|n| @result_type = n.get_enum_value(MicrosoftGraph::Models::ThreatAssessmentResultType) },
+                    "resultType" => lambda {|n| @result_type = n.get_enum_value(MicrosoftGraph::Models::ThreatAssessmentResultResultType) },
                 })
             end
             ## 
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
-            ## @return a threat_assessment_result_type
+            ## @return a threat_assessment_result_result_type
             ## 
             def result_type
                 return @result_type

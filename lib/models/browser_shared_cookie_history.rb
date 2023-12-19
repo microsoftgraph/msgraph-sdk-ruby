@@ -38,15 +38,15 @@ module MicrosoftGraph
             # Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
             @source_environment
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "path" => lambda {|n| @path = n.get_string_value() },
                     "publishedDateTime" => lambda {|n| @published_date_time = n.get_date_time_value() },
-                    "sourceEnvironment" => lambda {|n| @source_environment = n.get_enum_value(MicrosoftGraph::Models::BrowserSharedCookieSourceEnvironment) },
+                    "sourceEnvironment" => lambda {|n| @source_environment = n.get_enum_value(MicrosoftGraph::Models::BrowserSharedCookieHistorySourceEnvironment) },
                 }
             end
             ## 
@@ -225,7 +225,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
-            ## @return a browser_shared_cookie_source_environment
+            ## @return a browser_shared_cookie_history_source_environment
             ## 
             def source_environment
                 return @source_environment

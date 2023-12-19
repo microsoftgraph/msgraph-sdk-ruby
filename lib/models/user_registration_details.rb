@@ -11,10 +11,10 @@ module MicrosoftGraph
             # Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
             @is_admin
             ## 
-            # Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+            # Indicates whether the user has registered a strong authentication method for multifactor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
             @is_mfa_capable
             ## 
-            # Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
+            # Indicates whether the user has registered a strong authentication method for multifactor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
             @is_mfa_registered
             ## 
             # Indicates whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
@@ -35,19 +35,19 @@ module MicrosoftGraph
             # The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_updated_date_time
             ## 
-            # Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
+            # Collection of authentication methods registered, such as mobilePhone, email, passKeyDeviceBound. Supports $filter (any with eq).
             @methods_registered
             ## 
             # Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
             @system_preferred_authentication_methods
             ## 
-            # The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+            # The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
             @user_display_name
             ## 
-            # The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. This property is used as preferred MFA method when isSystemPreferredAuthenticationMethodEnabled is false. Supports $filter (any with eq).
+            # The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. This property is used as preferred MFA method when isSystemPreferredAuthenticationMethodEnabled is false. Supports $filter (any with eq).
             @user_preferred_method_for_secondary_authentication
             ## 
-            # The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+            # The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
             @user_principal_name
             ## 
             # Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
@@ -86,9 +86,9 @@ module MicrosoftGraph
                     "methodsRegistered" => lambda {|n| @methods_registered = n.get_collection_of_primitive_values(String) },
                     "systemPreferredAuthenticationMethods" => lambda {|n| @system_preferred_authentication_methods = n.get_collection_of_primitive_values(String) },
                     "userDisplayName" => lambda {|n| @user_display_name = n.get_string_value() },
-                    "userPreferredMethodForSecondaryAuthentication" => lambda {|n| @user_preferred_method_for_secondary_authentication = n.get_enum_value(MicrosoftGraph::Models::UserDefaultAuthenticationMethod) },
+                    "userPreferredMethodForSecondaryAuthentication" => lambda {|n| @user_preferred_method_for_secondary_authentication = n.get_enum_value(MicrosoftGraph::Models::UserRegistrationDetailsUserPreferredMethodForSecondaryAuthentication) },
                     "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
-                    "userType" => lambda {|n| @user_type = n.get_enum_value(MicrosoftGraph::Models::SignInUserType) },
+                    "userType" => lambda {|n| @user_type = n.get_enum_value(MicrosoftGraph::Models::UserRegistrationDetailsUserType) },
                 })
             end
             ## 
@@ -107,14 +107,14 @@ module MicrosoftGraph
                 @is_admin = value
             end
             ## 
-            ## Gets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+            ## Gets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
             ## @return a boolean
             ## 
             def is_mfa_capable
                 return @is_mfa_capable
             end
             ## 
-            ## Sets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+            ## Sets the isMfaCapable property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
             ## @param value Value to set for the isMfaCapable property.
             ## @return a void
             ## 
@@ -122,14 +122,14 @@ module MicrosoftGraph
                 @is_mfa_capable = value
             end
             ## 
-            ## Gets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
+            ## Gets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
             ## @return a boolean
             ## 
             def is_mfa_registered
                 return @is_mfa_registered
             end
             ## 
-            ## Sets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
+            ## Sets the isMfaRegistered property value. Indicates whether the user has registered a strong authentication method for multifactor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
             ## @param value Value to set for the isMfaRegistered property.
             ## @return a void
             ## 
@@ -227,14 +227,14 @@ module MicrosoftGraph
                 @last_updated_date_time = value
             end
             ## 
-            ## Gets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
+            ## Gets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, passKeyDeviceBound. Supports $filter (any with eq).
             ## @return a string
             ## 
             def methods_registered
                 return @methods_registered
             end
             ## 
-            ## Sets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
+            ## Sets the methodsRegistered property value. Collection of authentication methods registered, such as mobilePhone, email, passKeyDeviceBound. Supports $filter (any with eq).
             ## @param value Value to set for the methodsRegistered property.
             ## @return a void
             ## 
@@ -281,14 +281,14 @@ module MicrosoftGraph
                 @system_preferred_authentication_methods = value
             end
             ## 
-            ## Gets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+            ## Gets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
             ## @return a string
             ## 
             def user_display_name
                 return @user_display_name
             end
             ## 
-            ## Sets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+            ## Sets the userDisplayName property value. The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
             ## @param value Value to set for the userDisplayName property.
             ## @return a void
             ## 
@@ -296,14 +296,14 @@ module MicrosoftGraph
                 @user_display_name = value
             end
             ## 
-            ## Gets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. This property is used as preferred MFA method when isSystemPreferredAuthenticationMethodEnabled is false. Supports $filter (any with eq).
-            ## @return a user_default_authentication_method
+            ## Gets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. This property is used as preferred MFA method when isSystemPreferredAuthenticationMethodEnabled is false. Supports $filter (any with eq).
+            ## @return a user_registration_details_user_preferred_method_for_secondary_authentication
             ## 
             def user_preferred_method_for_secondary_authentication
                 return @user_preferred_method_for_secondary_authentication
             end
             ## 
-            ## Sets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. This property is used as preferred MFA method when isSystemPreferredAuthenticationMethodEnabled is false. Supports $filter (any with eq).
+            ## Sets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. This property is used as preferred MFA method when isSystemPreferredAuthenticationMethodEnabled is false. Supports $filter (any with eq).
             ## @param value Value to set for the userPreferredMethodForSecondaryAuthentication property.
             ## @return a void
             ## 
@@ -311,14 +311,14 @@ module MicrosoftGraph
                 @user_preferred_method_for_secondary_authentication = value
             end
             ## 
-            ## Gets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+            ## Gets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+            ## Sets the userPrincipalName property value. The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
             ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
@@ -327,7 +327,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the userType property value. Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
-            ## @return a sign_in_user_type
+            ## @return a user_registration_details_user_type
             ## 
             def user_type
                 return @user_type

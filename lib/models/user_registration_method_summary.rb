@@ -25,15 +25,15 @@ module MicrosoftGraph
             # User type. Possible values are: all, member, guest, unknownFutureValue.
             @user_types
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -64,8 +64,8 @@ module MicrosoftGraph
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "totalUserCount" => lambda {|n| @total_user_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "userRegistrationMethodCounts" => lambda {|n| @user_registration_method_counts = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserRegistrationMethodCount.create_from_discriminator_value(pn) }) },
-                    "userRoles" => lambda {|n| @user_roles = n.get_enum_value(MicrosoftGraph::Models::IncludedUserRoles) },
-                    "userTypes" => lambda {|n| @user_types = n.get_enum_value(MicrosoftGraph::Models::IncludedUserTypes) },
+                    "userRoles" => lambda {|n| @user_roles = n.get_enum_value(MicrosoftGraph::Models::UserRegistrationMethodSummaryUserRoles) },
+                    "userTypes" => lambda {|n| @user_types = n.get_enum_value(MicrosoftGraph::Models::UserRegistrationMethodSummaryUserTypes) },
                 }
             end
             ## 
@@ -129,7 +129,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the userRoles property value. The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
-            ## @return a included_user_roles
+            ## @return a user_registration_method_summary_user_roles
             ## 
             def user_roles
                 return @user_roles
@@ -144,7 +144,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the userTypes property value. User type. Possible values are: all, member, guest, unknownFutureValue.
-            ## @return a included_user_types
+            ## @return a user_registration_method_summary_user_types
             ## 
             def user_types
                 return @user_types

@@ -90,12 +90,12 @@ module MicrosoftGraph
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "device" => lambda {|n| @device = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Device.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "keyStrength" => lambda {|n| @key_strength = n.get_enum_value(MicrosoftGraph::Models::AuthenticationMethodKeyStrength) },
+                    "keyStrength" => lambda {|n| @key_strength = n.get_enum_value(MicrosoftGraph::Models::WindowsHelloForBusinessAuthenticationMethodKeyStrength) },
                 })
             end
             ## 
             ## Gets the keyStrength property value. Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
-            ## @return a authentication_method_key_strength
+            ## @return a windows_hello_for_business_authentication_method_key_strength
             ## 
             def key_strength
                 return @key_strength

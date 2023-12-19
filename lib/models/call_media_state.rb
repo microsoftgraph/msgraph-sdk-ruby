@@ -16,15 +16,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -32,7 +32,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the audio property value. The audio media state. Possible values are: active, inactive, unknownFutureValue.
-            ## @return a media_state
+            ## @return a call_media_state_audio
             ## 
             def audio
                 return @audio
@@ -67,7 +67,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "audio" => lambda {|n| @audio = n.get_enum_value(MicrosoftGraph::Models::MediaState) },
+                    "audio" => lambda {|n| @audio = n.get_enum_value(MicrosoftGraph::Models::CallMediaStateAudio) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end

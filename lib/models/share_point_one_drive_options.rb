@@ -16,15 +16,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -52,13 +52,13 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "includeContent" => lambda {|n| @include_content = n.get_enum_value(MicrosoftGraph::Models::SearchContent) },
+                    "includeContent" => lambda {|n| @include_content = n.get_enum_value(MicrosoftGraph::Models::SharePointOneDriveOptionsIncludeContent) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
             ## 
             ## Gets the includeContent property value. The type of search content. The possible values are: sharedContent, privateContent, unknownFutureValue. Read-only.
-            ## @return a search_content
+            ## @return a share_point_one_drive_options_include_content
             ## 
             def include_content
                 return @include_content

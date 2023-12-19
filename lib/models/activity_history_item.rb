@@ -123,7 +123,7 @@ module MicrosoftGraph
                     "lastActiveDateTime" => lambda {|n| @last_active_date_time = n.get_date_time_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "startedDateTime" => lambda {|n| @started_date_time = n.get_date_time_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::Status) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::ActivityHistoryItemStatus) },
                     "userTimezone" => lambda {|n| @user_timezone = n.get_string_value() },
                 })
             end
@@ -192,7 +192,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
-            ## @return a status
+            ## @return a activity_history_item_status
             ## 
             def status
                 return @status

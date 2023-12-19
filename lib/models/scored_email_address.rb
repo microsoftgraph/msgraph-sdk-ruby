@@ -25,15 +25,15 @@ module MicrosoftGraph
             # The selectionLikelihood property
             @selection_likelihood
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
                     "itemId" => lambda {|n| @item_id = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "relevanceScore" => lambda {|n| @relevance_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
-                    "selectionLikelihood" => lambda {|n| @selection_likelihood = n.get_enum_value(MicrosoftGraph::Models::SelectionLikelihoodInfo) },
+                    "selectionLikelihood" => lambda {|n| @selection_likelihood = n.get_enum_value(MicrosoftGraph::Models::ScoredEmailAddressSelectionLikelihood) },
                 }
             end
             ## 
@@ -130,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the selectionLikelihood property value. The selectionLikelihood property
-            ## @return a selection_likelihood_info
+            ## @return a scored_email_address_selection_likelihood
             ## 
             def selection_likelihood
                 return @selection_likelihood

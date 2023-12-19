@@ -1,1 +1,2 @@
+require_relative 'answer_post_request_body_accepted_modalities'
 require_relative 'answer_post_request_body'

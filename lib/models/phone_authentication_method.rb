@@ -7,7 +7,7 @@ module MicrosoftGraph
         class PhoneAuthenticationMethod < MicrosoftGraph::Models::AuthenticationMethod
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.
+            # The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don't match the required format.
             @phone_number
             ## 
             # The type of this phone. Possible values are: mobile, alternateMobile, or office.
@@ -39,19 +39,19 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "phoneNumber" => lambda {|n| @phone_number = n.get_string_value() },
-                    "phoneType" => lambda {|n| @phone_type = n.get_enum_value(MicrosoftGraph::Models::AuthenticationPhoneType) },
-                    "smsSignInState" => lambda {|n| @sms_sign_in_state = n.get_enum_value(MicrosoftGraph::Models::AuthenticationMethodSignInState) },
+                    "phoneType" => lambda {|n| @phone_type = n.get_enum_value(MicrosoftGraph::Models::PhoneAuthenticationMethodPhoneType) },
+                    "smsSignInState" => lambda {|n| @sms_sign_in_state = n.get_enum_value(MicrosoftGraph::Models::PhoneAuthenticationMethodSmsSignInState) },
                 })
             end
             ## 
-            ## Gets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.
+            ## Gets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don't match the required format.
             ## @return a string
             ## 
             def phone_number
                 return @phone_number
             end
             ## 
-            ## Sets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.
+            ## Sets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they don't match the required format.
             ## @param value Value to set for the phoneNumber property.
             ## @return a void
             ## 
@@ -60,7 +60,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the phoneType property value. The type of this phone. Possible values are: mobile, alternateMobile, or office.
-            ## @return a authentication_phone_type
+            ## @return a phone_authentication_method_phone_type
             ## 
             def phone_type
                 return @phone_type
@@ -87,7 +87,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
-            ## @return a authentication_method_sign_in_state
+            ## @return a phone_authentication_method_sms_sign_in_state
             ## 
             def sms_sign_in_state
                 return @sms_sign_in_state

@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the callRecordingStatus property value. Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
-            ## @return a call_recording_status
+            ## @return a call_recording_event_message_detail_call_recording_status
             ## 
             def call_recording_status
                 return @call_recording_status
@@ -128,7 +128,7 @@ module MicrosoftGraph
                     "callId" => lambda {|n| @call_id = n.get_string_value() },
                     "callRecordingDisplayName" => lambda {|n| @call_recording_display_name = n.get_string_value() },
                     "callRecordingDuration" => lambda {|n| @call_recording_duration = n.get_duration_value() },
-                    "callRecordingStatus" => lambda {|n| @call_recording_status = n.get_enum_value(MicrosoftGraph::Models::CallRecordingStatus) },
+                    "callRecordingStatus" => lambda {|n| @call_recording_status = n.get_enum_value(MicrosoftGraph::Models::CallRecordingEventMessageDetailCallRecordingStatus) },
                     "callRecordingUrl" => lambda {|n| @call_recording_url = n.get_string_value() },
                     "initiator" => lambda {|n| @initiator = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "meetingOrganizer" => lambda {|n| @meeting_organizer = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },

@@ -43,15 +43,15 @@ module MicrosoftGraph
             # Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD REGQWORDLITTLEENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
             @value_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -79,22 +79,22 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "hive" => lambda {|n| @hive = n.get_enum_value(MicrosoftGraph::Models::RegistryHive) },
+                    "hive" => lambda {|n| @hive = n.get_enum_value(MicrosoftGraph::Models::RegistryKeyStateHive) },
                     "key" => lambda {|n| @key = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "oldKey" => lambda {|n| @old_key = n.get_string_value() },
                     "oldValueData" => lambda {|n| @old_value_data = n.get_string_value() },
                     "oldValueName" => lambda {|n| @old_value_name = n.get_string_value() },
-                    "operation" => lambda {|n| @operation = n.get_enum_value(MicrosoftGraph::Models::RegistryOperation) },
+                    "operation" => lambda {|n| @operation = n.get_enum_value(MicrosoftGraph::Models::RegistryKeyStateOperation) },
                     "processId" => lambda {|n| @process_id = n.get_number_value() },
                     "valueData" => lambda {|n| @value_data = n.get_string_value() },
                     "valueName" => lambda {|n| @value_name = n.get_string_value() },
-                    "valueType" => lambda {|n| @value_type = n.get_enum_value(MicrosoftGraph::Models::RegistryValueType) },
+                    "valueType" => lambda {|n| @value_type = n.get_enum_value(MicrosoftGraph::Models::RegistryKeyStateValueType) },
                 }
             end
             ## 
             ## Gets the hive property value. A Windows registry hive : HKEYCURRENTCONFIG HKEYCURRENTUSER HKEYLOCALMACHINE/SAM HKEYLOCALMACHINE/Security HKEYLOCALMACHINE/Software HKEYLOCALMACHINE/System HKEY_USERS/.Default. Possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.
-            ## @return a registry_hive
+            ## @return a registry_key_state_hive
             ## 
             def hive
                 return @hive
@@ -184,7 +184,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the operation property value. Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.
-            ## @return a registry_operation
+            ## @return a registry_key_state_operation
             ## 
             def operation
                 return @operation
@@ -264,7 +264,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the valueType property value. Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD REGQWORDLITTLEENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
-            ## @return a registry_value_type
+            ## @return a registry_key_state_value_type
             ## 
             def value_type
                 return @value_type

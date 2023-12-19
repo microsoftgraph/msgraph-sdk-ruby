@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
-            ## @return a allowed_target_scope
+            ## @return a access_package_assignment_policy_allowed_target_scope
             ## 
             def allowed_target_scope
                 return @allowed_target_scope
@@ -210,7 +210,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "accessPackage" => lambda {|n| @access_package = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackage.create_from_discriminator_value(pn) }) },
-                    "allowedTargetScope" => lambda {|n| @allowed_target_scope = n.get_enum_value(MicrosoftGraph::Models::AllowedTargetScope) },
+                    "allowedTargetScope" => lambda {|n| @allowed_target_scope = n.get_enum_value(MicrosoftGraph::Models::AccessPackageAssignmentPolicyAllowedTargetScope) },
                     "automaticRequestSettings" => lambda {|n| @automatic_request_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageAutomaticRequestSettings.create_from_discriminator_value(pn) }) },
                     "catalog" => lambda {|n| @catalog = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },

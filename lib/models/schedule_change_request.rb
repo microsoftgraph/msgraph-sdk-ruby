@@ -33,7 +33,7 @@ module MicrosoftGraph
             @state
             ## 
             ## Gets the assignedTo property value. The assignedTo property
-            ## @return a schedule_change_request_actor
+            ## @return a schedule_change_request_assigned_to
             ## 
             def assigned_to
                 return @assigned_to
@@ -83,14 +83,14 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "assignedTo" => lambda {|n| @assigned_to = n.get_enum_value(MicrosoftGraph::Models::ScheduleChangeRequestActor) },
+                    "assignedTo" => lambda {|n| @assigned_to = n.get_enum_value(MicrosoftGraph::Models::ScheduleChangeRequestAssignedTo) },
                     "managerActionDateTime" => lambda {|n| @manager_action_date_time = n.get_date_time_value() },
                     "managerActionMessage" => lambda {|n| @manager_action_message = n.get_string_value() },
                     "managerUserId" => lambda {|n| @manager_user_id = n.get_string_value() },
                     "senderDateTime" => lambda {|n| @sender_date_time = n.get_date_time_value() },
                     "senderMessage" => lambda {|n| @sender_message = n.get_string_value() },
                     "senderUserId" => lambda {|n| @sender_user_id = n.get_string_value() },
-                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::ScheduleChangeState) },
+                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::ScheduleChangeRequestState) },
                 })
             end
             ## 
@@ -198,7 +198,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the state property value. The state property
-            ## @return a schedule_change_state
+            ## @return a schedule_change_request_state
             ## 
             def state
                 return @state

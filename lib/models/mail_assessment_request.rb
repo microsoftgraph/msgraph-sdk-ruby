@@ -34,7 +34,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
-            ## @return a mail_destination_routing_reason
+            ## @return a mail_assessment_request_destination_routing_reason
             ## 
             def destination_routing_reason
                 return @destination_routing_reason
@@ -53,7 +53,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "destinationRoutingReason" => lambda {|n| @destination_routing_reason = n.get_enum_value(MicrosoftGraph::Models::MailDestinationRoutingReason) },
+                    "destinationRoutingReason" => lambda {|n| @destination_routing_reason = n.get_enum_value(MicrosoftGraph::Models::MailAssessmentRequestDestinationRoutingReason) },
                     "messageUri" => lambda {|n| @message_uri = n.get_string_value() },
                     "recipientEmail" => lambda {|n| @recipient_email = n.get_string_value() },
                 })

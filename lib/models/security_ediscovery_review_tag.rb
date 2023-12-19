@@ -17,7 +17,7 @@ module MicrosoftGraph
             @parent
             ## 
             ## Gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
-            ## @return a security_child_selectability
+            ## @return a security_ediscovery_review_tag_child_selectability
             ## 
             def child_selectability
                 return @child_selectability
@@ -68,7 +68,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "childSelectability" => lambda {|n| @child_selectability = n.get_enum_value(MicrosoftGraph::Models::SecurityChildSelectability) },
+                    "childSelectability" => lambda {|n| @child_selectability = n.get_enum_value(MicrosoftGraph::Models::SecurityEdiscoveryReviewTagChildSelectability) },
                     "childTags" => lambda {|n| @child_tags = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryReviewTag.create_from_discriminator_value(pn) }) },
                     "parent" => lambda {|n| @parent = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryReviewTag.create_from_discriminator_value(pn) }) },
                 })

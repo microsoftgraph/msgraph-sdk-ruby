@@ -26,15 +26,15 @@ module MicrosoftGraph
             # The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.
             @source_service
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
                     "lastAccessedTime" => lambda {|n| @last_accessed_time = n.get_date_time_value() },
                     "links" => lambda {|n| @links = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::RecentNotebookLinks.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "sourceService" => lambda {|n| @source_service = n.get_enum_value(MicrosoftGraph::Models::OnenoteSourceService) },
+                    "sourceService" => lambda {|n| @source_service = n.get_enum_value(MicrosoftGraph::Models::RecentNotebookSourceService) },
                 }
             end
             ## 
@@ -145,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the sourceService property value. The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.
-            ## @return a onenote_source_service
+            ## @return a recent_notebook_source_service
             ## 
             def source_service
                 return @source_service

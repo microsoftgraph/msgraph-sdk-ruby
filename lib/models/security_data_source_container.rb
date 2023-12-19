@@ -89,7 +89,7 @@ module MicrosoftGraph
                 return super.merge({
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "holdStatus" => lambda {|n| @hold_status = n.get_enum_value(MicrosoftGraph::Models::SecurityDataSourceHoldStatus) },
+                    "holdStatus" => lambda {|n| @hold_status = n.get_enum_value(MicrosoftGraph::Models::SecurityDataSourceContainerHoldStatus) },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "releasedDateTime" => lambda {|n| @released_date_time = n.get_date_time_value() },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::SecurityDataSourceContainerStatus) },
@@ -97,7 +97,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the holdStatus property value. The hold status of the dataSourceContainer. The possible values are: notApplied, applied, applying, removing, partial
-            ## @return a security_data_source_hold_status
+            ## @return a security_data_source_container_hold_status
             ## 
             def hold_status
                 return @hold_status

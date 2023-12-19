@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
-require_relative '../../../models/mail_tips_type'
 require_relative '../../users'
 require_relative '../item'
 require_relative './get_mail_tips'
@@ -21,15 +20,15 @@ module MicrosoftGraph
                     # The MailTipsOptions property
                     @mail_tips_options
                     ## 
-                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                     ## @return a i_dictionary
                     ## 
                     def additional_data
                         return @additional_data
                     end
                     ## 
-                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the additionalData property.
+                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                    ## @param value Value to set for the AdditionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -73,12 +72,12 @@ module MicrosoftGraph
                     def get_field_deserializers()
                         return {
                             "EmailAddresses" => lambda {|n| @email_addresses = n.get_collection_of_primitive_values(String) },
-                            "MailTipsOptions" => lambda {|n| @mail_tips_options = n.get_enum_value(MicrosoftGraph::Models::MailTipsType) },
+                            "MailTipsOptions" => lambda {|n| @mail_tips_options = n.get_enum_value(MicrosoftGraph::Users::Item::GetMailTips::GetMailTipsPostRequestBodyMailTipsOptions) },
                         }
                     end
                     ## 
                     ## Gets the MailTipsOptions property value. The MailTipsOptions property
-                    ## @return a mail_tips_type
+                    ## @return a get_mail_tips_post_request_body_mail_tips_options
                     ## 
                     def mail_tips_options
                         return @mail_tips_options

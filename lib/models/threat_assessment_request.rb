@@ -55,7 +55,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
-            ## @return a threat_assessment_content_type
+            ## @return a threat_assessment_request_content_type
             ## 
             def content_type
                 return @content_type
@@ -143,18 +143,18 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraph::Models::ThreatCategory) },
-                    "contentType" => lambda {|n| @content_type = n.get_enum_value(MicrosoftGraph::Models::ThreatAssessmentContentType) },
+                    "contentType" => lambda {|n| @content_type = n.get_enum_value(MicrosoftGraph::Models::ThreatAssessmentRequestContentType) },
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "expectedAssessment" => lambda {|n| @expected_assessment = n.get_enum_value(MicrosoftGraph::Models::ThreatExpectedAssessment) },
-                    "requestSource" => lambda {|n| @request_source = n.get_enum_value(MicrosoftGraph::Models::ThreatAssessmentRequestSource) },
+                    "requestSource" => lambda {|n| @request_source = n.get_enum_value(MicrosoftGraph::Models::ThreatAssessmentRequestRequestSource) },
                     "results" => lambda {|n| @results = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ThreatAssessmentResult.create_from_discriminator_value(pn) }) },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::ThreatAssessmentStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::ThreatAssessmentRequestStatus) },
                 })
             end
             ## 
             ## Gets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
-            ## @return a threat_assessment_request_source
+            ## @return a threat_assessment_request_request_source
             ## 
             def request_source
                 return @request_source
@@ -201,7 +201,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the status property value. The assessment process status. Possible values are: pending, completed.
-            ## @return a threat_assessment_status
+            ## @return a threat_assessment_request_status
             ## 
             def status
                 return @status

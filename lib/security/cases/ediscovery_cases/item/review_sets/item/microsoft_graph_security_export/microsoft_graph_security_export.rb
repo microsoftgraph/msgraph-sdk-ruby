@@ -1,1 +1,3 @@
+require_relative 'export_post_request_body_export_options'
+require_relative 'export_post_request_body_export_structure'
 require_relative 'export_post_request_body'

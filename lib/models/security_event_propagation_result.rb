@@ -25,15 +25,15 @@ module MicrosoftGraph
             # Additional information about the status of the event creation request.
             @status_information
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph
                     "location" => lambda {|n| @location = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "serviceName" => lambda {|n| @service_name = n.get_string_value() },
-                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::SecurityEventPropagationStatus) },
+                    "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::SecurityEventPropagationResultStatus) },
                     "statusInformation" => lambda {|n| @status_information = n.get_string_value() },
                 }
             end
@@ -129,7 +129,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the status property value. Indicates the status of the event creation request. The possible values are: none, inProcessing, failed, success, unknownFutureValue.
-            ## @return a security_event_propagation_status
+            ## @return a security_event_propagation_result_status
             ## 
             def status
                 return @status

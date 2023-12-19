@@ -32,12 +32,12 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "initiatorType" => lambda {|n| @initiator_type = n.get_enum_value(MicrosoftGraph::Models::InitiatorType) },
+                    "initiatorType" => lambda {|n| @initiator_type = n.get_enum_value(MicrosoftGraph::Models::InitiatorInitiatorType) },
                 })
             end
             ## 
             ## Gets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
-            ## @return a initiator_type
+            ## @return a initiator_initiator_type
             ## 
             def initiator_type
                 return @initiator_type

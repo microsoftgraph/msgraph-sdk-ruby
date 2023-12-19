@@ -23,15 +23,15 @@ module MicrosoftGraph
             # The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
             @post_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "description" => lambda {|n| @description = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ItemBody.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "postType" => lambda {|n| @post_type = n.get_enum_value(MicrosoftGraph::Models::PostType) },
+                    "postType" => lambda {|n| @post_type = n.get_enum_value(MicrosoftGraph::Models::ServiceHealthIssuePostPostType) },
                 }
             end
             ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the postType property value. The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
-            ## @return a post_type
+            ## @return a service_health_issue_post_post_type
             ## 
             def post_type
                 return @post_type

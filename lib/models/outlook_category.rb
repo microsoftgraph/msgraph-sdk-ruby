@@ -14,7 +14,7 @@ module MicrosoftGraph
             @display_name
             ## 
             ## Gets the color property value. A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.
-            ## @return a category_color
+            ## @return a outlook_category_color
             ## 
             def color
                 return @color
@@ -64,7 +64,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "color" => lambda {|n| @color = n.get_enum_value(MicrosoftGraph::Models::CategoryColor) },
+                    "color" => lambda {|n| @color = n.get_enum_value(MicrosoftGraph::Models::OutlookCategoryColor) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                 })
             end

@@ -56,7 +56,7 @@ module MicrosoftGraph
             @ticket_info
             ## 
             ## Gets the action property value. Represents the type of the operation on the role assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign roles to principals.adminRemove: For administrators to remove principals from roles. adminUpdate: For administrators to change existing role assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.selfExtend: For principals to request to extend their expiring assignments.selfRenew: For principals to request to renew their expired assignments.
-            ## @return a unified_role_schedule_request_actions
+            ## @return a unified_role_assignment_schedule_request_action
             ## 
             def action
                 return @action
@@ -166,7 +166,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraph::Models::UnifiedRoleScheduleRequestActions) },
+                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraph::Models::UnifiedRoleAssignmentScheduleRequestAction) },
                     "activatedUsing" => lambda {|n| @activated_using = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleEligibilitySchedule.create_from_discriminator_value(pn) }) },
                     "appScope" => lambda {|n| @app_scope = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AppScope.create_from_discriminator_value(pn) }) },
                     "appScopeId" => lambda {|n| @app_scope_id = n.get_string_value() },

@@ -59,7 +59,7 @@ module MicrosoftGraph
             # The async operations that ran or are running on this team.
             @operations
             ## 
-            # The permissionGrants property
+            # A collection of permissions granted to apps to access the team.
             @permission_grants
             ## 
             # The profile photo for the team.
@@ -83,7 +83,7 @@ module MicrosoftGraph
             # The template this team was created from. See available templates.
             @template
             ## 
-            # The ID of the Azure Active Directory tenant.
+            # The ID of the Microsoft Entra tenant.
             @tenant_id
             ## 
             # The visibility of the group and team. Defaults to Public.
@@ -244,7 +244,7 @@ module MicrosoftGraph
                     "tags" => lambda {|n| @tags = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TeamworkTag.create_from_discriminator_value(pn) }) },
                     "template" => lambda {|n| @template = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamsTemplate.create_from_discriminator_value(pn) }) },
                     "tenantId" => lambda {|n| @tenant_id = n.get_string_value() },
-                    "visibility" => lambda {|n| @visibility = n.get_enum_value(MicrosoftGraph::Models::TeamVisibilityType) },
+                    "visibility" => lambda {|n| @visibility = n.get_enum_value(MicrosoftGraph::Models::TeamVisibility) },
                     "webUrl" => lambda {|n| @web_url = n.get_string_value() },
                 })
             end
@@ -399,14 +399,14 @@ module MicrosoftGraph
                 @operations = value
             end
             ## 
-            ## Gets the permissionGrants property value. The permissionGrants property
+            ## Gets the permissionGrants property value. A collection of permissions granted to apps to access the team.
             ## @return a resource_specific_permission_grant
             ## 
             def permission_grants
                 return @permission_grants
             end
             ## 
-            ## Sets the permissionGrants property value. The permissionGrants property
+            ## Sets the permissionGrants property value. A collection of permissions granted to apps to access the team.
             ## @param value Value to set for the permissionGrants property.
             ## @return a void
             ## 
@@ -556,14 +556,14 @@ module MicrosoftGraph
                 @template = value
             end
             ## 
-            ## Gets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Gets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Sets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
@@ -572,7 +572,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the visibility property value. The visibility of the group and team. Defaults to Public.
-            ## @return a team_visibility_type
+            ## @return a team_visibility
             ## 
             def visibility
                 return @visibility

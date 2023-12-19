@@ -16,10 +16,10 @@ module MicrosoftGraph
             # The email address of the subject.
             @email
             ## 
-            # The object identifier of the subject. null if the subject is not yet a user in the tenant.
+            # The object identifier of the subject. null if the subject isn't yet a user in the tenant.
             @object_id_escaped
             ## 
-            # A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
+            # A string representation of the principal's security identifier, if known, or null if the subject doesn't have a security identifier.
             @on_premises_security_identifier
             ## 
             # The principal name, if known, of the subject.
@@ -100,18 +100,18 @@ module MicrosoftGraph
                     "objectId" => lambda {|n| @object_id_escaped = n.get_string_value() },
                     "onPremisesSecurityIdentifier" => lambda {|n| @on_premises_security_identifier = n.get_string_value() },
                     "principalName" => lambda {|n| @principal_name = n.get_string_value() },
-                    "subjectType" => lambda {|n| @subject_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageSubjectType) },
+                    "subjectType" => lambda {|n| @subject_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageSubjectSubjectType) },
                 })
             end
             ## 
-            ## Gets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
+            ## Gets the objectId property value. The object identifier of the subject. null if the subject isn't yet a user in the tenant.
             ## @return a string
             ## 
             def object_id_escaped
                 return @object_id_escaped
             end
             ## 
-            ## Sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
+            ## Sets the objectId property value. The object identifier of the subject. null if the subject isn't yet a user in the tenant.
             ## @param value Value to set for the objectId property.
             ## @return a void
             ## 
@@ -119,14 +119,14 @@ module MicrosoftGraph
                 @object_id_escaped = value
             end
             ## 
-            ## Gets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
+            ## Gets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject doesn't have a security identifier.
             ## @return a string
             ## 
             def on_premises_security_identifier
                 return @on_premises_security_identifier
             end
             ## 
-            ## Sets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
+            ## Sets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject doesn't have a security identifier.
             ## @param value Value to set for the onPremisesSecurityIdentifier property.
             ## @return a void
             ## 
@@ -166,7 +166,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the subjectType property value. The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.
-            ## @return a access_package_subject_type
+            ## @return a access_package_subject_subject_type
             ## 
             def subject_type
                 return @subject_type

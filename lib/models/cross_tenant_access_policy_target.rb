@@ -19,15 +19,15 @@ module MicrosoftGraph
             # The type of resource that you want to target. The possible values are: user, group, application, unknownFutureValue.
             @target_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "target" => lambda {|n| @target = n.get_string_value() },
-                    "targetType" => lambda {|n| @target_type = n.get_enum_value(MicrosoftGraph::Models::CrossTenantAccessPolicyTargetType) },
+                    "targetType" => lambda {|n| @target_type = n.get_enum_value(MicrosoftGraph::Models::CrossTenantAccessPolicyTargetTargetType) },
                 }
             end
             ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the targetType property value. The type of resource that you want to target. The possible values are: user, group, application, unknownFutureValue.
-            ## @return a cross_tenant_access_policy_target_type
+            ## @return a cross_tenant_access_policy_target_target_type
             ## 
             def target_type
                 return @target_type

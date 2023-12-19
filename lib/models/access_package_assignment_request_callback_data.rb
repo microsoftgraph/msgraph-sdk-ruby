@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Unique identifier of the callout to the custom extension.
             @custom_extension_stage_instance_id
             ## 
-            # Indicates the stage at which the custom callout extension will be executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
+            # Indicates the stage at which the custom callout extension is executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
             @stage
             ## 
             # Allow the extension to be able to deny or cancel the request submitted by the requestor. The supported values are Denied and Canceled. This property can only be set for an assignmentRequestCreated stage.
@@ -73,7 +73,7 @@ module MicrosoftGraph
                 return super.merge({
                     "customExtensionStageInstanceDetail" => lambda {|n| @custom_extension_stage_instance_detail = n.get_string_value() },
                     "customExtensionStageInstanceId" => lambda {|n| @custom_extension_stage_instance_id = n.get_string_value() },
-                    "stage" => lambda {|n| @stage = n.get_enum_value(MicrosoftGraph::Models::AccessPackageCustomExtensionStage) },
+                    "stage" => lambda {|n| @stage = n.get_enum_value(MicrosoftGraph::Models::AccessPackageAssignmentRequestCallbackDataStage) },
                     "state" => lambda {|n| @state = n.get_string_value() },
                 })
             end
@@ -91,14 +91,14 @@ module MicrosoftGraph
                 writer.write_string_value("state", @state)
             end
             ## 
-            ## Gets the stage property value. Indicates the stage at which the custom callout extension will be executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
-            ## @return a access_package_custom_extension_stage
+            ## Gets the stage property value. Indicates the stage at which the custom callout extension is executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
+            ## @return a access_package_assignment_request_callback_data_stage
             ## 
             def stage
                 return @stage
             end
             ## 
-            ## Sets the stage property value. Indicates the stage at which the custom callout extension will be executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
+            ## Sets the stage property value. Indicates the stage at which the custom callout extension is executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
             ## @param value Value to set for the stage property.
             ## @return a void
             ## 

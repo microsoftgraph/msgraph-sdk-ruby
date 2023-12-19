@@ -55,6 +55,8 @@ module MicrosoftGraph
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.attackSimulationOperation"
+                            return AttackSimulationOperation.new
                         when "#microsoft.graph.richLongRunningOperation"
                             return RichLongRunningOperation.new
                     end

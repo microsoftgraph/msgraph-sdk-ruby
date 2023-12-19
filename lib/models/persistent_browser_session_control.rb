@@ -32,12 +32,12 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "mode" => lambda {|n| @mode = n.get_enum_value(MicrosoftGraph::Models::PersistentBrowserSessionMode) },
+                    "mode" => lambda {|n| @mode = n.get_enum_value(MicrosoftGraph::Models::PersistentBrowserSessionControlMode) },
                 })
             end
             ## 
             ## Gets the mode property value. Possible values are: always, never.
-            ## @return a persistent_browser_session_mode
+            ## @return a persistent_browser_session_control_mode
             ## 
             def mode
                 return @mode

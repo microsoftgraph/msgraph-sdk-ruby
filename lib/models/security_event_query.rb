@@ -19,15 +19,15 @@ module MicrosoftGraph
             # Represents the type of query associated with an event. 'files' for SPO and ODB and 'messages' for EXO.The possible values are: files, messages, unknownFutureValue.
             @query_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "query" => lambda {|n| @query = n.get_string_value() },
-                    "queryType" => lambda {|n| @query_type = n.get_enum_value(MicrosoftGraph::Models::SecurityQueryType) },
+                    "queryType" => lambda {|n| @query_type = n.get_enum_value(MicrosoftGraph::Models::SecurityEventQueryQueryType) },
                 }
             end
             ## 
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the queryType property value. Represents the type of query associated with an event. 'files' for SPO and ODB and 'messages' for EXO.The possible values are: files, messages, unknownFutureValue.
-            ## @return a security_query_type
+            ## @return a security_event_query_query_type
             ## 
             def query_type
                 return @query_type

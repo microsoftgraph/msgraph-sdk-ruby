@@ -28,18 +28,18 @@ module MicrosoftGraph
             # The participant ID of the participant. Read-only.
             @participant_id
             ## 
-            # The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+            # The home region of the participant. This can be a country, a continent, or a larger geographic region. This doesn't change based on the participant's current physical location. Read-only.
             @region
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
-            ## @return a endpoint_type
+            ## @return a participant_info_endpoint_type
             ## 
             def endpoint_type
                 return @endpoint_type
@@ -98,7 +98,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "countryCode" => lambda {|n| @country_code = n.get_string_value() },
-                    "endpointType" => lambda {|n| @endpoint_type = n.get_enum_value(MicrosoftGraph::Models::EndpointType) },
+                    "endpointType" => lambda {|n| @endpoint_type = n.get_enum_value(MicrosoftGraph::Models::ParticipantInfoEndpointType) },
                     "identity" => lambda {|n| @identity = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "languageId" => lambda {|n| @language_id = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -167,14 +167,14 @@ module MicrosoftGraph
                 @participant_id = value
             end
             ## 
-            ## Gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+            ## Gets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This doesn't change based on the participant's current physical location. Read-only.
             ## @return a string
             ## 
             def region
                 return @region
             end
             ## 
-            ## Sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant's current physical location. Read-only.
+            ## Sets the region property value. The home region of the participant. This can be a country, a continent, or a larger geographic region. This doesn't change based on the participant's current physical location. Read-only.
             ## @param value Value to set for the region property.
             ## @return a void
             ## 

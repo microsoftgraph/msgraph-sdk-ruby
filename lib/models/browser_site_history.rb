@@ -37,15 +37,15 @@ module MicrosoftGraph
             # The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.
             @target_environment
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the compatibilityMode property value. Controls what compatibility setting is used for specific sites or domains. The possible values are: default, internetExplorer8Enterprise, internetExplorer7Enterprise, internetExplorer11, internetExplorer10, internetExplorer9, internetExplorer8, internetExplorer7, internetExplorer5, unknownFutureValue.
-            ## @return a browser_site_compatibility_mode
+            ## @return a browser_site_history_compatibility_mode
             ## 
             def compatibility_mode
                 return @compatibility_mode
@@ -120,12 +120,12 @@ module MicrosoftGraph
                 return {
                     "allowRedirect" => lambda {|n| @allow_redirect = n.get_boolean_value() },
                     "comment" => lambda {|n| @comment = n.get_string_value() },
-                    "compatibilityMode" => lambda {|n| @compatibility_mode = n.get_enum_value(MicrosoftGraph::Models::BrowserSiteCompatibilityMode) },
+                    "compatibilityMode" => lambda {|n| @compatibility_mode = n.get_enum_value(MicrosoftGraph::Models::BrowserSiteHistoryCompatibilityMode) },
                     "lastModifiedBy" => lambda {|n| @last_modified_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
-                    "mergeType" => lambda {|n| @merge_type = n.get_enum_value(MicrosoftGraph::Models::BrowserSiteMergeType) },
+                    "mergeType" => lambda {|n| @merge_type = n.get_enum_value(MicrosoftGraph::Models::BrowserSiteHistoryMergeType) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "publishedDateTime" => lambda {|n| @published_date_time = n.get_date_time_value() },
-                    "targetEnvironment" => lambda {|n| @target_environment = n.get_enum_value(MicrosoftGraph::Models::BrowserSiteTargetEnvironment) },
+                    "targetEnvironment" => lambda {|n| @target_environment = n.get_enum_value(MicrosoftGraph::Models::BrowserSiteHistoryTargetEnvironment) },
                 }
             end
             ## 
@@ -145,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the mergeType property value. The merge type of the site. The possible values are: noMerge, default, unknownFutureValue.
-            ## @return a browser_site_merge_type
+            ## @return a browser_site_history_merge_type
             ## 
             def merge_type
                 return @merge_type
@@ -207,7 +207,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the targetEnvironment property value. The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.
-            ## @return a browser_site_target_environment
+            ## @return a browser_site_history_target_environment
             ## 
             def target_environment
                 return @target_environment

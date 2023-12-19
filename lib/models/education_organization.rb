@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Source where this organization was created from. Possible values are: sis, manual.
             @external_source
             ## 
-            # The name of the external source this resources was generated from.
+            # The name of the external source this resource was generated from.
             @external_source_detail
             ## 
             ## Instantiates a new educationOrganization and sets the default values.
@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
-            ## @return a education_external_source
+            ## @return a education_organization_external_source
             ## 
             def external_source
                 return @external_source
@@ -88,14 +88,14 @@ module MicrosoftGraph
                 @external_source = value
             end
             ## 
-            ## Gets the externalSourceDetail property value. The name of the external source this resources was generated from.
+            ## Gets the externalSourceDetail property value. The name of the external source this resource was generated from.
             ## @return a string
             ## 
             def external_source_detail
                 return @external_source_detail
             end
             ## 
-            ## Sets the externalSourceDetail property value. The name of the external source this resources was generated from.
+            ## Sets the externalSourceDetail property value. The name of the external source this resource was generated from.
             ## @param value Value to set for the externalSourceDetail property.
             ## @return a void
             ## 
@@ -110,7 +110,7 @@ module MicrosoftGraph
                 return super.merge({
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "externalSource" => lambda {|n| @external_source = n.get_enum_value(MicrosoftGraph::Models::EducationExternalSource) },
+                    "externalSource" => lambda {|n| @external_source = n.get_enum_value(MicrosoftGraph::Models::EducationOrganizationExternalSource) },
                     "externalSourceDetail" => lambda {|n| @external_source_detail = n.get_string_value() },
                 })
             end

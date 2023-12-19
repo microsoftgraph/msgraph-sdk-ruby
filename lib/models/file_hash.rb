@@ -19,15 +19,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,14 +55,14 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "hashType" => lambda {|n| @hash_type = n.get_enum_value(MicrosoftGraph::Models::FileHashType) },
+                    "hashType" => lambda {|n| @hash_type = n.get_enum_value(MicrosoftGraph::Models::FileHashHashType) },
                     "hashValue" => lambda {|n| @hash_value = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
             ## 
             ## Gets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
-            ## @return a file_hash_type
+            ## @return a file_hash_hash_type
             ## 
             def hash_type
                 return @hash_type

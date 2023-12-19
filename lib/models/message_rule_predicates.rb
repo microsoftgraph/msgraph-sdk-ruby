@@ -103,15 +103,15 @@ module MicrosoftGraph
             # Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
             @within_size_range
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -205,7 +205,7 @@ module MicrosoftGraph
                     "fromAddresses" => lambda {|n| @from_addresses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Recipient.create_from_discriminator_value(pn) }) },
                     "hasAttachments" => lambda {|n| @has_attachments = n.get_boolean_value() },
                     "headerContains" => lambda {|n| @header_contains = n.get_collection_of_primitive_values(String) },
-                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraph::Models::Importance) },
+                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraph::Models::MessageRulePredicatesImportance) },
                     "isApprovalRequest" => lambda {|n| @is_approval_request = n.get_boolean_value() },
                     "isAutomaticForward" => lambda {|n| @is_automatic_forward = n.get_boolean_value() },
                     "isAutomaticReply" => lambda {|n| @is_automatic_reply = n.get_boolean_value() },
@@ -217,12 +217,12 @@ module MicrosoftGraph
                     "isReadReceipt" => lambda {|n| @is_read_receipt = n.get_boolean_value() },
                     "isSigned" => lambda {|n| @is_signed = n.get_boolean_value() },
                     "isVoicemail" => lambda {|n| @is_voicemail = n.get_boolean_value() },
-                    "messageActionFlag" => lambda {|n| @message_action_flag = n.get_enum_value(MicrosoftGraph::Models::MessageActionFlag) },
+                    "messageActionFlag" => lambda {|n| @message_action_flag = n.get_enum_value(MicrosoftGraph::Models::MessageRulePredicatesMessageActionFlag) },
                     "notSentToMe" => lambda {|n| @not_sent_to_me = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "recipientContains" => lambda {|n| @recipient_contains = n.get_collection_of_primitive_values(String) },
                     "senderContains" => lambda {|n| @sender_contains = n.get_collection_of_primitive_values(String) },
-                    "sensitivity" => lambda {|n| @sensitivity = n.get_enum_value(MicrosoftGraph::Models::Sensitivity) },
+                    "sensitivity" => lambda {|n| @sensitivity = n.get_enum_value(MicrosoftGraph::Models::MessageRulePredicatesSensitivity) },
                     "sentCcMe" => lambda {|n| @sent_cc_me = n.get_boolean_value() },
                     "sentOnlyToMe" => lambda {|n| @sent_only_to_me = n.get_boolean_value() },
                     "sentToAddresses" => lambda {|n| @sent_to_addresses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Recipient.create_from_discriminator_value(pn) }) },
@@ -264,7 +264,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the importance property value. The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.
-            ## @return a importance
+            ## @return a message_rule_predicates_importance
             ## 
             def importance
                 return @importance
@@ -444,7 +444,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the messageActionFlag property value. Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
-            ## @return a message_action_flag
+            ## @return a message_rule_predicates_message_action_flag
             ## 
             def message_action_flag
                 return @message_action_flag
@@ -519,7 +519,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the sensitivity property value. Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.
-            ## @return a sensitivity
+            ## @return a message_rule_predicates_sensitivity
             ## 
             def sensitivity
                 return @sensitivity

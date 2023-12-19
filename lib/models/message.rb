@@ -295,8 +295,8 @@ module MicrosoftGraph
                     "flag" => lambda {|n| @flag = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::FollowupFlag.create_from_discriminator_value(pn) }) },
                     "from" => lambda {|n| @from = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Recipient.create_from_discriminator_value(pn) }) },
                     "hasAttachments" => lambda {|n| @has_attachments = n.get_boolean_value() },
-                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraph::Models::Importance) },
-                    "inferenceClassification" => lambda {|n| @inference_classification = n.get_enum_value(MicrosoftGraph::Models::InferenceClassificationType) },
+                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraph::Models::MessageImportance) },
+                    "inferenceClassification" => lambda {|n| @inference_classification = n.get_enum_value(MicrosoftGraph::Models::MessageInferenceClassification) },
                     "internetMessageHeaders" => lambda {|n| @internet_message_headers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::InternetMessageHeader.create_from_discriminator_value(pn) }) },
                     "internetMessageId" => lambda {|n| @internet_message_id = n.get_string_value() },
                     "isDeliveryReceiptRequested" => lambda {|n| @is_delivery_receipt_requested = n.get_boolean_value() },
@@ -333,7 +333,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the importance property value. The importance property
-            ## @return a importance
+            ## @return a message_importance
             ## 
             def importance
                 return @importance
@@ -348,7 +348,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the inferenceClassification property value. The inferenceClassification property
-            ## @return a inference_classification_type
+            ## @return a message_inference_classification
             ## 
             def inference_classification
                 return @inference_classification

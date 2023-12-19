@@ -60,7 +60,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
-            ## @return a access_package_catalog_type
+            ## @return a access_package_catalog_catalog_type
             ## 
             def catalog_type
                 return @catalog_type
@@ -156,7 +156,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "accessPackages" => lambda {|n| @access_packages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackage.create_from_discriminator_value(pn) }) },
-                    "catalogType" => lambda {|n| @catalog_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageCatalogType) },
+                    "catalogType" => lambda {|n| @catalog_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageCatalogCatalogType) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "customWorkflowExtensions" => lambda {|n| @custom_workflow_extensions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CustomCalloutExtension.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },

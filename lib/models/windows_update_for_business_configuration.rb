@@ -458,7 +458,7 @@ module MicrosoftGraph
                     "scheduleRestartWarningInHours" => lambda {|n| @schedule_restart_warning_in_hours = n.get_number_value() },
                     "skipChecksBeforeRestart" => lambda {|n| @skip_checks_before_restart = n.get_boolean_value() },
                     "updateNotificationLevel" => lambda {|n| @update_notification_level = n.get_enum_value(MicrosoftGraph::Models::WindowsUpdateNotificationDisplayOption) },
-                    "updateWeeks" => lambda {|n| @update_weeks = n.get_enum_value(MicrosoftGraph::Models::WindowsUpdateForBusinessUpdateWeeks) },
+                    "updateWeeks" => lambda {|n| @update_weeks = n.get_enum_value(MicrosoftGraph::Models::WindowsUpdateForBusinessConfigurationUpdateWeeks) },
                     "userPauseAccess" => lambda {|n| @user_pause_access = n.get_enum_value(MicrosoftGraph::Models::Enablement) },
                     "userWindowsUpdateScanAccess" => lambda {|n| @user_windows_update_scan_access = n.get_enum_value(MicrosoftGraph::Models::Enablement) },
                 })
@@ -718,7 +718,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the updateWeeks property value. Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.
-            ## @return a windows_update_for_business_update_weeks
+            ## @return a windows_update_for_business_configuration_update_weeks
             ## 
             def update_weeks
                 return @update_weeks

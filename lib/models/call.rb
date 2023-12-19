@@ -28,7 +28,7 @@ module MicrosoftGraph
             # The contentSharingSessions property
             @content_sharing_sessions
             ## 
-            # The direction of the call. The possible value are incoming or outgoing. Read-only.
+            # The direction of the call. The possible values are incoming or outgoing. Read-only.
             @direction
             ## 
             # Call context associated with an incoming call.
@@ -55,7 +55,7 @@ module MicrosoftGraph
             # The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
             @requested_modalities
             ## 
-            # The result information. For example can hold termination reason. Read-only.
+            # The result information. For example, the result can hold termination reason. Read-only.
             @result_info
             ## 
             # The originator of the call.
@@ -200,14 +200,14 @@ module MicrosoftGraph
                 return Call.new
             end
             ## 
-            ## Gets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Gets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @return a call_direction
             ## 
             def direction
                 return @direction
             end
             ## 
-            ## Sets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Sets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @param value Value to set for the direction property.
             ## @return a void
             ## 
@@ -235,7 +235,7 @@ module MicrosoftGraph
                     "myParticipantId" => lambda {|n| @my_participant_id = n.get_string_value() },
                     "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CommsOperation.create_from_discriminator_value(pn) }) },
                     "participants" => lambda {|n| @participants = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Participant.create_from_discriminator_value(pn) }) },
-                    "requestedModalities" => lambda {|n| @requested_modalities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Modality.create_from_discriminator_value(pn) }) },
+                    "requestedModalities" => lambda {|n| @requested_modalities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CallRequestedModalities.create_from_discriminator_value(pn) }) },
                     "resultInfo" => lambda {|n| @result_info = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ResultInfo.create_from_discriminator_value(pn) }) },
                     "source" => lambda {|n| @source = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ParticipantInfo.create_from_discriminator_value(pn) }) },
                     "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::CallState) },
@@ -353,7 +353,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
-            ## @return a modality
+            ## @return a call_requested_modalities
             ## 
             def requested_modalities
                 return @requested_modalities
@@ -367,14 +367,14 @@ module MicrosoftGraph
                 @requested_modalities = value
             end
             ## 
-            ## Gets the resultInfo property value. The result information. For example can hold termination reason. Read-only.
+            ## Gets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
             ## @return a result_info
             ## 
             def result_info
                 return @result_info
             end
             ## 
-            ## Sets the resultInfo property value. The result information. For example can hold termination reason. Read-only.
+            ## Sets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
             ## @param value Value to set for the resultInfo property.
             ## @return a void
             ## 

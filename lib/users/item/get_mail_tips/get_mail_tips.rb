@@ -1,2 +1,3 @@
+require_relative 'get_mail_tips_post_request_body_mail_tips_options'
 require_relative 'get_mail_tips_post_request_body'
-require_relative 'get_mail_tips_response'
+require_relative 'get_mail_tips_post_response'

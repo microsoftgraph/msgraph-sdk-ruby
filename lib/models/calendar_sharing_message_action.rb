@@ -23,7 +23,7 @@ module MicrosoftGraph
             @odata_type
             ## 
             ## Gets the action property value. The action property
-            ## @return a calendar_sharing_action
+            ## @return a calendar_sharing_message_action_action
             ## 
             def action
                 return @action
@@ -38,7 +38,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the actionType property value. The actionType property
-            ## @return a calendar_sharing_action_type
+            ## @return a calendar_sharing_message_action_action_type
             ## 
             def action_type
                 return @action_type
@@ -52,15 +52,15 @@ module MicrosoftGraph
                 @action_type = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -88,15 +88,15 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraph::Models::CalendarSharingAction) },
-                    "actionType" => lambda {|n| @action_type = n.get_enum_value(MicrosoftGraph::Models::CalendarSharingActionType) },
-                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraph::Models::CalendarSharingActionImportance) },
+                    "action" => lambda {|n| @action = n.get_enum_value(MicrosoftGraph::Models::CalendarSharingMessageActionAction) },
+                    "actionType" => lambda {|n| @action_type = n.get_enum_value(MicrosoftGraph::Models::CalendarSharingMessageActionActionType) },
+                    "importance" => lambda {|n| @importance = n.get_enum_value(MicrosoftGraph::Models::CalendarSharingMessageActionImportance) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
             ## 
             ## Gets the importance property value. The importance property
-            ## @return a calendar_sharing_action_importance
+            ## @return a calendar_sharing_message_action_importance
             ## 
             def importance
                 return @importance
