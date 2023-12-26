@@ -103,6 +103,12 @@ module MicrosoftGraph
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.privilegedAccessGroupAssignmentScheduleRequest"
+                            return PrivilegedAccessGroupAssignmentScheduleRequest.new
+                        when "#microsoft.graph.privilegedAccessGroupEligibilityScheduleRequest"
+                            return PrivilegedAccessGroupEligibilityScheduleRequest.new
+                        when "#microsoft.graph.privilegedAccessScheduleRequest"
+                            return PrivilegedAccessScheduleRequest.new
                         when "#microsoft.graph.unifiedRoleAssignmentScheduleRequest"
                             return UnifiedRoleAssignmentScheduleRequest.new
                         when "#microsoft.graph.unifiedRoleEligibilityScheduleRequest"

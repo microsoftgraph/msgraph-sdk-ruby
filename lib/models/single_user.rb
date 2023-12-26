@@ -7,10 +7,10 @@ module MicrosoftGraph
         class SingleUser < MicrosoftGraph::Models::SubjectSet
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The name of the user in Azure AD. Read only.
+            # The name of the user in Microsoft Entra ID. Read only.
             @description
             ## 
-            # The ID of the user in Azure AD.
+            # The ID of the user in Microsoft Entra ID.
             @user_id
             ## 
             ## Instantiates a new singleUser and sets the default values.
@@ -30,14 +30,14 @@ module MicrosoftGraph
                 return SingleUser.new
             end
             ## 
-            ## Gets the description property value. The name of the user in Azure AD. Read only.
+            ## Gets the description property value. The name of the user in Microsoft Entra ID. Read only.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The name of the user in Azure AD. Read only.
+            ## Sets the description property value. The name of the user in Microsoft Entra ID. Read only.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -66,14 +66,14 @@ module MicrosoftGraph
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the userId property value. The ID of the user in Azure AD.
+            ## Gets the userId property value. The ID of the user in Microsoft Entra ID.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The ID of the user in Azure AD.
+            ## Sets the userId property value. The ID of the user in Microsoft Entra ID.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 
