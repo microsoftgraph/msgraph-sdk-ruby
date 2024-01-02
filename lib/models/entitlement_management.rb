@@ -40,7 +40,7 @@ module MicrosoftGraph
             # The resources associated with the catalogs.
             @resources
             ## 
-            # The settings that control the behavior of Azure AD entitlement management.
+            # The settings that control the behavior of Microsoft Entra entitlement management.
             @settings
             ## 
             ## Gets the accessPackageAssignmentApprovals property value. Approval stages for decisions associated with access package assignment requests.
@@ -265,14 +265,14 @@ module MicrosoftGraph
                 writer.write_object_value("settings", @settings)
             end
             ## 
-            ## Gets the settings property value. The settings that control the behavior of Azure AD entitlement management.
+            ## Gets the settings property value. The settings that control the behavior of Microsoft Entra entitlement management.
             ## @return a entitlement_management_settings
             ## 
             def settings
                 return @settings
             end
             ## 
-            ## Sets the settings property value. The settings that control the behavior of Azure AD entitlement management.
+            ## Sets the settings property value. The settings that control the behavior of Microsoft Entra entitlement management.
             ## @param value Value to set for the settings property.
             ## @return a void
             ## 

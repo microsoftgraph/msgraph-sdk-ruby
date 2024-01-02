@@ -73,6 +73,8 @@ module MicrosoftGraph
                             return AndroidLobApp.new
                         when "#microsoft.graph.iosLobApp"
                             return IosLobApp.new
+                        when "#microsoft.graph.macOSDmgApp"
+                            return MacOSDmgApp.new
                         when "#microsoft.graph.macOSLobApp"
                             return MacOSLobApp.new
                         when "#microsoft.graph.win32LobApp"

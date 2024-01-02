@@ -146,7 +146,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "arguments" => lambda {|n| @arguments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::KeyValuePair.create_from_discriminator_value(pn) }) },
-                    "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraph::Models::IdentityGovernanceLifecycleTaskCategory) },
+                    "category" => lambda {|n| @category = n.get_enum_values(MicrosoftGraph::Models::IdentityGovernanceLifecycleTaskCategory) },
                     "continueOnError" => lambda {|n| @continue_on_error = n.get_boolean_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },

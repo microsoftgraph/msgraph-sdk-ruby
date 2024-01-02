@@ -7,7 +7,10 @@ module MicrosoftGraph
         class EducationAssignmentSettings < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
+            # The gradingCategories property
+            @grading_categories
+            ## 
+            # Indicates whether turn-in celebration animation is shown. A value of true indicates that the animation isn't shown. Default value is false.
             @submission_animation_disabled
             ## 
             ## Instantiates a new educationAssignmentSettings and sets the default values.
@@ -31,8 +34,24 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "gradingCategories" => lambda {|n| @grading_categories = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EducationGradingCategory.create_from_discriminator_value(pn) }) },
                     "submissionAnimationDisabled" => lambda {|n| @submission_animation_disabled = n.get_boolean_value() },
                 })
+            end
+            ## 
+            ## Gets the gradingCategories property value. The gradingCategories property
+            ## @return a education_grading_category
+            ## 
+            def grading_categories
+                return @grading_categories
+            end
+            ## 
+            ## Sets the gradingCategories property value. The gradingCategories property
+            ## @param value Value to set for the gradingCategories property.
+            ## @return a void
+            ## 
+            def grading_categories=(value)
+                @grading_categories = value
             end
             ## 
             ## Serializes information the current object
@@ -42,17 +61,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_collection_of_object_values("gradingCategories", @grading_categories)
                 writer.write_boolean_value("submissionAnimationDisabled", @submission_animation_disabled)
             end
             ## 
-            ## Gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
+            ## Gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation is shown. A value of true indicates that the animation isn't shown. Default value is false.
             ## @return a boolean
             ## 
             def submission_animation_disabled
                 return @submission_animation_disabled
             end
             ## 
-            ## Sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
+            ## Sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation is shown. A value of true indicates that the animation isn't shown. Default value is false.
             ## @param value Value to set for the submissionAnimationDisabled property.
             ## @return a void
             ## 
