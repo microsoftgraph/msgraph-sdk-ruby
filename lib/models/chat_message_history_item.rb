@@ -38,15 +38,15 @@ module MicrosoftGraph
                 @actions = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "actions" => lambda {|n| @actions = n.get_enum_value(MicrosoftGraph::Models::ChatMessageActions) },
+                    "actions" => lambda {|n| @actions = n.get_enum_values(MicrosoftGraph::Models::ChatMessageActions) },
                     "modifiedDateTime" => lambda {|n| @modified_date_time = n.get_date_time_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "reaction" => lambda {|n| @reaction = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ChatMessageReaction.create_from_discriminator_value(pn) }) },

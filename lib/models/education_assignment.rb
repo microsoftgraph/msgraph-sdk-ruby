@@ -56,6 +56,9 @@ module MicrosoftGraph
             # How the assignment will be graded.
             @grading
             ## 
+            # The gradingCategory property
+            @grading_category
+            ## 
             # Instructions for the assignment.  This along with the display name tell the student what to do.
             @instructions
             ## 
@@ -348,6 +351,7 @@ module MicrosoftGraph
                     "dueDateTime" => lambda {|n| @due_date_time = n.get_date_time_value() },
                     "feedbackResourcesFolderUrl" => lambda {|n| @feedback_resources_folder_url = n.get_string_value() },
                     "grading" => lambda {|n| @grading = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EducationAssignmentGradeType.create_from_discriminator_value(pn) }) },
+                    "gradingCategory" => lambda {|n| @grading_category = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EducationGradingCategory.create_from_discriminator_value(pn) }) },
                     "instructions" => lambda {|n| @instructions = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EducationItemBody.create_from_discriminator_value(pn) }) },
                     "lastModifiedBy" => lambda {|n| @last_modified_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
@@ -374,6 +378,21 @@ module MicrosoftGraph
             ## 
             def grading=(value)
                 @grading = value
+            end
+            ## 
+            ## Gets the gradingCategory property value. The gradingCategory property
+            ## @return a education_grading_category
+            ## 
+            def grading_category
+                return @grading_category
+            end
+            ## 
+            ## Sets the gradingCategory property value. The gradingCategory property
+            ## @param value Value to set for the gradingCategory property.
+            ## @return a void
+            ## 
+            def grading_category=(value)
+                @grading_category = value
             end
             ## 
             ## Gets the instructions property value. Instructions for the assignment.  This along with the display name tell the student what to do.
@@ -499,6 +518,7 @@ module MicrosoftGraph
                 writer.write_string_value("displayName", @display_name)
                 writer.write_date_time_value("dueDateTime", @due_date_time)
                 writer.write_object_value("grading", @grading)
+                writer.write_object_value("gradingCategory", @grading_category)
                 writer.write_object_value("instructions", @instructions)
                 writer.write_string_value("notificationChannelUrl", @notification_channel_url)
                 writer.write_collection_of_object_values("resources", @resources)

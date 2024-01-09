@@ -60,6 +60,8 @@ module MicrosoftGraph
                             return PlayPromptOperation.new
                         when "#microsoft.graph.recordOperation"
                             return RecordOperation.new
+                        when "#microsoft.graph.sendDtmfTonesOperation"
+                            return SendDtmfTonesOperation.new
                         when "#microsoft.graph.startHoldMusicOperation"
                             return StartHoldMusicOperation.new
                         when "#microsoft.graph.stopHoldMusicOperation"

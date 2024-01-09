@@ -45,7 +45,6 @@ require_relative './identity_protection/identity_protection_request_builder'
 require_relative './identity_providers/identity_providers_request_builder'
 require_relative './information_protection/information_protection_request_builder'
 require_relative './invitations/invitations_request_builder'
-require_relative './me/me_request_builder'
 require_relative './microsoft_graph'
 require_relative './oauth2_permission_grants/oauth2_permission_grants_request_builder'
 require_relative './organization/organization_request_builder'
@@ -288,11 +287,6 @@ module MicrosoftGraph
         # Provides operations to manage the collection of invitation entities.
         def invitations()
             return MicrosoftGraph::Invitations::InvitationsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to manage the user singleton.
-        def me()
-            return MicrosoftGraph::Me::MeRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the collection of oAuth2PermissionGrant entities.

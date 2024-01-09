@@ -8,7 +8,7 @@ module MicrosoftGraph
         class Permission < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+            # A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
             @expiration_date_time
             ## 
             # The grantedTo property
@@ -26,13 +26,13 @@ module MicrosoftGraph
             # Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
             @has_password
             ## 
-            # Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
+            # Provides a reference to the ancestor of the current permission, if it's inherited from an ancestor. Read-only.
             @inherited_from
             ## 
             # Details of any associated sharing invitation for this permission. Read-only.
             @invitation
             ## 
-            # Provides the link details of the current permission, if it is a link type permissions. Read-only.
+            # Provides the link details of the current permission, if it's a link type permission. Read-only.
             @link
             ## 
             # The type of permission, for example, read. See below for the full list of roles. Read-only.
@@ -57,14 +57,14 @@ module MicrosoftGraph
                 return Permission.new
             end
             ## 
-            ## Gets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+            ## Gets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
+            ## Sets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there's no expiration set for this permission. Optional.
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
@@ -166,14 +166,14 @@ module MicrosoftGraph
                 @has_password = value
             end
             ## 
-            ## Gets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
+            ## Gets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it's inherited from an ancestor. Read-only.
             ## @return a item_reference
             ## 
             def inherited_from
                 return @inherited_from
             end
             ## 
-            ## Sets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
+            ## Sets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it's inherited from an ancestor. Read-only.
             ## @param value Value to set for the inheritedFrom property.
             ## @return a void
             ## 
@@ -196,14 +196,14 @@ module MicrosoftGraph
                 @invitation = value
             end
             ## 
-            ## Gets the link property value. Provides the link details of the current permission, if it is a link type permissions. Read-only.
+            ## Gets the link property value. Provides the link details of the current permission, if it's a link type permission. Read-only.
             ## @return a sharing_link
             ## 
             def link
                 return @link
             end
             ## 
-            ## Sets the link property value. Provides the link details of the current permission, if it is a link type permissions. Read-only.
+            ## Sets the link property value. Provides the link details of the current permission, if it's a link type permission. Read-only.
             ## @param value Value to set for the link property.
             ## @return a void
             ## 

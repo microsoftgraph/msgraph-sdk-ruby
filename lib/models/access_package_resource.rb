@@ -23,7 +23,7 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @modified_date_time
             ## 
-            # The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            # The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
             @origin_id
             ## 
             # The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
@@ -143,14 +143,14 @@ module MicrosoftGraph
                 @modified_date_time = value
             end
             ## 
-            ## Gets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            ## Gets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
             ## @return a string
             ## 
             def origin_id
                 return @origin_id
             end
             ## 
-            ## Sets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            ## Sets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.
             ## @param value Value to set for the originId property.
             ## @return a void
             ## 
