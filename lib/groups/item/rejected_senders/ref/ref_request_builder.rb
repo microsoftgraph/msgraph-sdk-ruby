@@ -27,7 +27,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/rejectedSenders/$ref{?%24top,%24skip,%24filter,%24count,%24orderby}")
                         end
                         ## 
-                        ## Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+                        ## Users in the rejected senders list can't post to conversations of the group (identified in the GET request URL). Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of string_collection_response
                         ## 
@@ -41,7 +41,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::StringCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Specify the user or group in @odata.id in the request body. Users in the rejected senders list cannot post to conversations of the group (identified in the POST request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+                        ## Specify the user or group in @odata.id in the request body. Users in the rejected senders list can't post to conversations of the group (identified in the POST request URL). Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you'll get an error.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
@@ -57,25 +57,25 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+                        ## Users in the rejected senders list can't post to conversations of the group (identified in the GET request URL). Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
                         def to_get_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :GET
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :GET
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
                         end
                         ## 
-                        ## Specify the user or group in @odata.id in the request body. Users in the rejected senders list cannot post to conversations of the group (identified in the POST request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+                        ## Specify the user or group in @odata.id in the request body. Users in the rejected senders list can't post to conversations of the group (identified in the POST request URL). Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you'll get an error.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -83,19 +83,29 @@ module MicrosoftGraph
                         def to_post_request_information(body, request_configuration=nil)
                             raise StandardError, 'body cannot be null' if body.nil?
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :POST
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :POST
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a ref_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return RefRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 
-                        # Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+                        # Users in the rejected senders list can't post to conversations of the group (identified in the GET request URL). Make sure you don't specify the same user or group in the rejected senders and accepted senders lists, otherwise you get an error.
                         class RefRequestBuilderGetQueryParameters
                             
                             ## 

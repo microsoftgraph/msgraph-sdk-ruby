@@ -36,7 +36,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "group" => lambda {|n| @group = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Group.create_from_discriminator_value(pn) }) },
-                    "includedSources" => lambda {|n| @included_sources = n.get_enum_value(MicrosoftGraph::Models::SecuritySourceType) },
+                    "includedSources" => lambda {|n| @included_sources = n.get_enum_values(MicrosoftGraph::Models::SecuritySourceType) },
                 })
             end
             ## 

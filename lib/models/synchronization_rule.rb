@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The containerFilter property
             @container_filter
             ## 
-            # true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+            # true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
             @editable
             ## 
             # The groupFilter property
@@ -22,7 +22,7 @@ module MicrosoftGraph
             # Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
             @id
             ## 
-            # Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
+            # Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
             @metadata
             ## 
             # Human-readable name of the synchronization rule. Not nullable.
@@ -43,15 +43,15 @@ module MicrosoftGraph
             # Name of the target directory. Must match one of the directory definitions in synchronizationSchema.
             @target_directory_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -89,14 +89,14 @@ module MicrosoftGraph
                 return SynchronizationRule.new
             end
             ## 
-            ## Gets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+            ## Gets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
             ## @return a boolean
             ## 
             def editable
                 return @editable
             end
             ## 
-            ## Sets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+            ## Sets the editable property value. true if the synchronization rule can be customized; false if this rule is read-only and shouldn't be changed.
             ## @param value Value to set for the editable property.
             ## @return a void
             ## 
@@ -153,14 +153,14 @@ module MicrosoftGraph
                 @id = value
             end
             ## 
-            ## Gets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
+            ## Gets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
             ## @return a string_key_string_value_pair
             ## 
             def metadata
                 return @metadata
             end
             ## 
-            ## Sets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
+            ## Sets the metadata property value. Additional extension properties. Unless instructed explicitly by the support team, metadata values shouldn't be changed.
             ## @param value Value to set for the metadata property.
             ## @return a void
             ## 

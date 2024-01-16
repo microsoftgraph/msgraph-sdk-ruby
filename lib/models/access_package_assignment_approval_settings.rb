@@ -10,10 +10,10 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # If false, then approval is not required for new requests in this policy.
+            # If false, then approval isn't required for new requests in this policy.
             @is_approval_required_for_add
             ## 
-            # If false, then approval is not required for updates to requests in this policy.
+            # If false, then approval isn't required for updates to requests in this policy.
             @is_approval_required_for_update
             ## 
             # The OdataType property
@@ -22,15 +22,15 @@ module MicrosoftGraph
             # If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.
             @stages
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,14 +65,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the isApprovalRequiredForAdd property value. If false, then approval is not required for new requests in this policy.
+            ## Gets the isApprovalRequiredForAdd property value. If false, then approval isn't required for new requests in this policy.
             ## @return a boolean
             ## 
             def is_approval_required_for_add
                 return @is_approval_required_for_add
             end
             ## 
-            ## Sets the isApprovalRequiredForAdd property value. If false, then approval is not required for new requests in this policy.
+            ## Sets the isApprovalRequiredForAdd property value. If false, then approval isn't required for new requests in this policy.
             ## @param value Value to set for the isApprovalRequiredForAdd property.
             ## @return a void
             ## 
@@ -80,14 +80,14 @@ module MicrosoftGraph
                 @is_approval_required_for_add = value
             end
             ## 
-            ## Gets the isApprovalRequiredForUpdate property value. If false, then approval is not required for updates to requests in this policy.
+            ## Gets the isApprovalRequiredForUpdate property value. If false, then approval isn't required for updates to requests in this policy.
             ## @return a boolean
             ## 
             def is_approval_required_for_update
                 return @is_approval_required_for_update
             end
             ## 
-            ## Sets the isApprovalRequiredForUpdate property value. If false, then approval is not required for updates to requests in this policy.
+            ## Sets the isApprovalRequiredForUpdate property value. If false, then approval isn't required for updates to requests in this policy.
             ## @param value Value to set for the isApprovalRequiredForUpdate property.
             ## @return a void
             ## 

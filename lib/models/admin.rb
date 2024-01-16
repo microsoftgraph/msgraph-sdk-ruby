@@ -16,21 +16,24 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
+            # Represents a setting to control people-related admin settings in the tenant.
+            @people
+            ## 
             # A container for service communications resources. Read-only.
             @service_announcement
             ## 
             # The sharepoint property
             @sharepoint
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -75,6 +78,7 @@ module MicrosoftGraph
                 return {
                     "edge" => lambda {|n| @edge = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Edge.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "people" => lambda {|n| @people = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PeopleAdminSettings.create_from_discriminator_value(pn) }) },
                     "serviceAnnouncement" => lambda {|n| @service_announcement = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ServiceAnnouncement.create_from_discriminator_value(pn) }) },
                     "sharepoint" => lambda {|n| @sharepoint = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Sharepoint.create_from_discriminator_value(pn) }) },
                 }
@@ -95,6 +99,21 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
+            ## Gets the people property value. Represents a setting to control people-related admin settings in the tenant.
+            ## @return a people_admin_settings
+            ## 
+            def people
+                return @people
+            end
+            ## 
+            ## Sets the people property value. Represents a setting to control people-related admin settings in the tenant.
+            ## @param value Value to set for the people property.
+            ## @return a void
+            ## 
+            def people=(value)
+                @people = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -103,6 +122,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_object_value("edge", @edge)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_object_value("people", @people)
                 writer.write_object_value("serviceAnnouncement", @service_announcement)
                 writer.write_object_value("sharepoint", @sharepoint)
                 writer.write_additional_data(@additional_data)

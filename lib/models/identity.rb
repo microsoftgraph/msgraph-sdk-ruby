@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+            # The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
             @display_name
             ## 
             # Unique identifier for the identity.
@@ -19,15 +19,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -51,6 +51,20 @@ module MicrosoftGraph
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.azureCommunicationServicesUserIdentity"
+                            return AzureCommunicationServicesUserIdentity.new
+                        when "#microsoft.graph.communicationsApplicationIdentity"
+                            return CommunicationsApplicationIdentity.new
+                        when "#microsoft.graph.communicationsApplicationInstanceIdentity"
+                            return CommunicationsApplicationInstanceIdentity.new
+                        when "#microsoft.graph.communicationsEncryptedIdentity"
+                            return CommunicationsEncryptedIdentity.new
+                        when "#microsoft.graph.communicationsGuestIdentity"
+                            return CommunicationsGuestIdentity.new
+                        when "#microsoft.graph.communicationsPhoneIdentity"
+                            return CommunicationsPhoneIdentity.new
+                        when "#microsoft.graph.communicationsUserIdentity"
+                            return CommunicationsUserIdentity.new
                         when "#microsoft.graph.emailIdentity"
                             return EmailIdentity.new
                         when "#microsoft.graph.initiator"
@@ -80,14 +94,14 @@ module MicrosoftGraph
                 return Identity.new
             end
             ## 
-            ## Gets the displayName property value. The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+            ## Gets the displayName property value. The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+            ## Sets the displayName property value. The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
