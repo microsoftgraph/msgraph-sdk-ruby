@@ -23,7 +23,7 @@ module MicrosoftGraph
             # Whether this object is read-only.
             @read_only
             ## 
-            # Read only value that indicates version discovered. null if discovery has not yet occurred.
+            # Read only value that indicates version discovered. null if discovery hasn't yet occurred.
             @version
             ## 
             ## Instantiates a new directoryDefinition and sets the default values.
@@ -77,7 +77,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "discoverabilities" => lambda {|n| @discoverabilities = n.get_enum_value(MicrosoftGraph::Models::DirectoryDefinitionDiscoverabilities) },
+                    "discoverabilities" => lambda {|n| @discoverabilities = n.get_enum_values(MicrosoftGraph::Models::DirectoryDefinitionDiscoverabilities) },
                     "discoveryDateTime" => lambda {|n| @discovery_date_time = n.get_date_time_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "objects" => lambda {|n| @objects = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ObjectDefinition.create_from_discriminator_value(pn) }) },
@@ -146,14 +146,14 @@ module MicrosoftGraph
                 writer.write_string_value("version", @version)
             end
             ## 
-            ## Gets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
+            ## Gets the version property value. Read only value that indicates version discovered. null if discovery hasn't yet occurred.
             ## @return a string
             ## 
             def version
                 return @version
             end
             ## 
-            ## Sets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.
+            ## Sets the version property value. Read only value that indicates version discovered. null if discovery hasn't yet occurred.
             ## @param value Value to set for the version property.
             ## @return a void
             ## 

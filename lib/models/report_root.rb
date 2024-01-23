@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Container for navigation properties for Azure AD authentication methods resources.
+            # Container for navigation properties for Microsoft Entra authentication methods resources.
             @authentication_methods
             ## 
             # Retrieve a list of daily print usage summaries, grouped by printer.
@@ -31,29 +31,29 @@ module MicrosoftGraph
             # Represents an abstract type that contains resources for attack simulation and training reports.
             @security
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+            ## Gets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
             ## @return a authentication_methods_root
             ## 
             def authentication_methods
                 return @authentication_methods
             end
             ## 
-            ## Sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+            ## Sets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
             ## @param value Value to set for the authenticationMethods property.
             ## @return a void
             ## 

@@ -25,6 +25,9 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
+            # The privilegedAccess property
+            @privileged_access
+            ## 
             # The termsOfUse property
             @terms_of_use
             ## 
@@ -43,15 +46,15 @@ module MicrosoftGraph
                 @access_reviews = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -114,6 +117,7 @@ module MicrosoftGraph
                     "entitlementManagement" => lambda {|n| @entitlement_management = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EntitlementManagement.create_from_discriminator_value(pn) }) },
                     "lifecycleWorkflows" => lambda {|n| @lifecycle_workflows = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentityGovernanceLifecycleWorkflowsContainer.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "privilegedAccess" => lambda {|n| @privileged_access = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PrivilegedAccessRoot.create_from_discriminator_value(pn) }) },
                     "termsOfUse" => lambda {|n| @terms_of_use = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermsOfUseContainer.create_from_discriminator_value(pn) }) },
                 }
             end
@@ -148,6 +152,21 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
+            ## Gets the privilegedAccess property value. The privilegedAccess property
+            ## @return a privileged_access_root
+            ## 
+            def privileged_access
+                return @privileged_access
+            end
+            ## 
+            ## Sets the privilegedAccess property value. The privilegedAccess property
+            ## @param value Value to set for the privilegedAccess property.
+            ## @return a void
+            ## 
+            def privileged_access=(value)
+                @privileged_access = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -159,6 +178,7 @@ module MicrosoftGraph
                 writer.write_object_value("entitlementManagement", @entitlement_management)
                 writer.write_object_value("lifecycleWorkflows", @lifecycle_workflows)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_object_value("privilegedAccess", @privileged_access)
                 writer.write_object_value("termsOfUse", @terms_of_use)
                 writer.write_additional_data(@additional_data)
             end

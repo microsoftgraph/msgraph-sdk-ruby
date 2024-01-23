@@ -50,6 +50,9 @@ module MicrosoftGraph
             # Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @unsubmitted_date_time
             ## 
+            # The webUrl property
+            @web_url
+            ## 
             ## Instantiates a new educationSubmission and sets the default values.
             ## @return a void
             ## 
@@ -85,6 +88,7 @@ module MicrosoftGraph
                     "submittedResources" => lambda {|n| @submitted_resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EducationSubmissionResource.create_from_discriminator_value(pn) }) },
                     "unsubmittedBy" => lambda {|n| @unsubmitted_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "unsubmittedDateTime" => lambda {|n| @unsubmitted_date_time = n.get_date_time_value() },
+                    "webUrl" => lambda {|n| @web_url = n.get_string_value() },
                 })
             end
             ## 
@@ -309,6 +313,21 @@ module MicrosoftGraph
             ## 
             def unsubmitted_date_time=(value)
                 @unsubmitted_date_time = value
+            end
+            ## 
+            ## Gets the webUrl property value. The webUrl property
+            ## @return a string
+            ## 
+            def web_url
+                return @web_url
+            end
+            ## 
+            ## Sets the webUrl property value. The webUrl property
+            ## @param value Value to set for the webUrl property.
+            ## @return a void
+            ## 
+            def web_url=(value)
+                @web_url = value
             end
         end
     end

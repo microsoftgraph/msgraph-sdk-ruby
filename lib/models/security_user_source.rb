@@ -54,7 +54,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "email" => lambda {|n| @email = n.get_string_value() },
-                    "includedSources" => lambda {|n| @included_sources = n.get_enum_value(MicrosoftGraph::Models::SecuritySourceType) },
+                    "includedSources" => lambda {|n| @included_sources = n.get_enum_values(MicrosoftGraph::Models::SecuritySourceType) },
                     "siteWebUrl" => lambda {|n| @site_web_url = n.get_string_value() },
                 })
             end
