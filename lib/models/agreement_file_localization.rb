@@ -7,7 +7,7 @@ module MicrosoftGraph
         class AgreementFileLocalization < MicrosoftGraph::Models::AgreementFileProperties
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+            # Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
             @versions
             ## 
             ## Instantiates a new agreementFileLocalization and sets the default values.
@@ -45,14 +45,14 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("versions", @versions)
             end
             ## 
-            ## Gets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+            ## Gets the versions property value. Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
             ## @return a agreement_file_version
             ## 
             def versions
                 return @versions
             end
             ## 
-            ## Sets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
+            ## Sets the versions property value. Read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
             ## @param value Value to set for the versions property.
             ## @return a void
             ## 

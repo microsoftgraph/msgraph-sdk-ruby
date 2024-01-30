@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Read-only. Information about acceptances of this agreement.
             @acceptances
             ## 
-            # Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
+            # Display name of the agreement. The display name is used for internal tracking of the agreement but isn't shown to end users who view the agreement. Supports $filter (eq).
             @display_name
             ## 
             # Default PDF linked to this agreement.
@@ -19,7 +19,7 @@ module MicrosoftGraph
             # PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead. Supports $expand.
             @files
             ## 
-            # Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
+            # Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
             @is_per_device_acceptance_required
             ## 
             # Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).
@@ -28,7 +28,7 @@ module MicrosoftGraph
             # Expiration schedule and frequency of agreement for all users. Supports $filter (eq).
             @terms_expiration
             ## 
-            # The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
+            # The duration after which the user must reaccept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
             @user_reaccept_required_frequency
             ## 
             ## Gets the acceptances property value. Read-only. Information about acceptances of this agreement.
@@ -62,14 +62,14 @@ module MicrosoftGraph
                 return Agreement.new
             end
             ## 
-            ## Gets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
+            ## Gets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but isn't shown to end users who view the agreement. Supports $filter (eq).
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
+            ## Sets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but isn't shown to end users who view the agreement. Supports $filter (eq).
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
+            ## Gets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
             ## @return a boolean
             ## 
             def is_per_device_acceptance_required
                 return @is_per_device_acceptance_required
             end
             ## 
-            ## Sets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
+            ## Sets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Microsoft Entra ID, if they haven't already done so. Supports $filter (eq).
             ## @param value Value to set for the isPerDeviceAcceptanceRequired property.
             ## @return a void
             ## 
@@ -185,14 +185,14 @@ module MicrosoftGraph
                 @terms_expiration = value
             end
             ## 
-            ## Gets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
+            ## Gets the userReacceptRequiredFrequency property value. The duration after which the user must reaccept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def user_reaccept_required_frequency
                 return @user_reaccept_required_frequency
             end
             ## 
-            ## Sets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
+            ## Sets the userReacceptRequiredFrequency property value. The duration after which the user must reaccept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
             ## @param value Value to set for the userReacceptRequiredFrequency property.
             ## @return a void
             ## 

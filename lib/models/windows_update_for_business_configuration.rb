@@ -458,7 +458,7 @@ module MicrosoftGraph
                     "scheduleRestartWarningInHours" => lambda {|n| @schedule_restart_warning_in_hours = n.get_number_value() },
                     "skipChecksBeforeRestart" => lambda {|n| @skip_checks_before_restart = n.get_boolean_value() },
                     "updateNotificationLevel" => lambda {|n| @update_notification_level = n.get_enum_value(MicrosoftGraph::Models::WindowsUpdateNotificationDisplayOption) },
-                    "updateWeeks" => lambda {|n| @update_weeks = n.get_enum_value(MicrosoftGraph::Models::WindowsUpdateForBusinessUpdateWeeks) },
+                    "updateWeeks" => lambda {|n| @update_weeks = n.get_enum_values(MicrosoftGraph::Models::WindowsUpdateForBusinessUpdateWeeks) },
                     "userPauseAccess" => lambda {|n| @user_pause_access = n.get_enum_value(MicrosoftGraph::Models::Enablement) },
                     "userWindowsUpdateScanAccess" => lambda {|n| @user_windows_update_scan_access = n.get_enum_value(MicrosoftGraph::Models::Enablement) },
                 })
