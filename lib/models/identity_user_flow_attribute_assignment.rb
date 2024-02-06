@@ -10,10 +10,10 @@ module MicrosoftGraph
             # The display name of the identityUserFlowAttribute within a user flow.
             @display_name
             ## 
-            # Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
+            # Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user can't complete sign-up without providing a value.
             @is_optional
             ## 
-            # Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
+            # Determines whether the identityUserFlowAttribute requires verification, and is only used for verifying the user's phone number or email address.
             @requires_verification
             ## 
             # The user attribute that you want to add to your user flow.
@@ -70,14 +70,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
+            ## Gets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user can't complete sign-up without providing a value.
             ## @return a boolean
             ## 
             def is_optional
                 return @is_optional
             end
             ## 
-            ## Sets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
+            ## Sets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user can't complete sign-up without providing a value.
             ## @param value Value to set for the isOptional property.
             ## @return a void
             ## 
@@ -85,14 +85,14 @@ module MicrosoftGraph
                 @is_optional = value
             end
             ## 
-            ## Gets the requiresVerification property value. Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
+            ## Gets the requiresVerification property value. Determines whether the identityUserFlowAttribute requires verification, and is only used for verifying the user's phone number or email address.
             ## @return a boolean
             ## 
             def requires_verification
                 return @requires_verification
             end
             ## 
-            ## Sets the requiresVerification property value. Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
+            ## Sets the requiresVerification property value. Determines whether the identityUserFlowAttribute requires verification, and is only used for verifying the user's phone number or email address.
             ## @param value Value to set for the requiresVerification property.
             ## @return a void
             ## 

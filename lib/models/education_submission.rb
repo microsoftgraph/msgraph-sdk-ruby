@@ -14,7 +14,7 @@ module MicrosoftGraph
             # User who moved the status of this submission to reassigned.
             @reassigned_by
             ## 
-            # Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # Moment in time when the submission was reassigned. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @reassigned_date_time
             ## 
             # Who this submission is assigned to.
@@ -29,7 +29,7 @@ module MicrosoftGraph
             # User who moved the status of this submission to returned.
             @returned_by
             ## 
-            # Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # Moment in time when the submission was returned. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @returned_date_time
             ## 
             # Read-only. Possible values are: working, submitted, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.
@@ -38,7 +38,7 @@ module MicrosoftGraph
             # User who moved the resource into the submitted state.
             @submitted_by
             ## 
-            # Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # Moment in time when the submission was moved into the submitted state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @submitted_date_time
             ## 
             # The submittedResources property
@@ -47,8 +47,11 @@ module MicrosoftGraph
             # User who moved the resource from submitted into the working state.
             @unsubmitted_by
             ## 
-            # Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # Moment in time when the submission was moved from submitted into the working state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @unsubmitted_date_time
+            ## 
+            # The deep link URL for the given submission.
+            @web_url
             ## 
             ## Instantiates a new educationSubmission and sets the default values.
             ## @return a void
@@ -85,6 +88,7 @@ module MicrosoftGraph
                     "submittedResources" => lambda {|n| @submitted_resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EducationSubmissionResource.create_from_discriminator_value(pn) }) },
                     "unsubmittedBy" => lambda {|n| @unsubmitted_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "unsubmittedDateTime" => lambda {|n| @unsubmitted_date_time = n.get_date_time_value() },
+                    "webUrl" => lambda {|n| @web_url = n.get_string_value() },
                 })
             end
             ## 
@@ -118,14 +122,14 @@ module MicrosoftGraph
                 @reassigned_by = value
             end
             ## 
-            ## Gets the reassignedDateTime property value. Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the reassignedDateTime property value. Moment in time when the submission was reassigned. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def reassigned_date_time
                 return @reassigned_date_time
             end
             ## 
-            ## Sets the reassignedDateTime property value. Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the reassignedDateTime property value. Moment in time when the submission was reassigned. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the reassignedDateTime property.
             ## @return a void
             ## 
@@ -193,14 +197,14 @@ module MicrosoftGraph
                 @returned_by = value
             end
             ## 
-            ## Gets the returnedDateTime property value. Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the returnedDateTime property value. Moment in time when the submission was returned. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def returned_date_time
                 return @returned_date_time
             end
             ## 
-            ## Sets the returnedDateTime property value. Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the returnedDateTime property value. Moment in time when the submission was returned. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the returnedDateTime property.
             ## @return a void
             ## 
@@ -251,14 +255,14 @@ module MicrosoftGraph
                 @submitted_by = value
             end
             ## 
-            ## Gets the submittedDateTime property value. Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the submittedDateTime property value. Moment in time when the submission was moved into the submitted state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def submitted_date_time
                 return @submitted_date_time
             end
             ## 
-            ## Sets the submittedDateTime property value. Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the submittedDateTime property value. Moment in time when the submission was moved into the submitted state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the submittedDateTime property.
             ## @return a void
             ## 
@@ -296,19 +300,34 @@ module MicrosoftGraph
                 @unsubmitted_by = value
             end
             ## 
-            ## Gets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def unsubmitted_date_time
                 return @unsubmitted_date_time
             end
             ## 
-            ## Sets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the unsubmittedDateTime property.
             ## @return a void
             ## 
             def unsubmitted_date_time=(value)
                 @unsubmitted_date_time = value
+            end
+            ## 
+            ## Gets the webUrl property value. The deep link URL for the given submission.
+            ## @return a string
+            ## 
+            def web_url
+                return @web_url
+            end
+            ## 
+            ## Sets the webUrl property value. The deep link URL for the given submission.
+            ## @param value Value to set for the webUrl property.
+            ## @return a void
+            ## 
+            def web_url=(value)
+                @web_url = value
             end
         end
     end

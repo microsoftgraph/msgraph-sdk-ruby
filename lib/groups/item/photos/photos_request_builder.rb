@@ -4,7 +4,6 @@ require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../../models/profile_photo_collection_response'
 require_relative '../../groups'
 require_relative '../item'
-require_relative './count/count_request_builder'
 require_relative './item/profile_photo_item_request_builder'
 require_relative './photos'
 
@@ -16,11 +15,6 @@ module MicrosoftGraph
                 # Provides operations to manage the photos property of the microsoft.graph.group entity.
                 class PhotosRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
-                    ## 
-                    # Provides operations to count the resources in the collection.
-                    def count()
-                        return MicrosoftGraph::Groups::Item::Photos::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
                     ## 
                     ## Provides operations to manage the photos property of the microsoft.graph.group entity.
                     ## @param profile_photo_id The unique identifier of profilePhoto
@@ -39,7 +33,7 @@ module MicrosoftGraph
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/photos{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
+                        super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/photos{?%24filter,%24orderby,%24select,%24skip,%24top}")
                     end
                     ## 
                     ## Retrieve a list of profilePhoto objects.
@@ -62,25 +56,31 @@ module MicrosoftGraph
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a photos_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return PhotosRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 
                     # Retrieve a list of profilePhoto objects.
                     class PhotosRequestBuilderGetQueryParameters
                         
-                        ## 
-                        # Include count of items
-                        attr_accessor :count
                         ## 
                         # Filter items by property values
                         attr_accessor :filter
@@ -104,8 +104,6 @@ module MicrosoftGraph
                         def get_query_parameter(original_name)
                             raise StandardError, 'original_name cannot be null' if original_name.nil?
                             case original_name
-                                when "count"
-                                    return "%24count"
                                 when "filter"
                                     return "%24filter"
                                 when "orderby"

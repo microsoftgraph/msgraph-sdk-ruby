@@ -7,7 +7,7 @@ module MicrosoftGraph
         class EntitlementManagementSettings < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
+            # If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically many days, after an external user is blocked from sign in before their account is deleted.
             @duration_until_external_user_deleted_after_blocked
             ## 
             # Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
@@ -29,14 +29,14 @@ module MicrosoftGraph
                 return EntitlementManagementSettings.new
             end
             ## 
-            ## Gets the durationUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
+            ## Gets the durationUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically many days, after an external user is blocked from sign in before their account is deleted.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def duration_until_external_user_deleted_after_blocked
                 return @duration_until_external_user_deleted_after_blocked
             end
             ## 
-            ## Sets the durationUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.
+            ## Sets the durationUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically many days, after an external user is blocked from sign in before their account is deleted.
             ## @param value Value to set for the durationUntilExternalUserDeletedAfterBlocked property.
             ## @return a void
             ## 

@@ -14,7 +14,7 @@ module MicrosoftGraph
             # For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
             @alternative_security_ids
             ## 
-            # The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
+            # The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
             @approximate_last_sign_in_date_time
             ## 
             # The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -35,7 +35,7 @@ module MicrosoftGraph
             # For internal use only.
             @device_version
             ## 
-            # The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            # The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             @display_name
             ## 
             # Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
@@ -58,6 +58,9 @@ module MicrosoftGraph
             ## 
             # The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
             @on_premises_last_sync_date_time
+            ## 
+            # The onPremisesSecurityIdentifier property
+            @on_premises_security_identifier
             ## 
             # true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
             @on_premises_sync_enabled
@@ -89,7 +92,7 @@ module MicrosoftGraph
             # Groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
             @transitive_member_of
             ## 
-            # Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+            # Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
             @trust_type
             ## 
             ## Gets the accountEnabled property value. true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
@@ -122,14 +125,14 @@ module MicrosoftGraph
                 @alternative_security_ids = value
             end
             ## 
-            ## Gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
+            ## Gets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
             ## @return a date_time
             ## 
             def approximate_last_sign_in_date_time
                 return @approximate_last_sign_in_date_time
             end
             ## 
-            ## Sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
+            ## Sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderby.
             ## @param value Value to set for the approximateLastSignInDateTime property.
             ## @return a void
             ## 
@@ -244,14 +247,14 @@ module MicrosoftGraph
                 @device_version = value
             end
             ## 
-            ## Gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -311,6 +314,7 @@ module MicrosoftGraph
                     "mdmAppId" => lambda {|n| @mdm_app_id = n.get_string_value() },
                     "memberOf" => lambda {|n| @member_of = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
                     "onPremisesLastSyncDateTime" => lambda {|n| @on_premises_last_sync_date_time = n.get_date_time_value() },
+                    "onPremisesSecurityIdentifier" => lambda {|n| @on_premises_security_identifier = n.get_string_value() },
                     "onPremisesSyncEnabled" => lambda {|n| @on_premises_sync_enabled = n.get_boolean_value() },
                     "operatingSystem" => lambda {|n| @operating_system = n.get_string_value() },
                     "operatingSystemVersion" => lambda {|n| @operating_system_version = n.get_string_value() },
@@ -398,6 +402,21 @@ module MicrosoftGraph
             ## 
             def on_premises_last_sync_date_time=(value)
                 @on_premises_last_sync_date_time = value
+            end
+            ## 
+            ## Gets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+            ## @return a string
+            ## 
+            def on_premises_security_identifier
+                return @on_premises_security_identifier
+            end
+            ## 
+            ## Sets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+            ## @param value Value to set for the onPremisesSecurityIdentifier property.
+            ## @return a void
+            ## 
+            def on_premises_security_identifier=(value)
+                @on_premises_security_identifier = value
             end
             ## 
             ## Gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
@@ -544,6 +563,7 @@ module MicrosoftGraph
                 writer.write_string_value("mdmAppId", @mdm_app_id)
                 writer.write_collection_of_object_values("memberOf", @member_of)
                 writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time)
+                writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier)
                 writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
                 writer.write_string_value("operatingSystem", @operating_system)
                 writer.write_string_value("operatingSystemVersion", @operating_system_version)
@@ -587,14 +607,14 @@ module MicrosoftGraph
                 @transitive_member_of = value
             end
             ## 
-            ## Gets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+            ## Gets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
             ## @return a string
             ## 
             def trust_type
                 return @trust_type
             end
             ## 
-            ## Sets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+            ## Sets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.
             ## @param value Value to set for the trustType property.
             ## @return a void
             ## 

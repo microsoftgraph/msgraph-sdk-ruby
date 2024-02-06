@@ -14,19 +14,19 @@ module MicrosoftGraph
             # Indicates whether the user is deleted. Possible values are: true, false.
             @is_deleted
             ## 
-            # Indicates whether a user's risky state is being processed by the backend.
+            # Indicates whether a user's risky state is being processed by the backend. Supports $filter (eq).
             @is_processing
             ## 
             # Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
             @risk_detail
             ## 
-            # The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            # The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, gt, lt).
             @risk_last_updated_date_time
             ## 
-            # Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+            # Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
             @risk_level
             ## 
-            # State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+            # State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq).
             @risk_state
             ## 
             # Risky user display name.
@@ -106,14 +106,14 @@ module MicrosoftGraph
                 @is_deleted = value
             end
             ## 
-            ## Gets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend.
+            ## Gets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend. Supports $filter (eq).
             ## @return a boolean
             ## 
             def is_processing
                 return @is_processing
             end
             ## 
-            ## Sets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend.
+            ## Sets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend. Supports $filter (eq).
             ## @param value Value to set for the isProcessing property.
             ## @return a void
             ## 
@@ -136,14 +136,14 @@ module MicrosoftGraph
                 @risk_detail = value
             end
             ## 
-            ## Gets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## Gets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, gt, lt).
             ## @return a date_time
             ## 
             def risk_last_updated_date_time
                 return @risk_last_updated_date_time
             end
             ## 
-            ## Sets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## Sets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, gt, lt).
             ## @param value Value to set for the riskLastUpdatedDateTime property.
             ## @return a void
             ## 
@@ -151,14 +151,14 @@ module MicrosoftGraph
                 @risk_last_updated_date_time = value
             end
             ## 
-            ## Gets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+            ## Gets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
             ## @return a risk_level
             ## 
             def risk_level
                 return @risk_level
             end
             ## 
-            ## Sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
+            ## Sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Supports $filter (eq).
             ## @param value Value to set for the riskLevel property.
             ## @return a void
             ## 
@@ -166,14 +166,14 @@ module MicrosoftGraph
                 @risk_level = value
             end
             ## 
-            ## Gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+            ## Gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq).
             ## @return a risk_state
             ## 
             def risk_state
                 return @risk_state
             end
             ## 
-            ## Sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+            ## Sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq).
             ## @param value Value to set for the riskState property.
             ## @return a void
             ## 

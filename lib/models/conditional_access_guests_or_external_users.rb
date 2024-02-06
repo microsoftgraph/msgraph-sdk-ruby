@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes is not null or an empty String.
+            # The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
             @external_tenants
             ## 
             # The guestOrExternalUserTypes property
@@ -19,15 +19,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 return ConditionalAccessGuestsOrExternalUsers.new
             end
             ## 
-            ## Gets the externalTenants property value. The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes is not null or an empty String.
+            ## Gets the externalTenants property value. The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
             ## @return a conditional_access_external_tenants
             ## 
             def external_tenants
                 return @external_tenants
             end
             ## 
-            ## Sets the externalTenants property value. The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes is not null or an empty String.
+            ## Sets the externalTenants property value. The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes isn't null or an empty String.
             ## @param value Value to set for the externalTenants property.
             ## @return a void
             ## 
@@ -71,7 +71,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "externalTenants" => lambda {|n| @external_tenants = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessExternalTenants.create_from_discriminator_value(pn) }) },
-                    "guestOrExternalUserTypes" => lambda {|n| @guest_or_external_user_types = n.get_enum_value(MicrosoftGraph::Models::ConditionalAccessGuestOrExternalUserTypes) },
+                    "guestOrExternalUserTypes" => lambda {|n| @guest_or_external_user_types = n.get_enum_values(MicrosoftGraph::Models::ConditionalAccessGuestOrExternalUserTypes) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end

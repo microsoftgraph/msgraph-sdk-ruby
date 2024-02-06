@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The audioRoutingGroups property
             @audio_routing_groups
             ## 
-            # A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+            # A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This identifier must be copied over from Microsoft.Graph.Call.CallChainId.
             @call_chain_id
             ## 
             # Contains the optional features for the call.
@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The routing information on how the call was retargeted. Read-only.
             @call_routes
             ## 
-            # The callback URL on which callbacks will be delivered. Must be https.
+            # The callback URL on which callbacks are delivered. Must be an HTTPS URL.
             @callback_uri
             ## 
             # The chat information. Required information for joining a meeting.
@@ -28,7 +28,7 @@ module MicrosoftGraph
             # The contentSharingSessions property
             @content_sharing_sessions
             ## 
-            # The direction of the call. The possible value are incoming or outgoing. Read-only.
+            # The direction of the call. The possible values are incoming or outgoing. Read-only.
             @direction
             ## 
             # Call context associated with an incoming call.
@@ -55,7 +55,7 @@ module MicrosoftGraph
             # The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
             @requested_modalities
             ## 
-            # The result information. For example can hold termination reason. Read-only.
+            # The result information. For example, the result can hold termination reason. Read-only.
             @result_info
             ## 
             # The originator of the call.
@@ -94,14 +94,14 @@ module MicrosoftGraph
                 @audio_routing_groups = value
             end
             ## 
-            ## Gets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+            ## Gets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This identifier must be copied over from Microsoft.Graph.Call.CallChainId.
             ## @return a string
             ## 
             def call_chain_id
                 return @call_chain_id
             end
             ## 
-            ## Sets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+            ## Sets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This identifier must be copied over from Microsoft.Graph.Call.CallChainId.
             ## @param value Value to set for the callChainId property.
             ## @return a void
             ## 
@@ -139,14 +139,14 @@ module MicrosoftGraph
                 @call_routes = value
             end
             ## 
-            ## Gets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
+            ## Gets the callbackUri property value. The callback URL on which callbacks are delivered. Must be an HTTPS URL.
             ## @return a string
             ## 
             def callback_uri
                 return @callback_uri
             end
             ## 
-            ## Sets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
+            ## Sets the callbackUri property value. The callback URL on which callbacks are delivered. Must be an HTTPS URL.
             ## @param value Value to set for the callbackUri property.
             ## @return a void
             ## 
@@ -200,14 +200,14 @@ module MicrosoftGraph
                 return Call.new
             end
             ## 
-            ## Gets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Gets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @return a call_direction
             ## 
             def direction
                 return @direction
             end
             ## 
-            ## Sets the direction property value. The direction of the call. The possible value are incoming or outgoing. Read-only.
+            ## Sets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
             ## @param value Value to set for the direction property.
             ## @return a void
             ## 
@@ -367,14 +367,14 @@ module MicrosoftGraph
                 @requested_modalities = value
             end
             ## 
-            ## Gets the resultInfo property value. The result information. For example can hold termination reason. Read-only.
+            ## Gets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
             ## @return a result_info
             ## 
             def result_info
                 return @result_info
             end
             ## 
-            ## Sets the resultInfo property value. The result information. For example can hold termination reason. Read-only.
+            ## Sets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
             ## @param value Value to set for the resultInfo property.
             ## @return a void
             ## 

@@ -31,6 +31,9 @@ module MicrosoftGraph
             # The externalColumns property
             @external_columns
             ## 
+            # Identifies whether the site is personal or not. Read-only.
+            @is_personal_site
+            ## 
             # Used to address any item contained in this site. This collection can't be enumerated.
             @items
             ## 
@@ -214,6 +217,7 @@ module MicrosoftGraph
                     "drives" => lambda {|n| @drives = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }) },
                     "error" => lambda {|n| @error = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PublicError.create_from_discriminator_value(pn) }) },
                     "externalColumns" => lambda {|n| @external_columns = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ColumnDefinition.create_from_discriminator_value(pn) }) },
+                    "isPersonalSite" => lambda {|n| @is_personal_site = n.get_boolean_value() },
                     "items" => lambda {|n| @items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BaseItem.create_from_discriminator_value(pn) }) },
                     "lists" => lambda {|n| @lists = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::List.create_from_discriminator_value(pn) }) },
                     "onenote" => lambda {|n| @onenote = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Onenote.create_from_discriminator_value(pn) }) },
@@ -226,6 +230,21 @@ module MicrosoftGraph
                     "termStore" => lambda {|n| @term_store = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermStoreStore.create_from_discriminator_value(pn) }) },
                     "termStores" => lambda {|n| @term_stores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TermStoreStore.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the isPersonalSite property value. Identifies whether the site is personal or not. Read-only.
+            ## @return a boolean
+            ## 
+            def is_personal_site
+                return @is_personal_site
+            end
+            ## 
+            ## Sets the isPersonalSite property value. Identifies whether the site is personal or not. Read-only.
+            ## @param value Value to set for the isPersonalSite property.
+            ## @return a void
+            ## 
+            def is_personal_site=(value)
+                @is_personal_site = value
             end
             ## 
             ## Gets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
@@ -333,6 +352,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("drives", @drives)
                 writer.write_object_value("error", @error)
                 writer.write_collection_of_object_values("externalColumns", @external_columns)
+                writer.write_boolean_value("isPersonalSite", @is_personal_site)
                 writer.write_collection_of_object_values("items", @items)
                 writer.write_collection_of_object_values("lists", @lists)
                 writer.write_object_value("onenote", @onenote)

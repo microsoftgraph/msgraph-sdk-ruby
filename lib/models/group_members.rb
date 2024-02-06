@@ -7,10 +7,10 @@ module MicrosoftGraph
         class GroupMembers < MicrosoftGraph::Models::SubjectSet
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The name of the group in Azure AD. Read only.
+            # The name of the group in Microsoft Entra ID. Read only.
             @description
             ## 
-            # The ID of the group in Azure AD.
+            # The ID of the group in Microsoft Entra ID.
             @group_id
             ## 
             ## Instantiates a new groupMembers and sets the default values.
@@ -30,14 +30,14 @@ module MicrosoftGraph
                 return GroupMembers.new
             end
             ## 
-            ## Gets the description property value. The name of the group in Azure AD. Read only.
+            ## Gets the description property value. The name of the group in Microsoft Entra ID. Read only.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The name of the group in Azure AD. Read only.
+            ## Sets the description property value. The name of the group in Microsoft Entra ID. Read only.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the groupId property value. The ID of the group in Azure AD.
+            ## Gets the groupId property value. The ID of the group in Microsoft Entra ID.
             ## @return a string
             ## 
             def group_id
                 return @group_id
             end
             ## 
-            ## Sets the groupId property value. The ID of the group in Azure AD.
+            ## Sets the groupId property value. The ID of the group in Microsoft Entra ID.
             ## @param value Value to set for the groupId property.
             ## @return a void
             ## 
