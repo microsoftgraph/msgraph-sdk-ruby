@@ -61,8 +61,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("emailSettings", @email_settings)
-                writer.write_number_value("workflowScheduleIntervalInHours", @workflow_schedule_interval_in_hours)
+                writer.write_object_value("emailSettings", @email_settings) unless @email_settings.nil?
+                writer.write_number_value("workflowScheduleIntervalInHours", @workflow_schedule_interval_in_hours) unless @workflow_schedule_interval_in_hours.nil?
             end
             ## 
             ## Gets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.

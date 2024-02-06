@@ -62,8 +62,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("proposedNewTime", @proposed_new_time)
-                writer.write_object_value("status", @status)
+                writer.write_object_value("proposedNewTime", @proposed_new_time) unless @proposed_new_time.nil?
+                writer.write_object_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The attendee's response (none, accepted, declined, etc.) for the event and date-time that the response was sent.

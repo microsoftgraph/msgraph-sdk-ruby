@@ -58,7 +58,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("preFetchMedia", @pre_fetch_media)
+                writer.write_collection_of_object_values("preFetchMedia", @pre_fetch_media) unless @pre_fetch_media.nil?
             end
         end
     end

@@ -214,16 +214,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("access", @access)
-                writer.write_collection_of_object_values("activities", @activities)
-                writer.write_object_value("create", @create)
-                writer.write_object_value("delete", @delete)
-                writer.write_object_value("edit", @edit)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_object_value("incompleteData", @incomplete_data)
-                writer.write_boolean_value("isTrending", @is_trending)
-                writer.write_object_value("move", @move)
-                writer.write_date_time_value("startDateTime", @start_date_time)
+                writer.write_object_value("access", @access) unless @access.nil?
+                writer.write_collection_of_object_values("activities", @activities) unless @activities.nil?
+                writer.write_object_value("create", @create) unless @create.nil?
+                writer.write_object_value("delete", @delete) unless @delete.nil?
+                writer.write_object_value("edit", @edit) unless @edit.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_object_value("incompleteData", @incomplete_data) unless @incomplete_data.nil?
+                writer.write_boolean_value("isTrending", @is_trending) unless @is_trending.nil?
+                writer.write_object_value("move", @move) unless @move.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
             end
             ## 
             ## Gets the startDateTime property value. When the interval starts. Read-only.

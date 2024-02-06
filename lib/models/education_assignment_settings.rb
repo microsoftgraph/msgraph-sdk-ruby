@@ -42,7 +42,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("submissionAnimationDisabled", @submission_animation_disabled)
+                writer.write_boolean_value("submissionAnimationDisabled", @submission_animation_disabled) unless @submission_animation_disabled.nil?
             end
             ## 
             ## Gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.

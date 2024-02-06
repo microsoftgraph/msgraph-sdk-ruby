@@ -80,9 +80,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("arity", @arity)
-                writer.write_enum_value("multivaluedComparisonType", @multivalued_comparison_type)
-                writer.write_collection_of_object_values("supportedAttributeTypes", @supported_attribute_types)
+                writer.write_enum_value("arity", @arity) unless @arity.nil?
+                writer.write_enum_value("multivaluedComparisonType", @multivalued_comparison_type) unless @multivalued_comparison_type.nil?
+                writer.write_collection_of_object_values("supportedAttributeTypes", @supported_attribute_types) unless @supported_attribute_types.nil?
             end
             ## 
             ## Gets the supportedAttributeTypes property value. Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.

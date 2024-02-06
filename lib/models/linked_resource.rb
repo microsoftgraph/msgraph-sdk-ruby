@@ -99,10 +99,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("applicationName", @application_name)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("externalId", @external_id)
-                writer.write_string_value("webUrl", @web_url)
+                writer.write_string_value("applicationName", @application_name) unless @application_name.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("externalId", @external_id) unless @external_id.nil?
+                writer.write_string_value("webUrl", @web_url) unless @web_url.nil?
             end
             ## 
             ## Gets the webUrl property value. Deep link to the linkedResource.

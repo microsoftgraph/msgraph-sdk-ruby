@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("error", @error)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("status", @status)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("error", @error) unless @error.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the status property value. The status of the distribution. The possible values are: pending, error, success, notAvaliable.

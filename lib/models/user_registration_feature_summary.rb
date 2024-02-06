@@ -90,12 +90,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("totalUserCount", @total_user_count)
-                writer.write_collection_of_object_values("userRegistrationFeatureCounts", @user_registration_feature_counts)
-                writer.write_enum_value("userRoles", @user_roles)
-                writer.write_enum_value("userTypes", @user_types)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("totalUserCount", @total_user_count) unless @total_user_count.nil?
+                writer.write_collection_of_object_values("userRegistrationFeatureCounts", @user_registration_feature_counts) unless @user_registration_feature_counts.nil?
+                writer.write_enum_value("userRoles", @user_roles) unless @user_roles.nil?
+                writer.write_enum_value("userTypes", @user_types) unless @user_types.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the totalUserCount property value. Total number of users accounts, excluding those that are blocked.

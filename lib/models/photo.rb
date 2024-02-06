@@ -231,17 +231,17 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("cameraMake", @camera_make)
-                writer.write_string_value("cameraModel", @camera_model)
-                writer.write_object_value("exposureDenominator", @exposure_denominator)
-                writer.write_object_value("exposureNumerator", @exposure_numerator)
-                writer.write_object_value("fNumber", @f_number)
-                writer.write_object_value("focalLength", @focal_length)
-                writer.write_number_value("iso", @iso)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("orientation", @orientation)
-                writer.write_date_time_value("takenDateTime", @taken_date_time)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("cameraMake", @camera_make) unless @camera_make.nil?
+                writer.write_string_value("cameraModel", @camera_model) unless @camera_model.nil?
+                writer.write_object_value("exposureDenominator", @exposure_denominator) unless @exposure_denominator.nil?
+                writer.write_object_value("exposureNumerator", @exposure_numerator) unless @exposure_numerator.nil?
+                writer.write_object_value("fNumber", @f_number) unless @f_number.nil?
+                writer.write_object_value("focalLength", @focal_length) unless @focal_length.nil?
+                writer.write_number_value("iso", @iso) unless @iso.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("orientation", @orientation) unless @orientation.nil?
+                writer.write_date_time_value("takenDateTime", @taken_date_time) unless @taken_date_time.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the takenDateTime property value. Represents the date and time the photo was taken. Read-only.

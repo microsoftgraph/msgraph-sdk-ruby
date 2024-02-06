@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("isPasscodeRequired", @is_passcode_required)
-                writer.write_string_value("joinMeetingId", @join_meeting_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("passcode", @passcode)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("isPasscodeRequired", @is_passcode_required) unless @is_passcode_required.nil?
+                writer.write_string_value("joinMeetingId", @join_meeting_id) unless @join_meeting_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("passcode", @passcode) unless @passcode.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

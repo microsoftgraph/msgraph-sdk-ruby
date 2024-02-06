@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("isApprovalRequiredForAdd", @is_approval_required_for_add)
-                writer.write_boolean_value("isApprovalRequiredForUpdate", @is_approval_required_for_update)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("stages", @stages)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("isApprovalRequiredForAdd", @is_approval_required_for_add) unless @is_approval_required_for_add.nil?
+                writer.write_boolean_value("isApprovalRequiredForUpdate", @is_approval_required_for_update) unless @is_approval_required_for_update.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("stages", @stages) unless @stages.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the stages property value. If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.

@@ -102,10 +102,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("license", @license)
-                writer.write_enum_value("licenseType", @license_type)
-                writer.write_string_value("productKey", @product_key)
-                writer.write_enum_value("targetEdition", @target_edition)
+                writer.write_string_value("license", @license) unless @license.nil?
+                writer.write_enum_value("licenseType", @license_type) unless @license_type.nil?
+                writer.write_string_value("productKey", @product_key) unless @product_key.nil?
+                writer.write_enum_value("targetEdition", @target_edition) unless @target_edition.nil?
             end
             ## 
             ## Gets the targetEdition property value. Windows 10 Edition type.

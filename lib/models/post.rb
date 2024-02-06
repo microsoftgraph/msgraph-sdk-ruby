@@ -272,19 +272,19 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("attachments", @attachments)
-                writer.write_object_value("body", @body)
-                writer.write_string_value("conversationId", @conversation_id)
-                writer.write_string_value("conversationThreadId", @conversation_thread_id)
-                writer.write_collection_of_object_values("extensions", @extensions)
-                writer.write_object_value("from", @from)
-                writer.write_boolean_value("hasAttachments", @has_attachments)
-                writer.write_object_value("inReplyTo", @in_reply_to)
-                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties)
-                writer.write_collection_of_object_values("newParticipants", @new_participants)
-                writer.write_date_time_value("receivedDateTime", @received_date_time)
-                writer.write_object_value("sender", @sender)
-                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties)
+                writer.write_collection_of_object_values("attachments", @attachments) unless @attachments.nil?
+                writer.write_object_value("body", @body) unless @body.nil?
+                writer.write_string_value("conversationId", @conversation_id) unless @conversation_id.nil?
+                writer.write_string_value("conversationThreadId", @conversation_thread_id) unless @conversation_thread_id.nil?
+                writer.write_collection_of_object_values("extensions", @extensions) unless @extensions.nil?
+                writer.write_object_value("from", @from) unless @from.nil?
+                writer.write_boolean_value("hasAttachments", @has_attachments) unless @has_attachments.nil?
+                writer.write_object_value("inReplyTo", @in_reply_to) unless @in_reply_to.nil?
+                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties) unless @multi_value_extended_properties.nil?
+                writer.write_collection_of_object_values("newParticipants", @new_participants) unless @new_participants.nil?
+                writer.write_date_time_value("receivedDateTime", @received_date_time) unless @received_date_time.nil?
+                writer.write_object_value("sender", @sender) unless @sender.nil?
+                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties) unless @single_value_extended_properties.nil?
             end
             ## 
             ## Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the post. Read-only. Nullable.

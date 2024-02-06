@@ -150,12 +150,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("decimalPlaces", @decimal_places)
-                writer.write_string_value("displayAs", @display_as)
-                writer.write_object_value("maximum", @maximum)
-                writer.write_object_value("minimum", @minimum)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("decimalPlaces", @decimal_places) unless @decimal_places.nil?
+                writer.write_string_value("displayAs", @display_as) unless @display_as.nil?
+                writer.write_object_value("maximum", @maximum) unless @maximum.nil?
+                writer.write_object_value("minimum", @minimum) unless @minimum.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

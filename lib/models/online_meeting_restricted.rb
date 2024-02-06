@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("contentSharingDisabled", @content_sharing_disabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("videoDisabled", @video_disabled)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("contentSharingDisabled", @content_sharing_disabled) unless @content_sharing_disabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("videoDisabled", @video_disabled) unless @video_disabled.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the videoDisabled property value. Specifies the reason video from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.

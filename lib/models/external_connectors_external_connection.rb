@@ -213,15 +213,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("activitySettings", @activity_settings)
-                writer.write_object_value("configuration", @configuration)
-                writer.write_string_value("description", @description)
-                writer.write_collection_of_object_values("groups", @groups)
-                writer.write_collection_of_object_values("items", @items)
-                writer.write_string_value("name", @name)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_object_value("schema", @schema)
-                writer.write_object_value("searchSettings", @search_settings)
+                writer.write_object_value("activitySettings", @activity_settings) unless @activity_settings.nil?
+                writer.write_object_value("configuration", @configuration) unless @configuration.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_collection_of_object_values("groups", @groups) unless @groups.nil?
+                writer.write_collection_of_object_values("items", @items) unless @items.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_object_value("schema", @schema) unless @schema.nil?
+                writer.write_object_value("searchSettings", @search_settings) unless @search_settings.nil?
             end
             ## 
             ## Gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.

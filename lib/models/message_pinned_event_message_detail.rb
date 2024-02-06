@@ -78,8 +78,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("eventDateTime", @event_date_time)
-                writer.write_object_value("initiator", @initiator)
+                writer.write_date_time_value("eventDateTime", @event_date_time) unless @event_date_time.nil?
+                writer.write_object_value("initiator", @initiator) unless @initiator.nil?
             end
         end
     end

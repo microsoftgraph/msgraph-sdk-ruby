@@ -45,7 +45,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("useDeviceContext", @use_device_context)
+                writer.write_boolean_value("useDeviceContext", @use_device_context) unless @use_device_context.nil?
             end
             ## 
             ## Gets the useDeviceContext property value. When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.

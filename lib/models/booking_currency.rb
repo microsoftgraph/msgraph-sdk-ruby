@@ -42,7 +42,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("symbol", @symbol)
+                writer.write_string_value("symbol", @symbol) unless @symbol.nil?
             end
             ## 
             ## Gets the symbol property value. The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.

@@ -195,15 +195,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("containers", @containers)
-                writer.write_object_value("controller", @controller)
-                writer.write_collection_of_object_values("ephemeralContainers", @ephemeral_containers)
-                writer.write_collection_of_object_values("initContainers", @init_containers)
-                writer.write_object_value("labels", @labels)
-                writer.write_string_value("name", @name)
-                writer.write_object_value("namespace", @namespace)
-                writer.write_object_value("podIp", @pod_ip)
-                writer.write_object_value("serviceAccount", @service_account)
+                writer.write_collection_of_object_values("containers", @containers) unless @containers.nil?
+                writer.write_object_value("controller", @controller) unless @controller.nil?
+                writer.write_collection_of_object_values("ephemeralContainers", @ephemeral_containers) unless @ephemeral_containers.nil?
+                writer.write_collection_of_object_values("initContainers", @init_containers) unless @init_containers.nil?
+                writer.write_object_value("labels", @labels) unless @labels.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_object_value("namespace", @namespace) unless @namespace.nil?
+                writer.write_object_value("podIp", @pod_ip) unless @pod_ip.nil?
+                writer.write_object_value("serviceAccount", @service_account) unless @service_account.nil?
             end
             ## 
             ## Gets the serviceAccount property value. The pod service account.

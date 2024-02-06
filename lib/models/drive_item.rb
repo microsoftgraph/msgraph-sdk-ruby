@@ -497,38 +497,38 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("analytics", @analytics)
-                writer.write_object_value("audio", @audio)
-                writer.write_object_value("bundle", @bundle)
-                writer.write_string_value("cTag", @c_tag)
-                writer.write_collection_of_object_values("children", @children)
-                writer.write_object_value("content", @content)
-                writer.write_object_value("deleted", @deleted)
-                writer.write_object_value("file", @file)
-                writer.write_object_value("fileSystemInfo", @file_system_info)
-                writer.write_object_value("folder", @folder)
-                writer.write_object_value("image", @image)
-                writer.write_object_value("listItem", @list_item)
-                writer.write_object_value("location", @location)
-                writer.write_object_value("malware", @malware)
-                writer.write_object_value("package", @package)
-                writer.write_object_value("pendingOperations", @pending_operations)
-                writer.write_collection_of_object_values("permissions", @permissions)
-                writer.write_object_value("photo", @photo)
-                writer.write_object_value("publication", @publication)
-                writer.write_object_value("remoteItem", @remote_item)
-                writer.write_object_value("root", @root)
-                writer.write_object_value("searchResult", @search_result)
-                writer.write_object_value("shared", @shared)
-                writer.write_object_value("sharepointIds", @sharepoint_ids)
-                writer.write_object_value("size", @size)
-                writer.write_object_value("specialFolder", @special_folder)
-                writer.write_collection_of_object_values("subscriptions", @subscriptions)
-                writer.write_collection_of_object_values("thumbnails", @thumbnails)
-                writer.write_collection_of_object_values("versions", @versions)
-                writer.write_object_value("video", @video)
-                writer.write_string_value("webDavUrl", @web_dav_url)
-                writer.write_object_value("workbook", @workbook)
+                writer.write_object_value("analytics", @analytics) unless @analytics.nil?
+                writer.write_object_value("audio", @audio) unless @audio.nil?
+                writer.write_object_value("bundle", @bundle) unless @bundle.nil?
+                writer.write_string_value("cTag", @c_tag) unless @c_tag.nil?
+                writer.write_collection_of_object_values("children", @children) unless @children.nil?
+                writer.write_object_value("content", @content) unless @content.nil?
+                writer.write_object_value("deleted", @deleted) unless @deleted.nil?
+                writer.write_object_value("file", @file) unless @file.nil?
+                writer.write_object_value("fileSystemInfo", @file_system_info) unless @file_system_info.nil?
+                writer.write_object_value("folder", @folder) unless @folder.nil?
+                writer.write_object_value("image", @image) unless @image.nil?
+                writer.write_object_value("listItem", @list_item) unless @list_item.nil?
+                writer.write_object_value("location", @location) unless @location.nil?
+                writer.write_object_value("malware", @malware) unless @malware.nil?
+                writer.write_object_value("package", @package) unless @package.nil?
+                writer.write_object_value("pendingOperations", @pending_operations) unless @pending_operations.nil?
+                writer.write_collection_of_object_values("permissions", @permissions) unless @permissions.nil?
+                writer.write_object_value("photo", @photo) unless @photo.nil?
+                writer.write_object_value("publication", @publication) unless @publication.nil?
+                writer.write_object_value("remoteItem", @remote_item) unless @remote_item.nil?
+                writer.write_object_value("root", @root) unless @root.nil?
+                writer.write_object_value("searchResult", @search_result) unless @search_result.nil?
+                writer.write_object_value("shared", @shared) unless @shared.nil?
+                writer.write_object_value("sharepointIds", @sharepoint_ids) unless @sharepoint_ids.nil?
+                writer.write_object_value("size", @size) unless @size.nil?
+                writer.write_object_value("specialFolder", @special_folder) unless @special_folder.nil?
+                writer.write_collection_of_object_values("subscriptions", @subscriptions) unless @subscriptions.nil?
+                writer.write_collection_of_object_values("thumbnails", @thumbnails) unless @thumbnails.nil?
+                writer.write_collection_of_object_values("versions", @versions) unless @versions.nil?
+                writer.write_object_value("video", @video) unless @video.nil?
+                writer.write_string_value("webDavUrl", @web_dav_url) unless @web_dav_url.nil?
+                writer.write_object_value("workbook", @workbook) unless @workbook.nil?
             end
             ## 
             ## Gets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.

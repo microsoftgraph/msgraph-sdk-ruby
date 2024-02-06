@@ -154,12 +154,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("failedDeviceCount", @failed_device_count)
-                writer.write_number_value("failedUserCount", @failed_user_count)
-                writer.write_number_value("installedDeviceCount", @installed_device_count)
-                writer.write_number_value("installedUserCount", @installed_user_count)
-                writer.write_number_value("notInstalledDeviceCount", @not_installed_device_count)
-                writer.write_number_value("notInstalledUserCount", @not_installed_user_count)
+                writer.write_number_value("failedDeviceCount", @failed_device_count) unless @failed_device_count.nil?
+                writer.write_number_value("failedUserCount", @failed_user_count) unless @failed_user_count.nil?
+                writer.write_number_value("installedDeviceCount", @installed_device_count) unless @installed_device_count.nil?
+                writer.write_number_value("installedUserCount", @installed_user_count) unless @installed_user_count.nil?
+                writer.write_number_value("notInstalledDeviceCount", @not_installed_device_count) unless @not_installed_device_count.nil?
+                writer.write_number_value("notInstalledUserCount", @not_installed_user_count) unless @not_installed_user_count.nil?
             end
         end
     end

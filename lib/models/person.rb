@@ -339,25 +339,25 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("birthday", @birthday)
-                writer.write_string_value("companyName", @company_name)
-                writer.write_string_value("department", @department)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("givenName", @given_name)
-                writer.write_string_value("imAddress", @im_address)
-                writer.write_boolean_value("isFavorite", @is_favorite)
-                writer.write_string_value("jobTitle", @job_title)
-                writer.write_string_value("officeLocation", @office_location)
-                writer.write_string_value("personNotes", @person_notes)
-                writer.write_object_value("personType", @person_type)
-                writer.write_collection_of_object_values("phones", @phones)
-                writer.write_collection_of_object_values("postalAddresses", @postal_addresses)
-                writer.write_string_value("profession", @profession)
-                writer.write_collection_of_object_values("scoredEmailAddresses", @scored_email_addresses)
-                writer.write_string_value("surname", @surname)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_collection_of_object_values("websites", @websites)
-                writer.write_string_value("yomiCompany", @yomi_company)
+                writer.write_string_value("birthday", @birthday) unless @birthday.nil?
+                writer.write_string_value("companyName", @company_name) unless @company_name.nil?
+                writer.write_string_value("department", @department) unless @department.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("givenName", @given_name) unless @given_name.nil?
+                writer.write_string_value("imAddress", @im_address) unless @im_address.nil?
+                writer.write_boolean_value("isFavorite", @is_favorite) unless @is_favorite.nil?
+                writer.write_string_value("jobTitle", @job_title) unless @job_title.nil?
+                writer.write_string_value("officeLocation", @office_location) unless @office_location.nil?
+                writer.write_string_value("personNotes", @person_notes) unless @person_notes.nil?
+                writer.write_object_value("personType", @person_type) unless @person_type.nil?
+                writer.write_collection_of_object_values("phones", @phones) unless @phones.nil?
+                writer.write_collection_of_object_values("postalAddresses", @postal_addresses) unless @postal_addresses.nil?
+                writer.write_string_value("profession", @profession) unless @profession.nil?
+                writer.write_collection_of_object_values("scoredEmailAddresses", @scored_email_addresses) unless @scored_email_addresses.nil?
+                writer.write_string_value("surname", @surname) unless @surname.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
+                writer.write_collection_of_object_values("websites", @websites) unless @websites.nil?
+                writer.write_string_value("yomiCompany", @yomi_company) unless @yomi_company.nil?
             end
             ## 
             ## Gets the surname property value. The person's surname.

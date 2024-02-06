@@ -226,19 +226,19 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("email", @email)
-                writer.write_object_value("filesFolder", @files_folder)
-                writer.write_boolean_value("isFavoriteByDefault", @is_favorite_by_default)
-                writer.write_collection_of_object_values("members", @members)
-                writer.write_enum_value("membershipType", @membership_type)
-                writer.write_collection_of_object_values("messages", @messages)
-                writer.write_collection_of_object_values("sharedWithTeams", @shared_with_teams)
-                writer.write_collection_of_object_values("tabs", @tabs)
-                writer.write_string_value("tenantId", @tenant_id)
-                writer.write_string_value("webUrl", @web_url)
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("email", @email) unless @email.nil?
+                writer.write_object_value("filesFolder", @files_folder) unless @files_folder.nil?
+                writer.write_boolean_value("isFavoriteByDefault", @is_favorite_by_default) unless @is_favorite_by_default.nil?
+                writer.write_collection_of_object_values("members", @members) unless @members.nil?
+                writer.write_enum_value("membershipType", @membership_type) unless @membership_type.nil?
+                writer.write_collection_of_object_values("messages", @messages) unless @messages.nil?
+                writer.write_collection_of_object_values("sharedWithTeams", @shared_with_teams) unless @shared_with_teams.nil?
+                writer.write_collection_of_object_values("tabs", @tabs) unless @tabs.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
+                writer.write_string_value("webUrl", @web_url) unless @web_url.nil?
             end
             ## 
             ## Gets the sharedWithTeams property value. A collection of teams with which a channel is shared.

@@ -111,13 +111,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("comment", @comment)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("scope", @scope)
-                writer.write_string_value("type", @type)
-                writer.write_object_value("value", @value)
-                writer.write_boolean_value("visible", @visible)
-                writer.write_object_value("worksheet", @worksheet)
+                writer.write_string_value("comment", @comment) unless @comment.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("scope", @scope) unless @scope.nil?
+                writer.write_string_value("type", @type) unless @type.nil?
+                writer.write_object_value("value", @value) unless @value.nil?
+                writer.write_boolean_value("visible", @visible) unless @visible.nil?
+                writer.write_object_value("worksheet", @worksheet) unless @worksheet.nil?
             end
             ## 
             ## Gets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.

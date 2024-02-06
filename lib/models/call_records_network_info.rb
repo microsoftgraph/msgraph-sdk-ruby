@@ -403,34 +403,34 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_float_value("bandwidthLowEventRatio", @bandwidth_low_event_ratio)
-                writer.write_string_value("basicServiceSetIdentifier", @basic_service_set_identifier)
-                writer.write_enum_value("connectionType", @connection_type)
-                writer.write_float_value("delayEventRatio", @delay_event_ratio)
-                writer.write_string_value("dnsSuffix", @dns_suffix)
-                writer.write_string_value("ipAddress", @ip_address)
-                writer.write_object_value("linkSpeed", @link_speed)
-                writer.write_string_value("macAddress", @mac_address)
-                writer.write_enum_value("networkTransportProtocol", @network_transport_protocol)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("port", @port)
-                writer.write_float_value("receivedQualityEventRatio", @received_quality_event_ratio)
-                writer.write_string_value("reflexiveIPAddress", @reflexive_i_p_address)
-                writer.write_string_value("relayIPAddress", @relay_i_p_address)
-                writer.write_number_value("relayPort", @relay_port)
-                writer.write_float_value("sentQualityEventRatio", @sent_quality_event_ratio)
-                writer.write_string_value("subnet", @subnet)
-                writer.write_collection_of_object_values("traceRouteHops", @trace_route_hops)
-                writer.write_enum_value("wifiBand", @wifi_band)
-                writer.write_number_value("wifiBatteryCharge", @wifi_battery_charge)
-                writer.write_number_value("wifiChannel", @wifi_channel)
-                writer.write_string_value("wifiMicrosoftDriver", @wifi_microsoft_driver)
-                writer.write_string_value("wifiMicrosoftDriverVersion", @wifi_microsoft_driver_version)
-                writer.write_enum_value("wifiRadioType", @wifi_radio_type)
-                writer.write_number_value("wifiSignalStrength", @wifi_signal_strength)
-                writer.write_string_value("wifiVendorDriver", @wifi_vendor_driver)
-                writer.write_string_value("wifiVendorDriverVersion", @wifi_vendor_driver_version)
-                writer.write_additional_data(@additional_data)
+                writer.write_float_value("bandwidthLowEventRatio", @bandwidth_low_event_ratio) unless @bandwidth_low_event_ratio.nil?
+                writer.write_string_value("basicServiceSetIdentifier", @basic_service_set_identifier) unless @basic_service_set_identifier.nil?
+                writer.write_enum_value("connectionType", @connection_type) unless @connection_type.nil?
+                writer.write_float_value("delayEventRatio", @delay_event_ratio) unless @delay_event_ratio.nil?
+                writer.write_string_value("dnsSuffix", @dns_suffix) unless @dns_suffix.nil?
+                writer.write_string_value("ipAddress", @ip_address) unless @ip_address.nil?
+                writer.write_object_value("linkSpeed", @link_speed) unless @link_speed.nil?
+                writer.write_string_value("macAddress", @mac_address) unless @mac_address.nil?
+                writer.write_enum_value("networkTransportProtocol", @network_transport_protocol) unless @network_transport_protocol.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("port", @port) unless @port.nil?
+                writer.write_float_value("receivedQualityEventRatio", @received_quality_event_ratio) unless @received_quality_event_ratio.nil?
+                writer.write_string_value("reflexiveIPAddress", @reflexive_i_p_address) unless @reflexive_i_p_address.nil?
+                writer.write_string_value("relayIPAddress", @relay_i_p_address) unless @relay_i_p_address.nil?
+                writer.write_number_value("relayPort", @relay_port) unless @relay_port.nil?
+                writer.write_float_value("sentQualityEventRatio", @sent_quality_event_ratio) unless @sent_quality_event_ratio.nil?
+                writer.write_string_value("subnet", @subnet) unless @subnet.nil?
+                writer.write_collection_of_object_values("traceRouteHops", @trace_route_hops) unless @trace_route_hops.nil?
+                writer.write_enum_value("wifiBand", @wifi_band) unless @wifi_band.nil?
+                writer.write_number_value("wifiBatteryCharge", @wifi_battery_charge) unless @wifi_battery_charge.nil?
+                writer.write_number_value("wifiChannel", @wifi_channel) unless @wifi_channel.nil?
+                writer.write_string_value("wifiMicrosoftDriver", @wifi_microsoft_driver) unless @wifi_microsoft_driver.nil?
+                writer.write_string_value("wifiMicrosoftDriverVersion", @wifi_microsoft_driver_version) unless @wifi_microsoft_driver_version.nil?
+                writer.write_enum_value("wifiRadioType", @wifi_radio_type) unless @wifi_radio_type.nil?
+                writer.write_number_value("wifiSignalStrength", @wifi_signal_strength) unless @wifi_signal_strength.nil?
+                writer.write_string_value("wifiVendorDriver", @wifi_vendor_driver) unless @wifi_vendor_driver.nil?
+                writer.write_string_value("wifiVendorDriverVersion", @wifi_vendor_driver_version) unless @wifi_vendor_driver_version.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the subnet property value. Subnet used for media stream by the media endpoint.

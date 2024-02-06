@@ -487,34 +487,34 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("appsBlockCopyPaste", @apps_block_copy_paste)
-                writer.write_boolean_value("bluetoothBlocked", @bluetooth_blocked)
-                writer.write_boolean_value("cameraBlocked", @camera_blocked)
-                writer.write_boolean_value("cellularBlockWifiTethering", @cellular_block_wifi_tethering)
-                writer.write_enum_value("compliantAppListType", @compliant_app_list_type)
-                writer.write_collection_of_object_values("compliantAppsList", @compliant_apps_list)
-                writer.write_boolean_value("diagnosticDataBlockSubmission", @diagnostic_data_block_submission)
-                writer.write_boolean_value("emailBlockAddingAccounts", @email_block_adding_accounts)
-                writer.write_boolean_value("locationServicesBlocked", @location_services_blocked)
-                writer.write_boolean_value("microsoftAccountBlocked", @microsoft_account_blocked)
-                writer.write_boolean_value("nfcBlocked", @nfc_blocked)
-                writer.write_boolean_value("passwordBlockSimple", @password_block_simple)
-                writer.write_number_value("passwordExpirationDays", @password_expiration_days)
-                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count)
-                writer.write_number_value("passwordMinimumLength", @password_minimum_length)
-                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout)
-                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count)
-                writer.write_boolean_value("passwordRequired", @password_required)
-                writer.write_enum_value("passwordRequiredType", @password_required_type)
-                writer.write_number_value("passwordSignInFailureCountBeforeFactoryReset", @password_sign_in_failure_count_before_factory_reset)
-                writer.write_boolean_value("screenCaptureBlocked", @screen_capture_blocked)
-                writer.write_boolean_value("storageBlockRemovableStorage", @storage_block_removable_storage)
-                writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption)
-                writer.write_boolean_value("webBrowserBlocked", @web_browser_blocked)
-                writer.write_boolean_value("wifiBlockAutomaticConnectHotspots", @wifi_block_automatic_connect_hotspots)
-                writer.write_boolean_value("wifiBlockHotspotReporting", @wifi_block_hotspot_reporting)
-                writer.write_boolean_value("wifiBlocked", @wifi_blocked)
-                writer.write_boolean_value("windowsStoreBlocked", @windows_store_blocked)
+                writer.write_boolean_value("appsBlockCopyPaste", @apps_block_copy_paste) unless @apps_block_copy_paste.nil?
+                writer.write_boolean_value("bluetoothBlocked", @bluetooth_blocked) unless @bluetooth_blocked.nil?
+                writer.write_boolean_value("cameraBlocked", @camera_blocked) unless @camera_blocked.nil?
+                writer.write_boolean_value("cellularBlockWifiTethering", @cellular_block_wifi_tethering) unless @cellular_block_wifi_tethering.nil?
+                writer.write_enum_value("compliantAppListType", @compliant_app_list_type) unless @compliant_app_list_type.nil?
+                writer.write_collection_of_object_values("compliantAppsList", @compliant_apps_list) unless @compliant_apps_list.nil?
+                writer.write_boolean_value("diagnosticDataBlockSubmission", @diagnostic_data_block_submission) unless @diagnostic_data_block_submission.nil?
+                writer.write_boolean_value("emailBlockAddingAccounts", @email_block_adding_accounts) unless @email_block_adding_accounts.nil?
+                writer.write_boolean_value("locationServicesBlocked", @location_services_blocked) unless @location_services_blocked.nil?
+                writer.write_boolean_value("microsoftAccountBlocked", @microsoft_account_blocked) unless @microsoft_account_blocked.nil?
+                writer.write_boolean_value("nfcBlocked", @nfc_blocked) unless @nfc_blocked.nil?
+                writer.write_boolean_value("passwordBlockSimple", @password_block_simple) unless @password_block_simple.nil?
+                writer.write_number_value("passwordExpirationDays", @password_expiration_days) unless @password_expiration_days.nil?
+                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count) unless @password_minimum_character_set_count.nil?
+                writer.write_number_value("passwordMinimumLength", @password_minimum_length) unless @password_minimum_length.nil?
+                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout) unless @password_minutes_of_inactivity_before_screen_timeout.nil?
+                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count) unless @password_previous_password_block_count.nil?
+                writer.write_boolean_value("passwordRequired", @password_required) unless @password_required.nil?
+                writer.write_enum_value("passwordRequiredType", @password_required_type) unless @password_required_type.nil?
+                writer.write_number_value("passwordSignInFailureCountBeforeFactoryReset", @password_sign_in_failure_count_before_factory_reset) unless @password_sign_in_failure_count_before_factory_reset.nil?
+                writer.write_boolean_value("screenCaptureBlocked", @screen_capture_blocked) unless @screen_capture_blocked.nil?
+                writer.write_boolean_value("storageBlockRemovableStorage", @storage_block_removable_storage) unless @storage_block_removable_storage.nil?
+                writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption) unless @storage_require_encryption.nil?
+                writer.write_boolean_value("webBrowserBlocked", @web_browser_blocked) unless @web_browser_blocked.nil?
+                writer.write_boolean_value("wifiBlockAutomaticConnectHotspots", @wifi_block_automatic_connect_hotspots) unless @wifi_block_automatic_connect_hotspots.nil?
+                writer.write_boolean_value("wifiBlockHotspotReporting", @wifi_block_hotspot_reporting) unless @wifi_block_hotspot_reporting.nil?
+                writer.write_boolean_value("wifiBlocked", @wifi_blocked) unless @wifi_blocked.nil?
+                writer.write_boolean_value("windowsStoreBlocked", @windows_store_blocked) unless @windows_store_blocked.nil?
             end
             ## 
             ## Gets the storageBlockRemovableStorage property value. Indicates whether or not to block removable storage.

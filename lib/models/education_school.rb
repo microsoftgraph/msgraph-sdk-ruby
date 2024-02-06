@@ -290,20 +290,20 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("address", @address)
-                writer.write_object_value("administrativeUnit", @administrative_unit)
-                writer.write_collection_of_object_values("classes", @classes)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_string_value("externalId", @external_id)
-                writer.write_string_value("externalPrincipalId", @external_principal_id)
-                writer.write_string_value("fax", @fax)
-                writer.write_string_value("highestGrade", @highest_grade)
-                writer.write_string_value("lowestGrade", @lowest_grade)
-                writer.write_string_value("phone", @phone)
-                writer.write_string_value("principalEmail", @principal_email)
-                writer.write_string_value("principalName", @principal_name)
-                writer.write_string_value("schoolNumber", @school_number)
-                writer.write_collection_of_object_values("users", @users)
+                writer.write_object_value("address", @address) unless @address.nil?
+                writer.write_object_value("administrativeUnit", @administrative_unit) unless @administrative_unit.nil?
+                writer.write_collection_of_object_values("classes", @classes) unless @classes.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_string_value("externalId", @external_id) unless @external_id.nil?
+                writer.write_string_value("externalPrincipalId", @external_principal_id) unless @external_principal_id.nil?
+                writer.write_string_value("fax", @fax) unless @fax.nil?
+                writer.write_string_value("highestGrade", @highest_grade) unless @highest_grade.nil?
+                writer.write_string_value("lowestGrade", @lowest_grade) unless @lowest_grade.nil?
+                writer.write_string_value("phone", @phone) unless @phone.nil?
+                writer.write_string_value("principalEmail", @principal_email) unless @principal_email.nil?
+                writer.write_string_value("principalName", @principal_name) unless @principal_name.nil?
+                writer.write_string_value("schoolNumber", @school_number) unless @school_number.nil?
+                writer.write_collection_of_object_values("users", @users) unless @users.nil?
             end
             ## 
             ## Gets the users property value. Users in the school. Nullable.

@@ -79,8 +79,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("allowSampleSharing", @allow_sample_sharing)
-                writer.write_boolean_value("enableExpeditedTelemetryReporting", @enable_expedited_telemetry_reporting)
+                writer.write_boolean_value("allowSampleSharing", @allow_sample_sharing) unless @allow_sample_sharing.nil?
+                writer.write_boolean_value("enableExpeditedTelemetryReporting", @enable_expedited_telemetry_reporting) unless @enable_expedited_telemetry_reporting.nil?
             end
         end
     end

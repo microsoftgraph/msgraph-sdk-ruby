@@ -157,16 +157,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appStoreUrl", @app_store_url)
-                writer.write_object_value("applicableDeviceType", @applicable_device_type)
-                writer.write_string_value("bundleId", @bundle_id)
-                writer.write_object_value("licensingType", @licensing_type)
-                writer.write_date_time_value("releaseDateTime", @release_date_time)
-                writer.write_number_value("totalLicenseCount", @total_license_count)
-                writer.write_number_value("usedLicenseCount", @used_license_count)
-                writer.write_enum_value("vppTokenAccountType", @vpp_token_account_type)
-                writer.write_string_value("vppTokenAppleId", @vpp_token_apple_id)
-                writer.write_string_value("vppTokenOrganizationName", @vpp_token_organization_name)
+                writer.write_string_value("appStoreUrl", @app_store_url) unless @app_store_url.nil?
+                writer.write_object_value("applicableDeviceType", @applicable_device_type) unless @applicable_device_type.nil?
+                writer.write_string_value("bundleId", @bundle_id) unless @bundle_id.nil?
+                writer.write_object_value("licensingType", @licensing_type) unless @licensing_type.nil?
+                writer.write_date_time_value("releaseDateTime", @release_date_time) unless @release_date_time.nil?
+                writer.write_number_value("totalLicenseCount", @total_license_count) unless @total_license_count.nil?
+                writer.write_number_value("usedLicenseCount", @used_license_count) unless @used_license_count.nil?
+                writer.write_enum_value("vppTokenAccountType", @vpp_token_account_type) unless @vpp_token_account_type.nil?
+                writer.write_string_value("vppTokenAppleId", @vpp_token_apple_id) unless @vpp_token_apple_id.nil?
+                writer.write_string_value("vppTokenOrganizationName", @vpp_token_organization_name) unless @vpp_token_organization_name.nil?
             end
             ## 
             ## Gets the totalLicenseCount property value. The total number of VPP licenses.

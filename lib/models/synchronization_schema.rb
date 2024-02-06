@@ -65,9 +65,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("directories", @directories)
-                writer.write_collection_of_object_values("synchronizationRules", @synchronization_rules)
-                writer.write_string_value("version", @version)
+                writer.write_collection_of_object_values("directories", @directories) unless @directories.nil?
+                writer.write_collection_of_object_values("synchronizationRules", @synchronization_rules) unless @synchronization_rules.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the synchronizationRules property value. A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.

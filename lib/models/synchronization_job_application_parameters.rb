@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("ruleId", @rule_id)
-                writer.write_collection_of_object_values("subjects", @subjects)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("ruleId", @rule_id) unless @rule_id.nil?
+                writer.write_collection_of_object_values("subjects", @subjects) unless @subjects.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the subjects property value. The identifiers of one or more objects to which a synchronizationJob is to be applied.

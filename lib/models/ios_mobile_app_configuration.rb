@@ -64,8 +64,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("encodedSettingXml", @encoded_setting_xml)
-                writer.write_collection_of_object_values("settings", @settings)
+                writer.write_object_value("encodedSettingXml", @encoded_setting_xml) unless @encoded_setting_xml.nil?
+                writer.write_collection_of_object_values("settings", @settings) unless @settings.nil?
             end
             ## 
             ## Gets the settings property value. app configuration setting items.

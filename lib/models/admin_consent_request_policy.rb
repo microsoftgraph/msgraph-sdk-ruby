@@ -137,12 +137,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_boolean_value("notifyReviewers", @notify_reviewers)
-                writer.write_boolean_value("remindersEnabled", @reminders_enabled)
-                writer.write_number_value("requestDurationInDays", @request_duration_in_days)
-                writer.write_collection_of_object_values("reviewers", @reviewers)
-                writer.write_number_value("version", @version)
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_boolean_value("notifyReviewers", @notify_reviewers) unless @notify_reviewers.nil?
+                writer.write_boolean_value("remindersEnabled", @reminders_enabled) unless @reminders_enabled.nil?
+                writer.write_number_value("requestDurationInDays", @request_duration_in_days) unless @request_duration_in_days.nil?
+                writer.write_collection_of_object_values("reviewers", @reviewers) unless @reviewers.nil?
+                writer.write_number_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the version property value. Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.

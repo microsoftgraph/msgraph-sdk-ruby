@@ -100,10 +100,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("certificateData", @certificate_data)
-                writer.write_string_value("developerId", @developer_id)
-                writer.write_string_value("keyId", @key_id)
-                writer.write_string_value("serviceId", @service_id)
+                writer.write_string_value("certificateData", @certificate_data) unless @certificate_data.nil?
+                writer.write_string_value("developerId", @developer_id) unless @developer_id.nil?
+                writer.write_string_value("keyId", @key_id) unless @key_id.nil?
+                writer.write_string_value("serviceId", @service_id) unless @service_id.nil?
             end
             ## 
             ## Gets the serviceId property value. The Apple service identifier. Required.

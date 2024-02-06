@@ -84,10 +84,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("configuration", @configuration)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("teamsApp", @teams_app)
-                writer.write_string_value("webUrl", @web_url)
+                writer.write_object_value("configuration", @configuration) unless @configuration.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("teamsApp", @teams_app) unless @teams_app.nil?
+                writer.write_string_value("webUrl", @web_url) unless @web_url.nil?
             end
             ## 
             ## Gets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.

@@ -187,14 +187,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("components", @components)
-                writer.write_collection_of_object_values("cookies", @cookies)
-                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time)
-                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time)
-                writer.write_collection_of_object_values("passiveDns", @passive_dns)
-                writer.write_collection_of_object_values("passiveDnsReverse", @passive_dns_reverse)
-                writer.write_object_value("reputation", @reputation)
-                writer.write_collection_of_object_values("trackers", @trackers)
+                writer.write_collection_of_object_values("components", @components) unless @components.nil?
+                writer.write_collection_of_object_values("cookies", @cookies) unless @cookies.nil?
+                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time) unless @first_seen_date_time.nil?
+                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time) unless @last_seen_date_time.nil?
+                writer.write_collection_of_object_values("passiveDns", @passive_dns) unless @passive_dns.nil?
+                writer.write_collection_of_object_values("passiveDnsReverse", @passive_dns_reverse) unless @passive_dns_reverse.nil?
+                writer.write_object_value("reputation", @reputation) unless @reputation.nil?
+                writer.write_collection_of_object_values("trackers", @trackers) unless @trackers.nil?
             end
             ## 
             ## Gets the trackers property value. The hostTrackers that are associated with this host.

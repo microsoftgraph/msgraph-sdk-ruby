@@ -210,17 +210,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("childFolderCount", @child_folder_count)
-                writer.write_collection_of_object_values("childFolders", @child_folders)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("isHidden", @is_hidden)
-                writer.write_collection_of_object_values("messageRules", @message_rules)
-                writer.write_collection_of_object_values("messages", @messages)
-                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties)
-                writer.write_string_value("parentFolderId", @parent_folder_id)
-                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties)
-                writer.write_number_value("totalItemCount", @total_item_count)
-                writer.write_number_value("unreadItemCount", @unread_item_count)
+                writer.write_number_value("childFolderCount", @child_folder_count) unless @child_folder_count.nil?
+                writer.write_collection_of_object_values("childFolders", @child_folders) unless @child_folders.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("isHidden", @is_hidden) unless @is_hidden.nil?
+                writer.write_collection_of_object_values("messageRules", @message_rules) unless @message_rules.nil?
+                writer.write_collection_of_object_values("messages", @messages) unless @messages.nil?
+                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties) unless @multi_value_extended_properties.nil?
+                writer.write_string_value("parentFolderId", @parent_folder_id) unless @parent_folder_id.nil?
+                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties) unless @single_value_extended_properties.nil?
+                writer.write_number_value("totalItemCount", @total_item_count) unless @total_item_count.nil?
+                writer.write_number_value("unreadItemCount", @unread_item_count) unless @unread_item_count.nil?
             end
             ## 
             ## Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.

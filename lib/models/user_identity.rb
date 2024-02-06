@@ -62,8 +62,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("ipAddress", @ip_address)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
+                writer.write_string_value("ipAddress", @ip_address) unless @ip_address.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
             end
             ## 
             ## Gets the userPrincipalName property value. The userPrincipalName attribute of the user.

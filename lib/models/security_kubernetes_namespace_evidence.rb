@@ -96,9 +96,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("cluster", @cluster)
-                writer.write_object_value("labels", @labels)
-                writer.write_string_value("name", @name)
+                writer.write_object_value("cluster", @cluster) unless @cluster.nil?
+                writer.write_object_value("labels", @labels) unless @labels.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
             end
         end
     end

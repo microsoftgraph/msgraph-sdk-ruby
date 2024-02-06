@@ -43,7 +43,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("userAccount", @user_account)
+                writer.write_object_value("userAccount", @user_account) unless @user_account.nil?
             end
             ## 
             ## Gets the userAccount property value. The user account details.

@@ -66,9 +66,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("name", @name)
-                writer.write_object_value("storageResource", @storage_resource)
-                writer.write_string_value("url", @url)
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_object_value("storageResource", @storage_resource) unless @storage_resource.nil?
+                writer.write_string_value("url", @url) unless @url.nil?
             end
             ## 
             ## Gets the storageResource property value. The storage which the blob container belongs to.

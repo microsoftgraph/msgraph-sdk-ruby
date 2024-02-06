@@ -171,13 +171,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("automaticUserConsentSettings", @automatic_user_consent_settings)
+                writer.write_object_value("automaticUserConsentSettings", @automatic_user_consent_settings) unless @automatic_user_consent_settings.nil?
                 writer.write_object_value("b2bCollaborationInbound", @b2b_collaboration_inbound)
                 writer.write_object_value("b2bCollaborationOutbound", @b2b_collaboration_outbound)
                 writer.write_object_value("b2bDirectConnectInbound", @b2b_direct_connect_inbound)
                 writer.write_object_value("b2bDirectConnectOutbound", @b2b_direct_connect_outbound)
-                writer.write_object_value("inboundTrust", @inbound_trust)
-                writer.write_boolean_value("isServiceDefault", @is_service_default)
+                writer.write_object_value("inboundTrust", @inbound_trust) unless @inbound_trust.nil?
+                writer.write_boolean_value("isServiceDefault", @is_service_default) unless @is_service_default.nil?
             end
         end
     end

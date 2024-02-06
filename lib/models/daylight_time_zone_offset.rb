@@ -58,7 +58,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("daylightBias", @daylight_bias)
+                writer.write_number_value("daylightBias", @daylight_bias) unless @daylight_bias.nil?
             end
         end
     end

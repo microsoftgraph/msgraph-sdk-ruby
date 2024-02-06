@@ -115,10 +115,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("checkedDateTime", @checked_date_time)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("isChecked", @is_checked)
+                writer.write_date_time_value("checkedDateTime", @checked_date_time) unless @checked_date_time.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("isChecked", @is_checked) unless @is_checked.nil?
             end
         end
     end

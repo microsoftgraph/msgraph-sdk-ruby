@@ -61,8 +61,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("customExtension", @custom_extension)
-                writer.write_enum_value("stage", @stage)
+                writer.write_object_value("customExtension", @custom_extension) unless @custom_extension.nil?
+                writer.write_enum_value("stage", @stage) unless @stage.nil?
             end
             ## 
             ## Gets the stage property value. The stage property

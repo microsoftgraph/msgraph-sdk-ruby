@@ -727,69 +727,69 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("applePushNotificationCertificate", @apple_push_notification_certificate)
-                writer.write_collection_of_object_values("auditEvents", @audit_events)
-                writer.write_collection_of_object_values("complianceManagementPartners", @compliance_management_partners)
-                writer.write_object_value("conditionalAccessSettings", @conditional_access_settings)
-                writer.write_collection_of_object_values("detectedApps", @detected_apps)
-                writer.write_collection_of_object_values("deviceCategories", @device_categories)
-                writer.write_collection_of_object_values("deviceCompliancePolicies", @device_compliance_policies)
-                writer.write_object_value("deviceCompliancePolicyDeviceStateSummary", @device_compliance_policy_device_state_summary)
-                writer.write_collection_of_object_values("deviceCompliancePolicySettingStateSummaries", @device_compliance_policy_setting_state_summaries)
-                writer.write_object_value("deviceConfigurationDeviceStateSummaries", @device_configuration_device_state_summaries)
-                writer.write_collection_of_object_values("deviceConfigurations", @device_configurations)
-                writer.write_collection_of_object_values("deviceEnrollmentConfigurations", @device_enrollment_configurations)
-                writer.write_collection_of_object_values("deviceManagementPartners", @device_management_partners)
-                writer.write_object_value("deviceProtectionOverview", @device_protection_overview)
-                writer.write_collection_of_object_values("exchangeConnectors", @exchange_connectors)
-                writer.write_collection_of_object_values("importedWindowsAutopilotDeviceIdentities", @imported_windows_autopilot_device_identities)
-                writer.write_guid_value("intuneAccountId", @intune_account_id)
-                writer.write_object_value("intuneBrand", @intune_brand)
-                writer.write_collection_of_object_values("iosUpdateStatuses", @ios_update_statuses)
-                writer.write_object_value("managedDeviceOverview", @managed_device_overview)
-                writer.write_collection_of_object_values("managedDevices", @managed_devices)
-                writer.write_collection_of_object_values("mobileAppTroubleshootingEvents", @mobile_app_troubleshooting_events)
-                writer.write_collection_of_object_values("mobileThreatDefenseConnectors", @mobile_threat_defense_connectors)
-                writer.write_collection_of_object_values("notificationMessageTemplates", @notification_message_templates)
-                writer.write_collection_of_object_values("remoteAssistancePartners", @remote_assistance_partners)
-                writer.write_object_value("reports", @reports)
-                writer.write_collection_of_object_values("resourceOperations", @resource_operations)
-                writer.write_collection_of_object_values("roleAssignments", @role_assignments)
-                writer.write_collection_of_object_values("roleDefinitions", @role_definitions)
-                writer.write_object_value("settings", @settings)
-                writer.write_object_value("softwareUpdateStatusSummary", @software_update_status_summary)
-                writer.write_enum_value("subscriptionState", @subscription_state)
-                writer.write_collection_of_object_values("telecomExpenseManagementPartners", @telecom_expense_management_partners)
-                writer.write_collection_of_object_values("termsAndConditions", @terms_and_conditions)
-                writer.write_collection_of_object_values("troubleshootingEvents", @troubleshooting_events)
-                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformance", @user_experience_analytics_app_health_application_performance)
-                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", @user_experience_analytics_app_health_application_performance_by_app_version_details)
-                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId", @user_experience_analytics_app_health_application_performance_by_app_version_device_id)
-                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion", @user_experience_analytics_app_health_application_performance_by_o_s_version)
-                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthDeviceModelPerformance", @user_experience_analytics_app_health_device_model_performance)
-                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthDevicePerformance", @user_experience_analytics_app_health_device_performance)
-                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthDevicePerformanceDetails", @user_experience_analytics_app_health_device_performance_details)
-                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthOSVersionPerformance", @user_experience_analytics_app_health_o_s_version_performance)
-                writer.write_object_value("userExperienceAnalyticsAppHealthOverview", @user_experience_analytics_app_health_overview)
-                writer.write_collection_of_object_values("userExperienceAnalyticsBaselines", @user_experience_analytics_baselines)
-                writer.write_collection_of_object_values("userExperienceAnalyticsCategories", @user_experience_analytics_categories)
-                writer.write_collection_of_object_values("userExperienceAnalyticsDevicePerformance", @user_experience_analytics_device_performance)
-                writer.write_collection_of_object_values("userExperienceAnalyticsDeviceScores", @user_experience_analytics_device_scores)
-                writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupHistory", @user_experience_analytics_device_startup_history)
-                writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupProcesses", @user_experience_analytics_device_startup_processes)
-                writer.write_collection_of_object_values("userExperienceAnalyticsMetricHistory", @user_experience_analytics_metric_history)
-                writer.write_collection_of_object_values("userExperienceAnalyticsModelScores", @user_experience_analytics_model_scores)
-                writer.write_object_value("userExperienceAnalyticsOverview", @user_experience_analytics_overview)
-                writer.write_collection_of_object_values("userExperienceAnalyticsScoreHistory", @user_experience_analytics_score_history)
-                writer.write_object_value("userExperienceAnalyticsSettings", @user_experience_analytics_settings)
-                writer.write_object_value("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric", @user_experience_analytics_work_from_anywhere_hardware_readiness_metric)
-                writer.write_collection_of_object_values("userExperienceAnalyticsWorkFromAnywhereMetrics", @user_experience_analytics_work_from_anywhere_metrics)
-                writer.write_collection_of_object_values("userExperienceAnalyticsWorkFromAnywhereModelPerformance", @user_experience_analytics_work_from_anywhere_model_performance)
-                writer.write_collection_of_object_values("windowsAutopilotDeviceIdentities", @windows_autopilot_device_identities)
-                writer.write_collection_of_object_values("windowsInformationProtectionAppLearningSummaries", @windows_information_protection_app_learning_summaries)
-                writer.write_collection_of_object_values("windowsInformationProtectionNetworkLearningSummaries", @windows_information_protection_network_learning_summaries)
-                writer.write_collection_of_object_values("windowsMalwareInformation", @windows_malware_information)
-                writer.write_object_value("windowsMalwareOverview", @windows_malware_overview)
+                writer.write_object_value("applePushNotificationCertificate", @apple_push_notification_certificate) unless @apple_push_notification_certificate.nil?
+                writer.write_collection_of_object_values("auditEvents", @audit_events) unless @audit_events.nil?
+                writer.write_collection_of_object_values("complianceManagementPartners", @compliance_management_partners) unless @compliance_management_partners.nil?
+                writer.write_object_value("conditionalAccessSettings", @conditional_access_settings) unless @conditional_access_settings.nil?
+                writer.write_collection_of_object_values("detectedApps", @detected_apps) unless @detected_apps.nil?
+                writer.write_collection_of_object_values("deviceCategories", @device_categories) unless @device_categories.nil?
+                writer.write_collection_of_object_values("deviceCompliancePolicies", @device_compliance_policies) unless @device_compliance_policies.nil?
+                writer.write_object_value("deviceCompliancePolicyDeviceStateSummary", @device_compliance_policy_device_state_summary) unless @device_compliance_policy_device_state_summary.nil?
+                writer.write_collection_of_object_values("deviceCompliancePolicySettingStateSummaries", @device_compliance_policy_setting_state_summaries) unless @device_compliance_policy_setting_state_summaries.nil?
+                writer.write_object_value("deviceConfigurationDeviceStateSummaries", @device_configuration_device_state_summaries) unless @device_configuration_device_state_summaries.nil?
+                writer.write_collection_of_object_values("deviceConfigurations", @device_configurations) unless @device_configurations.nil?
+                writer.write_collection_of_object_values("deviceEnrollmentConfigurations", @device_enrollment_configurations) unless @device_enrollment_configurations.nil?
+                writer.write_collection_of_object_values("deviceManagementPartners", @device_management_partners) unless @device_management_partners.nil?
+                writer.write_object_value("deviceProtectionOverview", @device_protection_overview) unless @device_protection_overview.nil?
+                writer.write_collection_of_object_values("exchangeConnectors", @exchange_connectors) unless @exchange_connectors.nil?
+                writer.write_collection_of_object_values("importedWindowsAutopilotDeviceIdentities", @imported_windows_autopilot_device_identities) unless @imported_windows_autopilot_device_identities.nil?
+                writer.write_guid_value("intuneAccountId", @intune_account_id) unless @intune_account_id.nil?
+                writer.write_object_value("intuneBrand", @intune_brand) unless @intune_brand.nil?
+                writer.write_collection_of_object_values("iosUpdateStatuses", @ios_update_statuses) unless @ios_update_statuses.nil?
+                writer.write_object_value("managedDeviceOverview", @managed_device_overview) unless @managed_device_overview.nil?
+                writer.write_collection_of_object_values("managedDevices", @managed_devices) unless @managed_devices.nil?
+                writer.write_collection_of_object_values("mobileAppTroubleshootingEvents", @mobile_app_troubleshooting_events) unless @mobile_app_troubleshooting_events.nil?
+                writer.write_collection_of_object_values("mobileThreatDefenseConnectors", @mobile_threat_defense_connectors) unless @mobile_threat_defense_connectors.nil?
+                writer.write_collection_of_object_values("notificationMessageTemplates", @notification_message_templates) unless @notification_message_templates.nil?
+                writer.write_collection_of_object_values("remoteAssistancePartners", @remote_assistance_partners) unless @remote_assistance_partners.nil?
+                writer.write_object_value("reports", @reports) unless @reports.nil?
+                writer.write_collection_of_object_values("resourceOperations", @resource_operations) unless @resource_operations.nil?
+                writer.write_collection_of_object_values("roleAssignments", @role_assignments) unless @role_assignments.nil?
+                writer.write_collection_of_object_values("roleDefinitions", @role_definitions) unless @role_definitions.nil?
+                writer.write_object_value("settings", @settings) unless @settings.nil?
+                writer.write_object_value("softwareUpdateStatusSummary", @software_update_status_summary) unless @software_update_status_summary.nil?
+                writer.write_enum_value("subscriptionState", @subscription_state) unless @subscription_state.nil?
+                writer.write_collection_of_object_values("telecomExpenseManagementPartners", @telecom_expense_management_partners) unless @telecom_expense_management_partners.nil?
+                writer.write_collection_of_object_values("termsAndConditions", @terms_and_conditions) unless @terms_and_conditions.nil?
+                writer.write_collection_of_object_values("troubleshootingEvents", @troubleshooting_events) unless @troubleshooting_events.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformance", @user_experience_analytics_app_health_application_performance) unless @user_experience_analytics_app_health_application_performance.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", @user_experience_analytics_app_health_application_performance_by_app_version_details) unless @user_experience_analytics_app_health_application_performance_by_app_version_details.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId", @user_experience_analytics_app_health_application_performance_by_app_version_device_id) unless @user_experience_analytics_app_health_application_performance_by_app_version_device_id.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion", @user_experience_analytics_app_health_application_performance_by_o_s_version) unless @user_experience_analytics_app_health_application_performance_by_o_s_version.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthDeviceModelPerformance", @user_experience_analytics_app_health_device_model_performance) unless @user_experience_analytics_app_health_device_model_performance.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthDevicePerformance", @user_experience_analytics_app_health_device_performance) unless @user_experience_analytics_app_health_device_performance.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthDevicePerformanceDetails", @user_experience_analytics_app_health_device_performance_details) unless @user_experience_analytics_app_health_device_performance_details.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthOSVersionPerformance", @user_experience_analytics_app_health_o_s_version_performance) unless @user_experience_analytics_app_health_o_s_version_performance.nil?
+                writer.write_object_value("userExperienceAnalyticsAppHealthOverview", @user_experience_analytics_app_health_overview) unless @user_experience_analytics_app_health_overview.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsBaselines", @user_experience_analytics_baselines) unless @user_experience_analytics_baselines.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsCategories", @user_experience_analytics_categories) unless @user_experience_analytics_categories.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsDevicePerformance", @user_experience_analytics_device_performance) unless @user_experience_analytics_device_performance.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsDeviceScores", @user_experience_analytics_device_scores) unless @user_experience_analytics_device_scores.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupHistory", @user_experience_analytics_device_startup_history) unless @user_experience_analytics_device_startup_history.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupProcesses", @user_experience_analytics_device_startup_processes) unless @user_experience_analytics_device_startup_processes.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsMetricHistory", @user_experience_analytics_metric_history) unless @user_experience_analytics_metric_history.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsModelScores", @user_experience_analytics_model_scores) unless @user_experience_analytics_model_scores.nil?
+                writer.write_object_value("userExperienceAnalyticsOverview", @user_experience_analytics_overview) unless @user_experience_analytics_overview.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsScoreHistory", @user_experience_analytics_score_history) unless @user_experience_analytics_score_history.nil?
+                writer.write_object_value("userExperienceAnalyticsSettings", @user_experience_analytics_settings) unless @user_experience_analytics_settings.nil?
+                writer.write_object_value("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric", @user_experience_analytics_work_from_anywhere_hardware_readiness_metric) unless @user_experience_analytics_work_from_anywhere_hardware_readiness_metric.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsWorkFromAnywhereMetrics", @user_experience_analytics_work_from_anywhere_metrics) unless @user_experience_analytics_work_from_anywhere_metrics.nil?
+                writer.write_collection_of_object_values("userExperienceAnalyticsWorkFromAnywhereModelPerformance", @user_experience_analytics_work_from_anywhere_model_performance) unless @user_experience_analytics_work_from_anywhere_model_performance.nil?
+                writer.write_collection_of_object_values("windowsAutopilotDeviceIdentities", @windows_autopilot_device_identities) unless @windows_autopilot_device_identities.nil?
+                writer.write_collection_of_object_values("windowsInformationProtectionAppLearningSummaries", @windows_information_protection_app_learning_summaries) unless @windows_information_protection_app_learning_summaries.nil?
+                writer.write_collection_of_object_values("windowsInformationProtectionNetworkLearningSummaries", @windows_information_protection_network_learning_summaries) unless @windows_information_protection_network_learning_summaries.nil?
+                writer.write_collection_of_object_values("windowsMalwareInformation", @windows_malware_information) unless @windows_malware_information.nil?
+                writer.write_object_value("windowsMalwareOverview", @windows_malware_overview) unless @windows_malware_overview.nil?
             end
             ## 
             ## Gets the settings property value. Account level settings.

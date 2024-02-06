@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("disabledPlans", @disabled_plans)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_guid_value("skuId", @sku_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("disabledPlans", @disabled_plans) unless @disabled_plans.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_guid_value("skuId", @sku_id) unless @sku_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the skuId property value. The unique identifier for the SKU.

@@ -161,14 +161,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("buckets", @buckets)
-                writer.write_object_value("container", @container)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("details", @details)
-                writer.write_string_value("owner", @owner)
-                writer.write_collection_of_object_values("tasks", @tasks)
-                writer.write_string_value("title", @title)
+                writer.write_collection_of_object_values("buckets", @buckets) unless @buckets.nil?
+                writer.write_object_value("container", @container) unless @container.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("details", @details) unless @details.nil?
+                writer.write_string_value("owner", @owner) unless @owner.nil?
+                writer.write_collection_of_object_values("tasks", @tasks) unless @tasks.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
             end
             ## 
             ## Gets the tasks property value. Read-only. Nullable. Collection of tasks in the plan.

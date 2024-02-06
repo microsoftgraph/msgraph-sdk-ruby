@@ -283,19 +283,19 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowAutoFilter", @allow_auto_filter)
-                writer.write_boolean_value("allowDeleteColumns", @allow_delete_columns)
-                writer.write_boolean_value("allowDeleteRows", @allow_delete_rows)
-                writer.write_boolean_value("allowFormatCells", @allow_format_cells)
-                writer.write_boolean_value("allowFormatColumns", @allow_format_columns)
-                writer.write_boolean_value("allowFormatRows", @allow_format_rows)
-                writer.write_boolean_value("allowInsertColumns", @allow_insert_columns)
-                writer.write_boolean_value("allowInsertHyperlinks", @allow_insert_hyperlinks)
-                writer.write_boolean_value("allowInsertRows", @allow_insert_rows)
-                writer.write_boolean_value("allowPivotTables", @allow_pivot_tables)
-                writer.write_boolean_value("allowSort", @allow_sort)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowAutoFilter", @allow_auto_filter) unless @allow_auto_filter.nil?
+                writer.write_boolean_value("allowDeleteColumns", @allow_delete_columns) unless @allow_delete_columns.nil?
+                writer.write_boolean_value("allowDeleteRows", @allow_delete_rows) unless @allow_delete_rows.nil?
+                writer.write_boolean_value("allowFormatCells", @allow_format_cells) unless @allow_format_cells.nil?
+                writer.write_boolean_value("allowFormatColumns", @allow_format_columns) unless @allow_format_columns.nil?
+                writer.write_boolean_value("allowFormatRows", @allow_format_rows) unless @allow_format_rows.nil?
+                writer.write_boolean_value("allowInsertColumns", @allow_insert_columns) unless @allow_insert_columns.nil?
+                writer.write_boolean_value("allowInsertHyperlinks", @allow_insert_hyperlinks) unless @allow_insert_hyperlinks.nil?
+                writer.write_boolean_value("allowInsertRows", @allow_insert_rows) unless @allow_insert_rows.nil?
+                writer.write_boolean_value("allowPivotTables", @allow_pivot_tables) unless @allow_pivot_tables.nil?
+                writer.write_boolean_value("allowSort", @allow_sort) unless @allow_sort.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

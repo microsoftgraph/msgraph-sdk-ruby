@@ -340,25 +340,25 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("assignedTo", @assigned_to)
-                writer.write_date_time_value("closedDateTime", @closed_date_time)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("dataSubject", @data_subject)
-                writer.write_enum_value("dataSubjectType", @data_subject_type)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("history", @history)
-                writer.write_object_value("insight", @insight)
-                writer.write_date_time_value("internalDueDateTime", @internal_due_date_time)
-                writer.write_object_value("lastModifiedBy", @last_modified_by)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_collection_of_object_values("notes", @notes)
-                writer.write_collection_of_primitive_values("regulations", @regulations)
-                writer.write_collection_of_object_values("stages", @stages)
-                writer.write_enum_value("status", @status)
-                writer.write_object_value("team", @team)
-                writer.write_enum_value("type", @type)
+                writer.write_object_value("assignedTo", @assigned_to) unless @assigned_to.nil?
+                writer.write_date_time_value("closedDateTime", @closed_date_time) unless @closed_date_time.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("dataSubject", @data_subject) unless @data_subject.nil?
+                writer.write_enum_value("dataSubjectType", @data_subject_type) unless @data_subject_type.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("history", @history) unless @history.nil?
+                writer.write_object_value("insight", @insight) unless @insight.nil?
+                writer.write_date_time_value("internalDueDateTime", @internal_due_date_time) unless @internal_due_date_time.nil?
+                writer.write_object_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_collection_of_object_values("notes", @notes) unless @notes.nil?
+                writer.write_collection_of_primitive_values("regulations", @regulations) unless @regulations.nil?
+                writer.write_collection_of_object_values("stages", @stages) unless @stages.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_object_value("team", @team) unless @team.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
             end
             ## 
             ## Gets the stages property value. Information about the different stages for the request.

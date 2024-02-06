@@ -219,18 +219,18 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("hive", @hive)
-                writer.write_string_value("key", @key)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("oldKey", @old_key)
-                writer.write_string_value("oldValueData", @old_value_data)
-                writer.write_string_value("oldValueName", @old_value_name)
-                writer.write_enum_value("operation", @operation)
-                writer.write_number_value("processId", @process_id)
-                writer.write_string_value("valueData", @value_data)
-                writer.write_string_value("valueName", @value_name)
-                writer.write_enum_value("valueType", @value_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("hive", @hive) unless @hive.nil?
+                writer.write_string_value("key", @key) unless @key.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("oldKey", @old_key) unless @old_key.nil?
+                writer.write_string_value("oldValueData", @old_value_data) unless @old_value_data.nil?
+                writer.write_string_value("oldValueName", @old_value_name) unless @old_value_name.nil?
+                writer.write_enum_value("operation", @operation) unless @operation.nil?
+                writer.write_number_value("processId", @process_id) unless @process_id.nil?
+                writer.write_string_value("valueData", @value_data) unless @value_data.nil?
+                writer.write_string_value("valueName", @value_name) unless @value_name.nil?
+                writer.write_enum_value("valueType", @value_type) unless @value_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the valueData property value. Current (i.e. changed) registry key value data (contents).

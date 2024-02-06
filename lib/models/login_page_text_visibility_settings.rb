@@ -188,14 +188,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("hideAccountResetCredentials", @hide_account_reset_credentials)
-                writer.write_boolean_value("hideCannotAccessYourAccount", @hide_cannot_access_your_account)
-                writer.write_boolean_value("hideForgotMyPassword", @hide_forgot_my_password)
-                writer.write_boolean_value("hidePrivacyAndCookies", @hide_privacy_and_cookies)
-                writer.write_boolean_value("hideResetItNow", @hide_reset_it_now)
-                writer.write_boolean_value("hideTermsOfUse", @hide_terms_of_use)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("hideAccountResetCredentials", @hide_account_reset_credentials) unless @hide_account_reset_credentials.nil?
+                writer.write_boolean_value("hideCannotAccessYourAccount", @hide_cannot_access_your_account) unless @hide_cannot_access_your_account.nil?
+                writer.write_boolean_value("hideForgotMyPassword", @hide_forgot_my_password) unless @hide_forgot_my_password.nil?
+                writer.write_boolean_value("hidePrivacyAndCookies", @hide_privacy_and_cookies) unless @hide_privacy_and_cookies.nil?
+                writer.write_boolean_value("hideResetItNow", @hide_reset_it_now) unless @hide_reset_it_now.nil?
+                writer.write_boolean_value("hideTermsOfUse", @hide_terms_of_use) unless @hide_terms_of_use.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

@@ -61,8 +61,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("error", @error)
-                writer.write_enum_value("status", @status)
+                writer.write_object_value("error", @error) unless @error.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.

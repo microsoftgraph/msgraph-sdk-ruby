@@ -69,10 +69,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("color", @color)
-                writer.write_string_value("sideIndex", @side_index)
-                writer.write_string_value("style", @style)
-                writer.write_string_value("weight", @weight)
+                writer.write_string_value("color", @color) unless @color.nil?
+                writer.write_string_value("sideIndex", @side_index) unless @side_index.nil?
+                writer.write_string_value("style", @style) unless @style.nil?
+                writer.write_string_value("weight", @weight) unless @weight.nil?
             end
             ## 
             ## Gets the sideIndex property value. Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.

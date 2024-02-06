@@ -108,12 +108,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("hasAttachments", @has_attachments)
-                writer.write_date_time_value("lastDeliveredDateTime", @last_delivered_date_time)
-                writer.write_string_value("preview", @preview)
-                writer.write_collection_of_object_values("threads", @threads)
-                writer.write_string_value("topic", @topic)
-                writer.write_collection_of_primitive_values("uniqueSenders", @unique_senders)
+                writer.write_boolean_value("hasAttachments", @has_attachments) unless @has_attachments.nil?
+                writer.write_date_time_value("lastDeliveredDateTime", @last_delivered_date_time) unless @last_delivered_date_time.nil?
+                writer.write_string_value("preview", @preview) unless @preview.nil?
+                writer.write_collection_of_object_values("threads", @threads) unless @threads.nil?
+                writer.write_string_value("topic", @topic) unless @topic.nil?
+                writer.write_collection_of_primitive_values("uniqueSenders", @unique_senders) unless @unique_senders.nil?
             end
             ## 
             ## Gets the threads property value. A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.

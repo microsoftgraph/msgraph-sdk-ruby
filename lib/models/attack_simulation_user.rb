@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("email", @email)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("userId", @user_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("email", @email) unless @email.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the userId property value. This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.

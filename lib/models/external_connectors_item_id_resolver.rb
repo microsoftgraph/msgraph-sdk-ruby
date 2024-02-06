@@ -62,8 +62,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("itemId", @item_id)
-                writer.write_object_value("urlMatchInfo", @url_match_info)
+                writer.write_string_value("itemId", @item_id) unless @item_id.nil?
+                writer.write_object_value("urlMatchInfo", @url_match_info) unless @url_match_info.nil?
             end
             ## 
             ## Gets the urlMatchInfo property value. Configurations to match and resolve URL.

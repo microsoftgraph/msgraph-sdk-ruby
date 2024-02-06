@@ -197,15 +197,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("buildNumber", @build_number)
-                writer.write_string_value("bundleId", @bundle_id)
-                writer.write_collection_of_object_values("childApps", @child_apps)
-                writer.write_boolean_value("ignoreVersionDetection", @ignore_version_detection)
-                writer.write_boolean_value("installAsManaged", @install_as_managed)
+                writer.write_string_value("buildNumber", @build_number) unless @build_number.nil?
+                writer.write_string_value("bundleId", @bundle_id) unless @bundle_id.nil?
+                writer.write_collection_of_object_values("childApps", @child_apps) unless @child_apps.nil?
+                writer.write_boolean_value("ignoreVersionDetection", @ignore_version_detection) unless @ignore_version_detection.nil?
+                writer.write_boolean_value("installAsManaged", @install_as_managed) unless @install_as_managed.nil?
                 writer.write_collection_of_primitive_values("md5Hash", @md5_hash)
                 writer.write_number_value("md5HashChunkSize", @md5_hash_chunk_size)
-                writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system)
-                writer.write_string_value("versionNumber", @version_number)
+                writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system) unless @minimum_supported_operating_system.nil?
+                writer.write_string_value("versionNumber", @version_number) unless @version_number.nil?
             end
             ## 
             ## Gets the versionNumber property value. The version number of the package. This should match the package CFBundleVersion in the packageinfo file.

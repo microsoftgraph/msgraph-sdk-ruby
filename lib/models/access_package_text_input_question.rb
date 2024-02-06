@@ -77,8 +77,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("isSingleLineQuestion", @is_single_line_question)
-                writer.write_string_value("regexPattern", @regex_pattern)
+                writer.write_boolean_value("isSingleLineQuestion", @is_single_line_question) unless @is_single_line_question.nil?
+                writer.write_string_value("regexPattern", @regex_pattern) unless @regex_pattern.nil?
             end
         end
     end

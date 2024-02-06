@@ -150,12 +150,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("message", @message)
-                writer.write_object_value("messageLanguage", @message_language)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("scheduledEndTime", @scheduled_end_time)
-                writer.write_object_value("scheduledStartTime", @scheduled_start_time)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("message", @message) unless @message.nil?
+                writer.write_object_value("messageLanguage", @message_language) unless @message_language.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("scheduledEndTime", @scheduled_end_time) unless @scheduled_end_time.nil?
+                writer.write_object_value("scheduledStartTime", @scheduled_start_time) unless @scheduled_start_time.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

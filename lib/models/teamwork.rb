@@ -65,9 +65,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("deletedTeams", @deleted_teams)
-                writer.write_object_value("teamsAppSettings", @teams_app_settings)
-                writer.write_collection_of_object_values("workforceIntegrations", @workforce_integrations)
+                writer.write_collection_of_object_values("deletedTeams", @deleted_teams) unless @deleted_teams.nil?
+                writer.write_object_value("teamsAppSettings", @teams_app_settings) unless @teams_app_settings.nil?
+                writer.write_collection_of_object_values("workforceIntegrations", @workforce_integrations) unless @workforce_integrations.nil?
             end
             ## 
             ## Gets the teamsAppSettings property value. The teamsAppSettings property

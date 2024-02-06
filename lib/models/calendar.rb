@@ -365,24 +365,24 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("allowedOnlineMeetingProviders", @allowed_online_meeting_providers)
-                writer.write_collection_of_object_values("calendarPermissions", @calendar_permissions)
-                writer.write_collection_of_object_values("calendarView", @calendar_view)
-                writer.write_boolean_value("canEdit", @can_edit)
-                writer.write_boolean_value("canShare", @can_share)
-                writer.write_boolean_value("canViewPrivateItems", @can_view_private_items)
-                writer.write_string_value("changeKey", @change_key)
-                writer.write_enum_value("color", @color)
-                writer.write_enum_value("defaultOnlineMeetingProvider", @default_online_meeting_provider)
-                writer.write_collection_of_object_values("events", @events)
-                writer.write_string_value("hexColor", @hex_color)
-                writer.write_boolean_value("isDefaultCalendar", @is_default_calendar)
-                writer.write_boolean_value("isRemovable", @is_removable)
-                writer.write_boolean_value("isTallyingResponses", @is_tallying_responses)
-                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties)
-                writer.write_string_value("name", @name)
-                writer.write_object_value("owner", @owner)
-                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties)
+                writer.write_collection_of_object_values("allowedOnlineMeetingProviders", @allowed_online_meeting_providers) unless @allowed_online_meeting_providers.nil?
+                writer.write_collection_of_object_values("calendarPermissions", @calendar_permissions) unless @calendar_permissions.nil?
+                writer.write_collection_of_object_values("calendarView", @calendar_view) unless @calendar_view.nil?
+                writer.write_boolean_value("canEdit", @can_edit) unless @can_edit.nil?
+                writer.write_boolean_value("canShare", @can_share) unless @can_share.nil?
+                writer.write_boolean_value("canViewPrivateItems", @can_view_private_items) unless @can_view_private_items.nil?
+                writer.write_string_value("changeKey", @change_key) unless @change_key.nil?
+                writer.write_enum_value("color", @color) unless @color.nil?
+                writer.write_enum_value("defaultOnlineMeetingProvider", @default_online_meeting_provider) unless @default_online_meeting_provider.nil?
+                writer.write_collection_of_object_values("events", @events) unless @events.nil?
+                writer.write_string_value("hexColor", @hex_color) unless @hex_color.nil?
+                writer.write_boolean_value("isDefaultCalendar", @is_default_calendar) unless @is_default_calendar.nil?
+                writer.write_boolean_value("isRemovable", @is_removable) unless @is_removable.nil?
+                writer.write_boolean_value("isTallyingResponses", @is_tallying_responses) unless @is_tallying_responses.nil?
+                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties) unless @multi_value_extended_properties.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_object_value("owner", @owner) unless @owner.nil?
+                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties) unless @single_value_extended_properties.nil?
             end
             ## 
             ## Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the calendar. Read-only. Nullable.

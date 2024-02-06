@@ -99,10 +99,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("error", @error)
-                writer.write_number_value("percentageComplete", @percentage_complete)
-                writer.write_string_value("resourceId", @resource_id)
-                writer.write_string_value("type", @type)
+                writer.write_object_value("error", @error) unless @error.nil?
+                writer.write_number_value("percentageComplete", @percentage_complete) unless @percentage_complete.nil?
+                writer.write_string_value("resourceId", @resource_id) unless @resource_id.nil?
+                writer.write_string_value("type", @type) unless @type.nil?
             end
             ## 
             ## Gets the type property value. The type of the operation.

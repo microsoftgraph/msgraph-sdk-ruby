@@ -184,20 +184,20 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("currentValue", @current_value)
-                writer.write_object_value("errorCode", @error_code)
-                writer.write_string_value("errorDescription", @error_description)
-                writer.write_string_value("instanceDisplayName", @instance_display_name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("setting", @setting)
-                writer.write_string_value("settingName", @setting_name)
-                writer.write_collection_of_object_values("sources", @sources)
-                writer.write_enum_value("state", @state)
-                writer.write_string_value("userEmail", @user_email)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("userName", @user_name)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("currentValue", @current_value) unless @current_value.nil?
+                writer.write_object_value("errorCode", @error_code) unless @error_code.nil?
+                writer.write_string_value("errorDescription", @error_description) unless @error_description.nil?
+                writer.write_string_value("instanceDisplayName", @instance_display_name) unless @instance_display_name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("setting", @setting) unless @setting.nil?
+                writer.write_string_value("settingName", @setting_name) unless @setting_name.nil?
+                writer.write_collection_of_object_values("sources", @sources) unless @sources.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_string_value("userEmail", @user_email) unless @user_email.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
+                writer.write_string_value("userName", @user_name) unless @user_name.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the setting property value. The setting that is being reported

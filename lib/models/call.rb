@@ -389,30 +389,30 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("audioRoutingGroups", @audio_routing_groups)
-                writer.write_string_value("callChainId", @call_chain_id)
-                writer.write_object_value("callOptions", @call_options)
-                writer.write_collection_of_object_values("callRoutes", @call_routes)
-                writer.write_string_value("callbackUri", @callback_uri)
-                writer.write_object_value("chatInfo", @chat_info)
-                writer.write_collection_of_object_values("contentSharingSessions", @content_sharing_sessions)
-                writer.write_enum_value("direction", @direction)
-                writer.write_object_value("incomingContext", @incoming_context)
-                writer.write_object_value("mediaConfig", @media_config)
-                writer.write_object_value("mediaState", @media_state)
-                writer.write_object_value("meetingInfo", @meeting_info)
-                writer.write_string_value("myParticipantId", @my_participant_id)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_collection_of_object_values("participants", @participants)
-                writer.write_collection_of_object_values("requestedModalities", @requested_modalities)
-                writer.write_object_value("resultInfo", @result_info)
-                writer.write_object_value("source", @source)
-                writer.write_enum_value("state", @state)
-                writer.write_string_value("subject", @subject)
-                writer.write_collection_of_object_values("targets", @targets)
-                writer.write_string_value("tenantId", @tenant_id)
-                writer.write_object_value("toneInfo", @tone_info)
-                writer.write_object_value("transcription", @transcription)
+                writer.write_collection_of_object_values("audioRoutingGroups", @audio_routing_groups) unless @audio_routing_groups.nil?
+                writer.write_string_value("callChainId", @call_chain_id) unless @call_chain_id.nil?
+                writer.write_object_value("callOptions", @call_options) unless @call_options.nil?
+                writer.write_collection_of_object_values("callRoutes", @call_routes) unless @call_routes.nil?
+                writer.write_string_value("callbackUri", @callback_uri) unless @callback_uri.nil?
+                writer.write_object_value("chatInfo", @chat_info) unless @chat_info.nil?
+                writer.write_collection_of_object_values("contentSharingSessions", @content_sharing_sessions) unless @content_sharing_sessions.nil?
+                writer.write_enum_value("direction", @direction) unless @direction.nil?
+                writer.write_object_value("incomingContext", @incoming_context) unless @incoming_context.nil?
+                writer.write_object_value("mediaConfig", @media_config) unless @media_config.nil?
+                writer.write_object_value("mediaState", @media_state) unless @media_state.nil?
+                writer.write_object_value("meetingInfo", @meeting_info) unless @meeting_info.nil?
+                writer.write_string_value("myParticipantId", @my_participant_id) unless @my_participant_id.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_collection_of_object_values("participants", @participants) unless @participants.nil?
+                writer.write_collection_of_object_values("requestedModalities", @requested_modalities) unless @requested_modalities.nil?
+                writer.write_object_value("resultInfo", @result_info) unless @result_info.nil?
+                writer.write_object_value("source", @source) unless @source.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_string_value("subject", @subject) unless @subject.nil?
+                writer.write_collection_of_object_values("targets", @targets) unless @targets.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
+                writer.write_object_value("toneInfo", @tone_info) unless @tone_info.nil?
+                writer.write_object_value("transcription", @transcription) unless @transcription.nil?
             end
             ## 
             ## Gets the source property value. The originator of the call.

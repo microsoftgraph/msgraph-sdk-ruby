@@ -188,14 +188,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("approvalStageTimeOutInDays", @approval_stage_time_out_in_days)
-                writer.write_collection_of_object_values("escalationApprovers", @escalation_approvers)
-                writer.write_number_value("escalationTimeInMinutes", @escalation_time_in_minutes)
-                writer.write_boolean_value("isApproverJustificationRequired", @is_approver_justification_required)
-                writer.write_boolean_value("isEscalationEnabled", @is_escalation_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("primaryApprovers", @primary_approvers)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("approvalStageTimeOutInDays", @approval_stage_time_out_in_days) unless @approval_stage_time_out_in_days.nil?
+                writer.write_collection_of_object_values("escalationApprovers", @escalation_approvers) unless @escalation_approvers.nil?
+                writer.write_number_value("escalationTimeInMinutes", @escalation_time_in_minutes) unless @escalation_time_in_minutes.nil?
+                writer.write_boolean_value("isApproverJustificationRequired", @is_approver_justification_required) unless @is_approver_justification_required.nil?
+                writer.write_boolean_value("isEscalationEnabled", @is_escalation_enabled) unless @is_escalation_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("primaryApprovers", @primary_approvers) unless @primary_approvers.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

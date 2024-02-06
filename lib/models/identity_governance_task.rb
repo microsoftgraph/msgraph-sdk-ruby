@@ -179,15 +179,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("arguments", @arguments)
-                writer.write_enum_value("category", @category)
-                writer.write_boolean_value("continueOnError", @continue_on_error)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_number_value("executionSequence", @execution_sequence)
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_string_value("taskDefinitionId", @task_definition_id)
-                writer.write_collection_of_object_values("taskProcessingResults", @task_processing_results)
+                writer.write_collection_of_object_values("arguments", @arguments) unless @arguments.nil?
+                writer.write_enum_value("category", @category) unless @category.nil?
+                writer.write_boolean_value("continueOnError", @continue_on_error) unless @continue_on_error.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_number_value("executionSequence", @execution_sequence) unless @execution_sequence.nil?
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_string_value("taskDefinitionId", @task_definition_id) unless @task_definition_id.nil?
+                writer.write_collection_of_object_values("taskProcessingResults", @task_processing_results) unless @task_processing_results.nil?
             end
             ## 
             ## Gets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).

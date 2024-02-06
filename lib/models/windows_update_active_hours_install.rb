@@ -78,8 +78,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_time_value("activeHoursEnd", @active_hours_end)
-                writer.write_time_value("activeHoursStart", @active_hours_start)
+                writer.write_time_value("activeHoursEnd", @active_hours_end) unless @active_hours_end.nil?
+                writer.write_time_value("activeHoursStart", @active_hours_start) unless @active_hours_start.nil?
             end
         end
     end

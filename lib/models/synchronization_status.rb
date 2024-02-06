@@ -243,20 +243,20 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("code", @code)
-                writer.write_object_value("countSuccessiveCompleteFailures", @count_successive_complete_failures)
-                writer.write_boolean_value("escrowsPruned", @escrows_pruned)
-                writer.write_object_value("lastExecution", @last_execution)
-                writer.write_object_value("lastSuccessfulExecution", @last_successful_execution)
-                writer.write_object_value("lastSuccessfulExecutionWithExports", @last_successful_execution_with_exports)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("progress", @progress)
-                writer.write_object_value("quarantine", @quarantine)
-                writer.write_date_time_value("steadyStateFirstAchievedTime", @steady_state_first_achieved_time)
-                writer.write_date_time_value("steadyStateLastAchievedTime", @steady_state_last_achieved_time)
-                writer.write_collection_of_object_values("synchronizedEntryCountByType", @synchronized_entry_count_by_type)
-                writer.write_string_value("troubleshootingUrl", @troubleshooting_url)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("code", @code) unless @code.nil?
+                writer.write_object_value("countSuccessiveCompleteFailures", @count_successive_complete_failures) unless @count_successive_complete_failures.nil?
+                writer.write_boolean_value("escrowsPruned", @escrows_pruned) unless @escrows_pruned.nil?
+                writer.write_object_value("lastExecution", @last_execution) unless @last_execution.nil?
+                writer.write_object_value("lastSuccessfulExecution", @last_successful_execution) unless @last_successful_execution.nil?
+                writer.write_object_value("lastSuccessfulExecutionWithExports", @last_successful_execution_with_exports) unless @last_successful_execution_with_exports.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("progress", @progress) unless @progress.nil?
+                writer.write_object_value("quarantine", @quarantine) unless @quarantine.nil?
+                writer.write_date_time_value("steadyStateFirstAchievedTime", @steady_state_first_achieved_time) unless @steady_state_first_achieved_time.nil?
+                writer.write_date_time_value("steadyStateLastAchievedTime", @steady_state_last_achieved_time) unless @steady_state_last_achieved_time.nil?
+                writer.write_collection_of_object_values("synchronizedEntryCountByType", @synchronized_entry_count_by_type) unless @synchronized_entry_count_by_type.nil?
+                writer.write_string_value("troubleshootingUrl", @troubleshooting_url) unless @troubleshooting_url.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the steadyStateFirstAchievedTime property value. The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

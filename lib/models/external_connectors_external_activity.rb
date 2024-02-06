@@ -74,9 +74,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("performedBy", @performed_by)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_enum_value("type", @type)
+                writer.write_object_value("performedBy", @performed_by) unless @performed_by.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
             end
             ## 
             ## Gets the startDateTime property value. The date and time when the particular activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

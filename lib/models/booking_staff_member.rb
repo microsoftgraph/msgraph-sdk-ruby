@@ -148,14 +148,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("availabilityIsAffectedByPersonalCalendar", @availability_is_affected_by_personal_calendar)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("emailAddress", @email_address)
-                writer.write_boolean_value("isEmailNotificationEnabled", @is_email_notification_enabled)
-                writer.write_enum_value("role", @role)
-                writer.write_string_value("timeZone", @time_zone)
-                writer.write_boolean_value("useBusinessHours", @use_business_hours)
-                writer.write_collection_of_object_values("workingHours", @working_hours)
+                writer.write_boolean_value("availabilityIsAffectedByPersonalCalendar", @availability_is_affected_by_personal_calendar) unless @availability_is_affected_by_personal_calendar.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("emailAddress", @email_address) unless @email_address.nil?
+                writer.write_boolean_value("isEmailNotificationEnabled", @is_email_notification_enabled) unless @is_email_notification_enabled.nil?
+                writer.write_enum_value("role", @role) unless @role.nil?
+                writer.write_string_value("timeZone", @time_zone) unless @time_zone.nil?
+                writer.write_boolean_value("useBusinessHours", @use_business_hours) unless @use_business_hours.nil?
+                writer.write_collection_of_object_values("workingHours", @working_hours) unless @working_hours.nil?
             end
             ## 
             ## Gets the timeZone property value. The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.

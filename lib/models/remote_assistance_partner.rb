@@ -117,10 +117,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastConnectionDateTime", @last_connection_date_time)
-                writer.write_enum_value("onboardingStatus", @onboarding_status)
-                writer.write_string_value("onboardingUrl", @onboarding_url)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("lastConnectionDateTime", @last_connection_date_time) unless @last_connection_date_time.nil?
+                writer.write_enum_value("onboardingStatus", @onboarding_status) unless @onboarding_status.nil?
+                writer.write_string_value("onboardingUrl", @onboarding_url) unless @onboarding_url.nil?
             end
         end
     end

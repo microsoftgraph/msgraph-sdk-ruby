@@ -201,16 +201,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("acceptanceStatement", @acceptance_statement)
-                writer.write_collection_of_object_values("acceptanceStatuses", @acceptance_statuses)
-                writer.write_collection_of_object_values("assignments", @assignments)
-                writer.write_string_value("bodyText", @body_text)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_string_value("title", @title)
-                writer.write_number_value("version", @version)
+                writer.write_string_value("acceptanceStatement", @acceptance_statement) unless @acceptance_statement.nil?
+                writer.write_collection_of_object_values("acceptanceStatuses", @acceptance_statuses) unless @acceptance_statuses.nil?
+                writer.write_collection_of_object_values("assignments", @assignments) unless @assignments.nil?
+                writer.write_string_value("bodyText", @body_text) unless @body_text.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
+                writer.write_number_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the title property value. Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&C policy.

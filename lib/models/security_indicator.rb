@@ -71,8 +71,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("artifact", @artifact)
-                writer.write_enum_value("source", @source)
+                writer.write_object_value("artifact", @artifact) unless @artifact.nil?
+                writer.write_enum_value("source", @source) unless @source.nil?
             end
             ## 
             ## Gets the source property value. The source property

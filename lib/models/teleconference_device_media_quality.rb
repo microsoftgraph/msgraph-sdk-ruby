@@ -485,29 +485,29 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_duration_value("averageInboundJitter", @average_inbound_jitter)
-                writer.write_object_value("averageInboundPacketLossRateInPercentage", @average_inbound_packet_loss_rate_in_percentage)
-                writer.write_duration_value("averageInboundRoundTripDelay", @average_inbound_round_trip_delay)
-                writer.write_duration_value("averageOutboundJitter", @average_outbound_jitter)
-                writer.write_object_value("averageOutboundPacketLossRateInPercentage", @average_outbound_packet_loss_rate_in_percentage)
-                writer.write_duration_value("averageOutboundRoundTripDelay", @average_outbound_round_trip_delay)
-                writer.write_number_value("channelIndex", @channel_index)
-                writer.write_object_value("inboundPackets", @inbound_packets)
-                writer.write_string_value("localIPAddress", @local_i_p_address)
-                writer.write_number_value("localPort", @local_port)
-                writer.write_duration_value("maximumInboundJitter", @maximum_inbound_jitter)
-                writer.write_object_value("maximumInboundPacketLossRateInPercentage", @maximum_inbound_packet_loss_rate_in_percentage)
-                writer.write_duration_value("maximumInboundRoundTripDelay", @maximum_inbound_round_trip_delay)
-                writer.write_duration_value("maximumOutboundJitter", @maximum_outbound_jitter)
-                writer.write_object_value("maximumOutboundPacketLossRateInPercentage", @maximum_outbound_packet_loss_rate_in_percentage)
-                writer.write_duration_value("maximumOutboundRoundTripDelay", @maximum_outbound_round_trip_delay)
-                writer.write_duration_value("mediaDuration", @media_duration)
-                writer.write_object_value("networkLinkSpeedInBytes", @network_link_speed_in_bytes)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("outboundPackets", @outbound_packets)
-                writer.write_string_value("remoteIPAddress", @remote_i_p_address)
-                writer.write_number_value("remotePort", @remote_port)
-                writer.write_additional_data(@additional_data)
+                writer.write_duration_value("averageInboundJitter", @average_inbound_jitter) unless @average_inbound_jitter.nil?
+                writer.write_object_value("averageInboundPacketLossRateInPercentage", @average_inbound_packet_loss_rate_in_percentage) unless @average_inbound_packet_loss_rate_in_percentage.nil?
+                writer.write_duration_value("averageInboundRoundTripDelay", @average_inbound_round_trip_delay) unless @average_inbound_round_trip_delay.nil?
+                writer.write_duration_value("averageOutboundJitter", @average_outbound_jitter) unless @average_outbound_jitter.nil?
+                writer.write_object_value("averageOutboundPacketLossRateInPercentage", @average_outbound_packet_loss_rate_in_percentage) unless @average_outbound_packet_loss_rate_in_percentage.nil?
+                writer.write_duration_value("averageOutboundRoundTripDelay", @average_outbound_round_trip_delay) unless @average_outbound_round_trip_delay.nil?
+                writer.write_number_value("channelIndex", @channel_index) unless @channel_index.nil?
+                writer.write_object_value("inboundPackets", @inbound_packets) unless @inbound_packets.nil?
+                writer.write_string_value("localIPAddress", @local_i_p_address) unless @local_i_p_address.nil?
+                writer.write_number_value("localPort", @local_port) unless @local_port.nil?
+                writer.write_duration_value("maximumInboundJitter", @maximum_inbound_jitter) unless @maximum_inbound_jitter.nil?
+                writer.write_object_value("maximumInboundPacketLossRateInPercentage", @maximum_inbound_packet_loss_rate_in_percentage) unless @maximum_inbound_packet_loss_rate_in_percentage.nil?
+                writer.write_duration_value("maximumInboundRoundTripDelay", @maximum_inbound_round_trip_delay) unless @maximum_inbound_round_trip_delay.nil?
+                writer.write_duration_value("maximumOutboundJitter", @maximum_outbound_jitter) unless @maximum_outbound_jitter.nil?
+                writer.write_object_value("maximumOutboundPacketLossRateInPercentage", @maximum_outbound_packet_loss_rate_in_percentage) unless @maximum_outbound_packet_loss_rate_in_percentage.nil?
+                writer.write_duration_value("maximumOutboundRoundTripDelay", @maximum_outbound_round_trip_delay) unless @maximum_outbound_round_trip_delay.nil?
+                writer.write_duration_value("mediaDuration", @media_duration) unless @media_duration.nil?
+                writer.write_object_value("networkLinkSpeedInBytes", @network_link_speed_in_bytes) unless @network_link_speed_in_bytes.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("outboundPackets", @outbound_packets) unless @outbound_packets.nil?
+                writer.write_string_value("remoteIPAddress", @remote_i_p_address) unless @remote_i_p_address.nil?
+                writer.write_number_value("remotePort", @remote_port) unless @remote_port.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

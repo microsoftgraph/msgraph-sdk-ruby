@@ -81,9 +81,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("values", @values)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("values", @values) unless @values.nil?
             end
             ## 
             ## Gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.

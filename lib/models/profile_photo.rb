@@ -61,8 +61,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("height", @height)
-                writer.write_number_value("width", @width)
+                writer.write_number_value("height", @height) unless @height.nil?
+                writer.write_number_value("width", @width) unless @width.nil?
             end
             ## 
             ## Gets the width property value. The width of the photo. Read-only.

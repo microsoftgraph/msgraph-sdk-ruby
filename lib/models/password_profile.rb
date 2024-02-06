@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("forceChangePasswordNextSignIn", @force_change_password_next_sign_in)
-                writer.write_boolean_value("forceChangePasswordNextSignInWithMfa", @force_change_password_next_sign_in_with_mfa)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("password", @password)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("forceChangePasswordNextSignIn", @force_change_password_next_sign_in) unless @force_change_password_next_sign_in.nil?
+                writer.write_boolean_value("forceChangePasswordNextSignInWithMfa", @force_change_password_next_sign_in_with_mfa) unless @force_change_password_next_sign_in_with_mfa.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("password", @password) unless @password.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

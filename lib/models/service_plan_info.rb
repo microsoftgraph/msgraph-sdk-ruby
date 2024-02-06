@@ -120,12 +120,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("appliesTo", @applies_to)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("provisioningStatus", @provisioning_status)
-                writer.write_guid_value("servicePlanId", @service_plan_id)
-                writer.write_string_value("servicePlanName", @service_plan_name)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("appliesTo", @applies_to) unless @applies_to.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("provisioningStatus", @provisioning_status) unless @provisioning_status.nil?
+                writer.write_guid_value("servicePlanId", @service_plan_id) unless @service_plan_id.nil?
+                writer.write_string_value("servicePlanName", @service_plan_name) unless @service_plan_name.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the servicePlanId property value. The unique identifier of the service plan.

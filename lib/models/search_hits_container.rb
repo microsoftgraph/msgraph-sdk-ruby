@@ -135,12 +135,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("aggregations", @aggregations)
-                writer.write_collection_of_object_values("hits", @hits)
-                writer.write_boolean_value("moreResultsAvailable", @more_results_available)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("total", @total)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_object_values("aggregations", @aggregations) unless @aggregations.nil?
+                writer.write_collection_of_object_values("hits", @hits) unless @hits.nil?
+                writer.write_boolean_value("moreResultsAvailable", @more_results_available) unless @more_results_available.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("total", @total) unless @total.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the total property value. The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.

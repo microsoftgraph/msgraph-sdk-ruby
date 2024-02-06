@@ -119,15 +119,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("format", @format)
-                writer.write_string_value("position", @position)
-                writer.write_string_value("separator", @separator)
-                writer.write_boolean_value("showBubbleSize", @show_bubble_size)
-                writer.write_boolean_value("showCategoryName", @show_category_name)
-                writer.write_boolean_value("showLegendKey", @show_legend_key)
-                writer.write_boolean_value("showPercentage", @show_percentage)
-                writer.write_boolean_value("showSeriesName", @show_series_name)
-                writer.write_boolean_value("showValue", @show_value)
+                writer.write_object_value("format", @format) unless @format.nil?
+                writer.write_string_value("position", @position) unless @position.nil?
+                writer.write_string_value("separator", @separator) unless @separator.nil?
+                writer.write_boolean_value("showBubbleSize", @show_bubble_size) unless @show_bubble_size.nil?
+                writer.write_boolean_value("showCategoryName", @show_category_name) unless @show_category_name.nil?
+                writer.write_boolean_value("showLegendKey", @show_legend_key) unless @show_legend_key.nil?
+                writer.write_boolean_value("showPercentage", @show_percentage) unless @show_percentage.nil?
+                writer.write_boolean_value("showSeriesName", @show_series_name) unless @show_series_name.nil?
+                writer.write_boolean_value("showValue", @show_value) unless @show_value.nil?
             end
             ## 
             ## Gets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.

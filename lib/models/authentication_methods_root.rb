@@ -42,7 +42,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("userRegistrationDetails", @user_registration_details)
+                writer.write_collection_of_object_values("userRegistrationDetails", @user_registration_details) unless @user_registration_details.nil?
             end
             ## 
             ## Gets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).

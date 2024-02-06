@@ -85,10 +85,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("authenticationType", @authentication_type)
-                writer.write_enum_value("frequencyInterval", @frequency_interval)
-                writer.write_enum_value("type", @type)
-                writer.write_number_value("value", @value)
+                writer.write_enum_value("authenticationType", @authentication_type) unless @authentication_type.nil?
+                writer.write_enum_value("frequencyInterval", @frequency_interval) unless @frequency_interval.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
+                writer.write_number_value("value", @value) unless @value.nil?
             end
             ## 
             ## Gets the type property value. Possible values are: days, hours.

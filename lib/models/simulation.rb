@@ -309,21 +309,21 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("attackTechnique", @attack_technique)
-                writer.write_enum_value("attackType", @attack_type)
-                writer.write_string_value("automationId", @automation_id)
-                writer.write_date_time_value("completionDateTime", @completion_date_time)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("isAutomated", @is_automated)
-                writer.write_object_value("lastModifiedBy", @last_modified_by)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_date_time_value("launchDateTime", @launch_date_time)
-                writer.write_enum_value("payloadDeliveryPlatform", @payload_delivery_platform)
-                writer.write_object_value("report", @report)
-                writer.write_enum_value("status", @status)
+                writer.write_enum_value("attackTechnique", @attack_technique) unless @attack_technique.nil?
+                writer.write_enum_value("attackType", @attack_type) unless @attack_type.nil?
+                writer.write_string_value("automationId", @automation_id) unless @automation_id.nil?
+                writer.write_date_time_value("completionDateTime", @completion_date_time) unless @completion_date_time.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("isAutomated", @is_automated) unless @is_automated.nil?
+                writer.write_object_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_date_time_value("launchDateTime", @launch_date_time) unless @launch_date_time.nil?
+                writer.write_enum_value("payloadDeliveryPlatform", @payload_delivery_platform) unless @payload_delivery_platform.nil?
+                writer.write_object_value("report", @report) unless @report.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.

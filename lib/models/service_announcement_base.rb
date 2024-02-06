@@ -114,11 +114,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("details", @details)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_string_value("title", @title)
+                writer.write_collection_of_object_values("details", @details) unless @details.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
             end
             ## 
             ## Gets the startDateTime property value. The start time of the service event.

@@ -80,9 +80,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("activity", @activity)
-                writer.write_string_value("initiatedBy", @initiated_by)
-                writer.write_string_value("userId", @user_id)
+                writer.write_object_value("activity", @activity) unless @activity.nil?
+                writer.write_string_value("initiatedBy", @initiated_by) unless @initiated_by.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
             end
             ## 
             ## Gets the userId property value. The ID of the user.

@@ -80,9 +80,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("ocr", @ocr)
-                writer.write_object_value("redundancyDetection", @redundancy_detection)
-                writer.write_object_value("topicModeling", @topic_modeling)
+                writer.write_object_value("ocr", @ocr) unless @ocr.nil?
+                writer.write_object_value("redundancyDetection", @redundancy_detection) unless @redundancy_detection.nil?
+                writer.write_object_value("topicModeling", @topic_modeling) unless @topic_modeling.nil?
             end
             ## 
             ## Gets the topicModeling property value. The Topic Modeling (Themes) settings for the case.

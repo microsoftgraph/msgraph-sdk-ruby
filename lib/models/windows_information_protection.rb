@@ -511,31 +511,31 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("assignments", @assignments)
-                writer.write_boolean_value("azureRightsManagementServicesAllowed", @azure_rights_management_services_allowed)
-                writer.write_object_value("dataRecoveryCertificate", @data_recovery_certificate)
-                writer.write_enum_value("enforcementLevel", @enforcement_level)
-                writer.write_string_value("enterpriseDomain", @enterprise_domain)
-                writer.write_collection_of_object_values("enterpriseIPRanges", @enterprise_i_p_ranges)
-                writer.write_boolean_value("enterpriseIPRangesAreAuthoritative", @enterprise_i_p_ranges_are_authoritative)
-                writer.write_collection_of_object_values("enterpriseInternalProxyServers", @enterprise_internal_proxy_servers)
-                writer.write_collection_of_object_values("enterpriseNetworkDomainNames", @enterprise_network_domain_names)
-                writer.write_collection_of_object_values("enterpriseProtectedDomainNames", @enterprise_protected_domain_names)
-                writer.write_collection_of_object_values("enterpriseProxiedDomains", @enterprise_proxied_domains)
-                writer.write_collection_of_object_values("enterpriseProxyServers", @enterprise_proxy_servers)
-                writer.write_boolean_value("enterpriseProxyServersAreAuthoritative", @enterprise_proxy_servers_are_authoritative)
-                writer.write_collection_of_object_values("exemptAppLockerFiles", @exempt_app_locker_files)
-                writer.write_collection_of_object_values("exemptApps", @exempt_apps)
-                writer.write_boolean_value("iconsVisible", @icons_visible)
-                writer.write_boolean_value("indexingEncryptedStoresOrItemsBlocked", @indexing_encrypted_stores_or_items_blocked)
-                writer.write_boolean_value("isAssigned", @is_assigned)
-                writer.write_collection_of_object_values("neutralDomainResources", @neutral_domain_resources)
-                writer.write_collection_of_object_values("protectedAppLockerFiles", @protected_app_locker_files)
-                writer.write_collection_of_object_values("protectedApps", @protected_apps)
-                writer.write_boolean_value("protectionUnderLockConfigRequired", @protection_under_lock_config_required)
-                writer.write_boolean_value("revokeOnUnenrollDisabled", @revoke_on_unenroll_disabled)
-                writer.write_guid_value("rightsManagementServicesTemplateId", @rights_management_services_template_id)
-                writer.write_collection_of_object_values("smbAutoEncryptedFileExtensions", @smb_auto_encrypted_file_extensions)
+                writer.write_collection_of_object_values("assignments", @assignments) unless @assignments.nil?
+                writer.write_boolean_value("azureRightsManagementServicesAllowed", @azure_rights_management_services_allowed) unless @azure_rights_management_services_allowed.nil?
+                writer.write_object_value("dataRecoveryCertificate", @data_recovery_certificate) unless @data_recovery_certificate.nil?
+                writer.write_enum_value("enforcementLevel", @enforcement_level) unless @enforcement_level.nil?
+                writer.write_string_value("enterpriseDomain", @enterprise_domain) unless @enterprise_domain.nil?
+                writer.write_collection_of_object_values("enterpriseIPRanges", @enterprise_i_p_ranges) unless @enterprise_i_p_ranges.nil?
+                writer.write_boolean_value("enterpriseIPRangesAreAuthoritative", @enterprise_i_p_ranges_are_authoritative) unless @enterprise_i_p_ranges_are_authoritative.nil?
+                writer.write_collection_of_object_values("enterpriseInternalProxyServers", @enterprise_internal_proxy_servers) unless @enterprise_internal_proxy_servers.nil?
+                writer.write_collection_of_object_values("enterpriseNetworkDomainNames", @enterprise_network_domain_names) unless @enterprise_network_domain_names.nil?
+                writer.write_collection_of_object_values("enterpriseProtectedDomainNames", @enterprise_protected_domain_names) unless @enterprise_protected_domain_names.nil?
+                writer.write_collection_of_object_values("enterpriseProxiedDomains", @enterprise_proxied_domains) unless @enterprise_proxied_domains.nil?
+                writer.write_collection_of_object_values("enterpriseProxyServers", @enterprise_proxy_servers) unless @enterprise_proxy_servers.nil?
+                writer.write_boolean_value("enterpriseProxyServersAreAuthoritative", @enterprise_proxy_servers_are_authoritative) unless @enterprise_proxy_servers_are_authoritative.nil?
+                writer.write_collection_of_object_values("exemptAppLockerFiles", @exempt_app_locker_files) unless @exempt_app_locker_files.nil?
+                writer.write_collection_of_object_values("exemptApps", @exempt_apps) unless @exempt_apps.nil?
+                writer.write_boolean_value("iconsVisible", @icons_visible) unless @icons_visible.nil?
+                writer.write_boolean_value("indexingEncryptedStoresOrItemsBlocked", @indexing_encrypted_stores_or_items_blocked) unless @indexing_encrypted_stores_or_items_blocked.nil?
+                writer.write_boolean_value("isAssigned", @is_assigned) unless @is_assigned.nil?
+                writer.write_collection_of_object_values("neutralDomainResources", @neutral_domain_resources) unless @neutral_domain_resources.nil?
+                writer.write_collection_of_object_values("protectedAppLockerFiles", @protected_app_locker_files) unless @protected_app_locker_files.nil?
+                writer.write_collection_of_object_values("protectedApps", @protected_apps) unless @protected_apps.nil?
+                writer.write_boolean_value("protectionUnderLockConfigRequired", @protection_under_lock_config_required) unless @protection_under_lock_config_required.nil?
+                writer.write_boolean_value("revokeOnUnenrollDisabled", @revoke_on_unenroll_disabled) unless @revoke_on_unenroll_disabled.nil?
+                writer.write_guid_value("rightsManagementServicesTemplateId", @rights_management_services_template_id) unless @rights_management_services_template_id.nil?
+                writer.write_collection_of_object_values("smbAutoEncryptedFileExtensions", @smb_auto_encrypted_file_extensions) unless @smb_auto_encrypted_file_extensions.nil?
             end
             ## 
             ## Gets the smbAutoEncryptedFileExtensions property value. Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary

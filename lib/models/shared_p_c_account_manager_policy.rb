@@ -152,12 +152,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("accountDeletionPolicy", @account_deletion_policy)
-                writer.write_number_value("cacheAccountsAboveDiskFreePercentage", @cache_accounts_above_disk_free_percentage)
-                writer.write_number_value("inactiveThresholdDays", @inactive_threshold_days)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("removeAccountsBelowDiskFreePercentage", @remove_accounts_below_disk_free_percentage)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("accountDeletionPolicy", @account_deletion_policy) unless @account_deletion_policy.nil?
+                writer.write_number_value("cacheAccountsAboveDiskFreePercentage", @cache_accounts_above_disk_free_percentage) unless @cache_accounts_above_disk_free_percentage.nil?
+                writer.write_number_value("inactiveThresholdDays", @inactive_threshold_days) unless @inactive_threshold_days.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("removeAccountsBelowDiskFreePercentage", @remove_accounts_below_disk_free_percentage) unless @remove_accounts_below_disk_free_percentage.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

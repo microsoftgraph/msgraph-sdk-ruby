@@ -58,7 +58,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_duration_value("inactiveDuration", @inactive_duration)
+                writer.write_duration_value("inactiveDuration", @inactive_duration) unless @inactive_duration.nil?
             end
         end
     end

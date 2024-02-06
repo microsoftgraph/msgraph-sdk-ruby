@@ -61,8 +61,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("name", @name)
-                writer.write_object_value("worksheet", @worksheet)
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_object_value("worksheet", @worksheet) unless @worksheet.nil?
             end
             ## 
             ## Gets the worksheet property value. The worksheet containing the current PivotTable. Read-only.

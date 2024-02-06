@@ -148,12 +148,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_enum_value("holdStatus", @hold_status)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_date_time_value("releasedDateTime", @released_date_time)
-                writer.write_enum_value("status", @status)
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_enum_value("holdStatus", @hold_status) unless @hold_status.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_date_time_value("releasedDateTime", @released_date_time) unless @released_date_time.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. Latest status of the dataSourceContainer. Possible values are: Active, Released.

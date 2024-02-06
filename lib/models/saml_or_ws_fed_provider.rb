@@ -129,11 +129,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("issuerUri", @issuer_uri)
-                writer.write_string_value("metadataExchangeUri", @metadata_exchange_uri)
-                writer.write_string_value("passiveSignInUri", @passive_sign_in_uri)
-                writer.write_enum_value("preferredAuthenticationProtocol", @preferred_authentication_protocol)
-                writer.write_string_value("signingCertificate", @signing_certificate)
+                writer.write_string_value("issuerUri", @issuer_uri) unless @issuer_uri.nil?
+                writer.write_string_value("metadataExchangeUri", @metadata_exchange_uri) unless @metadata_exchange_uri.nil?
+                writer.write_string_value("passiveSignInUri", @passive_sign_in_uri) unless @passive_sign_in_uri.nil?
+                writer.write_enum_value("preferredAuthenticationProtocol", @preferred_authentication_protocol) unless @preferred_authentication_protocol.nil?
+                writer.write_string_value("signingCertificate", @signing_certificate) unless @signing_certificate.nil?
             end
             ## 
             ## Gets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.

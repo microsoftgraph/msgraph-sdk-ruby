@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("assignmentMethod", @assignment_method)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("sensitivityLabelId", @sensitivity_label_id)
-                writer.write_string_value("tenantId", @tenant_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("assignmentMethod", @assignment_method) unless @assignment_method.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("sensitivityLabelId", @sensitivity_label_id) unless @sensitivity_label_id.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the tenantId property value. The unique identifier for the tenant that hosts the file when this label is applied.

@@ -262,18 +262,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("appScope", @app_scope)
-                writer.write_string_value("appScopeId", @app_scope_id)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("createdUsing", @created_using)
-                writer.write_object_value("directoryScope", @directory_scope)
-                writer.write_string_value("directoryScopeId", @directory_scope_id)
-                writer.write_date_time_value("modifiedDateTime", @modified_date_time)
-                writer.write_object_value("principal", @principal)
-                writer.write_string_value("principalId", @principal_id)
-                writer.write_object_value("roleDefinition", @role_definition)
-                writer.write_string_value("roleDefinitionId", @role_definition_id)
-                writer.write_string_value("status", @status)
+                writer.write_object_value("appScope", @app_scope) unless @app_scope.nil?
+                writer.write_string_value("appScopeId", @app_scope_id) unless @app_scope_id.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("createdUsing", @created_using) unless @created_using.nil?
+                writer.write_object_value("directoryScope", @directory_scope) unless @directory_scope.nil?
+                writer.write_string_value("directoryScopeId", @directory_scope_id) unless @directory_scope_id.nil?
+                writer.write_date_time_value("modifiedDateTime", @modified_date_time) unless @modified_date_time.nil?
+                writer.write_object_value("principal", @principal) unless @principal.nil?
+                writer.write_string_value("principalId", @principal_id) unless @principal_id.nil?
+                writer.write_object_value("roleDefinition", @role_definition) unless @role_definition.nil?
+                writer.write_string_value("roleDefinitionId", @role_definition_id) unless @role_definition_id.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The status of the role assignment or eligibility request.

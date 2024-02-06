@@ -161,14 +161,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("conditions", @conditions)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("grantControls", @grant_controls)
-                writer.write_date_time_value("modifiedDateTime", @modified_date_time)
-                writer.write_object_value("sessionControls", @session_controls)
-                writer.write_enum_value("state", @state)
+                writer.write_object_value("conditions", @conditions) unless @conditions.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("grantControls", @grant_controls) unless @grant_controls.nil?
+                writer.write_date_time_value("modifiedDateTime", @modified_date_time) unless @modified_date_time.nil?
+                writer.write_object_value("sessionControls", @session_controls) unless @session_controls.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
             end
             ## 
             ## Gets the sessionControls property value. Specifies the session controls that are enforced after sign-in.

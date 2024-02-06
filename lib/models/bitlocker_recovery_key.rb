@@ -100,10 +100,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("deviceId", @device_id)
-                writer.write_string_value("key", @key)
-                writer.write_enum_value("volumeType", @volume_type)
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("deviceId", @device_id) unless @device_id.nil?
+                writer.write_string_value("key", @key) unless @key.nil?
+                writer.write_enum_value("volumeType", @volume_type) unless @volume_type.nil?
             end
             ## 
             ## Gets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).

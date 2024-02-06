@@ -135,12 +135,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("additionalProperties", @additional_properties)
-                writer.write_boolean_value("essential", @essential)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("source", @source)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("additionalProperties", @additional_properties) unless @additional_properties.nil?
+                writer.write_boolean_value("essential", @essential) unless @essential.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("source", @source) unless @source.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the source property value. The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.

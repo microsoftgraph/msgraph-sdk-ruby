@@ -132,11 +132,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("durationInSeconds", @duration_in_seconds)
-                writer.write_date_time_value("joinDateTime", @join_date_time)
-                writer.write_date_time_value("leaveDateTime", @leave_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("durationInSeconds", @duration_in_seconds) unless @duration_in_seconds.nil?
+                writer.write_date_time_value("joinDateTime", @join_date_time) unless @join_date_time.nil?
+                writer.write_date_time_value("leaveDateTime", @leave_date_time) unless @leave_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

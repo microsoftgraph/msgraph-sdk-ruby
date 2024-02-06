@@ -44,7 +44,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("unlockPin", @unlock_pin)
+                writer.write_string_value("unlockPin", @unlock_pin) unless @unlock_pin.nil?
             end
             ## 
             ## Gets the unlockPin property value. Pin to unlock the client

@@ -96,9 +96,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("author", @author)
-                writer.write_object_value("content", @content)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
+                writer.write_object_value("author", @author) unless @author.nil?
+                writer.write_object_value("content", @content) unless @content.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
             end
         end
     end

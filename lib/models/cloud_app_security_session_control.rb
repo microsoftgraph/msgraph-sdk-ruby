@@ -58,7 +58,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("cloudAppSecurityType", @cloud_app_security_type)
+                writer.write_enum_value("cloudAppSecurityType", @cloud_app_security_type) unless @cloud_app_security_type.nil?
             end
         end
     end

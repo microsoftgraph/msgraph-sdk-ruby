@@ -154,13 +154,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("applicationEnforcedRestrictions", @application_enforced_restrictions)
-                writer.write_object_value("cloudAppSecurity", @cloud_app_security)
-                writer.write_boolean_value("disableResilienceDefaults", @disable_resilience_defaults)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("persistentBrowser", @persistent_browser)
-                writer.write_object_value("signInFrequency", @sign_in_frequency)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("applicationEnforcedRestrictions", @application_enforced_restrictions) unless @application_enforced_restrictions.nil?
+                writer.write_object_value("cloudAppSecurity", @cloud_app_security) unless @cloud_app_security.nil?
+                writer.write_boolean_value("disableResilienceDefaults", @disable_resilience_defaults) unless @disable_resilience_defaults.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("persistentBrowser", @persistent_browser) unless @persistent_browser.nil?
+                writer.write_object_value("signInFrequency", @sign_in_frequency) unless @sign_in_frequency.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the signInFrequency property value. Session control to enforce signin frequency.

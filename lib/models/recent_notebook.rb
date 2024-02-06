@@ -136,12 +136,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastAccessedTime", @last_accessed_time)
-                writer.write_object_value("links", @links)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("sourceService", @source_service)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("lastAccessedTime", @last_accessed_time) unless @last_accessed_time.nil?
+                writer.write_object_value("links", @links) unless @links.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("sourceService", @source_service) unless @source_service.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sourceService property value. The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.

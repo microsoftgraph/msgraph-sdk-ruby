@@ -154,13 +154,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("authenticationStrength", @authentication_strength)
-                writer.write_collection_of_object_values("builtInControls", @built_in_controls)
-                writer.write_collection_of_primitive_values("customAuthenticationFactors", @custom_authentication_factors)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("operator", @operator)
-                writer.write_collection_of_primitive_values("termsOfUse", @terms_of_use)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("authenticationStrength", @authentication_strength) unless @authentication_strength.nil?
+                writer.write_collection_of_object_values("builtInControls", @built_in_controls) unless @built_in_controls.nil?
+                writer.write_collection_of_primitive_values("customAuthenticationFactors", @custom_authentication_factors) unless @custom_authentication_factors.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("operator", @operator) unless @operator.nil?
+                writer.write_collection_of_primitive_values("termsOfUse", @terms_of_use) unless @terms_of_use.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the termsOfUse property value. List of terms of use IDs required by the policy.

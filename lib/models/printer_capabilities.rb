@@ -519,33 +519,33 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("bottomMargins", @bottom_margins)
-                writer.write_boolean_value("collation", @collation)
-                writer.write_collection_of_object_values("colorModes", @color_modes)
-                writer.write_collection_of_primitive_values("contentTypes", @content_types)
-                writer.write_object_value("copiesPerJob", @copies_per_job)
-                writer.write_collection_of_primitive_values("dpis", @dpis)
-                writer.write_collection_of_object_values("duplexModes", @duplex_modes)
-                writer.write_collection_of_object_values("feedOrientations", @feed_orientations)
-                writer.write_collection_of_object_values("finishings", @finishings)
-                writer.write_collection_of_primitive_values("inputBins", @input_bins)
-                writer.write_boolean_value("isColorPrintingSupported", @is_color_printing_supported)
-                writer.write_boolean_value("isPageRangeSupported", @is_page_range_supported)
-                writer.write_collection_of_primitive_values("leftMargins", @left_margins)
-                writer.write_collection_of_primitive_values("mediaColors", @media_colors)
-                writer.write_collection_of_primitive_values("mediaSizes", @media_sizes)
-                writer.write_collection_of_primitive_values("mediaTypes", @media_types)
-                writer.write_collection_of_object_values("multipageLayouts", @multipage_layouts)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("orientations", @orientations)
-                writer.write_collection_of_primitive_values("outputBins", @output_bins)
-                writer.write_collection_of_primitive_values("pagesPerSheet", @pages_per_sheet)
-                writer.write_collection_of_object_values("qualities", @qualities)
-                writer.write_collection_of_primitive_values("rightMargins", @right_margins)
-                writer.write_collection_of_object_values("scalings", @scalings)
-                writer.write_boolean_value("supportsFitPdfToPage", @supports_fit_pdf_to_page)
-                writer.write_collection_of_primitive_values("topMargins", @top_margins)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("bottomMargins", @bottom_margins) unless @bottom_margins.nil?
+                writer.write_boolean_value("collation", @collation) unless @collation.nil?
+                writer.write_collection_of_object_values("colorModes", @color_modes) unless @color_modes.nil?
+                writer.write_collection_of_primitive_values("contentTypes", @content_types) unless @content_types.nil?
+                writer.write_object_value("copiesPerJob", @copies_per_job) unless @copies_per_job.nil?
+                writer.write_collection_of_primitive_values("dpis", @dpis) unless @dpis.nil?
+                writer.write_collection_of_object_values("duplexModes", @duplex_modes) unless @duplex_modes.nil?
+                writer.write_collection_of_object_values("feedOrientations", @feed_orientations) unless @feed_orientations.nil?
+                writer.write_collection_of_object_values("finishings", @finishings) unless @finishings.nil?
+                writer.write_collection_of_primitive_values("inputBins", @input_bins) unless @input_bins.nil?
+                writer.write_boolean_value("isColorPrintingSupported", @is_color_printing_supported) unless @is_color_printing_supported.nil?
+                writer.write_boolean_value("isPageRangeSupported", @is_page_range_supported) unless @is_page_range_supported.nil?
+                writer.write_collection_of_primitive_values("leftMargins", @left_margins) unless @left_margins.nil?
+                writer.write_collection_of_primitive_values("mediaColors", @media_colors) unless @media_colors.nil?
+                writer.write_collection_of_primitive_values("mediaSizes", @media_sizes) unless @media_sizes.nil?
+                writer.write_collection_of_primitive_values("mediaTypes", @media_types) unless @media_types.nil?
+                writer.write_collection_of_object_values("multipageLayouts", @multipage_layouts) unless @multipage_layouts.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("orientations", @orientations) unless @orientations.nil?
+                writer.write_collection_of_primitive_values("outputBins", @output_bins) unless @output_bins.nil?
+                writer.write_collection_of_primitive_values("pagesPerSheet", @pages_per_sheet) unless @pages_per_sheet.nil?
+                writer.write_collection_of_object_values("qualities", @qualities) unless @qualities.nil?
+                writer.write_collection_of_primitive_values("rightMargins", @right_margins) unless @right_margins.nil?
+                writer.write_collection_of_object_values("scalings", @scalings) unless @scalings.nil?
+                writer.write_boolean_value("supportsFitPdfToPage", @supports_fit_pdf_to_page) unless @supports_fit_pdf_to_page.nil?
+                writer.write_collection_of_primitive_values("topMargins", @top_margins) unless @top_margins.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the supportsFitPdfToPage property value. True if the printer supports scaling PDF pages to match the print media size; false otherwise.

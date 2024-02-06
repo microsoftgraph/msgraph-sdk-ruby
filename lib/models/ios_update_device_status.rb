@@ -188,17 +188,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("complianceGracePeriodExpirationDateTime", @compliance_grace_period_expiration_date_time)
-                writer.write_string_value("deviceDisplayName", @device_display_name)
-                writer.write_string_value("deviceId", @device_id)
-                writer.write_string_value("deviceModel", @device_model)
-                writer.write_enum_value("installStatus", @install_status)
-                writer.write_date_time_value("lastReportedDateTime", @last_reported_date_time)
-                writer.write_string_value("osVersion", @os_version)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("userName", @user_name)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
+                writer.write_date_time_value("complianceGracePeriodExpirationDateTime", @compliance_grace_period_expiration_date_time) unless @compliance_grace_period_expiration_date_time.nil?
+                writer.write_string_value("deviceDisplayName", @device_display_name) unless @device_display_name.nil?
+                writer.write_string_value("deviceId", @device_id) unless @device_id.nil?
+                writer.write_string_value("deviceModel", @device_model) unless @device_model.nil?
+                writer.write_enum_value("installStatus", @install_status) unless @install_status.nil?
+                writer.write_date_time_value("lastReportedDateTime", @last_reported_date_time) unless @last_reported_date_time.nil?
+                writer.write_string_value("osVersion", @os_version) unless @os_version.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
+                writer.write_string_value("userName", @user_name) unless @user_name.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
             end
             ## 
             ## Gets the status property value. The status property

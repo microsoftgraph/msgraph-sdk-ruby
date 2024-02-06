@@ -96,9 +96,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("childSelectability", @child_selectability)
-                writer.write_collection_of_object_values("childTags", @child_tags)
-                writer.write_object_value("parent", @parent)
+                writer.write_enum_value("childSelectability", @child_selectability) unless @child_selectability.nil?
+                writer.write_collection_of_object_values("childTags", @child_tags) unless @child_tags.nil?
+                writer.write_object_value("parent", @parent) unless @parent.nil?
             end
         end
     end

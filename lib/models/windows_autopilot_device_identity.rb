@@ -300,22 +300,22 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("addressableUserName", @addressable_user_name)
-                writer.write_string_value("azureActiveDirectoryDeviceId", @azure_active_directory_device_id)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_enum_value("enrollmentState", @enrollment_state)
-                writer.write_string_value("groupTag", @group_tag)
-                writer.write_date_time_value("lastContactedDateTime", @last_contacted_date_time)
-                writer.write_string_value("managedDeviceId", @managed_device_id)
-                writer.write_string_value("manufacturer", @manufacturer)
-                writer.write_string_value("model", @model)
-                writer.write_string_value("productKey", @product_key)
-                writer.write_string_value("purchaseOrderIdentifier", @purchase_order_identifier)
-                writer.write_string_value("resourceName", @resource_name)
-                writer.write_string_value("serialNumber", @serial_number)
-                writer.write_string_value("skuNumber", @sku_number)
-                writer.write_string_value("systemFamily", @system_family)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
+                writer.write_string_value("addressableUserName", @addressable_user_name) unless @addressable_user_name.nil?
+                writer.write_string_value("azureActiveDirectoryDeviceId", @azure_active_directory_device_id) unless @azure_active_directory_device_id.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_enum_value("enrollmentState", @enrollment_state) unless @enrollment_state.nil?
+                writer.write_string_value("groupTag", @group_tag) unless @group_tag.nil?
+                writer.write_date_time_value("lastContactedDateTime", @last_contacted_date_time) unless @last_contacted_date_time.nil?
+                writer.write_string_value("managedDeviceId", @managed_device_id) unless @managed_device_id.nil?
+                writer.write_string_value("manufacturer", @manufacturer) unless @manufacturer.nil?
+                writer.write_string_value("model", @model) unless @model.nil?
+                writer.write_string_value("productKey", @product_key) unless @product_key.nil?
+                writer.write_string_value("purchaseOrderIdentifier", @purchase_order_identifier) unless @purchase_order_identifier.nil?
+                writer.write_string_value("resourceName", @resource_name) unless @resource_name.nil?
+                writer.write_string_value("serialNumber", @serial_number) unless @serial_number.nil?
+                writer.write_string_value("skuNumber", @sku_number) unless @sku_number.nil?
+                writer.write_string_value("systemFamily", @system_family) unless @system_family.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
             end
             ## 
             ## Gets the skuNumber property value. SKU Number

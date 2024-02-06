@@ -179,15 +179,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("borders", @borders)
-                writer.write_object_value("columnWidth", @column_width)
-                writer.write_object_value("fill", @fill)
-                writer.write_object_value("font", @font)
-                writer.write_string_value("horizontalAlignment", @horizontal_alignment)
-                writer.write_object_value("protection", @protection)
-                writer.write_object_value("rowHeight", @row_height)
-                writer.write_string_value("verticalAlignment", @vertical_alignment)
-                writer.write_boolean_value("wrapText", @wrap_text)
+                writer.write_collection_of_object_values("borders", @borders) unless @borders.nil?
+                writer.write_object_value("columnWidth", @column_width) unless @column_width.nil?
+                writer.write_object_value("fill", @fill) unless @fill.nil?
+                writer.write_object_value("font", @font) unless @font.nil?
+                writer.write_string_value("horizontalAlignment", @horizontal_alignment) unless @horizontal_alignment.nil?
+                writer.write_object_value("protection", @protection) unless @protection.nil?
+                writer.write_object_value("rowHeight", @row_height) unless @row_height.nil?
+                writer.write_string_value("verticalAlignment", @vertical_alignment) unless @vertical_alignment.nil?
+                writer.write_boolean_value("wrapText", @wrap_text) unless @wrap_text.nil?
             end
             ## 
             ## Gets the verticalAlignment property value. Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.

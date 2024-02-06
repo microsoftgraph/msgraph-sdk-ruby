@@ -77,8 +77,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("allowExternalIdToUseEmailOtp", @allow_external_id_to_use_email_otp)
-                writer.write_collection_of_object_values("includeTargets", @include_targets)
+                writer.write_enum_value("allowExternalIdToUseEmailOtp", @allow_external_id_to_use_email_otp) unless @allow_external_id_to_use_email_otp.nil?
+                writer.write_collection_of_object_values("includeTargets", @include_targets) unless @include_targets.nil?
             end
         end
     end

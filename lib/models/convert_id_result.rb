@@ -101,11 +101,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("errorDetails", @error_details)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("sourceId", @source_id)
-                writer.write_string_value("targetId", @target_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("errorDetails", @error_details) unless @error_details.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("sourceId", @source_id) unless @source_id.nil?
+                writer.write_string_value("targetId", @target_id) unless @target_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sourceId property value. The identifier that was converted. This value is the original, un-converted identifier.

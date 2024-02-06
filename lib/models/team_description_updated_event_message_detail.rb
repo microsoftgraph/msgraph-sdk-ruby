@@ -66,9 +66,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("initiator", @initiator)
-                writer.write_string_value("teamDescription", @team_description)
-                writer.write_string_value("teamId", @team_id)
+                writer.write_object_value("initiator", @initiator) unless @initiator.nil?
+                writer.write_string_value("teamDescription", @team_description) unless @team_description.nil?
+                writer.write_string_value("teamId", @team_id) unless @team_id.nil?
             end
             ## 
             ## Gets the teamDescription property value. The updated description for the team.

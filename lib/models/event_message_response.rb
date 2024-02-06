@@ -77,8 +77,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("proposedNewTime", @proposed_new_time)
-                writer.write_enum_value("responseType", @response_type)
+                writer.write_object_value("proposedNewTime", @proposed_new_time) unless @proposed_new_time.nil?
+                writer.write_enum_value("responseType", @response_type) unless @response_type.nil?
             end
         end
     end

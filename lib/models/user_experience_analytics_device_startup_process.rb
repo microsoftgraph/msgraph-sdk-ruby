@@ -120,11 +120,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("managedDeviceId", @managed_device_id)
-                writer.write_string_value("processName", @process_name)
-                writer.write_string_value("productName", @product_name)
-                writer.write_string_value("publisher", @publisher)
-                writer.write_number_value("startupImpactInMs", @startup_impact_in_ms)
+                writer.write_string_value("managedDeviceId", @managed_device_id) unless @managed_device_id.nil?
+                writer.write_string_value("processName", @process_name) unless @process_name.nil?
+                writer.write_string_value("productName", @product_name) unless @product_name.nil?
+                writer.write_string_value("publisher", @publisher) unless @publisher.nil?
+                writer.write_number_value("startupImpactInMs", @startup_impact_in_ms) unless @startup_impact_in_ms.nil?
             end
             ## 
             ## Gets the startupImpactInMs property value. The impact of startup process on device boot time in milliseconds. Supports: $select, $OrderBy. Read-only.

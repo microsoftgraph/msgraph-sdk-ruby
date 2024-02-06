@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("dateTime", @date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("timeZone", @time_zone)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("dateTime", @date_time) unless @date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("timeZone", @time_zone) unless @time_zone.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the timeZone property value. Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.

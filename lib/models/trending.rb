@@ -119,9 +119,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_object_value("resource", @resource)
-                writer.write_object_value("weight", @weight)
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_object_value("resource", @resource) unless @resource.nil?
+                writer.write_object_value("weight", @weight) unless @weight.nil?
             end
             ## 
             ## Gets the weight property value. Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.

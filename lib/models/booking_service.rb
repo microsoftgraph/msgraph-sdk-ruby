@@ -394,26 +394,26 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("additionalInformation", @additional_information)
-                writer.write_collection_of_object_values("customQuestions", @custom_questions)
-                writer.write_duration_value("defaultDuration", @default_duration)
-                writer.write_object_value("defaultLocation", @default_location)
-                writer.write_object_value("defaultPrice", @default_price)
-                writer.write_enum_value("defaultPriceType", @default_price_type)
-                writer.write_collection_of_object_values("defaultReminders", @default_reminders)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("isAnonymousJoinEnabled", @is_anonymous_join_enabled)
-                writer.write_boolean_value("isHiddenFromCustomers", @is_hidden_from_customers)
-                writer.write_boolean_value("isLocationOnline", @is_location_online)
-                writer.write_string_value("languageTag", @language_tag)
-                writer.write_number_value("maximumAttendeesCount", @maximum_attendees_count)
-                writer.write_string_value("notes", @notes)
-                writer.write_duration_value("postBuffer", @post_buffer)
-                writer.write_duration_value("preBuffer", @pre_buffer)
-                writer.write_object_value("schedulingPolicy", @scheduling_policy)
-                writer.write_boolean_value("smsNotificationsEnabled", @sms_notifications_enabled)
-                writer.write_collection_of_primitive_values("staffMemberIds", @staff_member_ids)
+                writer.write_string_value("additionalInformation", @additional_information) unless @additional_information.nil?
+                writer.write_collection_of_object_values("customQuestions", @custom_questions) unless @custom_questions.nil?
+                writer.write_duration_value("defaultDuration", @default_duration) unless @default_duration.nil?
+                writer.write_object_value("defaultLocation", @default_location) unless @default_location.nil?
+                writer.write_object_value("defaultPrice", @default_price) unless @default_price.nil?
+                writer.write_enum_value("defaultPriceType", @default_price_type) unless @default_price_type.nil?
+                writer.write_collection_of_object_values("defaultReminders", @default_reminders) unless @default_reminders.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("isAnonymousJoinEnabled", @is_anonymous_join_enabled) unless @is_anonymous_join_enabled.nil?
+                writer.write_boolean_value("isHiddenFromCustomers", @is_hidden_from_customers) unless @is_hidden_from_customers.nil?
+                writer.write_boolean_value("isLocationOnline", @is_location_online) unless @is_location_online.nil?
+                writer.write_string_value("languageTag", @language_tag) unless @language_tag.nil?
+                writer.write_number_value("maximumAttendeesCount", @maximum_attendees_count) unless @maximum_attendees_count.nil?
+                writer.write_string_value("notes", @notes) unless @notes.nil?
+                writer.write_duration_value("postBuffer", @post_buffer) unless @post_buffer.nil?
+                writer.write_duration_value("preBuffer", @pre_buffer) unless @pre_buffer.nil?
+                writer.write_object_value("schedulingPolicy", @scheduling_policy) unless @scheduling_policy.nil?
+                writer.write_boolean_value("smsNotificationsEnabled", @sms_notifications_enabled) unless @sms_notifications_enabled.nil?
+                writer.write_collection_of_primitive_values("staffMemberIds", @staff_member_ids) unless @staff_member_ids.nil?
             end
             ## 
             ## Gets the smsNotificationsEnabled property value. True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.

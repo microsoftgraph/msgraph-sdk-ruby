@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("identityProvider", @identity_provider)
-                writer.write_object_value("key", @key)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("type", @type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("identityProvider", @identity_provider) unless @identity_provider.nil?
+                writer.write_object_value("key", @key) unless @key.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("type", @type) unless @type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the type property value. For internal use only.

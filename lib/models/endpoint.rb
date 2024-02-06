@@ -119,11 +119,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("capability", @capability)
-                writer.write_string_value("providerId", @provider_id)
-                writer.write_string_value("providerName", @provider_name)
-                writer.write_string_value("providerResourceId", @provider_resource_id)
-                writer.write_string_value("uri", @uri)
+                writer.write_string_value("capability", @capability) unless @capability.nil?
+                writer.write_string_value("providerId", @provider_id) unless @provider_id.nil?
+                writer.write_string_value("providerName", @provider_name) unless @provider_name.nil?
+                writer.write_string_value("providerResourceId", @provider_resource_id) unless @provider_resource_id.nil?
+                writer.write_string_value("uri", @uri) unless @uri.nil?
             end
             ## 
             ## Gets the uri property value. The uri property

@@ -71,8 +71,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("version", @version)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the version property value. Version of the entity.

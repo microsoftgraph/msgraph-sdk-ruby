@@ -80,9 +80,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("directoryAudits", @directory_audits)
-                writer.write_collection_of_object_values("provisioning", @provisioning)
-                writer.write_collection_of_object_values("signIns", @sign_ins)
+                writer.write_collection_of_object_values("directoryAudits", @directory_audits) unless @directory_audits.nil?
+                writer.write_collection_of_object_values("provisioning", @provisioning) unless @provisioning.nil?
+                writer.write_collection_of_object_values("signIns", @sign_ins) unless @sign_ins.nil?
             end
             ## 
             ## Gets the signIns property value. The signIns property

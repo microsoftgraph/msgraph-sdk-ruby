@@ -119,11 +119,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("catalog", @catalog)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_enum_value("requestType", @request_type)
-                writer.write_object_value("resource", @resource)
-                writer.write_enum_value("state", @state)
+                writer.write_object_value("catalog", @catalog) unless @catalog.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_enum_value("requestType", @request_type) unless @request_type.nil?
+                writer.write_object_value("resource", @resource) unless @resource.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
             end
             ## 
             ## Gets the state property value. The outcome of whether the service was able to add the resource to the catalog.  The value is delivered if the resource was added or removed. Read-only.

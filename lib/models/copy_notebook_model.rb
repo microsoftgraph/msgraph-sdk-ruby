@@ -345,23 +345,23 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("createdBy", @created_by)
-                writer.write_object_value("createdByIdentity", @created_by_identity)
-                writer.write_date_time_value("createdTime", @created_time)
-                writer.write_string_value("id", @id)
-                writer.write_boolean_value("isDefault", @is_default)
-                writer.write_boolean_value("isShared", @is_shared)
-                writer.write_string_value("lastModifiedBy", @last_modified_by)
-                writer.write_object_value("lastModifiedByIdentity", @last_modified_by_identity)
-                writer.write_date_time_value("lastModifiedTime", @last_modified_time)
-                writer.write_object_value("links", @links)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("sectionGroupsUrl", @section_groups_url)
-                writer.write_string_value("sectionsUrl", @sections_url)
-                writer.write_string_value("self", @self_escaped)
-                writer.write_enum_value("userRole", @user_role)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_object_value("createdByIdentity", @created_by_identity) unless @created_by_identity.nil?
+                writer.write_date_time_value("createdTime", @created_time) unless @created_time.nil?
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_boolean_value("isDefault", @is_default) unless @is_default.nil?
+                writer.write_boolean_value("isShared", @is_shared) unless @is_shared.nil?
+                writer.write_string_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_object_value("lastModifiedByIdentity", @last_modified_by_identity) unless @last_modified_by_identity.nil?
+                writer.write_date_time_value("lastModifiedTime", @last_modified_time) unless @last_modified_time.nil?
+                writer.write_object_value("links", @links) unless @links.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("sectionGroupsUrl", @section_groups_url) unless @section_groups_url.nil?
+                writer.write_string_value("sectionsUrl", @sections_url) unless @sections_url.nil?
+                writer.write_string_value("self", @self_escaped) unless @self_escaped.nil?
+                writer.write_enum_value("userRole", @user_role) unless @user_role.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the userRole property value. The userRole property

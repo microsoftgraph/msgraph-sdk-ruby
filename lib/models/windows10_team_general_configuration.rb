@@ -272,26 +272,26 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("azureOperationalInsightsBlockTelemetry", @azure_operational_insights_block_telemetry)
-                writer.write_string_value("azureOperationalInsightsWorkspaceId", @azure_operational_insights_workspace_id)
-                writer.write_string_value("azureOperationalInsightsWorkspaceKey", @azure_operational_insights_workspace_key)
-                writer.write_boolean_value("connectAppBlockAutoLaunch", @connect_app_block_auto_launch)
-                writer.write_boolean_value("maintenanceWindowBlocked", @maintenance_window_blocked)
-                writer.write_number_value("maintenanceWindowDurationInHours", @maintenance_window_duration_in_hours)
-                writer.write_time_value("maintenanceWindowStartTime", @maintenance_window_start_time)
-                writer.write_boolean_value("miracastBlocked", @miracast_blocked)
-                writer.write_enum_value("miracastChannel", @miracast_channel)
-                writer.write_boolean_value("miracastRequirePin", @miracast_require_pin)
-                writer.write_boolean_value("settingsBlockMyMeetingsAndFiles", @settings_block_my_meetings_and_files)
-                writer.write_boolean_value("settingsBlockSessionResume", @settings_block_session_resume)
-                writer.write_boolean_value("settingsBlockSigninSuggestions", @settings_block_signin_suggestions)
-                writer.write_number_value("settingsDefaultVolume", @settings_default_volume)
-                writer.write_number_value("settingsScreenTimeoutInMinutes", @settings_screen_timeout_in_minutes)
-                writer.write_number_value("settingsSessionTimeoutInMinutes", @settings_session_timeout_in_minutes)
-                writer.write_number_value("settingsSleepTimeoutInMinutes", @settings_sleep_timeout_in_minutes)
-                writer.write_string_value("welcomeScreenBackgroundImageUrl", @welcome_screen_background_image_url)
-                writer.write_boolean_value("welcomeScreenBlockAutomaticWakeUp", @welcome_screen_block_automatic_wake_up)
-                writer.write_enum_value("welcomeScreenMeetingInformation", @welcome_screen_meeting_information)
+                writer.write_boolean_value("azureOperationalInsightsBlockTelemetry", @azure_operational_insights_block_telemetry) unless @azure_operational_insights_block_telemetry.nil?
+                writer.write_string_value("azureOperationalInsightsWorkspaceId", @azure_operational_insights_workspace_id) unless @azure_operational_insights_workspace_id.nil?
+                writer.write_string_value("azureOperationalInsightsWorkspaceKey", @azure_operational_insights_workspace_key) unless @azure_operational_insights_workspace_key.nil?
+                writer.write_boolean_value("connectAppBlockAutoLaunch", @connect_app_block_auto_launch) unless @connect_app_block_auto_launch.nil?
+                writer.write_boolean_value("maintenanceWindowBlocked", @maintenance_window_blocked) unless @maintenance_window_blocked.nil?
+                writer.write_number_value("maintenanceWindowDurationInHours", @maintenance_window_duration_in_hours) unless @maintenance_window_duration_in_hours.nil?
+                writer.write_time_value("maintenanceWindowStartTime", @maintenance_window_start_time) unless @maintenance_window_start_time.nil?
+                writer.write_boolean_value("miracastBlocked", @miracast_blocked) unless @miracast_blocked.nil?
+                writer.write_enum_value("miracastChannel", @miracast_channel) unless @miracast_channel.nil?
+                writer.write_boolean_value("miracastRequirePin", @miracast_require_pin) unless @miracast_require_pin.nil?
+                writer.write_boolean_value("settingsBlockMyMeetingsAndFiles", @settings_block_my_meetings_and_files) unless @settings_block_my_meetings_and_files.nil?
+                writer.write_boolean_value("settingsBlockSessionResume", @settings_block_session_resume) unless @settings_block_session_resume.nil?
+                writer.write_boolean_value("settingsBlockSigninSuggestions", @settings_block_signin_suggestions) unless @settings_block_signin_suggestions.nil?
+                writer.write_number_value("settingsDefaultVolume", @settings_default_volume) unless @settings_default_volume.nil?
+                writer.write_number_value("settingsScreenTimeoutInMinutes", @settings_screen_timeout_in_minutes) unless @settings_screen_timeout_in_minutes.nil?
+                writer.write_number_value("settingsSessionTimeoutInMinutes", @settings_session_timeout_in_minutes) unless @settings_session_timeout_in_minutes.nil?
+                writer.write_number_value("settingsSleepTimeoutInMinutes", @settings_sleep_timeout_in_minutes) unless @settings_sleep_timeout_in_minutes.nil?
+                writer.write_string_value("welcomeScreenBackgroundImageUrl", @welcome_screen_background_image_url) unless @welcome_screen_background_image_url.nil?
+                writer.write_boolean_value("welcomeScreenBlockAutomaticWakeUp", @welcome_screen_block_automatic_wake_up) unless @welcome_screen_block_automatic_wake_up.nil?
+                writer.write_enum_value("welcomeScreenMeetingInformation", @welcome_screen_meeting_information) unless @welcome_screen_meeting_information.nil?
             end
             ## 
             ## Gets the settingsBlockMyMeetingsAndFiles property value. Specifies whether to disable the 'My meetings and files' feature in the Start menu, which shows the signed-in user's meetings and files from Office 365.

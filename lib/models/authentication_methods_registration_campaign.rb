@@ -120,12 +120,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("excludeTargets", @exclude_targets)
-                writer.write_collection_of_object_values("includeTargets", @include_targets)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("snoozeDurationInDays", @snooze_duration_in_days)
-                writer.write_enum_value("state", @state)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_object_values("excludeTargets", @exclude_targets) unless @exclude_targets.nil?
+                writer.write_collection_of_object_values("includeTargets", @include_targets) unless @include_targets.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("snoozeDurationInDays", @snooze_duration_in_days) unless @snooze_duration_in_days.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the snoozeDurationInDays property value. Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.

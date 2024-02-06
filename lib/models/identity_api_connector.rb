@@ -80,9 +80,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("authenticationConfiguration", @authentication_configuration)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("targetUrl", @target_url)
+                writer.write_object_value("authenticationConfiguration", @authentication_configuration) unless @authentication_configuration.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("targetUrl", @target_url) unless @target_url.nil?
             end
             ## 
             ## Gets the targetUrl property value. The URL of the API endpoint to call.

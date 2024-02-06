@@ -269,18 +269,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("appDataEncryptionType", @app_data_encryption_type)
-                writer.write_collection_of_object_values("apps", @apps)
-                writer.write_collection_of_object_values("customSettings", @custom_settings)
-                writer.write_number_value("deployedAppCount", @deployed_app_count)
-                writer.write_object_value("deploymentSummary", @deployment_summary)
-                writer.write_boolean_value("disableAppEncryptionIfDeviceEncryptionIsEnabled", @disable_app_encryption_if_device_encryption_is_enabled)
-                writer.write_boolean_value("encryptAppData", @encrypt_app_data)
-                writer.write_boolean_value("faceIdBlocked", @face_id_blocked)
-                writer.write_string_value("minimumRequiredPatchVersion", @minimum_required_patch_version)
-                writer.write_string_value("minimumRequiredSdkVersion", @minimum_required_sdk_version)
-                writer.write_string_value("minimumWarningPatchVersion", @minimum_warning_patch_version)
-                writer.write_boolean_value("screenCaptureBlocked", @screen_capture_blocked)
+                writer.write_enum_value("appDataEncryptionType", @app_data_encryption_type) unless @app_data_encryption_type.nil?
+                writer.write_collection_of_object_values("apps", @apps) unless @apps.nil?
+                writer.write_collection_of_object_values("customSettings", @custom_settings) unless @custom_settings.nil?
+                writer.write_number_value("deployedAppCount", @deployed_app_count) unless @deployed_app_count.nil?
+                writer.write_object_value("deploymentSummary", @deployment_summary) unless @deployment_summary.nil?
+                writer.write_boolean_value("disableAppEncryptionIfDeviceEncryptionIsEnabled", @disable_app_encryption_if_device_encryption_is_enabled) unless @disable_app_encryption_if_device_encryption_is_enabled.nil?
+                writer.write_boolean_value("encryptAppData", @encrypt_app_data) unless @encrypt_app_data.nil?
+                writer.write_boolean_value("faceIdBlocked", @face_id_blocked) unless @face_id_blocked.nil?
+                writer.write_string_value("minimumRequiredPatchVersion", @minimum_required_patch_version) unless @minimum_required_patch_version.nil?
+                writer.write_string_value("minimumRequiredSdkVersion", @minimum_required_sdk_version) unless @minimum_required_sdk_version.nil?
+                writer.write_string_value("minimumWarningPatchVersion", @minimum_warning_patch_version) unless @minimum_warning_patch_version.nil?
+                writer.write_boolean_value("screenCaptureBlocked", @screen_capture_blocked) unless @screen_capture_blocked.nil?
             end
         end
     end

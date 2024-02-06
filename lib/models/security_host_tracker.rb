@@ -120,11 +120,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time)
-                writer.write_object_value("host", @host)
-                writer.write_string_value("kind", @kind)
-                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time)
-                writer.write_string_value("value", @value)
+                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time) unless @first_seen_date_time.nil?
+                writer.write_object_value("host", @host) unless @host.nil?
+                writer.write_string_value("kind", @kind) unless @kind.nil?
+                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time) unless @last_seen_date_time.nil?
+                writer.write_string_value("value", @value) unless @value.nil?
             end
             ## 
             ## Gets the value property value. The identification value for the hostTracker.

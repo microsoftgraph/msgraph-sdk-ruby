@@ -79,8 +79,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("channel", @channel)
-                writer.write_string_value("displayLanguageLocale", @display_language_locale)
+                writer.write_enum_value("channel", @channel) unless @channel.nil?
+                writer.write_string_value("displayLanguageLocale", @display_language_locale) unless @display_language_locale.nil?
             end
         end
     end

@@ -168,16 +168,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("applicationDisplayName", @application_display_name)
-                writer.write_string_value("applicationId", @application_id)
-                writer.write_string_value("auditActorType", @audit_actor_type)
-                writer.write_string_value("ipAddress", @ip_address)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("servicePrincipalName", @service_principal_name)
-                writer.write_string_value("userId", @user_id)
-                writer.write_collection_of_primitive_values("userPermissions", @user_permissions)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("applicationDisplayName", @application_display_name) unless @application_display_name.nil?
+                writer.write_string_value("applicationId", @application_id) unless @application_id.nil?
+                writer.write_string_value("auditActorType", @audit_actor_type) unless @audit_actor_type.nil?
+                writer.write_string_value("ipAddress", @ip_address) unless @ip_address.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("servicePrincipalName", @service_principal_name) unless @service_principal_name.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
+                writer.write_collection_of_primitive_values("userPermissions", @user_permissions) unless @user_permissions.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the servicePrincipalName property value. Service Principal Name (SPN).

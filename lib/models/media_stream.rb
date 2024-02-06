@@ -139,13 +139,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("direction", @direction)
-                writer.write_string_value("label", @label)
-                writer.write_enum_value("mediaType", @media_type)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("serverMuted", @server_muted)
-                writer.write_string_value("sourceId", @source_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("direction", @direction) unless @direction.nil?
+                writer.write_string_value("label", @label) unless @label.nil?
+                writer.write_enum_value("mediaType", @media_type) unless @media_type.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("serverMuted", @server_muted) unless @server_muted.nil?
+                writer.write_string_value("sourceId", @source_id) unless @source_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the serverMuted property value. If the media is muted by the server.

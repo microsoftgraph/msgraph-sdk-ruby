@@ -154,12 +154,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("artifact", @artifact)
-                writer.write_date_time_value("collectedDateTime", @collected_date_time)
-                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time)
-                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time)
-                writer.write_object_value("parentHost", @parent_host)
-                writer.write_string_value("recordType", @record_type)
+                writer.write_object_value("artifact", @artifact) unless @artifact.nil?
+                writer.write_date_time_value("collectedDateTime", @collected_date_time) unless @collected_date_time.nil?
+                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time) unless @first_seen_date_time.nil?
+                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time) unless @last_seen_date_time.nil?
+                writer.write_object_value("parentHost", @parent_host) unless @parent_host.nil?
+                writer.write_string_value("recordType", @record_type) unless @record_type.nil?
             end
         end
     end

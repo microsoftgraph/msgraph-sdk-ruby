@@ -484,31 +484,31 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("activeChecklistItemCount", @active_checklist_item_count)
-                writer.write_object_value("appliedCategories", @applied_categories)
-                writer.write_object_value("assignedToTaskBoardFormat", @assigned_to_task_board_format)
-                writer.write_string_value("assigneePriority", @assignee_priority)
-                writer.write_object_value("assignments", @assignments)
-                writer.write_string_value("bucketId", @bucket_id)
-                writer.write_object_value("bucketTaskBoardFormat", @bucket_task_board_format)
-                writer.write_number_value("checklistItemCount", @checklist_item_count)
-                writer.write_object_value("completedBy", @completed_by)
-                writer.write_date_time_value("completedDateTime", @completed_date_time)
-                writer.write_string_value("conversationThreadId", @conversation_thread_id)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("details", @details)
-                writer.write_date_time_value("dueDateTime", @due_date_time)
-                writer.write_boolean_value("hasDescription", @has_description)
-                writer.write_string_value("orderHint", @order_hint)
-                writer.write_number_value("percentComplete", @percent_complete)
-                writer.write_string_value("planId", @plan_id)
-                writer.write_enum_value("previewType", @preview_type)
-                writer.write_number_value("priority", @priority)
-                writer.write_object_value("progressTaskBoardFormat", @progress_task_board_format)
-                writer.write_number_value("referenceCount", @reference_count)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_string_value("title", @title)
+                writer.write_number_value("activeChecklistItemCount", @active_checklist_item_count) unless @active_checklist_item_count.nil?
+                writer.write_object_value("appliedCategories", @applied_categories) unless @applied_categories.nil?
+                writer.write_object_value("assignedToTaskBoardFormat", @assigned_to_task_board_format) unless @assigned_to_task_board_format.nil?
+                writer.write_string_value("assigneePriority", @assignee_priority) unless @assignee_priority.nil?
+                writer.write_object_value("assignments", @assignments) unless @assignments.nil?
+                writer.write_string_value("bucketId", @bucket_id) unless @bucket_id.nil?
+                writer.write_object_value("bucketTaskBoardFormat", @bucket_task_board_format) unless @bucket_task_board_format.nil?
+                writer.write_number_value("checklistItemCount", @checklist_item_count) unless @checklist_item_count.nil?
+                writer.write_object_value("completedBy", @completed_by) unless @completed_by.nil?
+                writer.write_date_time_value("completedDateTime", @completed_date_time) unless @completed_date_time.nil?
+                writer.write_string_value("conversationThreadId", @conversation_thread_id) unless @conversation_thread_id.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("details", @details) unless @details.nil?
+                writer.write_date_time_value("dueDateTime", @due_date_time) unless @due_date_time.nil?
+                writer.write_boolean_value("hasDescription", @has_description) unless @has_description.nil?
+                writer.write_string_value("orderHint", @order_hint) unless @order_hint.nil?
+                writer.write_number_value("percentComplete", @percent_complete) unless @percent_complete.nil?
+                writer.write_string_value("planId", @plan_id) unless @plan_id.nil?
+                writer.write_enum_value("previewType", @preview_type) unless @preview_type.nil?
+                writer.write_number_value("priority", @priority) unless @priority.nil?
+                writer.write_object_value("progressTaskBoardFormat", @progress_task_board_format) unless @progress_task_board_format.nil?
+                writer.write_number_value("referenceCount", @reference_count) unless @reference_count.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
             end
             ## 
             ## Gets the startDateTime property value. Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z

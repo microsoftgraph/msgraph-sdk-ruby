@@ -105,12 +105,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("location", @location)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("serviceName", @service_name)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("statusInformation", @status_information)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("location", @location) unless @location.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("serviceName", @service_name) unless @service_name.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("statusInformation", @status_information) unless @status_information.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the serviceName property value. The name of the workload associated with the event.

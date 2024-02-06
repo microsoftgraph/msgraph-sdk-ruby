@@ -153,12 +153,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appVersion", @app_version)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("fullyQualifiedDomainName", @fully_qualified_domain_name)
-                writer.write_object_value("location", @location)
-                writer.write_string_value("operatingSystem", @operating_system)
-                writer.write_date_time_value("registeredDateTime", @registered_date_time)
+                writer.write_string_value("appVersion", @app_version) unless @app_version.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("fullyQualifiedDomainName", @fully_qualified_domain_name) unless @fully_qualified_domain_name.nil?
+                writer.write_object_value("location", @location) unless @location.nil?
+                writer.write_string_value("operatingSystem", @operating_system) unless @operating_system.nil?
+                writer.write_date_time_value("registeredDateTime", @registered_date_time) unless @registered_date_time.nil?
             end
         end
     end

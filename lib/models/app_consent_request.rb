@@ -99,10 +99,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appDisplayName", @app_display_name)
-                writer.write_string_value("appId", @app_id)
-                writer.write_collection_of_object_values("pendingScopes", @pending_scopes)
-                writer.write_collection_of_object_values("userConsentRequests", @user_consent_requests)
+                writer.write_string_value("appDisplayName", @app_display_name) unless @app_display_name.nil?
+                writer.write_string_value("appId", @app_id) unless @app_id.nil?
+                writer.write_collection_of_object_values("pendingScopes", @pending_scopes) unless @pending_scopes.nil?
+                writer.write_collection_of_object_values("userConsentRequests", @user_consent_requests) unless @user_consent_requests.nil?
             end
             ## 
             ## Gets the userConsentRequests property value. A list of pending user consent requests. Supports $filter (eq).

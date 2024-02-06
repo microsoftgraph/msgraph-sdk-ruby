@@ -138,12 +138,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("clusterBy", @cluster_by)
-                writer.write_string_value("clusterByValue", @cluster_by_value)
-                writer.write_object_value("emailCount", @email_count)
-                writer.write_collection_of_primitive_values("networkMessageIds", @network_message_ids)
-                writer.write_string_value("query", @query)
-                writer.write_string_value("urn", @urn)
+                writer.write_string_value("clusterBy", @cluster_by) unless @cluster_by.nil?
+                writer.write_string_value("clusterByValue", @cluster_by_value) unless @cluster_by_value.nil?
+                writer.write_object_value("emailCount", @email_count) unless @email_count.nil?
+                writer.write_collection_of_primitive_values("networkMessageIds", @network_message_ids) unless @network_message_ids.nil?
+                writer.write_string_value("query", @query) unless @query.nil?
+                writer.write_string_value("urn", @urn) unless @urn.nil?
             end
             ## 
             ## Gets the urn property value. Uniform resource name (URN) of the automated investigation where the cluster was identified.

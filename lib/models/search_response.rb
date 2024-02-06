@@ -150,12 +150,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("hitsContainers", @hits_containers)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("queryAlterationResponse", @query_alteration_response)
-                writer.write_object_value("resultTemplates", @result_templates)
-                writer.write_collection_of_primitive_values("searchTerms", @search_terms)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_object_values("hitsContainers", @hits_containers) unless @hits_containers.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("queryAlterationResponse", @query_alteration_response) unless @query_alteration_response.nil?
+                writer.write_object_value("resultTemplates", @result_templates) unless @result_templates.nil?
+                writer.write_collection_of_primitive_values("searchTerms", @search_terms) unless @search_terms.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

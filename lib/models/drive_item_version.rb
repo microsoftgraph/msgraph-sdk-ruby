@@ -62,8 +62,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("content", @content)
-                writer.write_object_value("size", @size)
+                writer.write_object_value("content", @content) unless @content.nil?
+                writer.write_object_value("size", @size) unless @size.nil?
             end
             ## 
             ## Gets the size property value. Indicates the size of the content stream for this version of the item.

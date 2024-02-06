@@ -61,8 +61,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("uri", @uri)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("uri", @uri) unless @uri.nil?
             end
             ## 
             ## Gets the uri property value. The URI that can be used to access the service.

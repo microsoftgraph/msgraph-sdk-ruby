@@ -61,8 +61,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("format", @format)
-                writer.write_boolean_value("visible", @visible)
+                writer.write_object_value("format", @format) unless @format.nil?
+                writer.write_boolean_value("visible", @visible) unless @visible.nil?
             end
             ## 
             ## Gets the visible property value. Boolean value representing if the axis gridlines are visible or not.

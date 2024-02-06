@@ -176,14 +176,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("isDefault", @is_default)
-                writer.write_boolean_value("isShared", @is_shared)
-                writer.write_object_value("links", @links)
-                writer.write_collection_of_object_values("sectionGroups", @section_groups)
-                writer.write_string_value("sectionGroupsUrl", @section_groups_url)
-                writer.write_collection_of_object_values("sections", @sections)
-                writer.write_string_value("sectionsUrl", @sections_url)
-                writer.write_enum_value("userRole", @user_role)
+                writer.write_boolean_value("isDefault", @is_default) unless @is_default.nil?
+                writer.write_boolean_value("isShared", @is_shared) unless @is_shared.nil?
+                writer.write_object_value("links", @links) unless @links.nil?
+                writer.write_collection_of_object_values("sectionGroups", @section_groups) unless @section_groups.nil?
+                writer.write_string_value("sectionGroupsUrl", @section_groups_url) unless @section_groups_url.nil?
+                writer.write_collection_of_object_values("sections", @sections) unless @sections.nil?
+                writer.write_string_value("sectionsUrl", @sections_url) unless @sections_url.nil?
+                writer.write_enum_value("userRole", @user_role) unless @user_role.nil?
             end
             ## 
             ## Gets the userRole property value. Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.

@@ -135,12 +135,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("riskDetections", @risk_detections)
-                writer.write_collection_of_object_values("riskyServicePrincipals", @risky_service_principals)
-                writer.write_collection_of_object_values("riskyUsers", @risky_users)
-                writer.write_collection_of_object_values("servicePrincipalRiskDetections", @service_principal_risk_detections)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("riskDetections", @risk_detections) unless @risk_detections.nil?
+                writer.write_collection_of_object_values("riskyServicePrincipals", @risky_service_principals) unless @risky_service_principals.nil?
+                writer.write_collection_of_object_values("riskyUsers", @risky_users) unless @risky_users.nil?
+                writer.write_collection_of_object_values("servicePrincipalRiskDetections", @service_principal_risk_detections) unless @service_principal_risk_detections.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the servicePrincipalRiskDetections property value. Represents information about detected at-risk service principals in an Azure AD tenant.

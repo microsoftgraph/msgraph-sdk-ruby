@@ -115,10 +115,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("includeTargets", @include_targets)
-                writer.write_boolean_value("isAttestationEnforced", @is_attestation_enforced)
-                writer.write_boolean_value("isSelfServiceRegistrationAllowed", @is_self_service_registration_allowed)
-                writer.write_object_value("keyRestrictions", @key_restrictions)
+                writer.write_collection_of_object_values("includeTargets", @include_targets) unless @include_targets.nil?
+                writer.write_boolean_value("isAttestationEnforced", @is_attestation_enforced) unless @is_attestation_enforced.nil?
+                writer.write_boolean_value("isSelfServiceRegistrationAllowed", @is_self_service_registration_allowed) unless @is_self_service_registration_allowed.nil?
+                writer.write_object_value("keyRestrictions", @key_restrictions) unless @key_restrictions.nil?
             end
         end
     end

@@ -245,17 +245,17 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("fqdn", @fqdn)
-                writer.write_boolean_value("isAzureAdJoined", @is_azure_ad_joined)
-                writer.write_boolean_value("isAzureAdRegistered", @is_azure_ad_registered)
-                writer.write_boolean_value("isHybridAzureDomainJoined", @is_hybrid_azure_domain_joined)
-                writer.write_string_value("netBiosName", @net_bios_name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("os", @os)
-                writer.write_string_value("privateIpAddress", @private_ip_address)
-                writer.write_string_value("publicIpAddress", @public_ip_address)
-                writer.write_string_value("riskScore", @risk_score)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("fqdn", @fqdn) unless @fqdn.nil?
+                writer.write_boolean_value("isAzureAdJoined", @is_azure_ad_joined) unless @is_azure_ad_joined.nil?
+                writer.write_boolean_value("isAzureAdRegistered", @is_azure_ad_registered) unless @is_azure_ad_registered.nil?
+                writer.write_boolean_value("isHybridAzureDomainJoined", @is_hybrid_azure_domain_joined) unless @is_hybrid_azure_domain_joined.nil?
+                writer.write_string_value("netBiosName", @net_bios_name) unless @net_bios_name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("os", @os) unless @os.nil?
+                writer.write_string_value("privateIpAddress", @private_ip_address) unless @private_ip_address.nil?
+                writer.write_string_value("publicIpAddress", @public_ip_address) unless @public_ip_address.nil?
+                writer.write_string_value("riskScore", @risk_score) unless @risk_score.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

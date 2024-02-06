@@ -147,15 +147,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("allowedContentTypes", @allowed_content_types)
-                writer.write_collection_of_object_values("defaultContents", @default_contents)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("propagateWelcomePageChanges", @propagate_welcome_page_changes)
-                writer.write_collection_of_object_values("sharedColumns", @shared_columns)
-                writer.write_boolean_value("shouldPrefixNameToFile", @should_prefix_name_to_file)
-                writer.write_collection_of_object_values("welcomePageColumns", @welcome_page_columns)
-                writer.write_string_value("welcomePageUrl", @welcome_page_url)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_object_values("allowedContentTypes", @allowed_content_types) unless @allowed_content_types.nil?
+                writer.write_collection_of_object_values("defaultContents", @default_contents) unless @default_contents.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("propagateWelcomePageChanges", @propagate_welcome_page_changes) unless @propagate_welcome_page_changes.nil?
+                writer.write_collection_of_object_values("sharedColumns", @shared_columns) unless @shared_columns.nil?
+                writer.write_boolean_value("shouldPrefixNameToFile", @should_prefix_name_to_file) unless @should_prefix_name_to_file.nil?
+                writer.write_collection_of_object_values("welcomePageColumns", @welcome_page_columns) unless @welcome_page_columns.nil?
+                writer.write_string_value("welcomePageUrl", @welcome_page_url) unless @welcome_page_url.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sharedColumns property value. The sharedColumns property

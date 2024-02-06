@@ -214,16 +214,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_collection_of_object_values("decisions", @decisions)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("instances", @instances)
-                writer.write_date_time_value("reviewHistoryPeriodEndDateTime", @review_history_period_end_date_time)
-                writer.write_date_time_value("reviewHistoryPeriodStartDateTime", @review_history_period_start_date_time)
-                writer.write_object_value("scheduleSettings", @schedule_settings)
-                writer.write_collection_of_object_values("scopes", @scopes)
-                writer.write_enum_value("status", @status)
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_collection_of_object_values("decisions", @decisions) unless @decisions.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("instances", @instances) unless @instances.nil?
+                writer.write_date_time_value("reviewHistoryPeriodEndDateTime", @review_history_period_end_date_time) unless @review_history_period_end_date_time.nil?
+                writer.write_date_time_value("reviewHistoryPeriodStartDateTime", @review_history_period_start_date_time) unless @review_history_period_start_date_time.nil?
+                writer.write_object_value("scheduleSettings", @schedule_settings) unless @schedule_settings.nil?
+                writer.write_collection_of_object_values("scopes", @scopes) unless @scopes.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.

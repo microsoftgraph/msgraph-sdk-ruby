@@ -226,16 +226,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("excludeGroups", @exclude_groups)
-                writer.write_object_value("excludeGuestsOrExternalUsers", @exclude_guests_or_external_users)
-                writer.write_collection_of_primitive_values("excludeRoles", @exclude_roles)
-                writer.write_collection_of_primitive_values("excludeUsers", @exclude_users)
-                writer.write_collection_of_primitive_values("includeGroups", @include_groups)
-                writer.write_object_value("includeGuestsOrExternalUsers", @include_guests_or_external_users)
-                writer.write_collection_of_primitive_values("includeRoles", @include_roles)
-                writer.write_collection_of_primitive_values("includeUsers", @include_users)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("excludeGroups", @exclude_groups) unless @exclude_groups.nil?
+                writer.write_object_value("excludeGuestsOrExternalUsers", @exclude_guests_or_external_users) unless @exclude_guests_or_external_users.nil?
+                writer.write_collection_of_primitive_values("excludeRoles", @exclude_roles) unless @exclude_roles.nil?
+                writer.write_collection_of_primitive_values("excludeUsers", @exclude_users) unless @exclude_users.nil?
+                writer.write_collection_of_primitive_values("includeGroups", @include_groups) unless @include_groups.nil?
+                writer.write_object_value("includeGuestsOrExternalUsers", @include_guests_or_external_users) unless @include_guests_or_external_users.nil?
+                writer.write_collection_of_primitive_values("includeRoles", @include_roles) unless @include_roles.nil?
+                writer.write_collection_of_primitive_values("includeUsers", @include_users) unless @include_users.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

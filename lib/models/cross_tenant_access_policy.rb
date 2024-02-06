@@ -96,9 +96,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_primitive_values("allowedCloudEndpoints", @allowed_cloud_endpoints)
-                writer.write_object_value("default", @default)
-                writer.write_collection_of_object_values("partners", @partners)
+                writer.write_collection_of_primitive_values("allowedCloudEndpoints", @allowed_cloud_endpoints) unless @allowed_cloud_endpoints.nil?
+                writer.write_object_value("default", @default) unless @default.nil?
+                writer.write_collection_of_object_values("partners", @partners) unless @partners.nil?
             end
         end
     end

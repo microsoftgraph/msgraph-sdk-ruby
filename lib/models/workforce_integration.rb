@@ -123,12 +123,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("apiVersion", @api_version)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("encryption", @encryption)
-                writer.write_boolean_value("isActive", @is_active)
-                writer.write_enum_value("supportedEntities", @supported_entities)
-                writer.write_string_value("url", @url)
+                writer.write_number_value("apiVersion", @api_version) unless @api_version.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("encryption", @encryption) unless @encryption.nil?
+                writer.write_boolean_value("isActive", @is_active) unless @is_active.nil?
+                writer.write_enum_value("supportedEntities", @supported_entities) unless @supported_entities.nil?
+                writer.write_string_value("url", @url) unless @url.nil?
             end
             ## 
             ## Gets the supportedEntities property value. The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openshift, openShiftRequest, offerShiftRequest, unknownFutureValue.

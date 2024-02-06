@@ -258,19 +258,19 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("applicableArchitectures", @applicable_architectures)
-                writer.write_string_value("installCommandLine", @install_command_line)
-                writer.write_object_value("installExperience", @install_experience)
-                writer.write_number_value("minimumCpuSpeedInMHz", @minimum_cpu_speed_in_m_hz)
-                writer.write_number_value("minimumFreeDiskSpaceInMB", @minimum_free_disk_space_in_m_b)
-                writer.write_number_value("minimumMemoryInMB", @minimum_memory_in_m_b)
-                writer.write_number_value("minimumNumberOfProcessors", @minimum_number_of_processors)
-                writer.write_string_value("minimumSupportedWindowsRelease", @minimum_supported_windows_release)
-                writer.write_object_value("msiInformation", @msi_information)
-                writer.write_collection_of_object_values("returnCodes", @return_codes)
-                writer.write_collection_of_object_values("rules", @rules)
-                writer.write_string_value("setupFilePath", @setup_file_path)
-                writer.write_string_value("uninstallCommandLine", @uninstall_command_line)
+                writer.write_enum_value("applicableArchitectures", @applicable_architectures) unless @applicable_architectures.nil?
+                writer.write_string_value("installCommandLine", @install_command_line) unless @install_command_line.nil?
+                writer.write_object_value("installExperience", @install_experience) unless @install_experience.nil?
+                writer.write_number_value("minimumCpuSpeedInMHz", @minimum_cpu_speed_in_m_hz) unless @minimum_cpu_speed_in_m_hz.nil?
+                writer.write_number_value("minimumFreeDiskSpaceInMB", @minimum_free_disk_space_in_m_b) unless @minimum_free_disk_space_in_m_b.nil?
+                writer.write_number_value("minimumMemoryInMB", @minimum_memory_in_m_b) unless @minimum_memory_in_m_b.nil?
+                writer.write_number_value("minimumNumberOfProcessors", @minimum_number_of_processors) unless @minimum_number_of_processors.nil?
+                writer.write_string_value("minimumSupportedWindowsRelease", @minimum_supported_windows_release) unless @minimum_supported_windows_release.nil?
+                writer.write_object_value("msiInformation", @msi_information) unless @msi_information.nil?
+                writer.write_collection_of_object_values("returnCodes", @return_codes) unless @return_codes.nil?
+                writer.write_collection_of_object_values("rules", @rules) unless @rules.nil?
+                writer.write_string_value("setupFilePath", @setup_file_path) unless @setup_file_path.nil?
+                writer.write_string_value("uninstallCommandLine", @uninstall_command_line) unless @uninstall_command_line.nil?
             end
             ## 
             ## Gets the setupFilePath property value. The relative path of the setup file in the encrypted Win32LobApp package.

@@ -541,38 +541,38 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("boolean", @boolean)
-                writer.write_object_value("calculated", @calculated)
-                writer.write_object_value("choice", @choice)
-                writer.write_string_value("columnGroup", @column_group)
-                writer.write_object_value("contentApprovalStatus", @content_approval_status)
-                writer.write_object_value("currency", @currency)
-                writer.write_object_value("dateTime", @date_time)
-                writer.write_object_value("defaultValue", @default_value)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("enforceUniqueValues", @enforce_unique_values)
-                writer.write_object_value("geolocation", @geolocation)
-                writer.write_boolean_value("hidden", @hidden)
-                writer.write_object_value("hyperlinkOrPicture", @hyperlink_or_picture)
-                writer.write_boolean_value("indexed", @indexed)
-                writer.write_boolean_value("isDeletable", @is_deletable)
-                writer.write_boolean_value("isReorderable", @is_reorderable)
-                writer.write_boolean_value("isSealed", @is_sealed)
-                writer.write_object_value("lookup", @lookup)
-                writer.write_string_value("name", @name)
-                writer.write_object_value("number", @number)
-                writer.write_object_value("personOrGroup", @person_or_group)
-                writer.write_boolean_value("propagateChanges", @propagate_changes)
-                writer.write_boolean_value("readOnly", @read_only)
-                writer.write_boolean_value("required", @required)
-                writer.write_object_value("sourceColumn", @source_column)
-                writer.write_object_value("sourceContentType", @source_content_type)
-                writer.write_object_value("term", @term)
-                writer.write_object_value("text", @text)
-                writer.write_object_value("thumbnail", @thumbnail)
-                writer.write_enum_value("type", @type)
-                writer.write_object_value("validation", @validation)
+                writer.write_object_value("boolean", @boolean) unless @boolean.nil?
+                writer.write_object_value("calculated", @calculated) unless @calculated.nil?
+                writer.write_object_value("choice", @choice) unless @choice.nil?
+                writer.write_string_value("columnGroup", @column_group) unless @column_group.nil?
+                writer.write_object_value("contentApprovalStatus", @content_approval_status) unless @content_approval_status.nil?
+                writer.write_object_value("currency", @currency) unless @currency.nil?
+                writer.write_object_value("dateTime", @date_time) unless @date_time.nil?
+                writer.write_object_value("defaultValue", @default_value) unless @default_value.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("enforceUniqueValues", @enforce_unique_values) unless @enforce_unique_values.nil?
+                writer.write_object_value("geolocation", @geolocation) unless @geolocation.nil?
+                writer.write_boolean_value("hidden", @hidden) unless @hidden.nil?
+                writer.write_object_value("hyperlinkOrPicture", @hyperlink_or_picture) unless @hyperlink_or_picture.nil?
+                writer.write_boolean_value("indexed", @indexed) unless @indexed.nil?
+                writer.write_boolean_value("isDeletable", @is_deletable) unless @is_deletable.nil?
+                writer.write_boolean_value("isReorderable", @is_reorderable) unless @is_reorderable.nil?
+                writer.write_boolean_value("isSealed", @is_sealed) unless @is_sealed.nil?
+                writer.write_object_value("lookup", @lookup) unless @lookup.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_object_value("number", @number) unless @number.nil?
+                writer.write_object_value("personOrGroup", @person_or_group) unless @person_or_group.nil?
+                writer.write_boolean_value("propagateChanges", @propagate_changes) unless @propagate_changes.nil?
+                writer.write_boolean_value("readOnly", @read_only) unless @read_only.nil?
+                writer.write_boolean_value("required", @required) unless @required.nil?
+                writer.write_object_value("sourceColumn", @source_column) unless @source_column.nil?
+                writer.write_object_value("sourceContentType", @source_content_type) unless @source_content_type.nil?
+                writer.write_object_value("term", @term) unless @term.nil?
+                writer.write_object_value("text", @text) unless @text.nil?
+                writer.write_object_value("thumbnail", @thumbnail) unless @thumbnail.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
+                writer.write_object_value("validation", @validation) unless @validation.nil?
             end
             ## 
             ## Gets the sourceColumn property value. The source column for the content type column.

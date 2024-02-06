@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("level", @level)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("versionId", @version_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("level", @level) unless @level.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("versionId", @version_id) unless @version_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the versionId property value. The unique identifier for the version that is visible to the current caller. Read-only.

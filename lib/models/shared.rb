@@ -121,12 +121,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("owner", @owner)
-                writer.write_string_value("scope", @scope)
-                writer.write_object_value("sharedBy", @shared_by)
-                writer.write_date_time_value("sharedDateTime", @shared_date_time)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("owner", @owner) unless @owner.nil?
+                writer.write_string_value("scope", @scope) unless @scope.nil?
+                writer.write_object_value("sharedBy", @shared_by) unless @shared_by.nil?
+                writer.write_date_time_value("sharedDateTime", @shared_date_time) unless @shared_date_time.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sharedBy property value. The identity of the user who shared the item. Read-only.

@@ -157,13 +157,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("assignedToMe", @assigned_to_me)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("justification", @justification)
-                writer.write_string_value("reviewResult", @review_result)
-                writer.write_object_value("reviewedBy", @reviewed_by)
-                writer.write_date_time_value("reviewedDateTime", @reviewed_date_time)
-                writer.write_string_value("status", @status)
+                writer.write_boolean_value("assignedToMe", @assigned_to_me) unless @assigned_to_me.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("justification", @justification) unless @justification.nil?
+                writer.write_string_value("reviewResult", @review_result) unless @review_result.nil?
+                writer.write_object_value("reviewedBy", @reviewed_by) unless @reviewed_by.nil?
+                writer.write_date_time_value("reviewedDateTime", @reviewed_date_time) unless @reviewed_date_time.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The stage status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.

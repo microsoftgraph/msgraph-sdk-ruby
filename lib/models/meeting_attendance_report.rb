@@ -100,10 +100,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("attendanceRecords", @attendance_records)
-                writer.write_date_time_value("meetingEndDateTime", @meeting_end_date_time)
-                writer.write_date_time_value("meetingStartDateTime", @meeting_start_date_time)
-                writer.write_number_value("totalParticipantCount", @total_participant_count)
+                writer.write_collection_of_object_values("attendanceRecords", @attendance_records) unless @attendance_records.nil?
+                writer.write_date_time_value("meetingEndDateTime", @meeting_end_date_time) unless @meeting_end_date_time.nil?
+                writer.write_date_time_value("meetingStartDateTime", @meeting_start_date_time) unless @meeting_start_date_time.nil?
+                writer.write_number_value("totalParticipantCount", @total_participant_count) unless @total_participant_count.nil?
             end
             ## 
             ## Gets the totalParticipantCount property value. Total number of participants. Read-only.

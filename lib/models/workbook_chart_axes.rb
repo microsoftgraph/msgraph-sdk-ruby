@@ -65,9 +65,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("categoryAxis", @category_axis)
-                writer.write_object_value("seriesAxis", @series_axis)
-                writer.write_object_value("valueAxis", @value_axis)
+                writer.write_object_value("categoryAxis", @category_axis) unless @category_axis.nil?
+                writer.write_object_value("seriesAxis", @series_axis) unless @series_axis.nil?
+                writer.write_object_value("valueAxis", @value_axis) unless @value_axis.nil?
             end
             ## 
             ## Gets the seriesAxis property value. Represents the series axis of a 3-dimensional chart. Read-only.

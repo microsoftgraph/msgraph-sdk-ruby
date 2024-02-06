@@ -154,13 +154,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_guid_value("id", @id)
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("value", @value)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_guid_value("id", @id) unless @id.nil?
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("value", @value) unless @value.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the value property value. The value of the permission.

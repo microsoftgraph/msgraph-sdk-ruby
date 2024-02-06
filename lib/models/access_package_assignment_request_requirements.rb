@@ -226,16 +226,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowCustomAssignmentSchedule", @allow_custom_assignment_schedule)
-                writer.write_boolean_value("isApprovalRequiredForAdd", @is_approval_required_for_add)
-                writer.write_boolean_value("isApprovalRequiredForUpdate", @is_approval_required_for_update)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("policyDescription", @policy_description)
-                writer.write_string_value("policyDisplayName", @policy_display_name)
-                writer.write_string_value("policyId", @policy_id)
-                writer.write_collection_of_object_values("questions", @questions)
-                writer.write_object_value("schedule", @schedule)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowCustomAssignmentSchedule", @allow_custom_assignment_schedule) unless @allow_custom_assignment_schedule.nil?
+                writer.write_boolean_value("isApprovalRequiredForAdd", @is_approval_required_for_add) unless @is_approval_required_for_add.nil?
+                writer.write_boolean_value("isApprovalRequiredForUpdate", @is_approval_required_for_update) unless @is_approval_required_for_update.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("policyDescription", @policy_description) unless @policy_description.nil?
+                writer.write_string_value("policyDisplayName", @policy_display_name) unless @policy_display_name.nil?
+                writer.write_string_value("policyId", @policy_id) unless @policy_id.nil?
+                writer.write_collection_of_object_values("questions", @questions) unless @questions.nil?
+                writer.write_object_value("schedule", @schedule) unless @schedule.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

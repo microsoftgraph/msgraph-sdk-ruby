@@ -165,15 +165,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("ccRecipients", @cc_recipients)
-                writer.write_boolean_value("hasAttachments", @has_attachments)
-                writer.write_boolean_value("isLocked", @is_locked)
-                writer.write_date_time_value("lastDeliveredDateTime", @last_delivered_date_time)
-                writer.write_collection_of_object_values("posts", @posts)
-                writer.write_string_value("preview", @preview)
-                writer.write_collection_of_object_values("toRecipients", @to_recipients)
-                writer.write_string_value("topic", @topic)
-                writer.write_collection_of_primitive_values("uniqueSenders", @unique_senders)
+                writer.write_collection_of_object_values("ccRecipients", @cc_recipients) unless @cc_recipients.nil?
+                writer.write_boolean_value("hasAttachments", @has_attachments) unless @has_attachments.nil?
+                writer.write_boolean_value("isLocked", @is_locked) unless @is_locked.nil?
+                writer.write_date_time_value("lastDeliveredDateTime", @last_delivered_date_time) unless @last_delivered_date_time.nil?
+                writer.write_collection_of_object_values("posts", @posts) unless @posts.nil?
+                writer.write_string_value("preview", @preview) unless @preview.nil?
+                writer.write_collection_of_object_values("toRecipients", @to_recipients) unless @to_recipients.nil?
+                writer.write_string_value("topic", @topic) unless @topic.nil?
+                writer.write_collection_of_primitive_values("uniqueSenders", @unique_senders) unless @unique_senders.nil?
             end
             ## 
             ## Gets the toRecipients property value. The To: recipients for the thread. Returned only on $select.

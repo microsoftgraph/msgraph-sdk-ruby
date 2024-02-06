@@ -118,11 +118,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("category", @category)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("executionConditions", @execution_conditions)
-                writer.write_collection_of_object_values("tasks", @tasks)
+                writer.write_enum_value("category", @category) unless @category.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("executionConditions", @execution_conditions) unless @execution_conditions.nil?
+                writer.write_collection_of_object_values("tasks", @tasks) unless @tasks.nil?
             end
             ## 
             ## Gets the tasks property value. Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.

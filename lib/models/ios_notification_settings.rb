@@ -202,17 +202,17 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("alertType", @alert_type)
-                writer.write_string_value("appName", @app_name)
-                writer.write_boolean_value("badgesEnabled", @badges_enabled)
-                writer.write_string_value("bundleID", @bundle_i_d)
-                writer.write_boolean_value("enabled", @enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("publisher", @publisher)
-                writer.write_boolean_value("showInNotificationCenter", @show_in_notification_center)
-                writer.write_boolean_value("showOnLockScreen", @show_on_lock_screen)
-                writer.write_boolean_value("soundsEnabled", @sounds_enabled)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("alertType", @alert_type) unless @alert_type.nil?
+                writer.write_string_value("appName", @app_name) unless @app_name.nil?
+                writer.write_boolean_value("badgesEnabled", @badges_enabled) unless @badges_enabled.nil?
+                writer.write_string_value("bundleID", @bundle_i_d) unless @bundle_i_d.nil?
+                writer.write_boolean_value("enabled", @enabled) unless @enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("publisher", @publisher) unless @publisher.nil?
+                writer.write_boolean_value("showInNotificationCenter", @show_in_notification_center) unless @show_in_notification_center.nil?
+                writer.write_boolean_value("showOnLockScreen", @show_on_lock_screen) unless @show_on_lock_screen.nil?
+                writer.write_boolean_value("soundsEnabled", @sounds_enabled) unless @sounds_enabled.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the showInNotificationCenter property value. Indicates whether notifications can be shown in notification center.

@@ -101,11 +101,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("signOutAfterInSeconds", @sign_out_after_in_seconds)
-                writer.write_object_value("warnAfterInSeconds", @warn_after_in_seconds)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("signOutAfterInSeconds", @sign_out_after_in_seconds) unless @sign_out_after_in_seconds.nil?
+                writer.write_object_value("warnAfterInSeconds", @warn_after_in_seconds) unless @warn_after_in_seconds.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the signOutAfterInSeconds property value. Number of seconds of inactivity after which a user is signed out.

@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("length", @length)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("offset", @offset)
-                writer.write_string_value("suggestion", @suggestion)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("length", @length) unless @length.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("offset", @offset) unless @offset.nil?
+                writer.write_string_value("suggestion", @suggestion) unless @suggestion.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the suggestion property value. Represents the corrected segment string.

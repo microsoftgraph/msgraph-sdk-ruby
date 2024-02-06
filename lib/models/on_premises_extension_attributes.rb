@@ -374,8 +374,8 @@ module MicrosoftGraph
                 writer.write_string_value("extensionAttribute7", @extension_attribute7)
                 writer.write_string_value("extensionAttribute8", @extension_attribute8)
                 writer.write_string_value("extensionAttribute9", @extension_attribute9)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

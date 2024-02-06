@@ -65,9 +65,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("serviceManagementDetails", @service_management_details)
-                writer.write_string_value("tenantId", @tenant_id)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("serviceManagementDetails", @service_management_details) unless @service_management_details.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
             end
             ## 
             ## Gets the serviceManagementDetails property value. Contains the management details of a service in the customer tenant that's managed by delegated administration.

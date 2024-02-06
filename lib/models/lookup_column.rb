@@ -169,13 +169,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowMultipleValues", @allow_multiple_values)
-                writer.write_boolean_value("allowUnlimitedLength", @allow_unlimited_length)
-                writer.write_string_value("columnName", @column_name)
-                writer.write_string_value("listId", @list_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("primaryLookupColumnId", @primary_lookup_column_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowMultipleValues", @allow_multiple_values) unless @allow_multiple_values.nil?
+                writer.write_boolean_value("allowUnlimitedLength", @allow_unlimited_length) unless @allow_unlimited_length.nil?
+                writer.write_string_value("columnName", @column_name) unless @column_name.nil?
+                writer.write_string_value("listId", @list_id) unless @list_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("primaryLookupColumnId", @primary_lookup_column_id) unless @primary_lookup_column_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

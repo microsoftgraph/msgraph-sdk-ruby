@@ -126,13 +126,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("indexedItemCount", @indexed_item_count)
-                writer.write_object_value("indexedItemsSize", @indexed_items_size)
-                writer.write_number_value("mailboxCount", @mailbox_count)
-                writer.write_object_value("search", @search)
-                writer.write_number_value("siteCount", @site_count)
-                writer.write_object_value("unindexedItemCount", @unindexed_item_count)
-                writer.write_object_value("unindexedItemsSize", @unindexed_items_size)
+                writer.write_object_value("indexedItemCount", @indexed_item_count) unless @indexed_item_count.nil?
+                writer.write_object_value("indexedItemsSize", @indexed_items_size) unless @indexed_items_size.nil?
+                writer.write_number_value("mailboxCount", @mailbox_count) unless @mailbox_count.nil?
+                writer.write_object_value("search", @search) unless @search.nil?
+                writer.write_number_value("siteCount", @site_count) unless @site_count.nil?
+                writer.write_object_value("unindexedItemCount", @unindexed_item_count) unless @unindexed_item_count.nil?
+                writer.write_object_value("unindexedItemsSize", @unindexed_items_size) unless @unindexed_items_size.nil?
             end
             ## 
             ## Gets the siteCount property value. The number of mailboxes that had search hits.

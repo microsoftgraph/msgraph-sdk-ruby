@@ -638,43 +638,43 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("assistantName", @assistant_name)
-                writer.write_date_time_value("birthday", @birthday)
-                writer.write_object_value("businessAddress", @business_address)
-                writer.write_string_value("businessHomePage", @business_home_page)
-                writer.write_collection_of_primitive_values("businessPhones", @business_phones)
-                writer.write_collection_of_primitive_values("children", @children)
-                writer.write_string_value("companyName", @company_name)
-                writer.write_string_value("department", @department)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("emailAddresses", @email_addresses)
-                writer.write_collection_of_object_values("extensions", @extensions)
-                writer.write_string_value("fileAs", @file_as)
-                writer.write_string_value("generation", @generation)
-                writer.write_string_value("givenName", @given_name)
-                writer.write_object_value("homeAddress", @home_address)
-                writer.write_collection_of_primitive_values("homePhones", @home_phones)
-                writer.write_collection_of_primitive_values("imAddresses", @im_addresses)
-                writer.write_string_value("initials", @initials)
-                writer.write_string_value("jobTitle", @job_title)
-                writer.write_string_value("manager", @manager)
-                writer.write_string_value("middleName", @middle_name)
-                writer.write_string_value("mobilePhone", @mobile_phone)
-                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties)
-                writer.write_string_value("nickName", @nick_name)
-                writer.write_string_value("officeLocation", @office_location)
-                writer.write_object_value("otherAddress", @other_address)
-                writer.write_string_value("parentFolderId", @parent_folder_id)
-                writer.write_string_value("personalNotes", @personal_notes)
-                writer.write_object_value("photo", @photo)
-                writer.write_string_value("profession", @profession)
-                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties)
-                writer.write_string_value("spouseName", @spouse_name)
-                writer.write_string_value("surname", @surname)
-                writer.write_string_value("title", @title)
-                writer.write_string_value("yomiCompanyName", @yomi_company_name)
-                writer.write_string_value("yomiGivenName", @yomi_given_name)
-                writer.write_string_value("yomiSurname", @yomi_surname)
+                writer.write_string_value("assistantName", @assistant_name) unless @assistant_name.nil?
+                writer.write_date_time_value("birthday", @birthday) unless @birthday.nil?
+                writer.write_object_value("businessAddress", @business_address) unless @business_address.nil?
+                writer.write_string_value("businessHomePage", @business_home_page) unless @business_home_page.nil?
+                writer.write_collection_of_primitive_values("businessPhones", @business_phones) unless @business_phones.nil?
+                writer.write_collection_of_primitive_values("children", @children) unless @children.nil?
+                writer.write_string_value("companyName", @company_name) unless @company_name.nil?
+                writer.write_string_value("department", @department) unless @department.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("emailAddresses", @email_addresses) unless @email_addresses.nil?
+                writer.write_collection_of_object_values("extensions", @extensions) unless @extensions.nil?
+                writer.write_string_value("fileAs", @file_as) unless @file_as.nil?
+                writer.write_string_value("generation", @generation) unless @generation.nil?
+                writer.write_string_value("givenName", @given_name) unless @given_name.nil?
+                writer.write_object_value("homeAddress", @home_address) unless @home_address.nil?
+                writer.write_collection_of_primitive_values("homePhones", @home_phones) unless @home_phones.nil?
+                writer.write_collection_of_primitive_values("imAddresses", @im_addresses) unless @im_addresses.nil?
+                writer.write_string_value("initials", @initials) unless @initials.nil?
+                writer.write_string_value("jobTitle", @job_title) unless @job_title.nil?
+                writer.write_string_value("manager", @manager) unless @manager.nil?
+                writer.write_string_value("middleName", @middle_name) unless @middle_name.nil?
+                writer.write_string_value("mobilePhone", @mobile_phone) unless @mobile_phone.nil?
+                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties) unless @multi_value_extended_properties.nil?
+                writer.write_string_value("nickName", @nick_name) unless @nick_name.nil?
+                writer.write_string_value("officeLocation", @office_location) unless @office_location.nil?
+                writer.write_object_value("otherAddress", @other_address) unless @other_address.nil?
+                writer.write_string_value("parentFolderId", @parent_folder_id) unless @parent_folder_id.nil?
+                writer.write_string_value("personalNotes", @personal_notes) unless @personal_notes.nil?
+                writer.write_object_value("photo", @photo) unless @photo.nil?
+                writer.write_string_value("profession", @profession) unless @profession.nil?
+                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties) unless @single_value_extended_properties.nil?
+                writer.write_string_value("spouseName", @spouse_name) unless @spouse_name.nil?
+                writer.write_string_value("surname", @surname) unless @surname.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
+                writer.write_string_value("yomiCompanyName", @yomi_company_name) unless @yomi_company_name.nil?
+                writer.write_string_value("yomiGivenName", @yomi_given_name) unless @yomi_given_name.nil?
+                writer.write_string_value("yomiSurname", @yomi_surname) unless @yomi_surname.nil?
             end
             ## 
             ## Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.

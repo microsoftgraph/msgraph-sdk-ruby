@@ -141,13 +141,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("allowedDeviceCount", @allowed_device_count)
-                writer.write_number_value("blockedDeviceCount", @blocked_device_count)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("quarantinedDeviceCount", @quarantined_device_count)
-                writer.write_number_value("unavailableDeviceCount", @unavailable_device_count)
-                writer.write_number_value("unknownDeviceCount", @unknown_device_count)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("allowedDeviceCount", @allowed_device_count) unless @allowed_device_count.nil?
+                writer.write_number_value("blockedDeviceCount", @blocked_device_count) unless @blocked_device_count.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("quarantinedDeviceCount", @quarantined_device_count) unless @quarantined_device_count.nil?
+                writer.write_number_value("unavailableDeviceCount", @unavailable_device_count) unless @unavailable_device_count.nil?
+                writer.write_number_value("unknownDeviceCount", @unknown_device_count) unless @unknown_device_count.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.

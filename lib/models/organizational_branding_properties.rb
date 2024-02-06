@@ -528,36 +528,36 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("backgroundColor", @background_color)
-                writer.write_object_value("backgroundImage", @background_image)
-                writer.write_string_value("backgroundImageRelativeUrl", @background_image_relative_url)
-                writer.write_object_value("bannerLogo", @banner_logo)
-                writer.write_string_value("bannerLogoRelativeUrl", @banner_logo_relative_url)
-                writer.write_collection_of_primitive_values("cdnList", @cdn_list)
-                writer.write_string_value("customAccountResetCredentialsUrl", @custom_account_reset_credentials_url)
-                writer.write_object_value("customCSS", @custom_c_s_s)
-                writer.write_string_value("customCSSRelativeUrl", @custom_c_s_s_relative_url)
-                writer.write_string_value("customCannotAccessYourAccountText", @custom_cannot_access_your_account_text)
-                writer.write_string_value("customCannotAccessYourAccountUrl", @custom_cannot_access_your_account_url)
-                writer.write_string_value("customForgotMyPasswordText", @custom_forgot_my_password_text)
-                writer.write_string_value("customPrivacyAndCookiesText", @custom_privacy_and_cookies_text)
-                writer.write_string_value("customPrivacyAndCookiesUrl", @custom_privacy_and_cookies_url)
-                writer.write_string_value("customResetItNowText", @custom_reset_it_now_text)
-                writer.write_string_value("customTermsOfUseText", @custom_terms_of_use_text)
-                writer.write_string_value("customTermsOfUseUrl", @custom_terms_of_use_url)
-                writer.write_object_value("favicon", @favicon)
-                writer.write_string_value("faviconRelativeUrl", @favicon_relative_url)
-                writer.write_string_value("headerBackgroundColor", @header_background_color)
-                writer.write_object_value("headerLogo", @header_logo)
-                writer.write_string_value("headerLogoRelativeUrl", @header_logo_relative_url)
-                writer.write_object_value("loginPageLayoutConfiguration", @login_page_layout_configuration)
-                writer.write_object_value("loginPageTextVisibilitySettings", @login_page_text_visibility_settings)
-                writer.write_string_value("signInPageText", @sign_in_page_text)
-                writer.write_object_value("squareLogo", @square_logo)
-                writer.write_object_value("squareLogoDark", @square_logo_dark)
-                writer.write_string_value("squareLogoDarkRelativeUrl", @square_logo_dark_relative_url)
-                writer.write_string_value("squareLogoRelativeUrl", @square_logo_relative_url)
-                writer.write_string_value("usernameHintText", @username_hint_text)
+                writer.write_string_value("backgroundColor", @background_color) unless @background_color.nil?
+                writer.write_object_value("backgroundImage", @background_image) unless @background_image.nil?
+                writer.write_string_value("backgroundImageRelativeUrl", @background_image_relative_url) unless @background_image_relative_url.nil?
+                writer.write_object_value("bannerLogo", @banner_logo) unless @banner_logo.nil?
+                writer.write_string_value("bannerLogoRelativeUrl", @banner_logo_relative_url) unless @banner_logo_relative_url.nil?
+                writer.write_collection_of_primitive_values("cdnList", @cdn_list) unless @cdn_list.nil?
+                writer.write_string_value("customAccountResetCredentialsUrl", @custom_account_reset_credentials_url) unless @custom_account_reset_credentials_url.nil?
+                writer.write_object_value("customCSS", @custom_c_s_s) unless @custom_c_s_s.nil?
+                writer.write_string_value("customCSSRelativeUrl", @custom_c_s_s_relative_url) unless @custom_c_s_s_relative_url.nil?
+                writer.write_string_value("customCannotAccessYourAccountText", @custom_cannot_access_your_account_text) unless @custom_cannot_access_your_account_text.nil?
+                writer.write_string_value("customCannotAccessYourAccountUrl", @custom_cannot_access_your_account_url) unless @custom_cannot_access_your_account_url.nil?
+                writer.write_string_value("customForgotMyPasswordText", @custom_forgot_my_password_text) unless @custom_forgot_my_password_text.nil?
+                writer.write_string_value("customPrivacyAndCookiesText", @custom_privacy_and_cookies_text) unless @custom_privacy_and_cookies_text.nil?
+                writer.write_string_value("customPrivacyAndCookiesUrl", @custom_privacy_and_cookies_url) unless @custom_privacy_and_cookies_url.nil?
+                writer.write_string_value("customResetItNowText", @custom_reset_it_now_text) unless @custom_reset_it_now_text.nil?
+                writer.write_string_value("customTermsOfUseText", @custom_terms_of_use_text) unless @custom_terms_of_use_text.nil?
+                writer.write_string_value("customTermsOfUseUrl", @custom_terms_of_use_url) unless @custom_terms_of_use_url.nil?
+                writer.write_object_value("favicon", @favicon) unless @favicon.nil?
+                writer.write_string_value("faviconRelativeUrl", @favicon_relative_url) unless @favicon_relative_url.nil?
+                writer.write_string_value("headerBackgroundColor", @header_background_color) unless @header_background_color.nil?
+                writer.write_object_value("headerLogo", @header_logo) unless @header_logo.nil?
+                writer.write_string_value("headerLogoRelativeUrl", @header_logo_relative_url) unless @header_logo_relative_url.nil?
+                writer.write_object_value("loginPageLayoutConfiguration", @login_page_layout_configuration) unless @login_page_layout_configuration.nil?
+                writer.write_object_value("loginPageTextVisibilitySettings", @login_page_text_visibility_settings) unless @login_page_text_visibility_settings.nil?
+                writer.write_string_value("signInPageText", @sign_in_page_text) unless @sign_in_page_text.nil?
+                writer.write_object_value("squareLogo", @square_logo) unless @square_logo.nil?
+                writer.write_object_value("squareLogoDark", @square_logo_dark) unless @square_logo_dark.nil?
+                writer.write_string_value("squareLogoDarkRelativeUrl", @square_logo_dark_relative_url) unless @square_logo_dark_relative_url.nil?
+                writer.write_string_value("squareLogoRelativeUrl", @square_logo_relative_url) unless @square_logo_relative_url.nil?
+                writer.write_string_value("usernameHintText", @username_hint_text) unless @username_hint_text.nil?
             end
             ## 
             ## Gets the signInPageText property value. Text that appears at the bottom of the sign-in box. Use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be in Unicode format and not exceed 1024 characters.

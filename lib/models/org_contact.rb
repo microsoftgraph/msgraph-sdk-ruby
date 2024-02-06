@@ -352,24 +352,24 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("addresses", @addresses)
-                writer.write_string_value("companyName", @company_name)
-                writer.write_string_value("department", @department)
-                writer.write_collection_of_object_values("directReports", @direct_reports)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("givenName", @given_name)
-                writer.write_string_value("jobTitle", @job_title)
-                writer.write_string_value("mail", @mail)
-                writer.write_string_value("mailNickname", @mail_nickname)
-                writer.write_object_value("manager", @manager)
-                writer.write_collection_of_object_values("memberOf", @member_of)
-                writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time)
-                writer.write_collection_of_object_values("onPremisesProvisioningErrors", @on_premises_provisioning_errors)
-                writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
-                writer.write_collection_of_object_values("phones", @phones)
-                writer.write_collection_of_primitive_values("proxyAddresses", @proxy_addresses)
-                writer.write_string_value("surname", @surname)
-                writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of)
+                writer.write_collection_of_object_values("addresses", @addresses) unless @addresses.nil?
+                writer.write_string_value("companyName", @company_name) unless @company_name.nil?
+                writer.write_string_value("department", @department) unless @department.nil?
+                writer.write_collection_of_object_values("directReports", @direct_reports) unless @direct_reports.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("givenName", @given_name) unless @given_name.nil?
+                writer.write_string_value("jobTitle", @job_title) unless @job_title.nil?
+                writer.write_string_value("mail", @mail) unless @mail.nil?
+                writer.write_string_value("mailNickname", @mail_nickname) unless @mail_nickname.nil?
+                writer.write_object_value("manager", @manager) unless @manager.nil?
+                writer.write_collection_of_object_values("memberOf", @member_of) unless @member_of.nil?
+                writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time) unless @on_premises_last_sync_date_time.nil?
+                writer.write_collection_of_object_values("onPremisesProvisioningErrors", @on_premises_provisioning_errors) unless @on_premises_provisioning_errors.nil?
+                writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled) unless @on_premises_sync_enabled.nil?
+                writer.write_collection_of_object_values("phones", @phones) unless @phones.nil?
+                writer.write_collection_of_primitive_values("proxyAddresses", @proxy_addresses) unless @proxy_addresses.nil?
+                writer.write_string_value("surname", @surname) unless @surname.nil?
+                writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of) unless @transitive_member_of.nil?
             end
             ## 
             ## Gets the surname property value. Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).

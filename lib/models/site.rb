@@ -325,25 +325,25 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("analytics", @analytics)
-                writer.write_collection_of_object_values("columns", @columns)
-                writer.write_collection_of_object_values("contentTypes", @content_types)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("drive", @drive)
-                writer.write_collection_of_object_values("drives", @drives)
-                writer.write_object_value("error", @error)
-                writer.write_collection_of_object_values("externalColumns", @external_columns)
-                writer.write_collection_of_object_values("items", @items)
-                writer.write_collection_of_object_values("lists", @lists)
-                writer.write_object_value("onenote", @onenote)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_collection_of_object_values("permissions", @permissions)
-                writer.write_object_value("root", @root)
-                writer.write_object_value("sharepointIds", @sharepoint_ids)
-                writer.write_object_value("siteCollection", @site_collection)
-                writer.write_collection_of_object_values("sites", @sites)
-                writer.write_object_value("termStore", @term_store)
-                writer.write_collection_of_object_values("termStores", @term_stores)
+                writer.write_object_value("analytics", @analytics) unless @analytics.nil?
+                writer.write_collection_of_object_values("columns", @columns) unless @columns.nil?
+                writer.write_collection_of_object_values("contentTypes", @content_types) unless @content_types.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("drive", @drive) unless @drive.nil?
+                writer.write_collection_of_object_values("drives", @drives) unless @drives.nil?
+                writer.write_object_value("error", @error) unless @error.nil?
+                writer.write_collection_of_object_values("externalColumns", @external_columns) unless @external_columns.nil?
+                writer.write_collection_of_object_values("items", @items) unless @items.nil?
+                writer.write_collection_of_object_values("lists", @lists) unless @lists.nil?
+                writer.write_object_value("onenote", @onenote) unless @onenote.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_collection_of_object_values("permissions", @permissions) unless @permissions.nil?
+                writer.write_object_value("root", @root) unless @root.nil?
+                writer.write_object_value("sharepointIds", @sharepoint_ids) unless @sharepoint_ids.nil?
+                writer.write_object_value("siteCollection", @site_collection) unless @site_collection.nil?
+                writer.write_collection_of_object_values("sites", @sites) unless @sites.nil?
+                writer.write_object_value("termStore", @term_store) unless @term_store.nil?
+                writer.write_collection_of_object_values("termStores", @term_stores) unless @term_stores.nil?
             end
             ## 
             ## Gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.

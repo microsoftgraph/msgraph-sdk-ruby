@@ -213,16 +213,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("inviteRedeemUrl", @invite_redeem_url)
-                writer.write_string_value("inviteRedirectUrl", @invite_redirect_url)
-                writer.write_object_value("invitedUser", @invited_user)
-                writer.write_string_value("invitedUserDisplayName", @invited_user_display_name)
-                writer.write_string_value("invitedUserEmailAddress", @invited_user_email_address)
-                writer.write_object_value("invitedUserMessageInfo", @invited_user_message_info)
-                writer.write_string_value("invitedUserType", @invited_user_type)
-                writer.write_boolean_value("resetRedemption", @reset_redemption)
-                writer.write_boolean_value("sendInvitationMessage", @send_invitation_message)
-                writer.write_string_value("status", @status)
+                writer.write_string_value("inviteRedeemUrl", @invite_redeem_url) unless @invite_redeem_url.nil?
+                writer.write_string_value("inviteRedirectUrl", @invite_redirect_url) unless @invite_redirect_url.nil?
+                writer.write_object_value("invitedUser", @invited_user) unless @invited_user.nil?
+                writer.write_string_value("invitedUserDisplayName", @invited_user_display_name) unless @invited_user_display_name.nil?
+                writer.write_string_value("invitedUserEmailAddress", @invited_user_email_address) unless @invited_user_email_address.nil?
+                writer.write_object_value("invitedUserMessageInfo", @invited_user_message_info) unless @invited_user_message_info.nil?
+                writer.write_string_value("invitedUserType", @invited_user_type) unless @invited_user_type.nil?
+                writer.write_boolean_value("resetRedemption", @reset_redemption) unless @reset_redemption.nil?
+                writer.write_boolean_value("sendInvitationMessage", @send_invitation_message) unless @send_invitation_message.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.

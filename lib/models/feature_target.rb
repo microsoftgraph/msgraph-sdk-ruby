@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("id", @id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("targetType", @target_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("targetType", @target_type) unless @target_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the targetType property value. The kind of entity that's targeted. The possible values are: group, administrativeUnit, role, unknownFutureValue.

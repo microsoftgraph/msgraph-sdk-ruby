@@ -207,15 +207,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("answer", @answer)
-                writer.write_enum_value("answerInputType", @answer_input_type)
-                writer.write_collection_of_primitive_values("answerOptions", @answer_options)
-                writer.write_boolean_value("isRequired", @is_required)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("question", @question)
-                writer.write_string_value("questionId", @question_id)
-                writer.write_collection_of_primitive_values("selectedOptions", @selected_options)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("answer", @answer) unless @answer.nil?
+                writer.write_enum_value("answerInputType", @answer_input_type) unless @answer_input_type.nil?
+                writer.write_collection_of_primitive_values("answerOptions", @answer_options) unless @answer_options.nil?
+                writer.write_boolean_value("isRequired", @is_required) unless @is_required.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("question", @question) unless @question.nil?
+                writer.write_string_value("questionId", @question_id) unless @question_id.nil?
+                writer.write_collection_of_primitive_values("selectedOptions", @selected_options) unless @selected_options.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

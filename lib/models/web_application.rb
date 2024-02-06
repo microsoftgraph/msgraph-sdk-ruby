@@ -169,13 +169,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("homePageUrl", @home_page_url)
-                writer.write_object_value("implicitGrantSettings", @implicit_grant_settings)
-                writer.write_string_value("logoutUrl", @logout_url)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("redirectUriSettings", @redirect_uri_settings)
-                writer.write_collection_of_primitive_values("redirectUris", @redirect_uris)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("homePageUrl", @home_page_url) unless @home_page_url.nil?
+                writer.write_object_value("implicitGrantSettings", @implicit_grant_settings) unless @implicit_grant_settings.nil?
+                writer.write_string_value("logoutUrl", @logout_url) unless @logout_url.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("redirectUriSettings", @redirect_uri_settings) unless @redirect_uri_settings.nil?
+                writer.write_collection_of_primitive_values("redirectUris", @redirect_uris) unless @redirect_uris.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("isCompliantDeviceAccepted", @is_compliant_device_accepted)
-                writer.write_boolean_value("isHybridAzureADJoinedDeviceAccepted", @is_hybrid_azure_a_d_joined_device_accepted)
-                writer.write_boolean_value("isMfaAccepted", @is_mfa_accepted)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("isCompliantDeviceAccepted", @is_compliant_device_accepted) unless @is_compliant_device_accepted.nil?
+                writer.write_boolean_value("isHybridAzureADJoinedDeviceAccepted", @is_hybrid_azure_a_d_joined_device_accepted) unless @is_hybrid_azure_a_d_joined_device_accepted.nil?
+                writer.write_boolean_value("isMfaAccepted", @is_mfa_accepted) unless @is_mfa_accepted.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

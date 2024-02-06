@@ -120,12 +120,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("recommendedActions", @recommended_actions)
-                writer.write_number_value("resolvedTargetsCount", @resolved_targets_count)
-                writer.write_object_value("simulationEventsContent", @simulation_events_content)
-                writer.write_object_value("trainingEventsContent", @training_events_content)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("recommendedActions", @recommended_actions) unless @recommended_actions.nil?
+                writer.write_number_value("resolvedTargetsCount", @resolved_targets_count) unless @resolved_targets_count.nil?
+                writer.write_object_value("simulationEventsContent", @simulation_events_content) unless @simulation_events_content.nil?
+                writer.write_object_value("trainingEventsContent", @training_events_content) unless @training_events_content.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.

@@ -101,11 +101,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("containerId", @container_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("type", @type)
-                writer.write_string_value("url", @url)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("containerId", @container_id) unless @container_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
+                writer.write_string_value("url", @url) unless @url.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster. Optional.

@@ -150,12 +150,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("addImageQuery", @add_image_query)
-                writer.write_string_value("alternateText", @alternate_text)
-                writer.write_string_value("alternativeText", @alternative_text)
-                writer.write_string_value("iconUrl", @icon_url)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("addImageQuery", @add_image_query) unless @add_image_query.nil?
+                writer.write_string_value("alternateText", @alternate_text) unless @alternate_text.nil?
+                writer.write_string_value("alternativeText", @alternative_text) unless @alternative_text.nil?
+                writer.write_string_value("iconUrl", @icon_url) unless @icon_url.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

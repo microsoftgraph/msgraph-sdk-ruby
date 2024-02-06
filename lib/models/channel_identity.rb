@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("channelId", @channel_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("teamId", @team_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("channelId", @channel_id) unless @channel_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("teamId", @team_id) unless @team_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the teamId property value. The identity of the team in which the message was posted.

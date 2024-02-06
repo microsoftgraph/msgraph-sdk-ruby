@@ -61,8 +61,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("type", @type)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("type", @type) unless @type.nil?
             end
             ## 
             ## Gets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.

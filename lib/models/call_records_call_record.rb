@@ -169,16 +169,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_string_value("joinWebUrl", @join_web_url)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_collection_of_object_values("modalities", @modalities)
-                writer.write_object_value("organizer", @organizer)
-                writer.write_collection_of_object_values("participants", @participants)
-                writer.write_collection_of_object_values("sessions", @sessions)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_enum_value("type", @type)
-                writer.write_object_value("version", @version)
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_string_value("joinWebUrl", @join_web_url) unless @join_web_url.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_collection_of_object_values("modalities", @modalities) unless @modalities.nil?
+                writer.write_object_value("organizer", @organizer) unless @organizer.nil?
+                writer.write_collection_of_object_values("participants", @participants) unless @participants.nil?
+                writer.write_collection_of_object_values("sessions", @sessions) unless @sessions.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
+                writer.write_object_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the sessions property value. List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.

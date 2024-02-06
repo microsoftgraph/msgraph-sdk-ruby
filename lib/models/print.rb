@@ -147,15 +147,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("connectors", @connectors)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_collection_of_object_values("printers", @printers)
-                writer.write_collection_of_object_values("services", @services)
-                writer.write_object_value("settings", @settings)
-                writer.write_collection_of_object_values("shares", @shares)
-                writer.write_collection_of_object_values("taskDefinitions", @task_definitions)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_object_values("connectors", @connectors) unless @connectors.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_collection_of_object_values("printers", @printers) unless @printers.nil?
+                writer.write_collection_of_object_values("services", @services) unless @services.nil?
+                writer.write_object_value("settings", @settings) unless @settings.nil?
+                writer.write_collection_of_object_values("shares", @shares) unless @shares.nil?
+                writer.write_collection_of_object_values("taskDefinitions", @task_definitions) unless @task_definitions.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the services property value. The list of available Universal Print service endpoints.

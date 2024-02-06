@@ -135,12 +135,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("action", @action)
-                writer.write_string_value("content", @content)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("position", @position)
-                writer.write_string_value("target", @target)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("action", @action) unless @action.nil?
+                writer.write_string_value("content", @content) unless @content.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("position", @position) unless @position.nil?
+                writer.write_string_value("target", @target) unless @target.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the target property value. The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.

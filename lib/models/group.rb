@@ -1140,71 +1140,71 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("acceptedSenders", @accepted_senders)
-                writer.write_boolean_value("allowExternalSenders", @allow_external_senders)
-                writer.write_collection_of_object_values("appRoleAssignments", @app_role_assignments)
-                writer.write_collection_of_object_values("assignedLabels", @assigned_labels)
-                writer.write_collection_of_object_values("assignedLicenses", @assigned_licenses)
-                writer.write_boolean_value("autoSubscribeNewMembers", @auto_subscribe_new_members)
-                writer.write_object_value("calendar", @calendar)
-                writer.write_collection_of_object_values("calendarView", @calendar_view)
-                writer.write_string_value("classification", @classification)
-                writer.write_collection_of_object_values("conversations", @conversations)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("createdOnBehalfOf", @created_on_behalf_of)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("drive", @drive)
-                writer.write_collection_of_object_values("drives", @drives)
-                writer.write_collection_of_object_values("events", @events)
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_collection_of_object_values("extensions", @extensions)
-                writer.write_collection_of_object_values("groupLifecyclePolicies", @group_lifecycle_policies)
-                writer.write_collection_of_primitive_values("groupTypes", @group_types)
-                writer.write_boolean_value("hasMembersWithLicenseErrors", @has_members_with_license_errors)
-                writer.write_boolean_value("hideFromAddressLists", @hide_from_address_lists)
-                writer.write_boolean_value("hideFromOutlookClients", @hide_from_outlook_clients)
-                writer.write_boolean_value("isArchived", @is_archived)
-                writer.write_boolean_value("isAssignableToRole", @is_assignable_to_role)
-                writer.write_boolean_value("isSubscribedByMail", @is_subscribed_by_mail)
-                writer.write_object_value("licenseProcessingState", @license_processing_state)
-                writer.write_string_value("mail", @mail)
-                writer.write_boolean_value("mailEnabled", @mail_enabled)
-                writer.write_string_value("mailNickname", @mail_nickname)
-                writer.write_collection_of_object_values("memberOf", @member_of)
-                writer.write_collection_of_object_values("members", @members)
-                writer.write_collection_of_object_values("membersWithLicenseErrors", @members_with_license_errors)
-                writer.write_string_value("membershipRule", @membership_rule)
-                writer.write_string_value("membershipRuleProcessingState", @membership_rule_processing_state)
-                writer.write_string_value("onPremisesDomainName", @on_premises_domain_name)
-                writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time)
-                writer.write_string_value("onPremisesNetBiosName", @on_premises_net_bios_name)
-                writer.write_collection_of_object_values("onPremisesProvisioningErrors", @on_premises_provisioning_errors)
-                writer.write_string_value("onPremisesSamAccountName", @on_premises_sam_account_name)
-                writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier)
-                writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
-                writer.write_object_value("onenote", @onenote)
-                writer.write_collection_of_object_values("owners", @owners)
-                writer.write_collection_of_object_values("permissionGrants", @permission_grants)
-                writer.write_object_value("photo", @photo)
-                writer.write_collection_of_object_values("photos", @photos)
-                writer.write_object_value("planner", @planner)
-                writer.write_string_value("preferredDataLocation", @preferred_data_location)
-                writer.write_string_value("preferredLanguage", @preferred_language)
-                writer.write_collection_of_primitive_values("proxyAddresses", @proxy_addresses)
-                writer.write_collection_of_object_values("rejectedSenders", @rejected_senders)
-                writer.write_date_time_value("renewedDateTime", @renewed_date_time)
-                writer.write_boolean_value("securityEnabled", @security_enabled)
-                writer.write_string_value("securityIdentifier", @security_identifier)
-                writer.write_collection_of_object_values("settings", @settings)
-                writer.write_collection_of_object_values("sites", @sites)
-                writer.write_object_value("team", @team)
-                writer.write_string_value("theme", @theme)
-                writer.write_collection_of_object_values("threads", @threads)
-                writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of)
-                writer.write_collection_of_object_values("transitiveMembers", @transitive_members)
-                writer.write_number_value("unseenCount", @unseen_count)
-                writer.write_string_value("visibility", @visibility)
+                writer.write_collection_of_object_values("acceptedSenders", @accepted_senders) unless @accepted_senders.nil?
+                writer.write_boolean_value("allowExternalSenders", @allow_external_senders) unless @allow_external_senders.nil?
+                writer.write_collection_of_object_values("appRoleAssignments", @app_role_assignments) unless @app_role_assignments.nil?
+                writer.write_collection_of_object_values("assignedLabels", @assigned_labels) unless @assigned_labels.nil?
+                writer.write_collection_of_object_values("assignedLicenses", @assigned_licenses) unless @assigned_licenses.nil?
+                writer.write_boolean_value("autoSubscribeNewMembers", @auto_subscribe_new_members) unless @auto_subscribe_new_members.nil?
+                writer.write_object_value("calendar", @calendar) unless @calendar.nil?
+                writer.write_collection_of_object_values("calendarView", @calendar_view) unless @calendar_view.nil?
+                writer.write_string_value("classification", @classification) unless @classification.nil?
+                writer.write_collection_of_object_values("conversations", @conversations) unless @conversations.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("createdOnBehalfOf", @created_on_behalf_of) unless @created_on_behalf_of.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("drive", @drive) unless @drive.nil?
+                writer.write_collection_of_object_values("drives", @drives) unless @drives.nil?
+                writer.write_collection_of_object_values("events", @events) unless @events.nil?
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_collection_of_object_values("extensions", @extensions) unless @extensions.nil?
+                writer.write_collection_of_object_values("groupLifecyclePolicies", @group_lifecycle_policies) unless @group_lifecycle_policies.nil?
+                writer.write_collection_of_primitive_values("groupTypes", @group_types) unless @group_types.nil?
+                writer.write_boolean_value("hasMembersWithLicenseErrors", @has_members_with_license_errors) unless @has_members_with_license_errors.nil?
+                writer.write_boolean_value("hideFromAddressLists", @hide_from_address_lists) unless @hide_from_address_lists.nil?
+                writer.write_boolean_value("hideFromOutlookClients", @hide_from_outlook_clients) unless @hide_from_outlook_clients.nil?
+                writer.write_boolean_value("isArchived", @is_archived) unless @is_archived.nil?
+                writer.write_boolean_value("isAssignableToRole", @is_assignable_to_role) unless @is_assignable_to_role.nil?
+                writer.write_boolean_value("isSubscribedByMail", @is_subscribed_by_mail) unless @is_subscribed_by_mail.nil?
+                writer.write_object_value("licenseProcessingState", @license_processing_state) unless @license_processing_state.nil?
+                writer.write_string_value("mail", @mail) unless @mail.nil?
+                writer.write_boolean_value("mailEnabled", @mail_enabled) unless @mail_enabled.nil?
+                writer.write_string_value("mailNickname", @mail_nickname) unless @mail_nickname.nil?
+                writer.write_collection_of_object_values("memberOf", @member_of) unless @member_of.nil?
+                writer.write_collection_of_object_values("members", @members) unless @members.nil?
+                writer.write_collection_of_object_values("membersWithLicenseErrors", @members_with_license_errors) unless @members_with_license_errors.nil?
+                writer.write_string_value("membershipRule", @membership_rule) unless @membership_rule.nil?
+                writer.write_string_value("membershipRuleProcessingState", @membership_rule_processing_state) unless @membership_rule_processing_state.nil?
+                writer.write_string_value("onPremisesDomainName", @on_premises_domain_name) unless @on_premises_domain_name.nil?
+                writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time) unless @on_premises_last_sync_date_time.nil?
+                writer.write_string_value("onPremisesNetBiosName", @on_premises_net_bios_name) unless @on_premises_net_bios_name.nil?
+                writer.write_collection_of_object_values("onPremisesProvisioningErrors", @on_premises_provisioning_errors) unless @on_premises_provisioning_errors.nil?
+                writer.write_string_value("onPremisesSamAccountName", @on_premises_sam_account_name) unless @on_premises_sam_account_name.nil?
+                writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier) unless @on_premises_security_identifier.nil?
+                writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled) unless @on_premises_sync_enabled.nil?
+                writer.write_object_value("onenote", @onenote) unless @onenote.nil?
+                writer.write_collection_of_object_values("owners", @owners) unless @owners.nil?
+                writer.write_collection_of_object_values("permissionGrants", @permission_grants) unless @permission_grants.nil?
+                writer.write_object_value("photo", @photo) unless @photo.nil?
+                writer.write_collection_of_object_values("photos", @photos) unless @photos.nil?
+                writer.write_object_value("planner", @planner) unless @planner.nil?
+                writer.write_string_value("preferredDataLocation", @preferred_data_location) unless @preferred_data_location.nil?
+                writer.write_string_value("preferredLanguage", @preferred_language) unless @preferred_language.nil?
+                writer.write_collection_of_primitive_values("proxyAddresses", @proxy_addresses) unless @proxy_addresses.nil?
+                writer.write_collection_of_object_values("rejectedSenders", @rejected_senders) unless @rejected_senders.nil?
+                writer.write_date_time_value("renewedDateTime", @renewed_date_time) unless @renewed_date_time.nil?
+                writer.write_boolean_value("securityEnabled", @security_enabled) unless @security_enabled.nil?
+                writer.write_string_value("securityIdentifier", @security_identifier) unless @security_identifier.nil?
+                writer.write_collection_of_object_values("settings", @settings) unless @settings.nil?
+                writer.write_collection_of_object_values("sites", @sites) unless @sites.nil?
+                writer.write_object_value("team", @team) unless @team.nil?
+                writer.write_string_value("theme", @theme) unless @theme.nil?
+                writer.write_collection_of_object_values("threads", @threads) unless @threads.nil?
+                writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of) unless @transitive_member_of.nil?
+                writer.write_collection_of_object_values("transitiveMembers", @transitive_members) unless @transitive_members.nil?
+                writer.write_number_value("unseenCount", @unseen_count) unless @unseen_count.nil?
+                writer.write_string_value("visibility", @visibility) unless @visibility.nil?
             end
             ## 
             ## Gets the settings property value. Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.

@@ -173,14 +173,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("calleeDevice", @callee_device)
-                writer.write_object_value("calleeNetwork", @callee_network)
-                writer.write_object_value("callerDevice", @caller_device)
-                writer.write_object_value("callerNetwork", @caller_network)
-                writer.write_string_value("label", @label)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("streams", @streams)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("calleeDevice", @callee_device) unless @callee_device.nil?
+                writer.write_object_value("calleeNetwork", @callee_network) unless @callee_network.nil?
+                writer.write_object_value("callerDevice", @caller_device) unless @caller_device.nil?
+                writer.write_object_value("callerNetwork", @caller_network) unless @caller_network.nil?
+                writer.write_string_value("label", @label) unless @label.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("streams", @streams) unless @streams.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the streams property value. Network streams associated with this media.

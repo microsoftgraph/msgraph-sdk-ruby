@@ -85,10 +85,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appIconWebUrl", @app_icon_web_url)
-                writer.write_string_value("appId", @app_id)
-                writer.write_string_value("teamsEmbeddedContentUrl", @teams_embedded_content_url)
-                writer.write_string_value("webUrl", @web_url)
+                writer.write_string_value("appIconWebUrl", @app_icon_web_url) unless @app_icon_web_url.nil?
+                writer.write_string_value("appId", @app_id) unless @app_id.nil?
+                writer.write_string_value("teamsEmbeddedContentUrl", @teams_embedded_content_url) unless @teams_embedded_content_url.nil?
+                writer.write_string_value("webUrl", @web_url) unless @web_url.nil?
             end
             ## 
             ## Gets the teamsEmbeddedContentUrl property value. URL for the app resource that will be opened by Teams.

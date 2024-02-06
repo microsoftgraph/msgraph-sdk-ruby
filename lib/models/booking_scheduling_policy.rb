@@ -156,13 +156,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowStaffSelection", @allow_staff_selection)
-                writer.write_duration_value("maximumAdvance", @maximum_advance)
-                writer.write_duration_value("minimumLeadTime", @minimum_lead_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("sendConfirmationsToOwner", @send_confirmations_to_owner)
-                writer.write_duration_value("timeSlotInterval", @time_slot_interval)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowStaffSelection", @allow_staff_selection) unless @allow_staff_selection.nil?
+                writer.write_duration_value("maximumAdvance", @maximum_advance) unless @maximum_advance.nil?
+                writer.write_duration_value("minimumLeadTime", @minimum_lead_time) unless @minimum_lead_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("sendConfirmationsToOwner", @send_confirmations_to_owner) unless @send_confirmations_to_owner.nil?
+                writer.write_duration_value("timeSlotInterval", @time_slot_interval) unless @time_slot_interval.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the timeSlotInterval property value. Duration of each time slot, denoted in ISO 8601 format.

@@ -188,14 +188,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("certificate", @certificate)
-                writer.write_string_value("certificateRevocationListUrl", @certificate_revocation_list_url)
-                writer.write_string_value("deltaCertificateRevocationListUrl", @delta_certificate_revocation_list_url)
-                writer.write_boolean_value("isRootAuthority", @is_root_authority)
-                writer.write_string_value("issuer", @issuer)
-                writer.write_string_value("issuerSki", @issuer_ski)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("certificate", @certificate) unless @certificate.nil?
+                writer.write_string_value("certificateRevocationListUrl", @certificate_revocation_list_url) unless @certificate_revocation_list_url.nil?
+                writer.write_string_value("deltaCertificateRevocationListUrl", @delta_certificate_revocation_list_url) unless @delta_certificate_revocation_list_url.nil?
+                writer.write_boolean_value("isRootAuthority", @is_root_authority) unless @is_root_authority.nil?
+                writer.write_string_value("issuer", @issuer) unless @issuer.nil?
+                writer.write_string_value("issuerSki", @issuer_ski) unless @issuer_ski.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

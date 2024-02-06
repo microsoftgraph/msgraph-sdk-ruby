@@ -145,17 +145,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("complianceGracePeriodExpirationDateTime", @compliance_grace_period_expiration_date_time)
-                writer.write_string_value("deviceId", @device_id)
-                writer.write_string_value("deviceModel", @device_model)
-                writer.write_string_value("deviceName", @device_name)
-                writer.write_string_value("setting", @setting)
-                writer.write_string_value("settingName", @setting_name)
-                writer.write_enum_value("state", @state)
-                writer.write_string_value("userEmail", @user_email)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("userName", @user_name)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
+                writer.write_date_time_value("complianceGracePeriodExpirationDateTime", @compliance_grace_period_expiration_date_time) unless @compliance_grace_period_expiration_date_time.nil?
+                writer.write_string_value("deviceId", @device_id) unless @device_id.nil?
+                writer.write_string_value("deviceModel", @device_model) unless @device_model.nil?
+                writer.write_string_value("deviceName", @device_name) unless @device_name.nil?
+                writer.write_string_value("setting", @setting) unless @setting.nil?
+                writer.write_string_value("settingName", @setting_name) unless @setting_name.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_string_value("userEmail", @user_email) unless @user_email.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
+                writer.write_string_value("userName", @user_name) unless @user_name.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
             end
             ## 
             ## Gets the setting property value. The setting class name and property name.

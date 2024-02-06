@@ -135,12 +135,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("city", @city)
-                writer.write_string_value("countryOrRegion", @country_or_region)
-                writer.write_object_value("geoCoordinates", @geo_coordinates)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("state", @state)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("city", @city) unless @city.nil?
+                writer.write_string_value("countryOrRegion", @country_or_region) unless @country_or_region.nil?
+                writer.write_object_value("geoCoordinates", @geo_coordinates) unless @geo_coordinates.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("state", @state) unless @state.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the state property value. Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.

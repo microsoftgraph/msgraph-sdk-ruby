@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("excludeServicePrincipals", @exclude_service_principals)
-                writer.write_collection_of_primitive_values("includeServicePrincipals", @include_service_principals)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("servicePrincipalFilter", @service_principal_filter)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("excludeServicePrincipals", @exclude_service_principals) unless @exclude_service_principals.nil?
+                writer.write_collection_of_primitive_values("includeServicePrincipals", @include_service_principals) unless @include_service_principals.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("servicePrincipalFilter", @service_principal_filter) unless @service_principal_filter.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the servicePrincipalFilter property value. The servicePrincipalFilter property

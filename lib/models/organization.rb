@@ -478,33 +478,33 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("assignedPlans", @assigned_plans)
-                writer.write_object_value("branding", @branding)
-                writer.write_collection_of_primitive_values("businessPhones", @business_phones)
-                writer.write_collection_of_object_values("certificateBasedAuthConfiguration", @certificate_based_auth_configuration)
-                writer.write_string_value("city", @city)
-                writer.write_string_value("country", @country)
-                writer.write_string_value("countryLetterCode", @country_letter_code)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("defaultUsageLocation", @default_usage_location)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("extensions", @extensions)
-                writer.write_collection_of_primitive_values("marketingNotificationEmails", @marketing_notification_emails)
-                writer.write_enum_value("mobileDeviceManagementAuthority", @mobile_device_management_authority)
-                writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time)
-                writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
-                writer.write_enum_value("partnerTenantType", @partner_tenant_type)
-                writer.write_string_value("postalCode", @postal_code)
-                writer.write_string_value("preferredLanguage", @preferred_language)
-                writer.write_object_value("privacyProfile", @privacy_profile)
-                writer.write_collection_of_object_values("provisionedPlans", @provisioned_plans)
-                writer.write_collection_of_primitive_values("securityComplianceNotificationMails", @security_compliance_notification_mails)
-                writer.write_collection_of_primitive_values("securityComplianceNotificationPhones", @security_compliance_notification_phones)
-                writer.write_string_value("state", @state)
-                writer.write_string_value("street", @street)
-                writer.write_collection_of_primitive_values("technicalNotificationMails", @technical_notification_mails)
-                writer.write_string_value("tenantType", @tenant_type)
-                writer.write_collection_of_object_values("verifiedDomains", @verified_domains)
+                writer.write_collection_of_object_values("assignedPlans", @assigned_plans) unless @assigned_plans.nil?
+                writer.write_object_value("branding", @branding) unless @branding.nil?
+                writer.write_collection_of_primitive_values("businessPhones", @business_phones) unless @business_phones.nil?
+                writer.write_collection_of_object_values("certificateBasedAuthConfiguration", @certificate_based_auth_configuration) unless @certificate_based_auth_configuration.nil?
+                writer.write_string_value("city", @city) unless @city.nil?
+                writer.write_string_value("country", @country) unless @country.nil?
+                writer.write_string_value("countryLetterCode", @country_letter_code) unless @country_letter_code.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("defaultUsageLocation", @default_usage_location) unless @default_usage_location.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("extensions", @extensions) unless @extensions.nil?
+                writer.write_collection_of_primitive_values("marketingNotificationEmails", @marketing_notification_emails) unless @marketing_notification_emails.nil?
+                writer.write_enum_value("mobileDeviceManagementAuthority", @mobile_device_management_authority) unless @mobile_device_management_authority.nil?
+                writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time) unless @on_premises_last_sync_date_time.nil?
+                writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled) unless @on_premises_sync_enabled.nil?
+                writer.write_enum_value("partnerTenantType", @partner_tenant_type) unless @partner_tenant_type.nil?
+                writer.write_string_value("postalCode", @postal_code) unless @postal_code.nil?
+                writer.write_string_value("preferredLanguage", @preferred_language) unless @preferred_language.nil?
+                writer.write_object_value("privacyProfile", @privacy_profile) unless @privacy_profile.nil?
+                writer.write_collection_of_object_values("provisionedPlans", @provisioned_plans) unless @provisioned_plans.nil?
+                writer.write_collection_of_primitive_values("securityComplianceNotificationMails", @security_compliance_notification_mails) unless @security_compliance_notification_mails.nil?
+                writer.write_collection_of_primitive_values("securityComplianceNotificationPhones", @security_compliance_notification_phones) unless @security_compliance_notification_phones.nil?
+                writer.write_string_value("state", @state) unless @state.nil?
+                writer.write_string_value("street", @street) unless @street.nil?
+                writer.write_collection_of_primitive_values("technicalNotificationMails", @technical_notification_mails) unless @technical_notification_mails.nil?
+                writer.write_string_value("tenantType", @tenant_type) unless @tenant_type.nil?
+                writer.write_collection_of_object_values("verifiedDomains", @verified_domains) unless @verified_domains.nil?
             end
             ## 
             ## Gets the state property value. State name of the address for the organization.

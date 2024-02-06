@@ -101,11 +101,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("isCaptionEnabled", @is_caption_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("spokenLanguage", @spoken_language)
-                writer.write_collection_of_primitive_values("translationLanguages", @translation_languages)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("isCaptionEnabled", @is_caption_enabled) unless @is_caption_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("spokenLanguage", @spoken_language) unless @spoken_language.nil?
+                writer.write_collection_of_primitive_values("translationLanguages", @translation_languages) unless @translation_languages.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the spokenLanguage property value. The spoken language.

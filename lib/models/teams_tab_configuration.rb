@@ -135,12 +135,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("contentUrl", @content_url)
-                writer.write_string_value("entityId", @entity_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("removeUrl", @remove_url)
-                writer.write_string_value("websiteUrl", @website_url)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("contentUrl", @content_url) unless @content_url.nil?
+                writer.write_string_value("entityId", @entity_id) unless @entity_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("removeUrl", @remove_url) unless @remove_url.nil?
+                writer.write_string_value("websiteUrl", @website_url) unless @website_url.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the websiteUrl property value. Url for showing tab contents outside of Teams.

@@ -337,22 +337,22 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("address", @address)
-                writer.write_collection_of_object_values("appointments", @appointments)
-                writer.write_collection_of_object_values("businessHours", @business_hours)
-                writer.write_string_value("businessType", @business_type)
-                writer.write_collection_of_object_values("calendarView", @calendar_view)
-                writer.write_collection_of_object_values("customQuestions", @custom_questions)
-                writer.write_collection_of_object_values("customers", @customers)
-                writer.write_string_value("defaultCurrencyIso", @default_currency_iso)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("email", @email)
-                writer.write_string_value("languageTag", @language_tag)
-                writer.write_string_value("phone", @phone)
-                writer.write_object_value("schedulingPolicy", @scheduling_policy)
-                writer.write_collection_of_object_values("services", @services)
-                writer.write_collection_of_object_values("staffMembers", @staff_members)
-                writer.write_string_value("webSiteUrl", @web_site_url)
+                writer.write_object_value("address", @address) unless @address.nil?
+                writer.write_collection_of_object_values("appointments", @appointments) unless @appointments.nil?
+                writer.write_collection_of_object_values("businessHours", @business_hours) unless @business_hours.nil?
+                writer.write_string_value("businessType", @business_type) unless @business_type.nil?
+                writer.write_collection_of_object_values("calendarView", @calendar_view) unless @calendar_view.nil?
+                writer.write_collection_of_object_values("customQuestions", @custom_questions) unless @custom_questions.nil?
+                writer.write_collection_of_object_values("customers", @customers) unless @customers.nil?
+                writer.write_string_value("defaultCurrencyIso", @default_currency_iso) unless @default_currency_iso.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("email", @email) unless @email.nil?
+                writer.write_string_value("languageTag", @language_tag) unless @language_tag.nil?
+                writer.write_string_value("phone", @phone) unless @phone.nil?
+                writer.write_object_value("schedulingPolicy", @scheduling_policy) unless @scheduling_policy.nil?
+                writer.write_collection_of_object_values("services", @services) unless @services.nil?
+                writer.write_collection_of_object_values("staffMembers", @staff_members) unless @staff_members.nil?
+                writer.write_string_value("webSiteUrl", @web_site_url) unless @web_site_url.nil?
             end
             ## 
             ## Gets the services property value. All the services offered by this business. Read-only. Nullable.

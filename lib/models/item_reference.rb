@@ -181,16 +181,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("driveId", @drive_id)
-                writer.write_string_value("driveType", @drive_type)
-                writer.write_string_value("id", @id)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("path", @path)
-                writer.write_string_value("shareId", @share_id)
-                writer.write_object_value("sharepointIds", @sharepoint_ids)
-                writer.write_string_value("siteId", @site_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("driveId", @drive_id) unless @drive_id.nil?
+                writer.write_string_value("driveType", @drive_type) unless @drive_type.nil?
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("path", @path) unless @path.nil?
+                writer.write_string_value("shareId", @share_id) unless @share_id.nil?
+                writer.write_object_value("sharepointIds", @sharepoint_ids) unless @sharepoint_ids.nil?
+                writer.write_string_value("siteId", @site_id) unless @site_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the shareId property value. A unique identifier for a shared resource that can be accessed via the [Shares][] API.

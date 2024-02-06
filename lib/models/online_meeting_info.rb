@@ -158,14 +158,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("conferenceId", @conference_id)
-                writer.write_string_value("joinUrl", @join_url)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("phones", @phones)
-                writer.write_string_value("quickDial", @quick_dial)
-                writer.write_collection_of_primitive_values("tollFreeNumbers", @toll_free_numbers)
-                writer.write_string_value("tollNumber", @toll_number)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("conferenceId", @conference_id) unless @conference_id.nil?
+                writer.write_string_value("joinUrl", @join_url) unless @join_url.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("phones", @phones) unless @phones.nil?
+                writer.write_string_value("quickDial", @quick_dial) unless @quick_dial.nil?
+                writer.write_collection_of_primitive_values("tollFreeNumbers", @toll_free_numbers) unless @toll_free_numbers.nil?
+                writer.write_string_value("tollNumber", @toll_number) unless @toll_number.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the tollFreeNumbers property value. The toll free numbers that can be used to join the conference.

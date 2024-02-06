@@ -89,8 +89,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("assignments", @assignments)
-                writer.write_boolean_value("isAssigned", @is_assigned)
+                writer.write_collection_of_object_values("assignments", @assignments) unless @assignments.nil?
+                writer.write_boolean_value("isAssigned", @is_assigned) unless @is_assigned.nil?
             end
         end
     end

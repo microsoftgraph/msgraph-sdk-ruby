@@ -2706,207 +2706,207 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("accountsBlockAddingNonMicrosoftAccountEmail", @accounts_block_adding_non_microsoft_account_email)
-                writer.write_boolean_value("antiTheftModeBlocked", @anti_theft_mode_blocked)
-                writer.write_enum_value("appsAllowTrustedAppsSideloading", @apps_allow_trusted_apps_sideloading)
-                writer.write_boolean_value("appsBlockWindowsStoreOriginatedApps", @apps_block_windows_store_originated_apps)
-                writer.write_collection_of_primitive_values("bluetoothAllowedServices", @bluetooth_allowed_services)
-                writer.write_boolean_value("bluetoothBlockAdvertising", @bluetooth_block_advertising)
-                writer.write_boolean_value("bluetoothBlockDiscoverableMode", @bluetooth_block_discoverable_mode)
-                writer.write_boolean_value("bluetoothBlockPrePairing", @bluetooth_block_pre_pairing)
-                writer.write_boolean_value("bluetoothBlocked", @bluetooth_blocked)
-                writer.write_boolean_value("cameraBlocked", @camera_blocked)
-                writer.write_boolean_value("cellularBlockDataWhenRoaming", @cellular_block_data_when_roaming)
-                writer.write_boolean_value("cellularBlockVpn", @cellular_block_vpn)
-                writer.write_boolean_value("cellularBlockVpnWhenRoaming", @cellular_block_vpn_when_roaming)
-                writer.write_boolean_value("certificatesBlockManualRootCertificateInstallation", @certificates_block_manual_root_certificate_installation)
-                writer.write_boolean_value("connectedDevicesServiceBlocked", @connected_devices_service_blocked)
-                writer.write_boolean_value("copyPasteBlocked", @copy_paste_blocked)
-                writer.write_boolean_value("cortanaBlocked", @cortana_blocked)
-                writer.write_boolean_value("defenderBlockEndUserAccess", @defender_block_end_user_access)
-                writer.write_enum_value("defenderCloudBlockLevel", @defender_cloud_block_level)
-                writer.write_number_value("defenderDaysBeforeDeletingQuarantinedMalware", @defender_days_before_deleting_quarantined_malware)
-                writer.write_object_value("defenderDetectedMalwareActions", @defender_detected_malware_actions)
-                writer.write_collection_of_primitive_values("defenderFileExtensionsToExclude", @defender_file_extensions_to_exclude)
-                writer.write_collection_of_primitive_values("defenderFilesAndFoldersToExclude", @defender_files_and_folders_to_exclude)
-                writer.write_enum_value("defenderMonitorFileActivity", @defender_monitor_file_activity)
-                writer.write_collection_of_primitive_values("defenderProcessesToExclude", @defender_processes_to_exclude)
-                writer.write_enum_value("defenderPromptForSampleSubmission", @defender_prompt_for_sample_submission)
-                writer.write_boolean_value("defenderRequireBehaviorMonitoring", @defender_require_behavior_monitoring)
-                writer.write_boolean_value("defenderRequireCloudProtection", @defender_require_cloud_protection)
-                writer.write_boolean_value("defenderRequireNetworkInspectionSystem", @defender_require_network_inspection_system)
-                writer.write_boolean_value("defenderRequireRealTimeMonitoring", @defender_require_real_time_monitoring)
-                writer.write_boolean_value("defenderScanArchiveFiles", @defender_scan_archive_files)
-                writer.write_boolean_value("defenderScanDownloads", @defender_scan_downloads)
-                writer.write_boolean_value("defenderScanIncomingMail", @defender_scan_incoming_mail)
-                writer.write_boolean_value("defenderScanMappedNetworkDrivesDuringFullScan", @defender_scan_mapped_network_drives_during_full_scan)
-                writer.write_number_value("defenderScanMaxCpu", @defender_scan_max_cpu)
-                writer.write_boolean_value("defenderScanNetworkFiles", @defender_scan_network_files)
-                writer.write_boolean_value("defenderScanRemovableDrivesDuringFullScan", @defender_scan_removable_drives_during_full_scan)
-                writer.write_boolean_value("defenderScanScriptsLoadedInInternetExplorer", @defender_scan_scripts_loaded_in_internet_explorer)
-                writer.write_enum_value("defenderScanType", @defender_scan_type)
-                writer.write_time_value("defenderScheduledQuickScanTime", @defender_scheduled_quick_scan_time)
-                writer.write_time_value("defenderScheduledScanTime", @defender_scheduled_scan_time)
-                writer.write_number_value("defenderSignatureUpdateIntervalInHours", @defender_signature_update_interval_in_hours)
-                writer.write_enum_value("defenderSystemScanSchedule", @defender_system_scan_schedule)
-                writer.write_enum_value("developerUnlockSetting", @developer_unlock_setting)
-                writer.write_boolean_value("deviceManagementBlockFactoryResetOnMobile", @device_management_block_factory_reset_on_mobile)
-                writer.write_boolean_value("deviceManagementBlockManualUnenroll", @device_management_block_manual_unenroll)
-                writer.write_enum_value("diagnosticsDataSubmissionMode", @diagnostics_data_submission_mode)
-                writer.write_boolean_value("edgeAllowStartPagesModification", @edge_allow_start_pages_modification)
-                writer.write_boolean_value("edgeBlockAccessToAboutFlags", @edge_block_access_to_about_flags)
-                writer.write_boolean_value("edgeBlockAddressBarDropdown", @edge_block_address_bar_dropdown)
-                writer.write_boolean_value("edgeBlockAutofill", @edge_block_autofill)
-                writer.write_boolean_value("edgeBlockCompatibilityList", @edge_block_compatibility_list)
-                writer.write_boolean_value("edgeBlockDeveloperTools", @edge_block_developer_tools)
-                writer.write_boolean_value("edgeBlockExtensions", @edge_block_extensions)
-                writer.write_boolean_value("edgeBlockInPrivateBrowsing", @edge_block_in_private_browsing)
-                writer.write_boolean_value("edgeBlockJavaScript", @edge_block_java_script)
-                writer.write_boolean_value("edgeBlockLiveTileDataCollection", @edge_block_live_tile_data_collection)
-                writer.write_boolean_value("edgeBlockPasswordManager", @edge_block_password_manager)
-                writer.write_boolean_value("edgeBlockPopups", @edge_block_popups)
-                writer.write_boolean_value("edgeBlockSearchSuggestions", @edge_block_search_suggestions)
-                writer.write_boolean_value("edgeBlockSendingDoNotTrackHeader", @edge_block_sending_do_not_track_header)
-                writer.write_boolean_value("edgeBlockSendingIntranetTrafficToInternetExplorer", @edge_block_sending_intranet_traffic_to_internet_explorer)
-                writer.write_boolean_value("edgeBlocked", @edge_blocked)
-                writer.write_boolean_value("edgeClearBrowsingDataOnExit", @edge_clear_browsing_data_on_exit)
-                writer.write_enum_value("edgeCookiePolicy", @edge_cookie_policy)
-                writer.write_boolean_value("edgeDisableFirstRunPage", @edge_disable_first_run_page)
-                writer.write_string_value("edgeEnterpriseModeSiteListLocation", @edge_enterprise_mode_site_list_location)
-                writer.write_string_value("edgeFirstRunUrl", @edge_first_run_url)
-                writer.write_collection_of_primitive_values("edgeHomepageUrls", @edge_homepage_urls)
-                writer.write_boolean_value("edgeRequireSmartScreen", @edge_require_smart_screen)
-                writer.write_object_value("edgeSearchEngine", @edge_search_engine)
-                writer.write_boolean_value("edgeSendIntranetTrafficToInternetExplorer", @edge_send_intranet_traffic_to_internet_explorer)
-                writer.write_boolean_value("edgeSyncFavoritesWithInternetExplorer", @edge_sync_favorites_with_internet_explorer)
-                writer.write_string_value("enterpriseCloudPrintDiscoveryEndPoint", @enterprise_cloud_print_discovery_end_point)
-                writer.write_number_value("enterpriseCloudPrintDiscoveryMaxLimit", @enterprise_cloud_print_discovery_max_limit)
-                writer.write_string_value("enterpriseCloudPrintMopriaDiscoveryResourceIdentifier", @enterprise_cloud_print_mopria_discovery_resource_identifier)
-                writer.write_string_value("enterpriseCloudPrintOAuthAuthority", @enterprise_cloud_print_o_auth_authority)
-                writer.write_string_value("enterpriseCloudPrintOAuthClientIdentifier", @enterprise_cloud_print_o_auth_client_identifier)
-                writer.write_string_value("enterpriseCloudPrintResourceIdentifier", @enterprise_cloud_print_resource_identifier)
-                writer.write_boolean_value("experienceBlockDeviceDiscovery", @experience_block_device_discovery)
-                writer.write_boolean_value("experienceBlockErrorDialogWhenNoSIM", @experience_block_error_dialog_when_no_s_i_m)
-                writer.write_boolean_value("experienceBlockTaskSwitcher", @experience_block_task_switcher)
-                writer.write_boolean_value("gameDvrBlocked", @game_dvr_blocked)
-                writer.write_boolean_value("internetSharingBlocked", @internet_sharing_blocked)
-                writer.write_boolean_value("locationServicesBlocked", @location_services_blocked)
-                writer.write_boolean_value("lockScreenAllowTimeoutConfiguration", @lock_screen_allow_timeout_configuration)
-                writer.write_boolean_value("lockScreenBlockActionCenterNotifications", @lock_screen_block_action_center_notifications)
-                writer.write_boolean_value("lockScreenBlockCortana", @lock_screen_block_cortana)
-                writer.write_boolean_value("lockScreenBlockToastNotifications", @lock_screen_block_toast_notifications)
-                writer.write_number_value("lockScreenTimeoutInSeconds", @lock_screen_timeout_in_seconds)
-                writer.write_boolean_value("logonBlockFastUserSwitching", @logon_block_fast_user_switching)
-                writer.write_boolean_value("microsoftAccountBlockSettingsSync", @microsoft_account_block_settings_sync)
-                writer.write_boolean_value("microsoftAccountBlocked", @microsoft_account_blocked)
-                writer.write_boolean_value("networkProxyApplySettingsDeviceWide", @network_proxy_apply_settings_device_wide)
-                writer.write_string_value("networkProxyAutomaticConfigurationUrl", @network_proxy_automatic_configuration_url)
-                writer.write_boolean_value("networkProxyDisableAutoDetect", @network_proxy_disable_auto_detect)
-                writer.write_object_value("networkProxyServer", @network_proxy_server)
-                writer.write_boolean_value("nfcBlocked", @nfc_blocked)
-                writer.write_boolean_value("oneDriveDisableFileSync", @one_drive_disable_file_sync)
-                writer.write_boolean_value("passwordBlockSimple", @password_block_simple)
-                writer.write_number_value("passwordExpirationDays", @password_expiration_days)
-                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count)
-                writer.write_number_value("passwordMinimumLength", @password_minimum_length)
-                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout)
-                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count)
-                writer.write_boolean_value("passwordRequireWhenResumeFromIdleState", @password_require_when_resume_from_idle_state)
-                writer.write_boolean_value("passwordRequired", @password_required)
-                writer.write_enum_value("passwordRequiredType", @password_required_type)
-                writer.write_number_value("passwordSignInFailureCountBeforeFactoryReset", @password_sign_in_failure_count_before_factory_reset)
-                writer.write_string_value("personalizationDesktopImageUrl", @personalization_desktop_image_url)
-                writer.write_string_value("personalizationLockScreenImageUrl", @personalization_lock_screen_image_url)
-                writer.write_enum_value("privacyAdvertisingId", @privacy_advertising_id)
-                writer.write_boolean_value("privacyAutoAcceptPairingAndConsentPrompts", @privacy_auto_accept_pairing_and_consent_prompts)
-                writer.write_boolean_value("privacyBlockInputPersonalization", @privacy_block_input_personalization)
-                writer.write_boolean_value("resetProtectionModeBlocked", @reset_protection_mode_blocked)
-                writer.write_enum_value("safeSearchFilter", @safe_search_filter)
-                writer.write_boolean_value("screenCaptureBlocked", @screen_capture_blocked)
-                writer.write_boolean_value("searchBlockDiacritics", @search_block_diacritics)
-                writer.write_boolean_value("searchDisableAutoLanguageDetection", @search_disable_auto_language_detection)
-                writer.write_boolean_value("searchDisableIndexerBackoff", @search_disable_indexer_backoff)
-                writer.write_boolean_value("searchDisableIndexingEncryptedItems", @search_disable_indexing_encrypted_items)
-                writer.write_boolean_value("searchDisableIndexingRemovableDrive", @search_disable_indexing_removable_drive)
-                writer.write_boolean_value("searchEnableAutomaticIndexSizeManangement", @search_enable_automatic_index_size_manangement)
-                writer.write_boolean_value("searchEnableRemoteQueries", @search_enable_remote_queries)
-                writer.write_boolean_value("settingsBlockAccountsPage", @settings_block_accounts_page)
-                writer.write_boolean_value("settingsBlockAddProvisioningPackage", @settings_block_add_provisioning_package)
-                writer.write_boolean_value("settingsBlockAppsPage", @settings_block_apps_page)
-                writer.write_boolean_value("settingsBlockChangeLanguage", @settings_block_change_language)
-                writer.write_boolean_value("settingsBlockChangePowerSleep", @settings_block_change_power_sleep)
-                writer.write_boolean_value("settingsBlockChangeRegion", @settings_block_change_region)
-                writer.write_boolean_value("settingsBlockChangeSystemTime", @settings_block_change_system_time)
-                writer.write_boolean_value("settingsBlockDevicesPage", @settings_block_devices_page)
-                writer.write_boolean_value("settingsBlockEaseOfAccessPage", @settings_block_ease_of_access_page)
-                writer.write_boolean_value("settingsBlockEditDeviceName", @settings_block_edit_device_name)
-                writer.write_boolean_value("settingsBlockGamingPage", @settings_block_gaming_page)
-                writer.write_boolean_value("settingsBlockNetworkInternetPage", @settings_block_network_internet_page)
-                writer.write_boolean_value("settingsBlockPersonalizationPage", @settings_block_personalization_page)
-                writer.write_boolean_value("settingsBlockPrivacyPage", @settings_block_privacy_page)
-                writer.write_boolean_value("settingsBlockRemoveProvisioningPackage", @settings_block_remove_provisioning_package)
-                writer.write_boolean_value("settingsBlockSettingsApp", @settings_block_settings_app)
-                writer.write_boolean_value("settingsBlockSystemPage", @settings_block_system_page)
-                writer.write_boolean_value("settingsBlockTimeLanguagePage", @settings_block_time_language_page)
-                writer.write_boolean_value("settingsBlockUpdateSecurityPage", @settings_block_update_security_page)
-                writer.write_boolean_value("sharedUserAppDataAllowed", @shared_user_app_data_allowed)
-                writer.write_boolean_value("smartScreenBlockPromptOverride", @smart_screen_block_prompt_override)
-                writer.write_boolean_value("smartScreenBlockPromptOverrideForFiles", @smart_screen_block_prompt_override_for_files)
-                writer.write_boolean_value("smartScreenEnableAppInstallControl", @smart_screen_enable_app_install_control)
-                writer.write_boolean_value("startBlockUnpinningAppsFromTaskbar", @start_block_unpinning_apps_from_taskbar)
-                writer.write_enum_value("startMenuAppListVisibility", @start_menu_app_list_visibility)
-                writer.write_boolean_value("startMenuHideChangeAccountSettings", @start_menu_hide_change_account_settings)
-                writer.write_boolean_value("startMenuHideFrequentlyUsedApps", @start_menu_hide_frequently_used_apps)
-                writer.write_boolean_value("startMenuHideHibernate", @start_menu_hide_hibernate)
-                writer.write_boolean_value("startMenuHideLock", @start_menu_hide_lock)
-                writer.write_boolean_value("startMenuHidePowerButton", @start_menu_hide_power_button)
-                writer.write_boolean_value("startMenuHideRecentJumpLists", @start_menu_hide_recent_jump_lists)
-                writer.write_boolean_value("startMenuHideRecentlyAddedApps", @start_menu_hide_recently_added_apps)
-                writer.write_boolean_value("startMenuHideRestartOptions", @start_menu_hide_restart_options)
-                writer.write_boolean_value("startMenuHideShutDown", @start_menu_hide_shut_down)
-                writer.write_boolean_value("startMenuHideSignOut", @start_menu_hide_sign_out)
-                writer.write_boolean_value("startMenuHideSleep", @start_menu_hide_sleep)
-                writer.write_boolean_value("startMenuHideSwitchAccount", @start_menu_hide_switch_account)
-                writer.write_boolean_value("startMenuHideUserTile", @start_menu_hide_user_tile)
-                writer.write_object_value("startMenuLayoutEdgeAssetsXml", @start_menu_layout_edge_assets_xml)
-                writer.write_object_value("startMenuLayoutXml", @start_menu_layout_xml)
-                writer.write_enum_value("startMenuMode", @start_menu_mode)
-                writer.write_enum_value("startMenuPinnedFolderDocuments", @start_menu_pinned_folder_documents)
-                writer.write_enum_value("startMenuPinnedFolderDownloads", @start_menu_pinned_folder_downloads)
-                writer.write_enum_value("startMenuPinnedFolderFileExplorer", @start_menu_pinned_folder_file_explorer)
-                writer.write_enum_value("startMenuPinnedFolderHomeGroup", @start_menu_pinned_folder_home_group)
-                writer.write_enum_value("startMenuPinnedFolderMusic", @start_menu_pinned_folder_music)
-                writer.write_enum_value("startMenuPinnedFolderNetwork", @start_menu_pinned_folder_network)
-                writer.write_enum_value("startMenuPinnedFolderPersonalFolder", @start_menu_pinned_folder_personal_folder)
-                writer.write_enum_value("startMenuPinnedFolderPictures", @start_menu_pinned_folder_pictures)
-                writer.write_enum_value("startMenuPinnedFolderSettings", @start_menu_pinned_folder_settings)
-                writer.write_enum_value("startMenuPinnedFolderVideos", @start_menu_pinned_folder_videos)
-                writer.write_boolean_value("storageBlockRemovableStorage", @storage_block_removable_storage)
-                writer.write_boolean_value("storageRequireMobileDeviceEncryption", @storage_require_mobile_device_encryption)
-                writer.write_boolean_value("storageRestrictAppDataToSystemVolume", @storage_restrict_app_data_to_system_volume)
-                writer.write_boolean_value("storageRestrictAppInstallToSystemVolume", @storage_restrict_app_install_to_system_volume)
-                writer.write_boolean_value("tenantLockdownRequireNetworkDuringOutOfBoxExperience", @tenant_lockdown_require_network_during_out_of_box_experience)
-                writer.write_boolean_value("usbBlocked", @usb_blocked)
-                writer.write_boolean_value("voiceRecordingBlocked", @voice_recording_blocked)
-                writer.write_boolean_value("webRtcBlockLocalhostIpAddress", @web_rtc_block_localhost_ip_address)
-                writer.write_boolean_value("wiFiBlockAutomaticConnectHotspots", @wi_fi_block_automatic_connect_hotspots)
-                writer.write_boolean_value("wiFiBlockManualConfiguration", @wi_fi_block_manual_configuration)
-                writer.write_boolean_value("wiFiBlocked", @wi_fi_blocked)
-                writer.write_number_value("wiFiScanInterval", @wi_fi_scan_interval)
-                writer.write_boolean_value("windowsSpotlightBlockConsumerSpecificFeatures", @windows_spotlight_block_consumer_specific_features)
-                writer.write_boolean_value("windowsSpotlightBlockOnActionCenter", @windows_spotlight_block_on_action_center)
-                writer.write_boolean_value("windowsSpotlightBlockTailoredExperiences", @windows_spotlight_block_tailored_experiences)
-                writer.write_boolean_value("windowsSpotlightBlockThirdPartyNotifications", @windows_spotlight_block_third_party_notifications)
-                writer.write_boolean_value("windowsSpotlightBlockWelcomeExperience", @windows_spotlight_block_welcome_experience)
-                writer.write_boolean_value("windowsSpotlightBlockWindowsTips", @windows_spotlight_block_windows_tips)
-                writer.write_boolean_value("windowsSpotlightBlocked", @windows_spotlight_blocked)
-                writer.write_enum_value("windowsSpotlightConfigureOnLockScreen", @windows_spotlight_configure_on_lock_screen)
-                writer.write_boolean_value("windowsStoreBlockAutoUpdate", @windows_store_block_auto_update)
-                writer.write_boolean_value("windowsStoreBlocked", @windows_store_blocked)
-                writer.write_boolean_value("windowsStoreEnablePrivateStoreOnly", @windows_store_enable_private_store_only)
-                writer.write_boolean_value("wirelessDisplayBlockProjectionToThisDevice", @wireless_display_block_projection_to_this_device)
-                writer.write_boolean_value("wirelessDisplayBlockUserInputFromReceiver", @wireless_display_block_user_input_from_receiver)
-                writer.write_boolean_value("wirelessDisplayRequirePinForPairing", @wireless_display_require_pin_for_pairing)
+                writer.write_boolean_value("accountsBlockAddingNonMicrosoftAccountEmail", @accounts_block_adding_non_microsoft_account_email) unless @accounts_block_adding_non_microsoft_account_email.nil?
+                writer.write_boolean_value("antiTheftModeBlocked", @anti_theft_mode_blocked) unless @anti_theft_mode_blocked.nil?
+                writer.write_enum_value("appsAllowTrustedAppsSideloading", @apps_allow_trusted_apps_sideloading) unless @apps_allow_trusted_apps_sideloading.nil?
+                writer.write_boolean_value("appsBlockWindowsStoreOriginatedApps", @apps_block_windows_store_originated_apps) unless @apps_block_windows_store_originated_apps.nil?
+                writer.write_collection_of_primitive_values("bluetoothAllowedServices", @bluetooth_allowed_services) unless @bluetooth_allowed_services.nil?
+                writer.write_boolean_value("bluetoothBlockAdvertising", @bluetooth_block_advertising) unless @bluetooth_block_advertising.nil?
+                writer.write_boolean_value("bluetoothBlockDiscoverableMode", @bluetooth_block_discoverable_mode) unless @bluetooth_block_discoverable_mode.nil?
+                writer.write_boolean_value("bluetoothBlockPrePairing", @bluetooth_block_pre_pairing) unless @bluetooth_block_pre_pairing.nil?
+                writer.write_boolean_value("bluetoothBlocked", @bluetooth_blocked) unless @bluetooth_blocked.nil?
+                writer.write_boolean_value("cameraBlocked", @camera_blocked) unless @camera_blocked.nil?
+                writer.write_boolean_value("cellularBlockDataWhenRoaming", @cellular_block_data_when_roaming) unless @cellular_block_data_when_roaming.nil?
+                writer.write_boolean_value("cellularBlockVpn", @cellular_block_vpn) unless @cellular_block_vpn.nil?
+                writer.write_boolean_value("cellularBlockVpnWhenRoaming", @cellular_block_vpn_when_roaming) unless @cellular_block_vpn_when_roaming.nil?
+                writer.write_boolean_value("certificatesBlockManualRootCertificateInstallation", @certificates_block_manual_root_certificate_installation) unless @certificates_block_manual_root_certificate_installation.nil?
+                writer.write_boolean_value("connectedDevicesServiceBlocked", @connected_devices_service_blocked) unless @connected_devices_service_blocked.nil?
+                writer.write_boolean_value("copyPasteBlocked", @copy_paste_blocked) unless @copy_paste_blocked.nil?
+                writer.write_boolean_value("cortanaBlocked", @cortana_blocked) unless @cortana_blocked.nil?
+                writer.write_boolean_value("defenderBlockEndUserAccess", @defender_block_end_user_access) unless @defender_block_end_user_access.nil?
+                writer.write_enum_value("defenderCloudBlockLevel", @defender_cloud_block_level) unless @defender_cloud_block_level.nil?
+                writer.write_number_value("defenderDaysBeforeDeletingQuarantinedMalware", @defender_days_before_deleting_quarantined_malware) unless @defender_days_before_deleting_quarantined_malware.nil?
+                writer.write_object_value("defenderDetectedMalwareActions", @defender_detected_malware_actions) unless @defender_detected_malware_actions.nil?
+                writer.write_collection_of_primitive_values("defenderFileExtensionsToExclude", @defender_file_extensions_to_exclude) unless @defender_file_extensions_to_exclude.nil?
+                writer.write_collection_of_primitive_values("defenderFilesAndFoldersToExclude", @defender_files_and_folders_to_exclude) unless @defender_files_and_folders_to_exclude.nil?
+                writer.write_enum_value("defenderMonitorFileActivity", @defender_monitor_file_activity) unless @defender_monitor_file_activity.nil?
+                writer.write_collection_of_primitive_values("defenderProcessesToExclude", @defender_processes_to_exclude) unless @defender_processes_to_exclude.nil?
+                writer.write_enum_value("defenderPromptForSampleSubmission", @defender_prompt_for_sample_submission) unless @defender_prompt_for_sample_submission.nil?
+                writer.write_boolean_value("defenderRequireBehaviorMonitoring", @defender_require_behavior_monitoring) unless @defender_require_behavior_monitoring.nil?
+                writer.write_boolean_value("defenderRequireCloudProtection", @defender_require_cloud_protection) unless @defender_require_cloud_protection.nil?
+                writer.write_boolean_value("defenderRequireNetworkInspectionSystem", @defender_require_network_inspection_system) unless @defender_require_network_inspection_system.nil?
+                writer.write_boolean_value("defenderRequireRealTimeMonitoring", @defender_require_real_time_monitoring) unless @defender_require_real_time_monitoring.nil?
+                writer.write_boolean_value("defenderScanArchiveFiles", @defender_scan_archive_files) unless @defender_scan_archive_files.nil?
+                writer.write_boolean_value("defenderScanDownloads", @defender_scan_downloads) unless @defender_scan_downloads.nil?
+                writer.write_boolean_value("defenderScanIncomingMail", @defender_scan_incoming_mail) unless @defender_scan_incoming_mail.nil?
+                writer.write_boolean_value("defenderScanMappedNetworkDrivesDuringFullScan", @defender_scan_mapped_network_drives_during_full_scan) unless @defender_scan_mapped_network_drives_during_full_scan.nil?
+                writer.write_number_value("defenderScanMaxCpu", @defender_scan_max_cpu) unless @defender_scan_max_cpu.nil?
+                writer.write_boolean_value("defenderScanNetworkFiles", @defender_scan_network_files) unless @defender_scan_network_files.nil?
+                writer.write_boolean_value("defenderScanRemovableDrivesDuringFullScan", @defender_scan_removable_drives_during_full_scan) unless @defender_scan_removable_drives_during_full_scan.nil?
+                writer.write_boolean_value("defenderScanScriptsLoadedInInternetExplorer", @defender_scan_scripts_loaded_in_internet_explorer) unless @defender_scan_scripts_loaded_in_internet_explorer.nil?
+                writer.write_enum_value("defenderScanType", @defender_scan_type) unless @defender_scan_type.nil?
+                writer.write_time_value("defenderScheduledQuickScanTime", @defender_scheduled_quick_scan_time) unless @defender_scheduled_quick_scan_time.nil?
+                writer.write_time_value("defenderScheduledScanTime", @defender_scheduled_scan_time) unless @defender_scheduled_scan_time.nil?
+                writer.write_number_value("defenderSignatureUpdateIntervalInHours", @defender_signature_update_interval_in_hours) unless @defender_signature_update_interval_in_hours.nil?
+                writer.write_enum_value("defenderSystemScanSchedule", @defender_system_scan_schedule) unless @defender_system_scan_schedule.nil?
+                writer.write_enum_value("developerUnlockSetting", @developer_unlock_setting) unless @developer_unlock_setting.nil?
+                writer.write_boolean_value("deviceManagementBlockFactoryResetOnMobile", @device_management_block_factory_reset_on_mobile) unless @device_management_block_factory_reset_on_mobile.nil?
+                writer.write_boolean_value("deviceManagementBlockManualUnenroll", @device_management_block_manual_unenroll) unless @device_management_block_manual_unenroll.nil?
+                writer.write_enum_value("diagnosticsDataSubmissionMode", @diagnostics_data_submission_mode) unless @diagnostics_data_submission_mode.nil?
+                writer.write_boolean_value("edgeAllowStartPagesModification", @edge_allow_start_pages_modification) unless @edge_allow_start_pages_modification.nil?
+                writer.write_boolean_value("edgeBlockAccessToAboutFlags", @edge_block_access_to_about_flags) unless @edge_block_access_to_about_flags.nil?
+                writer.write_boolean_value("edgeBlockAddressBarDropdown", @edge_block_address_bar_dropdown) unless @edge_block_address_bar_dropdown.nil?
+                writer.write_boolean_value("edgeBlockAutofill", @edge_block_autofill) unless @edge_block_autofill.nil?
+                writer.write_boolean_value("edgeBlockCompatibilityList", @edge_block_compatibility_list) unless @edge_block_compatibility_list.nil?
+                writer.write_boolean_value("edgeBlockDeveloperTools", @edge_block_developer_tools) unless @edge_block_developer_tools.nil?
+                writer.write_boolean_value("edgeBlockExtensions", @edge_block_extensions) unless @edge_block_extensions.nil?
+                writer.write_boolean_value("edgeBlockInPrivateBrowsing", @edge_block_in_private_browsing) unless @edge_block_in_private_browsing.nil?
+                writer.write_boolean_value("edgeBlockJavaScript", @edge_block_java_script) unless @edge_block_java_script.nil?
+                writer.write_boolean_value("edgeBlockLiveTileDataCollection", @edge_block_live_tile_data_collection) unless @edge_block_live_tile_data_collection.nil?
+                writer.write_boolean_value("edgeBlockPasswordManager", @edge_block_password_manager) unless @edge_block_password_manager.nil?
+                writer.write_boolean_value("edgeBlockPopups", @edge_block_popups) unless @edge_block_popups.nil?
+                writer.write_boolean_value("edgeBlockSearchSuggestions", @edge_block_search_suggestions) unless @edge_block_search_suggestions.nil?
+                writer.write_boolean_value("edgeBlockSendingDoNotTrackHeader", @edge_block_sending_do_not_track_header) unless @edge_block_sending_do_not_track_header.nil?
+                writer.write_boolean_value("edgeBlockSendingIntranetTrafficToInternetExplorer", @edge_block_sending_intranet_traffic_to_internet_explorer) unless @edge_block_sending_intranet_traffic_to_internet_explorer.nil?
+                writer.write_boolean_value("edgeBlocked", @edge_blocked) unless @edge_blocked.nil?
+                writer.write_boolean_value("edgeClearBrowsingDataOnExit", @edge_clear_browsing_data_on_exit) unless @edge_clear_browsing_data_on_exit.nil?
+                writer.write_enum_value("edgeCookiePolicy", @edge_cookie_policy) unless @edge_cookie_policy.nil?
+                writer.write_boolean_value("edgeDisableFirstRunPage", @edge_disable_first_run_page) unless @edge_disable_first_run_page.nil?
+                writer.write_string_value("edgeEnterpriseModeSiteListLocation", @edge_enterprise_mode_site_list_location) unless @edge_enterprise_mode_site_list_location.nil?
+                writer.write_string_value("edgeFirstRunUrl", @edge_first_run_url) unless @edge_first_run_url.nil?
+                writer.write_collection_of_primitive_values("edgeHomepageUrls", @edge_homepage_urls) unless @edge_homepage_urls.nil?
+                writer.write_boolean_value("edgeRequireSmartScreen", @edge_require_smart_screen) unless @edge_require_smart_screen.nil?
+                writer.write_object_value("edgeSearchEngine", @edge_search_engine) unless @edge_search_engine.nil?
+                writer.write_boolean_value("edgeSendIntranetTrafficToInternetExplorer", @edge_send_intranet_traffic_to_internet_explorer) unless @edge_send_intranet_traffic_to_internet_explorer.nil?
+                writer.write_boolean_value("edgeSyncFavoritesWithInternetExplorer", @edge_sync_favorites_with_internet_explorer) unless @edge_sync_favorites_with_internet_explorer.nil?
+                writer.write_string_value("enterpriseCloudPrintDiscoveryEndPoint", @enterprise_cloud_print_discovery_end_point) unless @enterprise_cloud_print_discovery_end_point.nil?
+                writer.write_number_value("enterpriseCloudPrintDiscoveryMaxLimit", @enterprise_cloud_print_discovery_max_limit) unless @enterprise_cloud_print_discovery_max_limit.nil?
+                writer.write_string_value("enterpriseCloudPrintMopriaDiscoveryResourceIdentifier", @enterprise_cloud_print_mopria_discovery_resource_identifier) unless @enterprise_cloud_print_mopria_discovery_resource_identifier.nil?
+                writer.write_string_value("enterpriseCloudPrintOAuthAuthority", @enterprise_cloud_print_o_auth_authority) unless @enterprise_cloud_print_o_auth_authority.nil?
+                writer.write_string_value("enterpriseCloudPrintOAuthClientIdentifier", @enterprise_cloud_print_o_auth_client_identifier) unless @enterprise_cloud_print_o_auth_client_identifier.nil?
+                writer.write_string_value("enterpriseCloudPrintResourceIdentifier", @enterprise_cloud_print_resource_identifier) unless @enterprise_cloud_print_resource_identifier.nil?
+                writer.write_boolean_value("experienceBlockDeviceDiscovery", @experience_block_device_discovery) unless @experience_block_device_discovery.nil?
+                writer.write_boolean_value("experienceBlockErrorDialogWhenNoSIM", @experience_block_error_dialog_when_no_s_i_m) unless @experience_block_error_dialog_when_no_s_i_m.nil?
+                writer.write_boolean_value("experienceBlockTaskSwitcher", @experience_block_task_switcher) unless @experience_block_task_switcher.nil?
+                writer.write_boolean_value("gameDvrBlocked", @game_dvr_blocked) unless @game_dvr_blocked.nil?
+                writer.write_boolean_value("internetSharingBlocked", @internet_sharing_blocked) unless @internet_sharing_blocked.nil?
+                writer.write_boolean_value("locationServicesBlocked", @location_services_blocked) unless @location_services_blocked.nil?
+                writer.write_boolean_value("lockScreenAllowTimeoutConfiguration", @lock_screen_allow_timeout_configuration) unless @lock_screen_allow_timeout_configuration.nil?
+                writer.write_boolean_value("lockScreenBlockActionCenterNotifications", @lock_screen_block_action_center_notifications) unless @lock_screen_block_action_center_notifications.nil?
+                writer.write_boolean_value("lockScreenBlockCortana", @lock_screen_block_cortana) unless @lock_screen_block_cortana.nil?
+                writer.write_boolean_value("lockScreenBlockToastNotifications", @lock_screen_block_toast_notifications) unless @lock_screen_block_toast_notifications.nil?
+                writer.write_number_value("lockScreenTimeoutInSeconds", @lock_screen_timeout_in_seconds) unless @lock_screen_timeout_in_seconds.nil?
+                writer.write_boolean_value("logonBlockFastUserSwitching", @logon_block_fast_user_switching) unless @logon_block_fast_user_switching.nil?
+                writer.write_boolean_value("microsoftAccountBlockSettingsSync", @microsoft_account_block_settings_sync) unless @microsoft_account_block_settings_sync.nil?
+                writer.write_boolean_value("microsoftAccountBlocked", @microsoft_account_blocked) unless @microsoft_account_blocked.nil?
+                writer.write_boolean_value("networkProxyApplySettingsDeviceWide", @network_proxy_apply_settings_device_wide) unless @network_proxy_apply_settings_device_wide.nil?
+                writer.write_string_value("networkProxyAutomaticConfigurationUrl", @network_proxy_automatic_configuration_url) unless @network_proxy_automatic_configuration_url.nil?
+                writer.write_boolean_value("networkProxyDisableAutoDetect", @network_proxy_disable_auto_detect) unless @network_proxy_disable_auto_detect.nil?
+                writer.write_object_value("networkProxyServer", @network_proxy_server) unless @network_proxy_server.nil?
+                writer.write_boolean_value("nfcBlocked", @nfc_blocked) unless @nfc_blocked.nil?
+                writer.write_boolean_value("oneDriveDisableFileSync", @one_drive_disable_file_sync) unless @one_drive_disable_file_sync.nil?
+                writer.write_boolean_value("passwordBlockSimple", @password_block_simple) unless @password_block_simple.nil?
+                writer.write_number_value("passwordExpirationDays", @password_expiration_days) unless @password_expiration_days.nil?
+                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count) unless @password_minimum_character_set_count.nil?
+                writer.write_number_value("passwordMinimumLength", @password_minimum_length) unless @password_minimum_length.nil?
+                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout) unless @password_minutes_of_inactivity_before_screen_timeout.nil?
+                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count) unless @password_previous_password_block_count.nil?
+                writer.write_boolean_value("passwordRequireWhenResumeFromIdleState", @password_require_when_resume_from_idle_state) unless @password_require_when_resume_from_idle_state.nil?
+                writer.write_boolean_value("passwordRequired", @password_required) unless @password_required.nil?
+                writer.write_enum_value("passwordRequiredType", @password_required_type) unless @password_required_type.nil?
+                writer.write_number_value("passwordSignInFailureCountBeforeFactoryReset", @password_sign_in_failure_count_before_factory_reset) unless @password_sign_in_failure_count_before_factory_reset.nil?
+                writer.write_string_value("personalizationDesktopImageUrl", @personalization_desktop_image_url) unless @personalization_desktop_image_url.nil?
+                writer.write_string_value("personalizationLockScreenImageUrl", @personalization_lock_screen_image_url) unless @personalization_lock_screen_image_url.nil?
+                writer.write_enum_value("privacyAdvertisingId", @privacy_advertising_id) unless @privacy_advertising_id.nil?
+                writer.write_boolean_value("privacyAutoAcceptPairingAndConsentPrompts", @privacy_auto_accept_pairing_and_consent_prompts) unless @privacy_auto_accept_pairing_and_consent_prompts.nil?
+                writer.write_boolean_value("privacyBlockInputPersonalization", @privacy_block_input_personalization) unless @privacy_block_input_personalization.nil?
+                writer.write_boolean_value("resetProtectionModeBlocked", @reset_protection_mode_blocked) unless @reset_protection_mode_blocked.nil?
+                writer.write_enum_value("safeSearchFilter", @safe_search_filter) unless @safe_search_filter.nil?
+                writer.write_boolean_value("screenCaptureBlocked", @screen_capture_blocked) unless @screen_capture_blocked.nil?
+                writer.write_boolean_value("searchBlockDiacritics", @search_block_diacritics) unless @search_block_diacritics.nil?
+                writer.write_boolean_value("searchDisableAutoLanguageDetection", @search_disable_auto_language_detection) unless @search_disable_auto_language_detection.nil?
+                writer.write_boolean_value("searchDisableIndexerBackoff", @search_disable_indexer_backoff) unless @search_disable_indexer_backoff.nil?
+                writer.write_boolean_value("searchDisableIndexingEncryptedItems", @search_disable_indexing_encrypted_items) unless @search_disable_indexing_encrypted_items.nil?
+                writer.write_boolean_value("searchDisableIndexingRemovableDrive", @search_disable_indexing_removable_drive) unless @search_disable_indexing_removable_drive.nil?
+                writer.write_boolean_value("searchEnableAutomaticIndexSizeManangement", @search_enable_automatic_index_size_manangement) unless @search_enable_automatic_index_size_manangement.nil?
+                writer.write_boolean_value("searchEnableRemoteQueries", @search_enable_remote_queries) unless @search_enable_remote_queries.nil?
+                writer.write_boolean_value("settingsBlockAccountsPage", @settings_block_accounts_page) unless @settings_block_accounts_page.nil?
+                writer.write_boolean_value("settingsBlockAddProvisioningPackage", @settings_block_add_provisioning_package) unless @settings_block_add_provisioning_package.nil?
+                writer.write_boolean_value("settingsBlockAppsPage", @settings_block_apps_page) unless @settings_block_apps_page.nil?
+                writer.write_boolean_value("settingsBlockChangeLanguage", @settings_block_change_language) unless @settings_block_change_language.nil?
+                writer.write_boolean_value("settingsBlockChangePowerSleep", @settings_block_change_power_sleep) unless @settings_block_change_power_sleep.nil?
+                writer.write_boolean_value("settingsBlockChangeRegion", @settings_block_change_region) unless @settings_block_change_region.nil?
+                writer.write_boolean_value("settingsBlockChangeSystemTime", @settings_block_change_system_time) unless @settings_block_change_system_time.nil?
+                writer.write_boolean_value("settingsBlockDevicesPage", @settings_block_devices_page) unless @settings_block_devices_page.nil?
+                writer.write_boolean_value("settingsBlockEaseOfAccessPage", @settings_block_ease_of_access_page) unless @settings_block_ease_of_access_page.nil?
+                writer.write_boolean_value("settingsBlockEditDeviceName", @settings_block_edit_device_name) unless @settings_block_edit_device_name.nil?
+                writer.write_boolean_value("settingsBlockGamingPage", @settings_block_gaming_page) unless @settings_block_gaming_page.nil?
+                writer.write_boolean_value("settingsBlockNetworkInternetPage", @settings_block_network_internet_page) unless @settings_block_network_internet_page.nil?
+                writer.write_boolean_value("settingsBlockPersonalizationPage", @settings_block_personalization_page) unless @settings_block_personalization_page.nil?
+                writer.write_boolean_value("settingsBlockPrivacyPage", @settings_block_privacy_page) unless @settings_block_privacy_page.nil?
+                writer.write_boolean_value("settingsBlockRemoveProvisioningPackage", @settings_block_remove_provisioning_package) unless @settings_block_remove_provisioning_package.nil?
+                writer.write_boolean_value("settingsBlockSettingsApp", @settings_block_settings_app) unless @settings_block_settings_app.nil?
+                writer.write_boolean_value("settingsBlockSystemPage", @settings_block_system_page) unless @settings_block_system_page.nil?
+                writer.write_boolean_value("settingsBlockTimeLanguagePage", @settings_block_time_language_page) unless @settings_block_time_language_page.nil?
+                writer.write_boolean_value("settingsBlockUpdateSecurityPage", @settings_block_update_security_page) unless @settings_block_update_security_page.nil?
+                writer.write_boolean_value("sharedUserAppDataAllowed", @shared_user_app_data_allowed) unless @shared_user_app_data_allowed.nil?
+                writer.write_boolean_value("smartScreenBlockPromptOverride", @smart_screen_block_prompt_override) unless @smart_screen_block_prompt_override.nil?
+                writer.write_boolean_value("smartScreenBlockPromptOverrideForFiles", @smart_screen_block_prompt_override_for_files) unless @smart_screen_block_prompt_override_for_files.nil?
+                writer.write_boolean_value("smartScreenEnableAppInstallControl", @smart_screen_enable_app_install_control) unless @smart_screen_enable_app_install_control.nil?
+                writer.write_boolean_value("startBlockUnpinningAppsFromTaskbar", @start_block_unpinning_apps_from_taskbar) unless @start_block_unpinning_apps_from_taskbar.nil?
+                writer.write_enum_value("startMenuAppListVisibility", @start_menu_app_list_visibility) unless @start_menu_app_list_visibility.nil?
+                writer.write_boolean_value("startMenuHideChangeAccountSettings", @start_menu_hide_change_account_settings) unless @start_menu_hide_change_account_settings.nil?
+                writer.write_boolean_value("startMenuHideFrequentlyUsedApps", @start_menu_hide_frequently_used_apps) unless @start_menu_hide_frequently_used_apps.nil?
+                writer.write_boolean_value("startMenuHideHibernate", @start_menu_hide_hibernate) unless @start_menu_hide_hibernate.nil?
+                writer.write_boolean_value("startMenuHideLock", @start_menu_hide_lock) unless @start_menu_hide_lock.nil?
+                writer.write_boolean_value("startMenuHidePowerButton", @start_menu_hide_power_button) unless @start_menu_hide_power_button.nil?
+                writer.write_boolean_value("startMenuHideRecentJumpLists", @start_menu_hide_recent_jump_lists) unless @start_menu_hide_recent_jump_lists.nil?
+                writer.write_boolean_value("startMenuHideRecentlyAddedApps", @start_menu_hide_recently_added_apps) unless @start_menu_hide_recently_added_apps.nil?
+                writer.write_boolean_value("startMenuHideRestartOptions", @start_menu_hide_restart_options) unless @start_menu_hide_restart_options.nil?
+                writer.write_boolean_value("startMenuHideShutDown", @start_menu_hide_shut_down) unless @start_menu_hide_shut_down.nil?
+                writer.write_boolean_value("startMenuHideSignOut", @start_menu_hide_sign_out) unless @start_menu_hide_sign_out.nil?
+                writer.write_boolean_value("startMenuHideSleep", @start_menu_hide_sleep) unless @start_menu_hide_sleep.nil?
+                writer.write_boolean_value("startMenuHideSwitchAccount", @start_menu_hide_switch_account) unless @start_menu_hide_switch_account.nil?
+                writer.write_boolean_value("startMenuHideUserTile", @start_menu_hide_user_tile) unless @start_menu_hide_user_tile.nil?
+                writer.write_object_value("startMenuLayoutEdgeAssetsXml", @start_menu_layout_edge_assets_xml) unless @start_menu_layout_edge_assets_xml.nil?
+                writer.write_object_value("startMenuLayoutXml", @start_menu_layout_xml) unless @start_menu_layout_xml.nil?
+                writer.write_enum_value("startMenuMode", @start_menu_mode) unless @start_menu_mode.nil?
+                writer.write_enum_value("startMenuPinnedFolderDocuments", @start_menu_pinned_folder_documents) unless @start_menu_pinned_folder_documents.nil?
+                writer.write_enum_value("startMenuPinnedFolderDownloads", @start_menu_pinned_folder_downloads) unless @start_menu_pinned_folder_downloads.nil?
+                writer.write_enum_value("startMenuPinnedFolderFileExplorer", @start_menu_pinned_folder_file_explorer) unless @start_menu_pinned_folder_file_explorer.nil?
+                writer.write_enum_value("startMenuPinnedFolderHomeGroup", @start_menu_pinned_folder_home_group) unless @start_menu_pinned_folder_home_group.nil?
+                writer.write_enum_value("startMenuPinnedFolderMusic", @start_menu_pinned_folder_music) unless @start_menu_pinned_folder_music.nil?
+                writer.write_enum_value("startMenuPinnedFolderNetwork", @start_menu_pinned_folder_network) unless @start_menu_pinned_folder_network.nil?
+                writer.write_enum_value("startMenuPinnedFolderPersonalFolder", @start_menu_pinned_folder_personal_folder) unless @start_menu_pinned_folder_personal_folder.nil?
+                writer.write_enum_value("startMenuPinnedFolderPictures", @start_menu_pinned_folder_pictures) unless @start_menu_pinned_folder_pictures.nil?
+                writer.write_enum_value("startMenuPinnedFolderSettings", @start_menu_pinned_folder_settings) unless @start_menu_pinned_folder_settings.nil?
+                writer.write_enum_value("startMenuPinnedFolderVideos", @start_menu_pinned_folder_videos) unless @start_menu_pinned_folder_videos.nil?
+                writer.write_boolean_value("storageBlockRemovableStorage", @storage_block_removable_storage) unless @storage_block_removable_storage.nil?
+                writer.write_boolean_value("storageRequireMobileDeviceEncryption", @storage_require_mobile_device_encryption) unless @storage_require_mobile_device_encryption.nil?
+                writer.write_boolean_value("storageRestrictAppDataToSystemVolume", @storage_restrict_app_data_to_system_volume) unless @storage_restrict_app_data_to_system_volume.nil?
+                writer.write_boolean_value("storageRestrictAppInstallToSystemVolume", @storage_restrict_app_install_to_system_volume) unless @storage_restrict_app_install_to_system_volume.nil?
+                writer.write_boolean_value("tenantLockdownRequireNetworkDuringOutOfBoxExperience", @tenant_lockdown_require_network_during_out_of_box_experience) unless @tenant_lockdown_require_network_during_out_of_box_experience.nil?
+                writer.write_boolean_value("usbBlocked", @usb_blocked) unless @usb_blocked.nil?
+                writer.write_boolean_value("voiceRecordingBlocked", @voice_recording_blocked) unless @voice_recording_blocked.nil?
+                writer.write_boolean_value("webRtcBlockLocalhostIpAddress", @web_rtc_block_localhost_ip_address) unless @web_rtc_block_localhost_ip_address.nil?
+                writer.write_boolean_value("wiFiBlockAutomaticConnectHotspots", @wi_fi_block_automatic_connect_hotspots) unless @wi_fi_block_automatic_connect_hotspots.nil?
+                writer.write_boolean_value("wiFiBlockManualConfiguration", @wi_fi_block_manual_configuration) unless @wi_fi_block_manual_configuration.nil?
+                writer.write_boolean_value("wiFiBlocked", @wi_fi_blocked) unless @wi_fi_blocked.nil?
+                writer.write_number_value("wiFiScanInterval", @wi_fi_scan_interval) unless @wi_fi_scan_interval.nil?
+                writer.write_boolean_value("windowsSpotlightBlockConsumerSpecificFeatures", @windows_spotlight_block_consumer_specific_features) unless @windows_spotlight_block_consumer_specific_features.nil?
+                writer.write_boolean_value("windowsSpotlightBlockOnActionCenter", @windows_spotlight_block_on_action_center) unless @windows_spotlight_block_on_action_center.nil?
+                writer.write_boolean_value("windowsSpotlightBlockTailoredExperiences", @windows_spotlight_block_tailored_experiences) unless @windows_spotlight_block_tailored_experiences.nil?
+                writer.write_boolean_value("windowsSpotlightBlockThirdPartyNotifications", @windows_spotlight_block_third_party_notifications) unless @windows_spotlight_block_third_party_notifications.nil?
+                writer.write_boolean_value("windowsSpotlightBlockWelcomeExperience", @windows_spotlight_block_welcome_experience) unless @windows_spotlight_block_welcome_experience.nil?
+                writer.write_boolean_value("windowsSpotlightBlockWindowsTips", @windows_spotlight_block_windows_tips) unless @windows_spotlight_block_windows_tips.nil?
+                writer.write_boolean_value("windowsSpotlightBlocked", @windows_spotlight_blocked) unless @windows_spotlight_blocked.nil?
+                writer.write_enum_value("windowsSpotlightConfigureOnLockScreen", @windows_spotlight_configure_on_lock_screen) unless @windows_spotlight_configure_on_lock_screen.nil?
+                writer.write_boolean_value("windowsStoreBlockAutoUpdate", @windows_store_block_auto_update) unless @windows_store_block_auto_update.nil?
+                writer.write_boolean_value("windowsStoreBlocked", @windows_store_blocked) unless @windows_store_blocked.nil?
+                writer.write_boolean_value("windowsStoreEnablePrivateStoreOnly", @windows_store_enable_private_store_only) unless @windows_store_enable_private_store_only.nil?
+                writer.write_boolean_value("wirelessDisplayBlockProjectionToThisDevice", @wireless_display_block_projection_to_this_device) unless @wireless_display_block_projection_to_this_device.nil?
+                writer.write_boolean_value("wirelessDisplayBlockUserInputFromReceiver", @wireless_display_block_user_input_from_receiver) unless @wireless_display_block_user_input_from_receiver.nil?
+                writer.write_boolean_value("wirelessDisplayRequirePinForPairing", @wireless_display_require_pin_for_pairing) unless @wireless_display_require_pin_for_pairing.nil?
             end
             ## 
             ## Gets the settingsBlockAccountsPage property value. Indicates whether or not to block access to Accounts in Settings app.

@@ -43,7 +43,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("teamId", @team_id)
+                writer.write_string_value("teamId", @team_id) unless @team_id.nil?
             end
             ## 
             ## Gets the teamId property value. The unique identifier for the team whose members should receive the notification.

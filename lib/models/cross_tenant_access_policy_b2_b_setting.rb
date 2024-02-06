@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("applications", @applications)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("usersAndGroups", @users_and_groups)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("applications", @applications) unless @applications.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("usersAndGroups", @users_and_groups) unless @users_and_groups.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the usersAndGroups property value. The list of users and groups targeted with your cross-tenant access policy.

@@ -133,11 +133,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("allowedRoles", @allowed_roles)
-                writer.write_object_value("emailAddress", @email_address)
-                writer.write_boolean_value("isInsideOrganization", @is_inside_organization)
-                writer.write_boolean_value("isRemovable", @is_removable)
-                writer.write_enum_value("role", @role)
+                writer.write_collection_of_object_values("allowedRoles", @allowed_roles) unless @allowed_roles.nil?
+                writer.write_object_value("emailAddress", @email_address) unless @email_address.nil?
+                writer.write_boolean_value("isInsideOrganization", @is_inside_organization) unless @is_inside_organization.nil?
+                writer.write_boolean_value("isRemovable", @is_removable) unless @is_removable.nil?
+                writer.write_enum_value("role", @role) unless @role.nil?
             end
         end
     end

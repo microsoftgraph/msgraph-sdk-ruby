@@ -58,7 +58,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("conversationIdentityType", @conversation_identity_type)
+                writer.write_enum_value("conversationIdentityType", @conversation_identity_type) unless @conversation_identity_type.nil?
             end
         end
     end

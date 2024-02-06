@@ -192,15 +192,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("dayOfMonth", @day_of_month)
-                writer.write_collection_of_object_values("daysOfWeek", @days_of_week)
-                writer.write_enum_value("firstDayOfWeek", @first_day_of_week)
-                writer.write_enum_value("index", @index)
-                writer.write_number_value("interval", @interval)
-                writer.write_number_value("month", @month)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("type", @type)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("dayOfMonth", @day_of_month) unless @day_of_month.nil?
+                writer.write_collection_of_object_values("daysOfWeek", @days_of_week) unless @days_of_week.nil?
+                writer.write_enum_value("firstDayOfWeek", @first_day_of_week) unless @first_day_of_week.nil?
+                writer.write_enum_value("index", @index) unless @index.nil?
+                writer.write_number_value("interval", @interval) unless @interval.nil?
+                writer.write_number_value("month", @month) unless @month.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the type property value. The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.

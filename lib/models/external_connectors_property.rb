@@ -211,16 +211,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("aliases", @aliases)
-                writer.write_boolean_value("isQueryable", @is_queryable)
-                writer.write_boolean_value("isRefinable", @is_refinable)
-                writer.write_boolean_value("isRetrievable", @is_retrievable)
-                writer.write_boolean_value("isSearchable", @is_searchable)
-                writer.write_collection_of_object_values("labels", @labels)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("type", @type)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("aliases", @aliases) unless @aliases.nil?
+                writer.write_boolean_value("isQueryable", @is_queryable) unless @is_queryable.nil?
+                writer.write_boolean_value("isRefinable", @is_refinable) unless @is_refinable.nil?
+                writer.write_boolean_value("isRetrievable", @is_retrievable) unless @is_retrievable.nil?
+                writer.write_boolean_value("isSearchable", @is_searchable) unless @is_searchable.nil?
+                writer.write_collection_of_object_values("labels", @labels) unless @labels.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the type property value. The type property

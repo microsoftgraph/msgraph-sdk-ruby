@@ -154,12 +154,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("aaGuid", @aa_guid)
-                writer.write_collection_of_primitive_values("attestationCertificates", @attestation_certificates)
-                writer.write_enum_value("attestationLevel", @attestation_level)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("model", @model)
+                writer.write_string_value("aaGuid", @aa_guid) unless @aa_guid.nil?
+                writer.write_collection_of_primitive_values("attestationCertificates", @attestation_certificates) unless @attestation_certificates.nil?
+                writer.write_enum_value("attestationLevel", @attestation_level) unless @attestation_level.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("model", @model) unless @model.nil?
             end
         end
     end

@@ -102,10 +102,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("completedDateTime", @completed_date_time)
-                writer.write_collection_of_primitive_values("customLogFolders", @custom_log_folders)
-                writer.write_string_value("errorMessage", @error_message)
-                writer.write_enum_value("status", @status)
+                writer.write_date_time_value("completedDateTime", @completed_date_time) unless @completed_date_time.nil?
+                writer.write_collection_of_primitive_values("customLogFolders", @custom_log_folders) unless @custom_log_folders.nil?
+                writer.write_string_value("errorMessage", @error_message) unless @error_message.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. AppLogUploadStatus

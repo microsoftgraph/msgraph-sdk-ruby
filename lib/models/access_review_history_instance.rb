@@ -157,13 +157,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("downloadUri", @download_uri)
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_date_time_value("fulfilledDateTime", @fulfilled_date_time)
-                writer.write_date_time_value("reviewHistoryPeriodEndDateTime", @review_history_period_end_date_time)
-                writer.write_date_time_value("reviewHistoryPeriodStartDateTime", @review_history_period_start_date_time)
-                writer.write_date_time_value("runDateTime", @run_date_time)
-                writer.write_enum_value("status", @status)
+                writer.write_string_value("downloadUri", @download_uri) unless @download_uri.nil?
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_date_time_value("fulfilledDateTime", @fulfilled_date_time) unless @fulfilled_date_time.nil?
+                writer.write_date_time_value("reviewHistoryPeriodEndDateTime", @review_history_period_end_date_time) unless @review_history_period_end_date_time.nil?
+                writer.write_date_time_value("reviewHistoryPeriodStartDateTime", @review_history_period_start_date_time) unless @review_history_period_start_date_time.nil?
+                writer.write_date_time_value("runDateTime", @run_date_time) unless @run_date_time.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance's data by calling generateDownloadUri method.

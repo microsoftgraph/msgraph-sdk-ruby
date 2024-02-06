@@ -160,14 +160,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("acceptances", @acceptances)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("file", @file)
-                writer.write_collection_of_object_values("files", @files)
-                writer.write_boolean_value("isPerDeviceAcceptanceRequired", @is_per_device_acceptance_required)
-                writer.write_boolean_value("isViewingBeforeAcceptanceRequired", @is_viewing_before_acceptance_required)
-                writer.write_object_value("termsExpiration", @terms_expiration)
-                writer.write_duration_value("userReacceptRequiredFrequency", @user_reaccept_required_frequency)
+                writer.write_collection_of_object_values("acceptances", @acceptances) unless @acceptances.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("file", @file) unless @file.nil?
+                writer.write_collection_of_object_values("files", @files) unless @files.nil?
+                writer.write_boolean_value("isPerDeviceAcceptanceRequired", @is_per_device_acceptance_required) unless @is_per_device_acceptance_required.nil?
+                writer.write_boolean_value("isViewingBeforeAcceptanceRequired", @is_viewing_before_acceptance_required) unless @is_viewing_before_acceptance_required.nil?
+                writer.write_object_value("termsExpiration", @terms_expiration) unless @terms_expiration.nil?
+                writer.write_duration_value("userReacceptRequiredFrequency", @user_reaccept_required_frequency) unless @user_reaccept_required_frequency.nil?
             end
             ## 
             ## Gets the termsExpiration property value. Expiration schedule and frequency of agreement for all users. Supports $filter (eq).

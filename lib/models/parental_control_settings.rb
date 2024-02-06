@@ -112,10 +112,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("countriesBlockedForMinors", @countries_blocked_for_minors)
-                writer.write_string_value("legalAgeGroupRule", @legal_age_group_rule)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("countriesBlockedForMinors", @countries_blocked_for_minors) unless @countries_blocked_for_minors.nil?
+                writer.write_string_value("legalAgeGroupRule", @legal_age_group_rule) unless @legal_age_group_rule.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

@@ -183,16 +183,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("emailMethods", @email_methods)
+                writer.write_collection_of_object_values("emailMethods", @email_methods) unless @email_methods.nil?
                 writer.write_collection_of_object_values("fido2Methods", @fido2_methods)
-                writer.write_collection_of_object_values("methods", @methods)
-                writer.write_collection_of_object_values("microsoftAuthenticatorMethods", @microsoft_authenticator_methods)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_collection_of_object_values("passwordMethods", @password_methods)
-                writer.write_collection_of_object_values("phoneMethods", @phone_methods)
-                writer.write_collection_of_object_values("softwareOathMethods", @software_oath_methods)
-                writer.write_collection_of_object_values("temporaryAccessPassMethods", @temporary_access_pass_methods)
-                writer.write_collection_of_object_values("windowsHelloForBusinessMethods", @windows_hello_for_business_methods)
+                writer.write_collection_of_object_values("methods", @methods) unless @methods.nil?
+                writer.write_collection_of_object_values("microsoftAuthenticatorMethods", @microsoft_authenticator_methods) unless @microsoft_authenticator_methods.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_collection_of_object_values("passwordMethods", @password_methods) unless @password_methods.nil?
+                writer.write_collection_of_object_values("phoneMethods", @phone_methods) unless @phone_methods.nil?
+                writer.write_collection_of_object_values("softwareOathMethods", @software_oath_methods) unless @software_oath_methods.nil?
+                writer.write_collection_of_object_values("temporaryAccessPassMethods", @temporary_access_pass_methods) unless @temporary_access_pass_methods.nil?
+                writer.write_collection_of_object_values("windowsHelloForBusinessMethods", @windows_hello_for_business_methods) unless @windows_hello_for_business_methods.nil?
             end
             ## 
             ## Gets the softwareOathMethods property value. The software OATH TOTP applications registered to a user for authentication.

@@ -73,9 +73,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("consentedPermissionSet", @consented_permission_set)
-                writer.write_object_value("teamsApp", @teams_app)
-                writer.write_object_value("teamsAppDefinition", @teams_app_definition)
+                writer.write_object_value("consentedPermissionSet", @consented_permission_set) unless @consented_permission_set.nil?
+                writer.write_object_value("teamsApp", @teams_app) unless @teams_app.nil?
+                writer.write_object_value("teamsAppDefinition", @teams_app_definition) unless @teams_app_definition.nil?
             end
             ## 
             ## Gets the teamsApp property value. The app that is installed.

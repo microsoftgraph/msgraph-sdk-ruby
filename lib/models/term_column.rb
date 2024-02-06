@@ -120,12 +120,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowMultipleValues", @allow_multiple_values)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("parentTerm", @parent_term)
-                writer.write_boolean_value("showFullyQualifiedName", @show_fully_qualified_name)
-                writer.write_object_value("termSet", @term_set)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowMultipleValues", @allow_multiple_values) unless @allow_multiple_values.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("parentTerm", @parent_term) unless @parent_term.nil?
+                writer.write_boolean_value("showFullyQualifiedName", @show_fully_qualified_name) unless @show_fully_qualified_name.nil?
+                writer.write_object_value("termSet", @term_set) unless @term_set.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the showFullyQualifiedName property value. Specifies whether to display the entire term path or only the term label.

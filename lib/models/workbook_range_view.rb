@@ -221,18 +221,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("cellAddresses", @cell_addresses)
-                writer.write_number_value("columnCount", @column_count)
-                writer.write_object_value("formulas", @formulas)
-                writer.write_object_value("formulasLocal", @formulas_local)
+                writer.write_object_value("cellAddresses", @cell_addresses) unless @cell_addresses.nil?
+                writer.write_number_value("columnCount", @column_count) unless @column_count.nil?
+                writer.write_object_value("formulas", @formulas) unless @formulas.nil?
+                writer.write_object_value("formulasLocal", @formulas_local) unless @formulas_local.nil?
                 writer.write_object_value("formulasR1C1", @formulas_r1_c1)
-                writer.write_number_value("index", @index)
-                writer.write_object_value("numberFormat", @number_format)
-                writer.write_number_value("rowCount", @row_count)
-                writer.write_collection_of_object_values("rows", @rows)
-                writer.write_object_value("text", @text)
-                writer.write_object_value("valueTypes", @value_types)
-                writer.write_object_value("values", @values)
+                writer.write_number_value("index", @index) unless @index.nil?
+                writer.write_object_value("numberFormat", @number_format) unless @number_format.nil?
+                writer.write_number_value("rowCount", @row_count) unless @row_count.nil?
+                writer.write_collection_of_object_values("rows", @rows) unless @rows.nil?
+                writer.write_object_value("text", @text) unless @text.nil?
+                writer.write_object_value("valueTypes", @value_types) unless @value_types.nil?
+                writer.write_object_value("values", @values) unless @values.nil?
             end
             ## 
             ## Gets the text property value. Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.

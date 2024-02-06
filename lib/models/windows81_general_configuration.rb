@@ -608,38 +608,38 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("accountsBlockAddingNonMicrosoftAccountEmail", @accounts_block_adding_non_microsoft_account_email)
-                writer.write_boolean_value("browserBlockAutofill", @browser_block_autofill)
-                writer.write_boolean_value("browserBlockAutomaticDetectionOfIntranetSites", @browser_block_automatic_detection_of_intranet_sites)
-                writer.write_boolean_value("browserBlockEnterpriseModeAccess", @browser_block_enterprise_mode_access)
-                writer.write_boolean_value("browserBlockJavaScript", @browser_block_java_script)
-                writer.write_boolean_value("browserBlockPlugins", @browser_block_plugins)
-                writer.write_boolean_value("browserBlockPopups", @browser_block_popups)
-                writer.write_boolean_value("browserBlockSendingDoNotTrackHeader", @browser_block_sending_do_not_track_header)
-                writer.write_boolean_value("browserBlockSingleWordEntryOnIntranetSites", @browser_block_single_word_entry_on_intranet_sites)
-                writer.write_string_value("browserEnterpriseModeSiteListLocation", @browser_enterprise_mode_site_list_location)
-                writer.write_enum_value("browserInternetSecurityLevel", @browser_internet_security_level)
-                writer.write_enum_value("browserIntranetSecurityLevel", @browser_intranet_security_level)
-                writer.write_string_value("browserLoggingReportLocation", @browser_logging_report_location)
-                writer.write_boolean_value("browserRequireFirewall", @browser_require_firewall)
-                writer.write_boolean_value("browserRequireFraudWarning", @browser_require_fraud_warning)
-                writer.write_boolean_value("browserRequireHighSecurityForRestrictedSites", @browser_require_high_security_for_restricted_sites)
-                writer.write_boolean_value("browserRequireSmartScreen", @browser_require_smart_screen)
-                writer.write_enum_value("browserTrustedSitesSecurityLevel", @browser_trusted_sites_security_level)
-                writer.write_boolean_value("cellularBlockDataRoaming", @cellular_block_data_roaming)
-                writer.write_boolean_value("diagnosticsBlockDataSubmission", @diagnostics_block_data_submission)
-                writer.write_boolean_value("passwordBlockPicturePasswordAndPin", @password_block_picture_password_and_pin)
-                writer.write_number_value("passwordExpirationDays", @password_expiration_days)
-                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count)
-                writer.write_number_value("passwordMinimumLength", @password_minimum_length)
-                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout)
-                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count)
-                writer.write_enum_value("passwordRequiredType", @password_required_type)
-                writer.write_number_value("passwordSignInFailureCountBeforeFactoryReset", @password_sign_in_failure_count_before_factory_reset)
-                writer.write_boolean_value("storageRequireDeviceEncryption", @storage_require_device_encryption)
-                writer.write_boolean_value("updatesRequireAutomaticUpdates", @updates_require_automatic_updates)
-                writer.write_enum_value("userAccountControlSettings", @user_account_control_settings)
-                writer.write_string_value("workFoldersUrl", @work_folders_url)
+                writer.write_boolean_value("accountsBlockAddingNonMicrosoftAccountEmail", @accounts_block_adding_non_microsoft_account_email) unless @accounts_block_adding_non_microsoft_account_email.nil?
+                writer.write_boolean_value("browserBlockAutofill", @browser_block_autofill) unless @browser_block_autofill.nil?
+                writer.write_boolean_value("browserBlockAutomaticDetectionOfIntranetSites", @browser_block_automatic_detection_of_intranet_sites) unless @browser_block_automatic_detection_of_intranet_sites.nil?
+                writer.write_boolean_value("browserBlockEnterpriseModeAccess", @browser_block_enterprise_mode_access) unless @browser_block_enterprise_mode_access.nil?
+                writer.write_boolean_value("browserBlockJavaScript", @browser_block_java_script) unless @browser_block_java_script.nil?
+                writer.write_boolean_value("browserBlockPlugins", @browser_block_plugins) unless @browser_block_plugins.nil?
+                writer.write_boolean_value("browserBlockPopups", @browser_block_popups) unless @browser_block_popups.nil?
+                writer.write_boolean_value("browserBlockSendingDoNotTrackHeader", @browser_block_sending_do_not_track_header) unless @browser_block_sending_do_not_track_header.nil?
+                writer.write_boolean_value("browserBlockSingleWordEntryOnIntranetSites", @browser_block_single_word_entry_on_intranet_sites) unless @browser_block_single_word_entry_on_intranet_sites.nil?
+                writer.write_string_value("browserEnterpriseModeSiteListLocation", @browser_enterprise_mode_site_list_location) unless @browser_enterprise_mode_site_list_location.nil?
+                writer.write_enum_value("browserInternetSecurityLevel", @browser_internet_security_level) unless @browser_internet_security_level.nil?
+                writer.write_enum_value("browserIntranetSecurityLevel", @browser_intranet_security_level) unless @browser_intranet_security_level.nil?
+                writer.write_string_value("browserLoggingReportLocation", @browser_logging_report_location) unless @browser_logging_report_location.nil?
+                writer.write_boolean_value("browserRequireFirewall", @browser_require_firewall) unless @browser_require_firewall.nil?
+                writer.write_boolean_value("browserRequireFraudWarning", @browser_require_fraud_warning) unless @browser_require_fraud_warning.nil?
+                writer.write_boolean_value("browserRequireHighSecurityForRestrictedSites", @browser_require_high_security_for_restricted_sites) unless @browser_require_high_security_for_restricted_sites.nil?
+                writer.write_boolean_value("browserRequireSmartScreen", @browser_require_smart_screen) unless @browser_require_smart_screen.nil?
+                writer.write_enum_value("browserTrustedSitesSecurityLevel", @browser_trusted_sites_security_level) unless @browser_trusted_sites_security_level.nil?
+                writer.write_boolean_value("cellularBlockDataRoaming", @cellular_block_data_roaming) unless @cellular_block_data_roaming.nil?
+                writer.write_boolean_value("diagnosticsBlockDataSubmission", @diagnostics_block_data_submission) unless @diagnostics_block_data_submission.nil?
+                writer.write_boolean_value("passwordBlockPicturePasswordAndPin", @password_block_picture_password_and_pin) unless @password_block_picture_password_and_pin.nil?
+                writer.write_number_value("passwordExpirationDays", @password_expiration_days) unless @password_expiration_days.nil?
+                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count) unless @password_minimum_character_set_count.nil?
+                writer.write_number_value("passwordMinimumLength", @password_minimum_length) unless @password_minimum_length.nil?
+                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout) unless @password_minutes_of_inactivity_before_screen_timeout.nil?
+                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count) unless @password_previous_password_block_count.nil?
+                writer.write_enum_value("passwordRequiredType", @password_required_type) unless @password_required_type.nil?
+                writer.write_number_value("passwordSignInFailureCountBeforeFactoryReset", @password_sign_in_failure_count_before_factory_reset) unless @password_sign_in_failure_count_before_factory_reset.nil?
+                writer.write_boolean_value("storageRequireDeviceEncryption", @storage_require_device_encryption) unless @storage_require_device_encryption.nil?
+                writer.write_boolean_value("updatesRequireAutomaticUpdates", @updates_require_automatic_updates) unless @updates_require_automatic_updates.nil?
+                writer.write_enum_value("userAccountControlSettings", @user_account_control_settings) unless @user_account_control_settings.nil?
+                writer.write_string_value("workFoldersUrl", @work_folders_url) unless @work_folders_url.nil?
             end
             ## 
             ## Gets the storageRequireDeviceEncryption property value. Indicates whether or not to require encryption on a mobile device.

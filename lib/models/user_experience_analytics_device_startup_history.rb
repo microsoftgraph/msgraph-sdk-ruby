@@ -300,22 +300,22 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("coreBootTimeInMs", @core_boot_time_in_ms)
-                writer.write_number_value("coreLoginTimeInMs", @core_login_time_in_ms)
-                writer.write_string_value("deviceId", @device_id)
-                writer.write_number_value("featureUpdateBootTimeInMs", @feature_update_boot_time_in_ms)
-                writer.write_number_value("groupPolicyBootTimeInMs", @group_policy_boot_time_in_ms)
-                writer.write_number_value("groupPolicyLoginTimeInMs", @group_policy_login_time_in_ms)
-                writer.write_boolean_value("isFeatureUpdate", @is_feature_update)
-                writer.write_boolean_value("isFirstLogin", @is_first_login)
-                writer.write_string_value("operatingSystemVersion", @operating_system_version)
-                writer.write_number_value("responsiveDesktopTimeInMs", @responsive_desktop_time_in_ms)
-                writer.write_enum_value("restartCategory", @restart_category)
-                writer.write_string_value("restartFaultBucket", @restart_fault_bucket)
-                writer.write_string_value("restartStopCode", @restart_stop_code)
-                writer.write_date_time_value("startTime", @start_time)
-                writer.write_number_value("totalBootTimeInMs", @total_boot_time_in_ms)
-                writer.write_number_value("totalLoginTimeInMs", @total_login_time_in_ms)
+                writer.write_number_value("coreBootTimeInMs", @core_boot_time_in_ms) unless @core_boot_time_in_ms.nil?
+                writer.write_number_value("coreLoginTimeInMs", @core_login_time_in_ms) unless @core_login_time_in_ms.nil?
+                writer.write_string_value("deviceId", @device_id) unless @device_id.nil?
+                writer.write_number_value("featureUpdateBootTimeInMs", @feature_update_boot_time_in_ms) unless @feature_update_boot_time_in_ms.nil?
+                writer.write_number_value("groupPolicyBootTimeInMs", @group_policy_boot_time_in_ms) unless @group_policy_boot_time_in_ms.nil?
+                writer.write_number_value("groupPolicyLoginTimeInMs", @group_policy_login_time_in_ms) unless @group_policy_login_time_in_ms.nil?
+                writer.write_boolean_value("isFeatureUpdate", @is_feature_update) unless @is_feature_update.nil?
+                writer.write_boolean_value("isFirstLogin", @is_first_login) unless @is_first_login.nil?
+                writer.write_string_value("operatingSystemVersion", @operating_system_version) unless @operating_system_version.nil?
+                writer.write_number_value("responsiveDesktopTimeInMs", @responsive_desktop_time_in_ms) unless @responsive_desktop_time_in_ms.nil?
+                writer.write_enum_value("restartCategory", @restart_category) unless @restart_category.nil?
+                writer.write_string_value("restartFaultBucket", @restart_fault_bucket) unless @restart_fault_bucket.nil?
+                writer.write_string_value("restartStopCode", @restart_stop_code) unless @restart_stop_code.nil?
+                writer.write_date_time_value("startTime", @start_time) unless @start_time.nil?
+                writer.write_number_value("totalBootTimeInMs", @total_boot_time_in_ms) unless @total_boot_time_in_ms.nil?
+                writer.write_number_value("totalLoginTimeInMs", @total_login_time_in_ms) unless @total_login_time_in_ms.nil?
             end
             ## 
             ## Gets the startTime property value. The device boot start time. The value cannot be modified and is automatically populated when the device performs a reboot. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.

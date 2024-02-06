@@ -121,11 +121,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("appAuthorized", @app_authorized)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("enabled", @enabled)
-                writer.write_date_time_value("lastConnectionDateTime", @last_connection_date_time)
-                writer.write_string_value("url", @url)
+                writer.write_boolean_value("appAuthorized", @app_authorized) unless @app_authorized.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("enabled", @enabled) unless @enabled.nil?
+                writer.write_date_time_value("lastConnectionDateTime", @last_connection_date_time) unless @last_connection_date_time.nil?
+                writer.write_string_value("url", @url) unless @url.nil?
             end
             ## 
             ## Gets the url property value. URL of the TEM partner's administrative control panel, where an administrator can configure their TEM service.

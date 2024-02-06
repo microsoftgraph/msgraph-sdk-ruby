@@ -99,10 +99,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("returnCode", @return_code)
-                writer.write_enum_value("type", @type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("returnCode", @return_code) unless @return_code.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the type property value. Indicates the type of return code.

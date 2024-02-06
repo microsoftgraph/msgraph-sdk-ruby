@@ -133,11 +133,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("countdownDisplayBeforeRestartInMinutes", @countdown_display_before_restart_in_minutes)
-                writer.write_number_value("gracePeriodInMinutes", @grace_period_in_minutes)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("restartNotificationSnoozeDurationInMinutes", @restart_notification_snooze_duration_in_minutes)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("countdownDisplayBeforeRestartInMinutes", @countdown_display_before_restart_in_minutes) unless @countdown_display_before_restart_in_minutes.nil?
+                writer.write_number_value("gracePeriodInMinutes", @grace_period_in_minutes) unless @grace_period_in_minutes.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("restartNotificationSnoozeDurationInMinutes", @restart_notification_snooze_duration_in_minutes) unless @restart_notification_snooze_duration_in_minutes.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

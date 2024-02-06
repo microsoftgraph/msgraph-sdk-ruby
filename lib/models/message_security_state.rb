@@ -246,17 +246,17 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("connectingIP", @connecting_i_p)
-                writer.write_string_value("deliveryAction", @delivery_action)
-                writer.write_string_value("deliveryLocation", @delivery_location)
-                writer.write_string_value("directionality", @directionality)
-                writer.write_string_value("internetMessageId", @internet_message_id)
-                writer.write_string_value("messageFingerprint", @message_fingerprint)
-                writer.write_date_time_value("messageReceivedDateTime", @message_received_date_time)
-                writer.write_string_value("messageSubject", @message_subject)
-                writer.write_string_value("networkMessageId", @network_message_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("connectingIP", @connecting_i_p) unless @connecting_i_p.nil?
+                writer.write_string_value("deliveryAction", @delivery_action) unless @delivery_action.nil?
+                writer.write_string_value("deliveryLocation", @delivery_location) unless @delivery_location.nil?
+                writer.write_string_value("directionality", @directionality) unless @directionality.nil?
+                writer.write_string_value("internetMessageId", @internet_message_id) unless @internet_message_id.nil?
+                writer.write_string_value("messageFingerprint", @message_fingerprint) unless @message_fingerprint.nil?
+                writer.write_date_time_value("messageReceivedDateTime", @message_received_date_time) unless @message_received_date_time.nil?
+                writer.write_string_value("messageSubject", @message_subject) unless @message_subject.nil?
+                writer.write_string_value("networkMessageId", @network_message_id) unless @network_message_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

@@ -369,29 +369,29 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("callEndSubReason", @call_end_sub_reason)
-                writer.write_string_value("callType", @call_type)
-                writer.write_string_value("calleeNumber", @callee_number)
-                writer.write_string_value("callerNumber", @caller_number)
-                writer.write_string_value("correlationId", @correlation_id)
-                writer.write_number_value("duration", @duration)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_date_time_value("failureDateTime", @failure_date_time)
-                writer.write_number_value("finalSipCode", @final_sip_code)
-                writer.write_string_value("finalSipCodePhrase", @final_sip_code_phrase)
-                writer.write_string_value("id", @id)
-                writer.write_date_time_value("inviteDateTime", @invite_date_time)
-                writer.write_boolean_value("mediaBypassEnabled", @media_bypass_enabled)
-                writer.write_string_value("mediaPathLocation", @media_path_location)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("signalingLocation", @signaling_location)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_boolean_value("successfulCall", @successful_call)
-                writer.write_string_value("trunkFullyQualifiedDomainName", @trunk_fully_qualified_domain_name)
-                writer.write_string_value("userDisplayName", @user_display_name)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("callEndSubReason", @call_end_sub_reason) unless @call_end_sub_reason.nil?
+                writer.write_string_value("callType", @call_type) unless @call_type.nil?
+                writer.write_string_value("calleeNumber", @callee_number) unless @callee_number.nil?
+                writer.write_string_value("callerNumber", @caller_number) unless @caller_number.nil?
+                writer.write_string_value("correlationId", @correlation_id) unless @correlation_id.nil?
+                writer.write_number_value("duration", @duration) unless @duration.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_date_time_value("failureDateTime", @failure_date_time) unless @failure_date_time.nil?
+                writer.write_number_value("finalSipCode", @final_sip_code) unless @final_sip_code.nil?
+                writer.write_string_value("finalSipCodePhrase", @final_sip_code_phrase) unless @final_sip_code_phrase.nil?
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_date_time_value("inviteDateTime", @invite_date_time) unless @invite_date_time.nil?
+                writer.write_boolean_value("mediaBypassEnabled", @media_bypass_enabled) unless @media_bypass_enabled.nil?
+                writer.write_string_value("mediaPathLocation", @media_path_location) unless @media_path_location.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("signalingLocation", @signaling_location) unless @signaling_location.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_boolean_value("successfulCall", @successful_call) unless @successful_call.nil?
+                writer.write_string_value("trunkFullyQualifiedDomainName", @trunk_fully_qualified_domain_name) unless @trunk_fully_qualified_domain_name.nil?
+                writer.write_string_value("userDisplayName", @user_display_name) unless @user_display_name.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.

@@ -151,15 +151,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("deletedDateTime", @deleted_date_time)
-                writer.write_collection_of_object_values("executionScope", @execution_scope)
-                writer.write_string_value("id", @id)
-                writer.write_date_time_value("nextScheduleRunDateTime", @next_schedule_run_date_time)
-                writer.write_collection_of_object_values("runs", @runs)
-                writer.write_collection_of_object_values("taskReports", @task_reports)
-                writer.write_collection_of_object_values("userProcessingResults", @user_processing_results)
-                writer.write_number_value("version", @version)
-                writer.write_collection_of_object_values("versions", @versions)
+                writer.write_date_time_value("deletedDateTime", @deleted_date_time) unless @deleted_date_time.nil?
+                writer.write_collection_of_object_values("executionScope", @execution_scope) unless @execution_scope.nil?
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_date_time_value("nextScheduleRunDateTime", @next_schedule_run_date_time) unless @next_schedule_run_date_time.nil?
+                writer.write_collection_of_object_values("runs", @runs) unless @runs.nil?
+                writer.write_collection_of_object_values("taskReports", @task_reports) unless @task_reports.nil?
+                writer.write_collection_of_object_values("userProcessingResults", @user_processing_results) unless @user_processing_results.nil?
+                writer.write_number_value("version", @version) unless @version.nil?
+                writer.write_collection_of_object_values("versions", @versions) unless @versions.nil?
             end
             ## 
             ## Gets the taskReports property value. Represents the aggregation of task execution data for tasks within a workflow object.

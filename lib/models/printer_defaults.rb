@@ -397,25 +397,25 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("colorMode", @color_mode)
-                writer.write_string_value("contentType", @content_type)
-                writer.write_number_value("copiesPerJob", @copies_per_job)
-                writer.write_number_value("dpi", @dpi)
-                writer.write_enum_value("duplexMode", @duplex_mode)
-                writer.write_collection_of_object_values("finishings", @finishings)
-                writer.write_boolean_value("fitPdfToPage", @fit_pdf_to_page)
-                writer.write_string_value("inputBin", @input_bin)
-                writer.write_string_value("mediaColor", @media_color)
-                writer.write_string_value("mediaSize", @media_size)
-                writer.write_string_value("mediaType", @media_type)
-                writer.write_enum_value("multipageLayout", @multipage_layout)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("orientation", @orientation)
-                writer.write_string_value("outputBin", @output_bin)
-                writer.write_number_value("pagesPerSheet", @pages_per_sheet)
-                writer.write_enum_value("quality", @quality)
-                writer.write_enum_value("scaling", @scaling)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("colorMode", @color_mode) unless @color_mode.nil?
+                writer.write_string_value("contentType", @content_type) unless @content_type.nil?
+                writer.write_number_value("copiesPerJob", @copies_per_job) unless @copies_per_job.nil?
+                writer.write_number_value("dpi", @dpi) unless @dpi.nil?
+                writer.write_enum_value("duplexMode", @duplex_mode) unless @duplex_mode.nil?
+                writer.write_collection_of_object_values("finishings", @finishings) unless @finishings.nil?
+                writer.write_boolean_value("fitPdfToPage", @fit_pdf_to_page) unless @fit_pdf_to_page.nil?
+                writer.write_string_value("inputBin", @input_bin) unless @input_bin.nil?
+                writer.write_string_value("mediaColor", @media_color) unless @media_color.nil?
+                writer.write_string_value("mediaSize", @media_size) unless @media_size.nil?
+                writer.write_string_value("mediaType", @media_type) unless @media_type.nil?
+                writer.write_enum_value("multipageLayout", @multipage_layout) unless @multipage_layout.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("orientation", @orientation) unless @orientation.nil?
+                writer.write_string_value("outputBin", @output_bin) unless @output_bin.nil?
+                writer.write_number_value("pagesPerSheet", @pages_per_sheet) unless @pages_per_sheet.nil?
+                writer.write_enum_value("quality", @quality) unless @quality.nil?
+                writer.write_enum_value("scaling", @scaling) unless @scaling.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

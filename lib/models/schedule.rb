@@ -249,23 +249,23 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("enabled", @enabled)
-                writer.write_collection_of_object_values("offerShiftRequests", @offer_shift_requests)
-                writer.write_boolean_value("offerShiftRequestsEnabled", @offer_shift_requests_enabled)
-                writer.write_collection_of_object_values("openShiftChangeRequests", @open_shift_change_requests)
-                writer.write_collection_of_object_values("openShifts", @open_shifts)
-                writer.write_boolean_value("openShiftsEnabled", @open_shifts_enabled)
-                writer.write_collection_of_object_values("schedulingGroups", @scheduling_groups)
-                writer.write_collection_of_object_values("shifts", @shifts)
-                writer.write_collection_of_object_values("swapShiftsChangeRequests", @swap_shifts_change_requests)
-                writer.write_boolean_value("swapShiftsRequestsEnabled", @swap_shifts_requests_enabled)
-                writer.write_boolean_value("timeClockEnabled", @time_clock_enabled)
-                writer.write_collection_of_object_values("timeOffReasons", @time_off_reasons)
-                writer.write_collection_of_object_values("timeOffRequests", @time_off_requests)
-                writer.write_boolean_value("timeOffRequestsEnabled", @time_off_requests_enabled)
-                writer.write_string_value("timeZone", @time_zone)
-                writer.write_collection_of_object_values("timesOff", @times_off)
-                writer.write_collection_of_primitive_values("workforceIntegrationIds", @workforce_integration_ids)
+                writer.write_boolean_value("enabled", @enabled) unless @enabled.nil?
+                writer.write_collection_of_object_values("offerShiftRequests", @offer_shift_requests) unless @offer_shift_requests.nil?
+                writer.write_boolean_value("offerShiftRequestsEnabled", @offer_shift_requests_enabled) unless @offer_shift_requests_enabled.nil?
+                writer.write_collection_of_object_values("openShiftChangeRequests", @open_shift_change_requests) unless @open_shift_change_requests.nil?
+                writer.write_collection_of_object_values("openShifts", @open_shifts) unless @open_shifts.nil?
+                writer.write_boolean_value("openShiftsEnabled", @open_shifts_enabled) unless @open_shifts_enabled.nil?
+                writer.write_collection_of_object_values("schedulingGroups", @scheduling_groups) unless @scheduling_groups.nil?
+                writer.write_collection_of_object_values("shifts", @shifts) unless @shifts.nil?
+                writer.write_collection_of_object_values("swapShiftsChangeRequests", @swap_shifts_change_requests) unless @swap_shifts_change_requests.nil?
+                writer.write_boolean_value("swapShiftsRequestsEnabled", @swap_shifts_requests_enabled) unless @swap_shifts_requests_enabled.nil?
+                writer.write_boolean_value("timeClockEnabled", @time_clock_enabled) unless @time_clock_enabled.nil?
+                writer.write_collection_of_object_values("timeOffReasons", @time_off_reasons) unless @time_off_reasons.nil?
+                writer.write_collection_of_object_values("timeOffRequests", @time_off_requests) unless @time_off_requests.nil?
+                writer.write_boolean_value("timeOffRequestsEnabled", @time_off_requests_enabled) unless @time_off_requests_enabled.nil?
+                writer.write_string_value("timeZone", @time_zone) unless @time_zone.nil?
+                writer.write_collection_of_object_values("timesOff", @times_off) unless @times_off.nil?
+                writer.write_collection_of_primitive_values("workforceIntegrationIds", @workforce_integration_ids) unless @workforce_integration_ids.nil?
             end
             ## 
             ## Gets the shifts property value. The shifts in the schedule.

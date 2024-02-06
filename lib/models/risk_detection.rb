@@ -325,25 +325,25 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("activity", @activity)
-                writer.write_date_time_value("activityDateTime", @activity_date_time)
-                writer.write_string_value("additionalInfo", @additional_info)
-                writer.write_string_value("correlationId", @correlation_id)
-                writer.write_date_time_value("detectedDateTime", @detected_date_time)
-                writer.write_enum_value("detectionTimingType", @detection_timing_type)
-                writer.write_string_value("ipAddress", @ip_address)
-                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
-                writer.write_object_value("location", @location)
-                writer.write_string_value("requestId", @request_id)
-                writer.write_enum_value("riskDetail", @risk_detail)
-                writer.write_string_value("riskEventType", @risk_event_type)
-                writer.write_enum_value("riskLevel", @risk_level)
-                writer.write_enum_value("riskState", @risk_state)
-                writer.write_string_value("source", @source)
-                writer.write_enum_value("tokenIssuerType", @token_issuer_type)
-                writer.write_string_value("userDisplayName", @user_display_name)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
+                writer.write_enum_value("activity", @activity) unless @activity.nil?
+                writer.write_date_time_value("activityDateTime", @activity_date_time) unless @activity_date_time.nil?
+                writer.write_string_value("additionalInfo", @additional_info) unless @additional_info.nil?
+                writer.write_string_value("correlationId", @correlation_id) unless @correlation_id.nil?
+                writer.write_date_time_value("detectedDateTime", @detected_date_time) unless @detected_date_time.nil?
+                writer.write_enum_value("detectionTimingType", @detection_timing_type) unless @detection_timing_type.nil?
+                writer.write_string_value("ipAddress", @ip_address) unless @ip_address.nil?
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time) unless @last_updated_date_time.nil?
+                writer.write_object_value("location", @location) unless @location.nil?
+                writer.write_string_value("requestId", @request_id) unless @request_id.nil?
+                writer.write_enum_value("riskDetail", @risk_detail) unless @risk_detail.nil?
+                writer.write_string_value("riskEventType", @risk_event_type) unless @risk_event_type.nil?
+                writer.write_enum_value("riskLevel", @risk_level) unless @risk_level.nil?
+                writer.write_enum_value("riskState", @risk_state) unless @risk_state.nil?
+                writer.write_string_value("source", @source) unless @source.nil?
+                writer.write_enum_value("tokenIssuerType", @token_issuer_type) unless @token_issuer_type.nil?
+                writer.write_string_value("userDisplayName", @user_display_name) unless @user_display_name.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
             end
             ## 
             ## Gets the source property value. Source of the risk detection. For example, activeDirectory.

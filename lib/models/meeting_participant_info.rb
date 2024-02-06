@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("identity", @identity)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("role", @role)
-                writer.write_string_value("upn", @upn)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("identity", @identity) unless @identity.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("role", @role) unless @role.nil?
+                writer.write_string_value("upn", @upn) unless @upn.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the upn property value. User principal name of the participant.

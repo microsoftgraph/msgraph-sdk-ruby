@@ -112,10 +112,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("isEnabledForContentSharing", @is_enabled_for_content_sharing)
-                writer.write_boolean_value("isEnabledForVideo", @is_enabled_for_video)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("isEnabledForContentSharing", @is_enabled_for_content_sharing) unless @is_enabled_for_content_sharing.nil?
+                writer.write_boolean_value("isEnabledForVideo", @is_enabled_for_video) unless @is_enabled_for_video.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

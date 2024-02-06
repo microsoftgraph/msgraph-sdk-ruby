@@ -95,9 +95,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_primitive_values("countriesAndRegions", @countries_and_regions)
-                writer.write_enum_value("countryLookupMethod", @country_lookup_method)
-                writer.write_boolean_value("includeUnknownCountriesAndRegions", @include_unknown_countries_and_regions)
+                writer.write_collection_of_primitive_values("countriesAndRegions", @countries_and_regions) unless @countries_and_regions.nil?
+                writer.write_enum_value("countryLookupMethod", @country_lookup_method) unless @country_lookup_method.nil?
+                writer.write_boolean_value("includeUnknownCountriesAndRegions", @include_unknown_countries_and_regions) unless @include_unknown_countries_and_regions.nil?
             end
         end
     end

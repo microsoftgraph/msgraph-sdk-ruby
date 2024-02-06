@@ -143,14 +143,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("application", @application)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("preventsDownload", @prevents_download)
-                writer.write_string_value("scope", @scope)
-                writer.write_string_value("type", @type)
-                writer.write_string_value("webHtml", @web_html)
-                writer.write_string_value("webUrl", @web_url)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("application", @application) unless @application.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("preventsDownload", @prevents_download) unless @prevents_download.nil?
+                writer.write_string_value("scope", @scope) unless @scope.nil?
+                writer.write_string_value("type", @type) unless @type.nil?
+                writer.write_string_value("webHtml", @web_html) unless @web_html.nil?
+                writer.write_string_value("webUrl", @web_url) unless @web_url.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the type property value. The type of the link created.

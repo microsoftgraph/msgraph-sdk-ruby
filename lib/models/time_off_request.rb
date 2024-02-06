@@ -67,9 +67,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_string_value("timeOffReasonId", @time_off_reason_id)
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_string_value("timeOffReasonId", @time_off_reason_id) unless @time_off_reason_id.nil?
             end
             ## 
             ## Gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z

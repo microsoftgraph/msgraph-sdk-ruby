@@ -67,9 +67,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("intent", @intent)
-                writer.write_object_value("settings", @settings)
-                writer.write_object_value("target", @target)
+                writer.write_enum_value("intent", @intent) unless @intent.nil?
+                writer.write_object_value("settings", @settings) unless @settings.nil?
+                writer.write_object_value("target", @target) unless @target.nil?
             end
             ## 
             ## Gets the settings property value. The settings for target assignment defined by the admin.

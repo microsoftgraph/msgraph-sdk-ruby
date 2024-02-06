@@ -630,45 +630,45 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("activityGroupName", @activity_group_name)
-                writer.write_collection_of_object_values("alertDetections", @alert_detections)
-                writer.write_string_value("assignedTo", @assigned_to)
-                writer.write_string_value("azureSubscriptionId", @azure_subscription_id)
-                writer.write_string_value("azureTenantId", @azure_tenant_id)
-                writer.write_string_value("category", @category)
-                writer.write_date_time_value("closedDateTime", @closed_date_time)
-                writer.write_collection_of_object_values("cloudAppStates", @cloud_app_states)
-                writer.write_collection_of_primitive_values("comments", @comments)
-                writer.write_number_value("confidence", @confidence)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_collection_of_primitive_values("detectionIds", @detection_ids)
-                writer.write_date_time_value("eventDateTime", @event_date_time)
-                writer.write_enum_value("feedback", @feedback)
-                writer.write_collection_of_object_values("fileStates", @file_states)
-                writer.write_collection_of_object_values("historyStates", @history_states)
-                writer.write_collection_of_object_values("hostStates", @host_states)
-                writer.write_collection_of_primitive_values("incidentIds", @incident_ids)
-                writer.write_collection_of_object_values("investigationSecurityStates", @investigation_security_states)
-                writer.write_date_time_value("lastEventDateTime", @last_event_date_time)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_collection_of_object_values("malwareStates", @malware_states)
-                writer.write_collection_of_object_values("messageSecurityStates", @message_security_states)
-                writer.write_collection_of_object_values("networkConnections", @network_connections)
-                writer.write_collection_of_object_values("processes", @processes)
-                writer.write_collection_of_primitive_values("recommendedActions", @recommended_actions)
-                writer.write_collection_of_object_values("registryKeyStates", @registry_key_states)
-                writer.write_collection_of_object_values("securityResources", @security_resources)
-                writer.write_enum_value("severity", @severity)
-                writer.write_collection_of_primitive_values("sourceMaterials", @source_materials)
-                writer.write_enum_value("status", @status)
-                writer.write_collection_of_primitive_values("tags", @tags)
-                writer.write_string_value("title", @title)
-                writer.write_collection_of_object_values("triggers", @triggers)
-                writer.write_collection_of_object_values("uriClickSecurityStates", @uri_click_security_states)
-                writer.write_collection_of_object_values("userStates", @user_states)
-                writer.write_object_value("vendorInformation", @vendor_information)
-                writer.write_collection_of_object_values("vulnerabilityStates", @vulnerability_states)
+                writer.write_string_value("activityGroupName", @activity_group_name) unless @activity_group_name.nil?
+                writer.write_collection_of_object_values("alertDetections", @alert_detections) unless @alert_detections.nil?
+                writer.write_string_value("assignedTo", @assigned_to) unless @assigned_to.nil?
+                writer.write_string_value("azureSubscriptionId", @azure_subscription_id) unless @azure_subscription_id.nil?
+                writer.write_string_value("azureTenantId", @azure_tenant_id) unless @azure_tenant_id.nil?
+                writer.write_string_value("category", @category) unless @category.nil?
+                writer.write_date_time_value("closedDateTime", @closed_date_time) unless @closed_date_time.nil?
+                writer.write_collection_of_object_values("cloudAppStates", @cloud_app_states) unless @cloud_app_states.nil?
+                writer.write_collection_of_primitive_values("comments", @comments) unless @comments.nil?
+                writer.write_number_value("confidence", @confidence) unless @confidence.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_collection_of_primitive_values("detectionIds", @detection_ids) unless @detection_ids.nil?
+                writer.write_date_time_value("eventDateTime", @event_date_time) unless @event_date_time.nil?
+                writer.write_enum_value("feedback", @feedback) unless @feedback.nil?
+                writer.write_collection_of_object_values("fileStates", @file_states) unless @file_states.nil?
+                writer.write_collection_of_object_values("historyStates", @history_states) unless @history_states.nil?
+                writer.write_collection_of_object_values("hostStates", @host_states) unless @host_states.nil?
+                writer.write_collection_of_primitive_values("incidentIds", @incident_ids) unless @incident_ids.nil?
+                writer.write_collection_of_object_values("investigationSecurityStates", @investigation_security_states) unless @investigation_security_states.nil?
+                writer.write_date_time_value("lastEventDateTime", @last_event_date_time) unless @last_event_date_time.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_collection_of_object_values("malwareStates", @malware_states) unless @malware_states.nil?
+                writer.write_collection_of_object_values("messageSecurityStates", @message_security_states) unless @message_security_states.nil?
+                writer.write_collection_of_object_values("networkConnections", @network_connections) unless @network_connections.nil?
+                writer.write_collection_of_object_values("processes", @processes) unless @processes.nil?
+                writer.write_collection_of_primitive_values("recommendedActions", @recommended_actions) unless @recommended_actions.nil?
+                writer.write_collection_of_object_values("registryKeyStates", @registry_key_states) unless @registry_key_states.nil?
+                writer.write_collection_of_object_values("securityResources", @security_resources) unless @security_resources.nil?
+                writer.write_enum_value("severity", @severity) unless @severity.nil?
+                writer.write_collection_of_primitive_values("sourceMaterials", @source_materials) unless @source_materials.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_collection_of_primitive_values("tags", @tags) unless @tags.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
+                writer.write_collection_of_object_values("triggers", @triggers) unless @triggers.nil?
+                writer.write_collection_of_object_values("uriClickSecurityStates", @uri_click_security_states) unless @uri_click_security_states.nil?
+                writer.write_collection_of_object_values("userStates", @user_states) unless @user_states.nil?
+                writer.write_object_value("vendorInformation", @vendor_information) unless @vendor_information.nil?
+                writer.write_collection_of_object_values("vulnerabilityStates", @vulnerability_states) unless @vulnerability_states.nil?
             end
             ## 
             ## Gets the severity property value. The severity property

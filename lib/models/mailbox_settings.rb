@@ -185,17 +185,17 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("archiveFolder", @archive_folder)
-                writer.write_object_value("automaticRepliesSetting", @automatic_replies_setting)
-                writer.write_string_value("dateFormat", @date_format)
-                writer.write_enum_value("delegateMeetingMessageDeliveryOptions", @delegate_meeting_message_delivery_options)
-                writer.write_object_value("language", @language)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("timeFormat", @time_format)
-                writer.write_string_value("timeZone", @time_zone)
-                writer.write_enum_value("userPurpose", @user_purpose)
-                writer.write_object_value("workingHours", @working_hours)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("archiveFolder", @archive_folder) unless @archive_folder.nil?
+                writer.write_object_value("automaticRepliesSetting", @automatic_replies_setting) unless @automatic_replies_setting.nil?
+                writer.write_string_value("dateFormat", @date_format) unless @date_format.nil?
+                writer.write_enum_value("delegateMeetingMessageDeliveryOptions", @delegate_meeting_message_delivery_options) unless @delegate_meeting_message_delivery_options.nil?
+                writer.write_object_value("language", @language) unless @language.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("timeFormat", @time_format) unless @time_format.nil?
+                writer.write_string_value("timeZone", @time_zone) unless @time_zone.nil?
+                writer.write_enum_value("userPurpose", @user_purpose) unless @user_purpose.nil?
+                writer.write_object_value("workingHours", @working_hours) unless @working_hours.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the timeFormat property value. The time format for the user's mailbox.

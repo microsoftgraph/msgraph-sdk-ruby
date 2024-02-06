@@ -80,9 +80,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("contentType", @content_type)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("size", @size)
+                writer.write_string_value("contentType", @content_type) unless @content_type.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("size", @size) unless @size.nil?
             end
             ## 
             ## Gets the size property value. The document's size in bytes. Read-only.

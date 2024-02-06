@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("contentType", @content_type)
-                writer.write_string_value("fileName", @file_name)
-                writer.write_string_value("folderName", @folder_name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("contentType", @content_type) unless @content_type.nil?
+                writer.write_string_value("fileName", @file_name) unless @file_name.nil?
+                writer.write_string_value("folderName", @folder_name) unless @folder_name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

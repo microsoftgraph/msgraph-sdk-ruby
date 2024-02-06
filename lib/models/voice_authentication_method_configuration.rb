@@ -77,8 +77,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("includeTargets", @include_targets)
-                writer.write_boolean_value("isOfficePhoneAllowed", @is_office_phone_allowed)
+                writer.write_collection_of_object_values("includeTargets", @include_targets) unless @include_targets.nil?
+                writer.write_boolean_value("isOfficePhoneAllowed", @is_office_phone_allowed) unless @is_office_phone_allowed.nil?
             end
         end
     end

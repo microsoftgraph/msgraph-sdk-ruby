@@ -123,12 +123,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("decisions", @decisions)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_collection_of_object_values("fallbackReviewers", @fallback_reviewers)
-                writer.write_collection_of_object_values("reviewers", @reviewers)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_string_value("status", @status)
+                writer.write_collection_of_object_values("decisions", @decisions) unless @decisions.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_collection_of_object_values("fallbackReviewers", @fallback_reviewers) unless @fallback_reviewers.nil?
+                writer.write_collection_of_object_values("reviewers", @reviewers) unless @reviewers.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the startDateTime property value. The date and time in ISO 8601 format and UTC time when the review stage is scheduled to start. Read-only.

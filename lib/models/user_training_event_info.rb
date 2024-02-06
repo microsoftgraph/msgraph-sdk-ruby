@@ -124,13 +124,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("displayName", @display_name)
-                writer.write_enum_value("latestTrainingStatus", @latest_training_status)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("trainingAssignedProperties", @training_assigned_properties)
-                writer.write_object_value("trainingCompletedProperties", @training_completed_properties)
-                writer.write_object_value("trainingUpdatedProperties", @training_updated_properties)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_enum_value("latestTrainingStatus", @latest_training_status) unless @latest_training_status.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("trainingAssignedProperties", @training_assigned_properties) unless @training_assigned_properties.nil?
+                writer.write_object_value("trainingCompletedProperties", @training_completed_properties) unless @training_completed_properties.nil?
+                writer.write_object_value("trainingUpdatedProperties", @training_updated_properties) unless @training_updated_properties.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.

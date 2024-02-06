@@ -66,9 +66,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("draftTimeOff", @draft_time_off)
-                writer.write_object_value("sharedTimeOff", @shared_time_off)
-                writer.write_string_value("userId", @user_id)
+                writer.write_object_value("draftTimeOff", @draft_time_off) unless @draft_time_off.nil?
+                writer.write_object_value("sharedTimeOff", @shared_time_off) unless @shared_time_off.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
             end
             ## 
             ## Gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.

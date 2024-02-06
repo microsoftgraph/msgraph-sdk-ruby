@@ -135,12 +135,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("isActive", @is_active)
-                writer.write_object_value("notAfter", @not_after)
-                writer.write_object_value("notBefore", @not_before)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("thumbprint", @thumbprint)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("isActive", @is_active) unless @is_active.nil?
+                writer.write_object_value("notAfter", @not_after) unless @not_after.nil?
+                writer.write_object_value("notBefore", @not_before) unless @not_before.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("thumbprint", @thumbprint) unless @thumbprint.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the thumbprint property value. The certificate thumbprint.

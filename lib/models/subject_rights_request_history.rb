@@ -125,13 +125,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("changedBy", @changed_by)
-                writer.write_date_time_value("eventDateTime", @event_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("stage", @stage)
-                writer.write_enum_value("stageStatus", @stage_status)
-                writer.write_string_value("type", @type)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("changedBy", @changed_by) unless @changed_by.nil?
+                writer.write_date_time_value("eventDateTime", @event_date_time) unless @event_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("stage", @stage) unless @stage.nil?
+                writer.write_enum_value("stageStatus", @stage_status) unless @stage_status.nil?
+                writer.write_string_value("type", @type) unless @type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the stage property value. The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.

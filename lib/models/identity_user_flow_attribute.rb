@@ -109,10 +109,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("dataType", @data_type)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_enum_value("userFlowAttributeType", @user_flow_attribute_type)
+                writer.write_enum_value("dataType", @data_type) unless @data_type.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_enum_value("userFlowAttributeType", @user_flow_attribute_type) unless @user_flow_attribute_type.nil?
             end
             ## 
             ## Gets the userFlowAttributeType property value. The userFlowAttributeType property

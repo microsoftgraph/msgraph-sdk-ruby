@@ -65,7 +65,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("appliesToCombinations", @applies_to_combinations)
+                writer.write_collection_of_object_values("appliesToCombinations", @applies_to_combinations) unless @applies_to_combinations.nil?
             end
         end
     end

@@ -135,12 +135,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("bottom", @bottom)
-                writer.write_number_value("left", @left)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("right", @right)
-                writer.write_number_value("top", @top)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("bottom", @bottom) unless @bottom.nil?
+                writer.write_number_value("left", @left) unless @left.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("right", @right) unless @right.nil?
+                writer.write_number_value("top", @top) unless @top.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the top property value. The margin in microns from the top edge.

@@ -169,13 +169,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("applicationFilter", @application_filter)
-                writer.write_collection_of_primitive_values("excludeApplications", @exclude_applications)
-                writer.write_collection_of_primitive_values("includeApplications", @include_applications)
-                writer.write_collection_of_primitive_values("includeAuthenticationContextClassReferences", @include_authentication_context_class_references)
-                writer.write_collection_of_primitive_values("includeUserActions", @include_user_actions)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("applicationFilter", @application_filter) unless @application_filter.nil?
+                writer.write_collection_of_primitive_values("excludeApplications", @exclude_applications) unless @exclude_applications.nil?
+                writer.write_collection_of_primitive_values("includeApplications", @include_applications) unless @include_applications.nil?
+                writer.write_collection_of_primitive_values("includeAuthenticationContextClassReferences", @include_authentication_context_class_references) unless @include_authentication_context_class_references.nil?
+                writer.write_collection_of_primitive_values("includeUserActions", @include_user_actions) unless @include_user_actions.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

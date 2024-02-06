@@ -150,12 +150,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("approvalId", @approval_id)
-                writer.write_date_time_value("completedDateTime", @completed_date_time)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("customData", @custom_data)
-                writer.write_string_value("status", @status)
+                writer.write_string_value("approvalId", @approval_id) unless @approval_id.nil?
+                writer.write_date_time_value("completedDateTime", @completed_date_time) unless @completed_date_time.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("customData", @custom_data) unless @custom_data.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.

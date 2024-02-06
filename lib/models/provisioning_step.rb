@@ -154,13 +154,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("description", @description)
-                writer.write_object_value("details", @details)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("provisioningStepType", @provisioning_step_type)
-                writer.write_enum_value("status", @status)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_object_value("details", @details) unless @details.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("provisioningStepType", @provisioning_step_type) unless @provisioning_step_type.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the status property value. Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.

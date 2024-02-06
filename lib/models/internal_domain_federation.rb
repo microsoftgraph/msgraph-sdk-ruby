@@ -142,13 +142,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("activeSignInUri", @active_sign_in_uri)
-                writer.write_enum_value("federatedIdpMfaBehavior", @federated_idp_mfa_behavior)
-                writer.write_boolean_value("isSignedAuthenticationRequestRequired", @is_signed_authentication_request_required)
-                writer.write_string_value("nextSigningCertificate", @next_signing_certificate)
-                writer.write_enum_value("promptLoginBehavior", @prompt_login_behavior)
-                writer.write_string_value("signOutUri", @sign_out_uri)
-                writer.write_object_value("signingCertificateUpdateStatus", @signing_certificate_update_status)
+                writer.write_string_value("activeSignInUri", @active_sign_in_uri) unless @active_sign_in_uri.nil?
+                writer.write_enum_value("federatedIdpMfaBehavior", @federated_idp_mfa_behavior) unless @federated_idp_mfa_behavior.nil?
+                writer.write_boolean_value("isSignedAuthenticationRequestRequired", @is_signed_authentication_request_required) unless @is_signed_authentication_request_required.nil?
+                writer.write_string_value("nextSigningCertificate", @next_signing_certificate) unless @next_signing_certificate.nil?
+                writer.write_enum_value("promptLoginBehavior", @prompt_login_behavior) unless @prompt_login_behavior.nil?
+                writer.write_string_value("signOutUri", @sign_out_uri) unless @sign_out_uri.nil?
+                writer.write_object_value("signingCertificateUpdateStatus", @signing_certificate_update_status) unless @signing_certificate_update_status.nil?
             end
             ## 
             ## Gets the signOutUri property value. URI that clients are redirected to when they sign out of Azure AD services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.

@@ -135,11 +135,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("deviceExchangeAccessStateSummary", @device_exchange_access_state_summary)
-                writer.write_object_value("deviceOperatingSystemSummary", @device_operating_system_summary)
-                writer.write_number_value("dualEnrolledDeviceCount", @dual_enrolled_device_count)
-                writer.write_number_value("enrolledDeviceCount", @enrolled_device_count)
-                writer.write_number_value("mdmEnrolledCount", @mdm_enrolled_count)
+                writer.write_object_value("deviceExchangeAccessStateSummary", @device_exchange_access_state_summary) unless @device_exchange_access_state_summary.nil?
+                writer.write_object_value("deviceOperatingSystemSummary", @device_operating_system_summary) unless @device_operating_system_summary.nil?
+                writer.write_number_value("dualEnrolledDeviceCount", @dual_enrolled_device_count) unless @dual_enrolled_device_count.nil?
+                writer.write_number_value("enrolledDeviceCount", @enrolled_device_count) unless @enrolled_device_count.nil?
+                writer.write_number_value("mdmEnrolledCount", @mdm_enrolled_count) unless @mdm_enrolled_count.nil?
             end
         end
     end

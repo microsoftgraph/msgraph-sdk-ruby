@@ -70,10 +70,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("canAccept", @can_accept)
-                writer.write_object_value("sharingMessageAction", @sharing_message_action)
-                writer.write_collection_of_object_values("sharingMessageActions", @sharing_message_actions)
-                writer.write_string_value("suggestedCalendarName", @suggested_calendar_name)
+                writer.write_boolean_value("canAccept", @can_accept) unless @can_accept.nil?
+                writer.write_object_value("sharingMessageAction", @sharing_message_action) unless @sharing_message_action.nil?
+                writer.write_collection_of_object_values("sharingMessageActions", @sharing_message_actions) unless @sharing_message_actions.nil?
+                writer.write_string_value("suggestedCalendarName", @suggested_calendar_name) unless @suggested_calendar_name.nil?
             end
             ## 
             ## Gets the sharingMessageAction property value. The sharingMessageAction property

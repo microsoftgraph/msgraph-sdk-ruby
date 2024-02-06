@@ -135,11 +135,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("domain", @domain)
-                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time)
-                writer.write_object_value("host", @host)
-                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time)
-                writer.write_string_value("name", @name)
+                writer.write_string_value("domain", @domain) unless @domain.nil?
+                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time) unless @first_seen_date_time.nil?
+                writer.write_object_value("host", @host) unless @host.nil?
+                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time) unless @last_seen_date_time.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
             end
         end
     end

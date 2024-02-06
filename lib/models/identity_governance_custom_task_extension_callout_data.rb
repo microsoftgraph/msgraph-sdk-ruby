@@ -55,10 +55,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("subject", @subject)
-                writer.write_object_value("task", @task)
-                writer.write_object_value("taskProcessingresult", @task_processingresult)
-                writer.write_object_value("workflow", @workflow)
+                writer.write_object_value("subject", @subject) unless @subject.nil?
+                writer.write_object_value("task", @task) unless @task.nil?
+                writer.write_object_value("taskProcessingresult", @task_processingresult) unless @task_processingresult.nil?
+                writer.write_object_value("workflow", @workflow) unless @workflow.nil?
             end
             ## 
             ## Gets the subject property value. The subject property

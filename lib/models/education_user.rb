@@ -626,44 +626,44 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("accountEnabled", @account_enabled)
-                writer.write_collection_of_object_values("assignedLicenses", @assigned_licenses)
-                writer.write_collection_of_object_values("assignedPlans", @assigned_plans)
-                writer.write_collection_of_object_values("assignments", @assignments)
-                writer.write_collection_of_primitive_values("businessPhones", @business_phones)
-                writer.write_collection_of_object_values("classes", @classes)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_string_value("department", @department)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_enum_value("externalSource", @external_source)
-                writer.write_string_value("externalSourceDetail", @external_source_detail)
-                writer.write_string_value("givenName", @given_name)
-                writer.write_string_value("mail", @mail)
-                writer.write_string_value("mailNickname", @mail_nickname)
-                writer.write_object_value("mailingAddress", @mailing_address)
-                writer.write_string_value("middleName", @middle_name)
-                writer.write_string_value("mobilePhone", @mobile_phone)
-                writer.write_string_value("officeLocation", @office_location)
-                writer.write_object_value("onPremisesInfo", @on_premises_info)
-                writer.write_string_value("passwordPolicies", @password_policies)
-                writer.write_object_value("passwordProfile", @password_profile)
-                writer.write_string_value("preferredLanguage", @preferred_language)
-                writer.write_enum_value("primaryRole", @primary_role)
-                writer.write_collection_of_object_values("provisionedPlans", @provisioned_plans)
-                writer.write_date_time_value("refreshTokensValidFromDateTime", @refresh_tokens_valid_from_date_time)
-                writer.write_collection_of_object_values("relatedContacts", @related_contacts)
-                writer.write_object_value("residenceAddress", @residence_address)
-                writer.write_collection_of_object_values("rubrics", @rubrics)
-                writer.write_collection_of_object_values("schools", @schools)
-                writer.write_boolean_value("showInAddressList", @show_in_address_list)
-                writer.write_object_value("student", @student)
-                writer.write_string_value("surname", @surname)
-                writer.write_collection_of_object_values("taughtClasses", @taught_classes)
-                writer.write_object_value("teacher", @teacher)
-                writer.write_string_value("usageLocation", @usage_location)
-                writer.write_object_value("user", @user)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_string_value("userType", @user_type)
+                writer.write_boolean_value("accountEnabled", @account_enabled) unless @account_enabled.nil?
+                writer.write_collection_of_object_values("assignedLicenses", @assigned_licenses) unless @assigned_licenses.nil?
+                writer.write_collection_of_object_values("assignedPlans", @assigned_plans) unless @assigned_plans.nil?
+                writer.write_collection_of_object_values("assignments", @assignments) unless @assignments.nil?
+                writer.write_collection_of_primitive_values("businessPhones", @business_phones) unless @business_phones.nil?
+                writer.write_collection_of_object_values("classes", @classes) unless @classes.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_string_value("department", @department) unless @department.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_enum_value("externalSource", @external_source) unless @external_source.nil?
+                writer.write_string_value("externalSourceDetail", @external_source_detail) unless @external_source_detail.nil?
+                writer.write_string_value("givenName", @given_name) unless @given_name.nil?
+                writer.write_string_value("mail", @mail) unless @mail.nil?
+                writer.write_string_value("mailNickname", @mail_nickname) unless @mail_nickname.nil?
+                writer.write_object_value("mailingAddress", @mailing_address) unless @mailing_address.nil?
+                writer.write_string_value("middleName", @middle_name) unless @middle_name.nil?
+                writer.write_string_value("mobilePhone", @mobile_phone) unless @mobile_phone.nil?
+                writer.write_string_value("officeLocation", @office_location) unless @office_location.nil?
+                writer.write_object_value("onPremisesInfo", @on_premises_info) unless @on_premises_info.nil?
+                writer.write_string_value("passwordPolicies", @password_policies) unless @password_policies.nil?
+                writer.write_object_value("passwordProfile", @password_profile) unless @password_profile.nil?
+                writer.write_string_value("preferredLanguage", @preferred_language) unless @preferred_language.nil?
+                writer.write_enum_value("primaryRole", @primary_role) unless @primary_role.nil?
+                writer.write_collection_of_object_values("provisionedPlans", @provisioned_plans) unless @provisioned_plans.nil?
+                writer.write_date_time_value("refreshTokensValidFromDateTime", @refresh_tokens_valid_from_date_time) unless @refresh_tokens_valid_from_date_time.nil?
+                writer.write_collection_of_object_values("relatedContacts", @related_contacts) unless @related_contacts.nil?
+                writer.write_object_value("residenceAddress", @residence_address) unless @residence_address.nil?
+                writer.write_collection_of_object_values("rubrics", @rubrics) unless @rubrics.nil?
+                writer.write_collection_of_object_values("schools", @schools) unless @schools.nil?
+                writer.write_boolean_value("showInAddressList", @show_in_address_list) unless @show_in_address_list.nil?
+                writer.write_object_value("student", @student) unless @student.nil?
+                writer.write_string_value("surname", @surname) unless @surname.nil?
+                writer.write_collection_of_object_values("taughtClasses", @taught_classes) unless @taught_classes.nil?
+                writer.write_object_value("teacher", @teacher) unless @teacher.nil?
+                writer.write_string_value("usageLocation", @usage_location) unless @usage_location.nil?
+                writer.write_object_value("user", @user) unless @user.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
+                writer.write_string_value("userType", @user_type) unless @user_type.nil?
             end
             ## 
             ## Gets the showInAddressList property value. True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.

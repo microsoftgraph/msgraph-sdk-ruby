@@ -200,16 +200,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("closedBy", @closed_by)
-                writer.write_date_time_value("closedDateTime", @closed_date_time)
-                writer.write_collection_of_object_values("custodians", @custodians)
-                writer.write_string_value("externalId", @external_id)
-                writer.write_collection_of_object_values("noncustodialDataSources", @noncustodial_data_sources)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_collection_of_object_values("reviewSets", @review_sets)
-                writer.write_collection_of_object_values("searches", @searches)
-                writer.write_object_value("settings", @settings)
-                writer.write_collection_of_object_values("tags", @tags)
+                writer.write_object_value("closedBy", @closed_by) unless @closed_by.nil?
+                writer.write_date_time_value("closedDateTime", @closed_date_time) unless @closed_date_time.nil?
+                writer.write_collection_of_object_values("custodians", @custodians) unless @custodians.nil?
+                writer.write_string_value("externalId", @external_id) unless @external_id.nil?
+                writer.write_collection_of_object_values("noncustodialDataSources", @noncustodial_data_sources) unless @noncustodial_data_sources.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_collection_of_object_values("reviewSets", @review_sets) unless @review_sets.nil?
+                writer.write_collection_of_object_values("searches", @searches) unless @searches.nil?
+                writer.write_object_value("settings", @settings) unless @settings.nil?
+                writer.write_collection_of_object_values("tags", @tags) unless @tags.nil?
             end
             ## 
             ## Gets the settings property value. Returns a list of eDIscoverySettings objects in the case.

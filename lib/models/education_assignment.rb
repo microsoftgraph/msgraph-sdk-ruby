@@ -488,22 +488,22 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("addToCalendarAction", @add_to_calendar_action)
-                writer.write_enum_value("addedStudentAction", @added_student_action)
-                writer.write_boolean_value("allowLateSubmissions", @allow_late_submissions)
-                writer.write_boolean_value("allowStudentsToAddResourcesToSubmission", @allow_students_to_add_resources_to_submission)
-                writer.write_object_value("assignTo", @assign_to)
-                writer.write_collection_of_object_values("categories", @categories)
-                writer.write_string_value("classId", @class_id)
-                writer.write_date_time_value("closeDateTime", @close_date_time)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("dueDateTime", @due_date_time)
-                writer.write_object_value("grading", @grading)
-                writer.write_object_value("instructions", @instructions)
-                writer.write_string_value("notificationChannelUrl", @notification_channel_url)
-                writer.write_collection_of_object_values("resources", @resources)
-                writer.write_object_value("rubric", @rubric)
-                writer.write_collection_of_object_values("submissions", @submissions)
+                writer.write_enum_value("addToCalendarAction", @add_to_calendar_action) unless @add_to_calendar_action.nil?
+                writer.write_enum_value("addedStudentAction", @added_student_action) unless @added_student_action.nil?
+                writer.write_boolean_value("allowLateSubmissions", @allow_late_submissions) unless @allow_late_submissions.nil?
+                writer.write_boolean_value("allowStudentsToAddResourcesToSubmission", @allow_students_to_add_resources_to_submission) unless @allow_students_to_add_resources_to_submission.nil?
+                writer.write_object_value("assignTo", @assign_to) unless @assign_to.nil?
+                writer.write_collection_of_object_values("categories", @categories) unless @categories.nil?
+                writer.write_string_value("classId", @class_id) unless @class_id.nil?
+                writer.write_date_time_value("closeDateTime", @close_date_time) unless @close_date_time.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("dueDateTime", @due_date_time) unless @due_date_time.nil?
+                writer.write_object_value("grading", @grading) unless @grading.nil?
+                writer.write_object_value("instructions", @instructions) unless @instructions.nil?
+                writer.write_string_value("notificationChannelUrl", @notification_channel_url) unless @notification_channel_url.nil?
+                writer.write_collection_of_object_values("resources", @resources) unless @resources.nil?
+                writer.write_object_value("rubric", @rubric) unless @rubric.nil?
+                writer.write_collection_of_object_values("submissions", @submissions) unless @submissions.nil?
             end
             ## 
             ## Gets the status property value. Status of the Assignment.  You can't PATCH this value.  Possible values are: draft, scheduled, published, assigned.

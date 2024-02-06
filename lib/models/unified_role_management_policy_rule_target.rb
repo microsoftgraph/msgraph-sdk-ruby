@@ -173,14 +173,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("caller", @caller)
-                writer.write_collection_of_primitive_values("enforcedSettings", @enforced_settings)
-                writer.write_collection_of_primitive_values("inheritableSettings", @inheritable_settings)
-                writer.write_string_value("level", @level)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_collection_of_object_values("targetObjects", @target_objects)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("caller", @caller) unless @caller.nil?
+                writer.write_collection_of_primitive_values("enforcedSettings", @enforced_settings) unless @enforced_settings.nil?
+                writer.write_collection_of_primitive_values("inheritableSettings", @inheritable_settings) unless @inheritable_settings.nil?
+                writer.write_string_value("level", @level) unless @level.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_collection_of_object_values("targetObjects", @target_objects) unless @target_objects.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the targetObjects property value. The targetObjects property

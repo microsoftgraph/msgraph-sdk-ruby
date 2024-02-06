@@ -623,40 +623,40 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("attestationIdentityKey", @attestation_identity_key)
-                writer.write_string_value("bitLockerStatus", @bit_locker_status)
-                writer.write_string_value("bootAppSecurityVersion", @boot_app_security_version)
-                writer.write_string_value("bootDebugging", @boot_debugging)
-                writer.write_string_value("bootManagerSecurityVersion", @boot_manager_security_version)
-                writer.write_string_value("bootManagerVersion", @boot_manager_version)
-                writer.write_string_value("bootRevisionListInfo", @boot_revision_list_info)
-                writer.write_string_value("codeIntegrity", @code_integrity)
-                writer.write_string_value("codeIntegrityCheckVersion", @code_integrity_check_version)
-                writer.write_string_value("codeIntegrityPolicy", @code_integrity_policy)
-                writer.write_string_value("contentNamespaceUrl", @content_namespace_url)
-                writer.write_string_value("contentVersion", @content_version)
-                writer.write_string_value("dataExcutionPolicy", @data_excution_policy)
-                writer.write_string_value("deviceHealthAttestationStatus", @device_health_attestation_status)
-                writer.write_string_value("earlyLaunchAntiMalwareDriverProtection", @early_launch_anti_malware_driver_protection)
-                writer.write_string_value("healthAttestationSupportedStatus", @health_attestation_supported_status)
-                writer.write_string_value("healthStatusMismatchInfo", @health_status_mismatch_info)
-                writer.write_date_time_value("issuedDateTime", @issued_date_time)
-                writer.write_string_value("lastUpdateDateTime", @last_update_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("operatingSystemKernelDebugging", @operating_system_kernel_debugging)
-                writer.write_string_value("operatingSystemRevListInfo", @operating_system_rev_list_info)
-                writer.write_string_value("pcrHashAlgorithm", @pcr_hash_algorithm)
+                writer.write_string_value("attestationIdentityKey", @attestation_identity_key) unless @attestation_identity_key.nil?
+                writer.write_string_value("bitLockerStatus", @bit_locker_status) unless @bit_locker_status.nil?
+                writer.write_string_value("bootAppSecurityVersion", @boot_app_security_version) unless @boot_app_security_version.nil?
+                writer.write_string_value("bootDebugging", @boot_debugging) unless @boot_debugging.nil?
+                writer.write_string_value("bootManagerSecurityVersion", @boot_manager_security_version) unless @boot_manager_security_version.nil?
+                writer.write_string_value("bootManagerVersion", @boot_manager_version) unless @boot_manager_version.nil?
+                writer.write_string_value("bootRevisionListInfo", @boot_revision_list_info) unless @boot_revision_list_info.nil?
+                writer.write_string_value("codeIntegrity", @code_integrity) unless @code_integrity.nil?
+                writer.write_string_value("codeIntegrityCheckVersion", @code_integrity_check_version) unless @code_integrity_check_version.nil?
+                writer.write_string_value("codeIntegrityPolicy", @code_integrity_policy) unless @code_integrity_policy.nil?
+                writer.write_string_value("contentNamespaceUrl", @content_namespace_url) unless @content_namespace_url.nil?
+                writer.write_string_value("contentVersion", @content_version) unless @content_version.nil?
+                writer.write_string_value("dataExcutionPolicy", @data_excution_policy) unless @data_excution_policy.nil?
+                writer.write_string_value("deviceHealthAttestationStatus", @device_health_attestation_status) unless @device_health_attestation_status.nil?
+                writer.write_string_value("earlyLaunchAntiMalwareDriverProtection", @early_launch_anti_malware_driver_protection) unless @early_launch_anti_malware_driver_protection.nil?
+                writer.write_string_value("healthAttestationSupportedStatus", @health_attestation_supported_status) unless @health_attestation_supported_status.nil?
+                writer.write_string_value("healthStatusMismatchInfo", @health_status_mismatch_info) unless @health_status_mismatch_info.nil?
+                writer.write_date_time_value("issuedDateTime", @issued_date_time) unless @issued_date_time.nil?
+                writer.write_string_value("lastUpdateDateTime", @last_update_date_time) unless @last_update_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("operatingSystemKernelDebugging", @operating_system_kernel_debugging) unless @operating_system_kernel_debugging.nil?
+                writer.write_string_value("operatingSystemRevListInfo", @operating_system_rev_list_info) unless @operating_system_rev_list_info.nil?
+                writer.write_string_value("pcrHashAlgorithm", @pcr_hash_algorithm) unless @pcr_hash_algorithm.nil?
                 writer.write_string_value("pcr0", @pcr0)
-                writer.write_object_value("resetCount", @reset_count)
-                writer.write_object_value("restartCount", @restart_count)
-                writer.write_string_value("safeMode", @safe_mode)
-                writer.write_string_value("secureBoot", @secure_boot)
-                writer.write_string_value("secureBootConfigurationPolicyFingerPrint", @secure_boot_configuration_policy_finger_print)
-                writer.write_string_value("testSigning", @test_signing)
-                writer.write_string_value("tpmVersion", @tpm_version)
-                writer.write_string_value("virtualSecureMode", @virtual_secure_mode)
-                writer.write_string_value("windowsPE", @windows_p_e)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("resetCount", @reset_count) unless @reset_count.nil?
+                writer.write_object_value("restartCount", @restart_count) unless @restart_count.nil?
+                writer.write_string_value("safeMode", @safe_mode) unless @safe_mode.nil?
+                writer.write_string_value("secureBoot", @secure_boot) unless @secure_boot.nil?
+                writer.write_string_value("secureBootConfigurationPolicyFingerPrint", @secure_boot_configuration_policy_finger_print) unless @secure_boot_configuration_policy_finger_print.nil?
+                writer.write_string_value("testSigning", @test_signing) unless @test_signing.nil?
+                writer.write_string_value("tpmVersion", @tpm_version) unless @tpm_version.nil?
+                writer.write_string_value("virtualSecureMode", @virtual_secure_mode) unless @virtual_secure_mode.nil?
+                writer.write_string_value("windowsPE", @windows_p_e) unless @windows_p_e.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the testSigning property value. When test signing is allowed, the device does not enforce signature validation during boot

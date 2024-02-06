@@ -173,13 +173,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_guid_value("appRoleId", @app_role_id)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("principalDisplayName", @principal_display_name)
-                writer.write_guid_value("principalId", @principal_id)
-                writer.write_string_value("principalType", @principal_type)
-                writer.write_string_value("resourceDisplayName", @resource_display_name)
-                writer.write_guid_value("resourceId", @resource_id)
+                writer.write_guid_value("appRoleId", @app_role_id) unless @app_role_id.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("principalDisplayName", @principal_display_name) unless @principal_display_name.nil?
+                writer.write_guid_value("principalId", @principal_id) unless @principal_id.nil?
+                writer.write_string_value("principalType", @principal_type) unless @principal_type.nil?
+                writer.write_string_value("resourceDisplayName", @resource_display_name) unless @resource_display_name.nil?
+                writer.write_guid_value("resourceId", @resource_id) unless @resource_id.nil?
             end
         end
     end

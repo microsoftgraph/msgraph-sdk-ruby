@@ -122,12 +122,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("nameTarget", @name_target)
-                writer.write_number_value("port", @port)
-                writer.write_number_value("priority", @priority)
-                writer.write_string_value("protocol", @protocol)
-                writer.write_string_value("service", @service)
-                writer.write_number_value("weight", @weight)
+                writer.write_string_value("nameTarget", @name_target) unless @name_target.nil?
+                writer.write_number_value("port", @port) unless @port.nil?
+                writer.write_number_value("priority", @priority) unless @priority.nil?
+                writer.write_string_value("protocol", @protocol) unless @protocol.nil?
+                writer.write_string_value("service", @service) unless @service.nil?
+                writer.write_number_value("weight", @weight) unless @weight.nil?
             end
             ## 
             ## Gets the service property value. Value to use when configuring the service property of the SRV record at the DNS host.

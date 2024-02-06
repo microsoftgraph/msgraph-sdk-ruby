@@ -98,9 +98,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appStoreUrl", @app_store_url)
-                writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system)
-                writer.write_string_value("packageId", @package_id)
+                writer.write_string_value("appStoreUrl", @app_store_url) unless @app_store_url.nil?
+                writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system) unless @minimum_supported_operating_system.nil?
+                writer.write_string_value("packageId", @package_id) unless @package_id.nil?
             end
         end
     end

@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("accessToken", @access_token)
-                writer.write_collection_of_object_values("idToken", @id_token)
-                writer.write_string_value("@odata.type", @odata_type)
+                writer.write_collection_of_object_values("accessToken", @access_token) unless @access_token.nil?
+                writer.write_collection_of_object_values("idToken", @id_token) unless @id_token.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
                 writer.write_collection_of_object_values("saml2Token", @saml2_token)
-                writer.write_additional_data(@additional_data)
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

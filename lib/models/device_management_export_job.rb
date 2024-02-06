@@ -186,16 +186,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_string_value("filter", @filter)
-                writer.write_enum_value("format", @format)
-                writer.write_enum_value("localizationType", @localization_type)
-                writer.write_string_value("reportName", @report_name)
-                writer.write_date_time_value("requestDateTime", @request_date_time)
-                writer.write_collection_of_primitive_values("select", @select)
-                writer.write_string_value("snapshotId", @snapshot_id)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("url", @url)
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_string_value("filter", @filter) unless @filter.nil?
+                writer.write_enum_value("format", @format) unless @format.nil?
+                writer.write_enum_value("localizationType", @localization_type) unless @localization_type.nil?
+                writer.write_string_value("reportName", @report_name) unless @report_name.nil?
+                writer.write_date_time_value("requestDateTime", @request_date_time) unless @request_date_time.nil?
+                writer.write_collection_of_primitive_values("select", @select) unless @select.nil?
+                writer.write_string_value("snapshotId", @snapshot_id) unless @snapshot_id.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("url", @url) unless @url.nil?
             end
             ## 
             ## Gets the snapshotId property value. A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.

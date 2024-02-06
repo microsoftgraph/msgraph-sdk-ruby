@@ -477,33 +477,33 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("allowAttendeeToEnableCamera", @allow_attendee_to_enable_camera)
-                writer.write_boolean_value("allowAttendeeToEnableMic", @allow_attendee_to_enable_mic)
-                writer.write_enum_value("allowMeetingChat", @allow_meeting_chat)
-                writer.write_boolean_value("allowParticipantsToChangeName", @allow_participants_to_change_name)
-                writer.write_boolean_value("allowTeamworkReactions", @allow_teamwork_reactions)
-                writer.write_enum_value("allowedPresenters", @allowed_presenters)
-                writer.write_collection_of_object_values("attendanceReports", @attendance_reports)
-                writer.write_object_value("attendeeReport", @attendee_report)
-                writer.write_object_value("audioConferencing", @audio_conferencing)
-                writer.write_object_value("broadcastSettings", @broadcast_settings)
-                writer.write_object_value("chatInfo", @chat_info)
-                writer.write_date_time_value("creationDateTime", @creation_date_time)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_string_value("externalId", @external_id)
-                writer.write_boolean_value("isBroadcast", @is_broadcast)
-                writer.write_boolean_value("isEntryExitAnnounced", @is_entry_exit_announced)
-                writer.write_object_value("joinInformation", @join_information)
-                writer.write_object_value("joinMeetingIdSettings", @join_meeting_id_settings)
-                writer.write_string_value("joinWebUrl", @join_web_url)
-                writer.write_object_value("lobbyBypassSettings", @lobby_bypass_settings)
-                writer.write_object_value("participants", @participants)
-                writer.write_boolean_value("recordAutomatically", @record_automatically)
-                writer.write_enum_value("shareMeetingChatHistoryDefault", @share_meeting_chat_history_default)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_string_value("subject", @subject)
-                writer.write_string_value("videoTeleconferenceId", @video_teleconference_id)
-                writer.write_object_value("watermarkProtection", @watermark_protection)
+                writer.write_boolean_value("allowAttendeeToEnableCamera", @allow_attendee_to_enable_camera) unless @allow_attendee_to_enable_camera.nil?
+                writer.write_boolean_value("allowAttendeeToEnableMic", @allow_attendee_to_enable_mic) unless @allow_attendee_to_enable_mic.nil?
+                writer.write_enum_value("allowMeetingChat", @allow_meeting_chat) unless @allow_meeting_chat.nil?
+                writer.write_boolean_value("allowParticipantsToChangeName", @allow_participants_to_change_name) unless @allow_participants_to_change_name.nil?
+                writer.write_boolean_value("allowTeamworkReactions", @allow_teamwork_reactions) unless @allow_teamwork_reactions.nil?
+                writer.write_enum_value("allowedPresenters", @allowed_presenters) unless @allowed_presenters.nil?
+                writer.write_collection_of_object_values("attendanceReports", @attendance_reports) unless @attendance_reports.nil?
+                writer.write_object_value("attendeeReport", @attendee_report) unless @attendee_report.nil?
+                writer.write_object_value("audioConferencing", @audio_conferencing) unless @audio_conferencing.nil?
+                writer.write_object_value("broadcastSettings", @broadcast_settings) unless @broadcast_settings.nil?
+                writer.write_object_value("chatInfo", @chat_info) unless @chat_info.nil?
+                writer.write_date_time_value("creationDateTime", @creation_date_time) unless @creation_date_time.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_string_value("externalId", @external_id) unless @external_id.nil?
+                writer.write_boolean_value("isBroadcast", @is_broadcast) unless @is_broadcast.nil?
+                writer.write_boolean_value("isEntryExitAnnounced", @is_entry_exit_announced) unless @is_entry_exit_announced.nil?
+                writer.write_object_value("joinInformation", @join_information) unless @join_information.nil?
+                writer.write_object_value("joinMeetingIdSettings", @join_meeting_id_settings) unless @join_meeting_id_settings.nil?
+                writer.write_string_value("joinWebUrl", @join_web_url) unless @join_web_url.nil?
+                writer.write_object_value("lobbyBypassSettings", @lobby_bypass_settings) unless @lobby_bypass_settings.nil?
+                writer.write_object_value("participants", @participants) unless @participants.nil?
+                writer.write_boolean_value("recordAutomatically", @record_automatically) unless @record_automatically.nil?
+                writer.write_enum_value("shareMeetingChatHistoryDefault", @share_meeting_chat_history_default) unless @share_meeting_chat_history_default.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_string_value("subject", @subject) unless @subject.nil?
+                writer.write_string_value("videoTeleconferenceId", @video_teleconference_id) unless @video_teleconference_id.nil?
+                writer.write_object_value("watermarkProtection", @watermark_protection) unless @watermark_protection.nil?
             end
             ## 
             ## Gets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants. Possible values are: all, none, unknownFutureValue.

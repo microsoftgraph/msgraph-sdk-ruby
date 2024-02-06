@@ -174,13 +174,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("applicableArchitectures", @applicable_architectures)
-                writer.write_string_value("identityName", @identity_name)
-                writer.write_string_value("identityPublisherHash", @identity_publisher_hash)
-                writer.write_string_value("identityResourceIdentifier", @identity_resource_identifier)
-                writer.write_string_value("identityVersion", @identity_version)
-                writer.write_boolean_value("isBundle", @is_bundle)
-                writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system)
+                writer.write_enum_value("applicableArchitectures", @applicable_architectures) unless @applicable_architectures.nil?
+                writer.write_string_value("identityName", @identity_name) unless @identity_name.nil?
+                writer.write_string_value("identityPublisherHash", @identity_publisher_hash) unless @identity_publisher_hash.nil?
+                writer.write_string_value("identityResourceIdentifier", @identity_resource_identifier) unless @identity_resource_identifier.nil?
+                writer.write_string_value("identityVersion", @identity_version) unless @identity_version.nil?
+                writer.write_boolean_value("isBundle", @is_bundle) unless @is_bundle.nil?
+                writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system) unless @minimum_supported_operating_system.nil?
             end
         end
     end

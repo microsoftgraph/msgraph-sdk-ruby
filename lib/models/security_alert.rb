@@ -485,35 +485,35 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("actorDisplayName", @actor_display_name)
-                writer.write_string_value("alertPolicyId", @alert_policy_id)
-                writer.write_string_value("alertWebUrl", @alert_web_url)
-                writer.write_string_value("assignedTo", @assigned_to)
-                writer.write_string_value("category", @category)
-                writer.write_enum_value("classification", @classification)
-                writer.write_collection_of_object_values("comments", @comments)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_enum_value("detectionSource", @detection_source)
-                writer.write_string_value("detectorId", @detector_id)
-                writer.write_enum_value("determination", @determination)
-                writer.write_collection_of_object_values("evidence", @evidence)
-                writer.write_date_time_value("firstActivityDateTime", @first_activity_date_time)
-                writer.write_string_value("incidentId", @incident_id)
-                writer.write_string_value("incidentWebUrl", @incident_web_url)
-                writer.write_date_time_value("lastActivityDateTime", @last_activity_date_time)
-                writer.write_date_time_value("lastUpdateDateTime", @last_update_date_time)
-                writer.write_collection_of_primitive_values("mitreTechniques", @mitre_techniques)
-                writer.write_string_value("providerAlertId", @provider_alert_id)
-                writer.write_string_value("recommendedActions", @recommended_actions)
-                writer.write_date_time_value("resolvedDateTime", @resolved_date_time)
-                writer.write_enum_value("serviceSource", @service_source)
-                writer.write_enum_value("severity", @severity)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("tenantId", @tenant_id)
-                writer.write_string_value("threatDisplayName", @threat_display_name)
-                writer.write_string_value("threatFamilyName", @threat_family_name)
-                writer.write_string_value("title", @title)
+                writer.write_string_value("actorDisplayName", @actor_display_name) unless @actor_display_name.nil?
+                writer.write_string_value("alertPolicyId", @alert_policy_id) unless @alert_policy_id.nil?
+                writer.write_string_value("alertWebUrl", @alert_web_url) unless @alert_web_url.nil?
+                writer.write_string_value("assignedTo", @assigned_to) unless @assigned_to.nil?
+                writer.write_string_value("category", @category) unless @category.nil?
+                writer.write_enum_value("classification", @classification) unless @classification.nil?
+                writer.write_collection_of_object_values("comments", @comments) unless @comments.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_enum_value("detectionSource", @detection_source) unless @detection_source.nil?
+                writer.write_string_value("detectorId", @detector_id) unless @detector_id.nil?
+                writer.write_enum_value("determination", @determination) unless @determination.nil?
+                writer.write_collection_of_object_values("evidence", @evidence) unless @evidence.nil?
+                writer.write_date_time_value("firstActivityDateTime", @first_activity_date_time) unless @first_activity_date_time.nil?
+                writer.write_string_value("incidentId", @incident_id) unless @incident_id.nil?
+                writer.write_string_value("incidentWebUrl", @incident_web_url) unless @incident_web_url.nil?
+                writer.write_date_time_value("lastActivityDateTime", @last_activity_date_time) unless @last_activity_date_time.nil?
+                writer.write_date_time_value("lastUpdateDateTime", @last_update_date_time) unless @last_update_date_time.nil?
+                writer.write_collection_of_primitive_values("mitreTechniques", @mitre_techniques) unless @mitre_techniques.nil?
+                writer.write_string_value("providerAlertId", @provider_alert_id) unless @provider_alert_id.nil?
+                writer.write_string_value("recommendedActions", @recommended_actions) unless @recommended_actions.nil?
+                writer.write_date_time_value("resolvedDateTime", @resolved_date_time) unless @resolved_date_time.nil?
+                writer.write_enum_value("serviceSource", @service_source) unless @service_source.nil?
+                writer.write_enum_value("severity", @severity) unless @severity.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
+                writer.write_string_value("threatDisplayName", @threat_display_name) unless @threat_display_name.nil?
+                writer.write_string_value("threatFamilyName", @threat_family_name) unless @threat_family_name.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
             end
             ## 
             ## Gets the serviceSource property value. The serviceSource property

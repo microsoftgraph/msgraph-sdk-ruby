@@ -190,14 +190,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("category", @category)
-                writer.write_enum_value("contentType", @content_type)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_enum_value("expectedAssessment", @expected_assessment)
-                writer.write_enum_value("requestSource", @request_source)
-                writer.write_collection_of_object_values("results", @results)
-                writer.write_enum_value("status", @status)
+                writer.write_enum_value("category", @category) unless @category.nil?
+                writer.write_enum_value("contentType", @content_type) unless @content_type.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_enum_value("expectedAssessment", @expected_assessment) unless @expected_assessment.nil?
+                writer.write_enum_value("requestSource", @request_source) unless @request_source.nil?
+                writer.write_collection_of_object_values("results", @results) unless @results.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The assessment process status. Possible values are: pending, completed.

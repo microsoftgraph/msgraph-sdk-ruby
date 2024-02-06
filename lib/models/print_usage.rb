@@ -228,17 +228,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("blackAndWhitePageCount", @black_and_white_page_count)
-                writer.write_object_value("colorPageCount", @color_page_count)
-                writer.write_object_value("completedBlackAndWhiteJobCount", @completed_black_and_white_job_count)
-                writer.write_object_value("completedColorJobCount", @completed_color_job_count)
-                writer.write_object_value("completedJobCount", @completed_job_count)
-                writer.write_object_value("doubleSidedSheetCount", @double_sided_sheet_count)
-                writer.write_object_value("incompleteJobCount", @incomplete_job_count)
-                writer.write_object_value("mediaSheetCount", @media_sheet_count)
-                writer.write_object_value("pageCount", @page_count)
-                writer.write_object_value("singleSidedSheetCount", @single_sided_sheet_count)
-                writer.write_date_value("usageDate", @usage_date)
+                writer.write_object_value("blackAndWhitePageCount", @black_and_white_page_count) unless @black_and_white_page_count.nil?
+                writer.write_object_value("colorPageCount", @color_page_count) unless @color_page_count.nil?
+                writer.write_object_value("completedBlackAndWhiteJobCount", @completed_black_and_white_job_count) unless @completed_black_and_white_job_count.nil?
+                writer.write_object_value("completedColorJobCount", @completed_color_job_count) unless @completed_color_job_count.nil?
+                writer.write_object_value("completedJobCount", @completed_job_count) unless @completed_job_count.nil?
+                writer.write_object_value("doubleSidedSheetCount", @double_sided_sheet_count) unless @double_sided_sheet_count.nil?
+                writer.write_object_value("incompleteJobCount", @incomplete_job_count) unless @incomplete_job_count.nil?
+                writer.write_object_value("mediaSheetCount", @media_sheet_count) unless @media_sheet_count.nil?
+                writer.write_object_value("pageCount", @page_count) unless @page_count.nil?
+                writer.write_object_value("singleSidedSheetCount", @single_sided_sheet_count) unless @single_sided_sheet_count.nil?
+                writer.write_date_value("usageDate", @usage_date) unless @usage_date.nil?
             end
             ## 
             ## Gets the singleSidedSheetCount property value. The singleSidedSheetCount property

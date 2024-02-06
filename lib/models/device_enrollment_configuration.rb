@@ -171,13 +171,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("assignments", @assignments)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_number_value("priority", @priority)
-                writer.write_number_value("version", @version)
+                writer.write_collection_of_object_values("assignments", @assignments) unless @assignments.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_number_value("priority", @priority) unless @priority.nil?
+                writer.write_number_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the version property value. The version of the device enrollment configuration

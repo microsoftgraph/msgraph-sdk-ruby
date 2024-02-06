@@ -314,23 +314,23 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("aggregationFilters", @aggregation_filters)
-                writer.write_collection_of_object_values("aggregations", @aggregations)
-                writer.write_collection_of_object_values("collapseProperties", @collapse_properties)
-                writer.write_collection_of_primitive_values("contentSources", @content_sources)
-                writer.write_boolean_value("enableTopResults", @enable_top_results)
-                writer.write_collection_of_object_values("entityTypes", @entity_types)
-                writer.write_collection_of_primitive_values("fields", @fields)
-                writer.write_number_value("from", @from)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("query", @query)
-                writer.write_object_value("queryAlterationOptions", @query_alteration_options)
-                writer.write_string_value("region", @region)
-                writer.write_object_value("resultTemplateOptions", @result_template_options)
-                writer.write_object_value("sharePointOneDriveOptions", @share_point_one_drive_options)
-                writer.write_number_value("size", @size)
-                writer.write_collection_of_object_values("sortProperties", @sort_properties)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("aggregationFilters", @aggregation_filters) unless @aggregation_filters.nil?
+                writer.write_collection_of_object_values("aggregations", @aggregations) unless @aggregations.nil?
+                writer.write_collection_of_object_values("collapseProperties", @collapse_properties) unless @collapse_properties.nil?
+                writer.write_collection_of_primitive_values("contentSources", @content_sources) unless @content_sources.nil?
+                writer.write_boolean_value("enableTopResults", @enable_top_results) unless @enable_top_results.nil?
+                writer.write_collection_of_object_values("entityTypes", @entity_types) unless @entity_types.nil?
+                writer.write_collection_of_primitive_values("fields", @fields) unless @fields.nil?
+                writer.write_number_value("from", @from) unless @from.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("query", @query) unless @query.nil?
+                writer.write_object_value("queryAlterationOptions", @query_alteration_options) unless @query_alteration_options.nil?
+                writer.write_string_value("region", @region) unless @region.nil?
+                writer.write_object_value("resultTemplateOptions", @result_template_options) unless @result_template_options.nil?
+                writer.write_object_value("sharePointOneDriveOptions", @share_point_one_drive_options) unless @share_point_one_drive_options.nil?
+                writer.write_number_value("size", @size) unless @size.nil?
+                writer.write_collection_of_object_values("sortProperties", @sort_properties) unless @sort_properties.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sharePointOneDriveOptions property value. Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.

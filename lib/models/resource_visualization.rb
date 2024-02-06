@@ -196,16 +196,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("containerDisplayName", @container_display_name)
-                writer.write_string_value("containerType", @container_type)
-                writer.write_string_value("containerWebUrl", @container_web_url)
-                writer.write_string_value("mediaType", @media_type)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("previewImageUrl", @preview_image_url)
-                writer.write_string_value("previewText", @preview_text)
-                writer.write_string_value("title", @title)
-                writer.write_string_value("type", @type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("containerDisplayName", @container_display_name) unless @container_display_name.nil?
+                writer.write_string_value("containerType", @container_type) unless @container_type.nil?
+                writer.write_string_value("containerWebUrl", @container_web_url) unless @container_web_url.nil?
+                writer.write_string_value("mediaType", @media_type) unless @media_type.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("previewImageUrl", @preview_image_url) unless @preview_image_url.nil?
+                writer.write_string_value("previewText", @preview_text) unless @preview_text.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
+                writer.write_string_value("type", @type) unless @type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the title property value. The item's title text.

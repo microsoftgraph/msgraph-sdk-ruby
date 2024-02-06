@@ -43,7 +43,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("skypeId", @skype_id)
+                writer.write_string_value("skypeId", @skype_id) unless @skype_id.nil?
             end
             ## 
             ## Gets the skypeId property value. Skype ID of the user.

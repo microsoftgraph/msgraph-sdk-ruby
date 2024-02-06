@@ -58,7 +58,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("rule", @rule)
+                writer.write_string_value("rule", @rule) unless @rule.nil?
             end
         end
     end

@@ -43,7 +43,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("token", @token)
+                writer.write_string_value("token", @token) unless @token.nil?
             end
             ## 
             ## Gets the token property value. The token used to join the call.

@@ -57,7 +57,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("isUsableForSignIn", @is_usable_for_sign_in)
+                writer.write_boolean_value("isUsableForSignIn", @is_usable_for_sign_in) unless @is_usable_for_sign_in.nil?
             end
         end
     end

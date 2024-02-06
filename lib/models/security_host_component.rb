@@ -139,12 +139,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("category", @category)
-                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time)
-                writer.write_object_value("host", @host)
-                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("version", @version)
+                writer.write_string_value("category", @category) unless @category.nil?
+                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time) unless @first_seen_date_time.nil?
+                writer.write_object_value("host", @host) unless @host.nil?
+                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time) unless @last_seen_date_time.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the version property value. The component version running on the artifact, for example, v8.5. This should not be assumed to be strictly numerical.

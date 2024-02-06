@@ -122,12 +122,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_number_value("memberCount", @member_count)
-                writer.write_collection_of_object_values("members", @members)
-                writer.write_enum_value("tagType", @tag_type)
-                writer.write_string_value("teamId", @team_id)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_number_value("memberCount", @member_count) unless @member_count.nil?
+                writer.write_collection_of_object_values("members", @members) unless @members.nil?
+                writer.write_enum_value("tagType", @tag_type) unless @tag_type.nil?
+                writer.write_string_value("teamId", @team_id) unless @team_id.nil?
             end
             ## 
             ## Gets the tagType property value. The type of the tag. Default is standard.

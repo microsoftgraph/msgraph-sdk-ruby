@@ -80,9 +80,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("jobs", @jobs)
-                writer.write_collection_of_object_values("secrets", @secrets)
-                writer.write_collection_of_object_values("templates", @templates)
+                writer.write_collection_of_object_values("jobs", @jobs) unless @jobs.nil?
+                writer.write_collection_of_object_values("secrets", @secrets) unless @secrets.nil?
+                writer.write_collection_of_object_values("templates", @templates) unless @templates.nil?
             end
             ## 
             ## Gets the templates property value. Pre-configured synchronization settings for a particular application.

@@ -120,12 +120,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("operation", @operation)
-                writer.write_string_value("property", @property)
-                writer.write_collection_of_primitive_values("values", @values)
-                writer.write_enum_value("valuesJoinedBy", @values_joined_by)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("operation", @operation) unless @operation.nil?
+                writer.write_string_value("property", @property) unless @property.nil?
+                writer.write_collection_of_primitive_values("values", @values) unless @values.nil?
+                writer.write_enum_value("valuesJoinedBy", @values_joined_by) unless @values_joined_by.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the values property value. A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.

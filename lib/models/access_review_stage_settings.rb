@@ -211,16 +211,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("decisionsThatWillMoveToNextStage", @decisions_that_will_move_to_next_stage)
-                writer.write_collection_of_primitive_values("dependsOn", @depends_on)
-                writer.write_number_value("durationInDays", @duration_in_days)
-                writer.write_collection_of_object_values("fallbackReviewers", @fallback_reviewers)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("recommendationInsightSettings", @recommendation_insight_settings)
-                writer.write_boolean_value("recommendationsEnabled", @recommendations_enabled)
-                writer.write_collection_of_object_values("reviewers", @reviewers)
-                writer.write_string_value("stageId", @stage_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("decisionsThatWillMoveToNextStage", @decisions_that_will_move_to_next_stage) unless @decisions_that_will_move_to_next_stage.nil?
+                writer.write_collection_of_primitive_values("dependsOn", @depends_on) unless @depends_on.nil?
+                writer.write_number_value("durationInDays", @duration_in_days) unless @duration_in_days.nil?
+                writer.write_collection_of_object_values("fallbackReviewers", @fallback_reviewers) unless @fallback_reviewers.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("recommendationInsightSettings", @recommendation_insight_settings) unless @recommendation_insight_settings.nil?
+                writer.write_boolean_value("recommendationsEnabled", @recommendations_enabled) unless @recommendations_enabled.nil?
+                writer.write_collection_of_object_values("reviewers", @reviewers) unless @reviewers.nil?
+                writer.write_string_value("stageId", @stage_id) unless @stage_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the stageId property value. Unique identifier of the accessReviewStageSettings object. The stageId will be used by the dependsOn property to indicate the order of the stages. Required.

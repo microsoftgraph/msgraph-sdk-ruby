@@ -195,15 +195,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowRedirect", @allow_redirect)
-                writer.write_string_value("comment", @comment)
-                writer.write_enum_value("compatibilityMode", @compatibility_mode)
-                writer.write_object_value("lastModifiedBy", @last_modified_by)
-                writer.write_enum_value("mergeType", @merge_type)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_date_time_value("publishedDateTime", @published_date_time)
-                writer.write_enum_value("targetEnvironment", @target_environment)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowRedirect", @allow_redirect) unless @allow_redirect.nil?
+                writer.write_string_value("comment", @comment) unless @comment.nil?
+                writer.write_enum_value("compatibilityMode", @compatibility_mode) unless @compatibility_mode.nil?
+                writer.write_object_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_enum_value("mergeType", @merge_type) unless @merge_type.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_date_time_value("publishedDateTime", @published_date_time) unless @published_date_time.nil?
+                writer.write_enum_value("targetEnvironment", @target_environment) unless @target_environment.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the targetEnvironment property value. The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.

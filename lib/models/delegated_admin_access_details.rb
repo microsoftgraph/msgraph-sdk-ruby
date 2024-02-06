@@ -78,9 +78,9 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("unifiedRoles", @unified_roles)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("unifiedRoles", @unified_roles) unless @unified_roles.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the unifiedRoles property value. The directory roles that the Microsoft partner is assigned in the customer tenant.

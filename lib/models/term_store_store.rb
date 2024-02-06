@@ -99,10 +99,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("defaultLanguageTag", @default_language_tag)
-                writer.write_collection_of_object_values("groups", @groups)
-                writer.write_collection_of_primitive_values("languageTags", @language_tags)
-                writer.write_collection_of_object_values("sets", @sets)
+                writer.write_string_value("defaultLanguageTag", @default_language_tag) unless @default_language_tag.nil?
+                writer.write_collection_of_object_values("groups", @groups) unless @groups.nil?
+                writer.write_collection_of_primitive_values("languageTags", @language_tags) unless @language_tags.nil?
+                writer.write_collection_of_object_values("sets", @sets) unless @sets.nil?
             end
             ## 
             ## Gets the sets property value. Collection of all sets available in the term store. This relationship can only be used to load a specific term set.

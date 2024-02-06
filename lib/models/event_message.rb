@@ -209,16 +209,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("endDateTime", @end_date_time)
-                writer.write_object_value("event", @event)
-                writer.write_boolean_value("isAllDay", @is_all_day)
-                writer.write_boolean_value("isDelegated", @is_delegated)
-                writer.write_boolean_value("isOutOfDate", @is_out_of_date)
-                writer.write_object_value("location", @location)
-                writer.write_enum_value("meetingMessageType", @meeting_message_type)
-                writer.write_object_value("recurrence", @recurrence)
-                writer.write_object_value("startDateTime", @start_date_time)
-                writer.write_enum_value("type", @type)
+                writer.write_object_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_object_value("event", @event) unless @event.nil?
+                writer.write_boolean_value("isAllDay", @is_all_day) unless @is_all_day.nil?
+                writer.write_boolean_value("isDelegated", @is_delegated) unless @is_delegated.nil?
+                writer.write_boolean_value("isOutOfDate", @is_out_of_date) unless @is_out_of_date.nil?
+                writer.write_object_value("location", @location) unless @location.nil?
+                writer.write_enum_value("meetingMessageType", @meeting_message_type) unless @meeting_message_type.nil?
+                writer.write_object_value("recurrence", @recurrence) unless @recurrence.nil?
+                writer.write_object_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
             end
             ## 
             ## Gets the startDateTime property value. The startDateTime property

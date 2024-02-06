@@ -136,11 +136,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("assetTagTemplate", @asset_tag_template)
-                writer.write_collection_of_object_values("homeScreenDockIcons", @home_screen_dock_icons)
-                writer.write_collection_of_object_values("homeScreenPages", @home_screen_pages)
-                writer.write_string_value("lockScreenFootnote", @lock_screen_footnote)
-                writer.write_collection_of_object_values("notificationSettings", @notification_settings)
+                writer.write_string_value("assetTagTemplate", @asset_tag_template) unless @asset_tag_template.nil?
+                writer.write_collection_of_object_values("homeScreenDockIcons", @home_screen_dock_icons) unless @home_screen_dock_icons.nil?
+                writer.write_collection_of_object_values("homeScreenPages", @home_screen_pages) unless @home_screen_pages.nil?
+                writer.write_string_value("lockScreenFootnote", @lock_screen_footnote) unless @lock_screen_footnote.nil?
+                writer.write_collection_of_object_values("notificationSettings", @notification_settings) unless @notification_settings.nil?
             end
         end
     end

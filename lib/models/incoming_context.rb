@@ -120,12 +120,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("observedParticipantId", @observed_participant_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("onBehalfOf", @on_behalf_of)
-                writer.write_string_value("sourceParticipantId", @source_participant_id)
-                writer.write_object_value("transferor", @transferor)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("observedParticipantId", @observed_participant_id) unless @observed_participant_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("onBehalfOf", @on_behalf_of) unless @on_behalf_of.nil?
+                writer.write_string_value("sourceParticipantId", @source_participant_id) unless @source_participant_id.nil?
+                writer.write_object_value("transferor", @transferor) unless @transferor.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sourceParticipantId property value. The ID of the participant that triggered the incoming call. Read-only.

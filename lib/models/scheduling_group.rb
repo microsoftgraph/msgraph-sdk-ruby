@@ -81,8 +81,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_primitive_values("userIds", @user_ids)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_primitive_values("userIds", @user_ids) unless @user_ids.nil?
             end
             ## 
             ## Gets the userIds property value. The list of user IDs that are a member of the schedulingGroup. Required.

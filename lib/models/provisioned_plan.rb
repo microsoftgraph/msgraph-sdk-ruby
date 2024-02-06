@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("capabilityStatus", @capability_status)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("provisioningStatus", @provisioning_status)
-                writer.write_string_value("service", @service)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("capabilityStatus", @capability_status) unless @capability_status.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("provisioningStatus", @provisioning_status) unless @provisioning_status.nil?
+                writer.write_string_value("service", @service) unless @service.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the service property value. The name of the service; for example, 'AccessControlS2S'

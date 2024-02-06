@@ -158,13 +158,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("assignedUserPrincipalName", @assigned_user_principal_name)
-                writer.write_string_value("groupTag", @group_tag)
-                writer.write_object_value("hardwareIdentifier", @hardware_identifier)
-                writer.write_string_value("importId", @import_id)
-                writer.write_string_value("productKey", @product_key)
-                writer.write_string_value("serialNumber", @serial_number)
-                writer.write_object_value("state", @state)
+                writer.write_string_value("assignedUserPrincipalName", @assigned_user_principal_name) unless @assigned_user_principal_name.nil?
+                writer.write_string_value("groupTag", @group_tag) unless @group_tag.nil?
+                writer.write_object_value("hardwareIdentifier", @hardware_identifier) unless @hardware_identifier.nil?
+                writer.write_string_value("importId", @import_id) unless @import_id.nil?
+                writer.write_string_value("productKey", @product_key) unless @product_key.nil?
+                writer.write_string_value("serialNumber", @serial_number) unless @serial_number.nil?
+                writer.write_object_value("state", @state) unless @state.nil?
             end
             ## 
             ## Gets the state property value. Current state of the imported device.

@@ -193,15 +193,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("customKeyIdentifier", @custom_key_identifier)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_string_value("hint", @hint)
-                writer.write_guid_value("keyId", @key_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("secretText", @secret_text)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("customKeyIdentifier", @custom_key_identifier) unless @custom_key_identifier.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_string_value("hint", @hint) unless @hint.nil?
+                writer.write_guid_value("keyId", @key_id) unless @key_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("secretText", @secret_text) unless @secret_text.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the startDateTime property value. The date and time at which the password becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.

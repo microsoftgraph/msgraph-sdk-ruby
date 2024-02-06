@@ -269,18 +269,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("compliantAppListType", @compliant_app_list_type)
-                writer.write_collection_of_object_values("compliantAppsList", @compliant_apps_list)
-                writer.write_collection_of_primitive_values("emailInDomainSuffixes", @email_in_domain_suffixes)
-                writer.write_boolean_value("passwordBlockSimple", @password_block_simple)
-                writer.write_number_value("passwordExpirationDays", @password_expiration_days)
-                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count)
-                writer.write_number_value("passwordMinimumLength", @password_minimum_length)
-                writer.write_number_value("passwordMinutesOfInactivityBeforeLock", @password_minutes_of_inactivity_before_lock)
-                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout)
-                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count)
-                writer.write_boolean_value("passwordRequired", @password_required)
-                writer.write_enum_value("passwordRequiredType", @password_required_type)
+                writer.write_enum_value("compliantAppListType", @compliant_app_list_type) unless @compliant_app_list_type.nil?
+                writer.write_collection_of_object_values("compliantAppsList", @compliant_apps_list) unless @compliant_apps_list.nil?
+                writer.write_collection_of_primitive_values("emailInDomainSuffixes", @email_in_domain_suffixes) unless @email_in_domain_suffixes.nil?
+                writer.write_boolean_value("passwordBlockSimple", @password_block_simple) unless @password_block_simple.nil?
+                writer.write_number_value("passwordExpirationDays", @password_expiration_days) unless @password_expiration_days.nil?
+                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count) unless @password_minimum_character_set_count.nil?
+                writer.write_number_value("passwordMinimumLength", @password_minimum_length) unless @password_minimum_length.nil?
+                writer.write_number_value("passwordMinutesOfInactivityBeforeLock", @password_minutes_of_inactivity_before_lock) unless @password_minutes_of_inactivity_before_lock.nil?
+                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout) unless @password_minutes_of_inactivity_before_screen_timeout.nil?
+                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count) unless @password_previous_password_block_count.nil?
+                writer.write_boolean_value("passwordRequired", @password_required) unless @password_required.nil?
+                writer.write_enum_value("passwordRequiredType", @password_required_type) unless @password_required_type.nil?
             end
         end
     end

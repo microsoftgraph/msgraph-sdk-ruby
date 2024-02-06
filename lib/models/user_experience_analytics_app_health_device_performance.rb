@@ -250,17 +250,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("appCrashCount", @app_crash_count)
-                writer.write_number_value("appHangCount", @app_hang_count)
-                writer.write_number_value("crashedAppCount", @crashed_app_count)
-                writer.write_object_value("deviceAppHealthScore", @device_app_health_score)
-                writer.write_string_value("deviceDisplayName", @device_display_name)
-                writer.write_string_value("deviceId", @device_id)
-                writer.write_string_value("deviceManufacturer", @device_manufacturer)
-                writer.write_string_value("deviceModel", @device_model)
-                writer.write_enum_value("healthStatus", @health_status)
-                writer.write_number_value("meanTimeToFailureInMinutes", @mean_time_to_failure_in_minutes)
-                writer.write_date_time_value("processedDateTime", @processed_date_time)
+                writer.write_number_value("appCrashCount", @app_crash_count) unless @app_crash_count.nil?
+                writer.write_number_value("appHangCount", @app_hang_count) unless @app_hang_count.nil?
+                writer.write_number_value("crashedAppCount", @crashed_app_count) unless @crashed_app_count.nil?
+                writer.write_object_value("deviceAppHealthScore", @device_app_health_score) unless @device_app_health_score.nil?
+                writer.write_string_value("deviceDisplayName", @device_display_name) unless @device_display_name.nil?
+                writer.write_string_value("deviceId", @device_id) unless @device_id.nil?
+                writer.write_string_value("deviceManufacturer", @device_manufacturer) unless @device_manufacturer.nil?
+                writer.write_string_value("deviceModel", @device_model) unless @device_model.nil?
+                writer.write_enum_value("healthStatus", @health_status) unless @health_status.nil?
+                writer.write_number_value("meanTimeToFailureInMinutes", @mean_time_to_failure_in_minutes) unless @mean_time_to_failure_in_minutes.nil?
+                writer.write_date_time_value("processedDateTime", @processed_date_time) unless @processed_date_time.nil?
             end
         end
     end

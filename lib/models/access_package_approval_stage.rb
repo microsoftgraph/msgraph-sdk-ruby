@@ -226,16 +226,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_duration_value("durationBeforeAutomaticDenial", @duration_before_automatic_denial)
-                writer.write_duration_value("durationBeforeEscalation", @duration_before_escalation)
-                writer.write_collection_of_object_values("escalationApprovers", @escalation_approvers)
-                writer.write_collection_of_object_values("fallbackEscalationApprovers", @fallback_escalation_approvers)
-                writer.write_collection_of_object_values("fallbackPrimaryApprovers", @fallback_primary_approvers)
-                writer.write_boolean_value("isApproverJustificationRequired", @is_approver_justification_required)
-                writer.write_boolean_value("isEscalationEnabled", @is_escalation_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("primaryApprovers", @primary_approvers)
-                writer.write_additional_data(@additional_data)
+                writer.write_duration_value("durationBeforeAutomaticDenial", @duration_before_automatic_denial) unless @duration_before_automatic_denial.nil?
+                writer.write_duration_value("durationBeforeEscalation", @duration_before_escalation) unless @duration_before_escalation.nil?
+                writer.write_collection_of_object_values("escalationApprovers", @escalation_approvers) unless @escalation_approvers.nil?
+                writer.write_collection_of_object_values("fallbackEscalationApprovers", @fallback_escalation_approvers) unless @fallback_escalation_approvers.nil?
+                writer.write_collection_of_object_values("fallbackPrimaryApprovers", @fallback_primary_approvers) unless @fallback_primary_approvers.nil?
+                writer.write_boolean_value("isApproverJustificationRequired", @is_approver_justification_required) unless @is_approver_justification_required.nil?
+                writer.write_boolean_value("isEscalationEnabled", @is_escalation_enabled) unless @is_escalation_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("primaryApprovers", @primary_approvers) unless @primary_approvers.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

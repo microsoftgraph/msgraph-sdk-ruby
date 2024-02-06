@@ -84,10 +84,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("large", @large)
-                writer.write_object_value("medium", @medium)
-                writer.write_object_value("small", @small)
-                writer.write_object_value("source", @source)
+                writer.write_object_value("large", @large) unless @large.nil?
+                writer.write_object_value("medium", @medium) unless @medium.nil?
+                writer.write_object_value("small", @small) unless @small.nil?
+                writer.write_object_value("source", @source) unless @source.nil?
             end
             ## 
             ## Gets the small property value. A 48x48 cropped thumbnail.

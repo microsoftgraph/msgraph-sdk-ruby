@@ -137,12 +137,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("category", @category)
-                writer.write_boolean_value("continueOnError", @continue_on_error)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("parameters", @parameters)
-                writer.write_number_value("version", @version)
+                writer.write_enum_value("category", @category) unless @category.nil?
+                writer.write_boolean_value("continueOnError", @continue_on_error) unless @continue_on_error.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("parameters", @parameters) unless @parameters.nil?
+                writer.write_number_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the version property value. The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.

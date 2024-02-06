@@ -122,12 +122,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("extensions", @extensions)
-                writer.write_boolean_value("isOwner", @is_owner)
-                writer.write_boolean_value("isShared", @is_shared)
-                writer.write_collection_of_object_values("tasks", @tasks)
-                writer.write_enum_value("wellknownListName", @wellknown_list_name)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("extensions", @extensions) unless @extensions.nil?
+                writer.write_boolean_value("isOwner", @is_owner) unless @is_owner.nil?
+                writer.write_boolean_value("isShared", @is_shared) unless @is_shared.nil?
+                writer.write_collection_of_object_values("tasks", @tasks) unless @tasks.nil?
+                writer.write_enum_value("wellknownListName", @wellknown_list_name) unless @wellknown_list_name.nil?
             end
             ## 
             ## Gets the tasks property value. The tasks in this task list. Read-only. Nullable.

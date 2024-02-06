@@ -139,13 +139,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("dlpAction", @dlp_action)
-                writer.write_string_value("justificationText", @justification_text)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("policyTip", @policy_tip)
-                writer.write_enum_value("userAction", @user_action)
-                writer.write_enum_value("verdictDetails", @verdict_details)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("dlpAction", @dlp_action) unless @dlp_action.nil?
+                writer.write_string_value("justificationText", @justification_text) unless @justification_text.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("policyTip", @policy_tip) unless @policy_tip.nil?
+                writer.write_enum_value("userAction", @user_action) unless @user_action.nil?
+                writer.write_enum_value("verdictDetails", @verdict_details) unless @verdict_details.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the userAction property value. Indicates the action taken by the user on a message blocked by the DLP provider. Supported values are: NoneOverrideReportFalsePositiveWhen the DLP provider is updating the message for blocking sensitive content, userAction is not required.

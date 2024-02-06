@@ -98,9 +98,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("binaryName", @binary_name)
-                writer.write_string_value("binaryVersionHigh", @binary_version_high)
-                writer.write_string_value("binaryVersionLow", @binary_version_low)
+                writer.write_string_value("binaryName", @binary_name) unless @binary_name.nil?
+                writer.write_string_value("binaryVersionHigh", @binary_version_high) unless @binary_version_high.nil?
+                writer.write_string_value("binaryVersionLow", @binary_version_low) unless @binary_version_low.nil?
             end
         end
     end

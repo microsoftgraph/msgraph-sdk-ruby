@@ -135,12 +135,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("email", @email)
-                writer.write_object_value("invitedBy", @invited_by)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("redeemedBy", @redeemed_by)
-                writer.write_boolean_value("signInRequired", @sign_in_required)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("email", @email) unless @email.nil?
+                writer.write_object_value("invitedBy", @invited_by) unless @invited_by.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("redeemedBy", @redeemed_by) unless @redeemed_by.nil?
+                writer.write_boolean_value("signInRequired", @sign_in_required) unless @sign_in_required.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the signInRequired property value. If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.

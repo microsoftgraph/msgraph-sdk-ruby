@@ -150,12 +150,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("address", @address)
-                writer.write_string_value("itemId", @item_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("relevanceScore", @relevance_score)
-                writer.write_enum_value("selectionLikelihood", @selection_likelihood)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("address", @address) unless @address.nil?
+                writer.write_string_value("itemId", @item_id) unless @item_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("relevanceScore", @relevance_score) unless @relevance_score.nil?
+                writer.write_enum_value("selectionLikelihood", @selection_likelihood) unless @selection_likelihood.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

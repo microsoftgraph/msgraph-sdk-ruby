@@ -183,16 +183,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("alerts", @alerts)
+                writer.write_collection_of_object_values("alerts", @alerts) unless @alerts.nil?
                 writer.write_collection_of_object_values("alerts_v2", @alerts_v2)
-                writer.write_object_value("attackSimulation", @attack_simulation)
-                writer.write_object_value("cases", @cases)
-                writer.write_collection_of_object_values("incidents", @incidents)
-                writer.write_collection_of_object_values("secureScoreControlProfiles", @secure_score_control_profiles)
-                writer.write_collection_of_object_values("secureScores", @secure_scores)
-                writer.write_object_value("threatIntelligence", @threat_intelligence)
-                writer.write_object_value("triggerTypes", @trigger_types)
-                writer.write_object_value("triggers", @triggers)
+                writer.write_object_value("attackSimulation", @attack_simulation) unless @attack_simulation.nil?
+                writer.write_object_value("cases", @cases) unless @cases.nil?
+                writer.write_collection_of_object_values("incidents", @incidents) unless @incidents.nil?
+                writer.write_collection_of_object_values("secureScoreControlProfiles", @secure_score_control_profiles) unless @secure_score_control_profiles.nil?
+                writer.write_collection_of_object_values("secureScores", @secure_scores) unless @secure_scores.nil?
+                writer.write_object_value("threatIntelligence", @threat_intelligence) unless @threat_intelligence.nil?
+                writer.write_object_value("triggerTypes", @trigger_types) unless @trigger_types.nil?
+                writer.write_object_value("triggers", @triggers) unless @triggers.nil?
             end
             ## 
             ## Gets the threatIntelligence property value. The threatIntelligence property

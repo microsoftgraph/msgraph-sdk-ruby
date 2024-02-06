@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("description", @description)
-                writer.write_collection_of_object_values("details", @details)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("state", @state)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_collection_of_object_values("details", @details) unless @details.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the state property value. The state property

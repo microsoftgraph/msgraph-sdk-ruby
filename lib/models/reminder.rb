@@ -226,16 +226,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("changeKey", @change_key)
-                writer.write_object_value("eventEndTime", @event_end_time)
-                writer.write_string_value("eventId", @event_id)
-                writer.write_object_value("eventLocation", @event_location)
-                writer.write_object_value("eventStartTime", @event_start_time)
-                writer.write_string_value("eventSubject", @event_subject)
-                writer.write_string_value("eventWebLink", @event_web_link)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("reminderFireTime", @reminder_fire_time)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("changeKey", @change_key) unless @change_key.nil?
+                writer.write_object_value("eventEndTime", @event_end_time) unless @event_end_time.nil?
+                writer.write_string_value("eventId", @event_id) unless @event_id.nil?
+                writer.write_object_value("eventLocation", @event_location) unless @event_location.nil?
+                writer.write_object_value("eventStartTime", @event_start_time) unless @event_start_time.nil?
+                writer.write_string_value("eventSubject", @event_subject) unless @event_subject.nil?
+                writer.write_string_value("eventWebLink", @event_web_link) unless @event_web_link.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("reminderFireTime", @reminder_fire_time) unless @reminder_fire_time.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

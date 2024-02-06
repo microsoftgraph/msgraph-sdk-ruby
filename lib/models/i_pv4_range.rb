@@ -64,8 +64,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("lowerAddress", @lower_address)
-                writer.write_string_value("upperAddress", @upper_address)
+                writer.write_string_value("lowerAddress", @lower_address) unless @lower_address.nil?
+                writer.write_string_value("upperAddress", @upper_address) unless @upper_address.nil?
             end
             ## 
             ## Gets the upperAddress property value. Upper address.

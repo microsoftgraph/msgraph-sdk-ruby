@@ -252,22 +252,22 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("autopilotDevicesSummary", @autopilot_devices_summary)
-                writer.write_object_value("cloudIdentityDevicesSummary", @cloud_identity_devices_summary)
-                writer.write_object_value("cloudManagementDevicesSummary", @cloud_management_devices_summary)
-                writer.write_number_value("coManagedDevices", @co_managed_devices)
-                writer.write_number_value("devicesNotAutopilotRegistered", @devices_not_autopilot_registered)
-                writer.write_number_value("devicesWithoutAutopilotProfileAssigned", @devices_without_autopilot_profile_assigned)
-                writer.write_number_value("devicesWithoutCloudIdentity", @devices_without_cloud_identity)
-                writer.write_number_value("intuneDevices", @intune_devices)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("tenantAttachDevices", @tenant_attach_devices)
-                writer.write_number_value("totalDevices", @total_devices)
-                writer.write_number_value("unsupportedOSversionDevices", @unsupported_o_sversion_devices)
+                writer.write_object_value("autopilotDevicesSummary", @autopilot_devices_summary) unless @autopilot_devices_summary.nil?
+                writer.write_object_value("cloudIdentityDevicesSummary", @cloud_identity_devices_summary) unless @cloud_identity_devices_summary.nil?
+                writer.write_object_value("cloudManagementDevicesSummary", @cloud_management_devices_summary) unless @cloud_management_devices_summary.nil?
+                writer.write_number_value("coManagedDevices", @co_managed_devices) unless @co_managed_devices.nil?
+                writer.write_number_value("devicesNotAutopilotRegistered", @devices_not_autopilot_registered) unless @devices_not_autopilot_registered.nil?
+                writer.write_number_value("devicesWithoutAutopilotProfileAssigned", @devices_without_autopilot_profile_assigned) unless @devices_without_autopilot_profile_assigned.nil?
+                writer.write_number_value("devicesWithoutCloudIdentity", @devices_without_cloud_identity) unless @devices_without_cloud_identity.nil?
+                writer.write_number_value("intuneDevices", @intune_devices) unless @intune_devices.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("tenantAttachDevices", @tenant_attach_devices) unless @tenant_attach_devices.nil?
+                writer.write_number_value("totalDevices", @total_devices) unless @total_devices.nil?
+                writer.write_number_value("unsupportedOSversionDevices", @unsupported_o_sversion_devices) unless @unsupported_o_sversion_devices.nil?
                 writer.write_number_value("windows10Devices", @windows10_devices)
                 writer.write_object_value("windows10DevicesSummary", @windows10_devices_summary)
                 writer.write_number_value("windows10DevicesWithoutTenantAttach", @windows10_devices_without_tenant_attach)
-                writer.write_additional_data(@additional_data)
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the tenantAttachDevices property value. Total count of tenant attach devices. Read-only. Valid values -2147483648 to 2147483647

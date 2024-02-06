@@ -188,14 +188,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowAddRemoveApps", @allow_add_remove_apps)
-                writer.write_boolean_value("allowCreatePrivateChannels", @allow_create_private_channels)
-                writer.write_boolean_value("allowCreateUpdateChannels", @allow_create_update_channels)
-                writer.write_boolean_value("allowCreateUpdateRemoveConnectors", @allow_create_update_remove_connectors)
-                writer.write_boolean_value("allowCreateUpdateRemoveTabs", @allow_create_update_remove_tabs)
-                writer.write_boolean_value("allowDeleteChannels", @allow_delete_channels)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowAddRemoveApps", @allow_add_remove_apps) unless @allow_add_remove_apps.nil?
+                writer.write_boolean_value("allowCreatePrivateChannels", @allow_create_private_channels) unless @allow_create_private_channels.nil?
+                writer.write_boolean_value("allowCreateUpdateChannels", @allow_create_update_channels) unless @allow_create_update_channels.nil?
+                writer.write_boolean_value("allowCreateUpdateRemoveConnectors", @allow_create_update_remove_connectors) unless @allow_create_update_remove_connectors.nil?
+                writer.write_boolean_value("allowCreateUpdateRemoveTabs", @allow_create_update_remove_tabs) unless @allow_create_update_remove_tabs.nil?
+                writer.write_boolean_value("allowDeleteChannels", @allow_delete_channels) unless @allow_delete_channels.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

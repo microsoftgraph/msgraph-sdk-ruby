@@ -155,12 +155,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("brandingOptions", @branding_options)
-                writer.write_string_value("defaultLocale", @default_locale)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_collection_of_object_values("localizedNotificationMessages", @localized_notification_messages)
-                writer.write_collection_of_primitive_values("roleScopeTagIds", @role_scope_tag_ids)
+                writer.write_enum_value("brandingOptions", @branding_options) unless @branding_options.nil?
+                writer.write_string_value("defaultLocale", @default_locale) unless @default_locale.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_collection_of_object_values("localizedNotificationMessages", @localized_notification_messages) unless @localized_notification_messages.nil?
+                writer.write_collection_of_primitive_values("roleScopeTagIds", @role_scope_tag_ids) unless @role_scope_tag_ids.nil?
             end
         end
     end

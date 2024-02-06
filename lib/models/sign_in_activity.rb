@@ -151,12 +151,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_date_time_value("lastNonInteractiveSignInDateTime", @last_non_interactive_sign_in_date_time)
-                writer.write_string_value("lastNonInteractiveSignInRequestId", @last_non_interactive_sign_in_request_id)
-                writer.write_date_time_value("lastSignInDateTime", @last_sign_in_date_time)
-                writer.write_string_value("lastSignInRequestId", @last_sign_in_request_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_date_time_value("lastNonInteractiveSignInDateTime", @last_non_interactive_sign_in_date_time) unless @last_non_interactive_sign_in_date_time.nil?
+                writer.write_string_value("lastNonInteractiveSignInRequestId", @last_non_interactive_sign_in_request_id) unless @last_non_interactive_sign_in_request_id.nil?
+                writer.write_date_time_value("lastSignInDateTime", @last_sign_in_date_time) unless @last_sign_in_date_time.nil?
+                writer.write_string_value("lastSignInRequestId", @last_sign_in_request_id) unless @last_sign_in_request_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

@@ -135,12 +135,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("attachmentType", @attachment_type)
-                writer.write_string_value("contentType", @content_type)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("size", @size)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("attachmentType", @attachment_type) unless @attachment_type.nil?
+                writer.write_string_value("contentType", @content_type) unless @content_type.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("size", @size) unless @size.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the size property value. The length of the attachment in bytes. Required.

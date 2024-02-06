@@ -177,15 +177,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("excludedItemCount", @excluded_item_count)
-                writer.write_collection_of_object_values("insightCounts", @insight_counts)
-                writer.write_object_value("itemCount", @item_count)
-                writer.write_object_value("itemNeedReview", @item_need_review)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("productItemCounts", @product_item_counts)
-                writer.write_object_value("signedOffItemCount", @signed_off_item_count)
-                writer.write_object_value("totalItemSize", @total_item_size)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("excludedItemCount", @excluded_item_count) unless @excluded_item_count.nil?
+                writer.write_collection_of_object_values("insightCounts", @insight_counts) unless @insight_counts.nil?
+                writer.write_object_value("itemCount", @item_count) unless @item_count.nil?
+                writer.write_object_value("itemNeedReview", @item_need_review) unless @item_need_review.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("productItemCounts", @product_item_counts) unless @product_item_counts.nil?
+                writer.write_object_value("signedOffItemCount", @signed_off_item_count) unless @signed_off_item_count.nil?
+                writer.write_object_value("totalItemSize", @total_item_size) unless @total_item_size.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the signedOffItemCount property value. Count of items signed off by the administrator.

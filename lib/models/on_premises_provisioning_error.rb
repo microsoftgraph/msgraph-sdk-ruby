@@ -136,12 +136,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("category", @category)
-                writer.write_date_time_value("occurredDateTime", @occurred_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("propertyCausingError", @property_causing_error)
-                writer.write_string_value("value", @value)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("category", @category) unless @category.nil?
+                writer.write_date_time_value("occurredDateTime", @occurred_date_time) unless @occurred_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("propertyCausingError", @property_causing_error) unless @property_causing_error.nil?
+                writer.write_string_value("value", @value) unless @value.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the value property value. Value of the property causing the error.

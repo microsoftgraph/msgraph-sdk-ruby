@@ -189,17 +189,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("actionRequiredByDateTime", @action_required_by_date_time)
-                writer.write_collection_of_object_values("attachments", @attachments)
-                writer.write_object_value("attachmentsArchive", @attachments_archive)
-                writer.write_object_value("body", @body)
-                writer.write_enum_value("category", @category)
-                writer.write_boolean_value("hasAttachments", @has_attachments)
-                writer.write_boolean_value("isMajorChange", @is_major_change)
-                writer.write_collection_of_primitive_values("services", @services)
-                writer.write_enum_value("severity", @severity)
-                writer.write_collection_of_primitive_values("tags", @tags)
-                writer.write_object_value("viewPoint", @view_point)
+                writer.write_date_time_value("actionRequiredByDateTime", @action_required_by_date_time) unless @action_required_by_date_time.nil?
+                writer.write_collection_of_object_values("attachments", @attachments) unless @attachments.nil?
+                writer.write_object_value("attachmentsArchive", @attachments_archive) unless @attachments_archive.nil?
+                writer.write_object_value("body", @body) unless @body.nil?
+                writer.write_enum_value("category", @category) unless @category.nil?
+                writer.write_boolean_value("hasAttachments", @has_attachments) unless @has_attachments.nil?
+                writer.write_boolean_value("isMajorChange", @is_major_change) unless @is_major_change.nil?
+                writer.write_collection_of_primitive_values("services", @services) unless @services.nil?
+                writer.write_enum_value("severity", @severity) unless @severity.nil?
+                writer.write_collection_of_primitive_values("tags", @tags) unless @tags.nil?
+                writer.write_object_value("viewPoint", @view_point) unless @view_point.nil?
             end
             ## 
             ## Gets the services property value. The affected services by the service message.

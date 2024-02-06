@@ -210,15 +210,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("effectiveRules", @effective_rules)
-                writer.write_boolean_value("isOrganizationDefault", @is_organization_default)
-                writer.write_object_value("lastModifiedBy", @last_modified_by)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_collection_of_object_values("rules", @rules)
-                writer.write_string_value("scopeId", @scope_id)
-                writer.write_string_value("scopeType", @scope_type)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("effectiveRules", @effective_rules) unless @effective_rules.nil?
+                writer.write_boolean_value("isOrganizationDefault", @is_organization_default) unless @is_organization_default.nil?
+                writer.write_object_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_collection_of_object_values("rules", @rules) unless @rules.nil?
+                writer.write_string_value("scopeId", @scope_id) unless @scope_id.nil?
+                writer.write_string_value("scopeType", @scope_type) unless @scope_type.nil?
             end
         end
     end

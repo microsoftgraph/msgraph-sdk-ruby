@@ -50,9 +50,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("servicePlans", @service_plans)
-                writer.write_guid_value("skuId", @sku_id)
-                writer.write_string_value("skuPartNumber", @sku_part_number)
+                writer.write_collection_of_object_values("servicePlans", @service_plans) unless @service_plans.nil?
+                writer.write_guid_value("skuId", @sku_id) unless @sku_id.nil?
+                writer.write_string_value("skuPartNumber", @sku_part_number) unless @sku_part_number.nil?
             end
             ## 
             ## Gets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable

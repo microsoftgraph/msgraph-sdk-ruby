@@ -60,7 +60,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("edgeSearchEngineOpenSearchXmlUrl", @edge_search_engine_open_search_xml_url)
+                writer.write_string_value("edgeSearchEngineOpenSearchXmlUrl", @edge_search_engine_open_search_xml_url) unless @edge_search_engine_open_search_xml_url.nil?
             end
         end
     end

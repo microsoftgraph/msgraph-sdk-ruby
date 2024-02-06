@@ -279,21 +279,21 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("alerts", @alerts)
-                writer.write_string_value("assignedTo", @assigned_to)
-                writer.write_enum_value("classification", @classification)
-                writer.write_collection_of_object_values("comments", @comments)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_collection_of_primitive_values("customTags", @custom_tags)
-                writer.write_enum_value("determination", @determination)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("incidentWebUrl", @incident_web_url)
-                writer.write_string_value("lastModifiedBy", @last_modified_by)
-                writer.write_date_time_value("lastUpdateDateTime", @last_update_date_time)
-                writer.write_string_value("redirectIncidentId", @redirect_incident_id)
-                writer.write_enum_value("severity", @severity)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("tenantId", @tenant_id)
+                writer.write_collection_of_object_values("alerts", @alerts) unless @alerts.nil?
+                writer.write_string_value("assignedTo", @assigned_to) unless @assigned_to.nil?
+                writer.write_enum_value("classification", @classification) unless @classification.nil?
+                writer.write_collection_of_object_values("comments", @comments) unless @comments.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_collection_of_primitive_values("customTags", @custom_tags) unless @custom_tags.nil?
+                writer.write_enum_value("determination", @determination) unless @determination.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("incidentWebUrl", @incident_web_url) unless @incident_web_url.nil?
+                writer.write_string_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_date_time_value("lastUpdateDateTime", @last_update_date_time) unless @last_update_date_time.nil?
+                writer.write_string_value("redirectIncidentId", @redirect_incident_id) unless @redirect_incident_id.nil?
+                writer.write_enum_value("severity", @severity) unless @severity.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
             end
             ## 
             ## Gets the severity property value. The severity property

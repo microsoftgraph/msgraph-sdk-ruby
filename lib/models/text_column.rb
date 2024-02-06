@@ -154,13 +154,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowMultipleLines", @allow_multiple_lines)
-                writer.write_boolean_value("appendChangesToExistingText", @append_changes_to_existing_text)
-                writer.write_number_value("linesForEditing", @lines_for_editing)
-                writer.write_number_value("maxLength", @max_length)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("textType", @text_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowMultipleLines", @allow_multiple_lines) unless @allow_multiple_lines.nil?
+                writer.write_boolean_value("appendChangesToExistingText", @append_changes_to_existing_text) unless @append_changes_to_existing_text.nil?
+                writer.write_number_value("linesForEditing", @lines_for_editing) unless @lines_for_editing.nil?
+                writer.write_number_value("maxLength", @max_length) unless @max_length.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("textType", @text_type) unless @text_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the textType property value. The type of text being stored. Must be one of plain or richText

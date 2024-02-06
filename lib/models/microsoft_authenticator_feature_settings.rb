@@ -112,10 +112,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("displayAppInformationRequiredState", @display_app_information_required_state)
-                writer.write_object_value("displayLocationInformationRequiredState", @display_location_information_required_state)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("displayAppInformationRequiredState", @display_app_information_required_state) unless @display_app_information_required_state.nil?
+                writer.write_object_value("displayLocationInformationRequiredState", @display_location_information_required_state) unless @display_location_information_required_state.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

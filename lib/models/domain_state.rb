@@ -117,11 +117,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_date_time_value("lastActionDateTime", @last_action_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("operation", @operation)
-                writer.write_string_value("status", @status)
-                writer.write_additional_data(@additional_data)
+                writer.write_date_time_value("lastActionDateTime", @last_action_date_time) unless @last_action_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("operation", @operation) unless @operation.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the status property value. Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.

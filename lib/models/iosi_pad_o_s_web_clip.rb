@@ -64,8 +64,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appUrl", @app_url)
-                writer.write_boolean_value("useManagedBrowser", @use_managed_browser)
+                writer.write_string_value("appUrl", @app_url) unless @app_url.nil?
+                writer.write_boolean_value("useManagedBrowser", @use_managed_browser) unless @use_managed_browser.nil?
             end
             ## 
             ## Gets the useManagedBrowser property value. Whether or not to use managed browser. When TRUE, the app will be required to be opened in Microsoft Edge. When FALSE, the app will not be required to be opened in Microsoft Edge. By default, this property is set to FALSE.

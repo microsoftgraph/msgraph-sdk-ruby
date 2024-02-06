@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("index", @index)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("uri", @uri)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("index", @index) unless @index.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("uri", @uri) unless @uri.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the uri property value. The uri property

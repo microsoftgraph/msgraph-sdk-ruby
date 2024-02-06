@@ -204,18 +204,18 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("applications", @applications)
-                writer.write_collection_of_object_values("clientAppTypes", @client_app_types)
-                writer.write_object_value("clientApplications", @client_applications)
-                writer.write_object_value("devices", @devices)
-                writer.write_object_value("locations", @locations)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("platforms", @platforms)
-                writer.write_collection_of_object_values("servicePrincipalRiskLevels", @service_principal_risk_levels)
-                writer.write_collection_of_object_values("signInRiskLevels", @sign_in_risk_levels)
-                writer.write_collection_of_object_values("userRiskLevels", @user_risk_levels)
-                writer.write_object_value("users", @users)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("applications", @applications) unless @applications.nil?
+                writer.write_collection_of_object_values("clientAppTypes", @client_app_types) unless @client_app_types.nil?
+                writer.write_object_value("clientApplications", @client_applications) unless @client_applications.nil?
+                writer.write_object_value("devices", @devices) unless @devices.nil?
+                writer.write_object_value("locations", @locations) unless @locations.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("platforms", @platforms) unless @platforms.nil?
+                writer.write_collection_of_object_values("servicePrincipalRiskLevels", @service_principal_risk_levels) unless @service_principal_risk_levels.nil?
+                writer.write_collection_of_object_values("signInRiskLevels", @sign_in_risk_levels) unless @sign_in_risk_levels.nil?
+                writer.write_collection_of_object_values("userRiskLevels", @user_risk_levels) unless @user_risk_levels.nil?
+                writer.write_object_value("users", @users) unless @users.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.

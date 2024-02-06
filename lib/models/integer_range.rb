@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("end", @end_escaped)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("start", @start)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("end", @end_escaped) unless @end_escaped.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("start", @start) unless @start.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the start property value. The inclusive lower bound of the integer range.

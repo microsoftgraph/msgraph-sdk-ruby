@@ -99,9 +99,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_primitive_values("roles", @roles)
-                writer.write_date_time_value("visibleHistoryStartDateTime", @visible_history_start_date_time)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_primitive_values("roles", @roles) unless @roles.nil?
+                writer.write_date_time_value("visibleHistoryStartDateTime", @visible_history_start_date_time) unless @visible_history_start_date_time.nil?
             end
             ## 
             ## Gets the visibleHistoryStartDateTime property value. The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.

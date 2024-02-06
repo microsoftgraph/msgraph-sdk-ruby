@@ -48,8 +48,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("unit", @unit)
-                writer.write_object_value("value", @value)
+                writer.write_string_value("unit", @unit) unless @unit.nil?
+                writer.write_object_value("value", @value) unless @value.nil?
             end
             ## 
             ## Gets the unit property value. The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.

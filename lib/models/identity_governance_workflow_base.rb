@@ -279,19 +279,19 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("category", @category)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("executionConditions", @execution_conditions)
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_boolean_value("isSchedulingEnabled", @is_scheduling_enabled)
-                writer.write_object_value("lastModifiedBy", @last_modified_by)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("tasks", @tasks)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("category", @category) unless @category.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("executionConditions", @execution_conditions) unless @execution_conditions.nil?
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_boolean_value("isSchedulingEnabled", @is_scheduling_enabled) unless @is_scheduling_enabled.nil?
+                writer.write_object_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("tasks", @tasks) unless @tasks.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the tasks property value. The tasks in the workflow.

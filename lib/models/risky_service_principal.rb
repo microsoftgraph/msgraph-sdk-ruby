@@ -222,16 +222,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appId", @app_id)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("history", @history)
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_boolean_value("isProcessing", @is_processing)
-                writer.write_enum_value("riskDetail", @risk_detail)
-                writer.write_date_time_value("riskLastUpdatedDateTime", @risk_last_updated_date_time)
-                writer.write_enum_value("riskLevel", @risk_level)
-                writer.write_enum_value("riskState", @risk_state)
-                writer.write_string_value("servicePrincipalType", @service_principal_type)
+                writer.write_string_value("appId", @app_id) unless @app_id.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("history", @history) unless @history.nil?
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_boolean_value("isProcessing", @is_processing) unless @is_processing.nil?
+                writer.write_enum_value("riskDetail", @risk_detail) unless @risk_detail.nil?
+                writer.write_date_time_value("riskLastUpdatedDateTime", @risk_last_updated_date_time) unless @risk_last_updated_date_time.nil?
+                writer.write_enum_value("riskLevel", @risk_level) unless @risk_level.nil?
+                writer.write_enum_value("riskState", @risk_state) unless @risk_state.nil?
+                writer.write_string_value("servicePrincipalType", @service_principal_type) unless @service_principal_type.nil?
             end
             ## 
             ## Gets the servicePrincipalType property value. Identifies whether the service principal represents an Application, a ManagedIdentity, or a legacy application (socialIdp). This is set by Azure AD internally and is inherited from servicePrincipal.

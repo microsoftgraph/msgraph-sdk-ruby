@@ -165,15 +165,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("body", @body)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("imageUrl", @image_url)
-                writer.write_collection_of_object_values("indicators", @indicators)
-                writer.write_boolean_value("isFeatured", @is_featured)
-                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
-                writer.write_object_value("summary", @summary)
-                writer.write_collection_of_primitive_values("tags", @tags)
-                writer.write_string_value("title", @title)
+                writer.write_object_value("body", @body) unless @body.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("imageUrl", @image_url) unless @image_url.nil?
+                writer.write_collection_of_object_values("indicators", @indicators) unless @indicators.nil?
+                writer.write_boolean_value("isFeatured", @is_featured) unless @is_featured.nil?
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time) unless @last_updated_date_time.nil?
+                writer.write_object_value("summary", @summary) unless @summary.nil?
+                writer.write_collection_of_primitive_values("tags", @tags) unless @tags.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
             end
             ## 
             ## Gets the summary property value. The summary property

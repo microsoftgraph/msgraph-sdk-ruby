@@ -60,7 +60,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("edgeSearchEngineType", @edge_search_engine_type)
+                writer.write_enum_value("edgeSearchEngineType", @edge_search_engine_type) unless @edge_search_engine_type.nil?
             end
         end
     end

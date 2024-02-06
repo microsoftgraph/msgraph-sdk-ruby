@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("baseUrls", @base_urls)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("urlPattern", @url_pattern)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("baseUrls", @base_urls) unless @base_urls.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("urlPattern", @url_pattern) unless @url_pattern.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the urlPattern property value. A regular expression that will be matched towards the URL that is processed by this URL-to-item-resolver. The ECMAScript specification for regular expressions (ECMA-262) is used for the evaluation. The named groups defined by the regular expression will be used later to extract values from the URL.

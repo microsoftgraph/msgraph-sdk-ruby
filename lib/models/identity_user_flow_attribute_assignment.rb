@@ -107,12 +107,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("isOptional", @is_optional)
-                writer.write_boolean_value("requiresVerification", @requires_verification)
-                writer.write_object_value("userAttribute", @user_attribute)
-                writer.write_collection_of_object_values("userAttributeValues", @user_attribute_values)
-                writer.write_enum_value("userInputType", @user_input_type)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("isOptional", @is_optional) unless @is_optional.nil?
+                writer.write_boolean_value("requiresVerification", @requires_verification) unless @requires_verification.nil?
+                writer.write_object_value("userAttribute", @user_attribute) unless @user_attribute.nil?
+                writer.write_collection_of_object_values("userAttributeValues", @user_attribute_values) unless @user_attribute_values.nil?
+                writer.write_enum_value("userInputType", @user_input_type) unless @user_input_type.nil?
             end
             ## 
             ## Gets the userAttribute property value. The user attribute that you want to add to your user flow.

@@ -124,13 +124,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("content", @content)
-                writer.write_number_value("height", @height)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("sourceItemId", @source_item_id)
-                writer.write_string_value("url", @url)
-                writer.write_number_value("width", @width)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("content", @content) unless @content.nil?
+                writer.write_number_value("height", @height) unless @height.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("sourceItemId", @source_item_id) unless @source_item_id.nil?
+                writer.write_string_value("url", @url) unless @url.nil?
+                writer.write_number_value("width", @width) unless @width.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sourceItemId property value. The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.

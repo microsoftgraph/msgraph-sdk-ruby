@@ -150,12 +150,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowCustomMemes", @allow_custom_memes)
-                writer.write_boolean_value("allowGiphy", @allow_giphy)
-                writer.write_boolean_value("allowStickersAndMemes", @allow_stickers_and_memes)
-                writer.write_enum_value("giphyContentRating", @giphy_content_rating)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowCustomMemes", @allow_custom_memes) unless @allow_custom_memes.nil?
+                writer.write_boolean_value("allowGiphy", @allow_giphy) unless @allow_giphy.nil?
+                writer.write_boolean_value("allowStickersAndMemes", @allow_stickers_and_memes) unless @allow_stickers_and_memes.nil?
+                writer.write_enum_value("giphyContentRating", @giphy_content_rating) unless @giphy_content_rating.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

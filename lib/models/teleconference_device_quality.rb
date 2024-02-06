@@ -264,18 +264,18 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_guid_value("callChainId", @call_chain_id)
-                writer.write_string_value("cloudServiceDeploymentEnvironment", @cloud_service_deployment_environment)
-                writer.write_string_value("cloudServiceDeploymentId", @cloud_service_deployment_id)
-                writer.write_string_value("cloudServiceInstanceName", @cloud_service_instance_name)
-                writer.write_string_value("cloudServiceName", @cloud_service_name)
-                writer.write_string_value("deviceDescription", @device_description)
-                writer.write_string_value("deviceName", @device_name)
-                writer.write_guid_value("mediaLegId", @media_leg_id)
-                writer.write_collection_of_object_values("mediaQualityList", @media_quality_list)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_guid_value("participantId", @participant_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_guid_value("callChainId", @call_chain_id) unless @call_chain_id.nil?
+                writer.write_string_value("cloudServiceDeploymentEnvironment", @cloud_service_deployment_environment) unless @cloud_service_deployment_environment.nil?
+                writer.write_string_value("cloudServiceDeploymentId", @cloud_service_deployment_id) unless @cloud_service_deployment_id.nil?
+                writer.write_string_value("cloudServiceInstanceName", @cloud_service_instance_name) unless @cloud_service_instance_name.nil?
+                writer.write_string_value("cloudServiceName", @cloud_service_name) unless @cloud_service_name.nil?
+                writer.write_string_value("deviceDescription", @device_description) unless @device_description.nil?
+                writer.write_string_value("deviceName", @device_name) unless @device_name.nil?
+                writer.write_guid_value("mediaLegId", @media_leg_id) unless @media_leg_id.nil?
+                writer.write_collection_of_object_values("mediaQualityList", @media_quality_list) unless @media_quality_list.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_guid_value("participantId", @participant_id) unless @participant_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

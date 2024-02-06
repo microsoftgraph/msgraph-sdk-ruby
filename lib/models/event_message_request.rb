@@ -153,12 +153,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("allowNewTimeProposals", @allow_new_time_proposals)
-                writer.write_enum_value("meetingRequestType", @meeting_request_type)
-                writer.write_object_value("previousEndDateTime", @previous_end_date_time)
-                writer.write_object_value("previousLocation", @previous_location)
-                writer.write_object_value("previousStartDateTime", @previous_start_date_time)
-                writer.write_boolean_value("responseRequested", @response_requested)
+                writer.write_boolean_value("allowNewTimeProposals", @allow_new_time_proposals) unless @allow_new_time_proposals.nil?
+                writer.write_enum_value("meetingRequestType", @meeting_request_type) unless @meeting_request_type.nil?
+                writer.write_object_value("previousEndDateTime", @previous_end_date_time) unless @previous_end_date_time.nil?
+                writer.write_object_value("previousLocation", @previous_location) unless @previous_location.nil?
+                writer.write_object_value("previousStartDateTime", @previous_start_date_time) unless @previous_start_date_time.nil?
+                writer.write_boolean_value("responseRequested", @response_requested) unless @response_requested.nil?
             end
         end
     end

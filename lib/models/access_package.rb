@@ -248,17 +248,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("accessPackagesIncompatibleWith", @access_packages_incompatible_with)
-                writer.write_collection_of_object_values("assignmentPolicies", @assignment_policies)
-                writer.write_object_value("catalog", @catalog)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("incompatibleAccessPackages", @incompatible_access_packages)
-                writer.write_collection_of_object_values("incompatibleGroups", @incompatible_groups)
-                writer.write_boolean_value("isHidden", @is_hidden)
-                writer.write_date_time_value("modifiedDateTime", @modified_date_time)
-                writer.write_collection_of_object_values("resourceRoleScopes", @resource_role_scopes)
+                writer.write_collection_of_object_values("accessPackagesIncompatibleWith", @access_packages_incompatible_with) unless @access_packages_incompatible_with.nil?
+                writer.write_collection_of_object_values("assignmentPolicies", @assignment_policies) unless @assignment_policies.nil?
+                writer.write_object_value("catalog", @catalog) unless @catalog.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("incompatibleAccessPackages", @incompatible_access_packages) unless @incompatible_access_packages.nil?
+                writer.write_collection_of_object_values("incompatibleGroups", @incompatible_groups) unless @incompatible_groups.nil?
+                writer.write_boolean_value("isHidden", @is_hidden) unless @is_hidden.nil?
+                writer.write_date_time_value("modifiedDateTime", @modified_date_time) unless @modified_date_time.nil?
+                writer.write_collection_of_object_values("resourceRoleScopes", @resource_role_scopes) unless @resource_role_scopes.nil?
             end
         end
     end

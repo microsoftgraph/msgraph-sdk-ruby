@@ -97,9 +97,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("applicationName", @application_name)
-                writer.write_enum_value("applicationType", @application_type)
-                writer.write_number_value("deviceCount", @device_count)
+                writer.write_string_value("applicationName", @application_name) unless @application_name.nil?
+                writer.write_enum_value("applicationType", @application_type) unless @application_type.nil?
+                writer.write_number_value("deviceCount", @device_count) unless @device_count.nil?
             end
         end
     end

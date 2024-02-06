@@ -184,13 +184,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("fileData", @file_data)
-                writer.write_string_value("fileName", @file_name)
-                writer.write_boolean_value("isDefault", @is_default)
-                writer.write_boolean_value("isMajorVersion", @is_major_version)
-                writer.write_string_value("language", @language)
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("fileData", @file_data) unless @file_data.nil?
+                writer.write_string_value("fileName", @file_name) unless @file_name.nil?
+                writer.write_boolean_value("isDefault", @is_default) unless @is_default.nil?
+                writer.write_boolean_value("isMajorVersion", @is_major_version) unless @is_major_version.nil?
+                writer.write_string_value("language", @language) unless @language.nil?
             end
         end
     end

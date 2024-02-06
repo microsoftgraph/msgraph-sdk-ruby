@@ -50,9 +50,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("shared", @shared)
-                writer.write_collection_of_object_values("trending", @trending)
-                writer.write_collection_of_object_values("used", @used)
+                writer.write_collection_of_object_values("shared", @shared) unless @shared.nil?
+                writer.write_collection_of_object_values("trending", @trending) unless @trending.nil?
+                writer.write_collection_of_object_values("used", @used) unless @used.nil?
             end
             ## 
             ## Gets the shared property value. Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.

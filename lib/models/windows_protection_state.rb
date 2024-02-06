@@ -395,27 +395,27 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("antiMalwareVersion", @anti_malware_version)
-                writer.write_collection_of_object_values("detectedMalwareState", @detected_malware_state)
-                writer.write_enum_value("deviceState", @device_state)
-                writer.write_string_value("engineVersion", @engine_version)
-                writer.write_boolean_value("fullScanOverdue", @full_scan_overdue)
-                writer.write_boolean_value("fullScanRequired", @full_scan_required)
-                writer.write_boolean_value("isVirtualMachine", @is_virtual_machine)
-                writer.write_date_time_value("lastFullScanDateTime", @last_full_scan_date_time)
-                writer.write_string_value("lastFullScanSignatureVersion", @last_full_scan_signature_version)
-                writer.write_date_time_value("lastQuickScanDateTime", @last_quick_scan_date_time)
-                writer.write_string_value("lastQuickScanSignatureVersion", @last_quick_scan_signature_version)
-                writer.write_date_time_value("lastReportedDateTime", @last_reported_date_time)
-                writer.write_boolean_value("malwareProtectionEnabled", @malware_protection_enabled)
-                writer.write_boolean_value("networkInspectionSystemEnabled", @network_inspection_system_enabled)
-                writer.write_enum_value("productStatus", @product_status)
-                writer.write_boolean_value("quickScanOverdue", @quick_scan_overdue)
-                writer.write_boolean_value("realTimeProtectionEnabled", @real_time_protection_enabled)
-                writer.write_boolean_value("rebootRequired", @reboot_required)
-                writer.write_boolean_value("signatureUpdateOverdue", @signature_update_overdue)
-                writer.write_string_value("signatureVersion", @signature_version)
-                writer.write_boolean_value("tamperProtectionEnabled", @tamper_protection_enabled)
+                writer.write_string_value("antiMalwareVersion", @anti_malware_version) unless @anti_malware_version.nil?
+                writer.write_collection_of_object_values("detectedMalwareState", @detected_malware_state) unless @detected_malware_state.nil?
+                writer.write_enum_value("deviceState", @device_state) unless @device_state.nil?
+                writer.write_string_value("engineVersion", @engine_version) unless @engine_version.nil?
+                writer.write_boolean_value("fullScanOverdue", @full_scan_overdue) unless @full_scan_overdue.nil?
+                writer.write_boolean_value("fullScanRequired", @full_scan_required) unless @full_scan_required.nil?
+                writer.write_boolean_value("isVirtualMachine", @is_virtual_machine) unless @is_virtual_machine.nil?
+                writer.write_date_time_value("lastFullScanDateTime", @last_full_scan_date_time) unless @last_full_scan_date_time.nil?
+                writer.write_string_value("lastFullScanSignatureVersion", @last_full_scan_signature_version) unless @last_full_scan_signature_version.nil?
+                writer.write_date_time_value("lastQuickScanDateTime", @last_quick_scan_date_time) unless @last_quick_scan_date_time.nil?
+                writer.write_string_value("lastQuickScanSignatureVersion", @last_quick_scan_signature_version) unless @last_quick_scan_signature_version.nil?
+                writer.write_date_time_value("lastReportedDateTime", @last_reported_date_time) unless @last_reported_date_time.nil?
+                writer.write_boolean_value("malwareProtectionEnabled", @malware_protection_enabled) unless @malware_protection_enabled.nil?
+                writer.write_boolean_value("networkInspectionSystemEnabled", @network_inspection_system_enabled) unless @network_inspection_system_enabled.nil?
+                writer.write_enum_value("productStatus", @product_status) unless @product_status.nil?
+                writer.write_boolean_value("quickScanOverdue", @quick_scan_overdue) unless @quick_scan_overdue.nil?
+                writer.write_boolean_value("realTimeProtectionEnabled", @real_time_protection_enabled) unless @real_time_protection_enabled.nil?
+                writer.write_boolean_value("rebootRequired", @reboot_required) unless @reboot_required.nil?
+                writer.write_boolean_value("signatureUpdateOverdue", @signature_update_overdue) unless @signature_update_overdue.nil?
+                writer.write_string_value("signatureVersion", @signature_version) unless @signature_version.nil?
+                writer.write_boolean_value("tamperProtectionEnabled", @tamper_protection_enabled) unless @tamper_protection_enabled.nil?
             end
             ## 
             ## Gets the signatureUpdateOverdue property value. When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.

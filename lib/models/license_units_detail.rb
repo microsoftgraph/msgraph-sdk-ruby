@@ -120,12 +120,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("enabled", @enabled)
-                writer.write_number_value("lockedOut", @locked_out)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("suspended", @suspended)
-                writer.write_number_value("warning", @warning)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("enabled", @enabled) unless @enabled.nil?
+                writer.write_number_value("lockedOut", @locked_out) unless @locked_out.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("suspended", @suspended) unless @suspended.nil?
+                writer.write_number_value("warning", @warning) unless @warning.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.

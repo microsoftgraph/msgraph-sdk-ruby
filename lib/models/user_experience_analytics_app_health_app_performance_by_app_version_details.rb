@@ -192,14 +192,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("appCrashCount", @app_crash_count)
-                writer.write_string_value("appDisplayName", @app_display_name)
-                writer.write_string_value("appName", @app_name)
-                writer.write_string_value("appPublisher", @app_publisher)
-                writer.write_string_value("appVersion", @app_version)
-                writer.write_number_value("deviceCountWithCrashes", @device_count_with_crashes)
-                writer.write_boolean_value("isLatestUsedVersion", @is_latest_used_version)
-                writer.write_boolean_value("isMostUsedVersion", @is_most_used_version)
+                writer.write_number_value("appCrashCount", @app_crash_count) unless @app_crash_count.nil?
+                writer.write_string_value("appDisplayName", @app_display_name) unless @app_display_name.nil?
+                writer.write_string_value("appName", @app_name) unless @app_name.nil?
+                writer.write_string_value("appPublisher", @app_publisher) unless @app_publisher.nil?
+                writer.write_string_value("appVersion", @app_version) unless @app_version.nil?
+                writer.write_number_value("deviceCountWithCrashes", @device_count_with_crashes) unless @device_count_with_crashes.nil?
+                writer.write_boolean_value("isLatestUsedVersion", @is_latest_used_version) unless @is_latest_used_version.nil?
+                writer.write_boolean_value("isMostUsedVersion", @is_most_used_version) unless @is_most_used_version.nil?
             end
         end
     end

@@ -65,9 +65,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("issues", @issues)
-                writer.write_string_value("service", @service)
-                writer.write_enum_value("status", @status)
+                writer.write_collection_of_object_values("issues", @issues) unless @issues.nil?
+                writer.write_string_value("service", @service) unless @service.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the service property value. The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.

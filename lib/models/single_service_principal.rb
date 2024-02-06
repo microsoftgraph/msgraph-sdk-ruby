@@ -62,8 +62,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("description", @description)
-                writer.write_string_value("servicePrincipalId", @service_principal_id)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("servicePrincipalId", @service_principal_id) unless @service_principal_id.nil?
             end
             ## 
             ## Gets the servicePrincipalId property value. ID of the servicePrincipal.

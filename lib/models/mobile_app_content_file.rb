@@ -167,15 +167,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("azureStorageUri", @azure_storage_uri)
-                writer.write_date_time_value("azureStorageUriExpirationDateTime", @azure_storage_uri_expiration_date_time)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_boolean_value("isCommitted", @is_committed)
-                writer.write_object_value("manifest", @manifest)
-                writer.write_string_value("name", @name)
-                writer.write_object_value("size", @size)
-                writer.write_object_value("sizeEncrypted", @size_encrypted)
-                writer.write_enum_value("uploadState", @upload_state)
+                writer.write_string_value("azureStorageUri", @azure_storage_uri) unless @azure_storage_uri.nil?
+                writer.write_date_time_value("azureStorageUriExpirationDateTime", @azure_storage_uri_expiration_date_time) unless @azure_storage_uri_expiration_date_time.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_boolean_value("isCommitted", @is_committed) unless @is_committed.nil?
+                writer.write_object_value("manifest", @manifest) unless @manifest.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_object_value("size", @size) unless @size.nil?
+                writer.write_object_value("sizeEncrypted", @size_encrypted) unless @size_encrypted.nil?
+                writer.write_enum_value("uploadState", @upload_state) unless @upload_state.nil?
             end
             ## 
             ## Gets the size property value. The size of the file prior to encryption.

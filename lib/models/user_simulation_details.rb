@@ -201,17 +201,17 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("assignedTrainingsCount", @assigned_trainings_count)
-                writer.write_number_value("completedTrainingsCount", @completed_trainings_count)
-                writer.write_date_time_value("compromisedDateTime", @compromised_date_time)
-                writer.write_number_value("inProgressTrainingsCount", @in_progress_trainings_count)
-                writer.write_boolean_value("isCompromised", @is_compromised)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_date_time_value("reportedPhishDateTime", @reported_phish_date_time)
-                writer.write_collection_of_object_values("simulationEvents", @simulation_events)
-                writer.write_object_value("simulationUser", @simulation_user)
-                writer.write_collection_of_object_values("trainingEvents", @training_events)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("assignedTrainingsCount", @assigned_trainings_count) unless @assigned_trainings_count.nil?
+                writer.write_number_value("completedTrainingsCount", @completed_trainings_count) unless @completed_trainings_count.nil?
+                writer.write_date_time_value("compromisedDateTime", @compromised_date_time) unless @compromised_date_time.nil?
+                writer.write_number_value("inProgressTrainingsCount", @in_progress_trainings_count) unless @in_progress_trainings_count.nil?
+                writer.write_boolean_value("isCompromised", @is_compromised) unless @is_compromised.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_date_time_value("reportedPhishDateTime", @reported_phish_date_time) unless @reported_phish_date_time.nil?
+                writer.write_collection_of_object_values("simulationEvents", @simulation_events) unless @simulation_events.nil?
+                writer.write_object_value("simulationUser", @simulation_user) unless @simulation_user.nil?
+                writer.write_collection_of_object_values("trainingEvents", @training_events) unless @training_events.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the simulationEvents property value. List of simulation events of a user in the attack simulation and training campaign.

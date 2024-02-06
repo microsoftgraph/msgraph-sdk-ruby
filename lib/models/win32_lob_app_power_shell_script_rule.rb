@@ -193,14 +193,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("comparisonValue", @comparison_value)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("enforceSignatureCheck", @enforce_signature_check)
-                writer.write_enum_value("operationType", @operation_type)
-                writer.write_enum_value("operator", @operator)
-                writer.write_enum_value("runAsAccount", @run_as_account)
+                writer.write_string_value("comparisonValue", @comparison_value) unless @comparison_value.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("enforceSignatureCheck", @enforce_signature_check) unless @enforce_signature_check.nil?
+                writer.write_enum_value("operationType", @operation_type) unless @operation_type.nil?
+                writer.write_enum_value("operator", @operator) unless @operator.nil?
+                writer.write_enum_value("runAsAccount", @run_as_account) unless @run_as_account.nil?
                 writer.write_boolean_value("runAs32Bit", @run_as32_bit)
-                writer.write_string_value("scriptContent", @script_content)
+                writer.write_string_value("scriptContent", @script_content) unless @script_content.nil?
             end
         end
     end

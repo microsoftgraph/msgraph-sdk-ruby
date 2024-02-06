@@ -219,17 +219,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("content", @content)
-                writer.write_string_value("contentUrl", @content_url)
-                writer.write_string_value("createdByAppId", @created_by_app_id)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_number_value("level", @level)
-                writer.write_object_value("links", @links)
-                writer.write_number_value("order", @order)
-                writer.write_object_value("parentNotebook", @parent_notebook)
-                writer.write_object_value("parentSection", @parent_section)
-                writer.write_string_value("title", @title)
-                writer.write_collection_of_primitive_values("userTags", @user_tags)
+                writer.write_object_value("content", @content) unless @content.nil?
+                writer.write_string_value("contentUrl", @content_url) unless @content_url.nil?
+                writer.write_string_value("createdByAppId", @created_by_app_id) unless @created_by_app_id.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_number_value("level", @level) unless @level.nil?
+                writer.write_object_value("links", @links) unless @links.nil?
+                writer.write_number_value("order", @order) unless @order.nil?
+                writer.write_object_value("parentNotebook", @parent_notebook) unless @parent_notebook.nil?
+                writer.write_object_value("parentSection", @parent_section) unless @parent_section.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
+                writer.write_collection_of_primitive_values("userTags", @user_tags) unless @user_tags.nil?
             end
             ## 
             ## Gets the title property value. The title of the page.

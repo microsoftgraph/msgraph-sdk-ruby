@@ -211,19 +211,19 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("agreementFileId", @agreement_file_id)
-                writer.write_string_value("agreementId", @agreement_id)
-                writer.write_string_value("deviceDisplayName", @device_display_name)
-                writer.write_string_value("deviceId", @device_id)
-                writer.write_string_value("deviceOSType", @device_o_s_type)
-                writer.write_string_value("deviceOSVersion", @device_o_s_version)
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_date_time_value("recordedDateTime", @recorded_date_time)
-                writer.write_enum_value("state", @state)
-                writer.write_string_value("userDisplayName", @user_display_name)
-                writer.write_string_value("userEmail", @user_email)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
+                writer.write_string_value("agreementFileId", @agreement_file_id) unless @agreement_file_id.nil?
+                writer.write_string_value("agreementId", @agreement_id) unless @agreement_id.nil?
+                writer.write_string_value("deviceDisplayName", @device_display_name) unless @device_display_name.nil?
+                writer.write_string_value("deviceId", @device_id) unless @device_id.nil?
+                writer.write_string_value("deviceOSType", @device_o_s_type) unless @device_o_s_type.nil?
+                writer.write_string_value("deviceOSVersion", @device_o_s_version) unless @device_o_s_version.nil?
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_date_time_value("recordedDateTime", @recorded_date_time) unless @recorded_date_time.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_string_value("userDisplayName", @user_display_name) unless @user_display_name.nil?
+                writer.write_string_value("userEmail", @user_email) unless @user_email.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
             end
             ## 
             ## Gets the state property value. The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).

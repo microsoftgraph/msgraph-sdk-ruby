@@ -58,7 +58,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_float_value("maxPoints", @max_points)
+                writer.write_float_value("maxPoints", @max_points) unless @max_points.nil?
             end
         end
     end

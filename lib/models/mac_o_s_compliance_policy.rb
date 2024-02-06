@@ -334,23 +334,23 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("deviceThreatProtectionEnabled", @device_threat_protection_enabled)
-                writer.write_enum_value("deviceThreatProtectionRequiredSecurityLevel", @device_threat_protection_required_security_level)
-                writer.write_boolean_value("firewallBlockAllIncoming", @firewall_block_all_incoming)
-                writer.write_boolean_value("firewallEnableStealthMode", @firewall_enable_stealth_mode)
-                writer.write_boolean_value("firewallEnabled", @firewall_enabled)
-                writer.write_string_value("osMaximumVersion", @os_maximum_version)
-                writer.write_string_value("osMinimumVersion", @os_minimum_version)
-                writer.write_boolean_value("passwordBlockSimple", @password_block_simple)
-                writer.write_number_value("passwordExpirationDays", @password_expiration_days)
-                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count)
-                writer.write_number_value("passwordMinimumLength", @password_minimum_length)
-                writer.write_number_value("passwordMinutesOfInactivityBeforeLock", @password_minutes_of_inactivity_before_lock)
-                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count)
-                writer.write_boolean_value("passwordRequired", @password_required)
-                writer.write_enum_value("passwordRequiredType", @password_required_type)
-                writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption)
-                writer.write_boolean_value("systemIntegrityProtectionEnabled", @system_integrity_protection_enabled)
+                writer.write_boolean_value("deviceThreatProtectionEnabled", @device_threat_protection_enabled) unless @device_threat_protection_enabled.nil?
+                writer.write_enum_value("deviceThreatProtectionRequiredSecurityLevel", @device_threat_protection_required_security_level) unless @device_threat_protection_required_security_level.nil?
+                writer.write_boolean_value("firewallBlockAllIncoming", @firewall_block_all_incoming) unless @firewall_block_all_incoming.nil?
+                writer.write_boolean_value("firewallEnableStealthMode", @firewall_enable_stealth_mode) unless @firewall_enable_stealth_mode.nil?
+                writer.write_boolean_value("firewallEnabled", @firewall_enabled) unless @firewall_enabled.nil?
+                writer.write_string_value("osMaximumVersion", @os_maximum_version) unless @os_maximum_version.nil?
+                writer.write_string_value("osMinimumVersion", @os_minimum_version) unless @os_minimum_version.nil?
+                writer.write_boolean_value("passwordBlockSimple", @password_block_simple) unless @password_block_simple.nil?
+                writer.write_number_value("passwordExpirationDays", @password_expiration_days) unless @password_expiration_days.nil?
+                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count) unless @password_minimum_character_set_count.nil?
+                writer.write_number_value("passwordMinimumLength", @password_minimum_length) unless @password_minimum_length.nil?
+                writer.write_number_value("passwordMinutesOfInactivityBeforeLock", @password_minutes_of_inactivity_before_lock) unless @password_minutes_of_inactivity_before_lock.nil?
+                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count) unless @password_previous_password_block_count.nil?
+                writer.write_boolean_value("passwordRequired", @password_required) unless @password_required.nil?
+                writer.write_enum_value("passwordRequiredType", @password_required_type) unless @password_required_type.nil?
+                writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption) unless @storage_require_encryption.nil?
+                writer.write_boolean_value("systemIntegrityProtectionEnabled", @system_integrity_protection_enabled) unless @system_integrity_protection_enabled.nil?
             end
             ## 
             ## Gets the storageRequireEncryption property value. Require encryption on Mac OS devices.

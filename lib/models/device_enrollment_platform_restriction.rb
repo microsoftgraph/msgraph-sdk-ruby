@@ -152,12 +152,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("osMaximumVersion", @os_maximum_version)
-                writer.write_string_value("osMinimumVersion", @os_minimum_version)
-                writer.write_boolean_value("personalDeviceEnrollmentBlocked", @personal_device_enrollment_blocked)
-                writer.write_boolean_value("platformBlocked", @platform_blocked)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("osMaximumVersion", @os_maximum_version) unless @os_maximum_version.nil?
+                writer.write_string_value("osMinimumVersion", @os_minimum_version) unless @os_minimum_version.nil?
+                writer.write_boolean_value("personalDeviceEnrollmentBlocked", @personal_device_enrollment_blocked) unless @personal_device_enrollment_blocked.nil?
+                writer.write_boolean_value("platformBlocked", @platform_blocked) unless @platform_blocked.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

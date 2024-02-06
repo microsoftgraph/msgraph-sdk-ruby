@@ -158,14 +158,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("displayName", @display_name)
-                writer.write_enum_value("groupType", @group_type)
-                writer.write_string_value("id", @id)
-                writer.write_collection_of_object_values("modifiedProperties", @modified_properties)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("type", @type)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_enum_value("groupType", @group_type) unless @group_type.nil?
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_collection_of_object_values("modifiedProperties", @modified_properties) unless @modified_properties.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("type", @type) unless @type.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the type property value. Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.

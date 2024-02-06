@@ -65,9 +65,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("tenantId", @tenant_id)
-                writer.write_string_value("userId", @user_id)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
             end
             ## 
             ## Gets the tenantId property value. The ID of the tenant that the tag member is a part of.

@@ -252,18 +252,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("accessPackages", @access_packages)
-                writer.write_enum_value("catalogType", @catalog_type)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_collection_of_object_values("customWorkflowExtensions", @custom_workflow_extensions)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("isExternallyVisible", @is_externally_visible)
-                writer.write_date_time_value("modifiedDateTime", @modified_date_time)
-                writer.write_collection_of_object_values("resourceRoles", @resource_roles)
-                writer.write_collection_of_object_values("resourceScopes", @resource_scopes)
-                writer.write_collection_of_object_values("resources", @resources)
-                writer.write_enum_value("state", @state)
+                writer.write_collection_of_object_values("accessPackages", @access_packages) unless @access_packages.nil?
+                writer.write_enum_value("catalogType", @catalog_type) unless @catalog_type.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_collection_of_object_values("customWorkflowExtensions", @custom_workflow_extensions) unless @custom_workflow_extensions.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("isExternallyVisible", @is_externally_visible) unless @is_externally_visible.nil?
+                writer.write_date_time_value("modifiedDateTime", @modified_date_time) unless @modified_date_time.nil?
+                writer.write_collection_of_object_values("resourceRoles", @resource_roles) unless @resource_roles.nil?
+                writer.write_collection_of_object_values("resourceScopes", @resource_scopes) unless @resource_scopes.nil?
+                writer.write_collection_of_object_values("resources", @resources) unless @resources.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
             end
             ## 
             ## Gets the state property value. Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.

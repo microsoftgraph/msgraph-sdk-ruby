@@ -695,42 +695,42 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("appLockerApplicationControl", @app_locker_application_control)
-                writer.write_boolean_value("applicationGuardAllowPersistence", @application_guard_allow_persistence)
-                writer.write_boolean_value("applicationGuardAllowPrintToLocalPrinters", @application_guard_allow_print_to_local_printers)
-                writer.write_boolean_value("applicationGuardAllowPrintToNetworkPrinters", @application_guard_allow_print_to_network_printers)
-                writer.write_boolean_value("applicationGuardAllowPrintToPDF", @application_guard_allow_print_to_p_d_f)
-                writer.write_boolean_value("applicationGuardAllowPrintToXPS", @application_guard_allow_print_to_x_p_s)
-                writer.write_enum_value("applicationGuardBlockClipboardSharing", @application_guard_block_clipboard_sharing)
-                writer.write_enum_value("applicationGuardBlockFileTransfer", @application_guard_block_file_transfer)
-                writer.write_boolean_value("applicationGuardBlockNonEnterpriseContent", @application_guard_block_non_enterprise_content)
-                writer.write_boolean_value("applicationGuardEnabled", @application_guard_enabled)
-                writer.write_boolean_value("applicationGuardForceAuditing", @application_guard_force_auditing)
-                writer.write_boolean_value("bitLockerDisableWarningForOtherDiskEncryption", @bit_locker_disable_warning_for_other_disk_encryption)
-                writer.write_boolean_value("bitLockerEnableStorageCardEncryptionOnMobile", @bit_locker_enable_storage_card_encryption_on_mobile)
-                writer.write_boolean_value("bitLockerEncryptDevice", @bit_locker_encrypt_device)
-                writer.write_object_value("bitLockerRemovableDrivePolicy", @bit_locker_removable_drive_policy)
-                writer.write_collection_of_primitive_values("defenderAdditionalGuardedFolders", @defender_additional_guarded_folders)
-                writer.write_collection_of_primitive_values("defenderAttackSurfaceReductionExcludedPaths", @defender_attack_surface_reduction_excluded_paths)
-                writer.write_object_value("defenderExploitProtectionXml", @defender_exploit_protection_xml)
-                writer.write_string_value("defenderExploitProtectionXmlFileName", @defender_exploit_protection_xml_file_name)
-                writer.write_collection_of_primitive_values("defenderGuardedFoldersAllowedAppPaths", @defender_guarded_folders_allowed_app_paths)
-                writer.write_boolean_value("defenderSecurityCenterBlockExploitProtectionOverride", @defender_security_center_block_exploit_protection_override)
-                writer.write_boolean_value("firewallBlockStatefulFTP", @firewall_block_stateful_f_t_p)
-                writer.write_enum_value("firewallCertificateRevocationListCheckMethod", @firewall_certificate_revocation_list_check_method)
-                writer.write_boolean_value("firewallIPSecExemptionsAllowDHCP", @firewall_i_p_sec_exemptions_allow_d_h_c_p)
-                writer.write_boolean_value("firewallIPSecExemptionsAllowICMP", @firewall_i_p_sec_exemptions_allow_i_c_m_p)
-                writer.write_boolean_value("firewallIPSecExemptionsAllowNeighborDiscovery", @firewall_i_p_sec_exemptions_allow_neighbor_discovery)
-                writer.write_boolean_value("firewallIPSecExemptionsAllowRouterDiscovery", @firewall_i_p_sec_exemptions_allow_router_discovery)
-                writer.write_number_value("firewallIdleTimeoutForSecurityAssociationInSeconds", @firewall_idle_timeout_for_security_association_in_seconds)
-                writer.write_boolean_value("firewallMergeKeyingModuleSettings", @firewall_merge_keying_module_settings)
-                writer.write_enum_value("firewallPacketQueueingMethod", @firewall_packet_queueing_method)
-                writer.write_enum_value("firewallPreSharedKeyEncodingMethod", @firewall_pre_shared_key_encoding_method)
-                writer.write_object_value("firewallProfileDomain", @firewall_profile_domain)
-                writer.write_object_value("firewallProfilePrivate", @firewall_profile_private)
-                writer.write_object_value("firewallProfilePublic", @firewall_profile_public)
-                writer.write_boolean_value("smartScreenBlockOverrideForFiles", @smart_screen_block_override_for_files)
-                writer.write_boolean_value("smartScreenEnableInShell", @smart_screen_enable_in_shell)
+                writer.write_enum_value("appLockerApplicationControl", @app_locker_application_control) unless @app_locker_application_control.nil?
+                writer.write_boolean_value("applicationGuardAllowPersistence", @application_guard_allow_persistence) unless @application_guard_allow_persistence.nil?
+                writer.write_boolean_value("applicationGuardAllowPrintToLocalPrinters", @application_guard_allow_print_to_local_printers) unless @application_guard_allow_print_to_local_printers.nil?
+                writer.write_boolean_value("applicationGuardAllowPrintToNetworkPrinters", @application_guard_allow_print_to_network_printers) unless @application_guard_allow_print_to_network_printers.nil?
+                writer.write_boolean_value("applicationGuardAllowPrintToPDF", @application_guard_allow_print_to_p_d_f) unless @application_guard_allow_print_to_p_d_f.nil?
+                writer.write_boolean_value("applicationGuardAllowPrintToXPS", @application_guard_allow_print_to_x_p_s) unless @application_guard_allow_print_to_x_p_s.nil?
+                writer.write_enum_value("applicationGuardBlockClipboardSharing", @application_guard_block_clipboard_sharing) unless @application_guard_block_clipboard_sharing.nil?
+                writer.write_enum_value("applicationGuardBlockFileTransfer", @application_guard_block_file_transfer) unless @application_guard_block_file_transfer.nil?
+                writer.write_boolean_value("applicationGuardBlockNonEnterpriseContent", @application_guard_block_non_enterprise_content) unless @application_guard_block_non_enterprise_content.nil?
+                writer.write_boolean_value("applicationGuardEnabled", @application_guard_enabled) unless @application_guard_enabled.nil?
+                writer.write_boolean_value("applicationGuardForceAuditing", @application_guard_force_auditing) unless @application_guard_force_auditing.nil?
+                writer.write_boolean_value("bitLockerDisableWarningForOtherDiskEncryption", @bit_locker_disable_warning_for_other_disk_encryption) unless @bit_locker_disable_warning_for_other_disk_encryption.nil?
+                writer.write_boolean_value("bitLockerEnableStorageCardEncryptionOnMobile", @bit_locker_enable_storage_card_encryption_on_mobile) unless @bit_locker_enable_storage_card_encryption_on_mobile.nil?
+                writer.write_boolean_value("bitLockerEncryptDevice", @bit_locker_encrypt_device) unless @bit_locker_encrypt_device.nil?
+                writer.write_object_value("bitLockerRemovableDrivePolicy", @bit_locker_removable_drive_policy) unless @bit_locker_removable_drive_policy.nil?
+                writer.write_collection_of_primitive_values("defenderAdditionalGuardedFolders", @defender_additional_guarded_folders) unless @defender_additional_guarded_folders.nil?
+                writer.write_collection_of_primitive_values("defenderAttackSurfaceReductionExcludedPaths", @defender_attack_surface_reduction_excluded_paths) unless @defender_attack_surface_reduction_excluded_paths.nil?
+                writer.write_object_value("defenderExploitProtectionXml", @defender_exploit_protection_xml) unless @defender_exploit_protection_xml.nil?
+                writer.write_string_value("defenderExploitProtectionXmlFileName", @defender_exploit_protection_xml_file_name) unless @defender_exploit_protection_xml_file_name.nil?
+                writer.write_collection_of_primitive_values("defenderGuardedFoldersAllowedAppPaths", @defender_guarded_folders_allowed_app_paths) unless @defender_guarded_folders_allowed_app_paths.nil?
+                writer.write_boolean_value("defenderSecurityCenterBlockExploitProtectionOverride", @defender_security_center_block_exploit_protection_override) unless @defender_security_center_block_exploit_protection_override.nil?
+                writer.write_boolean_value("firewallBlockStatefulFTP", @firewall_block_stateful_f_t_p) unless @firewall_block_stateful_f_t_p.nil?
+                writer.write_enum_value("firewallCertificateRevocationListCheckMethod", @firewall_certificate_revocation_list_check_method) unless @firewall_certificate_revocation_list_check_method.nil?
+                writer.write_boolean_value("firewallIPSecExemptionsAllowDHCP", @firewall_i_p_sec_exemptions_allow_d_h_c_p) unless @firewall_i_p_sec_exemptions_allow_d_h_c_p.nil?
+                writer.write_boolean_value("firewallIPSecExemptionsAllowICMP", @firewall_i_p_sec_exemptions_allow_i_c_m_p) unless @firewall_i_p_sec_exemptions_allow_i_c_m_p.nil?
+                writer.write_boolean_value("firewallIPSecExemptionsAllowNeighborDiscovery", @firewall_i_p_sec_exemptions_allow_neighbor_discovery) unless @firewall_i_p_sec_exemptions_allow_neighbor_discovery.nil?
+                writer.write_boolean_value("firewallIPSecExemptionsAllowRouterDiscovery", @firewall_i_p_sec_exemptions_allow_router_discovery) unless @firewall_i_p_sec_exemptions_allow_router_discovery.nil?
+                writer.write_number_value("firewallIdleTimeoutForSecurityAssociationInSeconds", @firewall_idle_timeout_for_security_association_in_seconds) unless @firewall_idle_timeout_for_security_association_in_seconds.nil?
+                writer.write_boolean_value("firewallMergeKeyingModuleSettings", @firewall_merge_keying_module_settings) unless @firewall_merge_keying_module_settings.nil?
+                writer.write_enum_value("firewallPacketQueueingMethod", @firewall_packet_queueing_method) unless @firewall_packet_queueing_method.nil?
+                writer.write_enum_value("firewallPreSharedKeyEncodingMethod", @firewall_pre_shared_key_encoding_method) unless @firewall_pre_shared_key_encoding_method.nil?
+                writer.write_object_value("firewallProfileDomain", @firewall_profile_domain) unless @firewall_profile_domain.nil?
+                writer.write_object_value("firewallProfilePrivate", @firewall_profile_private) unless @firewall_profile_private.nil?
+                writer.write_object_value("firewallProfilePublic", @firewall_profile_public) unless @firewall_profile_public.nil?
+                writer.write_boolean_value("smartScreenBlockOverrideForFiles", @smart_screen_block_override_for_files) unless @smart_screen_block_override_for_files.nil?
+                writer.write_boolean_value("smartScreenEnableInShell", @smart_screen_enable_in_shell) unless @smart_screen_enable_in_shell.nil?
             end
             ## 
             ## Gets the smartScreenBlockOverrideForFiles property value. Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.

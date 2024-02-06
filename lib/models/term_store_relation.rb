@@ -84,10 +84,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("fromTerm", @from_term)
-                writer.write_enum_value("relationship", @relationship)
-                writer.write_object_value("set", @set)
-                writer.write_object_value("toTerm", @to_term)
+                writer.write_object_value("fromTerm", @from_term) unless @from_term.nil?
+                writer.write_enum_value("relationship", @relationship) unless @relationship.nil?
+                writer.write_object_value("set", @set) unless @set.nil?
+                writer.write_object_value("toTerm", @to_term) unless @to_term.nil?
             end
             ## 
             ## Gets the set property value. The [set] in which the relation is relevant.

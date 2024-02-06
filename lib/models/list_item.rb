@@ -142,13 +142,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("analytics", @analytics)
-                writer.write_object_value("contentType", @content_type)
-                writer.write_collection_of_object_values("documentSetVersions", @document_set_versions)
-                writer.write_object_value("driveItem", @drive_item)
-                writer.write_object_value("fields", @fields)
-                writer.write_object_value("sharepointIds", @sharepoint_ids)
-                writer.write_collection_of_object_values("versions", @versions)
+                writer.write_object_value("analytics", @analytics) unless @analytics.nil?
+                writer.write_object_value("contentType", @content_type) unless @content_type.nil?
+                writer.write_collection_of_object_values("documentSetVersions", @document_set_versions) unless @document_set_versions.nil?
+                writer.write_object_value("driveItem", @drive_item) unless @drive_item.nil?
+                writer.write_object_value("fields", @fields) unless @fields.nil?
+                writer.write_object_value("sharepointIds", @sharepoint_ids) unless @sharepoint_ids.nil?
+                writer.write_collection_of_object_values("versions", @versions) unless @versions.nil?
             end
             ## 
             ## Gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.

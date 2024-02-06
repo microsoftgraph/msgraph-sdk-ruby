@@ -211,16 +211,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("color", @color)
+                writer.write_string_value("color", @color) unless @color.nil?
                 writer.write_string_value("criterion1", @criterion1)
                 writer.write_string_value("criterion2", @criterion2)
-                writer.write_string_value("dynamicCriteria", @dynamic_criteria)
-                writer.write_string_value("filterOn", @filter_on)
-                writer.write_object_value("icon", @icon)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("operator", @operator)
-                writer.write_object_value("values", @values)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("dynamicCriteria", @dynamic_criteria) unless @dynamic_criteria.nil?
+                writer.write_string_value("filterOn", @filter_on) unless @filter_on.nil?
+                writer.write_object_value("icon", @icon) unless @icon.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("operator", @operator) unless @operator.nil?
+                writer.write_object_value("values", @values) unless @values.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the values property value. The values property

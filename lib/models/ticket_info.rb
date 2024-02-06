@@ -82,10 +82,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("ticketNumber", @ticket_number)
-                writer.write_string_value("ticketSystem", @ticket_system)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("ticketNumber", @ticket_number) unless @ticket_number.nil?
+                writer.write_string_value("ticketSystem", @ticket_system) unless @ticket_system.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the ticketNumber property value. The ticket number.

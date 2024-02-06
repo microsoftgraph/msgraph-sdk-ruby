@@ -157,13 +157,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("configurationVersion", @configuration_version)
-                writer.write_number_value("errorCount", @error_count)
-                writer.write_number_value("failedCount", @failed_count)
-                writer.write_date_time_value("lastUpdateDateTime", @last_update_date_time)
-                writer.write_number_value("notApplicableCount", @not_applicable_count)
-                writer.write_number_value("pendingCount", @pending_count)
-                writer.write_number_value("successCount", @success_count)
+                writer.write_number_value("configurationVersion", @configuration_version) unless @configuration_version.nil?
+                writer.write_number_value("errorCount", @error_count) unless @error_count.nil?
+                writer.write_number_value("failedCount", @failed_count) unless @failed_count.nil?
+                writer.write_date_time_value("lastUpdateDateTime", @last_update_date_time) unless @last_update_date_time.nil?
+                writer.write_number_value("notApplicableCount", @not_applicable_count) unless @not_applicable_count.nil?
+                writer.write_number_value("pendingCount", @pending_count) unless @pending_count.nil?
+                writer.write_number_value("successCount", @success_count) unless @success_count.nil?
             end
             ## 
             ## Gets the successCount property value. Number of succeeded devices

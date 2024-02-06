@@ -380,28 +380,28 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("applicationName", @application_name)
-                writer.write_string_value("destinationAddress", @destination_address)
-                writer.write_string_value("destinationDomain", @destination_domain)
-                writer.write_string_value("destinationLocation", @destination_location)
-                writer.write_string_value("destinationPort", @destination_port)
-                writer.write_string_value("destinationUrl", @destination_url)
-                writer.write_enum_value("direction", @direction)
-                writer.write_date_time_value("domainRegisteredDateTime", @domain_registered_date_time)
-                writer.write_string_value("localDnsName", @local_dns_name)
-                writer.write_string_value("natDestinationAddress", @nat_destination_address)
-                writer.write_string_value("natDestinationPort", @nat_destination_port)
-                writer.write_string_value("natSourceAddress", @nat_source_address)
-                writer.write_string_value("natSourcePort", @nat_source_port)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("protocol", @protocol)
-                writer.write_string_value("riskScore", @risk_score)
-                writer.write_string_value("sourceAddress", @source_address)
-                writer.write_string_value("sourceLocation", @source_location)
-                writer.write_string_value("sourcePort", @source_port)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("urlParameters", @url_parameters)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("applicationName", @application_name) unless @application_name.nil?
+                writer.write_string_value("destinationAddress", @destination_address) unless @destination_address.nil?
+                writer.write_string_value("destinationDomain", @destination_domain) unless @destination_domain.nil?
+                writer.write_string_value("destinationLocation", @destination_location) unless @destination_location.nil?
+                writer.write_string_value("destinationPort", @destination_port) unless @destination_port.nil?
+                writer.write_string_value("destinationUrl", @destination_url) unless @destination_url.nil?
+                writer.write_enum_value("direction", @direction) unless @direction.nil?
+                writer.write_date_time_value("domainRegisteredDateTime", @domain_registered_date_time) unless @domain_registered_date_time.nil?
+                writer.write_string_value("localDnsName", @local_dns_name) unless @local_dns_name.nil?
+                writer.write_string_value("natDestinationAddress", @nat_destination_address) unless @nat_destination_address.nil?
+                writer.write_string_value("natDestinationPort", @nat_destination_port) unless @nat_destination_port.nil?
+                writer.write_string_value("natSourceAddress", @nat_source_address) unless @nat_source_address.nil?
+                writer.write_string_value("natSourcePort", @nat_source_port) unless @nat_source_port.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("protocol", @protocol) unless @protocol.nil?
+                writer.write_string_value("riskScore", @risk_score) unless @risk_score.nil?
+                writer.write_string_value("sourceAddress", @source_address) unless @source_address.nil?
+                writer.write_string_value("sourceLocation", @source_location) unless @source_location.nil?
+                writer.write_string_value("sourcePort", @source_port) unless @source_port.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("urlParameters", @url_parameters) unless @url_parameters.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sourceAddress property value. Source (i.e. origin) IP address (of the network connection).

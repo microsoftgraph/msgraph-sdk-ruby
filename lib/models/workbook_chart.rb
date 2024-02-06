@@ -191,18 +191,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("axes", @axes)
-                writer.write_object_value("dataLabels", @data_labels)
-                writer.write_object_value("format", @format)
-                writer.write_object_value("height", @height)
-                writer.write_object_value("left", @left)
-                writer.write_object_value("legend", @legend)
-                writer.write_string_value("name", @name)
-                writer.write_collection_of_object_values("series", @series)
-                writer.write_object_value("title", @title)
-                writer.write_object_value("top", @top)
-                writer.write_object_value("width", @width)
-                writer.write_object_value("worksheet", @worksheet)
+                writer.write_object_value("axes", @axes) unless @axes.nil?
+                writer.write_object_value("dataLabels", @data_labels) unless @data_labels.nil?
+                writer.write_object_value("format", @format) unless @format.nil?
+                writer.write_object_value("height", @height) unless @height.nil?
+                writer.write_object_value("left", @left) unless @left.nil?
+                writer.write_object_value("legend", @legend) unless @legend.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_collection_of_object_values("series", @series) unless @series.nil?
+                writer.write_object_value("title", @title) unless @title.nil?
+                writer.write_object_value("top", @top) unless @top.nil?
+                writer.write_object_value("width", @width) unless @width.nil?
+                writer.write_object_value("worksheet", @worksheet) unless @worksheet.nil?
             end
             ## 
             ## Gets the series property value. Represents either a single series or collection of series in the chart. Read-only.

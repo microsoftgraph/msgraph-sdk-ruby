@@ -301,23 +301,23 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("authenticationType", @authentication_type)
-                writer.write_string_value("availabilityStatus", @availability_status)
-                writer.write_collection_of_object_values("domainNameReferences", @domain_name_references)
-                writer.write_collection_of_object_values("federationConfiguration", @federation_configuration)
-                writer.write_boolean_value("isAdminManaged", @is_admin_managed)
-                writer.write_boolean_value("isDefault", @is_default)
-                writer.write_boolean_value("isInitial", @is_initial)
-                writer.write_boolean_value("isRoot", @is_root)
-                writer.write_boolean_value("isVerified", @is_verified)
-                writer.write_string_value("manufacturer", @manufacturer)
-                writer.write_string_value("model", @model)
-                writer.write_number_value("passwordNotificationWindowInDays", @password_notification_window_in_days)
-                writer.write_number_value("passwordValidityPeriodInDays", @password_validity_period_in_days)
-                writer.write_collection_of_object_values("serviceConfigurationRecords", @service_configuration_records)
-                writer.write_object_value("state", @state)
-                writer.write_collection_of_primitive_values("supportedServices", @supported_services)
-                writer.write_collection_of_object_values("verificationDnsRecords", @verification_dns_records)
+                writer.write_string_value("authenticationType", @authentication_type) unless @authentication_type.nil?
+                writer.write_string_value("availabilityStatus", @availability_status) unless @availability_status.nil?
+                writer.write_collection_of_object_values("domainNameReferences", @domain_name_references) unless @domain_name_references.nil?
+                writer.write_collection_of_object_values("federationConfiguration", @federation_configuration) unless @federation_configuration.nil?
+                writer.write_boolean_value("isAdminManaged", @is_admin_managed) unless @is_admin_managed.nil?
+                writer.write_boolean_value("isDefault", @is_default) unless @is_default.nil?
+                writer.write_boolean_value("isInitial", @is_initial) unless @is_initial.nil?
+                writer.write_boolean_value("isRoot", @is_root) unless @is_root.nil?
+                writer.write_boolean_value("isVerified", @is_verified) unless @is_verified.nil?
+                writer.write_string_value("manufacturer", @manufacturer) unless @manufacturer.nil?
+                writer.write_string_value("model", @model) unless @model.nil?
+                writer.write_number_value("passwordNotificationWindowInDays", @password_notification_window_in_days) unless @password_notification_window_in_days.nil?
+                writer.write_number_value("passwordValidityPeriodInDays", @password_validity_period_in_days) unless @password_validity_period_in_days.nil?
+                writer.write_collection_of_object_values("serviceConfigurationRecords", @service_configuration_records) unless @service_configuration_records.nil?
+                writer.write_object_value("state", @state) unless @state.nil?
+                writer.write_collection_of_primitive_values("supportedServices", @supported_services) unless @supported_services.nil?
+                writer.write_collection_of_object_values("verificationDnsRecords", @verification_dns_records) unless @verification_dns_records.nil?
             end
             ## 
             ## Gets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.

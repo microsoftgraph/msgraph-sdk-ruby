@@ -143,13 +143,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("connectors", @connectors)
-                writer.write_boolean_value("hasPhysicalDevice", @has_physical_device)
-                writer.write_boolean_value("isShared", @is_shared)
-                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time)
-                writer.write_date_time_value("registeredDateTime", @registered_date_time)
-                writer.write_collection_of_object_values("shares", @shares)
-                writer.write_collection_of_object_values("taskTriggers", @task_triggers)
+                writer.write_collection_of_object_values("connectors", @connectors) unless @connectors.nil?
+                writer.write_boolean_value("hasPhysicalDevice", @has_physical_device) unless @has_physical_device.nil?
+                writer.write_boolean_value("isShared", @is_shared) unless @is_shared.nil?
+                writer.write_date_time_value("lastSeenDateTime", @last_seen_date_time) unless @last_seen_date_time.nil?
+                writer.write_date_time_value("registeredDateTime", @registered_date_time) unless @registered_date_time.nil?
+                writer.write_collection_of_object_values("shares", @shares) unless @shares.nil?
+                writer.write_collection_of_object_values("taskTriggers", @task_triggers) unless @task_triggers.nil?
             end
             ## 
             ## Gets the shares property value. The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.

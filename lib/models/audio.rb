@@ -318,24 +318,24 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("album", @album)
-                writer.write_string_value("albumArtist", @album_artist)
-                writer.write_string_value("artist", @artist)
-                writer.write_object_value("bitrate", @bitrate)
-                writer.write_string_value("composers", @composers)
-                writer.write_string_value("copyright", @copyright)
-                writer.write_number_value("disc", @disc)
-                writer.write_number_value("discCount", @disc_count)
-                writer.write_object_value("duration", @duration)
-                writer.write_string_value("genre", @genre)
-                writer.write_boolean_value("hasDrm", @has_drm)
-                writer.write_boolean_value("isVariableBitrate", @is_variable_bitrate)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("title", @title)
-                writer.write_number_value("track", @track)
-                writer.write_number_value("trackCount", @track_count)
-                writer.write_number_value("year", @year)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("album", @album) unless @album.nil?
+                writer.write_string_value("albumArtist", @album_artist) unless @album_artist.nil?
+                writer.write_string_value("artist", @artist) unless @artist.nil?
+                writer.write_object_value("bitrate", @bitrate) unless @bitrate.nil?
+                writer.write_string_value("composers", @composers) unless @composers.nil?
+                writer.write_string_value("copyright", @copyright) unless @copyright.nil?
+                writer.write_number_value("disc", @disc) unless @disc.nil?
+                writer.write_number_value("discCount", @disc_count) unless @disc_count.nil?
+                writer.write_object_value("duration", @duration) unless @duration.nil?
+                writer.write_string_value("genre", @genre) unless @genre.nil?
+                writer.write_boolean_value("hasDrm", @has_drm) unless @has_drm.nil?
+                writer.write_boolean_value("isVariableBitrate", @is_variable_bitrate) unless @is_variable_bitrate.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
+                writer.write_number_value("track", @track) unless @track.nil?
+                writer.write_number_value("trackCount", @track_count) unless @track_count.nil?
+                writer.write_number_value("year", @year) unless @year.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the title property value. The title of the audio file.

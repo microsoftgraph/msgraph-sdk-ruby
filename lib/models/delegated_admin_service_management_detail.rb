@@ -46,8 +46,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("serviceManagementUrl", @service_management_url)
-                writer.write_string_value("serviceName", @service_name)
+                writer.write_string_value("serviceManagementUrl", @service_management_url) unless @service_management_url.nil?
+                writer.write_string_value("serviceName", @service_name) unless @service_name.nil?
             end
             ## 
             ## Gets the serviceManagementUrl property value. The URL of the management portal for the managed service. Read-only.

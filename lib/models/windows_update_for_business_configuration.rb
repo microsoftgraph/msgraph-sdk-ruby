@@ -652,39 +652,39 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_boolean_value("allowWindows11Upgrade", @allow_windows11_upgrade)
-                writer.write_enum_value("autoRestartNotificationDismissal", @auto_restart_notification_dismissal)
-                writer.write_enum_value("automaticUpdateMode", @automatic_update_mode)
-                writer.write_enum_value("businessReadyUpdatesOnly", @business_ready_updates_only)
-                writer.write_number_value("deadlineForFeatureUpdatesInDays", @deadline_for_feature_updates_in_days)
-                writer.write_number_value("deadlineForQualityUpdatesInDays", @deadline_for_quality_updates_in_days)
-                writer.write_number_value("deadlineGracePeriodInDays", @deadline_grace_period_in_days)
-                writer.write_enum_value("deliveryOptimizationMode", @delivery_optimization_mode)
-                writer.write_boolean_value("driversExcluded", @drivers_excluded)
-                writer.write_number_value("engagedRestartDeadlineInDays", @engaged_restart_deadline_in_days)
-                writer.write_number_value("engagedRestartSnoozeScheduleInDays", @engaged_restart_snooze_schedule_in_days)
-                writer.write_number_value("engagedRestartTransitionScheduleInDays", @engaged_restart_transition_schedule_in_days)
-                writer.write_number_value("featureUpdatesDeferralPeriodInDays", @feature_updates_deferral_period_in_days)
-                writer.write_date_time_value("featureUpdatesPauseExpiryDateTime", @feature_updates_pause_expiry_date_time)
-                writer.write_boolean_value("featureUpdatesPaused", @feature_updates_paused)
-                writer.write_date_time_value("featureUpdatesRollbackStartDateTime", @feature_updates_rollback_start_date_time)
-                writer.write_number_value("featureUpdatesRollbackWindowInDays", @feature_updates_rollback_window_in_days)
-                writer.write_boolean_value("featureUpdatesWillBeRolledBack", @feature_updates_will_be_rolled_back)
-                writer.write_object_value("installationSchedule", @installation_schedule)
-                writer.write_boolean_value("microsoftUpdateServiceAllowed", @microsoft_update_service_allowed)
-                writer.write_boolean_value("postponeRebootUntilAfterDeadline", @postpone_reboot_until_after_deadline)
-                writer.write_enum_value("prereleaseFeatures", @prerelease_features)
-                writer.write_number_value("qualityUpdatesDeferralPeriodInDays", @quality_updates_deferral_period_in_days)
-                writer.write_date_time_value("qualityUpdatesPauseExpiryDateTime", @quality_updates_pause_expiry_date_time)
-                writer.write_boolean_value("qualityUpdatesPaused", @quality_updates_paused)
-                writer.write_date_time_value("qualityUpdatesRollbackStartDateTime", @quality_updates_rollback_start_date_time)
-                writer.write_boolean_value("qualityUpdatesWillBeRolledBack", @quality_updates_will_be_rolled_back)
-                writer.write_number_value("scheduleImminentRestartWarningInMinutes", @schedule_imminent_restart_warning_in_minutes)
-                writer.write_number_value("scheduleRestartWarningInHours", @schedule_restart_warning_in_hours)
-                writer.write_boolean_value("skipChecksBeforeRestart", @skip_checks_before_restart)
-                writer.write_enum_value("updateNotificationLevel", @update_notification_level)
-                writer.write_enum_value("updateWeeks", @update_weeks)
-                writer.write_enum_value("userPauseAccess", @user_pause_access)
-                writer.write_enum_value("userWindowsUpdateScanAccess", @user_windows_update_scan_access)
+                writer.write_enum_value("autoRestartNotificationDismissal", @auto_restart_notification_dismissal) unless @auto_restart_notification_dismissal.nil?
+                writer.write_enum_value("automaticUpdateMode", @automatic_update_mode) unless @automatic_update_mode.nil?
+                writer.write_enum_value("businessReadyUpdatesOnly", @business_ready_updates_only) unless @business_ready_updates_only.nil?
+                writer.write_number_value("deadlineForFeatureUpdatesInDays", @deadline_for_feature_updates_in_days) unless @deadline_for_feature_updates_in_days.nil?
+                writer.write_number_value("deadlineForQualityUpdatesInDays", @deadline_for_quality_updates_in_days) unless @deadline_for_quality_updates_in_days.nil?
+                writer.write_number_value("deadlineGracePeriodInDays", @deadline_grace_period_in_days) unless @deadline_grace_period_in_days.nil?
+                writer.write_enum_value("deliveryOptimizationMode", @delivery_optimization_mode) unless @delivery_optimization_mode.nil?
+                writer.write_boolean_value("driversExcluded", @drivers_excluded) unless @drivers_excluded.nil?
+                writer.write_number_value("engagedRestartDeadlineInDays", @engaged_restart_deadline_in_days) unless @engaged_restart_deadline_in_days.nil?
+                writer.write_number_value("engagedRestartSnoozeScheduleInDays", @engaged_restart_snooze_schedule_in_days) unless @engaged_restart_snooze_schedule_in_days.nil?
+                writer.write_number_value("engagedRestartTransitionScheduleInDays", @engaged_restart_transition_schedule_in_days) unless @engaged_restart_transition_schedule_in_days.nil?
+                writer.write_number_value("featureUpdatesDeferralPeriodInDays", @feature_updates_deferral_period_in_days) unless @feature_updates_deferral_period_in_days.nil?
+                writer.write_date_time_value("featureUpdatesPauseExpiryDateTime", @feature_updates_pause_expiry_date_time) unless @feature_updates_pause_expiry_date_time.nil?
+                writer.write_boolean_value("featureUpdatesPaused", @feature_updates_paused) unless @feature_updates_paused.nil?
+                writer.write_date_time_value("featureUpdatesRollbackStartDateTime", @feature_updates_rollback_start_date_time) unless @feature_updates_rollback_start_date_time.nil?
+                writer.write_number_value("featureUpdatesRollbackWindowInDays", @feature_updates_rollback_window_in_days) unless @feature_updates_rollback_window_in_days.nil?
+                writer.write_boolean_value("featureUpdatesWillBeRolledBack", @feature_updates_will_be_rolled_back) unless @feature_updates_will_be_rolled_back.nil?
+                writer.write_object_value("installationSchedule", @installation_schedule) unless @installation_schedule.nil?
+                writer.write_boolean_value("microsoftUpdateServiceAllowed", @microsoft_update_service_allowed) unless @microsoft_update_service_allowed.nil?
+                writer.write_boolean_value("postponeRebootUntilAfterDeadline", @postpone_reboot_until_after_deadline) unless @postpone_reboot_until_after_deadline.nil?
+                writer.write_enum_value("prereleaseFeatures", @prerelease_features) unless @prerelease_features.nil?
+                writer.write_number_value("qualityUpdatesDeferralPeriodInDays", @quality_updates_deferral_period_in_days) unless @quality_updates_deferral_period_in_days.nil?
+                writer.write_date_time_value("qualityUpdatesPauseExpiryDateTime", @quality_updates_pause_expiry_date_time) unless @quality_updates_pause_expiry_date_time.nil?
+                writer.write_boolean_value("qualityUpdatesPaused", @quality_updates_paused) unless @quality_updates_paused.nil?
+                writer.write_date_time_value("qualityUpdatesRollbackStartDateTime", @quality_updates_rollback_start_date_time) unless @quality_updates_rollback_start_date_time.nil?
+                writer.write_boolean_value("qualityUpdatesWillBeRolledBack", @quality_updates_will_be_rolled_back) unless @quality_updates_will_be_rolled_back.nil?
+                writer.write_number_value("scheduleImminentRestartWarningInMinutes", @schedule_imminent_restart_warning_in_minutes) unless @schedule_imminent_restart_warning_in_minutes.nil?
+                writer.write_number_value("scheduleRestartWarningInHours", @schedule_restart_warning_in_hours) unless @schedule_restart_warning_in_hours.nil?
+                writer.write_boolean_value("skipChecksBeforeRestart", @skip_checks_before_restart) unless @skip_checks_before_restart.nil?
+                writer.write_enum_value("updateNotificationLevel", @update_notification_level) unless @update_notification_level.nil?
+                writer.write_enum_value("updateWeeks", @update_weeks) unless @update_weeks.nil?
+                writer.write_enum_value("userPauseAccess", @user_pause_access) unless @user_pause_access.nil?
+                writer.write_enum_value("userWindowsUpdateScanAccess", @user_windows_update_scan_access) unless @user_windows_update_scan_access.nil?
             end
             ## 
             ## Gets the skipChecksBeforeRestart property value. When TRUE, skips all checks before restart: Battery level = 40%, User presence, Display Needed, Presentation mode, Full screen mode, phone call state, game mode etc. When FALSE, does not skip all checks before restart. Returned by default. Query parameters are not supported.

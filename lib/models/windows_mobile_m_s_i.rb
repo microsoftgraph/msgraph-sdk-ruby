@@ -117,10 +117,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("commandLine", @command_line)
-                writer.write_boolean_value("ignoreVersionDetection", @ignore_version_detection)
-                writer.write_string_value("productCode", @product_code)
-                writer.write_string_value("productVersion", @product_version)
+                writer.write_string_value("commandLine", @command_line) unless @command_line.nil?
+                writer.write_boolean_value("ignoreVersionDetection", @ignore_version_detection) unless @ignore_version_detection.nil?
+                writer.write_string_value("productCode", @product_code) unless @product_code.nil?
+                writer.write_string_value("productVersion", @product_version) unless @product_version.nil?
             end
         end
     end

@@ -169,13 +169,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("approvalMode", @approval_mode)
-                writer.write_collection_of_object_values("approvalStages", @approval_stages)
-                writer.write_boolean_value("isApprovalRequired", @is_approval_required)
-                writer.write_boolean_value("isApprovalRequiredForExtension", @is_approval_required_for_extension)
-                writer.write_boolean_value("isRequestorJustificationRequired", @is_requestor_justification_required)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("approvalMode", @approval_mode) unless @approval_mode.nil?
+                writer.write_collection_of_object_values("approvalStages", @approval_stages) unless @approval_stages.nil?
+                writer.write_boolean_value("isApprovalRequired", @is_approval_required) unless @is_approval_required.nil?
+                writer.write_boolean_value("isApprovalRequiredForExtension", @is_approval_required_for_extension) unless @is_approval_required_for_extension.nil?
+                writer.write_boolean_value("isRequestorJustificationRequired", @is_requestor_justification_required) unless @is_requestor_justification_required.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

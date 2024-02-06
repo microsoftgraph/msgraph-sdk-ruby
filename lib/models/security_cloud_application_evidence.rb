@@ -134,11 +134,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("appId", @app_id)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("instanceId", @instance_id)
-                writer.write_string_value("instanceName", @instance_name)
-                writer.write_object_value("saasAppId", @saas_app_id)
+                writer.write_object_value("appId", @app_id) unless @app_id.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("instanceId", @instance_id) unless @instance_id.nil?
+                writer.write_string_value("instanceName", @instance_name) unless @instance_name.nil?
+                writer.write_object_value("saasAppId", @saas_app_id) unless @saas_app_id.nil?
             end
         end
     end

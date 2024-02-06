@@ -251,18 +251,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("accessPackageAssignmentApprovals", @access_package_assignment_approvals)
-                writer.write_collection_of_object_values("accessPackages", @access_packages)
-                writer.write_collection_of_object_values("assignmentPolicies", @assignment_policies)
-                writer.write_collection_of_object_values("assignmentRequests", @assignment_requests)
-                writer.write_collection_of_object_values("assignments", @assignments)
-                writer.write_collection_of_object_values("catalogs", @catalogs)
-                writer.write_collection_of_object_values("connectedOrganizations", @connected_organizations)
-                writer.write_collection_of_object_values("resourceEnvironments", @resource_environments)
-                writer.write_collection_of_object_values("resourceRequests", @resource_requests)
-                writer.write_collection_of_object_values("resourceRoleScopes", @resource_role_scopes)
-                writer.write_collection_of_object_values("resources", @resources)
-                writer.write_object_value("settings", @settings)
+                writer.write_collection_of_object_values("accessPackageAssignmentApprovals", @access_package_assignment_approvals) unless @access_package_assignment_approvals.nil?
+                writer.write_collection_of_object_values("accessPackages", @access_packages) unless @access_packages.nil?
+                writer.write_collection_of_object_values("assignmentPolicies", @assignment_policies) unless @assignment_policies.nil?
+                writer.write_collection_of_object_values("assignmentRequests", @assignment_requests) unless @assignment_requests.nil?
+                writer.write_collection_of_object_values("assignments", @assignments) unless @assignments.nil?
+                writer.write_collection_of_object_values("catalogs", @catalogs) unless @catalogs.nil?
+                writer.write_collection_of_object_values("connectedOrganizations", @connected_organizations) unless @connected_organizations.nil?
+                writer.write_collection_of_object_values("resourceEnvironments", @resource_environments) unless @resource_environments.nil?
+                writer.write_collection_of_object_values("resourceRequests", @resource_requests) unless @resource_requests.nil?
+                writer.write_collection_of_object_values("resourceRoleScopes", @resource_role_scopes) unless @resource_role_scopes.nil?
+                writer.write_collection_of_object_values("resources", @resources) unless @resources.nil?
+                writer.write_object_value("settings", @settings) unless @settings.nil?
             end
             ## 
             ## Gets the settings property value. The settings that control the behavior of Azure AD entitlement management.

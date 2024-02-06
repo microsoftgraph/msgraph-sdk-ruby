@@ -192,15 +192,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("contentSource", @content_source)
-                writer.write_string_value("hitId", @hit_id)
-                writer.write_boolean_value("isCollapsed", @is_collapsed)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("rank", @rank)
-                writer.write_object_value("resource", @resource)
-                writer.write_string_value("resultTemplateId", @result_template_id)
-                writer.write_string_value("summary", @summary)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("contentSource", @content_source) unless @content_source.nil?
+                writer.write_string_value("hitId", @hit_id) unless @hit_id.nil?
+                writer.write_boolean_value("isCollapsed", @is_collapsed) unless @is_collapsed.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("rank", @rank) unless @rank.nil?
+                writer.write_object_value("resource", @resource) unless @resource.nil?
+                writer.write_string_value("resultTemplateId", @result_template_id) unless @result_template_id.nil?
+                writer.write_string_value("summary", @summary) unless @summary.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the summary property value. A summary of the result, if a summary is available.

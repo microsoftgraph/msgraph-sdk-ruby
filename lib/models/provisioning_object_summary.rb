@@ -253,22 +253,22 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("activityDateTime", @activity_date_time)
-                writer.write_string_value("changeId", @change_id)
-                writer.write_string_value("cycleId", @cycle_id)
-                writer.write_number_value("durationInMilliseconds", @duration_in_milliseconds)
-                writer.write_object_value("initiatedBy", @initiated_by)
-                writer.write_string_value("jobId", @job_id)
-                writer.write_collection_of_object_values("modifiedProperties", @modified_properties)
-                writer.write_enum_value("provisioningAction", @provisioning_action)
-                writer.write_object_value("provisioningStatusInfo", @provisioning_status_info)
-                writer.write_collection_of_object_values("provisioningSteps", @provisioning_steps)
-                writer.write_object_value("servicePrincipal", @service_principal)
-                writer.write_object_value("sourceIdentity", @source_identity)
-                writer.write_object_value("sourceSystem", @source_system)
-                writer.write_object_value("targetIdentity", @target_identity)
-                writer.write_object_value("targetSystem", @target_system)
-                writer.write_string_value("tenantId", @tenant_id)
+                writer.write_date_time_value("activityDateTime", @activity_date_time) unless @activity_date_time.nil?
+                writer.write_string_value("changeId", @change_id) unless @change_id.nil?
+                writer.write_string_value("cycleId", @cycle_id) unless @cycle_id.nil?
+                writer.write_number_value("durationInMilliseconds", @duration_in_milliseconds) unless @duration_in_milliseconds.nil?
+                writer.write_object_value("initiatedBy", @initiated_by) unless @initiated_by.nil?
+                writer.write_string_value("jobId", @job_id) unless @job_id.nil?
+                writer.write_collection_of_object_values("modifiedProperties", @modified_properties) unless @modified_properties.nil?
+                writer.write_enum_value("provisioningAction", @provisioning_action) unless @provisioning_action.nil?
+                writer.write_object_value("provisioningStatusInfo", @provisioning_status_info) unless @provisioning_status_info.nil?
+                writer.write_collection_of_object_values("provisioningSteps", @provisioning_steps) unless @provisioning_steps.nil?
+                writer.write_object_value("servicePrincipal", @service_principal) unless @service_principal.nil?
+                writer.write_object_value("sourceIdentity", @source_identity) unless @source_identity.nil?
+                writer.write_object_value("sourceSystem", @source_system) unless @source_system.nil?
+                writer.write_object_value("targetIdentity", @target_identity) unless @target_identity.nil?
+                writer.write_object_value("targetSystem", @target_system) unless @target_system.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
             end
             ## 
             ## Gets the servicePrincipal property value. Represents the service principal used for provisioning. Supports $filter (eq) for id and name.

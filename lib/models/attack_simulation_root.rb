@@ -46,8 +46,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("simulationAutomations", @simulation_automations)
-                writer.write_collection_of_object_values("simulations", @simulations)
+                writer.write_collection_of_object_values("simulationAutomations", @simulation_automations) unless @simulation_automations.nil?
+                writer.write_collection_of_object_values("simulations", @simulations) unless @simulations.nil?
             end
             ## 
             ## Gets the simulationAutomations property value. Represents simulation automation created to run on a tenant.

@@ -159,14 +159,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_date_time_value("currentBegan", @current_began)
-                writer.write_object_value("error", @error)
-                writer.write_date_time_value("nextAttempt", @next_attempt)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("reason", @reason)
-                writer.write_date_time_value("seriesBegan", @series_began)
-                writer.write_object_value("seriesCount", @series_count)
-                writer.write_additional_data(@additional_data)
+                writer.write_date_time_value("currentBegan", @current_began) unless @current_began.nil?
+                writer.write_object_value("error", @error) unless @error.nil?
+                writer.write_date_time_value("nextAttempt", @next_attempt) unless @next_attempt.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("reason", @reason) unless @reason.nil?
+                writer.write_date_time_value("seriesBegan", @series_began) unless @series_began.nil?
+                writer.write_object_value("seriesCount", @series_count) unless @series_count.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the seriesBegan property value. Date and time when the quarantine was first imposed in this series (a series starts when a quarantine is first imposed, and is reset as soon as the quarantine is lifted). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.

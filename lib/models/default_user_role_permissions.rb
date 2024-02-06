@@ -188,14 +188,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowedToCreateApps", @allowed_to_create_apps)
-                writer.write_boolean_value("allowedToCreateSecurityGroups", @allowed_to_create_security_groups)
-                writer.write_boolean_value("allowedToCreateTenants", @allowed_to_create_tenants)
-                writer.write_boolean_value("allowedToReadBitlockerKeysForOwnedDevice", @allowed_to_read_bitlocker_keys_for_owned_device)
-                writer.write_boolean_value("allowedToReadOtherUsers", @allowed_to_read_other_users)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_primitive_values("permissionGrantPoliciesAssigned", @permission_grant_policies_assigned)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowedToCreateApps", @allowed_to_create_apps) unless @allowed_to_create_apps.nil?
+                writer.write_boolean_value("allowedToCreateSecurityGroups", @allowed_to_create_security_groups) unless @allowed_to_create_security_groups.nil?
+                writer.write_boolean_value("allowedToCreateTenants", @allowed_to_create_tenants) unless @allowed_to_create_tenants.nil?
+                writer.write_boolean_value("allowedToReadBitlockerKeysForOwnedDevice", @allowed_to_read_bitlocker_keys_for_owned_device) unless @allowed_to_read_bitlocker_keys_for_owned_device.nil?
+                writer.write_boolean_value("allowedToReadOtherUsers", @allowed_to_read_other_users) unless @allowed_to_read_other_users.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_primitive_values("permissionGrantPoliciesAssigned", @permission_grant_policies_assigned) unless @permission_grant_policies_assigned.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

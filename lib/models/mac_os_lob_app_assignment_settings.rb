@@ -45,7 +45,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("uninstallOnDeviceRemoval", @uninstall_on_device_removal)
+                writer.write_boolean_value("uninstallOnDeviceRemoval", @uninstall_on_device_removal) unless @uninstall_on_device_removal.nil?
             end
             ## 
             ## Gets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.

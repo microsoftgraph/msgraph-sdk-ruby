@@ -189,17 +189,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("osCheckFailedPercentage", @os_check_failed_percentage)
-                writer.write_object_value("processorCoreCountCheckFailedPercentage", @processor_core_count_check_failed_percentage)
-                writer.write_object_value("processorFamilyCheckFailedPercentage", @processor_family_check_failed_percentage)
-                writer.write_object_value("processorSpeedCheckFailedPercentage", @processor_speed_check_failed_percentage)
+                writer.write_object_value("osCheckFailedPercentage", @os_check_failed_percentage) unless @os_check_failed_percentage.nil?
+                writer.write_object_value("processorCoreCountCheckFailedPercentage", @processor_core_count_check_failed_percentage) unless @processor_core_count_check_failed_percentage.nil?
+                writer.write_object_value("processorFamilyCheckFailedPercentage", @processor_family_check_failed_percentage) unless @processor_family_check_failed_percentage.nil?
+                writer.write_object_value("processorSpeedCheckFailedPercentage", @processor_speed_check_failed_percentage) unless @processor_speed_check_failed_percentage.nil?
                 writer.write_object_value("processor64BitCheckFailedPercentage", @processor64_bit_check_failed_percentage)
-                writer.write_object_value("ramCheckFailedPercentage", @ram_check_failed_percentage)
-                writer.write_object_value("secureBootCheckFailedPercentage", @secure_boot_check_failed_percentage)
-                writer.write_object_value("storageCheckFailedPercentage", @storage_check_failed_percentage)
-                writer.write_number_value("totalDeviceCount", @total_device_count)
-                writer.write_object_value("tpmCheckFailedPercentage", @tpm_check_failed_percentage)
-                writer.write_number_value("upgradeEligibleDeviceCount", @upgrade_eligible_device_count)
+                writer.write_object_value("ramCheckFailedPercentage", @ram_check_failed_percentage) unless @ram_check_failed_percentage.nil?
+                writer.write_object_value("secureBootCheckFailedPercentage", @secure_boot_check_failed_percentage) unless @secure_boot_check_failed_percentage.nil?
+                writer.write_object_value("storageCheckFailedPercentage", @storage_check_failed_percentage) unless @storage_check_failed_percentage.nil?
+                writer.write_number_value("totalDeviceCount", @total_device_count) unless @total_device_count.nil?
+                writer.write_object_value("tpmCheckFailedPercentage", @tpm_check_failed_percentage) unless @tpm_check_failed_percentage.nil?
+                writer.write_number_value("upgradeEligibleDeviceCount", @upgrade_eligible_device_count) unless @upgrade_eligible_device_count.nil?
             end
             ## 
             ## Gets the storageCheckFailedPercentage property value. The percentage of devices for which storage hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308

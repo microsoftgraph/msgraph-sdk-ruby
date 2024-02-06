@@ -128,11 +128,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("isAnswerEditable", @is_answer_editable)
-                writer.write_boolean_value("isRequired", @is_required)
-                writer.write_collection_of_object_values("localizations", @localizations)
-                writer.write_number_value("sequence", @sequence)
-                writer.write_string_value("text", @text)
+                writer.write_boolean_value("isAnswerEditable", @is_answer_editable) unless @is_answer_editable.nil?
+                writer.write_boolean_value("isRequired", @is_required) unless @is_required.nil?
+                writer.write_collection_of_object_values("localizations", @localizations) unless @localizations.nil?
+                writer.write_number_value("sequence", @sequence) unless @sequence.nil?
+                writer.write_string_value("text", @text) unless @text.nil?
             end
             ## 
             ## Gets the text property value. The text of the question to show to the requestor.

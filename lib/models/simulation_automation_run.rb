@@ -70,10 +70,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_string_value("simulationId", @simulation_id)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_enum_value("status", @status)
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_string_value("simulationId", @simulation_id) unless @simulation_id.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the simulationId property value. Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.

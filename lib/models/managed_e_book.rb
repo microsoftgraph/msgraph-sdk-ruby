@@ -281,19 +281,19 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("assignments", @assignments)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_collection_of_object_values("deviceStates", @device_states)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("informationUrl", @information_url)
-                writer.write_object_value("installSummary", @install_summary)
-                writer.write_object_value("largeCover", @large_cover)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_string_value("privacyInformationUrl", @privacy_information_url)
-                writer.write_date_time_value("publishedDateTime", @published_date_time)
-                writer.write_string_value("publisher", @publisher)
-                writer.write_collection_of_object_values("userStateSummary", @user_state_summary)
+                writer.write_collection_of_object_values("assignments", @assignments) unless @assignments.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_collection_of_object_values("deviceStates", @device_states) unless @device_states.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("informationUrl", @information_url) unless @information_url.nil?
+                writer.write_object_value("installSummary", @install_summary) unless @install_summary.nil?
+                writer.write_object_value("largeCover", @large_cover) unless @large_cover.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_string_value("privacyInformationUrl", @privacy_information_url) unless @privacy_information_url.nil?
+                writer.write_date_time_value("publishedDateTime", @published_date_time) unless @published_date_time.nil?
+                writer.write_string_value("publisher", @publisher) unless @publisher.nil?
+                writer.write_collection_of_object_values("userStateSummary", @user_state_summary) unless @user_state_summary.nil?
             end
             ## 
             ## Gets the userStateSummary property value. The list of installation states for this eBook.

@@ -234,18 +234,18 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("containerFilter", @container_filter)
-                writer.write_boolean_value("editable", @editable)
-                writer.write_object_value("groupFilter", @group_filter)
-                writer.write_string_value("id", @id)
-                writer.write_collection_of_object_values("metadata", @metadata)
-                writer.write_string_value("name", @name)
-                writer.write_collection_of_object_values("objectMappings", @object_mappings)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("priority", @priority)
-                writer.write_string_value("sourceDirectoryName", @source_directory_name)
-                writer.write_string_value("targetDirectoryName", @target_directory_name)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("containerFilter", @container_filter) unless @container_filter.nil?
+                writer.write_boolean_value("editable", @editable) unless @editable.nil?
+                writer.write_object_value("groupFilter", @group_filter) unless @group_filter.nil?
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_collection_of_object_values("metadata", @metadata) unless @metadata.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_collection_of_object_values("objectMappings", @object_mappings) unless @object_mappings.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("priority", @priority) unless @priority.nil?
+                writer.write_string_value("sourceDirectoryName", @source_directory_name) unless @source_directory_name.nil?
+                writer.write_string_value("targetDirectoryName", @target_directory_name) unless @target_directory_name.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sourceDirectoryName property value. Name of the source directory. Must match one of the directory definitions in synchronizationSchema.

@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_duration_value("gracePeriodBeforeAccessRemoval", @grace_period_before_access_removal)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("removeAccessWhenTargetLeavesAllowedTargets", @remove_access_when_target_leaves_allowed_targets)
-                writer.write_boolean_value("requestAccessForAllowedTargets", @request_access_for_allowed_targets)
-                writer.write_additional_data(@additional_data)
+                writer.write_duration_value("gracePeriodBeforeAccessRemoval", @grace_period_before_access_removal) unless @grace_period_before_access_removal.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("removeAccessWhenTargetLeavesAllowedTargets", @remove_access_when_target_leaves_allowed_targets) unless @remove_access_when_target_leaves_allowed_targets.nil?
+                writer.write_boolean_value("requestAccessForAllowedTargets", @request_access_for_allowed_targets) unless @request_access_for_allowed_targets.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

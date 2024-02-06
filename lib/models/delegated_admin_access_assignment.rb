@@ -119,11 +119,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("accessContainer", @access_container)
-                writer.write_object_value("accessDetails", @access_details)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_enum_value("status", @status)
+                writer.write_object_value("accessContainer", @access_container) unless @access_container.nil?
+                writer.write_object_value("accessDetails", @access_details) unless @access_details.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The status of the access assignment. Read-only. The possible values are: pending, active, deleting, deleted, error, unknownFutureValue.

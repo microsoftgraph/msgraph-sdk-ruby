@@ -458,29 +458,29 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("captureDeviceDriver", @capture_device_driver)
-                writer.write_string_value("captureDeviceName", @capture_device_name)
-                writer.write_float_value("captureNotFunctioningEventRatio", @capture_not_functioning_event_ratio)
-                writer.write_float_value("cpuInsufficentEventRatio", @cpu_insufficent_event_ratio)
-                writer.write_float_value("deviceClippingEventRatio", @device_clipping_event_ratio)
-                writer.write_float_value("deviceGlitchEventRatio", @device_glitch_event_ratio)
-                writer.write_number_value("howlingEventCount", @howling_event_count)
-                writer.write_float_value("initialSignalLevelRootMeanSquare", @initial_signal_level_root_mean_square)
-                writer.write_float_value("lowSpeechLevelEventRatio", @low_speech_level_event_ratio)
-                writer.write_float_value("lowSpeechToNoiseEventRatio", @low_speech_to_noise_event_ratio)
-                writer.write_float_value("micGlitchRate", @mic_glitch_rate)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("receivedNoiseLevel", @received_noise_level)
-                writer.write_number_value("receivedSignalLevel", @received_signal_level)
-                writer.write_string_value("renderDeviceDriver", @render_device_driver)
-                writer.write_string_value("renderDeviceName", @render_device_name)
-                writer.write_float_value("renderMuteEventRatio", @render_mute_event_ratio)
-                writer.write_float_value("renderNotFunctioningEventRatio", @render_not_functioning_event_ratio)
-                writer.write_float_value("renderZeroVolumeEventRatio", @render_zero_volume_event_ratio)
-                writer.write_number_value("sentNoiseLevel", @sent_noise_level)
-                writer.write_number_value("sentSignalLevel", @sent_signal_level)
-                writer.write_float_value("speakerGlitchRate", @speaker_glitch_rate)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("captureDeviceDriver", @capture_device_driver) unless @capture_device_driver.nil?
+                writer.write_string_value("captureDeviceName", @capture_device_name) unless @capture_device_name.nil?
+                writer.write_float_value("captureNotFunctioningEventRatio", @capture_not_functioning_event_ratio) unless @capture_not_functioning_event_ratio.nil?
+                writer.write_float_value("cpuInsufficentEventRatio", @cpu_insufficent_event_ratio) unless @cpu_insufficent_event_ratio.nil?
+                writer.write_float_value("deviceClippingEventRatio", @device_clipping_event_ratio) unless @device_clipping_event_ratio.nil?
+                writer.write_float_value("deviceGlitchEventRatio", @device_glitch_event_ratio) unless @device_glitch_event_ratio.nil?
+                writer.write_number_value("howlingEventCount", @howling_event_count) unless @howling_event_count.nil?
+                writer.write_float_value("initialSignalLevelRootMeanSquare", @initial_signal_level_root_mean_square) unless @initial_signal_level_root_mean_square.nil?
+                writer.write_float_value("lowSpeechLevelEventRatio", @low_speech_level_event_ratio) unless @low_speech_level_event_ratio.nil?
+                writer.write_float_value("lowSpeechToNoiseEventRatio", @low_speech_to_noise_event_ratio) unless @low_speech_to_noise_event_ratio.nil?
+                writer.write_float_value("micGlitchRate", @mic_glitch_rate) unless @mic_glitch_rate.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("receivedNoiseLevel", @received_noise_level) unless @received_noise_level.nil?
+                writer.write_number_value("receivedSignalLevel", @received_signal_level) unless @received_signal_level.nil?
+                writer.write_string_value("renderDeviceDriver", @render_device_driver) unless @render_device_driver.nil?
+                writer.write_string_value("renderDeviceName", @render_device_name) unless @render_device_name.nil?
+                writer.write_float_value("renderMuteEventRatio", @render_mute_event_ratio) unless @render_mute_event_ratio.nil?
+                writer.write_float_value("renderNotFunctioningEventRatio", @render_not_functioning_event_ratio) unless @render_not_functioning_event_ratio.nil?
+                writer.write_float_value("renderZeroVolumeEventRatio", @render_zero_volume_event_ratio) unless @render_zero_volume_event_ratio.nil?
+                writer.write_number_value("sentNoiseLevel", @sent_noise_level) unless @sent_noise_level.nil?
+                writer.write_number_value("sentSignalLevel", @sent_signal_level) unless @sent_signal_level.nil?
+                writer.write_float_value("speakerGlitchRate", @speaker_glitch_rate) unless @speaker_glitch_rate.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the speakerGlitchRate property value. Glitches per 5 minute internal for the media endpoint's loudspeaker.

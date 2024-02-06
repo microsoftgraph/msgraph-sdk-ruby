@@ -131,11 +131,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("contentType", @content_type)
-                writer.write_boolean_value("isInline", @is_inline)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_string_value("name", @name)
-                writer.write_number_value("size", @size)
+                writer.write_string_value("contentType", @content_type) unless @content_type.nil?
+                writer.write_boolean_value("isInline", @is_inline) unless @is_inline.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_number_value("size", @size) unless @size.nil?
             end
             ## 
             ## Gets the size property value. The length of the attachment in bytes.

@@ -103,11 +103,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("apiConnectorConfiguration", @api_connector_configuration)
-                writer.write_collection_of_object_values("identityProviders", @identity_providers)
-                writer.write_collection_of_object_values("languages", @languages)
-                writer.write_collection_of_object_values("userAttributeAssignments", @user_attribute_assignments)
-                writer.write_collection_of_object_values("userFlowIdentityProviders", @user_flow_identity_providers)
+                writer.write_object_value("apiConnectorConfiguration", @api_connector_configuration) unless @api_connector_configuration.nil?
+                writer.write_collection_of_object_values("identityProviders", @identity_providers) unless @identity_providers.nil?
+                writer.write_collection_of_object_values("languages", @languages) unless @languages.nil?
+                writer.write_collection_of_object_values("userAttributeAssignments", @user_attribute_assignments) unless @user_attribute_assignments.nil?
+                writer.write_collection_of_object_values("userFlowIdentityProviders", @user_flow_identity_providers) unless @user_flow_identity_providers.nil?
             end
             ## 
             ## Gets the userAttributeAssignments property value. The user attribute assignments included in the user flow.

@@ -369,25 +369,25 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("activityBasedTimeoutPolicies", @activity_based_timeout_policies)
-                writer.write_object_value("adminConsentRequestPolicy", @admin_consent_request_policy)
-                writer.write_collection_of_object_values("appManagementPolicies", @app_management_policies)
-                writer.write_object_value("authenticationFlowsPolicy", @authentication_flows_policy)
-                writer.write_object_value("authenticationMethodsPolicy", @authentication_methods_policy)
-                writer.write_collection_of_object_values("authenticationStrengthPolicies", @authentication_strength_policies)
-                writer.write_object_value("authorizationPolicy", @authorization_policy)
-                writer.write_collection_of_object_values("claimsMappingPolicies", @claims_mapping_policies)
-                writer.write_collection_of_object_values("conditionalAccessPolicies", @conditional_access_policies)
-                writer.write_object_value("crossTenantAccessPolicy", @cross_tenant_access_policy)
-                writer.write_object_value("defaultAppManagementPolicy", @default_app_management_policy)
-                writer.write_collection_of_object_values("featureRolloutPolicies", @feature_rollout_policies)
-                writer.write_collection_of_object_values("homeRealmDiscoveryPolicies", @home_realm_discovery_policies)
-                writer.write_object_value("identitySecurityDefaultsEnforcementPolicy", @identity_security_defaults_enforcement_policy)
-                writer.write_collection_of_object_values("permissionGrantPolicies", @permission_grant_policies)
-                writer.write_collection_of_object_values("roleManagementPolicies", @role_management_policies)
-                writer.write_collection_of_object_values("roleManagementPolicyAssignments", @role_management_policy_assignments)
-                writer.write_collection_of_object_values("tokenIssuancePolicies", @token_issuance_policies)
-                writer.write_collection_of_object_values("tokenLifetimePolicies", @token_lifetime_policies)
+                writer.write_collection_of_object_values("activityBasedTimeoutPolicies", @activity_based_timeout_policies) unless @activity_based_timeout_policies.nil?
+                writer.write_object_value("adminConsentRequestPolicy", @admin_consent_request_policy) unless @admin_consent_request_policy.nil?
+                writer.write_collection_of_object_values("appManagementPolicies", @app_management_policies) unless @app_management_policies.nil?
+                writer.write_object_value("authenticationFlowsPolicy", @authentication_flows_policy) unless @authentication_flows_policy.nil?
+                writer.write_object_value("authenticationMethodsPolicy", @authentication_methods_policy) unless @authentication_methods_policy.nil?
+                writer.write_collection_of_object_values("authenticationStrengthPolicies", @authentication_strength_policies) unless @authentication_strength_policies.nil?
+                writer.write_object_value("authorizationPolicy", @authorization_policy) unless @authorization_policy.nil?
+                writer.write_collection_of_object_values("claimsMappingPolicies", @claims_mapping_policies) unless @claims_mapping_policies.nil?
+                writer.write_collection_of_object_values("conditionalAccessPolicies", @conditional_access_policies) unless @conditional_access_policies.nil?
+                writer.write_object_value("crossTenantAccessPolicy", @cross_tenant_access_policy) unless @cross_tenant_access_policy.nil?
+                writer.write_object_value("defaultAppManagementPolicy", @default_app_management_policy) unless @default_app_management_policy.nil?
+                writer.write_collection_of_object_values("featureRolloutPolicies", @feature_rollout_policies) unless @feature_rollout_policies.nil?
+                writer.write_collection_of_object_values("homeRealmDiscoveryPolicies", @home_realm_discovery_policies) unless @home_realm_discovery_policies.nil?
+                writer.write_object_value("identitySecurityDefaultsEnforcementPolicy", @identity_security_defaults_enforcement_policy) unless @identity_security_defaults_enforcement_policy.nil?
+                writer.write_collection_of_object_values("permissionGrantPolicies", @permission_grant_policies) unless @permission_grant_policies.nil?
+                writer.write_collection_of_object_values("roleManagementPolicies", @role_management_policies) unless @role_management_policies.nil?
+                writer.write_collection_of_object_values("roleManagementPolicyAssignments", @role_management_policy_assignments) unless @role_management_policy_assignments.nil?
+                writer.write_collection_of_object_values("tokenIssuancePolicies", @token_issuance_policies) unless @token_issuance_policies.nil?
+                writer.write_collection_of_object_values("tokenLifetimePolicies", @token_lifetime_policies) unless @token_lifetime_policies.nil?
             end
             ## 
             ## Gets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.

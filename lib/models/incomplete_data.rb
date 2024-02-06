@@ -98,10 +98,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_date_time_value("missingDataBeforeDateTime", @missing_data_before_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("wasThrottled", @was_throttled)
-                writer.write_additional_data(@additional_data)
+                writer.write_date_time_value("missingDataBeforeDateTime", @missing_data_before_date_time) unless @missing_data_before_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("wasThrottled", @was_throttled) unless @was_throttled.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the wasThrottled property value. Some data was not recorded due to excessive activity.

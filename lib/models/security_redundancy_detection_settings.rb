@@ -135,12 +135,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_number_value("maxWords", @max_words)
-                writer.write_number_value("minWords", @min_words)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("similarityThreshold", @similarity_threshold)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_number_value("maxWords", @max_words) unless @max_words.nil?
+                writer.write_number_value("minWords", @min_words) unless @min_words.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("similarityThreshold", @similarity_threshold) unless @similarity_threshold.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the similarityThreshold property value. Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.

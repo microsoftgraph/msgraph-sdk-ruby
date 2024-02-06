@@ -203,17 +203,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("bundles", @bundles)
-                writer.write_string_value("driveType", @drive_type)
-                writer.write_collection_of_object_values("following", @following)
-                writer.write_collection_of_object_values("items", @items)
-                writer.write_object_value("list", @list)
-                writer.write_object_value("owner", @owner)
-                writer.write_object_value("quota", @quota)
-                writer.write_object_value("root", @root)
-                writer.write_object_value("sharePointIds", @share_point_ids)
-                writer.write_collection_of_object_values("special", @special)
-                writer.write_object_value("system", @system)
+                writer.write_collection_of_object_values("bundles", @bundles) unless @bundles.nil?
+                writer.write_string_value("driveType", @drive_type) unless @drive_type.nil?
+                writer.write_collection_of_object_values("following", @following) unless @following.nil?
+                writer.write_collection_of_object_values("items", @items) unless @items.nil?
+                writer.write_object_value("list", @list) unless @list.nil?
+                writer.write_object_value("owner", @owner) unless @owner.nil?
+                writer.write_object_value("quota", @quota) unless @quota.nil?
+                writer.write_object_value("root", @root) unless @root.nil?
+                writer.write_object_value("sharePointIds", @share_point_ids) unless @share_point_ids.nil?
+                writer.write_collection_of_object_values("special", @special) unless @special.nil?
+                writer.write_object_value("system", @system) unless @system.nil?
             end
             ## 
             ## Gets the sharePointIds property value. The sharePointIds property

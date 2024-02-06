@@ -70,10 +70,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("email", @email)
-                writer.write_string_value("tenantId", @tenant_id)
-                writer.write_object_value("user", @user)
-                writer.write_string_value("userId", @user_id)
+                writer.write_string_value("email", @email) unless @email.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
+                writer.write_object_value("user", @user) unless @user.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
             end
             ## 
             ## Gets the tenantId property value. TenantId which the Azure AD user belongs to.

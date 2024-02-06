@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("contentTypesEnabled", @content_types_enabled)
-                writer.write_boolean_value("hidden", @hidden)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("template", @template)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("contentTypesEnabled", @content_types_enabled) unless @content_types_enabled.nil?
+                writer.write_boolean_value("hidden", @hidden) unless @hidden.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("template", @template) unless @template.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the template property value. An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.

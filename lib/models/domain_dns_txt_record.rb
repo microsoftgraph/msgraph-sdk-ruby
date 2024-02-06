@@ -42,7 +42,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("text", @text)
+                writer.write_string_value("text", @text) unless @text.nil?
             end
             ## 
             ## Gets the text property value. Value used when configuring the text property at the DNS host.

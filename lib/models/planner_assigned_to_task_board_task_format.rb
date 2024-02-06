@@ -61,8 +61,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("orderHintsByAssignee", @order_hints_by_assignee)
-                writer.write_string_value("unassignedOrderHint", @unassigned_order_hint)
+                writer.write_object_value("orderHintsByAssignee", @order_hints_by_assignee) unless @order_hints_by_assignee.nil?
+                writer.write_string_value("unassignedOrderHint", @unassigned_order_hint) unless @unassigned_order_hint.nil?
             end
             ## 
             ## Gets the unassignedOrderHint property value. Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.

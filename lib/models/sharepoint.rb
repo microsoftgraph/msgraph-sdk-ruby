@@ -42,7 +42,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("settings", @settings)
+                writer.write_object_value("settings", @settings) unless @settings.nil?
             end
             ## 
             ## Gets the settings property value. The settings property

@@ -87,10 +87,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system)
-                writer.write_string_value("packageId", @package_id)
-                writer.write_string_value("versionCode", @version_code)
-                writer.write_string_value("versionName", @version_name)
+                writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system) unless @minimum_supported_operating_system.nil?
+                writer.write_string_value("packageId", @package_id) unless @package_id.nil?
+                writer.write_string_value("versionCode", @version_code) unless @version_code.nil?
+                writer.write_string_value("versionName", @version_name) unless @version_name.nil?
             end
             ## 
             ## Gets the versionCode property value. The version code of managed Android Line of Business (LoB) app.

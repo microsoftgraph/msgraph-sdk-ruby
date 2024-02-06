@@ -58,7 +58,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("mode", @mode)
+                writer.write_enum_value("mode", @mode) unless @mode.nil?
             end
         end
     end

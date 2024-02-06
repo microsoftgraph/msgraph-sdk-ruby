@@ -109,12 +109,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("acknowledgedDateTime", @acknowledged_date_time)
-                writer.write_string_value("email", @email)
-                writer.write_object_value("lastIndexOperation", @last_index_operation)
-                writer.write_collection_of_object_values("siteSources", @site_sources)
-                writer.write_collection_of_object_values("unifiedGroupSources", @unified_group_sources)
-                writer.write_collection_of_object_values("userSources", @user_sources)
+                writer.write_date_time_value("acknowledgedDateTime", @acknowledged_date_time) unless @acknowledged_date_time.nil?
+                writer.write_string_value("email", @email) unless @email.nil?
+                writer.write_object_value("lastIndexOperation", @last_index_operation) unless @last_index_operation.nil?
+                writer.write_collection_of_object_values("siteSources", @site_sources) unless @site_sources.nil?
+                writer.write_collection_of_object_values("unifiedGroupSources", @unified_group_sources) unless @unified_group_sources.nil?
+                writer.write_collection_of_object_values("userSources", @user_sources) unless @user_sources.nil?
             end
             ## 
             ## Gets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.

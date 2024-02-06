@@ -117,11 +117,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("expiration", @expiration)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("recurrence", @recurrence)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("expiration", @expiration) unless @expiration.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("recurrence", @recurrence) unless @recurrence.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the startDateTime property value. When the  eligible or active assignment becomes active.

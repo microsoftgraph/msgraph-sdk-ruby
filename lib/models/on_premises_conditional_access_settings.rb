@@ -116,10 +116,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("enabled", @enabled)
-                writer.write_collection_of_primitive_values("excludedGroups", @excluded_groups)
-                writer.write_collection_of_primitive_values("includedGroups", @included_groups)
-                writer.write_boolean_value("overrideDefaultRule", @override_default_rule)
+                writer.write_boolean_value("enabled", @enabled) unless @enabled.nil?
+                writer.write_collection_of_primitive_values("excludedGroups", @excluded_groups) unless @excluded_groups.nil?
+                writer.write_collection_of_primitive_values("includedGroups", @included_groups) unless @included_groups.nil?
+                writer.write_boolean_value("overrideDefaultRule", @override_default_rule) unless @override_default_rule.nil?
             end
         end
     end

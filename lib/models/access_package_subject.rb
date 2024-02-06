@@ -156,13 +156,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("connectedOrganization", @connected_organization)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("email", @email)
-                writer.write_string_value("objectId", @object_id_escaped)
-                writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier)
-                writer.write_string_value("principalName", @principal_name)
-                writer.write_enum_value("subjectType", @subject_type)
+                writer.write_object_value("connectedOrganization", @connected_organization) unless @connected_organization.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("email", @email) unless @email.nil?
+                writer.write_string_value("objectId", @object_id_escaped) unless @object_id_escaped.nil?
+                writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier) unless @on_premises_security_identifier.nil?
+                writer.write_string_value("principalName", @principal_name) unless @principal_name.nil?
+                writer.write_enum_value("subjectType", @subject_type) unless @subject_type.nil?
             end
             ## 
             ## Gets the subjectType property value. The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.

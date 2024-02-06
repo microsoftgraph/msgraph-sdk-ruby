@@ -181,15 +181,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("cloudIdentityScore", @cloud_identity_score)
-                writer.write_object_value("cloudManagementScore", @cloud_management_score)
-                writer.write_object_value("cloudProvisioningScore", @cloud_provisioning_score)
-                writer.write_enum_value("healthStatus", @health_status)
-                writer.write_string_value("manufacturer", @manufacturer)
-                writer.write_string_value("model", @model)
-                writer.write_number_value("modelDeviceCount", @model_device_count)
-                writer.write_object_value("windowsScore", @windows_score)
-                writer.write_object_value("workFromAnywhereScore", @work_from_anywhere_score)
+                writer.write_object_value("cloudIdentityScore", @cloud_identity_score) unless @cloud_identity_score.nil?
+                writer.write_object_value("cloudManagementScore", @cloud_management_score) unless @cloud_management_score.nil?
+                writer.write_object_value("cloudProvisioningScore", @cloud_provisioning_score) unless @cloud_provisioning_score.nil?
+                writer.write_enum_value("healthStatus", @health_status) unless @health_status.nil?
+                writer.write_string_value("manufacturer", @manufacturer) unless @manufacturer.nil?
+                writer.write_string_value("model", @model) unless @model.nil?
+                writer.write_number_value("modelDeviceCount", @model_device_count) unless @model_device_count.nil?
+                writer.write_object_value("windowsScore", @windows_score) unless @windows_score.nil?
+                writer.write_object_value("workFromAnywhereScore", @work_from_anywhere_score) unless @work_from_anywhere_score.nil?
             end
             ## 
             ## Gets the windowsScore property value. The window score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308

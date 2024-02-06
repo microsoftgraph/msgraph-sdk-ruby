@@ -156,11 +156,11 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_boolean_value("check32BitOn64System", @check32_bit_on64_system)
-                writer.write_string_value("comparisonValue", @comparison_value)
-                writer.write_string_value("fileOrFolderName", @file_or_folder_name)
-                writer.write_enum_value("operationType", @operation_type)
-                writer.write_enum_value("operator", @operator)
-                writer.write_string_value("path", @path)
+                writer.write_string_value("comparisonValue", @comparison_value) unless @comparison_value.nil?
+                writer.write_string_value("fileOrFolderName", @file_or_folder_name) unless @file_or_folder_name.nil?
+                writer.write_enum_value("operationType", @operation_type) unless @operation_type.nil?
+                writer.write_enum_value("operator", @operator) unless @operator.nil?
+                writer.write_string_value("path", @path) unless @path.nil?
             end
         end
     end

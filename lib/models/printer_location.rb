@@ -322,25 +322,25 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("altitudeInMeters", @altitude_in_meters)
-                writer.write_string_value("building", @building)
-                writer.write_string_value("city", @city)
-                writer.write_string_value("countryOrRegion", @country_or_region)
-                writer.write_string_value("floor", @floor)
-                writer.write_string_value("floorDescription", @floor_description)
-                writer.write_object_value("latitude", @latitude)
-                writer.write_object_value("longitude", @longitude)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_primitive_values("organization", @organization)
-                writer.write_string_value("postalCode", @postal_code)
-                writer.write_string_value("roomDescription", @room_description)
-                writer.write_string_value("roomName", @room_name)
-                writer.write_string_value("site", @site)
-                writer.write_string_value("stateOrProvince", @state_or_province)
-                writer.write_string_value("streetAddress", @street_address)
-                writer.write_collection_of_primitive_values("subdivision", @subdivision)
-                writer.write_collection_of_primitive_values("subunit", @subunit)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("altitudeInMeters", @altitude_in_meters) unless @altitude_in_meters.nil?
+                writer.write_string_value("building", @building) unless @building.nil?
+                writer.write_string_value("city", @city) unless @city.nil?
+                writer.write_string_value("countryOrRegion", @country_or_region) unless @country_or_region.nil?
+                writer.write_string_value("floor", @floor) unless @floor.nil?
+                writer.write_string_value("floorDescription", @floor_description) unless @floor_description.nil?
+                writer.write_object_value("latitude", @latitude) unless @latitude.nil?
+                writer.write_object_value("longitude", @longitude) unless @longitude.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_primitive_values("organization", @organization) unless @organization.nil?
+                writer.write_string_value("postalCode", @postal_code) unless @postal_code.nil?
+                writer.write_string_value("roomDescription", @room_description) unless @room_description.nil?
+                writer.write_string_value("roomName", @room_name) unless @room_name.nil?
+                writer.write_string_value("site", @site) unless @site.nil?
+                writer.write_string_value("stateOrProvince", @state_or_province) unless @state_or_province.nil?
+                writer.write_string_value("streetAddress", @street_address) unless @street_address.nil?
+                writer.write_collection_of_primitive_values("subdivision", @subdivision) unless @subdivision.nil?
+                writer.write_collection_of_primitive_values("subunit", @subunit) unless @subunit.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the site property value. The site that the printer is located in.

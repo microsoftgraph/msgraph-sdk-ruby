@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("categoryFilterGroups", @category_filter_groups)
-                writer.write_collection_of_object_values("groups", @groups)
-                writer.write_collection_of_object_values("inputFilterGroups", @input_filter_groups)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_object_values("categoryFilterGroups", @category_filter_groups) unless @category_filter_groups.nil?
+                writer.write_collection_of_object_values("groups", @groups) unless @groups.nil?
+                writer.write_collection_of_object_values("inputFilterGroups", @input_filter_groups) unless @input_filter_groups.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

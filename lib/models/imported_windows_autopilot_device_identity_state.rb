@@ -150,12 +150,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("deviceErrorCode", @device_error_code)
-                writer.write_string_value("deviceErrorName", @device_error_name)
-                writer.write_enum_value("deviceImportStatus", @device_import_status)
-                writer.write_string_value("deviceRegistrationId", @device_registration_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("deviceErrorCode", @device_error_code) unless @device_error_code.nil?
+                writer.write_string_value("deviceErrorName", @device_error_name) unless @device_error_name.nil?
+                writer.write_enum_value("deviceImportStatus", @device_import_status) unless @device_import_status.nil?
+                writer.write_string_value("deviceRegistrationId", @device_registration_id) unless @device_registration_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

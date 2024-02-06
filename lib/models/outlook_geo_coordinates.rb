@@ -169,13 +169,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("accuracy", @accuracy)
-                writer.write_object_value("altitude", @altitude)
-                writer.write_object_value("altitudeAccuracy", @altitude_accuracy)
-                writer.write_object_value("latitude", @latitude)
-                writer.write_object_value("longitude", @longitude)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("accuracy", @accuracy) unless @accuracy.nil?
+                writer.write_object_value("altitude", @altitude) unless @altitude.nil?
+                writer.write_object_value("altitudeAccuracy", @altitude_accuracy) unless @altitude_accuracy.nil?
+                writer.write_object_value("latitude", @latitude) unless @latitude.nil?
+                writer.write_object_value("longitude", @longitude) unless @longitude.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

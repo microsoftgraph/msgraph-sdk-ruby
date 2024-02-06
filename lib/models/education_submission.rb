@@ -215,10 +215,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("outcomes", @outcomes)
-                writer.write_object_value("recipient", @recipient)
-                writer.write_collection_of_object_values("resources", @resources)
-                writer.write_collection_of_object_values("submittedResources", @submitted_resources)
+                writer.write_collection_of_object_values("outcomes", @outcomes) unless @outcomes.nil?
+                writer.write_object_value("recipient", @recipient) unless @recipient.nil?
+                writer.write_collection_of_object_values("resources", @resources) unless @resources.nil?
+                writer.write_collection_of_object_values("submittedResources", @submitted_resources) unless @submitted_resources.nil?
             end
             ## 
             ## Gets the status property value. Read-only. Possible values are: working, submitted, returned, and reassigned. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: reassigned.

@@ -120,12 +120,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("appId", @app_id)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("servicePrincipalId", @service_principal_id)
-                writer.write_string_value("servicePrincipalName", @service_principal_name)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("appId", @app_id) unless @app_id.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("servicePrincipalId", @service_principal_id) unless @service_principal_id.nil?
+                writer.write_string_value("servicePrincipalName", @service_principal_name) unless @service_principal_name.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the servicePrincipalId property value. Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.

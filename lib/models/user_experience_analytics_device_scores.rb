@@ -181,15 +181,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("appReliabilityScore", @app_reliability_score)
-                writer.write_object_value("batteryHealthScore", @battery_health_score)
-                writer.write_string_value("deviceName", @device_name)
-                writer.write_object_value("endpointAnalyticsScore", @endpoint_analytics_score)
-                writer.write_enum_value("healthStatus", @health_status)
-                writer.write_string_value("manufacturer", @manufacturer)
-                writer.write_string_value("model", @model)
-                writer.write_object_value("startupPerformanceScore", @startup_performance_score)
-                writer.write_object_value("workFromAnywhereScore", @work_from_anywhere_score)
+                writer.write_object_value("appReliabilityScore", @app_reliability_score) unless @app_reliability_score.nil?
+                writer.write_object_value("batteryHealthScore", @battery_health_score) unless @battery_health_score.nil?
+                writer.write_string_value("deviceName", @device_name) unless @device_name.nil?
+                writer.write_object_value("endpointAnalyticsScore", @endpoint_analytics_score) unless @endpoint_analytics_score.nil?
+                writer.write_enum_value("healthStatus", @health_status) unless @health_status.nil?
+                writer.write_string_value("manufacturer", @manufacturer) unless @manufacturer.nil?
+                writer.write_string_value("model", @model) unless @model.nil?
+                writer.write_object_value("startupPerformanceScore", @startup_performance_score) unless @startup_performance_score.nil?
+                writer.write_object_value("workFromAnywhereScore", @work_from_anywhere_score) unless @work_from_anywhere_score.nil?
             end
             ## 
             ## Gets the startupPerformanceScore property value. Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308

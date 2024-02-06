@@ -196,16 +196,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("attributeMappings", @attribute_mappings)
-                writer.write_boolean_value("enabled", @enabled)
-                writer.write_enum_value("flowTypes", @flow_types)
-                writer.write_collection_of_object_values("metadata", @metadata)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("scope", @scope)
-                writer.write_string_value("sourceObjectName", @source_object_name)
-                writer.write_string_value("targetObjectName", @target_object_name)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_object_values("attributeMappings", @attribute_mappings) unless @attribute_mappings.nil?
+                writer.write_boolean_value("enabled", @enabled) unless @enabled.nil?
+                writer.write_enum_value("flowTypes", @flow_types) unless @flow_types.nil?
+                writer.write_collection_of_object_values("metadata", @metadata) unless @metadata.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("scope", @scope) unless @scope.nil?
+                writer.write_string_value("sourceObjectName", @source_object_name) unless @source_object_name.nil?
+                writer.write_string_value("targetObjectName", @target_object_name) unless @target_object_name.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sourceObjectName property value. Name of the object in the source directory. Must match the object name from the source directory definition.

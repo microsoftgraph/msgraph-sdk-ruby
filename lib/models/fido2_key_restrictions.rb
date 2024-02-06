@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("aaGuids", @aa_guids)
-                writer.write_enum_value("enforcementType", @enforcement_type)
-                writer.write_boolean_value("isEnforced", @is_enforced)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("aaGuids", @aa_guids) unless @aa_guids.nil?
+                writer.write_enum_value("enforcementType", @enforcement_type) unless @enforcement_type.nil?
+                writer.write_boolean_value("isEnforced", @is_enforced) unless @is_enforced.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

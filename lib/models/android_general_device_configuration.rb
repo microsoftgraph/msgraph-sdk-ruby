@@ -773,54 +773,54 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("appsBlockClipboardSharing", @apps_block_clipboard_sharing)
-                writer.write_boolean_value("appsBlockCopyPaste", @apps_block_copy_paste)
-                writer.write_boolean_value("appsBlockYouTube", @apps_block_you_tube)
-                writer.write_collection_of_object_values("appsHideList", @apps_hide_list)
-                writer.write_collection_of_object_values("appsInstallAllowList", @apps_install_allow_list)
-                writer.write_collection_of_object_values("appsLaunchBlockList", @apps_launch_block_list)
-                writer.write_boolean_value("bluetoothBlocked", @bluetooth_blocked)
-                writer.write_boolean_value("cameraBlocked", @camera_blocked)
-                writer.write_boolean_value("cellularBlockDataRoaming", @cellular_block_data_roaming)
-                writer.write_boolean_value("cellularBlockMessaging", @cellular_block_messaging)
-                writer.write_boolean_value("cellularBlockVoiceRoaming", @cellular_block_voice_roaming)
-                writer.write_boolean_value("cellularBlockWiFiTethering", @cellular_block_wi_fi_tethering)
-                writer.write_enum_value("compliantAppListType", @compliant_app_list_type)
-                writer.write_collection_of_object_values("compliantAppsList", @compliant_apps_list)
-                writer.write_boolean_value("deviceSharingAllowed", @device_sharing_allowed)
-                writer.write_boolean_value("diagnosticDataBlockSubmission", @diagnostic_data_block_submission)
-                writer.write_boolean_value("factoryResetBlocked", @factory_reset_blocked)
-                writer.write_boolean_value("googleAccountBlockAutoSync", @google_account_block_auto_sync)
-                writer.write_boolean_value("googlePlayStoreBlocked", @google_play_store_blocked)
-                writer.write_collection_of_object_values("kioskModeApps", @kiosk_mode_apps)
-                writer.write_boolean_value("kioskModeBlockSleepButton", @kiosk_mode_block_sleep_button)
-                writer.write_boolean_value("kioskModeBlockVolumeButtons", @kiosk_mode_block_volume_buttons)
-                writer.write_boolean_value("locationServicesBlocked", @location_services_blocked)
-                writer.write_boolean_value("nfcBlocked", @nfc_blocked)
-                writer.write_boolean_value("passwordBlockFingerprintUnlock", @password_block_fingerprint_unlock)
-                writer.write_boolean_value("passwordBlockTrustAgents", @password_block_trust_agents)
-                writer.write_number_value("passwordExpirationDays", @password_expiration_days)
-                writer.write_number_value("passwordMinimumLength", @password_minimum_length)
-                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout)
-                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count)
-                writer.write_boolean_value("passwordRequired", @password_required)
-                writer.write_enum_value("passwordRequiredType", @password_required_type)
-                writer.write_number_value("passwordSignInFailureCountBeforeFactoryReset", @password_sign_in_failure_count_before_factory_reset)
-                writer.write_boolean_value("powerOffBlocked", @power_off_blocked)
-                writer.write_boolean_value("screenCaptureBlocked", @screen_capture_blocked)
-                writer.write_boolean_value("securityRequireVerifyApps", @security_require_verify_apps)
-                writer.write_boolean_value("storageBlockGoogleBackup", @storage_block_google_backup)
-                writer.write_boolean_value("storageBlockRemovableStorage", @storage_block_removable_storage)
-                writer.write_boolean_value("storageRequireDeviceEncryption", @storage_require_device_encryption)
-                writer.write_boolean_value("storageRequireRemovableStorageEncryption", @storage_require_removable_storage_encryption)
-                writer.write_boolean_value("voiceAssistantBlocked", @voice_assistant_blocked)
-                writer.write_boolean_value("voiceDialingBlocked", @voice_dialing_blocked)
-                writer.write_boolean_value("webBrowserBlockAutofill", @web_browser_block_autofill)
-                writer.write_boolean_value("webBrowserBlockJavaScript", @web_browser_block_java_script)
-                writer.write_boolean_value("webBrowserBlockPopups", @web_browser_block_popups)
-                writer.write_boolean_value("webBrowserBlocked", @web_browser_blocked)
-                writer.write_enum_value("webBrowserCookieSettings", @web_browser_cookie_settings)
-                writer.write_boolean_value("wiFiBlocked", @wi_fi_blocked)
+                writer.write_boolean_value("appsBlockClipboardSharing", @apps_block_clipboard_sharing) unless @apps_block_clipboard_sharing.nil?
+                writer.write_boolean_value("appsBlockCopyPaste", @apps_block_copy_paste) unless @apps_block_copy_paste.nil?
+                writer.write_boolean_value("appsBlockYouTube", @apps_block_you_tube) unless @apps_block_you_tube.nil?
+                writer.write_collection_of_object_values("appsHideList", @apps_hide_list) unless @apps_hide_list.nil?
+                writer.write_collection_of_object_values("appsInstallAllowList", @apps_install_allow_list) unless @apps_install_allow_list.nil?
+                writer.write_collection_of_object_values("appsLaunchBlockList", @apps_launch_block_list) unless @apps_launch_block_list.nil?
+                writer.write_boolean_value("bluetoothBlocked", @bluetooth_blocked) unless @bluetooth_blocked.nil?
+                writer.write_boolean_value("cameraBlocked", @camera_blocked) unless @camera_blocked.nil?
+                writer.write_boolean_value("cellularBlockDataRoaming", @cellular_block_data_roaming) unless @cellular_block_data_roaming.nil?
+                writer.write_boolean_value("cellularBlockMessaging", @cellular_block_messaging) unless @cellular_block_messaging.nil?
+                writer.write_boolean_value("cellularBlockVoiceRoaming", @cellular_block_voice_roaming) unless @cellular_block_voice_roaming.nil?
+                writer.write_boolean_value("cellularBlockWiFiTethering", @cellular_block_wi_fi_tethering) unless @cellular_block_wi_fi_tethering.nil?
+                writer.write_enum_value("compliantAppListType", @compliant_app_list_type) unless @compliant_app_list_type.nil?
+                writer.write_collection_of_object_values("compliantAppsList", @compliant_apps_list) unless @compliant_apps_list.nil?
+                writer.write_boolean_value("deviceSharingAllowed", @device_sharing_allowed) unless @device_sharing_allowed.nil?
+                writer.write_boolean_value("diagnosticDataBlockSubmission", @diagnostic_data_block_submission) unless @diagnostic_data_block_submission.nil?
+                writer.write_boolean_value("factoryResetBlocked", @factory_reset_blocked) unless @factory_reset_blocked.nil?
+                writer.write_boolean_value("googleAccountBlockAutoSync", @google_account_block_auto_sync) unless @google_account_block_auto_sync.nil?
+                writer.write_boolean_value("googlePlayStoreBlocked", @google_play_store_blocked) unless @google_play_store_blocked.nil?
+                writer.write_collection_of_object_values("kioskModeApps", @kiosk_mode_apps) unless @kiosk_mode_apps.nil?
+                writer.write_boolean_value("kioskModeBlockSleepButton", @kiosk_mode_block_sleep_button) unless @kiosk_mode_block_sleep_button.nil?
+                writer.write_boolean_value("kioskModeBlockVolumeButtons", @kiosk_mode_block_volume_buttons) unless @kiosk_mode_block_volume_buttons.nil?
+                writer.write_boolean_value("locationServicesBlocked", @location_services_blocked) unless @location_services_blocked.nil?
+                writer.write_boolean_value("nfcBlocked", @nfc_blocked) unless @nfc_blocked.nil?
+                writer.write_boolean_value("passwordBlockFingerprintUnlock", @password_block_fingerprint_unlock) unless @password_block_fingerprint_unlock.nil?
+                writer.write_boolean_value("passwordBlockTrustAgents", @password_block_trust_agents) unless @password_block_trust_agents.nil?
+                writer.write_number_value("passwordExpirationDays", @password_expiration_days) unless @password_expiration_days.nil?
+                writer.write_number_value("passwordMinimumLength", @password_minimum_length) unless @password_minimum_length.nil?
+                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout) unless @password_minutes_of_inactivity_before_screen_timeout.nil?
+                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count) unless @password_previous_password_block_count.nil?
+                writer.write_boolean_value("passwordRequired", @password_required) unless @password_required.nil?
+                writer.write_enum_value("passwordRequiredType", @password_required_type) unless @password_required_type.nil?
+                writer.write_number_value("passwordSignInFailureCountBeforeFactoryReset", @password_sign_in_failure_count_before_factory_reset) unless @password_sign_in_failure_count_before_factory_reset.nil?
+                writer.write_boolean_value("powerOffBlocked", @power_off_blocked) unless @power_off_blocked.nil?
+                writer.write_boolean_value("screenCaptureBlocked", @screen_capture_blocked) unless @screen_capture_blocked.nil?
+                writer.write_boolean_value("securityRequireVerifyApps", @security_require_verify_apps) unless @security_require_verify_apps.nil?
+                writer.write_boolean_value("storageBlockGoogleBackup", @storage_block_google_backup) unless @storage_block_google_backup.nil?
+                writer.write_boolean_value("storageBlockRemovableStorage", @storage_block_removable_storage) unless @storage_block_removable_storage.nil?
+                writer.write_boolean_value("storageRequireDeviceEncryption", @storage_require_device_encryption) unless @storage_require_device_encryption.nil?
+                writer.write_boolean_value("storageRequireRemovableStorageEncryption", @storage_require_removable_storage_encryption) unless @storage_require_removable_storage_encryption.nil?
+                writer.write_boolean_value("voiceAssistantBlocked", @voice_assistant_blocked) unless @voice_assistant_blocked.nil?
+                writer.write_boolean_value("voiceDialingBlocked", @voice_dialing_blocked) unless @voice_dialing_blocked.nil?
+                writer.write_boolean_value("webBrowserBlockAutofill", @web_browser_block_autofill) unless @web_browser_block_autofill.nil?
+                writer.write_boolean_value("webBrowserBlockJavaScript", @web_browser_block_java_script) unless @web_browser_block_java_script.nil?
+                writer.write_boolean_value("webBrowserBlockPopups", @web_browser_block_popups) unless @web_browser_block_popups.nil?
+                writer.write_boolean_value("webBrowserBlocked", @web_browser_blocked) unless @web_browser_blocked.nil?
+                writer.write_enum_value("webBrowserCookieSettings", @web_browser_cookie_settings) unless @web_browser_cookie_settings.nil?
+                writer.write_boolean_value("wiFiBlocked", @wi_fi_blocked) unless @wi_fi_blocked.nil?
             end
             ## 
             ## Gets the storageBlockGoogleBackup property value. Indicates whether or not to block Google Backup.

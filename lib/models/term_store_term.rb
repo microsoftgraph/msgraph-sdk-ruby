@@ -176,14 +176,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("children", @children)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_collection_of_object_values("descriptions", @descriptions)
-                writer.write_collection_of_object_values("labels", @labels)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_collection_of_object_values("properties", @properties)
-                writer.write_collection_of_object_values("relations", @relations)
-                writer.write_object_value("set", @set)
+                writer.write_collection_of_object_values("children", @children) unless @children.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_collection_of_object_values("descriptions", @descriptions) unless @descriptions.nil?
+                writer.write_collection_of_object_values("labels", @labels) unless @labels.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_collection_of_object_values("properties", @properties) unless @properties.nil?
+                writer.write_collection_of_object_values("relations", @relations) unless @relations.nil?
+                writer.write_object_value("set", @set) unless @set.nil?
             end
             ## 
             ## Gets the set property value. The [set] in which the term is created.

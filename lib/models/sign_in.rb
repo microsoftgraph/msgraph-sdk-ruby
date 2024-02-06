@@ -416,29 +416,29 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appDisplayName", @app_display_name)
-                writer.write_string_value("appId", @app_id)
-                writer.write_collection_of_object_values("appliedConditionalAccessPolicies", @applied_conditional_access_policies)
-                writer.write_string_value("clientAppUsed", @client_app_used)
-                writer.write_enum_value("conditionalAccessStatus", @conditional_access_status)
-                writer.write_string_value("correlationId", @correlation_id)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("deviceDetail", @device_detail)
-                writer.write_string_value("ipAddress", @ip_address)
-                writer.write_boolean_value("isInteractive", @is_interactive)
-                writer.write_object_value("location", @location)
-                writer.write_string_value("resourceDisplayName", @resource_display_name)
-                writer.write_string_value("resourceId", @resource_id)
-                writer.write_enum_value("riskDetail", @risk_detail)
-                writer.write_collection_of_object_values("riskEventTypes", @risk_event_types)
+                writer.write_string_value("appDisplayName", @app_display_name) unless @app_display_name.nil?
+                writer.write_string_value("appId", @app_id) unless @app_id.nil?
+                writer.write_collection_of_object_values("appliedConditionalAccessPolicies", @applied_conditional_access_policies) unless @applied_conditional_access_policies.nil?
+                writer.write_string_value("clientAppUsed", @client_app_used) unless @client_app_used.nil?
+                writer.write_enum_value("conditionalAccessStatus", @conditional_access_status) unless @conditional_access_status.nil?
+                writer.write_string_value("correlationId", @correlation_id) unless @correlation_id.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("deviceDetail", @device_detail) unless @device_detail.nil?
+                writer.write_string_value("ipAddress", @ip_address) unless @ip_address.nil?
+                writer.write_boolean_value("isInteractive", @is_interactive) unless @is_interactive.nil?
+                writer.write_object_value("location", @location) unless @location.nil?
+                writer.write_string_value("resourceDisplayName", @resource_display_name) unless @resource_display_name.nil?
+                writer.write_string_value("resourceId", @resource_id) unless @resource_id.nil?
+                writer.write_enum_value("riskDetail", @risk_detail) unless @risk_detail.nil?
+                writer.write_collection_of_object_values("riskEventTypes", @risk_event_types) unless @risk_event_types.nil?
                 writer.write_collection_of_primitive_values("riskEventTypes_v2", @risk_event_types_v2)
-                writer.write_enum_value("riskLevelAggregated", @risk_level_aggregated)
-                writer.write_enum_value("riskLevelDuringSignIn", @risk_level_during_sign_in)
-                writer.write_enum_value("riskState", @risk_state)
-                writer.write_object_value("status", @status)
-                writer.write_string_value("userDisplayName", @user_display_name)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
+                writer.write_enum_value("riskLevelAggregated", @risk_level_aggregated) unless @risk_level_aggregated.nil?
+                writer.write_enum_value("riskLevelDuringSignIn", @risk_level_during_sign_in) unless @risk_level_during_sign_in.nil?
+                writer.write_enum_value("riskState", @risk_state) unless @risk_state.nil?
+                writer.write_object_value("status", @status) unless @status.nil?
+                writer.write_string_value("userDisplayName", @user_display_name) unless @user_display_name.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
             end
             ## 
             ## Gets the status property value. Sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.

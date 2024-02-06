@@ -177,15 +177,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("content", @content)
-                writer.write_string_value("contentType", @content_type)
-                writer.write_string_value("contentUrl", @content_url)
-                writer.write_string_value("id", @id)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("teamsAppId", @teams_app_id)
-                writer.write_string_value("thumbnailUrl", @thumbnail_url)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("content", @content) unless @content.nil?
+                writer.write_string_value("contentType", @content_type) unless @content_type.nil?
+                writer.write_string_value("contentUrl", @content_url) unless @content_url.nil?
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("teamsAppId", @teams_app_id) unless @teams_app_id.nil?
+                writer.write_string_value("thumbnailUrl", @thumbnail_url) unless @thumbnail_url.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.

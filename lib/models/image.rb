@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("height", @height)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("width", @width)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("height", @height) unless @height.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("width", @width) unless @width.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the width property value. Optional. Width of the image, in pixels. Read-only.

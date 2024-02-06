@@ -242,15 +242,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_collection_of_primitive_values("detailedRoles", @detailed_roles)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("remediationStatus", @remediation_status)
-                writer.write_string_value("remediationStatusDetails", @remediation_status_details)
-                writer.write_collection_of_object_values("roles", @roles)
-                writer.write_collection_of_primitive_values("tags", @tags)
-                writer.write_enum_value("verdict", @verdict)
-                writer.write_additional_data(@additional_data)
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_collection_of_primitive_values("detailedRoles", @detailed_roles) unless @detailed_roles.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("remediationStatus", @remediation_status) unless @remediation_status.nil?
+                writer.write_string_value("remediationStatusDetails", @remediation_status_details) unless @remediation_status_details.nil?
+                writer.write_collection_of_object_values("roles", @roles) unless @roles.nil?
+                writer.write_collection_of_primitive_values("tags", @tags) unless @tags.nil?
+                writer.write_enum_value("verdict", @verdict) unless @verdict.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the tags property value. Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.

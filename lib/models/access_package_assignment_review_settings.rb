@@ -226,16 +226,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("expirationBehavior", @expiration_behavior)
-                writer.write_collection_of_object_values("fallbackReviewers", @fallback_reviewers)
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_boolean_value("isRecommendationEnabled", @is_recommendation_enabled)
-                writer.write_boolean_value("isReviewerJustificationRequired", @is_reviewer_justification_required)
-                writer.write_boolean_value("isSelfReview", @is_self_review)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("primaryReviewers", @primary_reviewers)
-                writer.write_object_value("schedule", @schedule)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("expirationBehavior", @expiration_behavior) unless @expiration_behavior.nil?
+                writer.write_collection_of_object_values("fallbackReviewers", @fallback_reviewers) unless @fallback_reviewers.nil?
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_boolean_value("isRecommendationEnabled", @is_recommendation_enabled) unless @is_recommendation_enabled.nil?
+                writer.write_boolean_value("isReviewerJustificationRequired", @is_reviewer_justification_required) unless @is_reviewer_justification_required.nil?
+                writer.write_boolean_value("isSelfReview", @is_self_review) unless @is_self_review.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("primaryReviewers", @primary_reviewers) unless @primary_reviewers.nil?
+                writer.write_object_value("schedule", @schedule) unless @schedule.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

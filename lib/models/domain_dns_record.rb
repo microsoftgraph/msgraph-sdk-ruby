@@ -119,11 +119,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("isOptional", @is_optional)
-                writer.write_string_value("label", @label)
-                writer.write_string_value("recordType", @record_type)
-                writer.write_string_value("supportedService", @supported_service)
-                writer.write_number_value("ttl", @ttl)
+                writer.write_boolean_value("isOptional", @is_optional) unless @is_optional.nil?
+                writer.write_string_value("label", @label) unless @label.nil?
+                writer.write_string_value("recordType", @record_type) unless @record_type.nil?
+                writer.write_string_value("supportedService", @supported_service) unless @supported_service.nil?
+                writer.write_number_value("ttl", @ttl) unless @ttl.nil?
             end
             ## 
             ## Gets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.

@@ -168,16 +168,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("accountId", @account_id)
-                writer.write_string_value("accountName", @account_name)
-                writer.write_string_value("appliesTo", @applies_to)
-                writer.write_string_value("capabilityStatus", @capability_status)
-                writer.write_number_value("consumedUnits", @consumed_units)
-                writer.write_object_value("prepaidUnits", @prepaid_units)
-                writer.write_collection_of_object_values("servicePlans", @service_plans)
-                writer.write_guid_value("skuId", @sku_id)
-                writer.write_string_value("skuPartNumber", @sku_part_number)
-                writer.write_collection_of_primitive_values("subscriptionIds", @subscription_ids)
+                writer.write_string_value("accountId", @account_id) unless @account_id.nil?
+                writer.write_string_value("accountName", @account_name) unless @account_name.nil?
+                writer.write_string_value("appliesTo", @applies_to) unless @applies_to.nil?
+                writer.write_string_value("capabilityStatus", @capability_status) unless @capability_status.nil?
+                writer.write_number_value("consumedUnits", @consumed_units) unless @consumed_units.nil?
+                writer.write_object_value("prepaidUnits", @prepaid_units) unless @prepaid_units.nil?
+                writer.write_collection_of_object_values("servicePlans", @service_plans) unless @service_plans.nil?
+                writer.write_guid_value("skuId", @sku_id) unless @sku_id.nil?
+                writer.write_string_value("skuPartNumber", @sku_part_number) unless @sku_part_number.nil?
+                writer.write_collection_of_primitive_values("subscriptionIds", @subscription_ids) unless @subscription_ids.nil?
             end
             ## 
             ## Gets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable.

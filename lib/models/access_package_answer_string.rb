@@ -43,7 +43,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("value", @value)
+                writer.write_string_value("value", @value) unless @value.nil?
             end
             ## 
             ## Gets the value property value. The value stored on the requestor's user profile, if this answer is configured to be stored as a specific attribute.

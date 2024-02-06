@@ -83,9 +83,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTimeUtc", @created_date_time_utc)
-                writer.write_collection_of_object_values("deviceIdentities", @device_identities)
-                writer.write_enum_value("status", @status)
+                writer.write_date_time_value("createdDateTimeUtc", @created_date_time_utc) unless @created_date_time_utc.nil?
+                writer.write_collection_of_object_values("deviceIdentities", @device_identities) unless @device_identities.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The status property

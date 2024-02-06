@@ -80,9 +80,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("error", @error)
-                writer.write_string_value("resourceLocation", @resource_location)
-                writer.write_enum_value("status", @status)
+                writer.write_object_value("error", @error) unless @error.nil?
+                writer.write_string_value("resourceLocation", @resource_location) unless @resource_location.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The status property

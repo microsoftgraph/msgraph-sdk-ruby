@@ -252,18 +252,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("accessAssignments", @access_assignments)
-                writer.write_object_value("accessDetails", @access_details)
-                writer.write_date_time_value("activatedDateTime", @activated_date_time)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("customer", @customer)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_duration_value("duration", @duration)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_collection_of_object_values("requests", @requests)
-                writer.write_enum_value("status", @status)
+                writer.write_collection_of_object_values("accessAssignments", @access_assignments) unless @access_assignments.nil?
+                writer.write_object_value("accessDetails", @access_details) unless @access_details.nil?
+                writer.write_date_time_value("activatedDateTime", @activated_date_time) unless @activated_date_time.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("customer", @customer) unless @customer.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_duration_value("duration", @duration) unless @duration.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_collection_of_object_values("requests", @requests) unless @requests.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.

@@ -57,7 +57,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("internetExplorerMode", @internet_explorer_mode)
+                writer.write_object_value("internetExplorerMode", @internet_explorer_mode) unless @internet_explorer_mode.nil?
             end
         end
     end

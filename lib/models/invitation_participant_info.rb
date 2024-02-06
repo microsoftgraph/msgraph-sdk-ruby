@@ -169,13 +169,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("hidden", @hidden)
-                writer.write_object_value("identity", @identity)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("participantId", @participant_id)
-                writer.write_boolean_value("removeFromDefaultAudioRoutingGroup", @remove_from_default_audio_routing_group)
-                writer.write_string_value("replacesCallId", @replaces_call_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("hidden", @hidden) unless @hidden.nil?
+                writer.write_object_value("identity", @identity) unless @identity.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("participantId", @participant_id) unless @participant_id.nil?
+                writer.write_boolean_value("removeFromDefaultAudioRoutingGroup", @remove_from_default_audio_routing_group) unless @remove_from_default_audio_routing_group.nil?
+                writer.write_string_value("replacesCallId", @replaces_call_id) unless @replaces_call_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

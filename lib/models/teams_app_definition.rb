@@ -184,16 +184,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("authorization", @authorization)
-                writer.write_object_value("bot", @bot)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_enum_value("publishingState", @publishing_state)
-                writer.write_string_value("shortDescription", @short_description)
-                writer.write_string_value("teamsAppId", @teams_app_id)
-                writer.write_string_value("version", @version)
+                writer.write_object_value("authorization", @authorization) unless @authorization.nil?
+                writer.write_object_value("bot", @bot) unless @bot.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_enum_value("publishingState", @publishing_state) unless @publishing_state.nil?
+                writer.write_string_value("shortDescription", @short_description) unless @short_description.nil?
+                writer.write_string_value("teamsAppId", @teams_app_id) unless @teams_app_id.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the shortDescription property value. Short description of the application.

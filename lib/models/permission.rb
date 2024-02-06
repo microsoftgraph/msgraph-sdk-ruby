@@ -233,17 +233,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_object_value("grantedTo", @granted_to)
-                writer.write_collection_of_object_values("grantedToIdentities", @granted_to_identities)
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_object_value("grantedTo", @granted_to) unless @granted_to.nil?
+                writer.write_collection_of_object_values("grantedToIdentities", @granted_to_identities) unless @granted_to_identities.nil?
                 writer.write_collection_of_object_values("grantedToIdentitiesV2", @granted_to_identities_v2)
                 writer.write_object_value("grantedToV2", @granted_to_v2)
-                writer.write_boolean_value("hasPassword", @has_password)
-                writer.write_object_value("inheritedFrom", @inherited_from)
-                writer.write_object_value("invitation", @invitation)
-                writer.write_object_value("link", @link)
-                writer.write_collection_of_primitive_values("roles", @roles)
-                writer.write_string_value("shareId", @share_id)
+                writer.write_boolean_value("hasPassword", @has_password) unless @has_password.nil?
+                writer.write_object_value("inheritedFrom", @inherited_from) unless @inherited_from.nil?
+                writer.write_object_value("invitation", @invitation) unless @invitation.nil?
+                writer.write_object_value("link", @link) unless @link.nil?
+                writer.write_collection_of_primitive_values("roles", @roles) unless @roles.nil?
+                writer.write_string_value("shareId", @share_id) unless @share_id.nil?
             end
             ## 
             ## Gets the shareId property value. A unique token that can be used to access this shared item via the shares API. Read-only.

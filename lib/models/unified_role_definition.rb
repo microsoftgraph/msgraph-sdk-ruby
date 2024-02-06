@@ -179,15 +179,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("inheritsPermissionsFrom", @inherits_permissions_from)
-                writer.write_boolean_value("isBuiltIn", @is_built_in)
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_collection_of_primitive_values("resourceScopes", @resource_scopes)
-                writer.write_collection_of_object_values("rolePermissions", @role_permissions)
-                writer.write_string_value("templateId", @template_id)
-                writer.write_string_value("version", @version)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("inheritsPermissionsFrom", @inherits_permissions_from) unless @inherits_permissions_from.nil?
+                writer.write_boolean_value("isBuiltIn", @is_built_in) unless @is_built_in.nil?
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_collection_of_primitive_values("resourceScopes", @resource_scopes) unless @resource_scopes.nil?
+                writer.write_collection_of_object_values("rolePermissions", @role_permissions) unless @role_permissions.nil?
+                writer.write_string_value("templateId", @template_id) unless @template_id.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the templateId property value. Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.

@@ -80,9 +80,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_primitive_values("receivers", @receivers)
-                writer.write_enum_value("routingMode", @routing_mode)
-                writer.write_collection_of_primitive_values("sources", @sources)
+                writer.write_collection_of_primitive_values("receivers", @receivers) unless @receivers.nil?
+                writer.write_enum_value("routingMode", @routing_mode) unless @routing_mode.nil?
+                writer.write_collection_of_primitive_values("sources", @sources) unless @sources.nil?
             end
             ## 
             ## Gets the sources property value. List of source participant ids.

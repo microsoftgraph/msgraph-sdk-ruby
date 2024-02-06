@@ -96,9 +96,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("featureSettings", @feature_settings)
-                writer.write_collection_of_object_values("includeTargets", @include_targets)
-                writer.write_boolean_value("isSoftwareOathEnabled", @is_software_oath_enabled)
+                writer.write_object_value("featureSettings", @feature_settings) unless @feature_settings.nil?
+                writer.write_collection_of_object_values("includeTargets", @include_targets) unless @include_targets.nil?
+                writer.write_boolean_value("isSoftwareOathEnabled", @is_software_oath_enabled) unless @is_software_oath_enabled.nil?
             end
         end
     end

@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("calendarEventId", @calendar_event_id)
-                writer.write_string_value("joinWebUrl", @join_web_url)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("organizer", @organizer)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("calendarEventId", @calendar_event_id) unless @calendar_event_id.nil?
+                writer.write_string_value("joinWebUrl", @join_web_url) unless @join_web_url.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("organizer", @organizer) unless @organizer.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

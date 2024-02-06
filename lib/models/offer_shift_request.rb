@@ -124,9 +124,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("recipientActionMessage", @recipient_action_message)
-                writer.write_string_value("recipientUserId", @recipient_user_id)
-                writer.write_string_value("senderShiftId", @sender_shift_id)
+                writer.write_string_value("recipientActionMessage", @recipient_action_message) unless @recipient_action_message.nil?
+                writer.write_string_value("recipientUserId", @recipient_user_id) unless @recipient_user_id.nil?
+                writer.write_string_value("senderShiftId", @sender_shift_id) unless @sender_shift_id.nil?
             end
         end
     end

@@ -169,13 +169,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("acceptMappedClaims", @accept_mapped_claims)
-                writer.write_collection_of_primitive_values("knownClientApplications", @known_client_applications)
+                writer.write_boolean_value("acceptMappedClaims", @accept_mapped_claims) unless @accept_mapped_claims.nil?
+                writer.write_collection_of_primitive_values("knownClientApplications", @known_client_applications) unless @known_client_applications.nil?
                 writer.write_collection_of_object_values("oauth2PermissionScopes", @oauth2_permission_scopes)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("preAuthorizedApplications", @pre_authorized_applications)
-                writer.write_number_value("requestedAccessTokenVersion", @requested_access_token_version)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("preAuthorizedApplications", @pre_authorized_applications) unless @pre_authorized_applications.nil?
+                writer.write_number_value("requestedAccessTokenVersion", @requested_access_token_version) unless @requested_access_token_version.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

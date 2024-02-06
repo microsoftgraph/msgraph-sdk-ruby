@@ -179,15 +179,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("isCourseActivitySyncEnabled", @is_course_activity_sync_enabled)
-                writer.write_collection_of_object_values("learningContents", @learning_contents)
-                writer.write_collection_of_object_values("learningCourseActivities", @learning_course_activities)
-                writer.write_string_value("loginWebUrl", @login_web_url)
-                writer.write_string_value("longLogoWebUrlForDarkTheme", @long_logo_web_url_for_dark_theme)
-                writer.write_string_value("longLogoWebUrlForLightTheme", @long_logo_web_url_for_light_theme)
-                writer.write_string_value("squareLogoWebUrlForDarkTheme", @square_logo_web_url_for_dark_theme)
-                writer.write_string_value("squareLogoWebUrlForLightTheme", @square_logo_web_url_for_light_theme)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("isCourseActivitySyncEnabled", @is_course_activity_sync_enabled) unless @is_course_activity_sync_enabled.nil?
+                writer.write_collection_of_object_values("learningContents", @learning_contents) unless @learning_contents.nil?
+                writer.write_collection_of_object_values("learningCourseActivities", @learning_course_activities) unless @learning_course_activities.nil?
+                writer.write_string_value("loginWebUrl", @login_web_url) unless @login_web_url.nil?
+                writer.write_string_value("longLogoWebUrlForDarkTheme", @long_logo_web_url_for_dark_theme) unless @long_logo_web_url_for_dark_theme.nil?
+                writer.write_string_value("longLogoWebUrlForLightTheme", @long_logo_web_url_for_light_theme) unless @long_logo_web_url_for_light_theme.nil?
+                writer.write_string_value("squareLogoWebUrlForDarkTheme", @square_logo_web_url_for_dark_theme) unless @square_logo_web_url_for_dark_theme.nil?
+                writer.write_string_value("squareLogoWebUrlForLightTheme", @square_logo_web_url_for_light_theme) unless @square_logo_web_url_for_light_theme.nil?
             end
             ## 
             ## Gets the squareLogoWebUrlForDarkTheme property value. The square logo URL for the dark mode that needs to be a publicly accessible image. This image would be saved to the blob storage of Viva Learning for rendering within the Viva Learning app. Required.

@@ -307,20 +307,20 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("deviceThreatProtectionEnabled", @device_threat_protection_enabled)
-                writer.write_enum_value("deviceThreatProtectionRequiredSecurityLevel", @device_threat_protection_required_security_level)
-                writer.write_boolean_value("managedEmailProfileRequired", @managed_email_profile_required)
-                writer.write_string_value("osMaximumVersion", @os_maximum_version)
-                writer.write_string_value("osMinimumVersion", @os_minimum_version)
-                writer.write_boolean_value("passcodeBlockSimple", @passcode_block_simple)
-                writer.write_number_value("passcodeExpirationDays", @passcode_expiration_days)
-                writer.write_number_value("passcodeMinimumCharacterSetCount", @passcode_minimum_character_set_count)
-                writer.write_number_value("passcodeMinimumLength", @passcode_minimum_length)
-                writer.write_number_value("passcodeMinutesOfInactivityBeforeLock", @passcode_minutes_of_inactivity_before_lock)
-                writer.write_number_value("passcodePreviousPasscodeBlockCount", @passcode_previous_passcode_block_count)
-                writer.write_boolean_value("passcodeRequired", @passcode_required)
-                writer.write_enum_value("passcodeRequiredType", @passcode_required_type)
-                writer.write_boolean_value("securityBlockJailbrokenDevices", @security_block_jailbroken_devices)
+                writer.write_boolean_value("deviceThreatProtectionEnabled", @device_threat_protection_enabled) unless @device_threat_protection_enabled.nil?
+                writer.write_enum_value("deviceThreatProtectionRequiredSecurityLevel", @device_threat_protection_required_security_level) unless @device_threat_protection_required_security_level.nil?
+                writer.write_boolean_value("managedEmailProfileRequired", @managed_email_profile_required) unless @managed_email_profile_required.nil?
+                writer.write_string_value("osMaximumVersion", @os_maximum_version) unless @os_maximum_version.nil?
+                writer.write_string_value("osMinimumVersion", @os_minimum_version) unless @os_minimum_version.nil?
+                writer.write_boolean_value("passcodeBlockSimple", @passcode_block_simple) unless @passcode_block_simple.nil?
+                writer.write_number_value("passcodeExpirationDays", @passcode_expiration_days) unless @passcode_expiration_days.nil?
+                writer.write_number_value("passcodeMinimumCharacterSetCount", @passcode_minimum_character_set_count) unless @passcode_minimum_character_set_count.nil?
+                writer.write_number_value("passcodeMinimumLength", @passcode_minimum_length) unless @passcode_minimum_length.nil?
+                writer.write_number_value("passcodeMinutesOfInactivityBeforeLock", @passcode_minutes_of_inactivity_before_lock) unless @passcode_minutes_of_inactivity_before_lock.nil?
+                writer.write_number_value("passcodePreviousPasscodeBlockCount", @passcode_previous_passcode_block_count) unless @passcode_previous_passcode_block_count.nil?
+                writer.write_boolean_value("passcodeRequired", @passcode_required) unless @passcode_required.nil?
+                writer.write_enum_value("passcodeRequiredType", @passcode_required_type) unless @passcode_required_type.nil?
+                writer.write_boolean_value("securityBlockJailbrokenDevices", @security_block_jailbroken_devices) unless @security_block_jailbroken_devices.nil?
             end
         end
     end

@@ -165,15 +165,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("contactedReviewers", @contacted_reviewers)
-                writer.write_collection_of_object_values("decisions", @decisions)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_collection_of_object_values("fallbackReviewers", @fallback_reviewers)
-                writer.write_collection_of_object_values("reviewers", @reviewers)
-                writer.write_object_value("scope", @scope)
-                writer.write_collection_of_object_values("stages", @stages)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_string_value("status", @status)
+                writer.write_collection_of_object_values("contactedReviewers", @contacted_reviewers) unless @contacted_reviewers.nil?
+                writer.write_collection_of_object_values("decisions", @decisions) unless @decisions.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_collection_of_object_values("fallbackReviewers", @fallback_reviewers) unless @fallback_reviewers.nil?
+                writer.write_collection_of_object_values("reviewers", @reviewers) unless @reviewers.nil?
+                writer.write_object_value("scope", @scope) unless @scope.nil?
+                writer.write_collection_of_object_values("stages", @stages) unless @stages.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the stages property value. If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.

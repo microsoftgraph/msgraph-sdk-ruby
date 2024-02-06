@@ -466,34 +466,34 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("allChannels", @all_channels)
-                writer.write_collection_of_object_values("channels", @channels)
-                writer.write_string_value("classification", @classification)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("funSettings", @fun_settings)
-                writer.write_object_value("group", @group)
-                writer.write_object_value("guestSettings", @guest_settings)
-                writer.write_collection_of_object_values("incomingChannels", @incoming_channels)
-                writer.write_collection_of_object_values("installedApps", @installed_apps)
-                writer.write_string_value("internalId", @internal_id)
-                writer.write_boolean_value("isArchived", @is_archived)
-                writer.write_object_value("memberSettings", @member_settings)
-                writer.write_collection_of_object_values("members", @members)
-                writer.write_object_value("messagingSettings", @messaging_settings)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_collection_of_object_values("permissionGrants", @permission_grants)
-                writer.write_object_value("photo", @photo)
-                writer.write_object_value("primaryChannel", @primary_channel)
-                writer.write_object_value("schedule", @schedule)
-                writer.write_enum_value("specialization", @specialization)
-                writer.write_object_value("summary", @summary)
-                writer.write_collection_of_object_values("tags", @tags)
-                writer.write_object_value("template", @template)
-                writer.write_string_value("tenantId", @tenant_id)
-                writer.write_enum_value("visibility", @visibility)
-                writer.write_string_value("webUrl", @web_url)
+                writer.write_collection_of_object_values("allChannels", @all_channels) unless @all_channels.nil?
+                writer.write_collection_of_object_values("channels", @channels) unless @channels.nil?
+                writer.write_string_value("classification", @classification) unless @classification.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("funSettings", @fun_settings) unless @fun_settings.nil?
+                writer.write_object_value("group", @group) unless @group.nil?
+                writer.write_object_value("guestSettings", @guest_settings) unless @guest_settings.nil?
+                writer.write_collection_of_object_values("incomingChannels", @incoming_channels) unless @incoming_channels.nil?
+                writer.write_collection_of_object_values("installedApps", @installed_apps) unless @installed_apps.nil?
+                writer.write_string_value("internalId", @internal_id) unless @internal_id.nil?
+                writer.write_boolean_value("isArchived", @is_archived) unless @is_archived.nil?
+                writer.write_object_value("memberSettings", @member_settings) unless @member_settings.nil?
+                writer.write_collection_of_object_values("members", @members) unless @members.nil?
+                writer.write_object_value("messagingSettings", @messaging_settings) unless @messaging_settings.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_collection_of_object_values("permissionGrants", @permission_grants) unless @permission_grants.nil?
+                writer.write_object_value("photo", @photo) unless @photo.nil?
+                writer.write_object_value("primaryChannel", @primary_channel) unless @primary_channel.nil?
+                writer.write_object_value("schedule", @schedule) unless @schedule.nil?
+                writer.write_enum_value("specialization", @specialization) unless @specialization.nil?
+                writer.write_object_value("summary", @summary) unless @summary.nil?
+                writer.write_collection_of_object_values("tags", @tags) unless @tags.nil?
+                writer.write_object_value("template", @template) unless @template.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
+                writer.write_enum_value("visibility", @visibility) unless @visibility.nil?
+                writer.write_string_value("webUrl", @web_url) unless @web_url.nil?
             end
             ## 
             ## Gets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.

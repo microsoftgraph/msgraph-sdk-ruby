@@ -858,57 +858,57 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("accountEnabled", @account_enabled)
-                writer.write_collection_of_object_values("addIns", @add_ins)
-                writer.write_collection_of_primitive_values("alternativeNames", @alternative_names)
-                writer.write_string_value("appDescription", @app_description)
-                writer.write_string_value("appDisplayName", @app_display_name)
-                writer.write_string_value("appId", @app_id)
-                writer.write_collection_of_object_values("appManagementPolicies", @app_management_policies)
-                writer.write_guid_value("appOwnerOrganizationId", @app_owner_organization_id)
-                writer.write_collection_of_object_values("appRoleAssignedTo", @app_role_assigned_to)
-                writer.write_boolean_value("appRoleAssignmentRequired", @app_role_assignment_required)
-                writer.write_collection_of_object_values("appRoleAssignments", @app_role_assignments)
-                writer.write_collection_of_object_values("appRoles", @app_roles)
-                writer.write_string_value("applicationTemplateId", @application_template_id)
-                writer.write_collection_of_object_values("claimsMappingPolicies", @claims_mapping_policies)
-                writer.write_collection_of_object_values("createdObjects", @created_objects)
-                writer.write_object_value("customSecurityAttributes", @custom_security_attributes)
-                writer.write_collection_of_object_values("delegatedPermissionClassifications", @delegated_permission_classifications)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("disabledByMicrosoftStatus", @disabled_by_microsoft_status)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("endpoints", @endpoints)
-                writer.write_collection_of_object_values("federatedIdentityCredentials", @federated_identity_credentials)
-                writer.write_collection_of_object_values("homeRealmDiscoveryPolicies", @home_realm_discovery_policies)
-                writer.write_string_value("homepage", @homepage)
-                writer.write_object_value("info", @info)
-                writer.write_collection_of_object_values("keyCredentials", @key_credentials)
-                writer.write_string_value("loginUrl", @login_url)
-                writer.write_string_value("logoutUrl", @logout_url)
-                writer.write_collection_of_object_values("memberOf", @member_of)
-                writer.write_string_value("notes", @notes)
-                writer.write_collection_of_primitive_values("notificationEmailAddresses", @notification_email_addresses)
+                writer.write_boolean_value("accountEnabled", @account_enabled) unless @account_enabled.nil?
+                writer.write_collection_of_object_values("addIns", @add_ins) unless @add_ins.nil?
+                writer.write_collection_of_primitive_values("alternativeNames", @alternative_names) unless @alternative_names.nil?
+                writer.write_string_value("appDescription", @app_description) unless @app_description.nil?
+                writer.write_string_value("appDisplayName", @app_display_name) unless @app_display_name.nil?
+                writer.write_string_value("appId", @app_id) unless @app_id.nil?
+                writer.write_collection_of_object_values("appManagementPolicies", @app_management_policies) unless @app_management_policies.nil?
+                writer.write_guid_value("appOwnerOrganizationId", @app_owner_organization_id) unless @app_owner_organization_id.nil?
+                writer.write_collection_of_object_values("appRoleAssignedTo", @app_role_assigned_to) unless @app_role_assigned_to.nil?
+                writer.write_boolean_value("appRoleAssignmentRequired", @app_role_assignment_required) unless @app_role_assignment_required.nil?
+                writer.write_collection_of_object_values("appRoleAssignments", @app_role_assignments) unless @app_role_assignments.nil?
+                writer.write_collection_of_object_values("appRoles", @app_roles) unless @app_roles.nil?
+                writer.write_string_value("applicationTemplateId", @application_template_id) unless @application_template_id.nil?
+                writer.write_collection_of_object_values("claimsMappingPolicies", @claims_mapping_policies) unless @claims_mapping_policies.nil?
+                writer.write_collection_of_object_values("createdObjects", @created_objects) unless @created_objects.nil?
+                writer.write_object_value("customSecurityAttributes", @custom_security_attributes) unless @custom_security_attributes.nil?
+                writer.write_collection_of_object_values("delegatedPermissionClassifications", @delegated_permission_classifications) unless @delegated_permission_classifications.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("disabledByMicrosoftStatus", @disabled_by_microsoft_status) unless @disabled_by_microsoft_status.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("endpoints", @endpoints) unless @endpoints.nil?
+                writer.write_collection_of_object_values("federatedIdentityCredentials", @federated_identity_credentials) unless @federated_identity_credentials.nil?
+                writer.write_collection_of_object_values("homeRealmDiscoveryPolicies", @home_realm_discovery_policies) unless @home_realm_discovery_policies.nil?
+                writer.write_string_value("homepage", @homepage) unless @homepage.nil?
+                writer.write_object_value("info", @info) unless @info.nil?
+                writer.write_collection_of_object_values("keyCredentials", @key_credentials) unless @key_credentials.nil?
+                writer.write_string_value("loginUrl", @login_url) unless @login_url.nil?
+                writer.write_string_value("logoutUrl", @logout_url) unless @logout_url.nil?
+                writer.write_collection_of_object_values("memberOf", @member_of) unless @member_of.nil?
+                writer.write_string_value("notes", @notes) unless @notes.nil?
+                writer.write_collection_of_primitive_values("notificationEmailAddresses", @notification_email_addresses) unless @notification_email_addresses.nil?
                 writer.write_collection_of_object_values("oauth2PermissionGrants", @oauth2_permission_grants)
                 writer.write_collection_of_object_values("oauth2PermissionScopes", @oauth2_permission_scopes)
-                writer.write_collection_of_object_values("ownedObjects", @owned_objects)
-                writer.write_collection_of_object_values("owners", @owners)
-                writer.write_collection_of_object_values("passwordCredentials", @password_credentials)
-                writer.write_string_value("preferredSingleSignOnMode", @preferred_single_sign_on_mode)
-                writer.write_string_value("preferredTokenSigningKeyThumbprint", @preferred_token_signing_key_thumbprint)
-                writer.write_collection_of_primitive_values("replyUrls", @reply_urls)
-                writer.write_collection_of_object_values("resourceSpecificApplicationPermissions", @resource_specific_application_permissions)
-                writer.write_object_value("samlSingleSignOnSettings", @saml_single_sign_on_settings)
-                writer.write_collection_of_primitive_values("servicePrincipalNames", @service_principal_names)
-                writer.write_string_value("servicePrincipalType", @service_principal_type)
-                writer.write_string_value("signInAudience", @sign_in_audience)
-                writer.write_object_value("synchronization", @synchronization)
-                writer.write_collection_of_primitive_values("tags", @tags)
-                writer.write_guid_value("tokenEncryptionKeyId", @token_encryption_key_id)
-                writer.write_collection_of_object_values("tokenIssuancePolicies", @token_issuance_policies)
-                writer.write_collection_of_object_values("tokenLifetimePolicies", @token_lifetime_policies)
-                writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of)
-                writer.write_object_value("verifiedPublisher", @verified_publisher)
+                writer.write_collection_of_object_values("ownedObjects", @owned_objects) unless @owned_objects.nil?
+                writer.write_collection_of_object_values("owners", @owners) unless @owners.nil?
+                writer.write_collection_of_object_values("passwordCredentials", @password_credentials) unless @password_credentials.nil?
+                writer.write_string_value("preferredSingleSignOnMode", @preferred_single_sign_on_mode) unless @preferred_single_sign_on_mode.nil?
+                writer.write_string_value("preferredTokenSigningKeyThumbprint", @preferred_token_signing_key_thumbprint) unless @preferred_token_signing_key_thumbprint.nil?
+                writer.write_collection_of_primitive_values("replyUrls", @reply_urls) unless @reply_urls.nil?
+                writer.write_collection_of_object_values("resourceSpecificApplicationPermissions", @resource_specific_application_permissions) unless @resource_specific_application_permissions.nil?
+                writer.write_object_value("samlSingleSignOnSettings", @saml_single_sign_on_settings) unless @saml_single_sign_on_settings.nil?
+                writer.write_collection_of_primitive_values("servicePrincipalNames", @service_principal_names) unless @service_principal_names.nil?
+                writer.write_string_value("servicePrincipalType", @service_principal_type) unless @service_principal_type.nil?
+                writer.write_string_value("signInAudience", @sign_in_audience) unless @sign_in_audience.nil?
+                writer.write_object_value("synchronization", @synchronization) unless @synchronization.nil?
+                writer.write_collection_of_primitive_values("tags", @tags) unless @tags.nil?
+                writer.write_guid_value("tokenEncryptionKeyId", @token_encryption_key_id) unless @token_encryption_key_id.nil?
+                writer.write_collection_of_object_values("tokenIssuancePolicies", @token_issuance_policies) unless @token_issuance_policies.nil?
+                writer.write_collection_of_object_values("tokenLifetimePolicies", @token_lifetime_policies) unless @token_lifetime_policies.nil?
+                writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of) unless @transitive_member_of.nil?
+                writer.write_object_value("verifiedPublisher", @verified_publisher) unless @verified_publisher.nil?
             end
             ## 
             ## Gets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).

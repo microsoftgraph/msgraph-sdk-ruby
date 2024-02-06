@@ -118,11 +118,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("authenticationContextClassReferences", @authentication_context_class_references)
-                writer.write_object_value("authenticationStrength", @authentication_strength)
-                writer.write_collection_of_object_values("namedLocations", @named_locations)
-                writer.write_collection_of_object_values("policies", @policies)
-                writer.write_collection_of_object_values("templates", @templates)
+                writer.write_collection_of_object_values("authenticationContextClassReferences", @authentication_context_class_references) unless @authentication_context_class_references.nil?
+                writer.write_object_value("authenticationStrength", @authentication_strength) unless @authentication_strength.nil?
+                writer.write_collection_of_object_values("namedLocations", @named_locations) unless @named_locations.nil?
+                writer.write_collection_of_object_values("policies", @policies) unless @policies.nil?
+                writer.write_collection_of_object_values("templates", @templates) unless @templates.nil?
             end
             ## 
             ## Gets the templates property value. Read-only. Nullable. Returns a collection of the specified Conditional Access templates.

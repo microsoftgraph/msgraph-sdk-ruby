@@ -101,11 +101,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("edge", @edge)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("serviceAnnouncement", @service_announcement)
-                writer.write_object_value("sharepoint", @sharepoint)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("edge", @edge) unless @edge.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("serviceAnnouncement", @service_announcement) unless @service_announcement.nil?
+                writer.write_object_value("sharepoint", @sharepoint) unless @sharepoint.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the serviceAnnouncement property value. A container for service communications resources. Read-only.

@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("originalQueryString", @original_query_string)
-                writer.write_object_value("queryAlteration", @query_alteration)
-                writer.write_enum_value("queryAlterationType", @query_alteration_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("originalQueryString", @original_query_string) unless @original_query_string.nil?
+                writer.write_object_value("queryAlteration", @query_alteration) unless @query_alteration.nil?
+                writer.write_enum_value("queryAlterationType", @query_alteration_type) unless @query_alteration_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

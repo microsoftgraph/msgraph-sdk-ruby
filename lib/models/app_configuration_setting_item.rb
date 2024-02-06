@@ -133,11 +133,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("appConfigKey", @app_config_key)
-                writer.write_enum_value("appConfigKeyType", @app_config_key_type)
-                writer.write_string_value("appConfigKeyValue", @app_config_key_value)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("appConfigKey", @app_config_key) unless @app_config_key.nil?
+                writer.write_enum_value("appConfigKeyType", @app_config_key_type) unless @app_config_key_type.nil?
+                writer.write_string_value("appConfigKeyValue", @app_config_key_value) unless @app_config_key_value.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

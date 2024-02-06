@@ -188,14 +188,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("allowedAudience", @allowed_audience)
-                writer.write_object_value("captions", @captions)
-                writer.write_boolean_value("isAttendeeReportEnabled", @is_attendee_report_enabled)
-                writer.write_boolean_value("isQuestionAndAnswerEnabled", @is_question_and_answer_enabled)
-                writer.write_boolean_value("isRecordingEnabled", @is_recording_enabled)
-                writer.write_boolean_value("isVideoOnDemandEnabled", @is_video_on_demand_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("allowedAudience", @allowed_audience) unless @allowed_audience.nil?
+                writer.write_object_value("captions", @captions) unless @captions.nil?
+                writer.write_boolean_value("isAttendeeReportEnabled", @is_attendee_report_enabled) unless @is_attendee_report_enabled.nil?
+                writer.write_boolean_value("isQuestionAndAnswerEnabled", @is_question_and_answer_enabled) unless @is_question_and_answer_enabled.nil?
+                writer.write_boolean_value("isRecordingEnabled", @is_recording_enabled) unless @is_recording_enabled.nil?
+                writer.write_boolean_value("isVideoOnDemandEnabled", @is_video_on_demand_enabled) unless @is_video_on_demand_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

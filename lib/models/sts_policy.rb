@@ -112,9 +112,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("appliesTo", @applies_to)
-                writer.write_collection_of_primitive_values("definition", @definition)
-                writer.write_boolean_value("isOrganizationDefault", @is_organization_default)
+                writer.write_collection_of_object_values("appliesTo", @applies_to) unless @applies_to.nil?
+                writer.write_collection_of_primitive_values("definition", @definition) unless @definition.nil?
+                writer.write_boolean_value("isOrganizationDefault", @is_organization_default) unless @is_organization_default.nil?
             end
         end
     end

@@ -120,11 +120,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("deviceStates", @device_states)
-                writer.write_number_value("failedDeviceCount", @failed_device_count)
-                writer.write_number_value("installedDeviceCount", @installed_device_count)
-                writer.write_number_value("notInstalledDeviceCount", @not_installed_device_count)
-                writer.write_string_value("userName", @user_name)
+                writer.write_collection_of_object_values("deviceStates", @device_states) unless @device_states.nil?
+                writer.write_number_value("failedDeviceCount", @failed_device_count) unless @failed_device_count.nil?
+                writer.write_number_value("installedDeviceCount", @installed_device_count) unless @installed_device_count.nil?
+                writer.write_number_value("notInstalledDeviceCount", @not_installed_device_count) unless @not_installed_device_count.nil?
+                writer.write_string_value("userName", @user_name) unless @user_name.nil?
             end
             ## 
             ## Gets the userName property value. User name.

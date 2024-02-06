@@ -133,14 +133,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appleId", @apple_id)
-                writer.write_collection_of_primitive_values("genres", @genres)
-                writer.write_string_value("language", @language)
-                writer.write_string_value("seller", @seller)
-                writer.write_number_value("totalLicenseCount", @total_license_count)
-                writer.write_number_value("usedLicenseCount", @used_license_count)
-                writer.write_string_value("vppOrganizationName", @vpp_organization_name)
-                writer.write_guid_value("vppTokenId", @vpp_token_id)
+                writer.write_string_value("appleId", @apple_id) unless @apple_id.nil?
+                writer.write_collection_of_primitive_values("genres", @genres) unless @genres.nil?
+                writer.write_string_value("language", @language) unless @language.nil?
+                writer.write_string_value("seller", @seller) unless @seller.nil?
+                writer.write_number_value("totalLicenseCount", @total_license_count) unless @total_license_count.nil?
+                writer.write_number_value("usedLicenseCount", @used_license_count) unless @used_license_count.nil?
+                writer.write_string_value("vppOrganizationName", @vpp_organization_name) unless @vpp_organization_name.nil?
+                writer.write_guid_value("vppTokenId", @vpp_token_id) unless @vpp_token_id.nil?
             end
             ## 
             ## Gets the totalLicenseCount property value. Total license count.

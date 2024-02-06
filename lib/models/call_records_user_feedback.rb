@@ -101,11 +101,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("rating", @rating)
-                writer.write_string_value("text", @text)
-                writer.write_object_value("tokens", @tokens)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("rating", @rating) unless @rating.nil?
+                writer.write_string_value("text", @text) unless @text.nil?
+                writer.write_object_value("tokens", @tokens) unless @tokens.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the text property value. The feedback text provided by the user of this endpoint for the session.

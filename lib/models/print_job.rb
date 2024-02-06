@@ -180,15 +180,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("configuration", @configuration)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_collection_of_object_values("documents", @documents)
-                writer.write_boolean_value("isFetchable", @is_fetchable)
-                writer.write_string_value("redirectedFrom", @redirected_from)
-                writer.write_string_value("redirectedTo", @redirected_to)
-                writer.write_object_value("status", @status)
-                writer.write_collection_of_object_values("tasks", @tasks)
+                writer.write_object_value("configuration", @configuration) unless @configuration.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_collection_of_object_values("documents", @documents) unless @documents.nil?
+                writer.write_boolean_value("isFetchable", @is_fetchable) unless @is_fetchable.nil?
+                writer.write_string_value("redirectedFrom", @redirected_from) unless @redirected_from.nil?
+                writer.write_string_value("redirectedTo", @redirected_to) unless @redirected_to.nil?
+                writer.write_object_value("status", @status) unless @status.nil?
+                writer.write_collection_of_object_values("tasks", @tasks) unless @tasks.nil?
             end
             ## 
             ## Gets the status property value. The status property

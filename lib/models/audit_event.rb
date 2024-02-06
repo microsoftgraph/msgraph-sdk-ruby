@@ -250,17 +250,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("activity", @activity)
-                writer.write_date_time_value("activityDateTime", @activity_date_time)
-                writer.write_string_value("activityOperationType", @activity_operation_type)
-                writer.write_string_value("activityResult", @activity_result)
-                writer.write_string_value("activityType", @activity_type)
-                writer.write_object_value("actor", @actor)
-                writer.write_string_value("category", @category)
-                writer.write_string_value("componentName", @component_name)
-                writer.write_guid_value("correlationId", @correlation_id)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("resources", @resources)
+                writer.write_string_value("activity", @activity) unless @activity.nil?
+                writer.write_date_time_value("activityDateTime", @activity_date_time) unless @activity_date_time.nil?
+                writer.write_string_value("activityOperationType", @activity_operation_type) unless @activity_operation_type.nil?
+                writer.write_string_value("activityResult", @activity_result) unless @activity_result.nil?
+                writer.write_string_value("activityType", @activity_type) unless @activity_type.nil?
+                writer.write_object_value("actor", @actor) unless @actor.nil?
+                writer.write_string_value("category", @category) unless @category.nil?
+                writer.write_string_value("componentName", @component_name) unless @component_name.nil?
+                writer.write_guid_value("correlationId", @correlation_id) unless @correlation_id.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("resources", @resources) unless @resources.nil?
             end
         end
     end

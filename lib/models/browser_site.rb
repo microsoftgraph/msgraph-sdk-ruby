@@ -224,18 +224,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("allowRedirect", @allow_redirect)
-                writer.write_string_value("comment", @comment)
-                writer.write_enum_value("compatibilityMode", @compatibility_mode)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_date_time_value("deletedDateTime", @deleted_date_time)
-                writer.write_collection_of_object_values("history", @history)
-                writer.write_object_value("lastModifiedBy", @last_modified_by)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_enum_value("mergeType", @merge_type)
-                writer.write_enum_value("status", @status)
-                writer.write_enum_value("targetEnvironment", @target_environment)
-                writer.write_string_value("webUrl", @web_url)
+                writer.write_boolean_value("allowRedirect", @allow_redirect) unless @allow_redirect.nil?
+                writer.write_string_value("comment", @comment) unless @comment.nil?
+                writer.write_enum_value("compatibilityMode", @compatibility_mode) unless @compatibility_mode.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_date_time_value("deletedDateTime", @deleted_date_time) unless @deleted_date_time.nil?
+                writer.write_collection_of_object_values("history", @history) unless @history.nil?
+                writer.write_object_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_enum_value("mergeType", @merge_type) unless @merge_type.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_enum_value("targetEnvironment", @target_environment) unless @target_environment.nil?
+                writer.write_string_value("webUrl", @web_url) unless @web_url.nil?
             end
             ## 
             ## Gets the status property value. The status property

@@ -2167,129 +2167,129 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("aboutMe", @about_me)
-                writer.write_boolean_value("accountEnabled", @account_enabled)
-                writer.write_collection_of_object_values("activities", @activities)
-                writer.write_string_value("ageGroup", @age_group)
-                writer.write_collection_of_object_values("agreementAcceptances", @agreement_acceptances)
-                writer.write_collection_of_object_values("appRoleAssignments", @app_role_assignments)
-                writer.write_collection_of_object_values("assignedLicenses", @assigned_licenses)
-                writer.write_collection_of_object_values("assignedPlans", @assigned_plans)
-                writer.write_object_value("authentication", @authentication)
-                writer.write_object_value("authorizationInfo", @authorization_info)
-                writer.write_date_time_value("birthday", @birthday)
-                writer.write_collection_of_primitive_values("businessPhones", @business_phones)
-                writer.write_object_value("calendar", @calendar)
-                writer.write_collection_of_object_values("calendarGroups", @calendar_groups)
-                writer.write_collection_of_object_values("calendarView", @calendar_view)
-                writer.write_collection_of_object_values("calendars", @calendars)
-                writer.write_collection_of_object_values("chats", @chats)
-                writer.write_string_value("city", @city)
-                writer.write_string_value("companyName", @company_name)
-                writer.write_string_value("consentProvidedForMinor", @consent_provided_for_minor)
-                writer.write_collection_of_object_values("contactFolders", @contact_folders)
-                writer.write_collection_of_object_values("contacts", @contacts)
-                writer.write_string_value("country", @country)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_collection_of_object_values("createdObjects", @created_objects)
-                writer.write_string_value("creationType", @creation_type)
-                writer.write_object_value("customSecurityAttributes", @custom_security_attributes)
-                writer.write_string_value("department", @department)
-                writer.write_number_value("deviceEnrollmentLimit", @device_enrollment_limit)
-                writer.write_collection_of_object_values("deviceManagementTroubleshootingEvents", @device_management_troubleshooting_events)
-                writer.write_collection_of_object_values("directReports", @direct_reports)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("drive", @drive)
-                writer.write_collection_of_object_values("drives", @drives)
-                writer.write_object_value("employeeExperience", @employee_experience)
-                writer.write_date_time_value("employeeHireDate", @employee_hire_date)
-                writer.write_string_value("employeeId", @employee_id)
-                writer.write_date_time_value("employeeLeaveDateTime", @employee_leave_date_time)
-                writer.write_object_value("employeeOrgData", @employee_org_data)
-                writer.write_string_value("employeeType", @employee_type)
-                writer.write_collection_of_object_values("events", @events)
-                writer.write_collection_of_object_values("extensions", @extensions)
-                writer.write_string_value("externalUserState", @external_user_state)
-                writer.write_date_time_value("externalUserStateChangeDateTime", @external_user_state_change_date_time)
-                writer.write_string_value("faxNumber", @fax_number)
-                writer.write_collection_of_object_values("followedSites", @followed_sites)
-                writer.write_string_value("givenName", @given_name)
-                writer.write_date_time_value("hireDate", @hire_date)
-                writer.write_collection_of_object_values("identities", @identities)
-                writer.write_collection_of_primitive_values("imAddresses", @im_addresses)
-                writer.write_object_value("inferenceClassification", @inference_classification)
-                writer.write_object_value("insights", @insights)
-                writer.write_collection_of_primitive_values("interests", @interests)
-                writer.write_boolean_value("isResourceAccount", @is_resource_account)
-                writer.write_string_value("jobTitle", @job_title)
-                writer.write_collection_of_object_values("joinedTeams", @joined_teams)
-                writer.write_date_time_value("lastPasswordChangeDateTime", @last_password_change_date_time)
-                writer.write_string_value("legalAgeGroupClassification", @legal_age_group_classification)
-                writer.write_collection_of_object_values("licenseAssignmentStates", @license_assignment_states)
-                writer.write_collection_of_object_values("licenseDetails", @license_details)
-                writer.write_string_value("mail", @mail)
-                writer.write_collection_of_object_values("mailFolders", @mail_folders)
-                writer.write_string_value("mailNickname", @mail_nickname)
-                writer.write_object_value("mailboxSettings", @mailbox_settings)
-                writer.write_collection_of_object_values("managedAppRegistrations", @managed_app_registrations)
-                writer.write_collection_of_object_values("managedDevices", @managed_devices)
-                writer.write_object_value("manager", @manager)
-                writer.write_collection_of_object_values("memberOf", @member_of)
-                writer.write_collection_of_object_values("messages", @messages)
-                writer.write_string_value("mobilePhone", @mobile_phone)
-                writer.write_string_value("mySite", @my_site)
+                writer.write_string_value("aboutMe", @about_me) unless @about_me.nil?
+                writer.write_boolean_value("accountEnabled", @account_enabled) unless @account_enabled.nil?
+                writer.write_collection_of_object_values("activities", @activities) unless @activities.nil?
+                writer.write_string_value("ageGroup", @age_group) unless @age_group.nil?
+                writer.write_collection_of_object_values("agreementAcceptances", @agreement_acceptances) unless @agreement_acceptances.nil?
+                writer.write_collection_of_object_values("appRoleAssignments", @app_role_assignments) unless @app_role_assignments.nil?
+                writer.write_collection_of_object_values("assignedLicenses", @assigned_licenses) unless @assigned_licenses.nil?
+                writer.write_collection_of_object_values("assignedPlans", @assigned_plans) unless @assigned_plans.nil?
+                writer.write_object_value("authentication", @authentication) unless @authentication.nil?
+                writer.write_object_value("authorizationInfo", @authorization_info) unless @authorization_info.nil?
+                writer.write_date_time_value("birthday", @birthday) unless @birthday.nil?
+                writer.write_collection_of_primitive_values("businessPhones", @business_phones) unless @business_phones.nil?
+                writer.write_object_value("calendar", @calendar) unless @calendar.nil?
+                writer.write_collection_of_object_values("calendarGroups", @calendar_groups) unless @calendar_groups.nil?
+                writer.write_collection_of_object_values("calendarView", @calendar_view) unless @calendar_view.nil?
+                writer.write_collection_of_object_values("calendars", @calendars) unless @calendars.nil?
+                writer.write_collection_of_object_values("chats", @chats) unless @chats.nil?
+                writer.write_string_value("city", @city) unless @city.nil?
+                writer.write_string_value("companyName", @company_name) unless @company_name.nil?
+                writer.write_string_value("consentProvidedForMinor", @consent_provided_for_minor) unless @consent_provided_for_minor.nil?
+                writer.write_collection_of_object_values("contactFolders", @contact_folders) unless @contact_folders.nil?
+                writer.write_collection_of_object_values("contacts", @contacts) unless @contacts.nil?
+                writer.write_string_value("country", @country) unless @country.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_collection_of_object_values("createdObjects", @created_objects) unless @created_objects.nil?
+                writer.write_string_value("creationType", @creation_type) unless @creation_type.nil?
+                writer.write_object_value("customSecurityAttributes", @custom_security_attributes) unless @custom_security_attributes.nil?
+                writer.write_string_value("department", @department) unless @department.nil?
+                writer.write_number_value("deviceEnrollmentLimit", @device_enrollment_limit) unless @device_enrollment_limit.nil?
+                writer.write_collection_of_object_values("deviceManagementTroubleshootingEvents", @device_management_troubleshooting_events) unless @device_management_troubleshooting_events.nil?
+                writer.write_collection_of_object_values("directReports", @direct_reports) unless @direct_reports.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("drive", @drive) unless @drive.nil?
+                writer.write_collection_of_object_values("drives", @drives) unless @drives.nil?
+                writer.write_object_value("employeeExperience", @employee_experience) unless @employee_experience.nil?
+                writer.write_date_time_value("employeeHireDate", @employee_hire_date) unless @employee_hire_date.nil?
+                writer.write_string_value("employeeId", @employee_id) unless @employee_id.nil?
+                writer.write_date_time_value("employeeLeaveDateTime", @employee_leave_date_time) unless @employee_leave_date_time.nil?
+                writer.write_object_value("employeeOrgData", @employee_org_data) unless @employee_org_data.nil?
+                writer.write_string_value("employeeType", @employee_type) unless @employee_type.nil?
+                writer.write_collection_of_object_values("events", @events) unless @events.nil?
+                writer.write_collection_of_object_values("extensions", @extensions) unless @extensions.nil?
+                writer.write_string_value("externalUserState", @external_user_state) unless @external_user_state.nil?
+                writer.write_date_time_value("externalUserStateChangeDateTime", @external_user_state_change_date_time) unless @external_user_state_change_date_time.nil?
+                writer.write_string_value("faxNumber", @fax_number) unless @fax_number.nil?
+                writer.write_collection_of_object_values("followedSites", @followed_sites) unless @followed_sites.nil?
+                writer.write_string_value("givenName", @given_name) unless @given_name.nil?
+                writer.write_date_time_value("hireDate", @hire_date) unless @hire_date.nil?
+                writer.write_collection_of_object_values("identities", @identities) unless @identities.nil?
+                writer.write_collection_of_primitive_values("imAddresses", @im_addresses) unless @im_addresses.nil?
+                writer.write_object_value("inferenceClassification", @inference_classification) unless @inference_classification.nil?
+                writer.write_object_value("insights", @insights) unless @insights.nil?
+                writer.write_collection_of_primitive_values("interests", @interests) unless @interests.nil?
+                writer.write_boolean_value("isResourceAccount", @is_resource_account) unless @is_resource_account.nil?
+                writer.write_string_value("jobTitle", @job_title) unless @job_title.nil?
+                writer.write_collection_of_object_values("joinedTeams", @joined_teams) unless @joined_teams.nil?
+                writer.write_date_time_value("lastPasswordChangeDateTime", @last_password_change_date_time) unless @last_password_change_date_time.nil?
+                writer.write_string_value("legalAgeGroupClassification", @legal_age_group_classification) unless @legal_age_group_classification.nil?
+                writer.write_collection_of_object_values("licenseAssignmentStates", @license_assignment_states) unless @license_assignment_states.nil?
+                writer.write_collection_of_object_values("licenseDetails", @license_details) unless @license_details.nil?
+                writer.write_string_value("mail", @mail) unless @mail.nil?
+                writer.write_collection_of_object_values("mailFolders", @mail_folders) unless @mail_folders.nil?
+                writer.write_string_value("mailNickname", @mail_nickname) unless @mail_nickname.nil?
+                writer.write_object_value("mailboxSettings", @mailbox_settings) unless @mailbox_settings.nil?
+                writer.write_collection_of_object_values("managedAppRegistrations", @managed_app_registrations) unless @managed_app_registrations.nil?
+                writer.write_collection_of_object_values("managedDevices", @managed_devices) unless @managed_devices.nil?
+                writer.write_object_value("manager", @manager) unless @manager.nil?
+                writer.write_collection_of_object_values("memberOf", @member_of) unless @member_of.nil?
+                writer.write_collection_of_object_values("messages", @messages) unless @messages.nil?
+                writer.write_string_value("mobilePhone", @mobile_phone) unless @mobile_phone.nil?
+                writer.write_string_value("mySite", @my_site) unless @my_site.nil?
                 writer.write_collection_of_object_values("oauth2PermissionGrants", @oauth2_permission_grants)
-                writer.write_string_value("officeLocation", @office_location)
-                writer.write_string_value("onPremisesDistinguishedName", @on_premises_distinguished_name)
-                writer.write_string_value("onPremisesDomainName", @on_premises_domain_name)
-                writer.write_object_value("onPremisesExtensionAttributes", @on_premises_extension_attributes)
-                writer.write_string_value("onPremisesImmutableId", @on_premises_immutable_id)
-                writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time)
-                writer.write_collection_of_object_values("onPremisesProvisioningErrors", @on_premises_provisioning_errors)
-                writer.write_string_value("onPremisesSamAccountName", @on_premises_sam_account_name)
-                writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier)
-                writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
-                writer.write_string_value("onPremisesUserPrincipalName", @on_premises_user_principal_name)
-                writer.write_object_value("onenote", @onenote)
-                writer.write_collection_of_object_values("onlineMeetings", @online_meetings)
-                writer.write_collection_of_primitive_values("otherMails", @other_mails)
-                writer.write_object_value("outlook", @outlook)
-                writer.write_collection_of_object_values("ownedDevices", @owned_devices)
-                writer.write_collection_of_object_values("ownedObjects", @owned_objects)
-                writer.write_string_value("passwordPolicies", @password_policies)
-                writer.write_object_value("passwordProfile", @password_profile)
-                writer.write_collection_of_primitive_values("pastProjects", @past_projects)
-                writer.write_collection_of_object_values("people", @people)
-                writer.write_object_value("photo", @photo)
-                writer.write_collection_of_object_values("photos", @photos)
-                writer.write_object_value("planner", @planner)
-                writer.write_string_value("postalCode", @postal_code)
-                writer.write_string_value("preferredDataLocation", @preferred_data_location)
-                writer.write_string_value("preferredLanguage", @preferred_language)
-                writer.write_string_value("preferredName", @preferred_name)
-                writer.write_object_value("presence", @presence)
-                writer.write_object_value("print", @print)
-                writer.write_collection_of_object_values("provisionedPlans", @provisioned_plans)
-                writer.write_collection_of_primitive_values("proxyAddresses", @proxy_addresses)
-                writer.write_collection_of_object_values("registeredDevices", @registered_devices)
-                writer.write_collection_of_primitive_values("responsibilities", @responsibilities)
-                writer.write_collection_of_primitive_values("schools", @schools)
-                writer.write_collection_of_object_values("scopedRoleMemberOf", @scoped_role_member_of)
-                writer.write_string_value("securityIdentifier", @security_identifier)
-                writer.write_object_value("settings", @settings)
-                writer.write_boolean_value("showInAddressList", @show_in_address_list)
-                writer.write_object_value("signInActivity", @sign_in_activity)
-                writer.write_date_time_value("signInSessionsValidFromDateTime", @sign_in_sessions_valid_from_date_time)
-                writer.write_collection_of_primitive_values("skills", @skills)
-                writer.write_string_value("state", @state)
-                writer.write_string_value("streetAddress", @street_address)
-                writer.write_string_value("surname", @surname)
-                writer.write_object_value("teamwork", @teamwork)
-                writer.write_object_value("todo", @todo)
-                writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of)
-                writer.write_string_value("usageLocation", @usage_location)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_string_value("userType", @user_type)
+                writer.write_string_value("officeLocation", @office_location) unless @office_location.nil?
+                writer.write_string_value("onPremisesDistinguishedName", @on_premises_distinguished_name) unless @on_premises_distinguished_name.nil?
+                writer.write_string_value("onPremisesDomainName", @on_premises_domain_name) unless @on_premises_domain_name.nil?
+                writer.write_object_value("onPremisesExtensionAttributes", @on_premises_extension_attributes) unless @on_premises_extension_attributes.nil?
+                writer.write_string_value("onPremisesImmutableId", @on_premises_immutable_id) unless @on_premises_immutable_id.nil?
+                writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time) unless @on_premises_last_sync_date_time.nil?
+                writer.write_collection_of_object_values("onPremisesProvisioningErrors", @on_premises_provisioning_errors) unless @on_premises_provisioning_errors.nil?
+                writer.write_string_value("onPremisesSamAccountName", @on_premises_sam_account_name) unless @on_premises_sam_account_name.nil?
+                writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier) unless @on_premises_security_identifier.nil?
+                writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled) unless @on_premises_sync_enabled.nil?
+                writer.write_string_value("onPremisesUserPrincipalName", @on_premises_user_principal_name) unless @on_premises_user_principal_name.nil?
+                writer.write_object_value("onenote", @onenote) unless @onenote.nil?
+                writer.write_collection_of_object_values("onlineMeetings", @online_meetings) unless @online_meetings.nil?
+                writer.write_collection_of_primitive_values("otherMails", @other_mails) unless @other_mails.nil?
+                writer.write_object_value("outlook", @outlook) unless @outlook.nil?
+                writer.write_collection_of_object_values("ownedDevices", @owned_devices) unless @owned_devices.nil?
+                writer.write_collection_of_object_values("ownedObjects", @owned_objects) unless @owned_objects.nil?
+                writer.write_string_value("passwordPolicies", @password_policies) unless @password_policies.nil?
+                writer.write_object_value("passwordProfile", @password_profile) unless @password_profile.nil?
+                writer.write_collection_of_primitive_values("pastProjects", @past_projects) unless @past_projects.nil?
+                writer.write_collection_of_object_values("people", @people) unless @people.nil?
+                writer.write_object_value("photo", @photo) unless @photo.nil?
+                writer.write_collection_of_object_values("photos", @photos) unless @photos.nil?
+                writer.write_object_value("planner", @planner) unless @planner.nil?
+                writer.write_string_value("postalCode", @postal_code) unless @postal_code.nil?
+                writer.write_string_value("preferredDataLocation", @preferred_data_location) unless @preferred_data_location.nil?
+                writer.write_string_value("preferredLanguage", @preferred_language) unless @preferred_language.nil?
+                writer.write_string_value("preferredName", @preferred_name) unless @preferred_name.nil?
+                writer.write_object_value("presence", @presence) unless @presence.nil?
+                writer.write_object_value("print", @print) unless @print.nil?
+                writer.write_collection_of_object_values("provisionedPlans", @provisioned_plans) unless @provisioned_plans.nil?
+                writer.write_collection_of_primitive_values("proxyAddresses", @proxy_addresses) unless @proxy_addresses.nil?
+                writer.write_collection_of_object_values("registeredDevices", @registered_devices) unless @registered_devices.nil?
+                writer.write_collection_of_primitive_values("responsibilities", @responsibilities) unless @responsibilities.nil?
+                writer.write_collection_of_primitive_values("schools", @schools) unless @schools.nil?
+                writer.write_collection_of_object_values("scopedRoleMemberOf", @scoped_role_member_of) unless @scoped_role_member_of.nil?
+                writer.write_string_value("securityIdentifier", @security_identifier) unless @security_identifier.nil?
+                writer.write_object_value("settings", @settings) unless @settings.nil?
+                writer.write_boolean_value("showInAddressList", @show_in_address_list) unless @show_in_address_list.nil?
+                writer.write_object_value("signInActivity", @sign_in_activity) unless @sign_in_activity.nil?
+                writer.write_date_time_value("signInSessionsValidFromDateTime", @sign_in_sessions_valid_from_date_time) unless @sign_in_sessions_valid_from_date_time.nil?
+                writer.write_collection_of_primitive_values("skills", @skills) unless @skills.nil?
+                writer.write_string_value("state", @state) unless @state.nil?
+                writer.write_string_value("streetAddress", @street_address) unless @street_address.nil?
+                writer.write_string_value("surname", @surname) unless @surname.nil?
+                writer.write_object_value("teamwork", @teamwork) unless @teamwork.nil?
+                writer.write_object_value("todo", @todo) unless @todo.nil?
+                writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of) unless @transitive_member_of.nil?
+                writer.write_string_value("usageLocation", @usage_location) unless @usage_location.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
+                writer.write_string_value("userType", @user_type) unless @user_type.nil?
             end
             ## 
             ## Gets the settings property value. The settings property

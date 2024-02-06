@@ -62,8 +62,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("initiator", @initiator)
-                writer.write_string_value("tabId", @tab_id)
+                writer.write_object_value("initiator", @initiator) unless @initiator.nil?
+                writer.write_string_value("tabId", @tab_id) unless @tab_id.nil?
             end
             ## 
             ## Gets the tabId property value. Unique identifier of the tab.

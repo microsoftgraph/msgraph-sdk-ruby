@@ -81,9 +81,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("phoneNumber", @phone_number)
-                writer.write_enum_value("phoneType", @phone_type)
-                writer.write_enum_value("smsSignInState", @sms_sign_in_state)
+                writer.write_string_value("phoneNumber", @phone_number) unless @phone_number.nil?
+                writer.write_enum_value("phoneType", @phone_type) unless @phone_type.nil?
+                writer.write_enum_value("smsSignInState", @sms_sign_in_state) unless @sms_sign_in_state.nil?
             end
             ## 
             ## Gets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.

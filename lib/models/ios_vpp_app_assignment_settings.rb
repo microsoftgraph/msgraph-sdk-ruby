@@ -49,8 +49,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("useDeviceLicensing", @use_device_licensing)
-                writer.write_string_value("vpnConfigurationId", @vpn_configuration_id)
+                writer.write_boolean_value("useDeviceLicensing", @use_device_licensing) unless @use_device_licensing.nil?
+                writer.write_string_value("vpnConfigurationId", @vpn_configuration_id) unless @vpn_configuration_id.nil?
             end
             ## 
             ## Gets the useDeviceLicensing property value. Whether or not to use device licensing.

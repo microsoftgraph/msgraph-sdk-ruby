@@ -153,12 +153,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("cpuCoresCount", @cpu_cores_count)
-                writer.write_string_value("cpuName", @cpu_name)
-                writer.write_number_value("cpuProcessorSpeedInMhz", @cpu_processor_speed_in_mhz)
-                writer.write_object_value("feedback", @feedback)
-                writer.write_object_value("identity", @identity)
-                writer.write_string_value("name", @name)
+                writer.write_number_value("cpuCoresCount", @cpu_cores_count) unless @cpu_cores_count.nil?
+                writer.write_string_value("cpuName", @cpu_name) unless @cpu_name.nil?
+                writer.write_number_value("cpuProcessorSpeedInMhz", @cpu_processor_speed_in_mhz) unless @cpu_processor_speed_in_mhz.nil?
+                writer.write_object_value("feedback", @feedback) unless @feedback.nil?
+                writer.write_object_value("identity", @identity) unless @identity.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
             end
         end
     end

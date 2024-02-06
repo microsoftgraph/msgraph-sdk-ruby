@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("hopCount", @hop_count)
-                writer.write_string_value("ipAddress", @ip_address)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_duration_value("roundTripTime", @round_trip_time)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("hopCount", @hop_count) unless @hop_count.nil?
+                writer.write_string_value("ipAddress", @ip_address) unless @ip_address.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_duration_value("roundTripTime", @round_trip_time) unless @round_trip_time.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

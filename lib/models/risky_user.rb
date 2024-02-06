@@ -188,15 +188,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("history", @history)
-                writer.write_boolean_value("isDeleted", @is_deleted)
-                writer.write_boolean_value("isProcessing", @is_processing)
-                writer.write_enum_value("riskDetail", @risk_detail)
-                writer.write_date_time_value("riskLastUpdatedDateTime", @risk_last_updated_date_time)
-                writer.write_enum_value("riskLevel", @risk_level)
-                writer.write_enum_value("riskState", @risk_state)
-                writer.write_string_value("userDisplayName", @user_display_name)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
+                writer.write_collection_of_object_values("history", @history) unless @history.nil?
+                writer.write_boolean_value("isDeleted", @is_deleted) unless @is_deleted.nil?
+                writer.write_boolean_value("isProcessing", @is_processing) unless @is_processing.nil?
+                writer.write_enum_value("riskDetail", @risk_detail) unless @risk_detail.nil?
+                writer.write_date_time_value("riskLastUpdatedDateTime", @risk_last_updated_date_time) unless @risk_last_updated_date_time.nil?
+                writer.write_enum_value("riskLevel", @risk_level) unless @risk_level.nil?
+                writer.write_enum_value("riskState", @risk_state) unless @risk_state.nil?
+                writer.write_string_value("userDisplayName", @user_display_name) unless @user_display_name.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
             end
             ## 
             ## Gets the userDisplayName property value. Risky user display name.

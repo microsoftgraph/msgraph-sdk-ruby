@@ -574,8 +574,8 @@ module MicrosoftGraph
                 writer.write_string_value("category7", @category7)
                 writer.write_string_value("category8", @category8)
                 writer.write_string_value("category9", @category9)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

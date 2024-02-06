@@ -152,12 +152,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("actionVerb", @action_verb)
-                writer.write_string_value("authenticationContextId", @authentication_context_id)
-                writer.write_string_value("description", @description)
-                writer.write_boolean_value("isAuthenticationContextSettable", @is_authentication_context_settable)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("resourceScopeId", @resource_scope_id)
+                writer.write_string_value("actionVerb", @action_verb) unless @action_verb.nil?
+                writer.write_string_value("authenticationContextId", @authentication_context_id) unless @authentication_context_id.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_boolean_value("isAuthenticationContextSettable", @is_authentication_context_settable) unless @is_authentication_context_settable.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("resourceScopeId", @resource_scope_id) unless @resource_scope_id.nil?
             end
         end
     end

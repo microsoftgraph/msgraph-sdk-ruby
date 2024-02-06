@@ -160,14 +160,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_primitive_values("categories", @categories)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("homePageUrl", @home_page_url)
-                writer.write_string_value("logoUrl", @logo_url)
-                writer.write_string_value("publisher", @publisher)
-                writer.write_collection_of_primitive_values("supportedProvisioningTypes", @supported_provisioning_types)
-                writer.write_collection_of_primitive_values("supportedSingleSignOnModes", @supported_single_sign_on_modes)
+                writer.write_collection_of_primitive_values("categories", @categories) unless @categories.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("homePageUrl", @home_page_url) unless @home_page_url.nil?
+                writer.write_string_value("logoUrl", @logo_url) unless @logo_url.nil?
+                writer.write_string_value("publisher", @publisher) unless @publisher.nil?
+                writer.write_collection_of_primitive_values("supportedProvisioningTypes", @supported_provisioning_types) unless @supported_provisioning_types.nil?
+                writer.write_collection_of_primitive_values("supportedSingleSignOnModes", @supported_single_sign_on_modes) unless @supported_single_sign_on_modes.nil?
             end
             ## 
             ## Gets the supportedProvisioningTypes property value. The list of provisioning modes supported by this application. The only valid value is sync.

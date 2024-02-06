@@ -112,10 +112,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowCreateUpdateChannels", @allow_create_update_channels)
-                writer.write_boolean_value("allowDeleteChannels", @allow_delete_channels)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowCreateUpdateChannels", @allow_create_update_channels) unless @allow_create_update_channels.nil?
+                writer.write_boolean_value("allowDeleteChannels", @allow_delete_channels) unless @allow_delete_channels.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

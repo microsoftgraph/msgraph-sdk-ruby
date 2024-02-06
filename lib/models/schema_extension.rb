@@ -103,11 +103,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("description", @description)
-                writer.write_string_value("owner", @owner)
-                writer.write_collection_of_object_values("properties", @properties)
-                writer.write_string_value("status", @status)
-                writer.write_collection_of_primitive_values("targetTypes", @target_types)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("owner", @owner) unless @owner.nil?
+                writer.write_collection_of_object_values("properties", @properties) unless @properties.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
+                writer.write_collection_of_primitive_values("targetTypes", @target_types) unless @target_types.nil?
             end
             ## 
             ## Gets the status property value. The lifecycle state of the schema extension. Possible states are InDevelopment, Available, and Deprecated. Automatically set to InDevelopment on creation. For more information about the possible state transitions and behaviors, see Schema extensions lifecycle. Supports $filter (eq).

@@ -139,13 +139,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("city", @city)
-                writer.write_string_value("countryOrRegion", @country_or_region)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("postalCode", @postal_code)
-                writer.write_string_value("state", @state)
-                writer.write_string_value("street", @street)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("city", @city) unless @city.nil?
+                writer.write_string_value("countryOrRegion", @country_or_region) unless @country_or_region.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("postalCode", @postal_code) unless @postal_code.nil?
+                writer.write_string_value("state", @state) unless @state.nil?
+                writer.write_string_value("street", @street) unless @street.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the state property value. The state.

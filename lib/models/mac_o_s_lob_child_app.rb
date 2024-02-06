@@ -118,11 +118,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("buildNumber", @build_number)
-                writer.write_string_value("bundleId", @bundle_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("versionNumber", @version_number)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("buildNumber", @build_number) unless @build_number.nil?
+                writer.write_string_value("bundleId", @bundle_id) unless @bundle_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("versionNumber", @version_number) unless @version_number.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the versionNumber property value. The version number of the app.

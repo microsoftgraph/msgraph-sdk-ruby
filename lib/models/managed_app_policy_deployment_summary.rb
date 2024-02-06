@@ -121,11 +121,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("configurationDeployedUserCount", @configuration_deployed_user_count)
-                writer.write_collection_of_object_values("configurationDeploymentSummaryPerApp", @configuration_deployment_summary_per_app)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastRefreshTime", @last_refresh_time)
-                writer.write_string_value("version", @version)
+                writer.write_number_value("configurationDeployedUserCount", @configuration_deployed_user_count) unless @configuration_deployed_user_count.nil?
+                writer.write_collection_of_object_values("configurationDeploymentSummaryPerApp", @configuration_deployment_summary_per_app) unless @configuration_deployment_summary_per_app.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("lastRefreshTime", @last_refresh_time) unless @last_refresh_time.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the version property value. Version of the entity.

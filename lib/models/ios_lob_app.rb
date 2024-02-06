@@ -141,12 +141,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("applicableDeviceType", @applicable_device_type)
-                writer.write_string_value("buildNumber", @build_number)
-                writer.write_string_value("bundleId", @bundle_id)
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system)
-                writer.write_string_value("versionNumber", @version_number)
+                writer.write_object_value("applicableDeviceType", @applicable_device_type) unless @applicable_device_type.nil?
+                writer.write_string_value("buildNumber", @build_number) unless @build_number.nil?
+                writer.write_string_value("bundleId", @bundle_id) unless @bundle_id.nil?
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system) unless @minimum_supported_operating_system.nil?
+                writer.write_string_value("versionNumber", @version_number) unless @version_number.nil?
             end
             ## 
             ## Gets the versionNumber property value. The version number of iOS Line of Business (LoB) app.

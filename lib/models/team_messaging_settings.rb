@@ -169,13 +169,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowChannelMentions", @allow_channel_mentions)
-                writer.write_boolean_value("allowOwnerDeleteMessages", @allow_owner_delete_messages)
-                writer.write_boolean_value("allowTeamMentions", @allow_team_mentions)
-                writer.write_boolean_value("allowUserDeleteMessages", @allow_user_delete_messages)
-                writer.write_boolean_value("allowUserEditMessages", @allow_user_edit_messages)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowChannelMentions", @allow_channel_mentions) unless @allow_channel_mentions.nil?
+                writer.write_boolean_value("allowOwnerDeleteMessages", @allow_owner_delete_messages) unless @allow_owner_delete_messages.nil?
+                writer.write_boolean_value("allowTeamMentions", @allow_team_mentions) unless @allow_team_mentions.nil?
+                writer.write_boolean_value("allowUserDeleteMessages", @allow_user_delete_messages) unless @allow_user_delete_messages.nil?
+                writer.write_boolean_value("allowUserEditMessages", @allow_user_edit_messages) unless @allow_user_edit_messages.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

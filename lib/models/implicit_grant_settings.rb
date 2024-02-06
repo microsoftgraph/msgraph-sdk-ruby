@@ -112,10 +112,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("enableAccessTokenIssuance", @enable_access_token_issuance)
-                writer.write_boolean_value("enableIdTokenIssuance", @enable_id_token_issuance)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("enableAccessTokenIssuance", @enable_access_token_issuance) unless @enable_access_token_issuance.nil?
+                writer.write_boolean_value("enableIdTokenIssuance", @enable_id_token_issuance) unless @enable_id_token_issuance.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

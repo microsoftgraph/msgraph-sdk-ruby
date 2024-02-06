@@ -80,9 +80,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("contributionToContentDiscoveryAsOrganizationDisabled", @contribution_to_content_discovery_as_organization_disabled)
-                writer.write_boolean_value("contributionToContentDiscoveryDisabled", @contribution_to_content_discovery_disabled)
-                writer.write_object_value("shiftPreferences", @shift_preferences)
+                writer.write_boolean_value("contributionToContentDiscoveryAsOrganizationDisabled", @contribution_to_content_discovery_as_organization_disabled) unless @contribution_to_content_discovery_as_organization_disabled.nil?
+                writer.write_boolean_value("contributionToContentDiscoveryDisabled", @contribution_to_content_discovery_disabled) unless @contribution_to_content_discovery_disabled.nil?
+                writer.write_object_value("shiftPreferences", @shift_preferences) unless @shift_preferences.nil?
             end
             ## 
             ## Gets the shiftPreferences property value. The shiftPreferences property

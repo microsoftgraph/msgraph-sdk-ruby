@@ -141,13 +141,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("application", @application)
-                writer.write_collection_of_object_values("comments", @comments)
-                writer.write_object_value("functions", @functions)
-                writer.write_collection_of_object_values("names", @names)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_collection_of_object_values("tables", @tables)
-                writer.write_collection_of_object_values("worksheets", @worksheets)
+                writer.write_object_value("application", @application) unless @application.nil?
+                writer.write_collection_of_object_values("comments", @comments) unless @comments.nil?
+                writer.write_object_value("functions", @functions) unless @functions.nil?
+                writer.write_collection_of_object_values("names", @names) unless @names.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_collection_of_object_values("tables", @tables) unless @tables.nil?
+                writer.write_collection_of_object_values("worksheets", @worksheets) unless @worksheets.nil?
             end
             ## 
             ## Gets the tables property value. Represents a collection of tables associated with the workbook. Read-only.

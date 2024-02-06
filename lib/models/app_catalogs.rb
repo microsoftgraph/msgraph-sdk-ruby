@@ -42,7 +42,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("teamsApps", @teams_apps)
+                writer.write_collection_of_object_values("teamsApps", @teams_apps) unless @teams_apps.nil?
             end
             ## 
             ## Gets the teamsApps property value. The teamsApps property

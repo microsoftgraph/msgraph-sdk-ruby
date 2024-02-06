@@ -115,10 +115,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("publishedRubricQualityFeedback", @published_rubric_quality_feedback)
-                writer.write_collection_of_object_values("publishedRubricQualitySelectedLevels", @published_rubric_quality_selected_levels)
-                writer.write_collection_of_object_values("rubricQualityFeedback", @rubric_quality_feedback)
-                writer.write_collection_of_object_values("rubricQualitySelectedLevels", @rubric_quality_selected_levels)
+                writer.write_collection_of_object_values("publishedRubricQualityFeedback", @published_rubric_quality_feedback) unless @published_rubric_quality_feedback.nil?
+                writer.write_collection_of_object_values("publishedRubricQualitySelectedLevels", @published_rubric_quality_selected_levels) unless @published_rubric_quality_selected_levels.nil?
+                writer.write_collection_of_object_values("rubricQualityFeedback", @rubric_quality_feedback) unless @rubric_quality_feedback.nil?
+                writer.write_collection_of_object_values("rubricQualitySelectedLevels", @rubric_quality_selected_levels) unless @rubric_quality_selected_levels.nil?
             end
         end
     end

@@ -43,7 +43,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("site", @site)
+                writer.write_object_value("site", @site) unless @site.nil?
             end
             ## 
             ## Gets the site property value. The site property

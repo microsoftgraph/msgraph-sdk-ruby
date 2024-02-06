@@ -66,9 +66,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("group", @group)
-                writer.write_object_value("siteGroup", @site_group)
-                writer.write_object_value("siteUser", @site_user)
+                writer.write_object_value("group", @group) unless @group.nil?
+                writer.write_object_value("siteGroup", @site_group) unless @site_group.nil?
+                writer.write_object_value("siteUser", @site_user) unless @site_user.nil?
             end
             ## 
             ## Gets the siteGroup property value. The SharePoint group associated with this action. Optional.

@@ -178,13 +178,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appleIdentifier", @apple_identifier)
-                writer.write_string_value("certificate", @certificate)
-                writer.write_string_value("certificateUploadFailureReason", @certificate_upload_failure_reason)
-                writer.write_string_value("certificateUploadStatus", @certificate_upload_status)
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_string_value("topicIdentifier", @topic_identifier)
+                writer.write_string_value("appleIdentifier", @apple_identifier) unless @apple_identifier.nil?
+                writer.write_string_value("certificate", @certificate) unless @certificate.nil?
+                writer.write_string_value("certificateUploadFailureReason", @certificate_upload_failure_reason) unless @certificate_upload_failure_reason.nil?
+                writer.write_string_value("certificateUploadStatus", @certificate_upload_status) unless @certificate_upload_status.nil?
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_string_value("topicIdentifier", @topic_identifier) unless @topic_identifier.nil?
             end
             ## 
             ## Gets the topicIdentifier property value. Topic Id.

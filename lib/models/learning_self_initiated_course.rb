@@ -43,7 +43,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("startedDateTime", @started_date_time)
+                writer.write_date_time_value("startedDateTime", @started_date_time) unless @started_date_time.nil?
             end
             ## 
             ## Gets the startedDateTime property value. The date time value on which the self-initiated course was started by the learner. Optional.

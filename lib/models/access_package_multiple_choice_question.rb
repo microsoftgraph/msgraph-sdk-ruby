@@ -77,8 +77,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("choices", @choices)
-                writer.write_boolean_value("isMultipleSelectionAllowed", @is_multiple_selection_allowed)
+                writer.write_collection_of_object_values("choices", @choices) unless @choices.nil?
+                writer.write_boolean_value("isMultipleSelectionAllowed", @is_multiple_selection_allowed) unless @is_multiple_selection_allowed.nil?
             end
         end
     end

@@ -176,14 +176,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("driveItem", @drive_item)
-                writer.write_collection_of_object_values("items", @items)
-                writer.write_object_value("list", @list)
-                writer.write_object_value("listItem", @list_item)
-                writer.write_object_value("owner", @owner)
-                writer.write_object_value("permission", @permission)
-                writer.write_object_value("root", @root)
-                writer.write_object_value("site", @site)
+                writer.write_object_value("driveItem", @drive_item) unless @drive_item.nil?
+                writer.write_collection_of_object_values("items", @items) unless @items.nil?
+                writer.write_object_value("list", @list) unless @list.nil?
+                writer.write_object_value("listItem", @list_item) unless @list_item.nil?
+                writer.write_object_value("owner", @owner) unless @owner.nil?
+                writer.write_object_value("permission", @permission) unless @permission.nil?
+                writer.write_object_value("root", @root) unless @root.nil?
+                writer.write_object_value("site", @site) unless @site.nil?
             end
             ## 
             ## Gets the site property value. Used to access the underlying site

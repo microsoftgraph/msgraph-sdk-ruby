@@ -259,20 +259,20 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("androidCorporateWorkProfileCount", @android_corporate_work_profile_count)
-                writer.write_number_value("androidCount", @android_count)
-                writer.write_number_value("androidDedicatedCount", @android_dedicated_count)
-                writer.write_number_value("androidDeviceAdminCount", @android_device_admin_count)
-                writer.write_number_value("androidFullyManagedCount", @android_fully_managed_count)
-                writer.write_number_value("androidWorkProfileCount", @android_work_profile_count)
-                writer.write_number_value("configMgrDeviceCount", @config_mgr_device_count)
-                writer.write_number_value("iosCount", @ios_count)
-                writer.write_number_value("macOSCount", @mac_o_s_count)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("unknownCount", @unknown_count)
-                writer.write_number_value("windowsCount", @windows_count)
-                writer.write_number_value("windowsMobileCount", @windows_mobile_count)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("androidCorporateWorkProfileCount", @android_corporate_work_profile_count) unless @android_corporate_work_profile_count.nil?
+                writer.write_number_value("androidCount", @android_count) unless @android_count.nil?
+                writer.write_number_value("androidDedicatedCount", @android_dedicated_count) unless @android_dedicated_count.nil?
+                writer.write_number_value("androidDeviceAdminCount", @android_device_admin_count) unless @android_device_admin_count.nil?
+                writer.write_number_value("androidFullyManagedCount", @android_fully_managed_count) unless @android_fully_managed_count.nil?
+                writer.write_number_value("androidWorkProfileCount", @android_work_profile_count) unless @android_work_profile_count.nil?
+                writer.write_number_value("configMgrDeviceCount", @config_mgr_device_count) unless @config_mgr_device_count.nil?
+                writer.write_number_value("iosCount", @ios_count) unless @ios_count.nil?
+                writer.write_number_value("macOSCount", @mac_o_s_count) unless @mac_o_s_count.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("unknownCount", @unknown_count) unless @unknown_count.nil?
+                writer.write_number_value("windowsCount", @windows_count) unless @windows_count.nil?
+                writer.write_number_value("windowsMobileCount", @windows_mobile_count) unless @windows_mobile_count.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the unknownCount property value. Number of unknown device count.

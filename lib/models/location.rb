@@ -204,16 +204,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("address", @address)
-                writer.write_object_value("coordinates", @coordinates)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("locationEmailAddress", @location_email_address)
-                writer.write_enum_value("locationType", @location_type)
-                writer.write_string_value("locationUri", @location_uri)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("uniqueId", @unique_id)
-                writer.write_enum_value("uniqueIdType", @unique_id_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("address", @address) unless @address.nil?
+                writer.write_object_value("coordinates", @coordinates) unless @coordinates.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("locationEmailAddress", @location_email_address) unless @location_email_address.nil?
+                writer.write_enum_value("locationType", @location_type) unless @location_type.nil?
+                writer.write_string_value("locationUri", @location_uri) unless @location_uri.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("uniqueId", @unique_id) unless @unique_id.nil?
+                writer.write_enum_value("uniqueIdType", @unique_id_type) unless @unique_id_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the uniqueId property value. For internal use only.

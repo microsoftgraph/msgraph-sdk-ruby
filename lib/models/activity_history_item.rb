@@ -165,15 +165,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("activeDurationSeconds", @active_duration_seconds)
-                writer.write_object_value("activity", @activity)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_date_time_value("lastActiveDateTime", @last_active_date_time)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_date_time_value("startedDateTime", @started_date_time)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("userTimezone", @user_timezone)
+                writer.write_number_value("activeDurationSeconds", @active_duration_seconds) unless @active_duration_seconds.nil?
+                writer.write_object_value("activity", @activity) unless @activity.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_date_time_value("lastActiveDateTime", @last_active_date_time) unless @last_active_date_time.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_date_time_value("startedDateTime", @started_date_time) unless @started_date_time.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("userTimezone", @user_timezone) unless @user_timezone.nil?
             end
             ## 
             ## Gets the startedDateTime property value. Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.

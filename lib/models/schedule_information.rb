@@ -154,13 +154,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("availabilityView", @availability_view)
-                writer.write_object_value("error", @error)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("scheduleId", @schedule_id)
-                writer.write_collection_of_object_values("scheduleItems", @schedule_items)
-                writer.write_object_value("workingHours", @working_hours)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("availabilityView", @availability_view) unless @availability_view.nil?
+                writer.write_object_value("error", @error) unless @error.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("scheduleId", @schedule_id) unless @schedule_id.nil?
+                writer.write_collection_of_object_values("scheduleItems", @schedule_items) unless @schedule_items.nil?
+                writer.write_object_value("workingHours", @working_hours) unless @working_hours.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the workingHours property value. The days of the week and hours in a specific time zone that the user works. These are set as part of the user's mailboxSettings.

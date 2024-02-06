@@ -143,13 +143,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("deviceCount", @device_count)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("managedDevices", @managed_devices)
-                writer.write_enum_value("platform", @platform)
-                writer.write_string_value("publisher", @publisher)
-                writer.write_object_value("sizeInByte", @size_in_byte)
-                writer.write_string_value("version", @version)
+                writer.write_number_value("deviceCount", @device_count) unless @device_count.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("managedDevices", @managed_devices) unless @managed_devices.nil?
+                writer.write_enum_value("platform", @platform) unless @platform.nil?
+                writer.write_string_value("publisher", @publisher) unless @publisher.nil?
+                writer.write_object_value("sizeInByte", @size_in_byte) unless @size_in_byte.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the sizeInByte property value. Discovered application size in bytes. Read-only

@@ -76,8 +76,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("formulaHidden", @formula_hidden)
-                writer.write_boolean_value("locked", @locked)
+                writer.write_boolean_value("formulaHidden", @formula_hidden) unless @formula_hidden.nil?
+                writer.write_boolean_value("locked", @locked) unless @locked.nil?
             end
         end
     end

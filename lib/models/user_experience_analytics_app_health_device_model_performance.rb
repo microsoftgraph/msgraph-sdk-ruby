@@ -154,12 +154,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("activeDeviceCount", @active_device_count)
-                writer.write_string_value("deviceManufacturer", @device_manufacturer)
-                writer.write_string_value("deviceModel", @device_model)
-                writer.write_enum_value("healthStatus", @health_status)
-                writer.write_number_value("meanTimeToFailureInMinutes", @mean_time_to_failure_in_minutes)
-                writer.write_object_value("modelAppHealthScore", @model_app_health_score)
+                writer.write_number_value("activeDeviceCount", @active_device_count) unless @active_device_count.nil?
+                writer.write_string_value("deviceManufacturer", @device_manufacturer) unless @device_manufacturer.nil?
+                writer.write_string_value("deviceModel", @device_model) unless @device_model.nil?
+                writer.write_enum_value("healthStatus", @health_status) unless @health_status.nil?
+                writer.write_number_value("meanTimeToFailureInMinutes", @mean_time_to_failure_in_minutes) unless @mean_time_to_failure_in_minutes.nil?
+                writer.write_object_value("modelAppHealthScore", @model_app_health_score) unless @model_app_health_score.nil?
             end
         end
     end

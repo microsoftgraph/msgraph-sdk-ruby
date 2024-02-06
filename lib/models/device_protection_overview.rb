@@ -255,19 +255,19 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("cleanDeviceCount", @clean_device_count)
-                writer.write_number_value("criticalFailuresDeviceCount", @critical_failures_device_count)
-                writer.write_number_value("inactiveThreatAgentDeviceCount", @inactive_threat_agent_device_count)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("pendingFullScanDeviceCount", @pending_full_scan_device_count)
-                writer.write_number_value("pendingManualStepsDeviceCount", @pending_manual_steps_device_count)
-                writer.write_number_value("pendingOfflineScanDeviceCount", @pending_offline_scan_device_count)
-                writer.write_number_value("pendingQuickScanDeviceCount", @pending_quick_scan_device_count)
-                writer.write_number_value("pendingRestartDeviceCount", @pending_restart_device_count)
-                writer.write_number_value("pendingSignatureUpdateDeviceCount", @pending_signature_update_device_count)
-                writer.write_number_value("totalReportedDeviceCount", @total_reported_device_count)
-                writer.write_number_value("unknownStateThreatAgentDeviceCount", @unknown_state_threat_agent_device_count)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("cleanDeviceCount", @clean_device_count) unless @clean_device_count.nil?
+                writer.write_number_value("criticalFailuresDeviceCount", @critical_failures_device_count) unless @critical_failures_device_count.nil?
+                writer.write_number_value("inactiveThreatAgentDeviceCount", @inactive_threat_agent_device_count) unless @inactive_threat_agent_device_count.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("pendingFullScanDeviceCount", @pending_full_scan_device_count) unless @pending_full_scan_device_count.nil?
+                writer.write_number_value("pendingManualStepsDeviceCount", @pending_manual_steps_device_count) unless @pending_manual_steps_device_count.nil?
+                writer.write_number_value("pendingOfflineScanDeviceCount", @pending_offline_scan_device_count) unless @pending_offline_scan_device_count.nil?
+                writer.write_number_value("pendingQuickScanDeviceCount", @pending_quick_scan_device_count) unless @pending_quick_scan_device_count.nil?
+                writer.write_number_value("pendingRestartDeviceCount", @pending_restart_device_count) unless @pending_restart_device_count.nil?
+                writer.write_number_value("pendingSignatureUpdateDeviceCount", @pending_signature_update_device_count) unless @pending_signature_update_device_count.nil?
+                writer.write_number_value("totalReportedDeviceCount", @total_reported_device_count) unless @total_reported_device_count.nil?
+                writer.write_number_value("unknownStateThreatAgentDeviceCount", @unknown_state_threat_agent_device_count) unless @unknown_state_threat_agent_device_count.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the totalReportedDeviceCount property value. Total device count.

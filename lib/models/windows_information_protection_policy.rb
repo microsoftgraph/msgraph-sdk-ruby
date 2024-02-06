@@ -254,18 +254,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("daysWithoutContactBeforeUnenroll", @days_without_contact_before_unenroll)
-                writer.write_string_value("mdmEnrollmentUrl", @mdm_enrollment_url)
-                writer.write_number_value("minutesOfInactivityBeforeDeviceLock", @minutes_of_inactivity_before_device_lock)
-                writer.write_number_value("numberOfPastPinsRemembered", @number_of_past_pins_remembered)
-                writer.write_number_value("passwordMaximumAttemptCount", @password_maximum_attempt_count)
-                writer.write_number_value("pinExpirationDays", @pin_expiration_days)
-                writer.write_enum_value("pinLowercaseLetters", @pin_lowercase_letters)
-                writer.write_number_value("pinMinimumLength", @pin_minimum_length)
-                writer.write_enum_value("pinSpecialCharacters", @pin_special_characters)
-                writer.write_enum_value("pinUppercaseLetters", @pin_uppercase_letters)
-                writer.write_boolean_value("revokeOnMdmHandoffDisabled", @revoke_on_mdm_handoff_disabled)
-                writer.write_boolean_value("windowsHelloForBusinessBlocked", @windows_hello_for_business_blocked)
+                writer.write_number_value("daysWithoutContactBeforeUnenroll", @days_without_contact_before_unenroll) unless @days_without_contact_before_unenroll.nil?
+                writer.write_string_value("mdmEnrollmentUrl", @mdm_enrollment_url) unless @mdm_enrollment_url.nil?
+                writer.write_number_value("minutesOfInactivityBeforeDeviceLock", @minutes_of_inactivity_before_device_lock) unless @minutes_of_inactivity_before_device_lock.nil?
+                writer.write_number_value("numberOfPastPinsRemembered", @number_of_past_pins_remembered) unless @number_of_past_pins_remembered.nil?
+                writer.write_number_value("passwordMaximumAttemptCount", @password_maximum_attempt_count) unless @password_maximum_attempt_count.nil?
+                writer.write_number_value("pinExpirationDays", @pin_expiration_days) unless @pin_expiration_days.nil?
+                writer.write_enum_value("pinLowercaseLetters", @pin_lowercase_letters) unless @pin_lowercase_letters.nil?
+                writer.write_number_value("pinMinimumLength", @pin_minimum_length) unless @pin_minimum_length.nil?
+                writer.write_enum_value("pinSpecialCharacters", @pin_special_characters) unless @pin_special_characters.nil?
+                writer.write_enum_value("pinUppercaseLetters", @pin_uppercase_letters) unless @pin_uppercase_letters.nil?
+                writer.write_boolean_value("revokeOnMdmHandoffDisabled", @revoke_on_mdm_handoff_disabled) unless @revoke_on_mdm_handoff_disabled.nil?
+                writer.write_boolean_value("windowsHelloForBusinessBlocked", @windows_hello_for_business_blocked) unless @windows_hello_for_business_blocked.nil?
             end
             ## 
             ## Gets the windowsHelloForBusinessBlocked property value. Boolean value that sets Windows Hello for Business as a method for signing into Windows.

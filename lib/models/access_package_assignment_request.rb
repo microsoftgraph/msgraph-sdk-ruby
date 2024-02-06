@@ -218,17 +218,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("accessPackage", @access_package)
-                writer.write_collection_of_object_values("answers", @answers)
-                writer.write_object_value("assignment", @assignment)
-                writer.write_date_time_value("completedDateTime", @completed_date_time)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_collection_of_object_values("customExtensionCalloutInstances", @custom_extension_callout_instances)
-                writer.write_enum_value("requestType", @request_type)
-                writer.write_object_value("requestor", @requestor)
-                writer.write_object_value("schedule", @schedule)
-                writer.write_enum_value("state", @state)
-                writer.write_string_value("status", @status)
+                writer.write_object_value("accessPackage", @access_package) unless @access_package.nil?
+                writer.write_collection_of_object_values("answers", @answers) unless @answers.nil?
+                writer.write_object_value("assignment", @assignment) unless @assignment.nil?
+                writer.write_date_time_value("completedDateTime", @completed_date_time) unless @completed_date_time.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_collection_of_object_values("customExtensionCalloutInstances", @custom_extension_callout_instances) unless @custom_extension_callout_instances.nil?
+                writer.write_enum_value("requestType", @request_type) unless @request_type.nil?
+                writer.write_object_value("requestor", @requestor) unless @requestor.nil?
+                writer.write_object_value("schedule", @schedule) unless @schedule.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the state property value. The state of the request. The possible values are: submitted, pendingApproval, delivering, delivered, deliveryFailed, denied, scheduled, canceled, partiallyDelivered, unknownFutureValue. Read-only. Supports $filter (eq).

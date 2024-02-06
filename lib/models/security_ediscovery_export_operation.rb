@@ -171,13 +171,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("description", @description)
-                writer.write_collection_of_object_values("exportFileMetadata", @export_file_metadata)
-                writer.write_enum_value("exportOptions", @export_options)
-                writer.write_enum_value("exportStructure", @export_structure)
-                writer.write_string_value("outputName", @output_name)
-                writer.write_object_value("reviewSet", @review_set)
-                writer.write_object_value("reviewSetQuery", @review_set_query)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_collection_of_object_values("exportFileMetadata", @export_file_metadata) unless @export_file_metadata.nil?
+                writer.write_enum_value("exportOptions", @export_options) unless @export_options.nil?
+                writer.write_enum_value("exportStructure", @export_structure) unless @export_structure.nil?
+                writer.write_string_value("outputName", @output_name) unless @output_name.nil?
+                writer.write_object_value("reviewSet", @review_set) unless @review_set.nil?
+                writer.write_object_value("reviewSetQuery", @review_set_query) unless @review_set_query.nil?
             end
         end
     end

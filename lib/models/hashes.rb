@@ -121,11 +121,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("crc32Hash", @crc32_hash)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("quickXorHash", @quick_xor_hash)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("quickXorHash", @quick_xor_hash) unless @quick_xor_hash.nil?
                 writer.write_string_value("sha1Hash", @sha1_hash)
                 writer.write_string_value("sha256Hash", @sha256_hash)
-                writer.write_additional_data(@additional_data)
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sha1Hash property value. SHA1 hash for the contents of the file (if available). Read-only.

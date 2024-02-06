@@ -2410,137 +2410,137 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("accountBlockModification", @account_block_modification)
-                writer.write_boolean_value("activationLockAllowWhenSupervised", @activation_lock_allow_when_supervised)
-                writer.write_boolean_value("airDropBlocked", @air_drop_blocked)
-                writer.write_boolean_value("airDropForceUnmanagedDropTarget", @air_drop_force_unmanaged_drop_target)
-                writer.write_boolean_value("airPlayForcePairingPasswordForOutgoingRequests", @air_play_force_pairing_password_for_outgoing_requests)
-                writer.write_boolean_value("appStoreBlockAutomaticDownloads", @app_store_block_automatic_downloads)
-                writer.write_boolean_value("appStoreBlockInAppPurchases", @app_store_block_in_app_purchases)
-                writer.write_boolean_value("appStoreBlockUIAppInstallation", @app_store_block_u_i_app_installation)
-                writer.write_boolean_value("appStoreBlocked", @app_store_blocked)
-                writer.write_boolean_value("appStoreRequirePassword", @app_store_require_password)
-                writer.write_boolean_value("appleNewsBlocked", @apple_news_blocked)
-                writer.write_boolean_value("appleWatchBlockPairing", @apple_watch_block_pairing)
-                writer.write_boolean_value("appleWatchForceWristDetection", @apple_watch_force_wrist_detection)
-                writer.write_collection_of_object_values("appsSingleAppModeList", @apps_single_app_mode_list)
-                writer.write_collection_of_object_values("appsVisibilityList", @apps_visibility_list)
-                writer.write_enum_value("appsVisibilityListType", @apps_visibility_list_type)
-                writer.write_boolean_value("bluetoothBlockModification", @bluetooth_block_modification)
-                writer.write_boolean_value("cameraBlocked", @camera_blocked)
-                writer.write_boolean_value("cellularBlockDataRoaming", @cellular_block_data_roaming)
-                writer.write_boolean_value("cellularBlockGlobalBackgroundFetchWhileRoaming", @cellular_block_global_background_fetch_while_roaming)
-                writer.write_boolean_value("cellularBlockPerAppDataModification", @cellular_block_per_app_data_modification)
-                writer.write_boolean_value("cellularBlockPersonalHotspot", @cellular_block_personal_hotspot)
-                writer.write_boolean_value("cellularBlockVoiceRoaming", @cellular_block_voice_roaming)
-                writer.write_boolean_value("certificatesBlockUntrustedTlsCertificates", @certificates_block_untrusted_tls_certificates)
-                writer.write_boolean_value("classroomAppBlockRemoteScreenObservation", @classroom_app_block_remote_screen_observation)
-                writer.write_boolean_value("classroomAppForceUnpromptedScreenObservation", @classroom_app_force_unprompted_screen_observation)
-                writer.write_enum_value("compliantAppListType", @compliant_app_list_type)
-                writer.write_collection_of_object_values("compliantAppsList", @compliant_apps_list)
-                writer.write_boolean_value("configurationProfileBlockChanges", @configuration_profile_block_changes)
-                writer.write_boolean_value("definitionLookupBlocked", @definition_lookup_blocked)
-                writer.write_boolean_value("deviceBlockEnableRestrictions", @device_block_enable_restrictions)
-                writer.write_boolean_value("deviceBlockEraseContentAndSettings", @device_block_erase_content_and_settings)
-                writer.write_boolean_value("deviceBlockNameModification", @device_block_name_modification)
-                writer.write_boolean_value("diagnosticDataBlockSubmission", @diagnostic_data_block_submission)
-                writer.write_boolean_value("diagnosticDataBlockSubmissionModification", @diagnostic_data_block_submission_modification)
-                writer.write_boolean_value("documentsBlockManagedDocumentsInUnmanagedApps", @documents_block_managed_documents_in_unmanaged_apps)
-                writer.write_boolean_value("documentsBlockUnmanagedDocumentsInManagedApps", @documents_block_unmanaged_documents_in_managed_apps)
-                writer.write_collection_of_primitive_values("emailInDomainSuffixes", @email_in_domain_suffixes)
-                writer.write_boolean_value("enterpriseAppBlockTrust", @enterprise_app_block_trust)
-                writer.write_boolean_value("enterpriseAppBlockTrustModification", @enterprise_app_block_trust_modification)
-                writer.write_boolean_value("faceTimeBlocked", @face_time_blocked)
-                writer.write_boolean_value("findMyFriendsBlocked", @find_my_friends_blocked)
-                writer.write_boolean_value("gameCenterBlocked", @game_center_blocked)
-                writer.write_boolean_value("gamingBlockGameCenterFriends", @gaming_block_game_center_friends)
-                writer.write_boolean_value("gamingBlockMultiplayer", @gaming_block_multiplayer)
-                writer.write_boolean_value("hostPairingBlocked", @host_pairing_blocked)
-                writer.write_boolean_value("iBooksStoreBlockErotica", @i_books_store_block_erotica)
-                writer.write_boolean_value("iBooksStoreBlocked", @i_books_store_blocked)
-                writer.write_boolean_value("iCloudBlockActivityContinuation", @i_cloud_block_activity_continuation)
-                writer.write_boolean_value("iCloudBlockBackup", @i_cloud_block_backup)
-                writer.write_boolean_value("iCloudBlockDocumentSync", @i_cloud_block_document_sync)
-                writer.write_boolean_value("iCloudBlockManagedAppsSync", @i_cloud_block_managed_apps_sync)
-                writer.write_boolean_value("iCloudBlockPhotoLibrary", @i_cloud_block_photo_library)
-                writer.write_boolean_value("iCloudBlockPhotoStreamSync", @i_cloud_block_photo_stream_sync)
-                writer.write_boolean_value("iCloudBlockSharedPhotoStream", @i_cloud_block_shared_photo_stream)
-                writer.write_boolean_value("iCloudRequireEncryptedBackup", @i_cloud_require_encrypted_backup)
-                writer.write_boolean_value("iTunesBlockExplicitContent", @i_tunes_block_explicit_content)
-                writer.write_boolean_value("iTunesBlockMusicService", @i_tunes_block_music_service)
-                writer.write_boolean_value("iTunesBlockRadio", @i_tunes_block_radio)
-                writer.write_boolean_value("keyboardBlockAutoCorrect", @keyboard_block_auto_correct)
-                writer.write_boolean_value("keyboardBlockDictation", @keyboard_block_dictation)
-                writer.write_boolean_value("keyboardBlockPredictive", @keyboard_block_predictive)
-                writer.write_boolean_value("keyboardBlockShortcuts", @keyboard_block_shortcuts)
-                writer.write_boolean_value("keyboardBlockSpellCheck", @keyboard_block_spell_check)
-                writer.write_boolean_value("kioskModeAllowAssistiveSpeak", @kiosk_mode_allow_assistive_speak)
-                writer.write_boolean_value("kioskModeAllowAssistiveTouchSettings", @kiosk_mode_allow_assistive_touch_settings)
-                writer.write_boolean_value("kioskModeAllowAutoLock", @kiosk_mode_allow_auto_lock)
-                writer.write_boolean_value("kioskModeAllowColorInversionSettings", @kiosk_mode_allow_color_inversion_settings)
-                writer.write_boolean_value("kioskModeAllowRingerSwitch", @kiosk_mode_allow_ringer_switch)
-                writer.write_boolean_value("kioskModeAllowScreenRotation", @kiosk_mode_allow_screen_rotation)
-                writer.write_boolean_value("kioskModeAllowSleepButton", @kiosk_mode_allow_sleep_button)
-                writer.write_boolean_value("kioskModeAllowTouchscreen", @kiosk_mode_allow_touchscreen)
-                writer.write_boolean_value("kioskModeAllowVoiceOverSettings", @kiosk_mode_allow_voice_over_settings)
-                writer.write_boolean_value("kioskModeAllowVolumeButtons", @kiosk_mode_allow_volume_buttons)
-                writer.write_boolean_value("kioskModeAllowZoomSettings", @kiosk_mode_allow_zoom_settings)
-                writer.write_string_value("kioskModeAppStoreUrl", @kiosk_mode_app_store_url)
-                writer.write_string_value("kioskModeBuiltInAppId", @kiosk_mode_built_in_app_id)
-                writer.write_string_value("kioskModeManagedAppId", @kiosk_mode_managed_app_id)
-                writer.write_boolean_value("kioskModeRequireAssistiveTouch", @kiosk_mode_require_assistive_touch)
-                writer.write_boolean_value("kioskModeRequireColorInversion", @kiosk_mode_require_color_inversion)
-                writer.write_boolean_value("kioskModeRequireMonoAudio", @kiosk_mode_require_mono_audio)
-                writer.write_boolean_value("kioskModeRequireVoiceOver", @kiosk_mode_require_voice_over)
-                writer.write_boolean_value("kioskModeRequireZoom", @kiosk_mode_require_zoom)
-                writer.write_boolean_value("lockScreenBlockControlCenter", @lock_screen_block_control_center)
-                writer.write_boolean_value("lockScreenBlockNotificationView", @lock_screen_block_notification_view)
-                writer.write_boolean_value("lockScreenBlockPassbook", @lock_screen_block_passbook)
-                writer.write_boolean_value("lockScreenBlockTodayView", @lock_screen_block_today_view)
-                writer.write_enum_value("mediaContentRatingApps", @media_content_rating_apps)
-                writer.write_object_value("mediaContentRatingAustralia", @media_content_rating_australia)
-                writer.write_object_value("mediaContentRatingCanada", @media_content_rating_canada)
-                writer.write_object_value("mediaContentRatingFrance", @media_content_rating_france)
-                writer.write_object_value("mediaContentRatingGermany", @media_content_rating_germany)
-                writer.write_object_value("mediaContentRatingIreland", @media_content_rating_ireland)
-                writer.write_object_value("mediaContentRatingJapan", @media_content_rating_japan)
-                writer.write_object_value("mediaContentRatingNewZealand", @media_content_rating_new_zealand)
-                writer.write_object_value("mediaContentRatingUnitedKingdom", @media_content_rating_united_kingdom)
-                writer.write_object_value("mediaContentRatingUnitedStates", @media_content_rating_united_states)
-                writer.write_boolean_value("messagesBlocked", @messages_blocked)
-                writer.write_collection_of_object_values("networkUsageRules", @network_usage_rules)
-                writer.write_boolean_value("notificationsBlockSettingsModification", @notifications_block_settings_modification)
-                writer.write_boolean_value("passcodeBlockFingerprintModification", @passcode_block_fingerprint_modification)
-                writer.write_boolean_value("passcodeBlockFingerprintUnlock", @passcode_block_fingerprint_unlock)
-                writer.write_boolean_value("passcodeBlockModification", @passcode_block_modification)
-                writer.write_boolean_value("passcodeBlockSimple", @passcode_block_simple)
-                writer.write_number_value("passcodeExpirationDays", @passcode_expiration_days)
-                writer.write_number_value("passcodeMinimumCharacterSetCount", @passcode_minimum_character_set_count)
-                writer.write_number_value("passcodeMinimumLength", @passcode_minimum_length)
-                writer.write_number_value("passcodeMinutesOfInactivityBeforeLock", @passcode_minutes_of_inactivity_before_lock)
-                writer.write_number_value("passcodeMinutesOfInactivityBeforeScreenTimeout", @passcode_minutes_of_inactivity_before_screen_timeout)
-                writer.write_number_value("passcodePreviousPasscodeBlockCount", @passcode_previous_passcode_block_count)
-                writer.write_boolean_value("passcodeRequired", @passcode_required)
-                writer.write_enum_value("passcodeRequiredType", @passcode_required_type)
-                writer.write_number_value("passcodeSignInFailureCountBeforeWipe", @passcode_sign_in_failure_count_before_wipe)
-                writer.write_boolean_value("podcastsBlocked", @podcasts_blocked)
-                writer.write_boolean_value("safariBlockAutofill", @safari_block_autofill)
-                writer.write_boolean_value("safariBlockJavaScript", @safari_block_java_script)
-                writer.write_boolean_value("safariBlockPopups", @safari_block_popups)
-                writer.write_boolean_value("safariBlocked", @safari_blocked)
-                writer.write_enum_value("safariCookieSettings", @safari_cookie_settings)
-                writer.write_collection_of_primitive_values("safariManagedDomains", @safari_managed_domains)
-                writer.write_collection_of_primitive_values("safariPasswordAutoFillDomains", @safari_password_auto_fill_domains)
-                writer.write_boolean_value("safariRequireFraudWarning", @safari_require_fraud_warning)
-                writer.write_boolean_value("screenCaptureBlocked", @screen_capture_blocked)
-                writer.write_boolean_value("siriBlockUserGeneratedContent", @siri_block_user_generated_content)
-                writer.write_boolean_value("siriBlocked", @siri_blocked)
-                writer.write_boolean_value("siriBlockedWhenLocked", @siri_blocked_when_locked)
-                writer.write_boolean_value("siriRequireProfanityFilter", @siri_require_profanity_filter)
-                writer.write_boolean_value("spotlightBlockInternetResults", @spotlight_block_internet_results)
-                writer.write_boolean_value("voiceDialingBlocked", @voice_dialing_blocked)
-                writer.write_boolean_value("wallpaperBlockModification", @wallpaper_block_modification)
-                writer.write_boolean_value("wiFiConnectOnlyToConfiguredNetworks", @wi_fi_connect_only_to_configured_networks)
+                writer.write_boolean_value("accountBlockModification", @account_block_modification) unless @account_block_modification.nil?
+                writer.write_boolean_value("activationLockAllowWhenSupervised", @activation_lock_allow_when_supervised) unless @activation_lock_allow_when_supervised.nil?
+                writer.write_boolean_value("airDropBlocked", @air_drop_blocked) unless @air_drop_blocked.nil?
+                writer.write_boolean_value("airDropForceUnmanagedDropTarget", @air_drop_force_unmanaged_drop_target) unless @air_drop_force_unmanaged_drop_target.nil?
+                writer.write_boolean_value("airPlayForcePairingPasswordForOutgoingRequests", @air_play_force_pairing_password_for_outgoing_requests) unless @air_play_force_pairing_password_for_outgoing_requests.nil?
+                writer.write_boolean_value("appStoreBlockAutomaticDownloads", @app_store_block_automatic_downloads) unless @app_store_block_automatic_downloads.nil?
+                writer.write_boolean_value("appStoreBlockInAppPurchases", @app_store_block_in_app_purchases) unless @app_store_block_in_app_purchases.nil?
+                writer.write_boolean_value("appStoreBlockUIAppInstallation", @app_store_block_u_i_app_installation) unless @app_store_block_u_i_app_installation.nil?
+                writer.write_boolean_value("appStoreBlocked", @app_store_blocked) unless @app_store_blocked.nil?
+                writer.write_boolean_value("appStoreRequirePassword", @app_store_require_password) unless @app_store_require_password.nil?
+                writer.write_boolean_value("appleNewsBlocked", @apple_news_blocked) unless @apple_news_blocked.nil?
+                writer.write_boolean_value("appleWatchBlockPairing", @apple_watch_block_pairing) unless @apple_watch_block_pairing.nil?
+                writer.write_boolean_value("appleWatchForceWristDetection", @apple_watch_force_wrist_detection) unless @apple_watch_force_wrist_detection.nil?
+                writer.write_collection_of_object_values("appsSingleAppModeList", @apps_single_app_mode_list) unless @apps_single_app_mode_list.nil?
+                writer.write_collection_of_object_values("appsVisibilityList", @apps_visibility_list) unless @apps_visibility_list.nil?
+                writer.write_enum_value("appsVisibilityListType", @apps_visibility_list_type) unless @apps_visibility_list_type.nil?
+                writer.write_boolean_value("bluetoothBlockModification", @bluetooth_block_modification) unless @bluetooth_block_modification.nil?
+                writer.write_boolean_value("cameraBlocked", @camera_blocked) unless @camera_blocked.nil?
+                writer.write_boolean_value("cellularBlockDataRoaming", @cellular_block_data_roaming) unless @cellular_block_data_roaming.nil?
+                writer.write_boolean_value("cellularBlockGlobalBackgroundFetchWhileRoaming", @cellular_block_global_background_fetch_while_roaming) unless @cellular_block_global_background_fetch_while_roaming.nil?
+                writer.write_boolean_value("cellularBlockPerAppDataModification", @cellular_block_per_app_data_modification) unless @cellular_block_per_app_data_modification.nil?
+                writer.write_boolean_value("cellularBlockPersonalHotspot", @cellular_block_personal_hotspot) unless @cellular_block_personal_hotspot.nil?
+                writer.write_boolean_value("cellularBlockVoiceRoaming", @cellular_block_voice_roaming) unless @cellular_block_voice_roaming.nil?
+                writer.write_boolean_value("certificatesBlockUntrustedTlsCertificates", @certificates_block_untrusted_tls_certificates) unless @certificates_block_untrusted_tls_certificates.nil?
+                writer.write_boolean_value("classroomAppBlockRemoteScreenObservation", @classroom_app_block_remote_screen_observation) unless @classroom_app_block_remote_screen_observation.nil?
+                writer.write_boolean_value("classroomAppForceUnpromptedScreenObservation", @classroom_app_force_unprompted_screen_observation) unless @classroom_app_force_unprompted_screen_observation.nil?
+                writer.write_enum_value("compliantAppListType", @compliant_app_list_type) unless @compliant_app_list_type.nil?
+                writer.write_collection_of_object_values("compliantAppsList", @compliant_apps_list) unless @compliant_apps_list.nil?
+                writer.write_boolean_value("configurationProfileBlockChanges", @configuration_profile_block_changes) unless @configuration_profile_block_changes.nil?
+                writer.write_boolean_value("definitionLookupBlocked", @definition_lookup_blocked) unless @definition_lookup_blocked.nil?
+                writer.write_boolean_value("deviceBlockEnableRestrictions", @device_block_enable_restrictions) unless @device_block_enable_restrictions.nil?
+                writer.write_boolean_value("deviceBlockEraseContentAndSettings", @device_block_erase_content_and_settings) unless @device_block_erase_content_and_settings.nil?
+                writer.write_boolean_value("deviceBlockNameModification", @device_block_name_modification) unless @device_block_name_modification.nil?
+                writer.write_boolean_value("diagnosticDataBlockSubmission", @diagnostic_data_block_submission) unless @diagnostic_data_block_submission.nil?
+                writer.write_boolean_value("diagnosticDataBlockSubmissionModification", @diagnostic_data_block_submission_modification) unless @diagnostic_data_block_submission_modification.nil?
+                writer.write_boolean_value("documentsBlockManagedDocumentsInUnmanagedApps", @documents_block_managed_documents_in_unmanaged_apps) unless @documents_block_managed_documents_in_unmanaged_apps.nil?
+                writer.write_boolean_value("documentsBlockUnmanagedDocumentsInManagedApps", @documents_block_unmanaged_documents_in_managed_apps) unless @documents_block_unmanaged_documents_in_managed_apps.nil?
+                writer.write_collection_of_primitive_values("emailInDomainSuffixes", @email_in_domain_suffixes) unless @email_in_domain_suffixes.nil?
+                writer.write_boolean_value("enterpriseAppBlockTrust", @enterprise_app_block_trust) unless @enterprise_app_block_trust.nil?
+                writer.write_boolean_value("enterpriseAppBlockTrustModification", @enterprise_app_block_trust_modification) unless @enterprise_app_block_trust_modification.nil?
+                writer.write_boolean_value("faceTimeBlocked", @face_time_blocked) unless @face_time_blocked.nil?
+                writer.write_boolean_value("findMyFriendsBlocked", @find_my_friends_blocked) unless @find_my_friends_blocked.nil?
+                writer.write_boolean_value("gameCenterBlocked", @game_center_blocked) unless @game_center_blocked.nil?
+                writer.write_boolean_value("gamingBlockGameCenterFriends", @gaming_block_game_center_friends) unless @gaming_block_game_center_friends.nil?
+                writer.write_boolean_value("gamingBlockMultiplayer", @gaming_block_multiplayer) unless @gaming_block_multiplayer.nil?
+                writer.write_boolean_value("hostPairingBlocked", @host_pairing_blocked) unless @host_pairing_blocked.nil?
+                writer.write_boolean_value("iBooksStoreBlockErotica", @i_books_store_block_erotica) unless @i_books_store_block_erotica.nil?
+                writer.write_boolean_value("iBooksStoreBlocked", @i_books_store_blocked) unless @i_books_store_blocked.nil?
+                writer.write_boolean_value("iCloudBlockActivityContinuation", @i_cloud_block_activity_continuation) unless @i_cloud_block_activity_continuation.nil?
+                writer.write_boolean_value("iCloudBlockBackup", @i_cloud_block_backup) unless @i_cloud_block_backup.nil?
+                writer.write_boolean_value("iCloudBlockDocumentSync", @i_cloud_block_document_sync) unless @i_cloud_block_document_sync.nil?
+                writer.write_boolean_value("iCloudBlockManagedAppsSync", @i_cloud_block_managed_apps_sync) unless @i_cloud_block_managed_apps_sync.nil?
+                writer.write_boolean_value("iCloudBlockPhotoLibrary", @i_cloud_block_photo_library) unless @i_cloud_block_photo_library.nil?
+                writer.write_boolean_value("iCloudBlockPhotoStreamSync", @i_cloud_block_photo_stream_sync) unless @i_cloud_block_photo_stream_sync.nil?
+                writer.write_boolean_value("iCloudBlockSharedPhotoStream", @i_cloud_block_shared_photo_stream) unless @i_cloud_block_shared_photo_stream.nil?
+                writer.write_boolean_value("iCloudRequireEncryptedBackup", @i_cloud_require_encrypted_backup) unless @i_cloud_require_encrypted_backup.nil?
+                writer.write_boolean_value("iTunesBlockExplicitContent", @i_tunes_block_explicit_content) unless @i_tunes_block_explicit_content.nil?
+                writer.write_boolean_value("iTunesBlockMusicService", @i_tunes_block_music_service) unless @i_tunes_block_music_service.nil?
+                writer.write_boolean_value("iTunesBlockRadio", @i_tunes_block_radio) unless @i_tunes_block_radio.nil?
+                writer.write_boolean_value("keyboardBlockAutoCorrect", @keyboard_block_auto_correct) unless @keyboard_block_auto_correct.nil?
+                writer.write_boolean_value("keyboardBlockDictation", @keyboard_block_dictation) unless @keyboard_block_dictation.nil?
+                writer.write_boolean_value("keyboardBlockPredictive", @keyboard_block_predictive) unless @keyboard_block_predictive.nil?
+                writer.write_boolean_value("keyboardBlockShortcuts", @keyboard_block_shortcuts) unless @keyboard_block_shortcuts.nil?
+                writer.write_boolean_value("keyboardBlockSpellCheck", @keyboard_block_spell_check) unless @keyboard_block_spell_check.nil?
+                writer.write_boolean_value("kioskModeAllowAssistiveSpeak", @kiosk_mode_allow_assistive_speak) unless @kiosk_mode_allow_assistive_speak.nil?
+                writer.write_boolean_value("kioskModeAllowAssistiveTouchSettings", @kiosk_mode_allow_assistive_touch_settings) unless @kiosk_mode_allow_assistive_touch_settings.nil?
+                writer.write_boolean_value("kioskModeAllowAutoLock", @kiosk_mode_allow_auto_lock) unless @kiosk_mode_allow_auto_lock.nil?
+                writer.write_boolean_value("kioskModeAllowColorInversionSettings", @kiosk_mode_allow_color_inversion_settings) unless @kiosk_mode_allow_color_inversion_settings.nil?
+                writer.write_boolean_value("kioskModeAllowRingerSwitch", @kiosk_mode_allow_ringer_switch) unless @kiosk_mode_allow_ringer_switch.nil?
+                writer.write_boolean_value("kioskModeAllowScreenRotation", @kiosk_mode_allow_screen_rotation) unless @kiosk_mode_allow_screen_rotation.nil?
+                writer.write_boolean_value("kioskModeAllowSleepButton", @kiosk_mode_allow_sleep_button) unless @kiosk_mode_allow_sleep_button.nil?
+                writer.write_boolean_value("kioskModeAllowTouchscreen", @kiosk_mode_allow_touchscreen) unless @kiosk_mode_allow_touchscreen.nil?
+                writer.write_boolean_value("kioskModeAllowVoiceOverSettings", @kiosk_mode_allow_voice_over_settings) unless @kiosk_mode_allow_voice_over_settings.nil?
+                writer.write_boolean_value("kioskModeAllowVolumeButtons", @kiosk_mode_allow_volume_buttons) unless @kiosk_mode_allow_volume_buttons.nil?
+                writer.write_boolean_value("kioskModeAllowZoomSettings", @kiosk_mode_allow_zoom_settings) unless @kiosk_mode_allow_zoom_settings.nil?
+                writer.write_string_value("kioskModeAppStoreUrl", @kiosk_mode_app_store_url) unless @kiosk_mode_app_store_url.nil?
+                writer.write_string_value("kioskModeBuiltInAppId", @kiosk_mode_built_in_app_id) unless @kiosk_mode_built_in_app_id.nil?
+                writer.write_string_value("kioskModeManagedAppId", @kiosk_mode_managed_app_id) unless @kiosk_mode_managed_app_id.nil?
+                writer.write_boolean_value("kioskModeRequireAssistiveTouch", @kiosk_mode_require_assistive_touch) unless @kiosk_mode_require_assistive_touch.nil?
+                writer.write_boolean_value("kioskModeRequireColorInversion", @kiosk_mode_require_color_inversion) unless @kiosk_mode_require_color_inversion.nil?
+                writer.write_boolean_value("kioskModeRequireMonoAudio", @kiosk_mode_require_mono_audio) unless @kiosk_mode_require_mono_audio.nil?
+                writer.write_boolean_value("kioskModeRequireVoiceOver", @kiosk_mode_require_voice_over) unless @kiosk_mode_require_voice_over.nil?
+                writer.write_boolean_value("kioskModeRequireZoom", @kiosk_mode_require_zoom) unless @kiosk_mode_require_zoom.nil?
+                writer.write_boolean_value("lockScreenBlockControlCenter", @lock_screen_block_control_center) unless @lock_screen_block_control_center.nil?
+                writer.write_boolean_value("lockScreenBlockNotificationView", @lock_screen_block_notification_view) unless @lock_screen_block_notification_view.nil?
+                writer.write_boolean_value("lockScreenBlockPassbook", @lock_screen_block_passbook) unless @lock_screen_block_passbook.nil?
+                writer.write_boolean_value("lockScreenBlockTodayView", @lock_screen_block_today_view) unless @lock_screen_block_today_view.nil?
+                writer.write_enum_value("mediaContentRatingApps", @media_content_rating_apps) unless @media_content_rating_apps.nil?
+                writer.write_object_value("mediaContentRatingAustralia", @media_content_rating_australia) unless @media_content_rating_australia.nil?
+                writer.write_object_value("mediaContentRatingCanada", @media_content_rating_canada) unless @media_content_rating_canada.nil?
+                writer.write_object_value("mediaContentRatingFrance", @media_content_rating_france) unless @media_content_rating_france.nil?
+                writer.write_object_value("mediaContentRatingGermany", @media_content_rating_germany) unless @media_content_rating_germany.nil?
+                writer.write_object_value("mediaContentRatingIreland", @media_content_rating_ireland) unless @media_content_rating_ireland.nil?
+                writer.write_object_value("mediaContentRatingJapan", @media_content_rating_japan) unless @media_content_rating_japan.nil?
+                writer.write_object_value("mediaContentRatingNewZealand", @media_content_rating_new_zealand) unless @media_content_rating_new_zealand.nil?
+                writer.write_object_value("mediaContentRatingUnitedKingdom", @media_content_rating_united_kingdom) unless @media_content_rating_united_kingdom.nil?
+                writer.write_object_value("mediaContentRatingUnitedStates", @media_content_rating_united_states) unless @media_content_rating_united_states.nil?
+                writer.write_boolean_value("messagesBlocked", @messages_blocked) unless @messages_blocked.nil?
+                writer.write_collection_of_object_values("networkUsageRules", @network_usage_rules) unless @network_usage_rules.nil?
+                writer.write_boolean_value("notificationsBlockSettingsModification", @notifications_block_settings_modification) unless @notifications_block_settings_modification.nil?
+                writer.write_boolean_value("passcodeBlockFingerprintModification", @passcode_block_fingerprint_modification) unless @passcode_block_fingerprint_modification.nil?
+                writer.write_boolean_value("passcodeBlockFingerprintUnlock", @passcode_block_fingerprint_unlock) unless @passcode_block_fingerprint_unlock.nil?
+                writer.write_boolean_value("passcodeBlockModification", @passcode_block_modification) unless @passcode_block_modification.nil?
+                writer.write_boolean_value("passcodeBlockSimple", @passcode_block_simple) unless @passcode_block_simple.nil?
+                writer.write_number_value("passcodeExpirationDays", @passcode_expiration_days) unless @passcode_expiration_days.nil?
+                writer.write_number_value("passcodeMinimumCharacterSetCount", @passcode_minimum_character_set_count) unless @passcode_minimum_character_set_count.nil?
+                writer.write_number_value("passcodeMinimumLength", @passcode_minimum_length) unless @passcode_minimum_length.nil?
+                writer.write_number_value("passcodeMinutesOfInactivityBeforeLock", @passcode_minutes_of_inactivity_before_lock) unless @passcode_minutes_of_inactivity_before_lock.nil?
+                writer.write_number_value("passcodeMinutesOfInactivityBeforeScreenTimeout", @passcode_minutes_of_inactivity_before_screen_timeout) unless @passcode_minutes_of_inactivity_before_screen_timeout.nil?
+                writer.write_number_value("passcodePreviousPasscodeBlockCount", @passcode_previous_passcode_block_count) unless @passcode_previous_passcode_block_count.nil?
+                writer.write_boolean_value("passcodeRequired", @passcode_required) unless @passcode_required.nil?
+                writer.write_enum_value("passcodeRequiredType", @passcode_required_type) unless @passcode_required_type.nil?
+                writer.write_number_value("passcodeSignInFailureCountBeforeWipe", @passcode_sign_in_failure_count_before_wipe) unless @passcode_sign_in_failure_count_before_wipe.nil?
+                writer.write_boolean_value("podcastsBlocked", @podcasts_blocked) unless @podcasts_blocked.nil?
+                writer.write_boolean_value("safariBlockAutofill", @safari_block_autofill) unless @safari_block_autofill.nil?
+                writer.write_boolean_value("safariBlockJavaScript", @safari_block_java_script) unless @safari_block_java_script.nil?
+                writer.write_boolean_value("safariBlockPopups", @safari_block_popups) unless @safari_block_popups.nil?
+                writer.write_boolean_value("safariBlocked", @safari_blocked) unless @safari_blocked.nil?
+                writer.write_enum_value("safariCookieSettings", @safari_cookie_settings) unless @safari_cookie_settings.nil?
+                writer.write_collection_of_primitive_values("safariManagedDomains", @safari_managed_domains) unless @safari_managed_domains.nil?
+                writer.write_collection_of_primitive_values("safariPasswordAutoFillDomains", @safari_password_auto_fill_domains) unless @safari_password_auto_fill_domains.nil?
+                writer.write_boolean_value("safariRequireFraudWarning", @safari_require_fraud_warning) unless @safari_require_fraud_warning.nil?
+                writer.write_boolean_value("screenCaptureBlocked", @screen_capture_blocked) unless @screen_capture_blocked.nil?
+                writer.write_boolean_value("siriBlockUserGeneratedContent", @siri_block_user_generated_content) unless @siri_block_user_generated_content.nil?
+                writer.write_boolean_value("siriBlocked", @siri_blocked) unless @siri_blocked.nil?
+                writer.write_boolean_value("siriBlockedWhenLocked", @siri_blocked_when_locked) unless @siri_blocked_when_locked.nil?
+                writer.write_boolean_value("siriRequireProfanityFilter", @siri_require_profanity_filter) unless @siri_require_profanity_filter.nil?
+                writer.write_boolean_value("spotlightBlockInternetResults", @spotlight_block_internet_results) unless @spotlight_block_internet_results.nil?
+                writer.write_boolean_value("voiceDialingBlocked", @voice_dialing_blocked) unless @voice_dialing_blocked.nil?
+                writer.write_boolean_value("wallpaperBlockModification", @wallpaper_block_modification) unless @wallpaper_block_modification.nil?
+                writer.write_boolean_value("wiFiConnectOnlyToConfiguredNetworks", @wi_fi_connect_only_to_configured_networks) unless @wi_fi_connect_only_to_configured_networks.nil?
             end
             ## 
             ## Gets the siriBlockUserGeneratedContent property value. Indicates whether or not to block Siri from querying user-generated content when used on a supervised device.

@@ -78,8 +78,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("scheduledInstallDay", @scheduled_install_day)
-                writer.write_time_value("scheduledInstallTime", @scheduled_install_time)
+                writer.write_enum_value("scheduledInstallDay", @scheduled_install_day) unless @scheduled_install_day.nil?
+                writer.write_time_value("scheduledInstallTime", @scheduled_install_time) unless @scheduled_install_time.nil?
             end
         end
     end

@@ -360,27 +360,27 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("blockCloudObjectTakeoverThroughHardMatchEnabled", @block_cloud_object_takeover_through_hard_match_enabled)
-                writer.write_boolean_value("blockSoftMatchEnabled", @block_soft_match_enabled)
-                writer.write_boolean_value("bypassDirSyncOverridesEnabled", @bypass_dir_sync_overrides_enabled)
-                writer.write_boolean_value("cloudPasswordPolicyForPasswordSyncedUsersEnabled", @cloud_password_policy_for_password_synced_users_enabled)
-                writer.write_boolean_value("concurrentCredentialUpdateEnabled", @concurrent_credential_update_enabled)
-                writer.write_boolean_value("concurrentOrgIdProvisioningEnabled", @concurrent_org_id_provisioning_enabled)
-                writer.write_boolean_value("deviceWritebackEnabled", @device_writeback_enabled)
-                writer.write_boolean_value("directoryExtensionsEnabled", @directory_extensions_enabled)
-                writer.write_boolean_value("fopeConflictResolutionEnabled", @fope_conflict_resolution_enabled)
-                writer.write_boolean_value("groupWriteBackEnabled", @group_write_back_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("passwordSyncEnabled", @password_sync_enabled)
-                writer.write_boolean_value("passwordWritebackEnabled", @password_writeback_enabled)
-                writer.write_boolean_value("quarantineUponProxyAddressesConflictEnabled", @quarantine_upon_proxy_addresses_conflict_enabled)
-                writer.write_boolean_value("quarantineUponUpnConflictEnabled", @quarantine_upon_upn_conflict_enabled)
-                writer.write_boolean_value("softMatchOnUpnEnabled", @soft_match_on_upn_enabled)
-                writer.write_boolean_value("synchronizeUpnForManagedUsersEnabled", @synchronize_upn_for_managed_users_enabled)
-                writer.write_boolean_value("unifiedGroupWritebackEnabled", @unified_group_writeback_enabled)
-                writer.write_boolean_value("userForcePasswordChangeOnLogonEnabled", @user_force_password_change_on_logon_enabled)
-                writer.write_boolean_value("userWritebackEnabled", @user_writeback_enabled)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("blockCloudObjectTakeoverThroughHardMatchEnabled", @block_cloud_object_takeover_through_hard_match_enabled) unless @block_cloud_object_takeover_through_hard_match_enabled.nil?
+                writer.write_boolean_value("blockSoftMatchEnabled", @block_soft_match_enabled) unless @block_soft_match_enabled.nil?
+                writer.write_boolean_value("bypassDirSyncOverridesEnabled", @bypass_dir_sync_overrides_enabled) unless @bypass_dir_sync_overrides_enabled.nil?
+                writer.write_boolean_value("cloudPasswordPolicyForPasswordSyncedUsersEnabled", @cloud_password_policy_for_password_synced_users_enabled) unless @cloud_password_policy_for_password_synced_users_enabled.nil?
+                writer.write_boolean_value("concurrentCredentialUpdateEnabled", @concurrent_credential_update_enabled) unless @concurrent_credential_update_enabled.nil?
+                writer.write_boolean_value("concurrentOrgIdProvisioningEnabled", @concurrent_org_id_provisioning_enabled) unless @concurrent_org_id_provisioning_enabled.nil?
+                writer.write_boolean_value("deviceWritebackEnabled", @device_writeback_enabled) unless @device_writeback_enabled.nil?
+                writer.write_boolean_value("directoryExtensionsEnabled", @directory_extensions_enabled) unless @directory_extensions_enabled.nil?
+                writer.write_boolean_value("fopeConflictResolutionEnabled", @fope_conflict_resolution_enabled) unless @fope_conflict_resolution_enabled.nil?
+                writer.write_boolean_value("groupWriteBackEnabled", @group_write_back_enabled) unless @group_write_back_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("passwordSyncEnabled", @password_sync_enabled) unless @password_sync_enabled.nil?
+                writer.write_boolean_value("passwordWritebackEnabled", @password_writeback_enabled) unless @password_writeback_enabled.nil?
+                writer.write_boolean_value("quarantineUponProxyAddressesConflictEnabled", @quarantine_upon_proxy_addresses_conflict_enabled) unless @quarantine_upon_proxy_addresses_conflict_enabled.nil?
+                writer.write_boolean_value("quarantineUponUpnConflictEnabled", @quarantine_upon_upn_conflict_enabled) unless @quarantine_upon_upn_conflict_enabled.nil?
+                writer.write_boolean_value("softMatchOnUpnEnabled", @soft_match_on_upn_enabled) unless @soft_match_on_upn_enabled.nil?
+                writer.write_boolean_value("synchronizeUpnForManagedUsersEnabled", @synchronize_upn_for_managed_users_enabled) unless @synchronize_upn_for_managed_users_enabled.nil?
+                writer.write_boolean_value("unifiedGroupWritebackEnabled", @unified_group_writeback_enabled) unless @unified_group_writeback_enabled.nil?
+                writer.write_boolean_value("userForcePasswordChangeOnLogonEnabled", @user_force_password_change_on_logon_enabled) unless @user_force_password_change_on_logon_enabled.nil?
+                writer.write_boolean_value("userWritebackEnabled", @user_writeback_enabled) unless @user_writeback_enabled.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the softMatchOnUpnEnabled property value. Used to indicate that we should soft match objects based on userPrincipalName.

@@ -185,17 +185,17 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("adminConsentDescription", @admin_consent_description)
-                writer.write_string_value("adminConsentDisplayName", @admin_consent_display_name)
-                writer.write_guid_value("id", @id)
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("origin", @origin)
-                writer.write_string_value("type", @type)
-                writer.write_string_value("userConsentDescription", @user_consent_description)
-                writer.write_string_value("userConsentDisplayName", @user_consent_display_name)
-                writer.write_string_value("value", @value)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("adminConsentDescription", @admin_consent_description) unless @admin_consent_description.nil?
+                writer.write_string_value("adminConsentDisplayName", @admin_consent_display_name) unless @admin_consent_display_name.nil?
+                writer.write_guid_value("id", @id) unless @id.nil?
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("origin", @origin) unless @origin.nil?
+                writer.write_string_value("type", @type) unless @type.nil?
+                writer.write_string_value("userConsentDescription", @user_consent_description) unless @user_consent_description.nil?
+                writer.write_string_value("userConsentDisplayName", @user_consent_display_name) unless @user_consent_display_name.nil?
+                writer.write_string_value("value", @value) unless @value.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the type property value. The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.

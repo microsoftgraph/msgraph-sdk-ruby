@@ -321,24 +321,24 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_primitive_values("additionalTags", @additional_tags)
-                writer.write_string_value("contentWebUrl", @content_web_url)
-                writer.write_collection_of_primitive_values("contributors", @contributors)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_duration_value("duration", @duration)
-                writer.write_string_value("externalId", @external_id)
-                writer.write_string_value("format", @format)
-                writer.write_boolean_value("isActive", @is_active)
-                writer.write_boolean_value("isPremium", @is_premium)
-                writer.write_boolean_value("isSearchable", @is_searchable)
-                writer.write_string_value("languageTag", @language_tag)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_number_value("numberOfPages", @number_of_pages)
-                writer.write_collection_of_primitive_values("skillTags", @skill_tags)
-                writer.write_string_value("sourceName", @source_name)
-                writer.write_string_value("thumbnailWebUrl", @thumbnail_web_url)
-                writer.write_string_value("title", @title)
+                writer.write_collection_of_primitive_values("additionalTags", @additional_tags) unless @additional_tags.nil?
+                writer.write_string_value("contentWebUrl", @content_web_url) unless @content_web_url.nil?
+                writer.write_collection_of_primitive_values("contributors", @contributors) unless @contributors.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_duration_value("duration", @duration) unless @duration.nil?
+                writer.write_string_value("externalId", @external_id) unless @external_id.nil?
+                writer.write_string_value("format", @format) unless @format.nil?
+                writer.write_boolean_value("isActive", @is_active) unless @is_active.nil?
+                writer.write_boolean_value("isPremium", @is_premium) unless @is_premium.nil?
+                writer.write_boolean_value("isSearchable", @is_searchable) unless @is_searchable.nil?
+                writer.write_string_value("languageTag", @language_tag) unless @language_tag.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_number_value("numberOfPages", @number_of_pages) unless @number_of_pages.nil?
+                writer.write_collection_of_primitive_values("skillTags", @skill_tags) unless @skill_tags.nil?
+                writer.write_string_value("sourceName", @source_name) unless @source_name.nil?
+                writer.write_string_value("thumbnailWebUrl", @thumbnail_web_url) unless @thumbnail_web_url.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
             end
             ## 
             ## Gets the skillTags property value. The skills tags associated with the learning content. Optional.

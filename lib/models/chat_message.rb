@@ -450,30 +450,30 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("attachments", @attachments)
-                writer.write_object_value("body", @body)
-                writer.write_object_value("channelIdentity", @channel_identity)
-                writer.write_string_value("chatId", @chat_id)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_date_time_value("deletedDateTime", @deleted_date_time)
-                writer.write_string_value("etag", @etag)
-                writer.write_object_value("eventDetail", @event_detail)
-                writer.write_object_value("from", @from)
-                writer.write_collection_of_object_values("hostedContents", @hosted_contents)
-                writer.write_enum_value("importance", @importance)
-                writer.write_date_time_value("lastEditedDateTime", @last_edited_date_time)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_string_value("locale", @locale)
-                writer.write_collection_of_object_values("mentions", @mentions)
-                writer.write_collection_of_object_values("messageHistory", @message_history)
-                writer.write_enum_value("messageType", @message_type)
-                writer.write_object_value("policyViolation", @policy_violation)
-                writer.write_collection_of_object_values("reactions", @reactions)
-                writer.write_collection_of_object_values("replies", @replies)
-                writer.write_string_value("replyToId", @reply_to_id)
-                writer.write_string_value("subject", @subject)
-                writer.write_string_value("summary", @summary)
-                writer.write_string_value("webUrl", @web_url)
+                writer.write_collection_of_object_values("attachments", @attachments) unless @attachments.nil?
+                writer.write_object_value("body", @body) unless @body.nil?
+                writer.write_object_value("channelIdentity", @channel_identity) unless @channel_identity.nil?
+                writer.write_string_value("chatId", @chat_id) unless @chat_id.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_date_time_value("deletedDateTime", @deleted_date_time) unless @deleted_date_time.nil?
+                writer.write_string_value("etag", @etag) unless @etag.nil?
+                writer.write_object_value("eventDetail", @event_detail) unless @event_detail.nil?
+                writer.write_object_value("from", @from) unless @from.nil?
+                writer.write_collection_of_object_values("hostedContents", @hosted_contents) unless @hosted_contents.nil?
+                writer.write_enum_value("importance", @importance) unless @importance.nil?
+                writer.write_date_time_value("lastEditedDateTime", @last_edited_date_time) unless @last_edited_date_time.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_string_value("locale", @locale) unless @locale.nil?
+                writer.write_collection_of_object_values("mentions", @mentions) unless @mentions.nil?
+                writer.write_collection_of_object_values("messageHistory", @message_history) unless @message_history.nil?
+                writer.write_enum_value("messageType", @message_type) unless @message_type.nil?
+                writer.write_object_value("policyViolation", @policy_violation) unless @policy_violation.nil?
+                writer.write_collection_of_object_values("reactions", @reactions) unless @reactions.nil?
+                writer.write_collection_of_object_values("replies", @replies) unless @replies.nil?
+                writer.write_string_value("replyToId", @reply_to_id) unless @reply_to_id.nil?
+                writer.write_string_value("subject", @subject) unless @subject.nil?
+                writer.write_string_value("summary", @summary) unless @summary.nil?
+                writer.write_string_value("webUrl", @web_url) unless @web_url.nil?
             end
             ## 
             ## Gets the subject property value. The subject of the chat message, in plaintext.

@@ -96,9 +96,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_primitive_values("conversationMemberRoles", @conversation_member_roles)
-                writer.write_object_value("conversationMemberUser", @conversation_member_user)
-                writer.write_object_value("initiator", @initiator)
+                writer.write_collection_of_primitive_values("conversationMemberRoles", @conversation_member_roles) unless @conversation_member_roles.nil?
+                writer.write_object_value("conversationMemberUser", @conversation_member_user) unless @conversation_member_user.nil?
+                writer.write_object_value("initiator", @initiator) unless @initiator.nil?
             end
         end
     end

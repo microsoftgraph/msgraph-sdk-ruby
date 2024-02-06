@@ -119,11 +119,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("blobContainer", @blob_container)
-                writer.write_string_value("etag", @etag)
-                writer.write_collection_of_object_values("fileHashes", @file_hashes)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("url", @url)
+                writer.write_object_value("blobContainer", @blob_container) unless @blob_container.nil?
+                writer.write_string_value("etag", @etag) unless @etag.nil?
+                writer.write_collection_of_object_values("fileHashes", @file_hashes) unless @file_hashes.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("url", @url) unless @url.nil?
             end
             ## 
             ## Gets the url property value. The full URL representation of the blob.

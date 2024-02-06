@@ -164,15 +164,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("allowedValues", @allowed_values)
-                writer.write_string_value("attributeSet", @attribute_set)
-                writer.write_string_value("description", @description)
-                writer.write_boolean_value("isCollection", @is_collection)
-                writer.write_boolean_value("isSearchable", @is_searchable)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("status", @status)
-                writer.write_string_value("type", @type)
-                writer.write_boolean_value("usePreDefinedValuesOnly", @use_pre_defined_values_only)
+                writer.write_collection_of_object_values("allowedValues", @allowed_values) unless @allowed_values.nil?
+                writer.write_string_value("attributeSet", @attribute_set) unless @attribute_set.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_boolean_value("isCollection", @is_collection) unless @is_collection.nil?
+                writer.write_boolean_value("isSearchable", @is_searchable) unless @is_searchable.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
+                writer.write_string_value("type", @type) unless @type.nil?
+                writer.write_boolean_value("usePreDefinedValuesOnly", @use_pre_defined_values_only) unless @use_pre_defined_values_only.nil?
             end
             ## 
             ## Gets the status property value. Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.

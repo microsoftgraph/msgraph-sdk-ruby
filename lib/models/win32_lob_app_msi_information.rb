@@ -194,15 +194,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("packageType", @package_type)
-                writer.write_string_value("productCode", @product_code)
-                writer.write_string_value("productName", @product_name)
-                writer.write_string_value("productVersion", @product_version)
-                writer.write_string_value("publisher", @publisher)
-                writer.write_boolean_value("requiresReboot", @requires_reboot)
-                writer.write_string_value("upgradeCode", @upgrade_code)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("packageType", @package_type) unless @package_type.nil?
+                writer.write_string_value("productCode", @product_code) unless @product_code.nil?
+                writer.write_string_value("productName", @product_name) unless @product_name.nil?
+                writer.write_string_value("productVersion", @product_version) unless @product_version.nil?
+                writer.write_string_value("publisher", @publisher) unless @publisher.nil?
+                writer.write_boolean_value("requiresReboot", @requires_reboot) unless @requires_reboot.nil?
+                writer.write_string_value("upgradeCode", @upgrade_code) unless @upgrade_code.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the upgradeCode property value. The MSI upgrade code.

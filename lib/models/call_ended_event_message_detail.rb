@@ -134,11 +134,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_duration_value("callDuration", @call_duration)
-                writer.write_enum_value("callEventType", @call_event_type)
-                writer.write_string_value("callId", @call_id)
-                writer.write_collection_of_object_values("callParticipants", @call_participants)
-                writer.write_object_value("initiator", @initiator)
+                writer.write_duration_value("callDuration", @call_duration) unless @call_duration.nil?
+                writer.write_enum_value("callEventType", @call_event_type) unless @call_event_type.nil?
+                writer.write_string_value("callId", @call_id) unless @call_id.nil?
+                writer.write_collection_of_object_values("callParticipants", @call_participants) unless @call_participants.nil?
+                writer.write_object_value("initiator", @initiator) unless @initiator.nil?
             end
         end
     end

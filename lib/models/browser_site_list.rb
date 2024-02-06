@@ -186,16 +186,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("lastModifiedBy", @last_modified_by)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_object_value("publishedBy", @published_by)
-                writer.write_date_time_value("publishedDateTime", @published_date_time)
-                writer.write_string_value("revision", @revision)
-                writer.write_collection_of_object_values("sharedCookies", @shared_cookies)
-                writer.write_collection_of_object_values("sites", @sites)
-                writer.write_enum_value("status", @status)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_object_value("publishedBy", @published_by) unless @published_by.nil?
+                writer.write_date_time_value("publishedDateTime", @published_date_time) unless @published_date_time.nil?
+                writer.write_string_value("revision", @revision) unless @revision.nil?
+                writer.write_collection_of_object_values("sharedCookies", @shared_cookies) unless @shared_cookies.nil?
+                writer.write_collection_of_object_values("sites", @sites) unless @sites.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the sharedCookies property value. A collection of shared cookies defined for the site list.

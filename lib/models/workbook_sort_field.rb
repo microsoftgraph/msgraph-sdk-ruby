@@ -173,14 +173,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("ascending", @ascending)
-                writer.write_string_value("color", @color)
-                writer.write_string_value("dataOption", @data_option)
-                writer.write_object_value("icon", @icon)
-                writer.write_number_value("key", @key)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("sortOn", @sort_on)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("ascending", @ascending) unless @ascending.nil?
+                writer.write_string_value("color", @color) unless @color.nil?
+                writer.write_string_value("dataOption", @data_option) unless @data_option.nil?
+                writer.write_object_value("icon", @icon) unless @icon.nil?
+                writer.write_number_value("key", @key) unless @key.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("sortOn", @sort_on) unless @sort_on.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.

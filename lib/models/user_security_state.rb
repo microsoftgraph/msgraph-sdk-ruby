@@ -311,22 +311,22 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("aadUserId", @aad_user_id)
-                writer.write_string_value("accountName", @account_name)
-                writer.write_string_value("domainName", @domain_name)
-                writer.write_enum_value("emailRole", @email_role)
-                writer.write_boolean_value("isVpn", @is_vpn)
-                writer.write_date_time_value("logonDateTime", @logon_date_time)
-                writer.write_string_value("logonId", @logon_id)
-                writer.write_string_value("logonIp", @logon_ip)
-                writer.write_string_value("logonLocation", @logon_location)
-                writer.write_enum_value("logonType", @logon_type)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier)
-                writer.write_string_value("riskScore", @risk_score)
-                writer.write_enum_value("userAccountType", @user_account_type)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("aadUserId", @aad_user_id) unless @aad_user_id.nil?
+                writer.write_string_value("accountName", @account_name) unless @account_name.nil?
+                writer.write_string_value("domainName", @domain_name) unless @domain_name.nil?
+                writer.write_enum_value("emailRole", @email_role) unless @email_role.nil?
+                writer.write_boolean_value("isVpn", @is_vpn) unless @is_vpn.nil?
+                writer.write_date_time_value("logonDateTime", @logon_date_time) unless @logon_date_time.nil?
+                writer.write_string_value("logonId", @logon_id) unless @logon_id.nil?
+                writer.write_string_value("logonIp", @logon_ip) unless @logon_ip.nil?
+                writer.write_string_value("logonLocation", @logon_location) unless @logon_location.nil?
+                writer.write_enum_value("logonType", @logon_type) unless @logon_type.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier) unless @on_premises_security_identifier.nil?
+                writer.write_string_value("riskScore", @risk_score) unless @risk_score.nil?
+                writer.write_enum_value("userAccountType", @user_account_type) unless @user_account_type.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the userAccountType property value. User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.

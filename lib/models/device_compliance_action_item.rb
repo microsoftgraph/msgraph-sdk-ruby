@@ -116,10 +116,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("actionType", @action_type)
-                writer.write_number_value("gracePeriodHours", @grace_period_hours)
-                writer.write_collection_of_primitive_values("notificationMessageCCList", @notification_message_c_c_list)
-                writer.write_string_value("notificationTemplateId", @notification_template_id)
+                writer.write_enum_value("actionType", @action_type) unless @action_type.nil?
+                writer.write_number_value("gracePeriodHours", @grace_period_hours) unless @grace_period_hours.nil?
+                writer.write_collection_of_primitive_values("notificationMessageCCList", @notification_message_c_c_list) unless @notification_message_c_c_list.nil?
+                writer.write_string_value("notificationTemplateId", @notification_template_id) unless @notification_template_id.nil?
             end
         end
     end

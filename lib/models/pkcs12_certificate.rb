@@ -77,7 +77,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("password", @password)
+                writer.write_string_value("password", @password) unless @password.nil?
                 writer.write_string_value("pkcs12Value", @pkcs12_value)
             end
         end

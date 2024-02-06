@@ -188,14 +188,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("countryCode", @country_code)
-                writer.write_enum_value("endpointType", @endpoint_type)
-                writer.write_object_value("identity", @identity)
-                writer.write_string_value("languageId", @language_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("participantId", @participant_id)
-                writer.write_string_value("region", @region)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("countryCode", @country_code) unless @country_code.nil?
+                writer.write_enum_value("endpointType", @endpoint_type) unless @endpoint_type.nil?
+                writer.write_object_value("identity", @identity) unless @identity.nil?
+                writer.write_string_value("languageId", @language_id) unless @language_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("participantId", @participant_id) unless @participant_id.nil?
+                writer.write_string_value("region", @region) unless @region.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

@@ -167,15 +167,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("groupsRequiringPartnerEnrollment", @groups_requiring_partner_enrollment)
-                writer.write_boolean_value("isConfigured", @is_configured)
-                writer.write_date_time_value("lastHeartbeatDateTime", @last_heartbeat_date_time)
-                writer.write_enum_value("partnerAppType", @partner_app_type)
-                writer.write_enum_value("partnerState", @partner_state)
-                writer.write_string_value("singleTenantAppId", @single_tenant_app_id)
-                writer.write_date_time_value("whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime", @when_partner_devices_will_be_marked_as_non_compliant_date_time)
-                writer.write_date_time_value("whenPartnerDevicesWillBeRemovedDateTime", @when_partner_devices_will_be_removed_date_time)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("groupsRequiringPartnerEnrollment", @groups_requiring_partner_enrollment) unless @groups_requiring_partner_enrollment.nil?
+                writer.write_boolean_value("isConfigured", @is_configured) unless @is_configured.nil?
+                writer.write_date_time_value("lastHeartbeatDateTime", @last_heartbeat_date_time) unless @last_heartbeat_date_time.nil?
+                writer.write_enum_value("partnerAppType", @partner_app_type) unless @partner_app_type.nil?
+                writer.write_enum_value("partnerState", @partner_state) unless @partner_state.nil?
+                writer.write_string_value("singleTenantAppId", @single_tenant_app_id) unless @single_tenant_app_id.nil?
+                writer.write_date_time_value("whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime", @when_partner_devices_will_be_marked_as_non_compliant_date_time) unless @when_partner_devices_will_be_marked_as_non_compliant_date_time.nil?
+                writer.write_date_time_value("whenPartnerDevicesWillBeRemovedDateTime", @when_partner_devices_will_be_removed_date_time) unless @when_partner_devices_will_be_removed_date_time.nil?
             end
             ## 
             ## Gets the singleTenantAppId property value. Partner Single tenant App id

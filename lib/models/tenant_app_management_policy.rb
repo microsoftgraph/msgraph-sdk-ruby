@@ -81,9 +81,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("applicationRestrictions", @application_restrictions)
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_object_value("servicePrincipalRestrictions", @service_principal_restrictions)
+                writer.write_object_value("applicationRestrictions", @application_restrictions) unless @application_restrictions.nil?
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_object_value("servicePrincipalRestrictions", @service_principal_restrictions) unless @service_principal_restrictions.nil?
             end
             ## 
             ## Gets the servicePrincipalRestrictions property value. Restrictions that apply as default to all service principal objects in the tenant.

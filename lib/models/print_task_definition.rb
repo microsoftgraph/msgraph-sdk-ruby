@@ -80,9 +80,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("tasks", @tasks)
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("tasks", @tasks) unless @tasks.nil?
             end
             ## 
             ## Gets the tasks property value. A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.

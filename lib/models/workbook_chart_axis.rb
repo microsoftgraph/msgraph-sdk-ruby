@@ -175,14 +175,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("format", @format)
-                writer.write_object_value("majorGridlines", @major_gridlines)
-                writer.write_object_value("majorUnit", @major_unit)
-                writer.write_object_value("maximum", @maximum)
-                writer.write_object_value("minimum", @minimum)
-                writer.write_object_value("minorGridlines", @minor_gridlines)
-                writer.write_object_value("minorUnit", @minor_unit)
-                writer.write_object_value("title", @title)
+                writer.write_object_value("format", @format) unless @format.nil?
+                writer.write_object_value("majorGridlines", @major_gridlines) unless @major_gridlines.nil?
+                writer.write_object_value("majorUnit", @major_unit) unless @major_unit.nil?
+                writer.write_object_value("maximum", @maximum) unless @maximum.nil?
+                writer.write_object_value("minimum", @minimum) unless @minimum.nil?
+                writer.write_object_value("minorGridlines", @minor_gridlines) unless @minor_gridlines.nil?
+                writer.write_object_value("minorUnit", @minor_unit) unless @minor_unit.nil?
+                writer.write_object_value("title", @title) unless @title.nil?
             end
             ## 
             ## Gets the title property value. Represents the axis title. Read-only.

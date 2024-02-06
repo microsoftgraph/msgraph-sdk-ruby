@@ -88,11 +88,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
                 writer.write_boolean_value("v10_0", @v10_0)
                 writer.write_boolean_value("v8_0", @v8_0)
                 writer.write_boolean_value("v8_1", @v8_1)
-                writer.write_additional_data(@additional_data)
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the v10_0 property value. Windows version 10.0 or later.

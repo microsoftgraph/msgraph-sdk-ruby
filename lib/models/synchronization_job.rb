@@ -88,11 +88,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("schedule", @schedule)
-                writer.write_object_value("schema", @schema)
-                writer.write_object_value("status", @status)
-                writer.write_collection_of_object_values("synchronizationJobSettings", @synchronization_job_settings)
-                writer.write_string_value("templateId", @template_id)
+                writer.write_object_value("schedule", @schedule) unless @schedule.nil?
+                writer.write_object_value("schema", @schema) unless @schema.nil?
+                writer.write_object_value("status", @status) unless @status.nil?
+                writer.write_collection_of_object_values("synchronizationJobSettings", @synchronization_job_settings) unless @synchronization_job_settings.nil?
+                writer.write_string_value("templateId", @template_id) unless @template_id.nil?
             end
             ## 
             ## Gets the status property value. Status of the job, which includes when the job was last run, current job state, and errors.

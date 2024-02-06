@@ -249,21 +249,21 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("chatType", @chat_type)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_collection_of_object_values("installedApps", @installed_apps)
-                writer.write_object_value("lastMessagePreview", @last_message_preview)
-                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
-                writer.write_collection_of_object_values("members", @members)
-                writer.write_collection_of_object_values("messages", @messages)
-                writer.write_object_value("onlineMeetingInfo", @online_meeting_info)
-                writer.write_collection_of_object_values("permissionGrants", @permission_grants)
-                writer.write_collection_of_object_values("pinnedMessages", @pinned_messages)
-                writer.write_collection_of_object_values("tabs", @tabs)
-                writer.write_string_value("tenantId", @tenant_id)
-                writer.write_string_value("topic", @topic)
-                writer.write_object_value("viewpoint", @viewpoint)
-                writer.write_string_value("webUrl", @web_url)
+                writer.write_enum_value("chatType", @chat_type) unless @chat_type.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_collection_of_object_values("installedApps", @installed_apps) unless @installed_apps.nil?
+                writer.write_object_value("lastMessagePreview", @last_message_preview) unless @last_message_preview.nil?
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time) unless @last_updated_date_time.nil?
+                writer.write_collection_of_object_values("members", @members) unless @members.nil?
+                writer.write_collection_of_object_values("messages", @messages) unless @messages.nil?
+                writer.write_object_value("onlineMeetingInfo", @online_meeting_info) unless @online_meeting_info.nil?
+                writer.write_collection_of_object_values("permissionGrants", @permission_grants) unless @permission_grants.nil?
+                writer.write_collection_of_object_values("pinnedMessages", @pinned_messages) unless @pinned_messages.nil?
+                writer.write_collection_of_object_values("tabs", @tabs) unless @tabs.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
+                writer.write_string_value("topic", @topic) unless @topic.nil?
+                writer.write_object_value("viewpoint", @viewpoint) unless @viewpoint.nil?
+                writer.write_string_value("webUrl", @web_url) unless @web_url.nil?
             end
             ## 
             ## Gets the tabs property value. A collection of all the tabs in the chat. Nullable.

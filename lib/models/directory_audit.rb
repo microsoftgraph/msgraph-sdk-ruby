@@ -233,17 +233,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("activityDateTime", @activity_date_time)
-                writer.write_string_value("activityDisplayName", @activity_display_name)
-                writer.write_collection_of_object_values("additionalDetails", @additional_details)
-                writer.write_string_value("category", @category)
-                writer.write_string_value("correlationId", @correlation_id)
-                writer.write_object_value("initiatedBy", @initiated_by)
-                writer.write_string_value("loggedByService", @logged_by_service)
-                writer.write_string_value("operationType", @operation_type)
-                writer.write_enum_value("result", @result)
-                writer.write_string_value("resultReason", @result_reason)
-                writer.write_collection_of_object_values("targetResources", @target_resources)
+                writer.write_date_time_value("activityDateTime", @activity_date_time) unless @activity_date_time.nil?
+                writer.write_string_value("activityDisplayName", @activity_display_name) unless @activity_display_name.nil?
+                writer.write_collection_of_object_values("additionalDetails", @additional_details) unless @additional_details.nil?
+                writer.write_string_value("category", @category) unless @category.nil?
+                writer.write_string_value("correlationId", @correlation_id) unless @correlation_id.nil?
+                writer.write_object_value("initiatedBy", @initiated_by) unless @initiated_by.nil?
+                writer.write_string_value("loggedByService", @logged_by_service) unless @logged_by_service.nil?
+                writer.write_string_value("operationType", @operation_type) unless @operation_type.nil?
+                writer.write_enum_value("result", @result) unless @result.nil?
+                writer.write_string_value("resultReason", @result_reason) unless @result_reason.nil?
+                writer.write_collection_of_object_values("targetResources", @target_resources) unless @target_resources.nil?
             end
             ## 
             ## Gets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.

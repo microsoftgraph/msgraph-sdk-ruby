@@ -77,8 +77,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("feedbackResource", @feedback_resource)
-                writer.write_enum_value("resourceStatus", @resource_status)
+                writer.write_object_value("feedbackResource", @feedback_resource) unless @feedback_resource.nil?
+                writer.write_enum_value("resourceStatus", @resource_status) unless @resource_status.nil?
             end
         end
     end

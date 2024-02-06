@@ -91,11 +91,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("acceptedDateTime", @accepted_date_time)
-                writer.write_number_value("acceptedVersion", @accepted_version)
-                writer.write_object_value("termsAndConditions", @terms_and_conditions)
-                writer.write_string_value("userDisplayName", @user_display_name)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
+                writer.write_date_time_value("acceptedDateTime", @accepted_date_time) unless @accepted_date_time.nil?
+                writer.write_number_value("acceptedVersion", @accepted_version) unless @accepted_version.nil?
+                writer.write_object_value("termsAndConditions", @terms_and_conditions) unless @terms_and_conditions.nil?
+                writer.write_string_value("userDisplayName", @user_display_name) unless @user_display_name.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
             end
             ## 
             ## Gets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.

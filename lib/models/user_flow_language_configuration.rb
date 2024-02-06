@@ -114,10 +114,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("defaultPages", @default_pages)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_collection_of_object_values("overridesPages", @overrides_pages)
+                writer.write_collection_of_object_values("defaultPages", @default_pages) unless @default_pages.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_collection_of_object_values("overridesPages", @overrides_pages) unless @overrides_pages.nil?
             end
         end
     end

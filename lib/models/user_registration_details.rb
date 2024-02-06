@@ -249,21 +249,21 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("isAdmin", @is_admin)
-                writer.write_boolean_value("isMfaCapable", @is_mfa_capable)
-                writer.write_boolean_value("isMfaRegistered", @is_mfa_registered)
-                writer.write_boolean_value("isPasswordlessCapable", @is_passwordless_capable)
-                writer.write_boolean_value("isSsprCapable", @is_sspr_capable)
-                writer.write_boolean_value("isSsprEnabled", @is_sspr_enabled)
-                writer.write_boolean_value("isSsprRegistered", @is_sspr_registered)
-                writer.write_boolean_value("isSystemPreferredAuthenticationMethodEnabled", @is_system_preferred_authentication_method_enabled)
-                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
-                writer.write_collection_of_primitive_values("methodsRegistered", @methods_registered)
-                writer.write_collection_of_primitive_values("systemPreferredAuthenticationMethods", @system_preferred_authentication_methods)
-                writer.write_string_value("userDisplayName", @user_display_name)
-                writer.write_enum_value("userPreferredMethodForSecondaryAuthentication", @user_preferred_method_for_secondary_authentication)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_enum_value("userType", @user_type)
+                writer.write_boolean_value("isAdmin", @is_admin) unless @is_admin.nil?
+                writer.write_boolean_value("isMfaCapable", @is_mfa_capable) unless @is_mfa_capable.nil?
+                writer.write_boolean_value("isMfaRegistered", @is_mfa_registered) unless @is_mfa_registered.nil?
+                writer.write_boolean_value("isPasswordlessCapable", @is_passwordless_capable) unless @is_passwordless_capable.nil?
+                writer.write_boolean_value("isSsprCapable", @is_sspr_capable) unless @is_sspr_capable.nil?
+                writer.write_boolean_value("isSsprEnabled", @is_sspr_enabled) unless @is_sspr_enabled.nil?
+                writer.write_boolean_value("isSsprRegistered", @is_sspr_registered) unless @is_sspr_registered.nil?
+                writer.write_boolean_value("isSystemPreferredAuthenticationMethodEnabled", @is_system_preferred_authentication_method_enabled) unless @is_system_preferred_authentication_method_enabled.nil?
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time) unless @last_updated_date_time.nil?
+                writer.write_collection_of_primitive_values("methodsRegistered", @methods_registered) unless @methods_registered.nil?
+                writer.write_collection_of_primitive_values("systemPreferredAuthenticationMethods", @system_preferred_authentication_methods) unless @system_preferred_authentication_methods.nil?
+                writer.write_string_value("userDisplayName", @user_display_name) unless @user_display_name.nil?
+                writer.write_enum_value("userPreferredMethodForSecondaryAuthentication", @user_preferred_method_for_secondary_authentication) unless @user_preferred_method_for_secondary_authentication.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
+                writer.write_enum_value("userType", @user_type) unless @user_type.nil?
             end
             ## 
             ## Gets the systemPreferredAuthenticationMethods property value. Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).

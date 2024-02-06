@@ -103,10 +103,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_time_value("activeHoursEnd", @active_hours_end)
-                writer.write_time_value("activeHoursStart", @active_hours_start)
-                writer.write_collection_of_object_values("scheduledInstallDays", @scheduled_install_days)
-                writer.write_number_value("utcTimeOffsetInMinutes", @utc_time_offset_in_minutes)
+                writer.write_time_value("activeHoursEnd", @active_hours_end) unless @active_hours_end.nil?
+                writer.write_time_value("activeHoursStart", @active_hours_start) unless @active_hours_start.nil?
+                writer.write_collection_of_object_values("scheduledInstallDays", @scheduled_install_days) unless @scheduled_install_days.nil?
+                writer.write_number_value("utcTimeOffsetInMinutes", @utc_time_offset_in_minutes) unless @utc_time_offset_in_minutes.nil?
             end
             ## 
             ## Gets the utcTimeOffsetInMinutes property value. UTC Time Offset indicated in minutes

@@ -173,14 +173,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("externalAudience", @external_audience)
-                writer.write_string_value("externalReplyMessage", @external_reply_message)
-                writer.write_string_value("internalReplyMessage", @internal_reply_message)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("scheduledEndDateTime", @scheduled_end_date_time)
-                writer.write_object_value("scheduledStartDateTime", @scheduled_start_date_time)
-                writer.write_enum_value("status", @status)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("externalAudience", @external_audience) unless @external_audience.nil?
+                writer.write_string_value("externalReplyMessage", @external_reply_message) unless @external_reply_message.nil?
+                writer.write_string_value("internalReplyMessage", @internal_reply_message) unless @internal_reply_message.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("scheduledEndDateTime", @scheduled_end_date_time) unless @scheduled_end_date_time.nil?
+                writer.write_object_value("scheduledStartDateTime", @scheduled_start_date_time) unless @scheduled_start_date_time.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.

@@ -159,14 +159,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("assignedByGroup", @assigned_by_group)
-                writer.write_collection_of_primitive_values("disabledPlans", @disabled_plans)
-                writer.write_string_value("error", @error)
-                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_guid_value("skuId", @sku_id)
-                writer.write_string_value("state", @state)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("assignedByGroup", @assigned_by_group) unless @assigned_by_group.nil?
+                writer.write_collection_of_primitive_values("disabledPlans", @disabled_plans) unless @disabled_plans.nil?
+                writer.write_string_value("error", @error) unless @error.nil?
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time) unless @last_updated_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_guid_value("skuId", @sku_id) unless @sku_id.nil?
+                writer.write_string_value("state", @state) unless @state.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the skuId property value. The skuId property

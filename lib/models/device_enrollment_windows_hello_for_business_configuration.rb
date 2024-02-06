@@ -239,18 +239,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("enhancedBiometricsState", @enhanced_biometrics_state)
-                writer.write_number_value("pinExpirationInDays", @pin_expiration_in_days)
-                writer.write_enum_value("pinLowercaseCharactersUsage", @pin_lowercase_characters_usage)
-                writer.write_number_value("pinMaximumLength", @pin_maximum_length)
-                writer.write_number_value("pinMinimumLength", @pin_minimum_length)
-                writer.write_number_value("pinPreviousBlockCount", @pin_previous_block_count)
-                writer.write_enum_value("pinSpecialCharactersUsage", @pin_special_characters_usage)
-                writer.write_enum_value("pinUppercaseCharactersUsage", @pin_uppercase_characters_usage)
-                writer.write_boolean_value("remotePassportEnabled", @remote_passport_enabled)
-                writer.write_boolean_value("securityDeviceRequired", @security_device_required)
-                writer.write_enum_value("state", @state)
-                writer.write_boolean_value("unlockWithBiometricsEnabled", @unlock_with_biometrics_enabled)
+                writer.write_enum_value("enhancedBiometricsState", @enhanced_biometrics_state) unless @enhanced_biometrics_state.nil?
+                writer.write_number_value("pinExpirationInDays", @pin_expiration_in_days) unless @pin_expiration_in_days.nil?
+                writer.write_enum_value("pinLowercaseCharactersUsage", @pin_lowercase_characters_usage) unless @pin_lowercase_characters_usage.nil?
+                writer.write_number_value("pinMaximumLength", @pin_maximum_length) unless @pin_maximum_length.nil?
+                writer.write_number_value("pinMinimumLength", @pin_minimum_length) unless @pin_minimum_length.nil?
+                writer.write_number_value("pinPreviousBlockCount", @pin_previous_block_count) unless @pin_previous_block_count.nil?
+                writer.write_enum_value("pinSpecialCharactersUsage", @pin_special_characters_usage) unless @pin_special_characters_usage.nil?
+                writer.write_enum_value("pinUppercaseCharactersUsage", @pin_uppercase_characters_usage) unless @pin_uppercase_characters_usage.nil?
+                writer.write_boolean_value("remotePassportEnabled", @remote_passport_enabled) unless @remote_passport_enabled.nil?
+                writer.write_boolean_value("securityDeviceRequired", @security_device_required) unless @security_device_required.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_boolean_value("unlockWithBiometricsEnabled", @unlock_with_biometrics_enabled) unless @unlock_with_biometrics_enabled.nil?
             end
             ## 
             ## Gets the state property value. Possible values of a property

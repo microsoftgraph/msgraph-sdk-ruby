@@ -95,9 +95,9 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("deviceWithoutCloudIdentityCount", @device_without_cloud_identity_count)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("deviceWithoutCloudIdentityCount", @device_without_cloud_identity_count) unless @device_without_cloud_identity_count.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

@@ -139,12 +139,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("allowAllUsers", @allow_all_users)
-                writer.write_collection_of_object_values("allowedGroups", @allowed_groups)
-                writer.write_collection_of_object_values("allowedUsers", @allowed_users)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("printer", @printer)
-                writer.write_object_value("viewPoint", @view_point)
+                writer.write_boolean_value("allowAllUsers", @allow_all_users) unless @allow_all_users.nil?
+                writer.write_collection_of_object_values("allowedGroups", @allowed_groups) unless @allowed_groups.nil?
+                writer.write_collection_of_object_values("allowedUsers", @allowed_users) unless @allowed_users.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("printer", @printer) unless @printer.nil?
+                writer.write_object_value("viewPoint", @view_point) unless @view_point.nil?
             end
             ## 
             ## Gets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.

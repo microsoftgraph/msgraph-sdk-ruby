@@ -312,40 +312,40 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("passwordBlockFingerprintUnlock", @password_block_fingerprint_unlock)
-                writer.write_boolean_value("passwordBlockTrustAgents", @password_block_trust_agents)
-                writer.write_number_value("passwordExpirationDays", @password_expiration_days)
-                writer.write_number_value("passwordMinimumLength", @password_minimum_length)
-                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout)
-                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count)
-                writer.write_enum_value("passwordRequiredType", @password_required_type)
-                writer.write_number_value("passwordSignInFailureCountBeforeFactoryReset", @password_sign_in_failure_count_before_factory_reset)
-                writer.write_boolean_value("securityRequireVerifyApps", @security_require_verify_apps)
-                writer.write_boolean_value("workProfileBlockAddingAccounts", @work_profile_block_adding_accounts)
-                writer.write_boolean_value("workProfileBlockCamera", @work_profile_block_camera)
-                writer.write_boolean_value("workProfileBlockCrossProfileCallerId", @work_profile_block_cross_profile_caller_id)
-                writer.write_boolean_value("workProfileBlockCrossProfileContactsSearch", @work_profile_block_cross_profile_contacts_search)
-                writer.write_boolean_value("workProfileBlockCrossProfileCopyPaste", @work_profile_block_cross_profile_copy_paste)
-                writer.write_boolean_value("workProfileBlockNotificationsWhileDeviceLocked", @work_profile_block_notifications_while_device_locked)
-                writer.write_boolean_value("workProfileBlockScreenCapture", @work_profile_block_screen_capture)
-                writer.write_boolean_value("workProfileBluetoothEnableContactSharing", @work_profile_bluetooth_enable_contact_sharing)
-                writer.write_enum_value("workProfileDataSharingType", @work_profile_data_sharing_type)
-                writer.write_enum_value("workProfileDefaultAppPermissionPolicy", @work_profile_default_app_permission_policy)
-                writer.write_boolean_value("workProfilePasswordBlockFingerprintUnlock", @work_profile_password_block_fingerprint_unlock)
-                writer.write_boolean_value("workProfilePasswordBlockTrustAgents", @work_profile_password_block_trust_agents)
-                writer.write_number_value("workProfilePasswordExpirationDays", @work_profile_password_expiration_days)
-                writer.write_number_value("workProfilePasswordMinLetterCharacters", @work_profile_password_min_letter_characters)
-                writer.write_number_value("workProfilePasswordMinLowerCaseCharacters", @work_profile_password_min_lower_case_characters)
-                writer.write_number_value("workProfilePasswordMinNonLetterCharacters", @work_profile_password_min_non_letter_characters)
-                writer.write_number_value("workProfilePasswordMinNumericCharacters", @work_profile_password_min_numeric_characters)
-                writer.write_number_value("workProfilePasswordMinSymbolCharacters", @work_profile_password_min_symbol_characters)
-                writer.write_number_value("workProfilePasswordMinUpperCaseCharacters", @work_profile_password_min_upper_case_characters)
-                writer.write_number_value("workProfilePasswordMinimumLength", @work_profile_password_minimum_length)
-                writer.write_number_value("workProfilePasswordMinutesOfInactivityBeforeScreenTimeout", @work_profile_password_minutes_of_inactivity_before_screen_timeout)
-                writer.write_number_value("workProfilePasswordPreviousPasswordBlockCount", @work_profile_password_previous_password_block_count)
-                writer.write_enum_value("workProfilePasswordRequiredType", @work_profile_password_required_type)
-                writer.write_number_value("workProfilePasswordSignInFailureCountBeforeFactoryReset", @work_profile_password_sign_in_failure_count_before_factory_reset)
-                writer.write_boolean_value("workProfileRequirePassword", @work_profile_require_password)
+                writer.write_boolean_value("passwordBlockFingerprintUnlock", @password_block_fingerprint_unlock) unless @password_block_fingerprint_unlock.nil?
+                writer.write_boolean_value("passwordBlockTrustAgents", @password_block_trust_agents) unless @password_block_trust_agents.nil?
+                writer.write_number_value("passwordExpirationDays", @password_expiration_days) unless @password_expiration_days.nil?
+                writer.write_number_value("passwordMinimumLength", @password_minimum_length) unless @password_minimum_length.nil?
+                writer.write_number_value("passwordMinutesOfInactivityBeforeScreenTimeout", @password_minutes_of_inactivity_before_screen_timeout) unless @password_minutes_of_inactivity_before_screen_timeout.nil?
+                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count) unless @password_previous_password_block_count.nil?
+                writer.write_enum_value("passwordRequiredType", @password_required_type) unless @password_required_type.nil?
+                writer.write_number_value("passwordSignInFailureCountBeforeFactoryReset", @password_sign_in_failure_count_before_factory_reset) unless @password_sign_in_failure_count_before_factory_reset.nil?
+                writer.write_boolean_value("securityRequireVerifyApps", @security_require_verify_apps) unless @security_require_verify_apps.nil?
+                writer.write_boolean_value("workProfileBlockAddingAccounts", @work_profile_block_adding_accounts) unless @work_profile_block_adding_accounts.nil?
+                writer.write_boolean_value("workProfileBlockCamera", @work_profile_block_camera) unless @work_profile_block_camera.nil?
+                writer.write_boolean_value("workProfileBlockCrossProfileCallerId", @work_profile_block_cross_profile_caller_id) unless @work_profile_block_cross_profile_caller_id.nil?
+                writer.write_boolean_value("workProfileBlockCrossProfileContactsSearch", @work_profile_block_cross_profile_contacts_search) unless @work_profile_block_cross_profile_contacts_search.nil?
+                writer.write_boolean_value("workProfileBlockCrossProfileCopyPaste", @work_profile_block_cross_profile_copy_paste) unless @work_profile_block_cross_profile_copy_paste.nil?
+                writer.write_boolean_value("workProfileBlockNotificationsWhileDeviceLocked", @work_profile_block_notifications_while_device_locked) unless @work_profile_block_notifications_while_device_locked.nil?
+                writer.write_boolean_value("workProfileBlockScreenCapture", @work_profile_block_screen_capture) unless @work_profile_block_screen_capture.nil?
+                writer.write_boolean_value("workProfileBluetoothEnableContactSharing", @work_profile_bluetooth_enable_contact_sharing) unless @work_profile_bluetooth_enable_contact_sharing.nil?
+                writer.write_enum_value("workProfileDataSharingType", @work_profile_data_sharing_type) unless @work_profile_data_sharing_type.nil?
+                writer.write_enum_value("workProfileDefaultAppPermissionPolicy", @work_profile_default_app_permission_policy) unless @work_profile_default_app_permission_policy.nil?
+                writer.write_boolean_value("workProfilePasswordBlockFingerprintUnlock", @work_profile_password_block_fingerprint_unlock) unless @work_profile_password_block_fingerprint_unlock.nil?
+                writer.write_boolean_value("workProfilePasswordBlockTrustAgents", @work_profile_password_block_trust_agents) unless @work_profile_password_block_trust_agents.nil?
+                writer.write_number_value("workProfilePasswordExpirationDays", @work_profile_password_expiration_days) unless @work_profile_password_expiration_days.nil?
+                writer.write_number_value("workProfilePasswordMinLetterCharacters", @work_profile_password_min_letter_characters) unless @work_profile_password_min_letter_characters.nil?
+                writer.write_number_value("workProfilePasswordMinLowerCaseCharacters", @work_profile_password_min_lower_case_characters) unless @work_profile_password_min_lower_case_characters.nil?
+                writer.write_number_value("workProfilePasswordMinNonLetterCharacters", @work_profile_password_min_non_letter_characters) unless @work_profile_password_min_non_letter_characters.nil?
+                writer.write_number_value("workProfilePasswordMinNumericCharacters", @work_profile_password_min_numeric_characters) unless @work_profile_password_min_numeric_characters.nil?
+                writer.write_number_value("workProfilePasswordMinSymbolCharacters", @work_profile_password_min_symbol_characters) unless @work_profile_password_min_symbol_characters.nil?
+                writer.write_number_value("workProfilePasswordMinUpperCaseCharacters", @work_profile_password_min_upper_case_characters) unless @work_profile_password_min_upper_case_characters.nil?
+                writer.write_number_value("workProfilePasswordMinimumLength", @work_profile_password_minimum_length) unless @work_profile_password_minimum_length.nil?
+                writer.write_number_value("workProfilePasswordMinutesOfInactivityBeforeScreenTimeout", @work_profile_password_minutes_of_inactivity_before_screen_timeout) unless @work_profile_password_minutes_of_inactivity_before_screen_timeout.nil?
+                writer.write_number_value("workProfilePasswordPreviousPasswordBlockCount", @work_profile_password_previous_password_block_count) unless @work_profile_password_previous_password_block_count.nil?
+                writer.write_enum_value("workProfilePasswordRequiredType", @work_profile_password_required_type) unless @work_profile_password_required_type.nil?
+                writer.write_number_value("workProfilePasswordSignInFailureCountBeforeFactoryReset", @work_profile_password_sign_in_failure_count_before_factory_reset) unless @work_profile_password_sign_in_failure_count_before_factory_reset.nil?
+                writer.write_boolean_value("workProfileRequirePassword", @work_profile_require_password) unless @work_profile_require_password.nil?
             end
             ## 
             ## Gets the workProfileBlockAddingAccounts property value. Block users from adding/removing accounts in work profile.

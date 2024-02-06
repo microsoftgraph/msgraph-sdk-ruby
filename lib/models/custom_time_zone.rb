@@ -81,9 +81,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("bias", @bias)
-                writer.write_object_value("daylightOffset", @daylight_offset)
-                writer.write_object_value("standardOffset", @standard_offset)
+                writer.write_number_value("bias", @bias) unless @bias.nil?
+                writer.write_object_value("daylightOffset", @daylight_offset) unless @daylight_offset.nil?
+                writer.write_object_value("standardOffset", @standard_offset) unless @standard_offset.nil?
             end
             ## 
             ## Gets the standardOffset property value. Specifies when the time zone switches from daylight saving time to standard time.

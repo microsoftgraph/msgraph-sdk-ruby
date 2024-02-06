@@ -191,14 +191,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("allowedCombinations", @allowed_combinations)
-                writer.write_collection_of_object_values("combinationConfigurations", @combination_configurations)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("modifiedDateTime", @modified_date_time)
-                writer.write_enum_value("policyType", @policy_type)
-                writer.write_enum_value("requirementsSatisfied", @requirements_satisfied)
+                writer.write_collection_of_object_values("allowedCombinations", @allowed_combinations) unless @allowed_combinations.nil?
+                writer.write_collection_of_object_values("combinationConfigurations", @combination_configurations) unless @combination_configurations.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("modifiedDateTime", @modified_date_time) unless @modified_date_time.nil?
+                writer.write_enum_value("policyType", @policy_type) unless @policy_type.nil?
+                writer.write_enum_value("requirementsSatisfied", @requirements_satisfied) unless @requirements_satisfied.nil?
             end
         end
     end

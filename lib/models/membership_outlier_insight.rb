@@ -172,13 +172,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("container", @container)
-                writer.write_string_value("containerId", @container_id)
-                writer.write_object_value("lastModifiedBy", @last_modified_by)
-                writer.write_object_value("member", @member)
-                writer.write_string_value("memberId", @member_id)
-                writer.write_enum_value("outlierContainerType", @outlier_container_type)
-                writer.write_enum_value("outlierMemberType", @outlier_member_type)
+                writer.write_object_value("container", @container) unless @container.nil?
+                writer.write_string_value("containerId", @container_id) unless @container_id.nil?
+                writer.write_object_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_object_value("member", @member) unless @member.nil?
+                writer.write_string_value("memberId", @member_id) unless @member_id.nil?
+                writer.write_enum_value("outlierContainerType", @outlier_container_type) unless @outlier_container_type.nil?
+                writer.write_enum_value("outlierMemberType", @outlier_member_type) unless @outlier_member_type.nil?
             end
         end
     end

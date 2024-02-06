@@ -141,11 +141,11 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_boolean_value("check32BitOn64System", @check32_bit_on64_system)
-                writer.write_string_value("comparisonValue", @comparison_value)
-                writer.write_string_value("keyPath", @key_path)
-                writer.write_enum_value("operationType", @operation_type)
-                writer.write_enum_value("operator", @operator)
-                writer.write_string_value("valueName", @value_name)
+                writer.write_string_value("comparisonValue", @comparison_value) unless @comparison_value.nil?
+                writer.write_string_value("keyPath", @key_path) unless @key_path.nil?
+                writer.write_enum_value("operationType", @operation_type) unless @operation_type.nil?
+                writer.write_enum_value("operator", @operator) unless @operator.nil?
+                writer.write_string_value("valueName", @value_name) unless @value_name.nil?
             end
             ## 
             ## Gets the valueName property value. The name of the registry value to detect.

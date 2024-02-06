@@ -249,18 +249,18 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("audioBitsPerSample", @audio_bits_per_sample)
-                writer.write_number_value("audioChannels", @audio_channels)
-                writer.write_string_value("audioFormat", @audio_format)
-                writer.write_number_value("audioSamplesPerSecond", @audio_samples_per_second)
-                writer.write_number_value("bitrate", @bitrate)
-                writer.write_object_value("duration", @duration)
-                writer.write_string_value("fourCC", @four_c_c)
-                writer.write_object_value("frameRate", @frame_rate)
-                writer.write_number_value("height", @height)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("width", @width)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("audioBitsPerSample", @audio_bits_per_sample) unless @audio_bits_per_sample.nil?
+                writer.write_number_value("audioChannels", @audio_channels) unless @audio_channels.nil?
+                writer.write_string_value("audioFormat", @audio_format) unless @audio_format.nil?
+                writer.write_number_value("audioSamplesPerSecond", @audio_samples_per_second) unless @audio_samples_per_second.nil?
+                writer.write_number_value("bitrate", @bitrate) unless @bitrate.nil?
+                writer.write_object_value("duration", @duration) unless @duration.nil?
+                writer.write_string_value("fourCC", @four_c_c) unless @four_c_c.nil?
+                writer.write_object_value("frameRate", @frame_rate) unless @frame_rate.nil?
+                writer.write_number_value("height", @height) unless @height.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("width", @width) unless @width.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the width property value. Width of the video, in pixels.

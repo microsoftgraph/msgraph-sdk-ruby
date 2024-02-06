@@ -117,11 +117,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_collection_of_primitive_values("nextExpectedRanges", @next_expected_ranges)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("uploadUrl", @upload_url)
-                writer.write_additional_data(@additional_data)
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_collection_of_primitive_values("nextExpectedRanges", @next_expected_ranges) unless @next_expected_ranges.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("uploadUrl", @upload_url) unless @upload_url.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the uploadUrl property value. The URL endpoint that accepts PUT requests for byte ranges of the file.

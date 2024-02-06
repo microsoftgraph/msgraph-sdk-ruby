@@ -190,14 +190,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_primitive_values("clientApplicationIds", @client_application_ids)
-                writer.write_collection_of_primitive_values("clientApplicationPublisherIds", @client_application_publisher_ids)
-                writer.write_collection_of_primitive_values("clientApplicationTenantIds", @client_application_tenant_ids)
-                writer.write_boolean_value("clientApplicationsFromVerifiedPublisherOnly", @client_applications_from_verified_publisher_only)
-                writer.write_string_value("permissionClassification", @permission_classification)
-                writer.write_enum_value("permissionType", @permission_type)
-                writer.write_collection_of_primitive_values("permissions", @permissions)
-                writer.write_string_value("resourceApplication", @resource_application)
+                writer.write_collection_of_primitive_values("clientApplicationIds", @client_application_ids) unless @client_application_ids.nil?
+                writer.write_collection_of_primitive_values("clientApplicationPublisherIds", @client_application_publisher_ids) unless @client_application_publisher_ids.nil?
+                writer.write_collection_of_primitive_values("clientApplicationTenantIds", @client_application_tenant_ids) unless @client_application_tenant_ids.nil?
+                writer.write_boolean_value("clientApplicationsFromVerifiedPublisherOnly", @client_applications_from_verified_publisher_only) unless @client_applications_from_verified_publisher_only.nil?
+                writer.write_string_value("permissionClassification", @permission_classification) unless @permission_classification.nil?
+                writer.write_enum_value("permissionType", @permission_type) unless @permission_type.nil?
+                writer.write_collection_of_primitive_values("permissions", @permissions) unless @permissions.nil?
+                writer.write_string_value("resourceApplication", @resource_application) unless @resource_application.nil?
             end
         end
     end

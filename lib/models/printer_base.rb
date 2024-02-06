@@ -204,15 +204,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("capabilities", @capabilities)
-                writer.write_object_value("defaults", @defaults)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("isAcceptingJobs", @is_accepting_jobs)
-                writer.write_collection_of_object_values("jobs", @jobs)
-                writer.write_object_value("location", @location)
-                writer.write_string_value("manufacturer", @manufacturer)
-                writer.write_string_value("model", @model)
-                writer.write_object_value("status", @status)
+                writer.write_object_value("capabilities", @capabilities) unless @capabilities.nil?
+                writer.write_object_value("defaults", @defaults) unless @defaults.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("isAcceptingJobs", @is_accepting_jobs) unless @is_accepting_jobs.nil?
+                writer.write_collection_of_object_values("jobs", @jobs) unless @jobs.nil?
+                writer.write_object_value("location", @location) unless @location.nil?
+                writer.write_string_value("manufacturer", @manufacturer) unless @manufacturer.nil?
+                writer.write_string_value("model", @model) unless @model.nil?
+                writer.write_object_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The status property

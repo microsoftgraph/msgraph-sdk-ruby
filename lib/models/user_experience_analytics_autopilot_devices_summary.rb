@@ -118,11 +118,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("devicesNotAutopilotRegistered", @devices_not_autopilot_registered)
-                writer.write_number_value("devicesWithoutAutopilotProfileAssigned", @devices_without_autopilot_profile_assigned)
-                writer.write_string_value("@odata.type", @odata_type)
+                writer.write_number_value("devicesNotAutopilotRegistered", @devices_not_autopilot_registered) unless @devices_not_autopilot_registered.nil?
+                writer.write_number_value("devicesWithoutAutopilotProfileAssigned", @devices_without_autopilot_profile_assigned) unless @devices_without_autopilot_profile_assigned.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
                 writer.write_number_value("totalWindows10DevicesWithoutTenantAttached", @total_windows10_devices_without_tenant_attached)
-                writer.write_additional_data(@additional_data)
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the totalWindows10DevicesWithoutTenantAttached property value. The count of windows 10 devices that are Intune and co-managed. Read-only.

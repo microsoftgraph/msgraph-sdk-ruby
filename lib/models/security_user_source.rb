@@ -81,9 +81,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("email", @email)
-                writer.write_enum_value("includedSources", @included_sources)
-                writer.write_string_value("siteWebUrl", @site_web_url)
+                writer.write_string_value("email", @email) unless @email.nil?
+                writer.write_enum_value("includedSources", @included_sources) unless @included_sources.nil?
+                writer.write_string_value("siteWebUrl", @site_web_url) unless @site_web_url.nil?
             end
             ## 
             ## Gets the siteWebUrl property value. The URL of the user's OneDrive for Business site. Read-only.

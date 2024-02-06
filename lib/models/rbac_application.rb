@@ -209,15 +209,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("resourceNamespaces", @resource_namespaces)
-                writer.write_collection_of_object_values("roleAssignmentScheduleInstances", @role_assignment_schedule_instances)
-                writer.write_collection_of_object_values("roleAssignmentScheduleRequests", @role_assignment_schedule_requests)
-                writer.write_collection_of_object_values("roleAssignmentSchedules", @role_assignment_schedules)
-                writer.write_collection_of_object_values("roleAssignments", @role_assignments)
-                writer.write_collection_of_object_values("roleDefinitions", @role_definitions)
-                writer.write_collection_of_object_values("roleEligibilityScheduleInstances", @role_eligibility_schedule_instances)
-                writer.write_collection_of_object_values("roleEligibilityScheduleRequests", @role_eligibility_schedule_requests)
-                writer.write_collection_of_object_values("roleEligibilitySchedules", @role_eligibility_schedules)
+                writer.write_collection_of_object_values("resourceNamespaces", @resource_namespaces) unless @resource_namespaces.nil?
+                writer.write_collection_of_object_values("roleAssignmentScheduleInstances", @role_assignment_schedule_instances) unless @role_assignment_schedule_instances.nil?
+                writer.write_collection_of_object_values("roleAssignmentScheduleRequests", @role_assignment_schedule_requests) unless @role_assignment_schedule_requests.nil?
+                writer.write_collection_of_object_values("roleAssignmentSchedules", @role_assignment_schedules) unless @role_assignment_schedules.nil?
+                writer.write_collection_of_object_values("roleAssignments", @role_assignments) unless @role_assignments.nil?
+                writer.write_collection_of_object_values("roleDefinitions", @role_definitions) unless @role_definitions.nil?
+                writer.write_collection_of_object_values("roleEligibilityScheduleInstances", @role_eligibility_schedule_instances) unless @role_eligibility_schedule_instances.nil?
+                writer.write_collection_of_object_values("roleEligibilityScheduleRequests", @role_eligibility_schedule_requests) unless @role_eligibility_schedule_requests.nil?
+                writer.write_collection_of_object_values("roleEligibilitySchedules", @role_eligibility_schedules) unless @role_eligibility_schedules.nil?
             end
         end
     end

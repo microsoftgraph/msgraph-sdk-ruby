@@ -57,7 +57,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("learningCourseActivities", @learning_course_activities)
+                writer.write_collection_of_object_values("learningCourseActivities", @learning_course_activities) unless @learning_course_activities.nil?
             end
         end
     end

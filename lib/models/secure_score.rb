@@ -214,16 +214,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("activeUserCount", @active_user_count)
-                writer.write_collection_of_object_values("averageComparativeScores", @average_comparative_scores)
-                writer.write_string_value("azureTenantId", @azure_tenant_id)
-                writer.write_collection_of_object_values("controlScores", @control_scores)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("currentScore", @current_score)
-                writer.write_collection_of_primitive_values("enabledServices", @enabled_services)
-                writer.write_number_value("licensedUserCount", @licensed_user_count)
-                writer.write_object_value("maxScore", @max_score)
-                writer.write_object_value("vendorInformation", @vendor_information)
+                writer.write_number_value("activeUserCount", @active_user_count) unless @active_user_count.nil?
+                writer.write_collection_of_object_values("averageComparativeScores", @average_comparative_scores) unless @average_comparative_scores.nil?
+                writer.write_string_value("azureTenantId", @azure_tenant_id) unless @azure_tenant_id.nil?
+                writer.write_collection_of_object_values("controlScores", @control_scores) unless @control_scores.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("currentScore", @current_score) unless @current_score.nil?
+                writer.write_collection_of_primitive_values("enabledServices", @enabled_services) unless @enabled_services.nil?
+                writer.write_number_value("licensedUserCount", @licensed_user_count) unless @licensed_user_count.nil?
+                writer.write_object_value("maxScore", @max_score) unless @max_score.nil?
+                writer.write_object_value("vendorInformation", @vendor_information) unless @vendor_information.nil?
             end
             ## 
             ## Gets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.

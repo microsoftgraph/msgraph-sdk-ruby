@@ -237,18 +237,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("comment", @comment)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_date_time_value("deletedDateTime", @deleted_date_time)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("history", @history)
-                writer.write_boolean_value("hostOnly", @host_only)
-                writer.write_string_value("hostOrDomain", @host_or_domain)
-                writer.write_object_value("lastModifiedBy", @last_modified_by)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_string_value("path", @path)
-                writer.write_enum_value("sourceEnvironment", @source_environment)
-                writer.write_enum_value("status", @status)
+                writer.write_string_value("comment", @comment) unless @comment.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_date_time_value("deletedDateTime", @deleted_date_time) unless @deleted_date_time.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("history", @history) unless @history.nil?
+                writer.write_boolean_value("hostOnly", @host_only) unless @host_only.nil?
+                writer.write_string_value("hostOrDomain", @host_or_domain) unless @host_or_domain.nil?
+                writer.write_object_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_string_value("path", @path) unless @path.nil?
+                writer.write_enum_value("sourceEnvironment", @source_environment) unless @source_environment.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the sourceEnvironment property value. The sourceEnvironment property

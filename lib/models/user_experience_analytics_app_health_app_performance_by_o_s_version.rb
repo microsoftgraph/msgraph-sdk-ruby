@@ -211,15 +211,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("activeDeviceCount", @active_device_count)
-                writer.write_number_value("appCrashCount", @app_crash_count)
-                writer.write_string_value("appDisplayName", @app_display_name)
-                writer.write_string_value("appName", @app_name)
-                writer.write_string_value("appPublisher", @app_publisher)
-                writer.write_number_value("appUsageDuration", @app_usage_duration)
-                writer.write_number_value("meanTimeToFailureInMinutes", @mean_time_to_failure_in_minutes)
-                writer.write_string_value("osBuildNumber", @os_build_number)
-                writer.write_string_value("osVersion", @os_version)
+                writer.write_number_value("activeDeviceCount", @active_device_count) unless @active_device_count.nil?
+                writer.write_number_value("appCrashCount", @app_crash_count) unless @app_crash_count.nil?
+                writer.write_string_value("appDisplayName", @app_display_name) unless @app_display_name.nil?
+                writer.write_string_value("appName", @app_name) unless @app_name.nil?
+                writer.write_string_value("appPublisher", @app_publisher) unless @app_publisher.nil?
+                writer.write_number_value("appUsageDuration", @app_usage_duration) unless @app_usage_duration.nil?
+                writer.write_number_value("meanTimeToFailureInMinutes", @mean_time_to_failure_in_minutes) unless @mean_time_to_failure_in_minutes.nil?
+                writer.write_string_value("osBuildNumber", @os_build_number) unless @os_build_number.nil?
+                writer.write_string_value("osVersion", @os_version) unless @os_version.nil?
             end
         end
     end

@@ -96,9 +96,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("contentData", @content_data)
-                writer.write_enum_value("destinationRoutingReason", @destination_routing_reason)
-                writer.write_string_value("recipientEmail", @recipient_email)
+                writer.write_string_value("contentData", @content_data) unless @content_data.nil?
+                writer.write_enum_value("destinationRoutingReason", @destination_routing_reason) unless @destination_routing_reason.nil?
+                writer.write_string_value("recipientEmail", @recipient_email) unless @recipient_email.nil?
             end
         end
     end

@@ -118,11 +118,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("apiConnectors", @api_connectors)
+                writer.write_collection_of_object_values("apiConnectors", @api_connectors) unless @api_connectors.nil?
                 writer.write_collection_of_object_values("b2xUserFlows", @b2x_user_flows)
-                writer.write_object_value("conditionalAccess", @conditional_access)
-                writer.write_collection_of_object_values("identityProviders", @identity_providers)
-                writer.write_collection_of_object_values("userFlowAttributes", @user_flow_attributes)
+                writer.write_object_value("conditionalAccess", @conditional_access) unless @conditional_access.nil?
+                writer.write_collection_of_object_values("identityProviders", @identity_providers) unless @identity_providers.nil?
+                writer.write_collection_of_object_values("userFlowAttributes", @user_flow_attributes) unless @user_flow_attributes.nil?
             end
             ## 
             ## Gets the userFlowAttributes property value. Represents entry point for identity userflow attributes.

@@ -177,15 +177,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("defaultValue", @default_value)
-                writer.write_boolean_value("exportMissingReferences", @export_missing_references)
-                writer.write_enum_value("flowBehavior", @flow_behavior)
-                writer.write_enum_value("flowType", @flow_type)
-                writer.write_number_value("matchingPriority", @matching_priority)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("source", @source)
-                writer.write_string_value("targetAttributeName", @target_attribute_name)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("defaultValue", @default_value) unless @default_value.nil?
+                writer.write_boolean_value("exportMissingReferences", @export_missing_references) unless @export_missing_references.nil?
+                writer.write_enum_value("flowBehavior", @flow_behavior) unless @flow_behavior.nil?
+                writer.write_enum_value("flowType", @flow_type) unless @flow_type.nil?
+                writer.write_number_value("matchingPriority", @matching_priority) unless @matching_priority.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("source", @source) unless @source.nil?
+                writer.write_string_value("targetAttributeName", @target_attribute_name) unless @target_attribute_name.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the source property value. Defines how a value should be extracted (or transformed) from the source object.

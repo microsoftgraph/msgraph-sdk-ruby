@@ -61,8 +61,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("plans", @plans)
-                writer.write_collection_of_object_values("tasks", @tasks)
+                writer.write_collection_of_object_values("plans", @plans) unless @plans.nil?
+                writer.write_collection_of_object_values("tasks", @tasks) unless @tasks.nil?
             end
             ## 
             ## Gets the tasks property value. Read-only. Nullable. Returns the plannerPlans shared with the user.

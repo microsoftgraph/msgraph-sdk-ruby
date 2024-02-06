@@ -76,8 +76,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("description", @description)
-                writer.write_number_value("maxAttributesPerSet", @max_attributes_per_set)
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_number_value("maxAttributesPerSet", @max_attributes_per_set) unless @max_attributes_per_set.nil?
             end
         end
     end

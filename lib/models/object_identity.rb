@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("issuer", @issuer)
-                writer.write_string_value("issuerAssignedId", @issuer_assigned_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("signInType", @sign_in_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("issuer", @issuer) unless @issuer.nil?
+                writer.write_string_value("issuerAssignedId", @issuer_assigned_id) unless @issuer_assigned_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("signInType", @sign_in_type) unless @sign_in_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the signInType property value. Specifies the user sign-in types in your directory, such as emailAddress, userName, federated, or userPrincipalName. federated represents a unique identifier for a user from an issuer, that can be in any format chosen by the issuer. Setting or updating a userPrincipalName identity will update the value of the userPrincipalName property on the user object. The validations performed on the userPrincipalName property on the user object, for example, verified domains and acceptable characters, will be performed when setting or updating a userPrincipalName identity. Additional validation is enforced on issuerAssignedId when the sign-in type is set to emailAddress or userName. This property can also be set to any custom string.

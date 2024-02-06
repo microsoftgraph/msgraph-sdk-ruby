@@ -226,16 +226,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("allowCustomAssignmentSchedule", @allow_custom_assignment_schedule)
-                writer.write_boolean_value("enableOnBehalfRequestorsToAddAccess", @enable_on_behalf_requestors_to_add_access)
-                writer.write_boolean_value("enableOnBehalfRequestorsToRemoveAccess", @enable_on_behalf_requestors_to_remove_access)
-                writer.write_boolean_value("enableOnBehalfRequestorsToUpdateAccess", @enable_on_behalf_requestors_to_update_access)
-                writer.write_boolean_value("enableTargetsToSelfAddAccess", @enable_targets_to_self_add_access)
-                writer.write_boolean_value("enableTargetsToSelfRemoveAccess", @enable_targets_to_self_remove_access)
-                writer.write_boolean_value("enableTargetsToSelfUpdateAccess", @enable_targets_to_self_update_access)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("onBehalfRequestors", @on_behalf_requestors)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("allowCustomAssignmentSchedule", @allow_custom_assignment_schedule) unless @allow_custom_assignment_schedule.nil?
+                writer.write_boolean_value("enableOnBehalfRequestorsToAddAccess", @enable_on_behalf_requestors_to_add_access) unless @enable_on_behalf_requestors_to_add_access.nil?
+                writer.write_boolean_value("enableOnBehalfRequestorsToRemoveAccess", @enable_on_behalf_requestors_to_remove_access) unless @enable_on_behalf_requestors_to_remove_access.nil?
+                writer.write_boolean_value("enableOnBehalfRequestorsToUpdateAccess", @enable_on_behalf_requestors_to_update_access) unless @enable_on_behalf_requestors_to_update_access.nil?
+                writer.write_boolean_value("enableTargetsToSelfAddAccess", @enable_targets_to_self_add_access) unless @enable_targets_to_self_add_access.nil?
+                writer.write_boolean_value("enableTargetsToSelfRemoveAccess", @enable_targets_to_self_remove_access) unless @enable_targets_to_self_remove_access.nil?
+                writer.write_boolean_value("enableTargetsToSelfUpdateAccess", @enable_targets_to_self_update_access) unless @enable_targets_to_self_update_access.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("onBehalfRequestors", @on_behalf_requestors) unless @on_behalf_requestors.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

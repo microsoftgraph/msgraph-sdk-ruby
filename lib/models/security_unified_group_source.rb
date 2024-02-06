@@ -77,8 +77,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("group", @group)
-                writer.write_enum_value("includedSources", @included_sources)
+                writer.write_object_value("group", @group) unless @group.nil?
+                writer.write_enum_value("includedSources", @included_sources) unless @included_sources.nil?
             end
         end
     end

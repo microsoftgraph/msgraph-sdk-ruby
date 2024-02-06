@@ -169,13 +169,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("error", @error)
-                writer.write_collection_of_primitive_values("evaluationResult", @evaluation_result)
-                writer.write_boolean_value("evaluationSucceeded", @evaluation_succeeded)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("parsedExpression", @parsed_expression)
-                writer.write_boolean_value("parsingSucceeded", @parsing_succeeded)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("error", @error) unless @error.nil?
+                writer.write_collection_of_primitive_values("evaluationResult", @evaluation_result) unless @evaluation_result.nil?
+                writer.write_boolean_value("evaluationSucceeded", @evaluation_succeeded) unless @evaluation_succeeded.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("parsedExpression", @parsed_expression) unless @parsed_expression.nil?
+                writer.write_boolean_value("parsingSucceeded", @parsing_succeeded) unless @parsing_succeeded.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

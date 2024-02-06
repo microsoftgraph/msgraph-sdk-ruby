@@ -527,34 +527,34 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("accountEnabled", @account_enabled)
-                writer.write_collection_of_object_values("alternativeSecurityIds", @alternative_security_ids)
-                writer.write_date_time_value("approximateLastSignInDateTime", @approximate_last_sign_in_date_time)
-                writer.write_date_time_value("complianceExpirationDateTime", @compliance_expiration_date_time)
-                writer.write_string_value("deviceCategory", @device_category)
-                writer.write_string_value("deviceId", @device_id)
-                writer.write_string_value("deviceMetadata", @device_metadata)
-                writer.write_string_value("deviceOwnership", @device_ownership)
-                writer.write_number_value("deviceVersion", @device_version)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("enrollmentProfileName", @enrollment_profile_name)
-                writer.write_collection_of_object_values("extensions", @extensions)
-                writer.write_boolean_value("isCompliant", @is_compliant)
-                writer.write_boolean_value("isManaged", @is_managed)
-                writer.write_string_value("mdmAppId", @mdm_app_id)
-                writer.write_collection_of_object_values("memberOf", @member_of)
-                writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time)
-                writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
-                writer.write_string_value("operatingSystem", @operating_system)
-                writer.write_string_value("operatingSystemVersion", @operating_system_version)
-                writer.write_collection_of_primitive_values("physicalIds", @physical_ids)
-                writer.write_string_value("profileType", @profile_type)
-                writer.write_collection_of_object_values("registeredOwners", @registered_owners)
-                writer.write_collection_of_object_values("registeredUsers", @registered_users)
-                writer.write_date_time_value("registrationDateTime", @registration_date_time)
-                writer.write_collection_of_primitive_values("systemLabels", @system_labels)
-                writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of)
-                writer.write_string_value("trustType", @trust_type)
+                writer.write_boolean_value("accountEnabled", @account_enabled) unless @account_enabled.nil?
+                writer.write_collection_of_object_values("alternativeSecurityIds", @alternative_security_ids) unless @alternative_security_ids.nil?
+                writer.write_date_time_value("approximateLastSignInDateTime", @approximate_last_sign_in_date_time) unless @approximate_last_sign_in_date_time.nil?
+                writer.write_date_time_value("complianceExpirationDateTime", @compliance_expiration_date_time) unless @compliance_expiration_date_time.nil?
+                writer.write_string_value("deviceCategory", @device_category) unless @device_category.nil?
+                writer.write_string_value("deviceId", @device_id) unless @device_id.nil?
+                writer.write_string_value("deviceMetadata", @device_metadata) unless @device_metadata.nil?
+                writer.write_string_value("deviceOwnership", @device_ownership) unless @device_ownership.nil?
+                writer.write_number_value("deviceVersion", @device_version) unless @device_version.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("enrollmentProfileName", @enrollment_profile_name) unless @enrollment_profile_name.nil?
+                writer.write_collection_of_object_values("extensions", @extensions) unless @extensions.nil?
+                writer.write_boolean_value("isCompliant", @is_compliant) unless @is_compliant.nil?
+                writer.write_boolean_value("isManaged", @is_managed) unless @is_managed.nil?
+                writer.write_string_value("mdmAppId", @mdm_app_id) unless @mdm_app_id.nil?
+                writer.write_collection_of_object_values("memberOf", @member_of) unless @member_of.nil?
+                writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time) unless @on_premises_last_sync_date_time.nil?
+                writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled) unless @on_premises_sync_enabled.nil?
+                writer.write_string_value("operatingSystem", @operating_system) unless @operating_system.nil?
+                writer.write_string_value("operatingSystemVersion", @operating_system_version) unless @operating_system_version.nil?
+                writer.write_collection_of_primitive_values("physicalIds", @physical_ids) unless @physical_ids.nil?
+                writer.write_string_value("profileType", @profile_type) unless @profile_type.nil?
+                writer.write_collection_of_object_values("registeredOwners", @registered_owners) unless @registered_owners.nil?
+                writer.write_collection_of_object_values("registeredUsers", @registered_users) unless @registered_users.nil?
+                writer.write_date_time_value("registrationDateTime", @registration_date_time) unless @registration_date_time.nil?
+                writer.write_collection_of_primitive_values("systemLabels", @system_labels) unless @system_labels.nil?
+                writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of) unless @transitive_member_of.nil?
+                writer.write_string_value("trustType", @trust_type) unless @trust_type.nil?
             end
             ## 
             ## Gets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).

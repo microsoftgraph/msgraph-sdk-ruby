@@ -61,8 +61,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("categoryDescriptions", @category_descriptions)
-                writer.write_object_value("sharedWith", @shared_with)
+                writer.write_object_value("categoryDescriptions", @category_descriptions) unless @category_descriptions.nil?
+                writer.write_object_value("sharedWith", @shared_with) unless @shared_with.nil?
             end
             ## 
             ## Gets the sharedWith property value. Set of user IDs that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required for them to access the plan owned by the group.

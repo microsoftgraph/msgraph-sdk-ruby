@@ -121,12 +121,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("daysOfWeek", @days_of_week)
-                writer.write_time_value("endTime", @end_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_time_value("startTime", @start_time)
-                writer.write_object_value("timeZone", @time_zone)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_object_values("daysOfWeek", @days_of_week) unless @days_of_week.nil?
+                writer.write_time_value("endTime", @end_time) unless @end_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_time_value("startTime", @start_time) unless @start_time.nil?
+                writer.write_object_value("timeZone", @time_zone) unless @time_zone.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the startTime property value. The time of the day that the user starts working.

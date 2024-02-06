@@ -42,7 +42,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("siteLists", @site_lists)
+                writer.write_collection_of_object_values("siteLists", @site_lists) unless @site_lists.nil?
             end
             ## 
             ## Gets the siteLists property value. A collection of site lists to support Internet Explorer mode.

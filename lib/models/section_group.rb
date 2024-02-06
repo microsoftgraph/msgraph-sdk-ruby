@@ -153,12 +153,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("parentNotebook", @parent_notebook)
-                writer.write_object_value("parentSectionGroup", @parent_section_group)
-                writer.write_collection_of_object_values("sectionGroups", @section_groups)
-                writer.write_string_value("sectionGroupsUrl", @section_groups_url)
-                writer.write_collection_of_object_values("sections", @sections)
-                writer.write_string_value("sectionsUrl", @sections_url)
+                writer.write_object_value("parentNotebook", @parent_notebook) unless @parent_notebook.nil?
+                writer.write_object_value("parentSectionGroup", @parent_section_group) unless @parent_section_group.nil?
+                writer.write_collection_of_object_values("sectionGroups", @section_groups) unless @section_groups.nil?
+                writer.write_string_value("sectionGroupsUrl", @section_groups_url) unless @section_groups_url.nil?
+                writer.write_collection_of_object_values("sections", @sections) unless @sections.nil?
+                writer.write_string_value("sectionsUrl", @sections_url) unless @sections_url.nil?
             end
         end
     end

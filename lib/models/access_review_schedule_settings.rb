@@ -321,21 +321,21 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("applyActions", @apply_actions)
-                writer.write_boolean_value("autoApplyDecisionsEnabled", @auto_apply_decisions_enabled)
-                writer.write_boolean_value("decisionHistoriesForReviewersEnabled", @decision_histories_for_reviewers_enabled)
-                writer.write_string_value("defaultDecision", @default_decision)
-                writer.write_boolean_value("defaultDecisionEnabled", @default_decision_enabled)
-                writer.write_number_value("instanceDurationInDays", @instance_duration_in_days)
-                writer.write_boolean_value("justificationRequiredOnApproval", @justification_required_on_approval)
-                writer.write_boolean_value("mailNotificationsEnabled", @mail_notifications_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("recommendationInsightSettings", @recommendation_insight_settings)
-                writer.write_duration_value("recommendationLookBackDuration", @recommendation_look_back_duration)
-                writer.write_boolean_value("recommendationsEnabled", @recommendations_enabled)
-                writer.write_object_value("recurrence", @recurrence)
-                writer.write_boolean_value("reminderNotificationsEnabled", @reminder_notifications_enabled)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_object_values("applyActions", @apply_actions) unless @apply_actions.nil?
+                writer.write_boolean_value("autoApplyDecisionsEnabled", @auto_apply_decisions_enabled) unless @auto_apply_decisions_enabled.nil?
+                writer.write_boolean_value("decisionHistoriesForReviewersEnabled", @decision_histories_for_reviewers_enabled) unless @decision_histories_for_reviewers_enabled.nil?
+                writer.write_string_value("defaultDecision", @default_decision) unless @default_decision.nil?
+                writer.write_boolean_value("defaultDecisionEnabled", @default_decision_enabled) unless @default_decision_enabled.nil?
+                writer.write_number_value("instanceDurationInDays", @instance_duration_in_days) unless @instance_duration_in_days.nil?
+                writer.write_boolean_value("justificationRequiredOnApproval", @justification_required_on_approval) unless @justification_required_on_approval.nil?
+                writer.write_boolean_value("mailNotificationsEnabled", @mail_notifications_enabled) unless @mail_notifications_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("recommendationInsightSettings", @recommendation_insight_settings) unless @recommendation_insight_settings.nil?
+                writer.write_duration_value("recommendationLookBackDuration", @recommendation_look_back_duration) unless @recommendation_look_back_duration.nil?
+                writer.write_boolean_value("recommendationsEnabled", @recommendations_enabled) unless @recommendations_enabled.nil?
+                writer.write_object_value("recurrence", @recurrence) unless @recurrence.nil?
+                writer.write_boolean_value("reminderNotificationsEnabled", @reminder_notifications_enabled) unless @reminder_notifications_enabled.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

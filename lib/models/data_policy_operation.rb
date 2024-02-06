@@ -93,12 +93,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("completedDateTime", @completed_date_time)
-                writer.write_object_value("progress", @progress)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("storageLocation", @storage_location)
-                writer.write_date_time_value("submittedDateTime", @submitted_date_time)
-                writer.write_string_value("userId", @user_id)
+                writer.write_date_time_value("completedDateTime", @completed_date_time) unless @completed_date_time.nil?
+                writer.write_object_value("progress", @progress) unless @progress.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("storageLocation", @storage_location) unless @storage_location.nil?
+                writer.write_date_time_value("submittedDateTime", @submitted_date_time) unless @submitted_date_time.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
             end
             ## 
             ## Gets the status property value. Possible values are: notStarted, running, complete, failed, unknownFutureValue.

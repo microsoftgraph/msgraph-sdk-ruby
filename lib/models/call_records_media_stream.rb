@@ -570,38 +570,38 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("audioCodec", @audio_codec)
-                writer.write_float_value("averageAudioDegradation", @average_audio_degradation)
-                writer.write_duration_value("averageAudioNetworkJitter", @average_audio_network_jitter)
-                writer.write_object_value("averageBandwidthEstimate", @average_bandwidth_estimate)
-                writer.write_duration_value("averageFreezeDuration", @average_freeze_duration)
-                writer.write_duration_value("averageJitter", @average_jitter)
-                writer.write_float_value("averagePacketLossRate", @average_packet_loss_rate)
-                writer.write_float_value("averageRatioOfConcealedSamples", @average_ratio_of_concealed_samples)
-                writer.write_float_value("averageReceivedFrameRate", @average_received_frame_rate)
-                writer.write_duration_value("averageRoundTripTime", @average_round_trip_time)
-                writer.write_float_value("averageVideoFrameLossPercentage", @average_video_frame_loss_percentage)
-                writer.write_float_value("averageVideoFrameRate", @average_video_frame_rate)
-                writer.write_float_value("averageVideoPacketLossRate", @average_video_packet_loss_rate)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_boolean_value("isAudioForwardErrorCorrectionUsed", @is_audio_forward_error_correction_used)
-                writer.write_float_value("lowFrameRateRatio", @low_frame_rate_ratio)
-                writer.write_float_value("lowVideoProcessingCapabilityRatio", @low_video_processing_capability_ratio)
-                writer.write_duration_value("maxAudioNetworkJitter", @max_audio_network_jitter)
-                writer.write_duration_value("maxJitter", @max_jitter)
-                writer.write_float_value("maxPacketLossRate", @max_packet_loss_rate)
-                writer.write_float_value("maxRatioOfConcealedSamples", @max_ratio_of_concealed_samples)
-                writer.write_duration_value("maxRoundTripTime", @max_round_trip_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("packetUtilization", @packet_utilization)
-                writer.write_float_value("postForwardErrorCorrectionPacketLossRate", @post_forward_error_correction_packet_loss_rate)
-                writer.write_duration_value("rmsFreezeDuration", @rms_freeze_duration)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_enum_value("streamDirection", @stream_direction)
-                writer.write_string_value("streamId", @stream_id)
-                writer.write_enum_value("videoCodec", @video_codec)
-                writer.write_boolean_value("wasMediaBypassed", @was_media_bypassed)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("audioCodec", @audio_codec) unless @audio_codec.nil?
+                writer.write_float_value("averageAudioDegradation", @average_audio_degradation) unless @average_audio_degradation.nil?
+                writer.write_duration_value("averageAudioNetworkJitter", @average_audio_network_jitter) unless @average_audio_network_jitter.nil?
+                writer.write_object_value("averageBandwidthEstimate", @average_bandwidth_estimate) unless @average_bandwidth_estimate.nil?
+                writer.write_duration_value("averageFreezeDuration", @average_freeze_duration) unless @average_freeze_duration.nil?
+                writer.write_duration_value("averageJitter", @average_jitter) unless @average_jitter.nil?
+                writer.write_float_value("averagePacketLossRate", @average_packet_loss_rate) unless @average_packet_loss_rate.nil?
+                writer.write_float_value("averageRatioOfConcealedSamples", @average_ratio_of_concealed_samples) unless @average_ratio_of_concealed_samples.nil?
+                writer.write_float_value("averageReceivedFrameRate", @average_received_frame_rate) unless @average_received_frame_rate.nil?
+                writer.write_duration_value("averageRoundTripTime", @average_round_trip_time) unless @average_round_trip_time.nil?
+                writer.write_float_value("averageVideoFrameLossPercentage", @average_video_frame_loss_percentage) unless @average_video_frame_loss_percentage.nil?
+                writer.write_float_value("averageVideoFrameRate", @average_video_frame_rate) unless @average_video_frame_rate.nil?
+                writer.write_float_value("averageVideoPacketLossRate", @average_video_packet_loss_rate) unless @average_video_packet_loss_rate.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_boolean_value("isAudioForwardErrorCorrectionUsed", @is_audio_forward_error_correction_used) unless @is_audio_forward_error_correction_used.nil?
+                writer.write_float_value("lowFrameRateRatio", @low_frame_rate_ratio) unless @low_frame_rate_ratio.nil?
+                writer.write_float_value("lowVideoProcessingCapabilityRatio", @low_video_processing_capability_ratio) unless @low_video_processing_capability_ratio.nil?
+                writer.write_duration_value("maxAudioNetworkJitter", @max_audio_network_jitter) unless @max_audio_network_jitter.nil?
+                writer.write_duration_value("maxJitter", @max_jitter) unless @max_jitter.nil?
+                writer.write_float_value("maxPacketLossRate", @max_packet_loss_rate) unless @max_packet_loss_rate.nil?
+                writer.write_float_value("maxRatioOfConcealedSamples", @max_ratio_of_concealed_samples) unless @max_ratio_of_concealed_samples.nil?
+                writer.write_duration_value("maxRoundTripTime", @max_round_trip_time) unless @max_round_trip_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("packetUtilization", @packet_utilization) unless @packet_utilization.nil?
+                writer.write_float_value("postForwardErrorCorrectionPacketLossRate", @post_forward_error_correction_packet_loss_rate) unless @post_forward_error_correction_packet_loss_rate.nil?
+                writer.write_duration_value("rmsFreezeDuration", @rms_freeze_duration) unless @rms_freeze_duration.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_enum_value("streamDirection", @stream_direction) unless @stream_direction.nil?
+                writer.write_string_value("streamId", @stream_id) unless @stream_id.nil?
+                writer.write_enum_value("videoCodec", @video_codec) unless @video_codec.nil?
+                writer.write_boolean_value("wasMediaBypassed", @was_media_bypassed) unless @was_media_bypassed.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the startDateTime property value. UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z

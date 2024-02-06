@@ -86,11 +86,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("sortBy", @sort_by)
-                writer.write_string_value("sortOrder", @sort_order)
-                writer.write_string_value("viewType", @view_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("sortBy", @sort_by) unless @sort_by.nil?
+                writer.write_string_value("sortOrder", @sort_order) unless @sort_order.nil?
+                writer.write_string_value("viewType", @view_type) unless @view_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sortBy property value. The method by which the folder should be sorted.

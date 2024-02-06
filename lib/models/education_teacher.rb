@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("externalId", @external_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("teacherNumber", @teacher_number)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("externalId", @external_id) unless @external_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("teacherNumber", @teacher_number) unless @teacher_number.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the teacherNumber property value. Teacher number.

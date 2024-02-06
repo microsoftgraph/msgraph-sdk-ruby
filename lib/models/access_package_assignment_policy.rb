@@ -309,21 +309,21 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("accessPackage", @access_package)
-                writer.write_enum_value("allowedTargetScope", @allowed_target_scope)
-                writer.write_object_value("automaticRequestSettings", @automatic_request_settings)
-                writer.write_object_value("catalog", @catalog)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_collection_of_object_values("customExtensionStageSettings", @custom_extension_stage_settings)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("expiration", @expiration)
-                writer.write_date_time_value("modifiedDateTime", @modified_date_time)
-                writer.write_collection_of_object_values("questions", @questions)
-                writer.write_object_value("requestApprovalSettings", @request_approval_settings)
-                writer.write_object_value("requestorSettings", @requestor_settings)
-                writer.write_object_value("reviewSettings", @review_settings)
-                writer.write_collection_of_object_values("specificAllowedTargets", @specific_allowed_targets)
+                writer.write_object_value("accessPackage", @access_package) unless @access_package.nil?
+                writer.write_enum_value("allowedTargetScope", @allowed_target_scope) unless @allowed_target_scope.nil?
+                writer.write_object_value("automaticRequestSettings", @automatic_request_settings) unless @automatic_request_settings.nil?
+                writer.write_object_value("catalog", @catalog) unless @catalog.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_collection_of_object_values("customExtensionStageSettings", @custom_extension_stage_settings) unless @custom_extension_stage_settings.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("expiration", @expiration) unless @expiration.nil?
+                writer.write_date_time_value("modifiedDateTime", @modified_date_time) unless @modified_date_time.nil?
+                writer.write_collection_of_object_values("questions", @questions) unless @questions.nil?
+                writer.write_object_value("requestApprovalSettings", @request_approval_settings) unless @request_approval_settings.nil?
+                writer.write_object_value("requestorSettings", @requestor_settings) unless @requestor_settings.nil?
+                writer.write_object_value("reviewSettings", @review_settings) unless @review_settings.nil?
+                writer.write_collection_of_object_values("specificAllowedTargets", @specific_allowed_targets) unless @specific_allowed_targets.nil?
             end
             ## 
             ## Gets the specificAllowedTargets property value. The principals that can be assigned access from an access package through this policy.

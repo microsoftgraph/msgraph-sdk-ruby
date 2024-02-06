@@ -159,14 +159,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("code", @code)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_boolean_value("isPaid", @is_paid)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_enum_value("theme", @theme)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("code", @code) unless @code.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_boolean_value("isPaid", @is_paid) unless @is_paid.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_enum_value("theme", @theme) unless @theme.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the startDateTime property value. The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.

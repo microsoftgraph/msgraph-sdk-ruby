@@ -185,20 +185,20 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("completedDateTime", @completed_date_time)
-                writer.write_number_value("failedTasksCount", @failed_tasks_count)
-                writer.write_number_value("failedUsersCount", @failed_users_count)
-                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
-                writer.write_enum_value("processingStatus", @processing_status)
-                writer.write_date_time_value("scheduledDateTime", @scheduled_date_time)
-                writer.write_date_time_value("startedDateTime", @started_date_time)
-                writer.write_number_value("successfulUsersCount", @successful_users_count)
-                writer.write_collection_of_object_values("taskProcessingResults", @task_processing_results)
-                writer.write_number_value("totalTasksCount", @total_tasks_count)
-                writer.write_number_value("totalUnprocessedTasksCount", @total_unprocessed_tasks_count)
-                writer.write_number_value("totalUsersCount", @total_users_count)
-                writer.write_collection_of_object_values("userProcessingResults", @user_processing_results)
-                writer.write_enum_value("workflowExecutionType", @workflow_execution_type)
+                writer.write_date_time_value("completedDateTime", @completed_date_time) unless @completed_date_time.nil?
+                writer.write_number_value("failedTasksCount", @failed_tasks_count) unless @failed_tasks_count.nil?
+                writer.write_number_value("failedUsersCount", @failed_users_count) unless @failed_users_count.nil?
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time) unless @last_updated_date_time.nil?
+                writer.write_enum_value("processingStatus", @processing_status) unless @processing_status.nil?
+                writer.write_date_time_value("scheduledDateTime", @scheduled_date_time) unless @scheduled_date_time.nil?
+                writer.write_date_time_value("startedDateTime", @started_date_time) unless @started_date_time.nil?
+                writer.write_number_value("successfulUsersCount", @successful_users_count) unless @successful_users_count.nil?
+                writer.write_collection_of_object_values("taskProcessingResults", @task_processing_results) unless @task_processing_results.nil?
+                writer.write_number_value("totalTasksCount", @total_tasks_count) unless @total_tasks_count.nil?
+                writer.write_number_value("totalUnprocessedTasksCount", @total_unprocessed_tasks_count) unless @total_unprocessed_tasks_count.nil?
+                writer.write_number_value("totalUsersCount", @total_users_count) unless @total_users_count.nil?
+                writer.write_collection_of_object_values("userProcessingResults", @user_processing_results) unless @user_processing_results.nil?
+                writer.write_enum_value("workflowExecutionType", @workflow_execution_type) unless @workflow_execution_type.nil?
             end
             ## 
             ## Gets the startedDateTime property value. The date time that the run execution started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.

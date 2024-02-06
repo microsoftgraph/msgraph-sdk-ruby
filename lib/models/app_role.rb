@@ -192,15 +192,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("allowedMemberTypes", @allowed_member_types)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_guid_value("id", @id)
-                writer.write_boolean_value("isEnabled", @is_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("origin", @origin)
-                writer.write_string_value("value", @value)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("allowedMemberTypes", @allowed_member_types) unless @allowed_member_types.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_guid_value("id", @id) unless @id.nil?
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("origin", @origin) unless @origin.nil?
+                writer.write_string_value("value", @value) unless @value.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the value property value. Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..

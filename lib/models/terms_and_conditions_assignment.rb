@@ -44,7 +44,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("target", @target)
+                writer.write_object_value("target", @target) unless @target.nil?
             end
             ## 
             ## Gets the target property value. Assignment target that the T&C policy is assigned to.

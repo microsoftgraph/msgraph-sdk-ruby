@@ -268,19 +268,19 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("assignCategories", @assign_categories)
-                writer.write_string_value("copyToFolder", @copy_to_folder)
-                writer.write_boolean_value("delete", @delete)
-                writer.write_collection_of_object_values("forwardAsAttachmentTo", @forward_as_attachment_to)
-                writer.write_collection_of_object_values("forwardTo", @forward_to)
-                writer.write_boolean_value("markAsRead", @mark_as_read)
-                writer.write_enum_value("markImportance", @mark_importance)
-                writer.write_string_value("moveToFolder", @move_to_folder)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("permanentDelete", @permanent_delete)
-                writer.write_collection_of_object_values("redirectTo", @redirect_to)
-                writer.write_boolean_value("stopProcessingRules", @stop_processing_rules)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("assignCategories", @assign_categories) unless @assign_categories.nil?
+                writer.write_string_value("copyToFolder", @copy_to_folder) unless @copy_to_folder.nil?
+                writer.write_boolean_value("delete", @delete) unless @delete.nil?
+                writer.write_collection_of_object_values("forwardAsAttachmentTo", @forward_as_attachment_to) unless @forward_as_attachment_to.nil?
+                writer.write_collection_of_object_values("forwardTo", @forward_to) unless @forward_to.nil?
+                writer.write_boolean_value("markAsRead", @mark_as_read) unless @mark_as_read.nil?
+                writer.write_enum_value("markImportance", @mark_importance) unless @mark_importance.nil?
+                writer.write_string_value("moveToFolder", @move_to_folder) unless @move_to_folder.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("permanentDelete", @permanent_delete) unless @permanent_delete.nil?
+                writer.write_collection_of_object_values("redirectTo", @redirect_to) unless @redirect_to.nil?
+                writer.write_boolean_value("stopProcessingRules", @stop_processing_rules) unless @stop_processing_rules.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the stopProcessingRules property value. Indicates whether subsequent rules should be evaluated.

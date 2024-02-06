@@ -256,19 +256,19 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("audioDeviceName", @audio_device_name)
-                writer.write_enum_value("bookingType", @booking_type)
-                writer.write_string_value("building", @building)
-                writer.write_number_value("capacity", @capacity)
-                writer.write_string_value("displayDeviceName", @display_device_name)
-                writer.write_string_value("emailAddress", @email_address)
-                writer.write_string_value("floorLabel", @floor_label)
-                writer.write_number_value("floorNumber", @floor_number)
-                writer.write_boolean_value("isWheelChairAccessible", @is_wheel_chair_accessible)
-                writer.write_string_value("label", @label)
-                writer.write_string_value("nickname", @nickname)
-                writer.write_collection_of_primitive_values("tags", @tags)
-                writer.write_string_value("videoDeviceName", @video_device_name)
+                writer.write_string_value("audioDeviceName", @audio_device_name) unless @audio_device_name.nil?
+                writer.write_enum_value("bookingType", @booking_type) unless @booking_type.nil?
+                writer.write_string_value("building", @building) unless @building.nil?
+                writer.write_number_value("capacity", @capacity) unless @capacity.nil?
+                writer.write_string_value("displayDeviceName", @display_device_name) unless @display_device_name.nil?
+                writer.write_string_value("emailAddress", @email_address) unless @email_address.nil?
+                writer.write_string_value("floorLabel", @floor_label) unless @floor_label.nil?
+                writer.write_number_value("floorNumber", @floor_number) unless @floor_number.nil?
+                writer.write_boolean_value("isWheelChairAccessible", @is_wheel_chair_accessible) unless @is_wheel_chair_accessible.nil?
+                writer.write_string_value("label", @label) unless @label.nil?
+                writer.write_string_value("nickname", @nickname) unless @nickname.nil?
+                writer.write_collection_of_primitive_values("tags", @tags) unless @tags.nil?
+                writer.write_string_value("videoDeviceName", @video_device_name) unless @video_device_name.nil?
             end
             ## 
             ## Gets the tags property value. Specifies additional features of the room, for example, details like the type of view or furniture type.

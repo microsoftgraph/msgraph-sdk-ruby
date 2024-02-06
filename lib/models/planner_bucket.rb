@@ -99,10 +99,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("name", @name)
-                writer.write_string_value("orderHint", @order_hint)
-                writer.write_string_value("planId", @plan_id)
-                writer.write_collection_of_object_values("tasks", @tasks)
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("orderHint", @order_hint) unless @order_hint.nil?
+                writer.write_string_value("planId", @plan_id) unless @plan_id.nil?
+                writer.write_collection_of_object_values("tasks", @tasks) unless @tasks.nil?
             end
             ## 
             ## Gets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.

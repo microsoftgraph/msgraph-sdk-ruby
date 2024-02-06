@@ -170,11 +170,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_date_time_value("certificationExpirationDateTime", @certification_expiration_date_time)
-                writer.write_boolean_value("isPublisherAttested", @is_publisher_attested)
-                writer.write_date_time_value("lastCertificationDateTime", @last_certification_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_date_time_value("certificationExpirationDateTime", @certification_expiration_date_time) unless @certification_expiration_date_time.nil?
+                writer.write_boolean_value("isPublisherAttested", @is_publisher_attested) unless @is_publisher_attested.nil?
+                writer.write_date_time_value("lastCertificationDateTime", @last_certification_date_time) unless @last_certification_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

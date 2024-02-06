@@ -176,14 +176,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("externalSponsors", @external_sponsors)
-                writer.write_collection_of_object_values("identitySources", @identity_sources)
-                writer.write_collection_of_object_values("internalSponsors", @internal_sponsors)
-                writer.write_date_time_value("modifiedDateTime", @modified_date_time)
-                writer.write_enum_value("state", @state)
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("externalSponsors", @external_sponsors) unless @external_sponsors.nil?
+                writer.write_collection_of_object_values("identitySources", @identity_sources) unless @identity_sources.nil?
+                writer.write_collection_of_object_values("internalSponsors", @internal_sponsors) unless @internal_sponsors.nil?
+                writer.write_date_time_value("modifiedDateTime", @modified_date_time) unless @modified_date_time.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
             end
             ## 
             ## Gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.

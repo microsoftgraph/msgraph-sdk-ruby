@@ -171,13 +171,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("info", @info)
-                writer.write_boolean_value("isInLobby", @is_in_lobby)
-                writer.write_boolean_value("isMuted", @is_muted)
-                writer.write_collection_of_object_values("mediaStreams", @media_streams)
-                writer.write_string_value("metadata", @metadata)
-                writer.write_object_value("recordingInfo", @recording_info)
-                writer.write_object_value("restrictedExperience", @restricted_experience)
+                writer.write_object_value("info", @info) unless @info.nil?
+                writer.write_boolean_value("isInLobby", @is_in_lobby) unless @is_in_lobby.nil?
+                writer.write_boolean_value("isMuted", @is_muted) unless @is_muted.nil?
+                writer.write_collection_of_object_values("mediaStreams", @media_streams) unless @media_streams.nil?
+                writer.write_string_value("metadata", @metadata) unless @metadata.nil?
+                writer.write_object_value("recordingInfo", @recording_info) unless @recording_info.nil?
+                writer.write_object_value("restrictedExperience", @restricted_experience) unless @restricted_experience.nil?
             end
         end
     end

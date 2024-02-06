@@ -422,31 +422,31 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("callDurationSource", @call_duration_source)
-                writer.write_string_value("callId", @call_id)
-                writer.write_string_value("callType", @call_type)
-                writer.write_string_value("calleeNumber", @callee_number)
-                writer.write_string_value("callerNumber", @caller_number)
-                writer.write_object_value("charge", @charge)
-                writer.write_string_value("conferenceId", @conference_id)
-                writer.write_object_value("connectionCharge", @connection_charge)
-                writer.write_string_value("currency", @currency)
-                writer.write_string_value("destinationContext", @destination_context)
-                writer.write_string_value("destinationName", @destination_name)
-                writer.write_number_value("duration", @duration)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_string_value("id", @id)
-                writer.write_string_value("inventoryType", @inventory_type)
-                writer.write_string_value("licenseCapability", @license_capability)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("operator", @operator)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_string_value("tenantCountryCode", @tenant_country_code)
-                writer.write_string_value("usageCountryCode", @usage_country_code)
-                writer.write_string_value("userDisplayName", @user_display_name)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("userPrincipalName", @user_principal_name)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("callDurationSource", @call_duration_source) unless @call_duration_source.nil?
+                writer.write_string_value("callId", @call_id) unless @call_id.nil?
+                writer.write_string_value("callType", @call_type) unless @call_type.nil?
+                writer.write_string_value("calleeNumber", @callee_number) unless @callee_number.nil?
+                writer.write_string_value("callerNumber", @caller_number) unless @caller_number.nil?
+                writer.write_object_value("charge", @charge) unless @charge.nil?
+                writer.write_string_value("conferenceId", @conference_id) unless @conference_id.nil?
+                writer.write_object_value("connectionCharge", @connection_charge) unless @connection_charge.nil?
+                writer.write_string_value("currency", @currency) unless @currency.nil?
+                writer.write_string_value("destinationContext", @destination_context) unless @destination_context.nil?
+                writer.write_string_value("destinationName", @destination_name) unless @destination_name.nil?
+                writer.write_number_value("duration", @duration) unless @duration.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_string_value("inventoryType", @inventory_type) unless @inventory_type.nil?
+                writer.write_string_value("licenseCapability", @license_capability) unless @license_capability.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("operator", @operator) unless @operator.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_string_value("tenantCountryCode", @tenant_country_code) unless @tenant_country_code.nil?
+                writer.write_string_value("usageCountryCode", @usage_country_code) unless @usage_country_code.nil?
+                writer.write_string_value("userDisplayName", @user_display_name) unless @user_display_name.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
+                writer.write_string_value("userPrincipalName", @user_principal_name) unless @user_principal_name.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the startDateTime property value. Call start time.

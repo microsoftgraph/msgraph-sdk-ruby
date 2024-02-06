@@ -137,10 +137,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("lastShared", @last_shared)
-                writer.write_object_value("lastSharedMethod", @last_shared_method)
-                writer.write_object_value("resource", @resource)
-                writer.write_collection_of_object_values("sharingHistory", @sharing_history)
+                writer.write_object_value("lastShared", @last_shared) unless @last_shared.nil?
+                writer.write_object_value("lastSharedMethod", @last_shared_method) unless @last_shared_method.nil?
+                writer.write_object_value("resource", @resource) unless @resource.nil?
+                writer.write_collection_of_object_values("sharingHistory", @sharing_history) unless @sharing_history.nil?
             end
             ## 
             ## Gets the sharingHistory property value. The sharingHistory property

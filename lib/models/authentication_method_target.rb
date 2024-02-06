@@ -71,8 +71,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("isRegistrationRequired", @is_registration_required)
-                writer.write_enum_value("targetType", @target_type)
+                writer.write_boolean_value("isRegistrationRequired", @is_registration_required) unless @is_registration_required.nil?
+                writer.write_enum_value("targetType", @target_type) unless @target_type.nil?
             end
             ## 
             ## Gets the targetType property value. The targetType property

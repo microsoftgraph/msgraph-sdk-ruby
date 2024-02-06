@@ -68,7 +68,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("insightCreatedDateTime", @insight_created_date_time)
+                writer.write_date_time_value("insightCreatedDateTime", @insight_created_date_time) unless @insight_created_date_time.nil?
             end
         end
     end

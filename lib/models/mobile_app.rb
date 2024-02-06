@@ -382,21 +382,21 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("assignments", @assignments)
-                writer.write_collection_of_object_values("categories", @categories)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("developer", @developer)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("informationUrl", @information_url)
-                writer.write_boolean_value("isFeatured", @is_featured)
-                writer.write_object_value("largeIcon", @large_icon)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_string_value("notes", @notes)
-                writer.write_string_value("owner", @owner)
-                writer.write_string_value("privacyInformationUrl", @privacy_information_url)
-                writer.write_string_value("publisher", @publisher)
-                writer.write_enum_value("publishingState", @publishing_state)
+                writer.write_collection_of_object_values("assignments", @assignments) unless @assignments.nil?
+                writer.write_collection_of_object_values("categories", @categories) unless @categories.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("developer", @developer) unless @developer.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("informationUrl", @information_url) unless @information_url.nil?
+                writer.write_boolean_value("isFeatured", @is_featured) unless @is_featured.nil?
+                writer.write_object_value("largeIcon", @large_icon) unless @large_icon.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_string_value("notes", @notes) unless @notes.nil?
+                writer.write_string_value("owner", @owner) unless @owner.nil?
+                writer.write_string_value("privacyInformationUrl", @privacy_information_url) unless @privacy_information_url.nil?
+                writer.write_string_value("publisher", @publisher) unless @publisher.nil?
+                writer.write_enum_value("publishingState", @publishing_state) unless @publishing_state.nil?
             end
         end
     end

@@ -279,21 +279,21 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("additionalNotificationRecipients", @additional_notification_recipients)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("descriptionForAdmins", @description_for_admins)
-                writer.write_string_value("descriptionForReviewers", @description_for_reviewers)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("fallbackReviewers", @fallback_reviewers)
-                writer.write_object_value("instanceEnumerationScope", @instance_enumeration_scope)
-                writer.write_collection_of_object_values("instances", @instances)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_collection_of_object_values("reviewers", @reviewers)
-                writer.write_object_value("scope", @scope)
-                writer.write_object_value("settings", @settings)
-                writer.write_collection_of_object_values("stageSettings", @stage_settings)
-                writer.write_string_value("status", @status)
+                writer.write_collection_of_object_values("additionalNotificationRecipients", @additional_notification_recipients) unless @additional_notification_recipients.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("descriptionForAdmins", @description_for_admins) unless @description_for_admins.nil?
+                writer.write_string_value("descriptionForReviewers", @description_for_reviewers) unless @description_for_reviewers.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("fallbackReviewers", @fallback_reviewers) unless @fallback_reviewers.nil?
+                writer.write_object_value("instanceEnumerationScope", @instance_enumeration_scope) unless @instance_enumeration_scope.nil?
+                writer.write_collection_of_object_values("instances", @instances) unless @instances.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_collection_of_object_values("reviewers", @reviewers) unless @reviewers.nil?
+                writer.write_object_value("scope", @scope) unless @scope.nil?
+                writer.write_object_value("settings", @settings) unless @settings.nil?
+                writer.write_collection_of_object_values("stageSettings", @stage_settings) unless @stage_settings.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the settings property value. The settings for an access review series, see type definition below. Supports $select. Required on create.

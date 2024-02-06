@@ -118,11 +118,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("coManagedDeviceCount", @co_managed_device_count)
-                writer.write_number_value("intuneDeviceCount", @intune_device_count)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("tenantAttachDeviceCount", @tenant_attach_device_count)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("coManagedDeviceCount", @co_managed_device_count) unless @co_managed_device_count.nil?
+                writer.write_number_value("intuneDeviceCount", @intune_device_count) unless @intune_device_count.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("tenantAttachDeviceCount", @tenant_attach_device_count) unless @tenant_attach_device_count.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the tenantAttachDeviceCount property value. Total count of tenant attach devices. Read-only.

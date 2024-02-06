@@ -216,16 +216,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("appHealthMetrics", @app_health_metrics)
-                writer.write_object_value("batteryHealthMetrics", @battery_health_metrics)
-                writer.write_object_value("bestPracticesMetrics", @best_practices_metrics)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("deviceBootPerformanceMetrics", @device_boot_performance_metrics)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("isBuiltIn", @is_built_in)
-                writer.write_object_value("rebootAnalyticsMetrics", @reboot_analytics_metrics)
-                writer.write_object_value("resourcePerformanceMetrics", @resource_performance_metrics)
-                writer.write_object_value("workFromAnywhereMetrics", @work_from_anywhere_metrics)
+                writer.write_object_value("appHealthMetrics", @app_health_metrics) unless @app_health_metrics.nil?
+                writer.write_object_value("batteryHealthMetrics", @battery_health_metrics) unless @battery_health_metrics.nil?
+                writer.write_object_value("bestPracticesMetrics", @best_practices_metrics) unless @best_practices_metrics.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("deviceBootPerformanceMetrics", @device_boot_performance_metrics) unless @device_boot_performance_metrics.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("isBuiltIn", @is_built_in) unless @is_built_in.nil?
+                writer.write_object_value("rebootAnalyticsMetrics", @reboot_analytics_metrics) unless @reboot_analytics_metrics.nil?
+                writer.write_object_value("resourcePerformanceMetrics", @resource_performance_metrics) unless @resource_performance_metrics.nil?
+                writer.write_object_value("workFromAnywhereMetrics", @work_from_anywhere_metrics) unless @work_from_anywhere_metrics.nil?
             end
             ## 
             ## Gets the workFromAnywhereMetrics property value. The scores and insights for the work from anywhere metrics.

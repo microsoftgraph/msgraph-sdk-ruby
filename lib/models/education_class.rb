@@ -388,26 +388,26 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("assignmentCategories", @assignment_categories)
-                writer.write_object_value("assignmentDefaults", @assignment_defaults)
-                writer.write_object_value("assignmentSettings", @assignment_settings)
-                writer.write_collection_of_object_values("assignments", @assignments)
-                writer.write_string_value("classCode", @class_code)
-                writer.write_object_value("course", @course)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("externalId", @external_id)
-                writer.write_string_value("externalName", @external_name)
-                writer.write_enum_value("externalSource", @external_source)
-                writer.write_string_value("externalSourceDetail", @external_source_detail)
-                writer.write_string_value("grade", @grade)
-                writer.write_object_value("group", @group)
-                writer.write_string_value("mailNickname", @mail_nickname)
-                writer.write_collection_of_object_values("members", @members)
-                writer.write_collection_of_object_values("schools", @schools)
-                writer.write_collection_of_object_values("teachers", @teachers)
-                writer.write_object_value("term", @term)
+                writer.write_collection_of_object_values("assignmentCategories", @assignment_categories) unless @assignment_categories.nil?
+                writer.write_object_value("assignmentDefaults", @assignment_defaults) unless @assignment_defaults.nil?
+                writer.write_object_value("assignmentSettings", @assignment_settings) unless @assignment_settings.nil?
+                writer.write_collection_of_object_values("assignments", @assignments) unless @assignments.nil?
+                writer.write_string_value("classCode", @class_code) unless @class_code.nil?
+                writer.write_object_value("course", @course) unless @course.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("externalId", @external_id) unless @external_id.nil?
+                writer.write_string_value("externalName", @external_name) unless @external_name.nil?
+                writer.write_enum_value("externalSource", @external_source) unless @external_source.nil?
+                writer.write_string_value("externalSourceDetail", @external_source_detail) unless @external_source_detail.nil?
+                writer.write_string_value("grade", @grade) unless @grade.nil?
+                writer.write_object_value("group", @group) unless @group.nil?
+                writer.write_string_value("mailNickname", @mail_nickname) unless @mail_nickname.nil?
+                writer.write_collection_of_object_values("members", @members) unless @members.nil?
+                writer.write_collection_of_object_values("schools", @schools) unless @schools.nil?
+                writer.write_collection_of_object_values("teachers", @teachers) unless @teachers.nil?
+                writer.write_object_value("term", @term) unless @term.nil?
             end
             ## 
             ## Gets the teachers property value. All teachers in the class. Nullable.

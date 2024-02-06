@@ -147,15 +147,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("listId", @list_id)
-                writer.write_string_value("listItemId", @list_item_id)
-                writer.write_string_value("listItemUniqueId", @list_item_unique_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("siteId", @site_id)
-                writer.write_string_value("siteUrl", @site_url)
-                writer.write_string_value("tenantId", @tenant_id)
-                writer.write_string_value("webId", @web_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("listId", @list_id) unless @list_id.nil?
+                writer.write_string_value("listItemId", @list_item_id) unless @list_item_id.nil?
+                writer.write_string_value("listItemUniqueId", @list_item_unique_id) unless @list_item_unique_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("siteId", @site_id) unless @site_id.nil?
+                writer.write_string_value("siteUrl", @site_url) unless @site_url.nil?
+                writer.write_string_value("tenantId", @tenant_id) unless @tenant_id.nil?
+                writer.write_string_value("webId", @web_id) unless @web_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the siteId property value. The unique identifier (guid) for the item's site collection (SPSite).

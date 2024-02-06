@@ -484,35 +484,35 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_primitive_values("allowedDomainGuidsForSyncApp", @allowed_domain_guids_for_sync_app)
-                writer.write_collection_of_primitive_values("availableManagedPathsForSiteCreation", @available_managed_paths_for_site_creation)
-                writer.write_number_value("deletedUserPersonalSiteRetentionPeriodInDays", @deleted_user_personal_site_retention_period_in_days)
-                writer.write_collection_of_primitive_values("excludedFileExtensionsForSyncApp", @excluded_file_extensions_for_sync_app)
-                writer.write_object_value("idleSessionSignOut", @idle_session_sign_out)
-                writer.write_enum_value("imageTaggingOption", @image_tagging_option)
-                writer.write_boolean_value("isCommentingOnSitePagesEnabled", @is_commenting_on_site_pages_enabled)
-                writer.write_boolean_value("isFileActivityNotificationEnabled", @is_file_activity_notification_enabled)
-                writer.write_boolean_value("isLegacyAuthProtocolsEnabled", @is_legacy_auth_protocols_enabled)
-                writer.write_boolean_value("isLoopEnabled", @is_loop_enabled)
-                writer.write_boolean_value("isMacSyncAppEnabled", @is_mac_sync_app_enabled)
-                writer.write_boolean_value("isRequireAcceptingUserToMatchInvitedUserEnabled", @is_require_accepting_user_to_match_invited_user_enabled)
-                writer.write_boolean_value("isResharingByExternalUsersEnabled", @is_resharing_by_external_users_enabled)
-                writer.write_boolean_value("isSharePointMobileNotificationEnabled", @is_share_point_mobile_notification_enabled)
-                writer.write_boolean_value("isSharePointNewsfeedEnabled", @is_share_point_newsfeed_enabled)
-                writer.write_boolean_value("isSiteCreationEnabled", @is_site_creation_enabled)
-                writer.write_boolean_value("isSiteCreationUIEnabled", @is_site_creation_u_i_enabled)
-                writer.write_boolean_value("isSitePagesCreationEnabled", @is_site_pages_creation_enabled)
-                writer.write_boolean_value("isSitesStorageLimitAutomatic", @is_sites_storage_limit_automatic)
-                writer.write_boolean_value("isSyncButtonHiddenOnPersonalSite", @is_sync_button_hidden_on_personal_site)
-                writer.write_boolean_value("isUnmanagedSyncAppForTenantRestricted", @is_unmanaged_sync_app_for_tenant_restricted)
-                writer.write_object_value("personalSiteDefaultStorageLimitInMB", @personal_site_default_storage_limit_in_m_b)
-                writer.write_collection_of_primitive_values("sharingAllowedDomainList", @sharing_allowed_domain_list)
-                writer.write_collection_of_primitive_values("sharingBlockedDomainList", @sharing_blocked_domain_list)
-                writer.write_enum_value("sharingCapability", @sharing_capability)
-                writer.write_enum_value("sharingDomainRestrictionMode", @sharing_domain_restriction_mode)
-                writer.write_string_value("siteCreationDefaultManagedPath", @site_creation_default_managed_path)
-                writer.write_number_value("siteCreationDefaultStorageLimitInMB", @site_creation_default_storage_limit_in_m_b)
-                writer.write_string_value("tenantDefaultTimezone", @tenant_default_timezone)
+                writer.write_collection_of_primitive_values("allowedDomainGuidsForSyncApp", @allowed_domain_guids_for_sync_app) unless @allowed_domain_guids_for_sync_app.nil?
+                writer.write_collection_of_primitive_values("availableManagedPathsForSiteCreation", @available_managed_paths_for_site_creation) unless @available_managed_paths_for_site_creation.nil?
+                writer.write_number_value("deletedUserPersonalSiteRetentionPeriodInDays", @deleted_user_personal_site_retention_period_in_days) unless @deleted_user_personal_site_retention_period_in_days.nil?
+                writer.write_collection_of_primitive_values("excludedFileExtensionsForSyncApp", @excluded_file_extensions_for_sync_app) unless @excluded_file_extensions_for_sync_app.nil?
+                writer.write_object_value("idleSessionSignOut", @idle_session_sign_out) unless @idle_session_sign_out.nil?
+                writer.write_enum_value("imageTaggingOption", @image_tagging_option) unless @image_tagging_option.nil?
+                writer.write_boolean_value("isCommentingOnSitePagesEnabled", @is_commenting_on_site_pages_enabled) unless @is_commenting_on_site_pages_enabled.nil?
+                writer.write_boolean_value("isFileActivityNotificationEnabled", @is_file_activity_notification_enabled) unless @is_file_activity_notification_enabled.nil?
+                writer.write_boolean_value("isLegacyAuthProtocolsEnabled", @is_legacy_auth_protocols_enabled) unless @is_legacy_auth_protocols_enabled.nil?
+                writer.write_boolean_value("isLoopEnabled", @is_loop_enabled) unless @is_loop_enabled.nil?
+                writer.write_boolean_value("isMacSyncAppEnabled", @is_mac_sync_app_enabled) unless @is_mac_sync_app_enabled.nil?
+                writer.write_boolean_value("isRequireAcceptingUserToMatchInvitedUserEnabled", @is_require_accepting_user_to_match_invited_user_enabled) unless @is_require_accepting_user_to_match_invited_user_enabled.nil?
+                writer.write_boolean_value("isResharingByExternalUsersEnabled", @is_resharing_by_external_users_enabled) unless @is_resharing_by_external_users_enabled.nil?
+                writer.write_boolean_value("isSharePointMobileNotificationEnabled", @is_share_point_mobile_notification_enabled) unless @is_share_point_mobile_notification_enabled.nil?
+                writer.write_boolean_value("isSharePointNewsfeedEnabled", @is_share_point_newsfeed_enabled) unless @is_share_point_newsfeed_enabled.nil?
+                writer.write_boolean_value("isSiteCreationEnabled", @is_site_creation_enabled) unless @is_site_creation_enabled.nil?
+                writer.write_boolean_value("isSiteCreationUIEnabled", @is_site_creation_u_i_enabled) unless @is_site_creation_u_i_enabled.nil?
+                writer.write_boolean_value("isSitePagesCreationEnabled", @is_site_pages_creation_enabled) unless @is_site_pages_creation_enabled.nil?
+                writer.write_boolean_value("isSitesStorageLimitAutomatic", @is_sites_storage_limit_automatic) unless @is_sites_storage_limit_automatic.nil?
+                writer.write_boolean_value("isSyncButtonHiddenOnPersonalSite", @is_sync_button_hidden_on_personal_site) unless @is_sync_button_hidden_on_personal_site.nil?
+                writer.write_boolean_value("isUnmanagedSyncAppForTenantRestricted", @is_unmanaged_sync_app_for_tenant_restricted) unless @is_unmanaged_sync_app_for_tenant_restricted.nil?
+                writer.write_object_value("personalSiteDefaultStorageLimitInMB", @personal_site_default_storage_limit_in_m_b) unless @personal_site_default_storage_limit_in_m_b.nil?
+                writer.write_collection_of_primitive_values("sharingAllowedDomainList", @sharing_allowed_domain_list) unless @sharing_allowed_domain_list.nil?
+                writer.write_collection_of_primitive_values("sharingBlockedDomainList", @sharing_blocked_domain_list) unless @sharing_blocked_domain_list.nil?
+                writer.write_enum_value("sharingCapability", @sharing_capability) unless @sharing_capability.nil?
+                writer.write_enum_value("sharingDomainRestrictionMode", @sharing_domain_restriction_mode) unless @sharing_domain_restriction_mode.nil?
+                writer.write_string_value("siteCreationDefaultManagedPath", @site_creation_default_managed_path) unless @site_creation_default_managed_path.nil?
+                writer.write_number_value("siteCreationDefaultStorageLimitInMB", @site_creation_default_storage_limit_in_m_b) unless @site_creation_default_storage_limit_in_m_b.nil?
+                writer.write_string_value("tenantDefaultTimezone", @tenant_default_timezone) unless @tenant_default_timezone.nil?
             end
             ## 
             ## Gets the sharingAllowedDomainList property value. Collection of email domains that are allowed for sharing outside the organization.

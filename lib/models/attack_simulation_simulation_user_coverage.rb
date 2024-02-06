@@ -155,13 +155,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("attackSimulationUser", @attack_simulation_user)
-                writer.write_number_value("clickCount", @click_count)
-                writer.write_number_value("compromisedCount", @compromised_count)
-                writer.write_date_time_value("latestSimulationDateTime", @latest_simulation_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("simulationCount", @simulation_count)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("attackSimulationUser", @attack_simulation_user) unless @attack_simulation_user.nil?
+                writer.write_number_value("clickCount", @click_count) unless @click_count.nil?
+                writer.write_number_value("compromisedCount", @compromised_count) unless @compromised_count.nil?
+                writer.write_date_time_value("latestSimulationDateTime", @latest_simulation_date_time) unless @latest_simulation_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("simulationCount", @simulation_count) unless @simulation_count.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the simulationCount property value. Number of attack simulation and training campaigns that the user was included in.

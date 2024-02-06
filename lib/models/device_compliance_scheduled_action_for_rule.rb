@@ -78,8 +78,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("ruleName", @rule_name)
-                writer.write_collection_of_object_values("scheduledActionConfigurations", @scheduled_action_configurations)
+                writer.write_string_value("ruleName", @rule_name) unless @rule_name.nil?
+                writer.write_collection_of_object_values("scheduledActionConfigurations", @scheduled_action_configurations) unless @scheduled_action_configurations.nil?
             end
         end
     end

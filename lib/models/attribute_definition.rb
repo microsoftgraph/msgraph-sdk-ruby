@@ -287,20 +287,20 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("anchor", @anchor)
-                writer.write_collection_of_object_values("apiExpressions", @api_expressions)
-                writer.write_boolean_value("caseExact", @case_exact)
-                writer.write_string_value("defaultValue", @default_value)
-                writer.write_boolean_value("flowNullValues", @flow_null_values)
-                writer.write_collection_of_object_values("metadata", @metadata)
-                writer.write_boolean_value("multivalued", @multivalued)
-                writer.write_enum_value("mutability", @mutability)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("referencedObjects", @referenced_objects)
-                writer.write_boolean_value("required", @required)
-                writer.write_enum_value("type", @type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("anchor", @anchor) unless @anchor.nil?
+                writer.write_collection_of_object_values("apiExpressions", @api_expressions) unless @api_expressions.nil?
+                writer.write_boolean_value("caseExact", @case_exact) unless @case_exact.nil?
+                writer.write_string_value("defaultValue", @default_value) unless @default_value.nil?
+                writer.write_boolean_value("flowNullValues", @flow_null_values) unless @flow_null_values.nil?
+                writer.write_collection_of_object_values("metadata", @metadata) unless @metadata.nil?
+                writer.write_boolean_value("multivalued", @multivalued) unless @multivalued.nil?
+                writer.write_enum_value("mutability", @mutability) unless @mutability.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("referencedObjects", @referenced_objects) unless @referenced_objects.nil?
+                writer.write_boolean_value("required", @required) unless @required.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the type property value. The type property

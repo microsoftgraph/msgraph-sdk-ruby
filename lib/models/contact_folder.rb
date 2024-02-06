@@ -137,12 +137,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("childFolders", @child_folders)
-                writer.write_collection_of_object_values("contacts", @contacts)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties)
-                writer.write_string_value("parentFolderId", @parent_folder_id)
-                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties)
+                writer.write_collection_of_object_values("childFolders", @child_folders) unless @child_folders.nil?
+                writer.write_collection_of_object_values("contacts", @contacts) unless @contacts.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties) unless @multi_value_extended_properties.nil?
+                writer.write_string_value("parentFolderId", @parent_folder_id) unless @parent_folder_id.nil?
+                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties) unless @single_value_extended_properties.nil?
             end
             ## 
             ## Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.

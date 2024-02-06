@@ -42,7 +42,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("timeOffReasonId", @time_off_reason_id)
+                writer.write_string_value("timeOffReasonId", @time_off_reason_id) unless @time_off_reason_id.nil?
             end
             ## 
             ## Gets the timeOffReasonId property value. ID of the timeOffReason for this timeOffItem. Required.

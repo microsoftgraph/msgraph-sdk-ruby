@@ -153,12 +153,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("defaultLength", @default_length)
-                writer.write_number_value("defaultLifetimeInMinutes", @default_lifetime_in_minutes)
-                writer.write_collection_of_object_values("includeTargets", @include_targets)
-                writer.write_boolean_value("isUsableOnce", @is_usable_once)
-                writer.write_number_value("maximumLifetimeInMinutes", @maximum_lifetime_in_minutes)
-                writer.write_number_value("minimumLifetimeInMinutes", @minimum_lifetime_in_minutes)
+                writer.write_number_value("defaultLength", @default_length) unless @default_length.nil?
+                writer.write_number_value("defaultLifetimeInMinutes", @default_lifetime_in_minutes) unless @default_lifetime_in_minutes.nil?
+                writer.write_collection_of_object_values("includeTargets", @include_targets) unless @include_targets.nil?
+                writer.write_boolean_value("isUsableOnce", @is_usable_once) unless @is_usable_once.nil?
+                writer.write_number_value("maximumLifetimeInMinutes", @maximum_lifetime_in_minutes) unless @maximum_lifetime_in_minutes.nil?
+                writer.write_number_value("minimumLifetimeInMinutes", @minimum_lifetime_in_minutes) unless @minimum_lifetime_in_minutes.nil?
             end
         end
     end

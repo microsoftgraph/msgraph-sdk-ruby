@@ -94,12 +94,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_enum_value("platformType", @platform_type)
-                writer.write_number_value("settingCount", @setting_count)
-                writer.write_collection_of_object_values("settingStates", @setting_states)
-                writer.write_enum_value("state", @state)
-                writer.write_number_value("version", @version)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_enum_value("platformType", @platform_type) unless @platform_type.nil?
+                writer.write_number_value("settingCount", @setting_count) unless @setting_count.nil?
+                writer.write_collection_of_object_values("settingStates", @setting_states) unless @setting_states.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_number_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the settingCount property value. Count of how many setting a policy holds

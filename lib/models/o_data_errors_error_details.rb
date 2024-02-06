@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("code", @code)
-                writer.write_string_value("message", @message)
-                writer.write_string_value("target", @target)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("code", @code) unless @code.nil?
+                writer.write_string_value("message", @message) unless @message.nil?
+                writer.write_string_value("target", @target) unless @target.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the target property value. The target property

@@ -99,10 +99,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("filter", @filter)
-                writer.write_number_value("index", @index)
-                writer.write_string_value("name", @name)
-                writer.write_object_value("values", @values)
+                writer.write_object_value("filter", @filter) unless @filter.nil?
+                writer.write_number_value("index", @index) unless @index.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_object_value("values", @values) unless @values.nil?
             end
             ## 
             ## Gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.

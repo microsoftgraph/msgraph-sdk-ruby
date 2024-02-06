@@ -122,10 +122,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("hideBotAfterEscalation", @hide_bot_after_escalation)
-                writer.write_boolean_value("isContentSharingNotificationEnabled", @is_content_sharing_notification_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("hideBotAfterEscalation", @hide_bot_after_escalation) unless @hide_bot_after_escalation.nil?
+                writer.write_boolean_value("isContentSharingNotificationEnabled", @is_content_sharing_notification_enabled) unless @is_content_sharing_notification_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

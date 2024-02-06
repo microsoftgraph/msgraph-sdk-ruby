@@ -96,9 +96,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("digestImage", @digest_image)
-                writer.write_string_value("imageId", @image_id)
-                writer.write_object_value("registry", @registry)
+                writer.write_object_value("digestImage", @digest_image) unless @digest_image.nil?
+                writer.write_string_value("imageId", @image_id) unless @image_id.nil?
+                writer.write_object_value("registry", @registry) unless @registry.nil?
             end
         end
     end

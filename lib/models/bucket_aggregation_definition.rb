@@ -154,13 +154,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("isDescending", @is_descending)
-                writer.write_number_value("minimumCount", @minimum_count)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("prefixFilter", @prefix_filter)
-                writer.write_collection_of_object_values("ranges", @ranges)
-                writer.write_enum_value("sortBy", @sort_by)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("isDescending", @is_descending) unless @is_descending.nil?
+                writer.write_number_value("minimumCount", @minimum_count) unless @minimum_count.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("prefixFilter", @prefix_filter) unless @prefix_filter.nil?
+                writer.write_collection_of_object_values("ranges", @ranges) unless @ranges.nil?
+                writer.write_enum_value("sortBy", @sort_by) unless @sort_by.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sortBy property value. The sortBy property

@@ -177,14 +177,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("deviceId", @device_id)
-                writer.write_enum_value("enrollmentType", @enrollment_type)
-                writer.write_enum_value("failureCategory", @failure_category)
-                writer.write_string_value("failureReason", @failure_reason)
-                writer.write_string_value("managedDeviceIdentifier", @managed_device_identifier)
-                writer.write_string_value("operatingSystem", @operating_system)
-                writer.write_string_value("osVersion", @os_version)
-                writer.write_string_value("userId", @user_id)
+                writer.write_string_value("deviceId", @device_id) unless @device_id.nil?
+                writer.write_enum_value("enrollmentType", @enrollment_type) unless @enrollment_type.nil?
+                writer.write_enum_value("failureCategory", @failure_category) unless @failure_category.nil?
+                writer.write_string_value("failureReason", @failure_reason) unless @failure_reason.nil?
+                writer.write_string_value("managedDeviceIdentifier", @managed_device_identifier) unless @managed_device_identifier.nil?
+                writer.write_string_value("operatingSystem", @operating_system) unless @operating_system.nil?
+                writer.write_string_value("osVersion", @os_version) unless @os_version.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
             end
             ## 
             ## Gets the userId property value. Identifier for the user that tried to enroll the device.

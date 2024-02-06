@@ -184,16 +184,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("columns", @columns)
-                writer.write_collection_of_object_values("contentTypes", @content_types)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("drive", @drive)
-                writer.write_collection_of_object_values("items", @items)
-                writer.write_object_value("list", @list)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_object_value("sharepointIds", @sharepoint_ids)
-                writer.write_collection_of_object_values("subscriptions", @subscriptions)
-                writer.write_object_value("system", @system)
+                writer.write_collection_of_object_values("columns", @columns) unless @columns.nil?
+                writer.write_collection_of_object_values("contentTypes", @content_types) unless @content_types.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("drive", @drive) unless @drive.nil?
+                writer.write_collection_of_object_values("items", @items) unless @items.nil?
+                writer.write_object_value("list", @list) unless @list.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_object_value("sharepointIds", @sharepoint_ids) unless @sharepoint_ids.nil?
+                writer.write_collection_of_object_values("subscriptions", @subscriptions) unless @subscriptions.nil?
+                writer.write_object_value("system", @system) unless @system.nil?
             end
             ## 
             ## Gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.

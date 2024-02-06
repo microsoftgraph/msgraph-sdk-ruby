@@ -596,40 +596,40 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("autoPilotProfileAssigned", @auto_pilot_profile_assigned)
-                writer.write_boolean_value("autoPilotRegistered", @auto_pilot_registered)
-                writer.write_string_value("azureAdDeviceId", @azure_ad_device_id)
-                writer.write_string_value("azureAdJoinType", @azure_ad_join_type)
-                writer.write_boolean_value("azureAdRegistered", @azure_ad_registered)
-                writer.write_object_value("cloudIdentityScore", @cloud_identity_score)
-                writer.write_object_value("cloudManagementScore", @cloud_management_score)
-                writer.write_object_value("cloudProvisioningScore", @cloud_provisioning_score)
-                writer.write_boolean_value("compliancePolicySetToIntune", @compliance_policy_set_to_intune)
-                writer.write_string_value("deviceId", @device_id)
-                writer.write_string_value("deviceName", @device_name)
-                writer.write_enum_value("healthStatus", @health_status)
-                writer.write_boolean_value("isCloudManagedGatewayEnabled", @is_cloud_managed_gateway_enabled)
-                writer.write_string_value("managedBy", @managed_by)
-                writer.write_string_value("manufacturer", @manufacturer)
-                writer.write_string_value("model", @model)
-                writer.write_boolean_value("osCheckFailed", @os_check_failed)
-                writer.write_string_value("osDescription", @os_description)
-                writer.write_string_value("osVersion", @os_version)
-                writer.write_boolean_value("otherWorkloadsSetToIntune", @other_workloads_set_to_intune)
-                writer.write_string_value("ownership", @ownership)
-                writer.write_boolean_value("processorCoreCountCheckFailed", @processor_core_count_check_failed)
-                writer.write_boolean_value("processorFamilyCheckFailed", @processor_family_check_failed)
-                writer.write_boolean_value("processorSpeedCheckFailed", @processor_speed_check_failed)
+                writer.write_boolean_value("autoPilotProfileAssigned", @auto_pilot_profile_assigned) unless @auto_pilot_profile_assigned.nil?
+                writer.write_boolean_value("autoPilotRegistered", @auto_pilot_registered) unless @auto_pilot_registered.nil?
+                writer.write_string_value("azureAdDeviceId", @azure_ad_device_id) unless @azure_ad_device_id.nil?
+                writer.write_string_value("azureAdJoinType", @azure_ad_join_type) unless @azure_ad_join_type.nil?
+                writer.write_boolean_value("azureAdRegistered", @azure_ad_registered) unless @azure_ad_registered.nil?
+                writer.write_object_value("cloudIdentityScore", @cloud_identity_score) unless @cloud_identity_score.nil?
+                writer.write_object_value("cloudManagementScore", @cloud_management_score) unless @cloud_management_score.nil?
+                writer.write_object_value("cloudProvisioningScore", @cloud_provisioning_score) unless @cloud_provisioning_score.nil?
+                writer.write_boolean_value("compliancePolicySetToIntune", @compliance_policy_set_to_intune) unless @compliance_policy_set_to_intune.nil?
+                writer.write_string_value("deviceId", @device_id) unless @device_id.nil?
+                writer.write_string_value("deviceName", @device_name) unless @device_name.nil?
+                writer.write_enum_value("healthStatus", @health_status) unless @health_status.nil?
+                writer.write_boolean_value("isCloudManagedGatewayEnabled", @is_cloud_managed_gateway_enabled) unless @is_cloud_managed_gateway_enabled.nil?
+                writer.write_string_value("managedBy", @managed_by) unless @managed_by.nil?
+                writer.write_string_value("manufacturer", @manufacturer) unless @manufacturer.nil?
+                writer.write_string_value("model", @model) unless @model.nil?
+                writer.write_boolean_value("osCheckFailed", @os_check_failed) unless @os_check_failed.nil?
+                writer.write_string_value("osDescription", @os_description) unless @os_description.nil?
+                writer.write_string_value("osVersion", @os_version) unless @os_version.nil?
+                writer.write_boolean_value("otherWorkloadsSetToIntune", @other_workloads_set_to_intune) unless @other_workloads_set_to_intune.nil?
+                writer.write_string_value("ownership", @ownership) unless @ownership.nil?
+                writer.write_boolean_value("processorCoreCountCheckFailed", @processor_core_count_check_failed) unless @processor_core_count_check_failed.nil?
+                writer.write_boolean_value("processorFamilyCheckFailed", @processor_family_check_failed) unless @processor_family_check_failed.nil?
+                writer.write_boolean_value("processorSpeedCheckFailed", @processor_speed_check_failed) unless @processor_speed_check_failed.nil?
                 writer.write_boolean_value("processor64BitCheckFailed", @processor64_bit_check_failed)
-                writer.write_boolean_value("ramCheckFailed", @ram_check_failed)
-                writer.write_boolean_value("secureBootCheckFailed", @secure_boot_check_failed)
-                writer.write_string_value("serialNumber", @serial_number)
-                writer.write_boolean_value("storageCheckFailed", @storage_check_failed)
-                writer.write_boolean_value("tenantAttached", @tenant_attached)
-                writer.write_boolean_value("tpmCheckFailed", @tpm_check_failed)
-                writer.write_enum_value("upgradeEligibility", @upgrade_eligibility)
-                writer.write_object_value("windowsScore", @windows_score)
-                writer.write_object_value("workFromAnywhereScore", @work_from_anywhere_score)
+                writer.write_boolean_value("ramCheckFailed", @ram_check_failed) unless @ram_check_failed.nil?
+                writer.write_boolean_value("secureBootCheckFailed", @secure_boot_check_failed) unless @secure_boot_check_failed.nil?
+                writer.write_string_value("serialNumber", @serial_number) unless @serial_number.nil?
+                writer.write_boolean_value("storageCheckFailed", @storage_check_failed) unless @storage_check_failed.nil?
+                writer.write_boolean_value("tenantAttached", @tenant_attached) unless @tenant_attached.nil?
+                writer.write_boolean_value("tpmCheckFailed", @tpm_check_failed) unless @tpm_check_failed.nil?
+                writer.write_enum_value("upgradeEligibility", @upgrade_eligibility) unless @upgrade_eligibility.nil?
+                writer.write_object_value("windowsScore", @windows_score) unless @windows_score.nil?
+                writer.write_object_value("workFromAnywhereScore", @work_from_anywhere_score) unless @work_from_anywhere_score.nil?
             end
             ## 
             ## Gets the storageCheckFailed property value. When TRUE, indicates storage hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.

@@ -112,10 +112,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("committedContentVersion", @committed_content_version)
-                writer.write_collection_of_object_values("contentVersions", @content_versions)
-                writer.write_string_value("fileName", @file_name)
-                writer.write_object_value("size", @size)
+                writer.write_string_value("committedContentVersion", @committed_content_version) unless @committed_content_version.nil?
+                writer.write_collection_of_object_values("contentVersions", @content_versions) unless @content_versions.nil?
+                writer.write_string_value("fileName", @file_name) unless @file_name.nil?
+                writer.write_object_value("size", @size) unless @size.nil?
             end
             ## 
             ## Gets the size property value. The total size, including all uploaded files.

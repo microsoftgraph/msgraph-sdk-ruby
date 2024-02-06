@@ -296,22 +296,22 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("activityIdentifier", @activity_identifier)
-                writer.write_object_value("countEntitled", @count_entitled)
-                writer.write_object_value("countEntitledForProvisioning", @count_entitled_for_provisioning)
-                writer.write_object_value("countEscrowed", @count_escrowed)
-                writer.write_object_value("countEscrowedRaw", @count_escrowed_raw)
-                writer.write_object_value("countExported", @count_exported)
-                writer.write_object_value("countExports", @count_exports)
-                writer.write_object_value("countImported", @count_imported)
-                writer.write_object_value("countImportedDeltas", @count_imported_deltas)
-                writer.write_object_value("countImportedReferenceDeltas", @count_imported_reference_deltas)
-                writer.write_object_value("error", @error)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("state", @state)
-                writer.write_date_time_value("timeBegan", @time_began)
-                writer.write_date_time_value("timeEnded", @time_ended)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("activityIdentifier", @activity_identifier) unless @activity_identifier.nil?
+                writer.write_object_value("countEntitled", @count_entitled) unless @count_entitled.nil?
+                writer.write_object_value("countEntitledForProvisioning", @count_entitled_for_provisioning) unless @count_entitled_for_provisioning.nil?
+                writer.write_object_value("countEscrowed", @count_escrowed) unless @count_escrowed.nil?
+                writer.write_object_value("countEscrowedRaw", @count_escrowed_raw) unless @count_escrowed_raw.nil?
+                writer.write_object_value("countExported", @count_exported) unless @count_exported.nil?
+                writer.write_object_value("countExports", @count_exports) unless @count_exports.nil?
+                writer.write_object_value("countImported", @count_imported) unless @count_imported.nil?
+                writer.write_object_value("countImportedDeltas", @count_imported_deltas) unless @count_imported_deltas.nil?
+                writer.write_object_value("countImportedReferenceDeltas", @count_imported_reference_deltas) unless @count_imported_reference_deltas.nil?
+                writer.write_object_value("error", @error) unless @error.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_date_time_value("timeBegan", @time_began) unless @time_began.nil?
+                writer.write_date_time_value("timeEnded", @time_ended) unless @time_ended.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the state property value. The state property

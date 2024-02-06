@@ -154,13 +154,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("capabilities", @capabilities)
-                writer.write_boolean_value("isDefault", @is_default)
-                writer.write_boolean_value("isInitial", @is_initial)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("type", @type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("capabilities", @capabilities) unless @capabilities.nil?
+                writer.write_boolean_value("isDefault", @is_default) unless @is_default.nil?
+                writer.write_boolean_value("isInitial", @is_initial) unless @is_initial.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("type", @type) unless @type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the type property value. For example, Managed.

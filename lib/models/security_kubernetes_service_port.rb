@@ -173,14 +173,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("appProtocol", @app_protocol)
-                writer.write_string_value("name", @name)
-                writer.write_number_value("nodePort", @node_port)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("port", @port)
-                writer.write_enum_value("protocol", @protocol)
-                writer.write_string_value("targetPort", @target_port)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("appProtocol", @app_protocol) unless @app_protocol.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_number_value("nodePort", @node_port) unless @node_port.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("port", @port) unless @port.nil?
+                writer.write_enum_value("protocol", @protocol) unless @protocol.nil?
+                writer.write_string_value("targetPort", @target_port) unless @target_port.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the targetPort property value. The name or number of the port to access on the pods targeted by the service. The port number must be in the range 1 to 65535. The name must be an IANASVCNAME.

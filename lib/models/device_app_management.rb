@@ -338,24 +338,24 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("androidManagedAppProtections", @android_managed_app_protections)
-                writer.write_collection_of_object_values("defaultManagedAppProtections", @default_managed_app_protections)
-                writer.write_collection_of_object_values("iosManagedAppProtections", @ios_managed_app_protections)
-                writer.write_boolean_value("isEnabledForMicrosoftStoreForBusiness", @is_enabled_for_microsoft_store_for_business)
-                writer.write_collection_of_object_values("managedAppPolicies", @managed_app_policies)
-                writer.write_collection_of_object_values("managedAppRegistrations", @managed_app_registrations)
-                writer.write_collection_of_object_values("managedAppStatuses", @managed_app_statuses)
-                writer.write_collection_of_object_values("managedEBooks", @managed_e_books)
-                writer.write_collection_of_object_values("mdmWindowsInformationProtectionPolicies", @mdm_windows_information_protection_policies)
-                writer.write_string_value("microsoftStoreForBusinessLanguage", @microsoft_store_for_business_language)
-                writer.write_date_time_value("microsoftStoreForBusinessLastCompletedApplicationSyncTime", @microsoft_store_for_business_last_completed_application_sync_time)
-                writer.write_date_time_value("microsoftStoreForBusinessLastSuccessfulSyncDateTime", @microsoft_store_for_business_last_successful_sync_date_time)
-                writer.write_collection_of_object_values("mobileAppCategories", @mobile_app_categories)
-                writer.write_collection_of_object_values("mobileAppConfigurations", @mobile_app_configurations)
-                writer.write_collection_of_object_values("mobileApps", @mobile_apps)
-                writer.write_collection_of_object_values("targetedManagedAppConfigurations", @targeted_managed_app_configurations)
-                writer.write_collection_of_object_values("vppTokens", @vpp_tokens)
-                writer.write_collection_of_object_values("windowsInformationProtectionPolicies", @windows_information_protection_policies)
+                writer.write_collection_of_object_values("androidManagedAppProtections", @android_managed_app_protections) unless @android_managed_app_protections.nil?
+                writer.write_collection_of_object_values("defaultManagedAppProtections", @default_managed_app_protections) unless @default_managed_app_protections.nil?
+                writer.write_collection_of_object_values("iosManagedAppProtections", @ios_managed_app_protections) unless @ios_managed_app_protections.nil?
+                writer.write_boolean_value("isEnabledForMicrosoftStoreForBusiness", @is_enabled_for_microsoft_store_for_business) unless @is_enabled_for_microsoft_store_for_business.nil?
+                writer.write_collection_of_object_values("managedAppPolicies", @managed_app_policies) unless @managed_app_policies.nil?
+                writer.write_collection_of_object_values("managedAppRegistrations", @managed_app_registrations) unless @managed_app_registrations.nil?
+                writer.write_collection_of_object_values("managedAppStatuses", @managed_app_statuses) unless @managed_app_statuses.nil?
+                writer.write_collection_of_object_values("managedEBooks", @managed_e_books) unless @managed_e_books.nil?
+                writer.write_collection_of_object_values("mdmWindowsInformationProtectionPolicies", @mdm_windows_information_protection_policies) unless @mdm_windows_information_protection_policies.nil?
+                writer.write_string_value("microsoftStoreForBusinessLanguage", @microsoft_store_for_business_language) unless @microsoft_store_for_business_language.nil?
+                writer.write_date_time_value("microsoftStoreForBusinessLastCompletedApplicationSyncTime", @microsoft_store_for_business_last_completed_application_sync_time) unless @microsoft_store_for_business_last_completed_application_sync_time.nil?
+                writer.write_date_time_value("microsoftStoreForBusinessLastSuccessfulSyncDateTime", @microsoft_store_for_business_last_successful_sync_date_time) unless @microsoft_store_for_business_last_successful_sync_date_time.nil?
+                writer.write_collection_of_object_values("mobileAppCategories", @mobile_app_categories) unless @mobile_app_categories.nil?
+                writer.write_collection_of_object_values("mobileAppConfigurations", @mobile_app_configurations) unless @mobile_app_configurations.nil?
+                writer.write_collection_of_object_values("mobileApps", @mobile_apps) unless @mobile_apps.nil?
+                writer.write_collection_of_object_values("targetedManagedAppConfigurations", @targeted_managed_app_configurations) unless @targeted_managed_app_configurations.nil?
+                writer.write_collection_of_object_values("vppTokens", @vpp_tokens) unless @vpp_tokens.nil?
+                writer.write_collection_of_object_values("windowsInformationProtectionPolicies", @windows_information_protection_policies) unless @windows_information_protection_policies.nil?
             end
             ## 
             ## Gets the targetedManagedAppConfigurations property value. Targeted managed app configurations.

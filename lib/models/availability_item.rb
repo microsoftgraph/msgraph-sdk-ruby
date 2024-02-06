@@ -105,12 +105,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("endDateTime", @end_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("serviceId", @service_id)
-                writer.write_object_value("startDateTime", @start_date_time)
-                writer.write_enum_value("status", @status)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("serviceId", @service_id) unless @service_id.nil?
+                writer.write_object_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the serviceId property value. Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.

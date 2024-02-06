@@ -235,17 +235,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("osMaximumVersion", @os_maximum_version)
-                writer.write_string_value("osMinimumVersion", @os_minimum_version)
-                writer.write_boolean_value("passwordBlockSimple", @password_block_simple)
-                writer.write_number_value("passwordExpirationDays", @password_expiration_days)
-                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count)
-                writer.write_number_value("passwordMinimumLength", @password_minimum_length)
-                writer.write_number_value("passwordMinutesOfInactivityBeforeLock", @password_minutes_of_inactivity_before_lock)
-                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count)
-                writer.write_boolean_value("passwordRequired", @password_required)
-                writer.write_enum_value("passwordRequiredType", @password_required_type)
-                writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption)
+                writer.write_string_value("osMaximumVersion", @os_maximum_version) unless @os_maximum_version.nil?
+                writer.write_string_value("osMinimumVersion", @os_minimum_version) unless @os_minimum_version.nil?
+                writer.write_boolean_value("passwordBlockSimple", @password_block_simple) unless @password_block_simple.nil?
+                writer.write_number_value("passwordExpirationDays", @password_expiration_days) unless @password_expiration_days.nil?
+                writer.write_number_value("passwordMinimumCharacterSetCount", @password_minimum_character_set_count) unless @password_minimum_character_set_count.nil?
+                writer.write_number_value("passwordMinimumLength", @password_minimum_length) unless @password_minimum_length.nil?
+                writer.write_number_value("passwordMinutesOfInactivityBeforeLock", @password_minutes_of_inactivity_before_lock) unless @password_minutes_of_inactivity_before_lock.nil?
+                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count) unless @password_previous_password_block_count.nil?
+                writer.write_boolean_value("passwordRequired", @password_required) unless @password_required.nil?
+                writer.write_enum_value("passwordRequiredType", @password_required_type) unless @password_required_type.nil?
+                writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption) unless @storage_require_encryption.nil?
             end
             ## 
             ## Gets the storageRequireEncryption property value. Indicates whether or not to require encryption on a windows 8.1 device.

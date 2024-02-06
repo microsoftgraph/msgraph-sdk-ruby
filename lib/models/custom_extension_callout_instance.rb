@@ -154,13 +154,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("customExtensionId", @custom_extension_id)
-                writer.write_string_value("detail", @detail)
-                writer.write_string_value("externalCorrelationId", @external_correlation_id)
-                writer.write_string_value("id", @id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("status", @status)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("customExtensionId", @custom_extension_id) unless @custom_extension_id.nil?
+                writer.write_string_value("detail", @detail) unless @detail.nil?
+                writer.write_string_value("externalCorrelationId", @external_correlation_id) unless @external_correlation_id.nil?
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the status property value. The status of the request to the custom extension. The possible values are: calloutSent, callbackReceived, calloutFailed, callbackTimedOut, waitingForCallback, unknownFutureValue.

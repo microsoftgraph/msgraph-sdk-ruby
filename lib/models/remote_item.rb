@@ -331,27 +331,27 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("file", @file)
-                writer.write_object_value("fileSystemInfo", @file_system_info)
-                writer.write_object_value("folder", @folder)
-                writer.write_string_value("id", @id)
-                writer.write_object_value("image", @image)
-                writer.write_object_value("lastModifiedBy", @last_modified_by)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("package", @package)
-                writer.write_object_value("parentReference", @parent_reference)
-                writer.write_object_value("shared", @shared)
-                writer.write_object_value("sharepointIds", @sharepoint_ids)
-                writer.write_object_value("size", @size)
-                writer.write_object_value("specialFolder", @special_folder)
-                writer.write_object_value("video", @video)
-                writer.write_string_value("webDavUrl", @web_dav_url)
-                writer.write_string_value("webUrl", @web_url)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("file", @file) unless @file.nil?
+                writer.write_object_value("fileSystemInfo", @file_system_info) unless @file_system_info.nil?
+                writer.write_object_value("folder", @folder) unless @folder.nil?
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_object_value("image", @image) unless @image.nil?
+                writer.write_object_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("package", @package) unless @package.nil?
+                writer.write_object_value("parentReference", @parent_reference) unless @parent_reference.nil?
+                writer.write_object_value("shared", @shared) unless @shared.nil?
+                writer.write_object_value("sharepointIds", @sharepoint_ids) unless @sharepoint_ids.nil?
+                writer.write_object_value("size", @size) unless @size.nil?
+                writer.write_object_value("specialFolder", @special_folder) unless @special_folder.nil?
+                writer.write_object_value("video", @video) unless @video.nil?
+                writer.write_string_value("webDavUrl", @web_dav_url) unless @web_dav_url.nil?
+                writer.write_string_value("webUrl", @web_url) unless @web_url.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the shared property value. Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.

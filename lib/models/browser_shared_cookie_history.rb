@@ -212,16 +212,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("comment", @comment)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_boolean_value("hostOnly", @host_only)
-                writer.write_string_value("hostOrDomain", @host_or_domain)
-                writer.write_object_value("lastModifiedBy", @last_modified_by)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("path", @path)
-                writer.write_date_time_value("publishedDateTime", @published_date_time)
-                writer.write_enum_value("sourceEnvironment", @source_environment)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("comment", @comment) unless @comment.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_boolean_value("hostOnly", @host_only) unless @host_only.nil?
+                writer.write_string_value("hostOrDomain", @host_or_domain) unless @host_or_domain.nil?
+                writer.write_object_value("lastModifiedBy", @last_modified_by) unless @last_modified_by.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("path", @path) unless @path.nil?
+                writer.write_date_time_value("publishedDateTime", @published_date_time) unless @published_date_time.nil?
+                writer.write_enum_value("sourceEnvironment", @source_environment) unless @source_environment.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.

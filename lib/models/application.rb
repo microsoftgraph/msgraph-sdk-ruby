@@ -726,50 +726,50 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("addIns", @add_ins)
-                writer.write_object_value("api", @api)
-                writer.write_string_value("appId", @app_id)
-                writer.write_collection_of_object_values("appManagementPolicies", @app_management_policies)
-                writer.write_collection_of_object_values("appRoles", @app_roles)
-                writer.write_string_value("applicationTemplateId", @application_template_id)
-                writer.write_object_value("certification", @certification)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("createdOnBehalfOf", @created_on_behalf_of)
-                writer.write_string_value("defaultRedirectUri", @default_redirect_uri)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("disabledByMicrosoftStatus", @disabled_by_microsoft_status)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("extensionProperties", @extension_properties)
-                writer.write_collection_of_object_values("federatedIdentityCredentials", @federated_identity_credentials)
-                writer.write_string_value("groupMembershipClaims", @group_membership_claims)
-                writer.write_collection_of_object_values("homeRealmDiscoveryPolicies", @home_realm_discovery_policies)
-                writer.write_collection_of_primitive_values("identifierUris", @identifier_uris)
-                writer.write_object_value("info", @info)
-                writer.write_boolean_value("isDeviceOnlyAuthSupported", @is_device_only_auth_supported)
-                writer.write_boolean_value("isFallbackPublicClient", @is_fallback_public_client)
-                writer.write_collection_of_object_values("keyCredentials", @key_credentials)
-                writer.write_object_value("logo", @logo)
-                writer.write_string_value("notes", @notes)
+                writer.write_collection_of_object_values("addIns", @add_ins) unless @add_ins.nil?
+                writer.write_object_value("api", @api) unless @api.nil?
+                writer.write_string_value("appId", @app_id) unless @app_id.nil?
+                writer.write_collection_of_object_values("appManagementPolicies", @app_management_policies) unless @app_management_policies.nil?
+                writer.write_collection_of_object_values("appRoles", @app_roles) unless @app_roles.nil?
+                writer.write_string_value("applicationTemplateId", @application_template_id) unless @application_template_id.nil?
+                writer.write_object_value("certification", @certification) unless @certification.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("createdOnBehalfOf", @created_on_behalf_of) unless @created_on_behalf_of.nil?
+                writer.write_string_value("defaultRedirectUri", @default_redirect_uri) unless @default_redirect_uri.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("disabledByMicrosoftStatus", @disabled_by_microsoft_status) unless @disabled_by_microsoft_status.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("extensionProperties", @extension_properties) unless @extension_properties.nil?
+                writer.write_collection_of_object_values("federatedIdentityCredentials", @federated_identity_credentials) unless @federated_identity_credentials.nil?
+                writer.write_string_value("groupMembershipClaims", @group_membership_claims) unless @group_membership_claims.nil?
+                writer.write_collection_of_object_values("homeRealmDiscoveryPolicies", @home_realm_discovery_policies) unless @home_realm_discovery_policies.nil?
+                writer.write_collection_of_primitive_values("identifierUris", @identifier_uris) unless @identifier_uris.nil?
+                writer.write_object_value("info", @info) unless @info.nil?
+                writer.write_boolean_value("isDeviceOnlyAuthSupported", @is_device_only_auth_supported) unless @is_device_only_auth_supported.nil?
+                writer.write_boolean_value("isFallbackPublicClient", @is_fallback_public_client) unless @is_fallback_public_client.nil?
+                writer.write_collection_of_object_values("keyCredentials", @key_credentials) unless @key_credentials.nil?
+                writer.write_object_value("logo", @logo) unless @logo.nil?
+                writer.write_string_value("notes", @notes) unless @notes.nil?
                 writer.write_boolean_value("oauth2RequirePostResponse", @oauth2_require_post_response)
-                writer.write_object_value("optionalClaims", @optional_claims)
-                writer.write_collection_of_object_values("owners", @owners)
-                writer.write_object_value("parentalControlSettings", @parental_control_settings)
-                writer.write_collection_of_object_values("passwordCredentials", @password_credentials)
-                writer.write_object_value("publicClient", @public_client)
-                writer.write_string_value("publisherDomain", @publisher_domain)
-                writer.write_object_value("requestSignatureVerification", @request_signature_verification)
-                writer.write_collection_of_object_values("requiredResourceAccess", @required_resource_access)
-                writer.write_string_value("samlMetadataUrl", @saml_metadata_url)
-                writer.write_string_value("serviceManagementReference", @service_management_reference)
-                writer.write_string_value("signInAudience", @sign_in_audience)
-                writer.write_object_value("spa", @spa)
-                writer.write_object_value("synchronization", @synchronization)
-                writer.write_collection_of_primitive_values("tags", @tags)
-                writer.write_guid_value("tokenEncryptionKeyId", @token_encryption_key_id)
-                writer.write_collection_of_object_values("tokenIssuancePolicies", @token_issuance_policies)
-                writer.write_collection_of_object_values("tokenLifetimePolicies", @token_lifetime_policies)
-                writer.write_object_value("verifiedPublisher", @verified_publisher)
-                writer.write_object_value("web", @web)
+                writer.write_object_value("optionalClaims", @optional_claims) unless @optional_claims.nil?
+                writer.write_collection_of_object_values("owners", @owners) unless @owners.nil?
+                writer.write_object_value("parentalControlSettings", @parental_control_settings) unless @parental_control_settings.nil?
+                writer.write_collection_of_object_values("passwordCredentials", @password_credentials) unless @password_credentials.nil?
+                writer.write_object_value("publicClient", @public_client) unless @public_client.nil?
+                writer.write_string_value("publisherDomain", @publisher_domain) unless @publisher_domain.nil?
+                writer.write_object_value("requestSignatureVerification", @request_signature_verification) unless @request_signature_verification.nil?
+                writer.write_collection_of_object_values("requiredResourceAccess", @required_resource_access) unless @required_resource_access.nil?
+                writer.write_string_value("samlMetadataUrl", @saml_metadata_url) unless @saml_metadata_url.nil?
+                writer.write_string_value("serviceManagementReference", @service_management_reference) unless @service_management_reference.nil?
+                writer.write_string_value("signInAudience", @sign_in_audience) unless @sign_in_audience.nil?
+                writer.write_object_value("spa", @spa) unless @spa.nil?
+                writer.write_object_value("synchronization", @synchronization) unless @synchronization.nil?
+                writer.write_collection_of_primitive_values("tags", @tags) unless @tags.nil?
+                writer.write_guid_value("tokenEncryptionKeyId", @token_encryption_key_id) unless @token_encryption_key_id.nil?
+                writer.write_collection_of_object_values("tokenIssuancePolicies", @token_issuance_policies) unless @token_issuance_policies.nil?
+                writer.write_collection_of_object_values("tokenLifetimePolicies", @token_lifetime_policies) unless @token_lifetime_policies.nil?
+                writer.write_object_value("verifiedPublisher", @verified_publisher) unless @verified_publisher.nil?
+                writer.write_object_value("web", @web) unless @web.nil?
             end
             ## 
             ## Gets the serviceManagementReference property value. References application or service contact information from a Service or Asset Management database. Nullable.

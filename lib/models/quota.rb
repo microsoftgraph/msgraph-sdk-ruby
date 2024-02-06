@@ -128,14 +128,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("deleted", @deleted)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("remaining", @remaining)
-                writer.write_string_value("state", @state)
-                writer.write_object_value("storagePlanInformation", @storage_plan_information)
-                writer.write_object_value("total", @total)
-                writer.write_object_value("used", @used)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("deleted", @deleted) unless @deleted.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("remaining", @remaining) unless @remaining.nil?
+                writer.write_string_value("state", @state) unless @state.nil?
+                writer.write_object_value("storagePlanInformation", @storage_plan_information) unless @storage_plan_information.nil?
+                writer.write_object_value("total", @total) unless @total.nil?
+                writer.write_object_value("used", @used) unless @used.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the state property value. Enumeration value that indicates the state of the storage space. Read-only.

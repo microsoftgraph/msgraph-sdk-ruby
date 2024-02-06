@@ -62,8 +62,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("scope", @scope)
-                writer.write_object_value("trigger", @trigger)
+                writer.write_object_value("scope", @scope) unless @scope.nil?
+                writer.write_object_value("trigger", @trigger) unless @trigger.nil?
             end
             ## 
             ## Gets the trigger property value. What triggers a workflow to run.

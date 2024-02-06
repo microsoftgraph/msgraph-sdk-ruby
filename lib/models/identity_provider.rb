@@ -99,10 +99,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("clientId", @client_id)
-                writer.write_string_value("clientSecret", @client_secret)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("type", @type)
+                writer.write_string_value("clientId", @client_id) unless @client_id.nil?
+                writer.write_string_value("clientSecret", @client_secret) unless @client_secret.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("type", @type) unless @type.nil?
             end
             ## 
             ## Gets the type property value. The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.

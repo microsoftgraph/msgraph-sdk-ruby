@@ -99,10 +99,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("format", @format)
-                writer.write_boolean_value("overlay", @overlay)
-                writer.write_string_value("position", @position)
-                writer.write_boolean_value("visible", @visible)
+                writer.write_object_value("format", @format) unless @format.nil?
+                writer.write_boolean_value("overlay", @overlay) unless @overlay.nil?
+                writer.write_string_value("position", @position) unless @position.nil?
+                writer.write_boolean_value("visible", @visible) unless @visible.nil?
             end
             ## 
             ## Gets the visible property value. A boolean value the represents the visibility of a ChartLegend object.

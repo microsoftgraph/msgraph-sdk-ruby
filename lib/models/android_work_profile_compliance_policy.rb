@@ -425,27 +425,27 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("deviceThreatProtectionEnabled", @device_threat_protection_enabled)
-                writer.write_enum_value("deviceThreatProtectionRequiredSecurityLevel", @device_threat_protection_required_security_level)
-                writer.write_string_value("minAndroidSecurityPatchLevel", @min_android_security_patch_level)
-                writer.write_string_value("osMaximumVersion", @os_maximum_version)
-                writer.write_string_value("osMinimumVersion", @os_minimum_version)
-                writer.write_number_value("passwordExpirationDays", @password_expiration_days)
-                writer.write_number_value("passwordMinimumLength", @password_minimum_length)
-                writer.write_number_value("passwordMinutesOfInactivityBeforeLock", @password_minutes_of_inactivity_before_lock)
-                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count)
-                writer.write_boolean_value("passwordRequired", @password_required)
-                writer.write_enum_value("passwordRequiredType", @password_required_type)
-                writer.write_boolean_value("securityBlockJailbrokenDevices", @security_block_jailbroken_devices)
-                writer.write_boolean_value("securityDisableUsbDebugging", @security_disable_usb_debugging)
-                writer.write_boolean_value("securityPreventInstallAppsFromUnknownSources", @security_prevent_install_apps_from_unknown_sources)
-                writer.write_boolean_value("securityRequireCompanyPortalAppIntegrity", @security_require_company_portal_app_integrity)
-                writer.write_boolean_value("securityRequireGooglePlayServices", @security_require_google_play_services)
-                writer.write_boolean_value("securityRequireSafetyNetAttestationBasicIntegrity", @security_require_safety_net_attestation_basic_integrity)
-                writer.write_boolean_value("securityRequireSafetyNetAttestationCertifiedDevice", @security_require_safety_net_attestation_certified_device)
-                writer.write_boolean_value("securityRequireUpToDateSecurityProviders", @security_require_up_to_date_security_providers)
-                writer.write_boolean_value("securityRequireVerifyApps", @security_require_verify_apps)
-                writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption)
+                writer.write_boolean_value("deviceThreatProtectionEnabled", @device_threat_protection_enabled) unless @device_threat_protection_enabled.nil?
+                writer.write_enum_value("deviceThreatProtectionRequiredSecurityLevel", @device_threat_protection_required_security_level) unless @device_threat_protection_required_security_level.nil?
+                writer.write_string_value("minAndroidSecurityPatchLevel", @min_android_security_patch_level) unless @min_android_security_patch_level.nil?
+                writer.write_string_value("osMaximumVersion", @os_maximum_version) unless @os_maximum_version.nil?
+                writer.write_string_value("osMinimumVersion", @os_minimum_version) unless @os_minimum_version.nil?
+                writer.write_number_value("passwordExpirationDays", @password_expiration_days) unless @password_expiration_days.nil?
+                writer.write_number_value("passwordMinimumLength", @password_minimum_length) unless @password_minimum_length.nil?
+                writer.write_number_value("passwordMinutesOfInactivityBeforeLock", @password_minutes_of_inactivity_before_lock) unless @password_minutes_of_inactivity_before_lock.nil?
+                writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count) unless @password_previous_password_block_count.nil?
+                writer.write_boolean_value("passwordRequired", @password_required) unless @password_required.nil?
+                writer.write_enum_value("passwordRequiredType", @password_required_type) unless @password_required_type.nil?
+                writer.write_boolean_value("securityBlockJailbrokenDevices", @security_block_jailbroken_devices) unless @security_block_jailbroken_devices.nil?
+                writer.write_boolean_value("securityDisableUsbDebugging", @security_disable_usb_debugging) unless @security_disable_usb_debugging.nil?
+                writer.write_boolean_value("securityPreventInstallAppsFromUnknownSources", @security_prevent_install_apps_from_unknown_sources) unless @security_prevent_install_apps_from_unknown_sources.nil?
+                writer.write_boolean_value("securityRequireCompanyPortalAppIntegrity", @security_require_company_portal_app_integrity) unless @security_require_company_portal_app_integrity.nil?
+                writer.write_boolean_value("securityRequireGooglePlayServices", @security_require_google_play_services) unless @security_require_google_play_services.nil?
+                writer.write_boolean_value("securityRequireSafetyNetAttestationBasicIntegrity", @security_require_safety_net_attestation_basic_integrity) unless @security_require_safety_net_attestation_basic_integrity.nil?
+                writer.write_boolean_value("securityRequireSafetyNetAttestationCertifiedDevice", @security_require_safety_net_attestation_certified_device) unless @security_require_safety_net_attestation_certified_device.nil?
+                writer.write_boolean_value("securityRequireUpToDateSecurityProviders", @security_require_up_to_date_security_providers) unless @security_require_up_to_date_security_providers.nil?
+                writer.write_boolean_value("securityRequireVerifyApps", @security_require_verify_apps) unless @security_require_verify_apps.nil?
+                writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption) unless @storage_require_encryption.nil?
             end
             ## 
             ## Gets the storageRequireEncryption property value. Require encryption on Android devices.

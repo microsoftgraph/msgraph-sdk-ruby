@@ -127,13 +127,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("completedDateTime", @completed_date_time)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("failureReason", @failure_reason)
-                writer.write_enum_value("processingStatus", @processing_status)
-                writer.write_date_time_value("startedDateTime", @started_date_time)
-                writer.write_object_value("subject", @subject)
-                writer.write_object_value("task", @task)
+                writer.write_date_time_value("completedDateTime", @completed_date_time) unless @completed_date_time.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("failureReason", @failure_reason) unless @failure_reason.nil?
+                writer.write_enum_value("processingStatus", @processing_status) unless @processing_status.nil?
+                writer.write_date_time_value("startedDateTime", @started_date_time) unless @started_date_time.nil?
+                writer.write_object_value("subject", @subject) unless @subject.nil?
+                writer.write_object_value("task", @task) unless @task.nil?
             end
             ## 
             ## Gets the startedDateTime property value. The date time when taskProcessingResult execution started. Value is null if task execution has not yet started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.

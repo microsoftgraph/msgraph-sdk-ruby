@@ -296,21 +296,21 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("allowPartnerToCollectIOSApplicationMetadata", @allow_partner_to_collect_i_o_s_application_metadata)
-                writer.write_boolean_value("allowPartnerToCollectIOSPersonalApplicationMetadata", @allow_partner_to_collect_i_o_s_personal_application_metadata)
-                writer.write_boolean_value("androidDeviceBlockedOnMissingPartnerData", @android_device_blocked_on_missing_partner_data)
-                writer.write_boolean_value("androidEnabled", @android_enabled)
-                writer.write_boolean_value("androidMobileApplicationManagementEnabled", @android_mobile_application_management_enabled)
-                writer.write_boolean_value("iosDeviceBlockedOnMissingPartnerData", @ios_device_blocked_on_missing_partner_data)
-                writer.write_boolean_value("iosEnabled", @ios_enabled)
-                writer.write_boolean_value("iosMobileApplicationManagementEnabled", @ios_mobile_application_management_enabled)
-                writer.write_date_time_value("lastHeartbeatDateTime", @last_heartbeat_date_time)
-                writer.write_boolean_value("microsoftDefenderForEndpointAttachEnabled", @microsoft_defender_for_endpoint_attach_enabled)
-                writer.write_enum_value("partnerState", @partner_state)
-                writer.write_number_value("partnerUnresponsivenessThresholdInDays", @partner_unresponsiveness_threshold_in_days)
-                writer.write_boolean_value("partnerUnsupportedOsVersionBlocked", @partner_unsupported_os_version_blocked)
-                writer.write_boolean_value("windowsDeviceBlockedOnMissingPartnerData", @windows_device_blocked_on_missing_partner_data)
-                writer.write_boolean_value("windowsEnabled", @windows_enabled)
+                writer.write_boolean_value("allowPartnerToCollectIOSApplicationMetadata", @allow_partner_to_collect_i_o_s_application_metadata) unless @allow_partner_to_collect_i_o_s_application_metadata.nil?
+                writer.write_boolean_value("allowPartnerToCollectIOSPersonalApplicationMetadata", @allow_partner_to_collect_i_o_s_personal_application_metadata) unless @allow_partner_to_collect_i_o_s_personal_application_metadata.nil?
+                writer.write_boolean_value("androidDeviceBlockedOnMissingPartnerData", @android_device_blocked_on_missing_partner_data) unless @android_device_blocked_on_missing_partner_data.nil?
+                writer.write_boolean_value("androidEnabled", @android_enabled) unless @android_enabled.nil?
+                writer.write_boolean_value("androidMobileApplicationManagementEnabled", @android_mobile_application_management_enabled) unless @android_mobile_application_management_enabled.nil?
+                writer.write_boolean_value("iosDeviceBlockedOnMissingPartnerData", @ios_device_blocked_on_missing_partner_data) unless @ios_device_blocked_on_missing_partner_data.nil?
+                writer.write_boolean_value("iosEnabled", @ios_enabled) unless @ios_enabled.nil?
+                writer.write_boolean_value("iosMobileApplicationManagementEnabled", @ios_mobile_application_management_enabled) unless @ios_mobile_application_management_enabled.nil?
+                writer.write_date_time_value("lastHeartbeatDateTime", @last_heartbeat_date_time) unless @last_heartbeat_date_time.nil?
+                writer.write_boolean_value("microsoftDefenderForEndpointAttachEnabled", @microsoft_defender_for_endpoint_attach_enabled) unless @microsoft_defender_for_endpoint_attach_enabled.nil?
+                writer.write_enum_value("partnerState", @partner_state) unless @partner_state.nil?
+                writer.write_number_value("partnerUnresponsivenessThresholdInDays", @partner_unresponsiveness_threshold_in_days) unless @partner_unresponsiveness_threshold_in_days.nil?
+                writer.write_boolean_value("partnerUnsupportedOsVersionBlocked", @partner_unsupported_os_version_blocked) unless @partner_unsupported_os_version_blocked.nil?
+                writer.write_boolean_value("windowsDeviceBlockedOnMissingPartnerData", @windows_device_blocked_on_missing_partner_data) unless @windows_device_blocked_on_missing_partner_data.nil?
+                writer.write_boolean_value("windowsEnabled", @windows_enabled) unless @windows_enabled.nil?
             end
             ## 
             ## Gets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.

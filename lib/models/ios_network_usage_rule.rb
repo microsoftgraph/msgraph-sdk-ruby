@@ -133,11 +133,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("cellularDataBlockWhenRoaming", @cellular_data_block_when_roaming)
-                writer.write_boolean_value("cellularDataBlocked", @cellular_data_blocked)
-                writer.write_collection_of_object_values("managedApps", @managed_apps)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("cellularDataBlockWhenRoaming", @cellular_data_block_when_roaming) unless @cellular_data_block_when_roaming.nil?
+                writer.write_boolean_value("cellularDataBlocked", @cellular_data_blocked) unless @cellular_data_blocked.nil?
+                writer.write_collection_of_object_values("managedApps", @managed_apps) unless @managed_apps.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

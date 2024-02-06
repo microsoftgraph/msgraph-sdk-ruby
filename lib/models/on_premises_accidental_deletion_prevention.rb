@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("alertThreshold", @alert_threshold)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("synchronizationPreventionType", @synchronization_prevention_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("alertThreshold", @alert_threshold) unless @alert_threshold.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("synchronizationPreventionType", @synchronization_prevention_type) unless @synchronization_prevention_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the synchronizationPreventionType property value. The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage, unknownFutureValue.

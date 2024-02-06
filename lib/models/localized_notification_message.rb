@@ -121,11 +121,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("isDefault", @is_default)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_string_value("locale", @locale)
-                writer.write_string_value("messageTemplate", @message_template)
-                writer.write_string_value("subject", @subject)
+                writer.write_boolean_value("isDefault", @is_default) unless @is_default.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_string_value("locale", @locale) unless @locale.nil?
+                writer.write_string_value("messageTemplate", @message_template) unless @message_template.nil?
+                writer.write_string_value("subject", @subject) unless @subject.nil?
             end
             ## 
             ## Gets the subject property value. The Message Template Subject.

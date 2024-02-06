@@ -140,13 +140,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_date_value("endDate", @end_date)
-                writer.write_number_value("numberOfOccurrences", @number_of_occurrences)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("recurrenceTimeZone", @recurrence_time_zone)
-                writer.write_date_value("startDate", @start_date)
-                writer.write_enum_value("type", @type)
-                writer.write_additional_data(@additional_data)
+                writer.write_date_value("endDate", @end_date) unless @end_date.nil?
+                writer.write_number_value("numberOfOccurrences", @number_of_occurrences) unless @number_of_occurrences.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("recurrenceTimeZone", @recurrence_time_zone) unless @recurrence_time_zone.nil?
+                writer.write_date_value("startDate", @start_date) unless @start_date.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the startDate property value. The date to start applying the recurrence pattern. The first occurrence of the meeting may be this date or later, depending on the recurrence pattern of the event. Must be the same value as the start property of the recurring event. Required.

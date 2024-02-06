@@ -374,26 +374,26 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("attachmentSessions", @attachment_sessions)
-                writer.write_collection_of_object_values("attachments", @attachments)
-                writer.write_object_value("body", @body)
-                writer.write_date_time_value("bodyLastModifiedDateTime", @body_last_modified_date_time)
-                writer.write_collection_of_primitive_values("categories", @categories)
-                writer.write_collection_of_object_values("checklistItems", @checklist_items)
-                writer.write_object_value("completedDateTime", @completed_date_time)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("dueDateTime", @due_date_time)
-                writer.write_collection_of_object_values("extensions", @extensions)
-                writer.write_boolean_value("hasAttachments", @has_attachments)
-                writer.write_enum_value("importance", @importance)
-                writer.write_boolean_value("isReminderOn", @is_reminder_on)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_collection_of_object_values("linkedResources", @linked_resources)
-                writer.write_object_value("recurrence", @recurrence)
-                writer.write_object_value("reminderDateTime", @reminder_date_time)
-                writer.write_object_value("startDateTime", @start_date_time)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("title", @title)
+                writer.write_collection_of_object_values("attachmentSessions", @attachment_sessions) unless @attachment_sessions.nil?
+                writer.write_collection_of_object_values("attachments", @attachments) unless @attachments.nil?
+                writer.write_object_value("body", @body) unless @body.nil?
+                writer.write_date_time_value("bodyLastModifiedDateTime", @body_last_modified_date_time) unless @body_last_modified_date_time.nil?
+                writer.write_collection_of_primitive_values("categories", @categories) unless @categories.nil?
+                writer.write_collection_of_object_values("checklistItems", @checklist_items) unless @checklist_items.nil?
+                writer.write_object_value("completedDateTime", @completed_date_time) unless @completed_date_time.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("dueDateTime", @due_date_time) unless @due_date_time.nil?
+                writer.write_collection_of_object_values("extensions", @extensions) unless @extensions.nil?
+                writer.write_boolean_value("hasAttachments", @has_attachments) unless @has_attachments.nil?
+                writer.write_enum_value("importance", @importance) unless @importance.nil?
+                writer.write_boolean_value("isReminderOn", @is_reminder_on) unless @is_reminder_on.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_collection_of_object_values("linkedResources", @linked_resources) unless @linked_resources.nil?
+                writer.write_object_value("recurrence", @recurrence) unless @recurrence.nil?
+                writer.write_object_value("reminderDateTime", @reminder_date_time) unless @reminder_date_time.nil?
+                writer.write_object_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
             end
             ## 
             ## Gets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.

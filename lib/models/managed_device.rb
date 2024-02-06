@@ -1027,22 +1027,22 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("complianceState", @compliance_state)
-                writer.write_object_value("deviceCategory", @device_category)
-                writer.write_collection_of_object_values("deviceCompliancePolicyStates", @device_compliance_policy_states)
-                writer.write_collection_of_object_values("deviceConfigurationStates", @device_configuration_states)
-                writer.write_enum_value("deviceEnrollmentType", @device_enrollment_type)
-                writer.write_enum_value("deviceRegistrationState", @device_registration_state)
-                writer.write_enum_value("exchangeAccessState", @exchange_access_state)
-                writer.write_enum_value("exchangeAccessStateReason", @exchange_access_state_reason)
-                writer.write_collection_of_object_values("logCollectionRequests", @log_collection_requests)
-                writer.write_string_value("managedDeviceName", @managed_device_name)
-                writer.write_enum_value("managedDeviceOwnerType", @managed_device_owner_type)
-                writer.write_enum_value("managementAgent", @management_agent)
-                writer.write_string_value("notes", @notes)
-                writer.write_enum_value("partnerReportedThreatState", @partner_reported_threat_state)
-                writer.write_collection_of_object_values("users", @users)
-                writer.write_object_value("windowsProtectionState", @windows_protection_state)
+                writer.write_enum_value("complianceState", @compliance_state) unless @compliance_state.nil?
+                writer.write_object_value("deviceCategory", @device_category) unless @device_category.nil?
+                writer.write_collection_of_object_values("deviceCompliancePolicyStates", @device_compliance_policy_states) unless @device_compliance_policy_states.nil?
+                writer.write_collection_of_object_values("deviceConfigurationStates", @device_configuration_states) unless @device_configuration_states.nil?
+                writer.write_enum_value("deviceEnrollmentType", @device_enrollment_type) unless @device_enrollment_type.nil?
+                writer.write_enum_value("deviceRegistrationState", @device_registration_state) unless @device_registration_state.nil?
+                writer.write_enum_value("exchangeAccessState", @exchange_access_state) unless @exchange_access_state.nil?
+                writer.write_enum_value("exchangeAccessStateReason", @exchange_access_state_reason) unless @exchange_access_state_reason.nil?
+                writer.write_collection_of_object_values("logCollectionRequests", @log_collection_requests) unless @log_collection_requests.nil?
+                writer.write_string_value("managedDeviceName", @managed_device_name) unless @managed_device_name.nil?
+                writer.write_enum_value("managedDeviceOwnerType", @managed_device_owner_type) unless @managed_device_owner_type.nil?
+                writer.write_enum_value("managementAgent", @management_agent) unless @management_agent.nil?
+                writer.write_string_value("notes", @notes) unless @notes.nil?
+                writer.write_enum_value("partnerReportedThreatState", @partner_reported_threat_state) unless @partner_reported_threat_state.nil?
+                writer.write_collection_of_object_values("users", @users) unless @users.nil?
+                writer.write_object_value("windowsProtectionState", @windows_protection_state) unless @windows_protection_state.nil?
             end
             ## 
             ## Gets the subscriberCarrier property value. Subscriber Carrier. This property is read-only.

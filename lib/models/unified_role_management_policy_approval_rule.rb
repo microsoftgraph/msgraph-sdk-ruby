@@ -43,7 +43,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("setting", @setting)
+                writer.write_object_value("setting", @setting) unless @setting.nil?
             end
             ## 
             ## Gets the setting property value. The settings for approval of the role assignment.

@@ -120,12 +120,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("provider", @provider)
-                writer.write_string_value("providerVersion", @provider_version)
-                writer.write_string_value("subProvider", @sub_provider)
-                writer.write_string_value("vendor", @vendor)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("provider", @provider) unless @provider.nil?
+                writer.write_string_value("providerVersion", @provider_version) unless @provider_version.nil?
+                writer.write_string_value("subProvider", @sub_provider) unless @sub_provider.nil?
+                writer.write_string_value("vendor", @vendor) unless @vendor.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the subProvider property value. Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.

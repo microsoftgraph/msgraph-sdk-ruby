@@ -306,21 +306,21 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("appIdentifier", @app_identifier)
-                writer.write_string_value("applicationVersion", @application_version)
-                writer.write_collection_of_object_values("appliedPolicies", @applied_policies)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("deviceName", @device_name)
-                writer.write_string_value("deviceTag", @device_tag)
-                writer.write_string_value("deviceType", @device_type)
-                writer.write_collection_of_object_values("flaggedReasons", @flagged_reasons)
-                writer.write_collection_of_object_values("intendedPolicies", @intended_policies)
-                writer.write_date_time_value("lastSyncDateTime", @last_sync_date_time)
-                writer.write_string_value("managementSdkVersion", @management_sdk_version)
-                writer.write_collection_of_object_values("operations", @operations)
-                writer.write_string_value("platformVersion", @platform_version)
-                writer.write_string_value("userId", @user_id)
-                writer.write_string_value("version", @version)
+                writer.write_object_value("appIdentifier", @app_identifier) unless @app_identifier.nil?
+                writer.write_string_value("applicationVersion", @application_version) unless @application_version.nil?
+                writer.write_collection_of_object_values("appliedPolicies", @applied_policies) unless @applied_policies.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("deviceName", @device_name) unless @device_name.nil?
+                writer.write_string_value("deviceTag", @device_tag) unless @device_tag.nil?
+                writer.write_string_value("deviceType", @device_type) unless @device_type.nil?
+                writer.write_collection_of_object_values("flaggedReasons", @flagged_reasons) unless @flagged_reasons.nil?
+                writer.write_collection_of_object_values("intendedPolicies", @intended_policies) unless @intended_policies.nil?
+                writer.write_date_time_value("lastSyncDateTime", @last_sync_date_time) unless @last_sync_date_time.nil?
+                writer.write_string_value("managementSdkVersion", @management_sdk_version) unless @management_sdk_version.nil?
+                writer.write_collection_of_object_values("operations", @operations) unless @operations.nil?
+                writer.write_string_value("platformVersion", @platform_version) unless @platform_version.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the userId property value. The user Id to who this app registration belongs.

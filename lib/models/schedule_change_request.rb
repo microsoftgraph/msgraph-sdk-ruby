@@ -191,10 +191,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("assignedTo", @assigned_to)
-                writer.write_string_value("managerActionMessage", @manager_action_message)
-                writer.write_string_value("senderMessage", @sender_message)
-                writer.write_enum_value("state", @state)
+                writer.write_enum_value("assignedTo", @assigned_to) unless @assigned_to.nil?
+                writer.write_string_value("managerActionMessage", @manager_action_message) unless @manager_action_message.nil?
+                writer.write_string_value("senderMessage", @sender_message) unless @sender_message.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
             end
             ## 
             ## Gets the state property value. The state property

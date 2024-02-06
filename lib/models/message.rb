@@ -549,36 +549,36 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("attachments", @attachments)
-                writer.write_collection_of_object_values("bccRecipients", @bcc_recipients)
-                writer.write_object_value("body", @body)
-                writer.write_string_value("bodyPreview", @body_preview)
-                writer.write_collection_of_object_values("ccRecipients", @cc_recipients)
-                writer.write_string_value("conversationId", @conversation_id)
-                writer.write_object_value("conversationIndex", @conversation_index)
-                writer.write_collection_of_object_values("extensions", @extensions)
-                writer.write_object_value("flag", @flag)
-                writer.write_object_value("from", @from)
-                writer.write_boolean_value("hasAttachments", @has_attachments)
-                writer.write_enum_value("importance", @importance)
-                writer.write_enum_value("inferenceClassification", @inference_classification)
-                writer.write_collection_of_object_values("internetMessageHeaders", @internet_message_headers)
-                writer.write_string_value("internetMessageId", @internet_message_id)
-                writer.write_boolean_value("isDeliveryReceiptRequested", @is_delivery_receipt_requested)
-                writer.write_boolean_value("isDraft", @is_draft)
-                writer.write_boolean_value("isRead", @is_read)
-                writer.write_boolean_value("isReadReceiptRequested", @is_read_receipt_requested)
-                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties)
-                writer.write_string_value("parentFolderId", @parent_folder_id)
-                writer.write_date_time_value("receivedDateTime", @received_date_time)
-                writer.write_collection_of_object_values("replyTo", @reply_to)
-                writer.write_object_value("sender", @sender)
-                writer.write_date_time_value("sentDateTime", @sent_date_time)
-                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties)
-                writer.write_string_value("subject", @subject)
-                writer.write_collection_of_object_values("toRecipients", @to_recipients)
-                writer.write_object_value("uniqueBody", @unique_body)
-                writer.write_string_value("webLink", @web_link)
+                writer.write_collection_of_object_values("attachments", @attachments) unless @attachments.nil?
+                writer.write_collection_of_object_values("bccRecipients", @bcc_recipients) unless @bcc_recipients.nil?
+                writer.write_object_value("body", @body) unless @body.nil?
+                writer.write_string_value("bodyPreview", @body_preview) unless @body_preview.nil?
+                writer.write_collection_of_object_values("ccRecipients", @cc_recipients) unless @cc_recipients.nil?
+                writer.write_string_value("conversationId", @conversation_id) unless @conversation_id.nil?
+                writer.write_object_value("conversationIndex", @conversation_index) unless @conversation_index.nil?
+                writer.write_collection_of_object_values("extensions", @extensions) unless @extensions.nil?
+                writer.write_object_value("flag", @flag) unless @flag.nil?
+                writer.write_object_value("from", @from) unless @from.nil?
+                writer.write_boolean_value("hasAttachments", @has_attachments) unless @has_attachments.nil?
+                writer.write_enum_value("importance", @importance) unless @importance.nil?
+                writer.write_enum_value("inferenceClassification", @inference_classification) unless @inference_classification.nil?
+                writer.write_collection_of_object_values("internetMessageHeaders", @internet_message_headers) unless @internet_message_headers.nil?
+                writer.write_string_value("internetMessageId", @internet_message_id) unless @internet_message_id.nil?
+                writer.write_boolean_value("isDeliveryReceiptRequested", @is_delivery_receipt_requested) unless @is_delivery_receipt_requested.nil?
+                writer.write_boolean_value("isDraft", @is_draft) unless @is_draft.nil?
+                writer.write_boolean_value("isRead", @is_read) unless @is_read.nil?
+                writer.write_boolean_value("isReadReceiptRequested", @is_read_receipt_requested) unless @is_read_receipt_requested.nil?
+                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties) unless @multi_value_extended_properties.nil?
+                writer.write_string_value("parentFolderId", @parent_folder_id) unless @parent_folder_id.nil?
+                writer.write_date_time_value("receivedDateTime", @received_date_time) unless @received_date_time.nil?
+                writer.write_collection_of_object_values("replyTo", @reply_to) unless @reply_to.nil?
+                writer.write_object_value("sender", @sender) unless @sender.nil?
+                writer.write_date_time_value("sentDateTime", @sent_date_time) unless @sent_date_time.nil?
+                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties) unless @single_value_extended_properties.nil?
+                writer.write_string_value("subject", @subject) unless @subject.nil?
+                writer.write_collection_of_object_values("toRecipients", @to_recipients) unless @to_recipients.nil?
+                writer.write_object_value("uniqueBody", @unique_body) unless @unique_body.nil?
+                writer.write_string_value("webLink", @web_link) unless @web_link.nil?
             end
             ## 
             ## Gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the message. Nullable.

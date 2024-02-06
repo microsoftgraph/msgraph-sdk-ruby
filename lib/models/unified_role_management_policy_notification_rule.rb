@@ -134,11 +134,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("isDefaultRecipientsEnabled", @is_default_recipients_enabled)
-                writer.write_string_value("notificationLevel", @notification_level)
-                writer.write_collection_of_primitive_values("notificationRecipients", @notification_recipients)
-                writer.write_string_value("notificationType", @notification_type)
-                writer.write_string_value("recipientType", @recipient_type)
+                writer.write_boolean_value("isDefaultRecipientsEnabled", @is_default_recipients_enabled) unless @is_default_recipients_enabled.nil?
+                writer.write_string_value("notificationLevel", @notification_level) unless @notification_level.nil?
+                writer.write_collection_of_primitive_values("notificationRecipients", @notification_recipients) unless @notification_recipients.nil?
+                writer.write_string_value("notificationType", @notification_type) unless @notification_type.nil?
+                writer.write_string_value("recipientType", @recipient_type) unless @recipient_type.nil?
             end
         end
     end

@@ -152,12 +152,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("appliesTo", @applies_to)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_enum_value("feature", @feature)
-                writer.write_boolean_value("isAppliedToOrganization", @is_applied_to_organization)
-                writer.write_boolean_value("isEnabled", @is_enabled)
+                writer.write_collection_of_object_values("appliesTo", @applies_to) unless @applies_to.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_enum_value("feature", @feature) unless @feature.nil?
+                writer.write_boolean_value("isAppliedToOrganization", @is_applied_to_organization) unless @is_applied_to_organization.nil?
+                writer.write_boolean_value("isEnabled", @is_enabled) unless @is_enabled.nil?
             end
         end
     end

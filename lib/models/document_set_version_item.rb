@@ -101,11 +101,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("itemId", @item_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("title", @title)
-                writer.write_string_value("versionId", @version_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("itemId", @item_id) unless @item_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
+                writer.write_string_value("versionId", @version_id) unless @version_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the title property value. The title of the item.

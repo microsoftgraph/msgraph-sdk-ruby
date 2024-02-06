@@ -118,11 +118,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("address", @address)
-                writer.write_collection_of_primitive_values("exceptions", @exceptions)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("useForLocalAddresses", @use_for_local_addresses)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("address", @address) unless @address.nil?
+                writer.write_collection_of_primitive_values("exceptions", @exceptions) unless @exceptions.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("useForLocalAddresses", @use_for_local_addresses) unless @use_for_local_addresses.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the useForLocalAddresses property value. Specifies whether the proxy server should be used for local (intranet) addresses.

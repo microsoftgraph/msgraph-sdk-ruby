@@ -133,11 +133,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("blockCrossOrganizationWriteAccess", @block_cross_organization_write_access)
-                writer.write_enum_value("encryptionMethod", @encryption_method)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("requireEncryptionForWriteAccess", @require_encryption_for_write_access)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("blockCrossOrganizationWriteAccess", @block_cross_organization_write_access) unless @block_cross_organization_write_access.nil?
+                writer.write_enum_value("encryptionMethod", @encryption_method) unless @encryption_method.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("requireEncryptionForWriteAccess", @require_encryption_for_write_access) unless @require_encryption_for_write_access.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

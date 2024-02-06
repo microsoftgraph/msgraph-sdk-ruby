@@ -399,25 +399,25 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_primitive_values("associatedHubsUrls", @associated_hubs_urls)
-                writer.write_object_value("base", @base)
-                writer.write_collection_of_object_values("baseTypes", @base_types)
-                writer.write_collection_of_object_values("columnLinks", @column_links)
-                writer.write_collection_of_object_values("columnPositions", @column_positions)
-                writer.write_collection_of_object_values("columns", @columns)
-                writer.write_string_value("description", @description)
-                writer.write_object_value("documentSet", @document_set)
-                writer.write_object_value("documentTemplate", @document_template)
-                writer.write_string_value("group", @group)
-                writer.write_boolean_value("hidden", @hidden)
-                writer.write_object_value("inheritedFrom", @inherited_from)
-                writer.write_boolean_value("isBuiltIn", @is_built_in)
-                writer.write_string_value("name", @name)
-                writer.write_object_value("order", @order)
-                writer.write_string_value("parentId", @parent_id)
-                writer.write_boolean_value("propagateChanges", @propagate_changes)
-                writer.write_boolean_value("readOnly", @read_only)
-                writer.write_boolean_value("sealed", @sealed)
+                writer.write_collection_of_primitive_values("associatedHubsUrls", @associated_hubs_urls) unless @associated_hubs_urls.nil?
+                writer.write_object_value("base", @base) unless @base.nil?
+                writer.write_collection_of_object_values("baseTypes", @base_types) unless @base_types.nil?
+                writer.write_collection_of_object_values("columnLinks", @column_links) unless @column_links.nil?
+                writer.write_collection_of_object_values("columnPositions", @column_positions) unless @column_positions.nil?
+                writer.write_collection_of_object_values("columns", @columns) unless @columns.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_object_value("documentSet", @document_set) unless @document_set.nil?
+                writer.write_object_value("documentTemplate", @document_template) unless @document_template.nil?
+                writer.write_string_value("group", @group) unless @group.nil?
+                writer.write_boolean_value("hidden", @hidden) unless @hidden.nil?
+                writer.write_object_value("inheritedFrom", @inherited_from) unless @inherited_from.nil?
+                writer.write_boolean_value("isBuiltIn", @is_built_in) unless @is_built_in.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_object_value("order", @order) unless @order.nil?
+                writer.write_string_value("parentId", @parent_id) unless @parent_id.nil?
+                writer.write_boolean_value("propagateChanges", @propagate_changes) unless @propagate_changes.nil?
+                writer.write_boolean_value("readOnly", @read_only) unless @read_only.nil?
+                writer.write_boolean_value("sealed", @sealed) unless @sealed.nil?
             end
         end
     end

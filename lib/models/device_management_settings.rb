@@ -131,11 +131,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("deviceComplianceCheckinThresholdDays", @device_compliance_checkin_threshold_days)
-                writer.write_boolean_value("isScheduledActionEnabled", @is_scheduled_action_enabled)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("secureByDefault", @secure_by_default)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("deviceComplianceCheckinThresholdDays", @device_compliance_checkin_threshold_days) unless @device_compliance_checkin_threshold_days.nil?
+                writer.write_boolean_value("isScheduledActionEnabled", @is_scheduled_action_enabled) unless @is_scheduled_action_enabled.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("secureByDefault", @secure_by_default) unless @secure_by_default.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

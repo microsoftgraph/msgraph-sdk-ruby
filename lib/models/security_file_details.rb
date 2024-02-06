@@ -181,16 +181,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("fileName", @file_name)
-                writer.write_string_value("filePath", @file_path)
-                writer.write_string_value("filePublisher", @file_publisher)
-                writer.write_object_value("fileSize", @file_size)
-                writer.write_string_value("issuer", @issuer)
-                writer.write_string_value("@odata.type", @odata_type)
+                writer.write_string_value("fileName", @file_name) unless @file_name.nil?
+                writer.write_string_value("filePath", @file_path) unless @file_path.nil?
+                writer.write_string_value("filePublisher", @file_publisher) unless @file_publisher.nil?
+                writer.write_object_value("fileSize", @file_size) unless @file_size.nil?
+                writer.write_string_value("issuer", @issuer) unless @issuer.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
                 writer.write_string_value("sha1", @sha1)
                 writer.write_string_value("sha256", @sha256)
-                writer.write_string_value("signer", @signer)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("signer", @signer) unless @signer.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sha1 property value. The Sha1 cryptographic hash of the file content.

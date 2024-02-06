@@ -132,11 +132,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_duration_value("maxLifetime", @max_lifetime)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_date_time_value("restrictForAppsCreatedAfterDateTime", @restrict_for_apps_created_after_date_time)
-                writer.write_enum_value("restrictionType", @restriction_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_duration_value("maxLifetime", @max_lifetime) unless @max_lifetime.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_date_time_value("restrictForAppsCreatedAfterDateTime", @restrict_for_apps_created_after_date_time) unless @restrict_for_apps_created_after_date_time.nil?
+                writer.write_enum_value("restrictionType", @restriction_type) unless @restriction_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

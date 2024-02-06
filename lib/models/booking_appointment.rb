@@ -391,28 +391,28 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("additionalInformation", @additional_information)
-                writer.write_string_value("anonymousJoinWebUrl", @anonymous_join_web_url)
-                writer.write_string_value("customerTimeZone", @customer_time_zone)
-                writer.write_collection_of_object_values("customers", @customers)
-                writer.write_object_value("endDateTime", @end_date_time)
-                writer.write_boolean_value("isLocationOnline", @is_location_online)
-                writer.write_string_value("joinWebUrl", @join_web_url)
-                writer.write_number_value("maximumAttendeesCount", @maximum_attendees_count)
-                writer.write_boolean_value("optOutOfCustomerEmail", @opt_out_of_customer_email)
-                writer.write_duration_value("postBuffer", @post_buffer)
-                writer.write_duration_value("preBuffer", @pre_buffer)
-                writer.write_object_value("price", @price)
-                writer.write_enum_value("priceType", @price_type)
-                writer.write_collection_of_object_values("reminders", @reminders)
-                writer.write_string_value("selfServiceAppointmentId", @self_service_appointment_id)
-                writer.write_string_value("serviceId", @service_id)
-                writer.write_object_value("serviceLocation", @service_location)
-                writer.write_string_value("serviceName", @service_name)
-                writer.write_string_value("serviceNotes", @service_notes)
-                writer.write_boolean_value("smsNotificationsEnabled", @sms_notifications_enabled)
-                writer.write_collection_of_primitive_values("staffMemberIds", @staff_member_ids)
-                writer.write_object_value("startDateTime", @start_date_time)
+                writer.write_string_value("additionalInformation", @additional_information) unless @additional_information.nil?
+                writer.write_string_value("anonymousJoinWebUrl", @anonymous_join_web_url) unless @anonymous_join_web_url.nil?
+                writer.write_string_value("customerTimeZone", @customer_time_zone) unless @customer_time_zone.nil?
+                writer.write_collection_of_object_values("customers", @customers) unless @customers.nil?
+                writer.write_object_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_boolean_value("isLocationOnline", @is_location_online) unless @is_location_online.nil?
+                writer.write_string_value("joinWebUrl", @join_web_url) unless @join_web_url.nil?
+                writer.write_number_value("maximumAttendeesCount", @maximum_attendees_count) unless @maximum_attendees_count.nil?
+                writer.write_boolean_value("optOutOfCustomerEmail", @opt_out_of_customer_email) unless @opt_out_of_customer_email.nil?
+                writer.write_duration_value("postBuffer", @post_buffer) unless @post_buffer.nil?
+                writer.write_duration_value("preBuffer", @pre_buffer) unless @pre_buffer.nil?
+                writer.write_object_value("price", @price) unless @price.nil?
+                writer.write_enum_value("priceType", @price_type) unless @price_type.nil?
+                writer.write_collection_of_object_values("reminders", @reminders) unless @reminders.nil?
+                writer.write_string_value("selfServiceAppointmentId", @self_service_appointment_id) unless @self_service_appointment_id.nil?
+                writer.write_string_value("serviceId", @service_id) unless @service_id.nil?
+                writer.write_object_value("serviceLocation", @service_location) unless @service_location.nil?
+                writer.write_string_value("serviceName", @service_name) unless @service_name.nil?
+                writer.write_string_value("serviceNotes", @service_notes) unless @service_notes.nil?
+                writer.write_boolean_value("smsNotificationsEnabled", @sms_notifications_enabled) unless @sms_notifications_enabled.nil?
+                writer.write_collection_of_primitive_values("staffMemberIds", @staff_member_ids) unless @staff_member_ids.nil?
+                writer.write_object_value("startDateTime", @start_date_time) unless @start_date_time.nil?
             end
             ## 
             ## Gets the serviceId property value. The ID of the bookingService associated with this appointment.

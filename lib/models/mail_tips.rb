@@ -287,20 +287,20 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("automaticReplies", @automatic_replies)
-                writer.write_string_value("customMailTip", @custom_mail_tip)
-                writer.write_boolean_value("deliveryRestricted", @delivery_restricted)
-                writer.write_object_value("emailAddress", @email_address)
-                writer.write_object_value("error", @error)
-                writer.write_number_value("externalMemberCount", @external_member_count)
-                writer.write_boolean_value("isModerated", @is_moderated)
-                writer.write_boolean_value("mailboxFull", @mailbox_full)
-                writer.write_number_value("maxMessageSize", @max_message_size)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("recipientScope", @recipient_scope)
-                writer.write_collection_of_object_values("recipientSuggestions", @recipient_suggestions)
-                writer.write_number_value("totalMemberCount", @total_member_count)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("automaticReplies", @automatic_replies) unless @automatic_replies.nil?
+                writer.write_string_value("customMailTip", @custom_mail_tip) unless @custom_mail_tip.nil?
+                writer.write_boolean_value("deliveryRestricted", @delivery_restricted) unless @delivery_restricted.nil?
+                writer.write_object_value("emailAddress", @email_address) unless @email_address.nil?
+                writer.write_object_value("error", @error) unless @error.nil?
+                writer.write_number_value("externalMemberCount", @external_member_count) unless @external_member_count.nil?
+                writer.write_boolean_value("isModerated", @is_moderated) unless @is_moderated.nil?
+                writer.write_boolean_value("mailboxFull", @mailbox_full) unless @mailbox_full.nil?
+                writer.write_number_value("maxMessageSize", @max_message_size) unless @max_message_size.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("recipientScope", @recipient_scope) unless @recipient_scope.nil?
+                writer.write_collection_of_object_values("recipientSuggestions", @recipient_suggestions) unless @recipient_suggestions.nil?
+                writer.write_number_value("totalMemberCount", @total_member_count) unless @total_member_count.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the totalMemberCount property value. The number of members if the recipient is a distribution list.

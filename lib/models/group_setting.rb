@@ -65,9 +65,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("templateId", @template_id)
-                writer.write_collection_of_object_values("values", @values)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("templateId", @template_id) unless @template_id.nil?
+                writer.write_collection_of_object_values("values", @values) unless @values.nil?
             end
             ## 
             ## Gets the templateId property value. Unique identifier for the tenant-level groupSettingTemplates object that's been customized for this group-level settings object. Read-only.

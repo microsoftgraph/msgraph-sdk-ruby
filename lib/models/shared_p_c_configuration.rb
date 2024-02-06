@@ -270,18 +270,18 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("accountManagerPolicy", @account_manager_policy)
-                writer.write_boolean_value("allowLocalStorage", @allow_local_storage)
-                writer.write_enum_value("allowedAccounts", @allowed_accounts)
-                writer.write_boolean_value("disableAccountManager", @disable_account_manager)
-                writer.write_boolean_value("disableEduPolicies", @disable_edu_policies)
-                writer.write_boolean_value("disablePowerPolicies", @disable_power_policies)
-                writer.write_boolean_value("disableSignInOnResume", @disable_sign_in_on_resume)
-                writer.write_boolean_value("enabled", @enabled)
-                writer.write_number_value("idleTimeBeforeSleepInSeconds", @idle_time_before_sleep_in_seconds)
-                writer.write_string_value("kioskAppDisplayName", @kiosk_app_display_name)
-                writer.write_string_value("kioskAppUserModelId", @kiosk_app_user_model_id)
-                writer.write_time_value("maintenanceStartTime", @maintenance_start_time)
+                writer.write_object_value("accountManagerPolicy", @account_manager_policy) unless @account_manager_policy.nil?
+                writer.write_boolean_value("allowLocalStorage", @allow_local_storage) unless @allow_local_storage.nil?
+                writer.write_enum_value("allowedAccounts", @allowed_accounts) unless @allowed_accounts.nil?
+                writer.write_boolean_value("disableAccountManager", @disable_account_manager) unless @disable_account_manager.nil?
+                writer.write_boolean_value("disableEduPolicies", @disable_edu_policies) unless @disable_edu_policies.nil?
+                writer.write_boolean_value("disablePowerPolicies", @disable_power_policies) unless @disable_power_policies.nil?
+                writer.write_boolean_value("disableSignInOnResume", @disable_sign_in_on_resume) unless @disable_sign_in_on_resume.nil?
+                writer.write_boolean_value("enabled", @enabled) unless @enabled.nil?
+                writer.write_number_value("idleTimeBeforeSleepInSeconds", @idle_time_before_sleep_in_seconds) unless @idle_time_before_sleep_in_seconds.nil?
+                writer.write_string_value("kioskAppDisplayName", @kiosk_app_display_name) unless @kiosk_app_display_name.nil?
+                writer.write_string_value("kioskAppUserModelId", @kiosk_app_user_model_id) unless @kiosk_app_user_model_id.nil?
+                writer.write_time_value("maintenanceStartTime", @maintenance_start_time) unless @maintenance_start_time.nil?
             end
         end
     end

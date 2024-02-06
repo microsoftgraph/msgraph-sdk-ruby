@@ -167,13 +167,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("completedDateTime", @completed_date_time)
-                writer.write_number_value("completionPercentage", @completion_percentage)
-                writer.write_string_value("externalcourseActivityId", @externalcourse_activity_id)
-                writer.write_string_value("learnerUserId", @learner_user_id)
-                writer.write_string_value("learningContentId", @learning_content_id)
-                writer.write_string_value("learningProviderId", @learning_provider_id)
-                writer.write_enum_value("status", @status)
+                writer.write_date_time_value("completedDateTime", @completed_date_time) unless @completed_date_time.nil?
+                writer.write_number_value("completionPercentage", @completion_percentage) unless @completion_percentage.nil?
+                writer.write_string_value("externalcourseActivityId", @externalcourse_activity_id) unless @externalcourse_activity_id.nil?
+                writer.write_string_value("learnerUserId", @learner_user_id) unless @learner_user_id.nil?
+                writer.write_string_value("learningContentId", @learning_content_id) unless @learning_content_id.nil?
+                writer.write_string_value("learningProviderId", @learning_provider_id) unless @learning_provider_id.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the status property value. The status of the course activity. Possible values are: notStarted, inProgress, completed. Required.

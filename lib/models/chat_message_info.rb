@@ -153,12 +153,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("body", @body)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("eventDetail", @event_detail)
-                writer.write_object_value("from", @from)
-                writer.write_boolean_value("isDeleted", @is_deleted)
-                writer.write_enum_value("messageType", @message_type)
+                writer.write_object_value("body", @body) unless @body.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("eventDetail", @event_detail) unless @event_detail.nil?
+                writer.write_object_value("from", @from) unless @from.nil?
+                writer.write_boolean_value("isDeleted", @is_deleted) unless @is_deleted.nil?
+                writer.write_enum_value("messageType", @message_type) unless @message_type.nil?
             end
         end
     end

@@ -83,8 +83,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("excludeTargets", @exclude_targets)
-                writer.write_enum_value("state", @state)
+                writer.write_collection_of_object_values("excludeTargets", @exclude_targets) unless @exclude_targets.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
             end
             ## 
             ## Gets the state property value. The state of the policy. Possible values are: enabled, disabled.

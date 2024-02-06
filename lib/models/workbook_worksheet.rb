@@ -160,14 +160,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("charts", @charts)
-                writer.write_string_value("name", @name)
-                writer.write_collection_of_object_values("names", @names)
-                writer.write_collection_of_object_values("pivotTables", @pivot_tables)
-                writer.write_number_value("position", @position)
-                writer.write_object_value("protection", @protection)
-                writer.write_collection_of_object_values("tables", @tables)
-                writer.write_string_value("visibility", @visibility)
+                writer.write_collection_of_object_values("charts", @charts) unless @charts.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_collection_of_object_values("names", @names) unless @names.nil?
+                writer.write_collection_of_object_values("pivotTables", @pivot_tables) unless @pivot_tables.nil?
+                writer.write_number_value("position", @position) unless @position.nil?
+                writer.write_object_value("protection", @protection) unless @protection.nil?
+                writer.write_collection_of_object_values("tables", @tables) unless @tables.nil?
+                writer.write_string_value("visibility", @visibility) unless @visibility.nil?
             end
             ## 
             ## Gets the tables property value. Collection of tables that are part of the worksheet. Read-only.

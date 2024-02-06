@@ -123,10 +123,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("averageInboundBitRate", @average_inbound_bit_rate)
-                writer.write_object_value("averageInboundFrameRate", @average_inbound_frame_rate)
-                writer.write_object_value("averageOutboundBitRate", @average_outbound_bit_rate)
-                writer.write_object_value("averageOutboundFrameRate", @average_outbound_frame_rate)
+                writer.write_object_value("averageInboundBitRate", @average_inbound_bit_rate) unless @average_inbound_bit_rate.nil?
+                writer.write_object_value("averageInboundFrameRate", @average_inbound_frame_rate) unless @average_inbound_frame_rate.nil?
+                writer.write_object_value("averageOutboundBitRate", @average_outbound_bit_rate) unless @average_outbound_bit_rate.nil?
+                writer.write_object_value("averageOutboundFrameRate", @average_outbound_frame_rate) unless @average_outbound_frame_rate.nil?
             end
         end
     end

@@ -405,26 +405,26 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("averageBlueScreens", @average_blue_screens)
-                writer.write_object_value("averageRestarts", @average_restarts)
-                writer.write_number_value("blueScreenCount", @blue_screen_count)
-                writer.write_number_value("bootScore", @boot_score)
-                writer.write_number_value("coreBootTimeInMs", @core_boot_time_in_ms)
-                writer.write_number_value("coreLoginTimeInMs", @core_login_time_in_ms)
-                writer.write_object_value("deviceCount", @device_count)
-                writer.write_string_value("deviceName", @device_name)
-                writer.write_enum_value("diskType", @disk_type)
-                writer.write_number_value("groupPolicyBootTimeInMs", @group_policy_boot_time_in_ms)
-                writer.write_number_value("groupPolicyLoginTimeInMs", @group_policy_login_time_in_ms)
-                writer.write_enum_value("healthStatus", @health_status)
-                writer.write_number_value("loginScore", @login_score)
-                writer.write_string_value("manufacturer", @manufacturer)
-                writer.write_string_value("model", @model)
-                writer.write_object_value("modelStartupPerformanceScore", @model_startup_performance_score)
-                writer.write_string_value("operatingSystemVersion", @operating_system_version)
-                writer.write_number_value("responsiveDesktopTimeInMs", @responsive_desktop_time_in_ms)
-                writer.write_number_value("restartCount", @restart_count)
-                writer.write_object_value("startupPerformanceScore", @startup_performance_score)
+                writer.write_object_value("averageBlueScreens", @average_blue_screens) unless @average_blue_screens.nil?
+                writer.write_object_value("averageRestarts", @average_restarts) unless @average_restarts.nil?
+                writer.write_number_value("blueScreenCount", @blue_screen_count) unless @blue_screen_count.nil?
+                writer.write_number_value("bootScore", @boot_score) unless @boot_score.nil?
+                writer.write_number_value("coreBootTimeInMs", @core_boot_time_in_ms) unless @core_boot_time_in_ms.nil?
+                writer.write_number_value("coreLoginTimeInMs", @core_login_time_in_ms) unless @core_login_time_in_ms.nil?
+                writer.write_object_value("deviceCount", @device_count) unless @device_count.nil?
+                writer.write_string_value("deviceName", @device_name) unless @device_name.nil?
+                writer.write_enum_value("diskType", @disk_type) unless @disk_type.nil?
+                writer.write_number_value("groupPolicyBootTimeInMs", @group_policy_boot_time_in_ms) unless @group_policy_boot_time_in_ms.nil?
+                writer.write_number_value("groupPolicyLoginTimeInMs", @group_policy_login_time_in_ms) unless @group_policy_login_time_in_ms.nil?
+                writer.write_enum_value("healthStatus", @health_status) unless @health_status.nil?
+                writer.write_number_value("loginScore", @login_score) unless @login_score.nil?
+                writer.write_string_value("manufacturer", @manufacturer) unless @manufacturer.nil?
+                writer.write_string_value("model", @model) unless @model.nil?
+                writer.write_object_value("modelStartupPerformanceScore", @model_startup_performance_score) unless @model_startup_performance_score.nil?
+                writer.write_string_value("operatingSystemVersion", @operating_system_version) unless @operating_system_version.nil?
+                writer.write_number_value("responsiveDesktopTimeInMs", @responsive_desktop_time_in_ms) unless @responsive_desktop_time_in_ms.nil?
+                writer.write_number_value("restartCount", @restart_count) unless @restart_count.nil?
+                writer.write_object_value("startupPerformanceScore", @startup_performance_score) unless @startup_performance_score.nil?
             end
             ## 
             ## Gets the startupPerformanceScore property value. The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308

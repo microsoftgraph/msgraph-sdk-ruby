@@ -122,12 +122,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("bold", @bold)
-                writer.write_string_value("color", @color)
-                writer.write_boolean_value("italic", @italic)
-                writer.write_string_value("name", @name)
-                writer.write_object_value("size", @size)
-                writer.write_string_value("underline", @underline)
+                writer.write_boolean_value("bold", @bold) unless @bold.nil?
+                writer.write_string_value("color", @color) unless @color.nil?
+                writer.write_boolean_value("italic", @italic) unless @italic.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_object_value("size", @size) unless @size.nil?
+                writer.write_string_value("underline", @underline) unless @underline.nil?
             end
             ## 
             ## Gets the size property value. Size of the font (e.g. 11)

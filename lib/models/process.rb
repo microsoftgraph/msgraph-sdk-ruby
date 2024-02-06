@@ -303,20 +303,20 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("accountName", @account_name)
-                writer.write_string_value("commandLine", @command_line)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_object_value("fileHash", @file_hash)
-                writer.write_enum_value("integrityLevel", @integrity_level)
-                writer.write_boolean_value("isElevated", @is_elevated)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_date_time_value("parentProcessCreatedDateTime", @parent_process_created_date_time)
-                writer.write_number_value("parentProcessId", @parent_process_id)
-                writer.write_string_value("parentProcessName", @parent_process_name)
-                writer.write_string_value("path", @path)
-                writer.write_number_value("processId", @process_id)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("accountName", @account_name) unless @account_name.nil?
+                writer.write_string_value("commandLine", @command_line) unless @command_line.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_object_value("fileHash", @file_hash) unless @file_hash.nil?
+                writer.write_enum_value("integrityLevel", @integrity_level) unless @integrity_level.nil?
+                writer.write_boolean_value("isElevated", @is_elevated) unless @is_elevated.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_date_time_value("parentProcessCreatedDateTime", @parent_process_created_date_time) unless @parent_process_created_date_time.nil?
+                writer.write_number_value("parentProcessId", @parent_process_id) unless @parent_process_id.nil?
+                writer.write_string_value("parentProcessName", @parent_process_name) unless @parent_process_name.nil?
+                writer.write_string_value("path", @path) unless @path.nil?
+                writer.write_number_value("processId", @process_id) unless @process_id.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

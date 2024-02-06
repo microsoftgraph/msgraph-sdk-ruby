@@ -42,7 +42,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("stages", @stages)
+                writer.write_collection_of_object_values("stages", @stages) unless @stages.nil?
             end
             ## 
             ## Gets the stages property value. A collection of stages in the approval decision.

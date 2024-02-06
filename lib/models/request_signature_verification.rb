@@ -112,10 +112,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("allowedWeakAlgorithms", @allowed_weak_algorithms)
-                writer.write_boolean_value("isSignedRequestRequired", @is_signed_request_required)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("allowedWeakAlgorithms", @allowed_weak_algorithms) unless @allowed_weak_algorithms.nil?
+                writer.write_boolean_value("isSignedRequestRequired", @is_signed_request_required) unless @is_signed_request_required.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

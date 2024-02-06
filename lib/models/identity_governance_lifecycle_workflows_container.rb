@@ -92,12 +92,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("customTaskExtensions", @custom_task_extensions)
-                writer.write_object_value("deletedItems", @deleted_items)
-                writer.write_object_value("settings", @settings)
-                writer.write_collection_of_object_values("taskDefinitions", @task_definitions)
-                writer.write_collection_of_object_values("workflowTemplates", @workflow_templates)
-                writer.write_collection_of_object_values("workflows", @workflows)
+                writer.write_collection_of_object_values("customTaskExtensions", @custom_task_extensions) unless @custom_task_extensions.nil?
+                writer.write_object_value("deletedItems", @deleted_items) unless @deleted_items.nil?
+                writer.write_object_value("settings", @settings) unless @settings.nil?
+                writer.write_collection_of_object_values("taskDefinitions", @task_definitions) unless @task_definitions.nil?
+                writer.write_collection_of_object_values("workflowTemplates", @workflow_templates) unless @workflow_templates.nil?
+                writer.write_collection_of_object_values("workflows", @workflows) unless @workflows.nil?
             end
             ## 
             ## Gets the settings property value. The settings property

@@ -157,13 +157,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("activatedUsing", @activated_using)
-                writer.write_string_value("assignmentType", @assignment_type)
-                writer.write_date_time_value("endDateTime", @end_date_time)
-                writer.write_string_value("memberType", @member_type)
-                writer.write_string_value("roleAssignmentOriginId", @role_assignment_origin_id)
-                writer.write_string_value("roleAssignmentScheduleId", @role_assignment_schedule_id)
-                writer.write_date_time_value("startDateTime", @start_date_time)
+                writer.write_object_value("activatedUsing", @activated_using) unless @activated_using.nil?
+                writer.write_string_value("assignmentType", @assignment_type) unless @assignment_type.nil?
+                writer.write_date_time_value("endDateTime", @end_date_time) unless @end_date_time.nil?
+                writer.write_string_value("memberType", @member_type) unless @member_type.nil?
+                writer.write_string_value("roleAssignmentOriginId", @role_assignment_origin_id) unless @role_assignment_origin_id.nil?
+                writer.write_string_value("roleAssignmentScheduleId", @role_assignment_schedule_id) unless @role_assignment_schedule_id.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
             end
             ## 
             ## Gets the startDateTime property value. When this instance starts.

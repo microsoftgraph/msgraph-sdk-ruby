@@ -45,7 +45,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("uninstallBuiltInApps", @uninstall_built_in_apps)
+                writer.write_boolean_value("uninstallBuiltInApps", @uninstall_built_in_apps) unless @uninstall_built_in_apps.nil?
             end
             ## 
             ## Gets the uninstallBuiltInApps property value. Indicates whether or not to uninstall a fixed list of built-in Windows apps.

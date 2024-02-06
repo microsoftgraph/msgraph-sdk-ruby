@@ -143,13 +143,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_boolean_value("isUsable", @is_usable)
-                writer.write_boolean_value("isUsableOnce", @is_usable_once)
-                writer.write_number_value("lifetimeInMinutes", @lifetime_in_minutes)
-                writer.write_string_value("methodUsabilityReason", @method_usability_reason)
-                writer.write_date_time_value("startDateTime", @start_date_time)
-                writer.write_string_value("temporaryAccessPass", @temporary_access_pass)
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_boolean_value("isUsable", @is_usable) unless @is_usable.nil?
+                writer.write_boolean_value("isUsableOnce", @is_usable_once) unless @is_usable_once.nil?
+                writer.write_number_value("lifetimeInMinutes", @lifetime_in_minutes) unless @lifetime_in_minutes.nil?
+                writer.write_string_value("methodUsabilityReason", @method_usability_reason) unless @method_usability_reason.nil?
+                writer.write_date_time_value("startDateTime", @start_date_time) unless @start_date_time.nil?
+                writer.write_string_value("temporaryAccessPass", @temporary_access_pass) unless @temporary_access_pass.nil?
             end
             ## 
             ## Gets the startDateTime property value. The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.

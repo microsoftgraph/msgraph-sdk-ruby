@@ -718,48 +718,48 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("allowNewTimeProposals", @allow_new_time_proposals)
-                writer.write_collection_of_object_values("attachments", @attachments)
-                writer.write_collection_of_object_values("attendees", @attendees)
-                writer.write_object_value("body", @body)
-                writer.write_string_value("bodyPreview", @body_preview)
-                writer.write_object_value("calendar", @calendar)
-                writer.write_object_value("end", @end_escaped)
-                writer.write_collection_of_object_values("extensions", @extensions)
-                writer.write_boolean_value("hasAttachments", @has_attachments)
-                writer.write_boolean_value("hideAttendees", @hide_attendees)
-                writer.write_string_value("iCalUId", @i_cal_u_id)
-                writer.write_enum_value("importance", @importance)
-                writer.write_collection_of_object_values("instances", @instances)
-                writer.write_boolean_value("isAllDay", @is_all_day)
-                writer.write_boolean_value("isCancelled", @is_cancelled)
-                writer.write_boolean_value("isDraft", @is_draft)
-                writer.write_boolean_value("isOnlineMeeting", @is_online_meeting)
-                writer.write_boolean_value("isOrganizer", @is_organizer)
-                writer.write_boolean_value("isReminderOn", @is_reminder_on)
-                writer.write_object_value("location", @location)
-                writer.write_collection_of_object_values("locations", @locations)
-                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties)
-                writer.write_object_value("onlineMeeting", @online_meeting)
-                writer.write_enum_value("onlineMeetingProvider", @online_meeting_provider)
-                writer.write_string_value("onlineMeetingUrl", @online_meeting_url)
-                writer.write_object_value("organizer", @organizer)
-                writer.write_string_value("originalEndTimeZone", @original_end_time_zone)
-                writer.write_date_time_value("originalStart", @original_start)
-                writer.write_string_value("originalStartTimeZone", @original_start_time_zone)
-                writer.write_object_value("recurrence", @recurrence)
-                writer.write_number_value("reminderMinutesBeforeStart", @reminder_minutes_before_start)
-                writer.write_boolean_value("responseRequested", @response_requested)
-                writer.write_object_value("responseStatus", @response_status)
-                writer.write_enum_value("sensitivity", @sensitivity)
-                writer.write_string_value("seriesMasterId", @series_master_id)
-                writer.write_enum_value("showAs", @show_as)
-                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties)
-                writer.write_object_value("start", @start)
-                writer.write_string_value("subject", @subject)
-                writer.write_string_value("transactionId", @transaction_id)
-                writer.write_enum_value("type", @type)
-                writer.write_string_value("webLink", @web_link)
+                writer.write_boolean_value("allowNewTimeProposals", @allow_new_time_proposals) unless @allow_new_time_proposals.nil?
+                writer.write_collection_of_object_values("attachments", @attachments) unless @attachments.nil?
+                writer.write_collection_of_object_values("attendees", @attendees) unless @attendees.nil?
+                writer.write_object_value("body", @body) unless @body.nil?
+                writer.write_string_value("bodyPreview", @body_preview) unless @body_preview.nil?
+                writer.write_object_value("calendar", @calendar) unless @calendar.nil?
+                writer.write_object_value("end", @end_escaped) unless @end_escaped.nil?
+                writer.write_collection_of_object_values("extensions", @extensions) unless @extensions.nil?
+                writer.write_boolean_value("hasAttachments", @has_attachments) unless @has_attachments.nil?
+                writer.write_boolean_value("hideAttendees", @hide_attendees) unless @hide_attendees.nil?
+                writer.write_string_value("iCalUId", @i_cal_u_id) unless @i_cal_u_id.nil?
+                writer.write_enum_value("importance", @importance) unless @importance.nil?
+                writer.write_collection_of_object_values("instances", @instances) unless @instances.nil?
+                writer.write_boolean_value("isAllDay", @is_all_day) unless @is_all_day.nil?
+                writer.write_boolean_value("isCancelled", @is_cancelled) unless @is_cancelled.nil?
+                writer.write_boolean_value("isDraft", @is_draft) unless @is_draft.nil?
+                writer.write_boolean_value("isOnlineMeeting", @is_online_meeting) unless @is_online_meeting.nil?
+                writer.write_boolean_value("isOrganizer", @is_organizer) unless @is_organizer.nil?
+                writer.write_boolean_value("isReminderOn", @is_reminder_on) unless @is_reminder_on.nil?
+                writer.write_object_value("location", @location) unless @location.nil?
+                writer.write_collection_of_object_values("locations", @locations) unless @locations.nil?
+                writer.write_collection_of_object_values("multiValueExtendedProperties", @multi_value_extended_properties) unless @multi_value_extended_properties.nil?
+                writer.write_object_value("onlineMeeting", @online_meeting) unless @online_meeting.nil?
+                writer.write_enum_value("onlineMeetingProvider", @online_meeting_provider) unless @online_meeting_provider.nil?
+                writer.write_string_value("onlineMeetingUrl", @online_meeting_url) unless @online_meeting_url.nil?
+                writer.write_object_value("organizer", @organizer) unless @organizer.nil?
+                writer.write_string_value("originalEndTimeZone", @original_end_time_zone) unless @original_end_time_zone.nil?
+                writer.write_date_time_value("originalStart", @original_start) unless @original_start.nil?
+                writer.write_string_value("originalStartTimeZone", @original_start_time_zone) unless @original_start_time_zone.nil?
+                writer.write_object_value("recurrence", @recurrence) unless @recurrence.nil?
+                writer.write_number_value("reminderMinutesBeforeStart", @reminder_minutes_before_start) unless @reminder_minutes_before_start.nil?
+                writer.write_boolean_value("responseRequested", @response_requested) unless @response_requested.nil?
+                writer.write_object_value("responseStatus", @response_status) unless @response_status.nil?
+                writer.write_enum_value("sensitivity", @sensitivity) unless @sensitivity.nil?
+                writer.write_string_value("seriesMasterId", @series_master_id) unless @series_master_id.nil?
+                writer.write_enum_value("showAs", @show_as) unless @show_as.nil?
+                writer.write_collection_of_object_values("singleValueExtendedProperties", @single_value_extended_properties) unless @single_value_extended_properties.nil?
+                writer.write_object_value("start", @start) unless @start.nil?
+                writer.write_string_value("subject", @subject) unless @subject.nil?
+                writer.write_string_value("transactionId", @transaction_id) unless @transaction_id.nil?
+                writer.write_enum_value("type", @type) unless @type.nil?
+                writer.write_string_value("webLink", @web_link) unless @web_link.nil?
             end
             ## 
             ## Gets the seriesMasterId property value. The seriesMasterId property

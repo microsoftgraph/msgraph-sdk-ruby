@@ -77,8 +77,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("isExpirationRequired", @is_expiration_required)
-                writer.write_duration_value("maximumDuration", @maximum_duration)
+                writer.write_boolean_value("isExpirationRequired", @is_expiration_required) unless @is_expiration_required.nil?
+                writer.write_duration_value("maximumDuration", @maximum_duration) unless @maximum_duration.nil?
             end
         end
     end

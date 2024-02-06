@@ -169,16 +169,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_primitive_values("aliases", @aliases)
-                writer.write_collection_of_object_values("countriesOrRegionsOfOrigin", @countries_or_regions_of_origin)
-                writer.write_object_value("description", @description)
-                writer.write_date_time_value("firstActiveDateTime", @first_active_date_time)
-                writer.write_collection_of_object_values("indicators", @indicators)
-                writer.write_enum_value("kind", @kind)
-                writer.write_object_value("summary", @summary)
-                writer.write_collection_of_primitive_values("targets", @targets)
-                writer.write_string_value("title", @title)
-                writer.write_object_value("tradecraft", @tradecraft)
+                writer.write_collection_of_primitive_values("aliases", @aliases) unless @aliases.nil?
+                writer.write_collection_of_object_values("countriesOrRegionsOfOrigin", @countries_or_regions_of_origin) unless @countries_or_regions_of_origin.nil?
+                writer.write_object_value("description", @description) unless @description.nil?
+                writer.write_date_time_value("firstActiveDateTime", @first_active_date_time) unless @first_active_date_time.nil?
+                writer.write_collection_of_object_values("indicators", @indicators) unless @indicators.nil?
+                writer.write_enum_value("kind", @kind) unless @kind.nil?
+                writer.write_object_value("summary", @summary) unless @summary.nil?
+                writer.write_collection_of_primitive_values("targets", @targets) unless @targets.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
+                writer.write_object_value("tradecraft", @tradecraft) unless @tradecraft.nil?
             end
             ## 
             ## Gets the summary property value. The summary property

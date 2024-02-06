@@ -265,18 +265,18 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("acquiredByPrinter", @acquired_by_printer)
-                writer.write_date_time_value("acquiredDateTime", @acquired_date_time)
-                writer.write_date_time_value("completionDateTime", @completion_date_time)
-                writer.write_number_value("copiesPrinted", @copies_printed)
-                writer.write_object_value("createdBy", @created_by)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("id", @id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("printerId", @printer_id)
-                writer.write_string_value("printerName", @printer_name)
-                writer.write_enum_value("processingState", @processing_state)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("acquiredByPrinter", @acquired_by_printer) unless @acquired_by_printer.nil?
+                writer.write_date_time_value("acquiredDateTime", @acquired_date_time) unless @acquired_date_time.nil?
+                writer.write_date_time_value("completionDateTime", @completion_date_time) unless @completion_date_time.nil?
+                writer.write_number_value("copiesPrinted", @copies_printed) unless @copies_printed.nil?
+                writer.write_object_value("createdBy", @created_by) unless @created_by.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("id", @id) unless @id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("printerId", @printer_id) unless @printer_id.nil?
+                writer.write_string_value("printerName", @printer_name) unless @printer_name.nil?
+                writer.write_enum_value("processingState", @processing_state) unless @processing_state.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

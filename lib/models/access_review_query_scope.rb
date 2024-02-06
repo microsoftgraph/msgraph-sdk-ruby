@@ -104,9 +104,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("query", @query)
-                writer.write_string_value("queryRoot", @query_root)
-                writer.write_string_value("queryType", @query_type)
+                writer.write_string_value("query", @query) unless @query.nil?
+                writer.write_string_value("queryRoot", @query_root) unless @query_root.nil?
+                writer.write_string_value("queryType", @query_type) unless @query_type.nil?
             end
         end
     end

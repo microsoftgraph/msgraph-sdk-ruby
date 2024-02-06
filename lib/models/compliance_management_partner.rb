@@ -212,15 +212,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("androidEnrollmentAssignments", @android_enrollment_assignments)
-                writer.write_boolean_value("androidOnboarded", @android_onboarded)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_collection_of_object_values("iosEnrollmentAssignments", @ios_enrollment_assignments)
-                writer.write_boolean_value("iosOnboarded", @ios_onboarded)
-                writer.write_date_time_value("lastHeartbeatDateTime", @last_heartbeat_date_time)
-                writer.write_collection_of_object_values("macOsEnrollmentAssignments", @mac_os_enrollment_assignments)
-                writer.write_boolean_value("macOsOnboarded", @mac_os_onboarded)
-                writer.write_enum_value("partnerState", @partner_state)
+                writer.write_collection_of_object_values("androidEnrollmentAssignments", @android_enrollment_assignments) unless @android_enrollment_assignments.nil?
+                writer.write_boolean_value("androidOnboarded", @android_onboarded) unless @android_onboarded.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_collection_of_object_values("iosEnrollmentAssignments", @ios_enrollment_assignments) unless @ios_enrollment_assignments.nil?
+                writer.write_boolean_value("iosOnboarded", @ios_onboarded) unless @ios_onboarded.nil?
+                writer.write_date_time_value("lastHeartbeatDateTime", @last_heartbeat_date_time) unless @last_heartbeat_date_time.nil?
+                writer.write_collection_of_object_values("macOsEnrollmentAssignments", @mac_os_enrollment_assignments) unless @mac_os_enrollment_assignments.nil?
+                writer.write_boolean_value("macOsOnboarded", @mac_os_onboarded) unless @mac_os_onboarded.nil?
+                writer.write_enum_value("partnerState", @partner_state) unless @partner_state.nil?
             end
         end
     end

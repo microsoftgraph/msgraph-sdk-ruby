@@ -154,13 +154,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("accessReviews", @access_reviews)
-                writer.write_object_value("appConsent", @app_consent)
-                writer.write_object_value("entitlementManagement", @entitlement_management)
-                writer.write_object_value("lifecycleWorkflows", @lifecycle_workflows)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("termsOfUse", @terms_of_use)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("accessReviews", @access_reviews) unless @access_reviews.nil?
+                writer.write_object_value("appConsent", @app_consent) unless @app_consent.nil?
+                writer.write_object_value("entitlementManagement", @entitlement_management) unless @entitlement_management.nil?
+                writer.write_object_value("lifecycleWorkflows", @lifecycle_workflows) unless @lifecycle_workflows.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("termsOfUse", @terms_of_use) unless @terms_of_use.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the termsOfUse property value. The termsOfUse property

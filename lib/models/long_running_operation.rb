@@ -112,11 +112,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_date_time_value("lastActionDateTime", @last_action_date_time)
-                writer.write_string_value("resourceLocation", @resource_location)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("statusDetail", @status_detail)
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_date_time_value("lastActionDateTime", @last_action_date_time) unless @last_action_date_time.nil?
+                writer.write_string_value("resourceLocation", @resource_location) unless @resource_location.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("statusDetail", @status_detail) unless @status_detail.nil?
             end
             ## 
             ## Gets the status property value. The status of the operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.

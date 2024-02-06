@@ -60,7 +60,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("bundleID", @bundle_i_d)
+                writer.write_string_value("bundleID", @bundle_i_d) unless @bundle_i_d.nil?
             end
         end
     end

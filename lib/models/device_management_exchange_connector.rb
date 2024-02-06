@@ -167,15 +167,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("connectorServerName", @connector_server_name)
-                writer.write_string_value("exchangeAlias", @exchange_alias)
-                writer.write_enum_value("exchangeConnectorType", @exchange_connector_type)
-                writer.write_string_value("exchangeOrganization", @exchange_organization)
-                writer.write_date_time_value("lastSyncDateTime", @last_sync_date_time)
-                writer.write_string_value("primarySmtpAddress", @primary_smtp_address)
-                writer.write_string_value("serverName", @server_name)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("version", @version)
+                writer.write_string_value("connectorServerName", @connector_server_name) unless @connector_server_name.nil?
+                writer.write_string_value("exchangeAlias", @exchange_alias) unless @exchange_alias.nil?
+                writer.write_enum_value("exchangeConnectorType", @exchange_connector_type) unless @exchange_connector_type.nil?
+                writer.write_string_value("exchangeOrganization", @exchange_organization) unless @exchange_organization.nil?
+                writer.write_date_time_value("lastSyncDateTime", @last_sync_date_time) unless @last_sync_date_time.nil?
+                writer.write_string_value("primarySmtpAddress", @primary_smtp_address) unless @primary_smtp_address.nil?
+                writer.write_string_value("serverName", @server_name) unless @server_name.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the serverName property value. The name of the Exchange server.

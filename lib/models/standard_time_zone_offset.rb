@@ -148,13 +148,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("dayOccurrence", @day_occurrence)
-                writer.write_enum_value("dayOfWeek", @day_of_week)
-                writer.write_number_value("month", @month)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_time_value("time", @time)
-                writer.write_number_value("year", @year)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("dayOccurrence", @day_occurrence) unless @day_occurrence.nil?
+                writer.write_enum_value("dayOfWeek", @day_of_week) unless @day_of_week.nil?
+                writer.write_number_value("month", @month) unless @month.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_time_value("time", @time) unless @time.nil?
+                writer.write_number_value("year", @year) unless @year.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the time property value. Represents the time of day when the transition from daylight saving time to standard time occurs.

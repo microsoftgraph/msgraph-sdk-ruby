@@ -198,17 +198,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("assignments", @assignments)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_object_value("deviceStatusSummary", @device_status_summary)
-                writer.write_collection_of_object_values("deviceStatuses", @device_statuses)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_collection_of_primitive_values("targetedMobileApps", @targeted_mobile_apps)
-                writer.write_object_value("userStatusSummary", @user_status_summary)
-                writer.write_collection_of_object_values("userStatuses", @user_statuses)
-                writer.write_number_value("version", @version)
+                writer.write_collection_of_object_values("assignments", @assignments) unless @assignments.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_object_value("deviceStatusSummary", @device_status_summary) unless @device_status_summary.nil?
+                writer.write_collection_of_object_values("deviceStatuses", @device_statuses) unless @device_statuses.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_collection_of_primitive_values("targetedMobileApps", @targeted_mobile_apps) unless @targeted_mobile_apps.nil?
+                writer.write_object_value("userStatusSummary", @user_status_summary) unless @user_status_summary.nil?
+                writer.write_collection_of_object_values("userStatuses", @user_statuses) unless @user_statuses.nil?
+                writer.write_number_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the targetedMobileApps property value. the associated app.

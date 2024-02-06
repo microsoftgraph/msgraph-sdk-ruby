@@ -63,8 +63,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("deviceCount", @device_count)
-                writer.write_string_value("url", @url)
+                writer.write_number_value("deviceCount", @device_count) unless @device_count.nil?
+                writer.write_string_value("url", @url) unless @url.nil?
             end
             ## 
             ## Gets the url property value. Website url

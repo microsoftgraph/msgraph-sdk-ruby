@@ -146,14 +146,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("accessPackage", @access_package)
-                writer.write_object_value("assignmentPolicy", @assignment_policy)
-                writer.write_collection_of_object_values("customExtensionCalloutInstances", @custom_extension_callout_instances)
-                writer.write_date_time_value("expiredDateTime", @expired_date_time)
-                writer.write_object_value("schedule", @schedule)
-                writer.write_enum_value("state", @state)
-                writer.write_string_value("status", @status)
-                writer.write_object_value("target", @target)
+                writer.write_object_value("accessPackage", @access_package) unless @access_package.nil?
+                writer.write_object_value("assignmentPolicy", @assignment_policy) unless @assignment_policy.nil?
+                writer.write_collection_of_object_values("customExtensionCalloutInstances", @custom_extension_callout_instances) unless @custom_extension_callout_instances.nil?
+                writer.write_date_time_value("expiredDateTime", @expired_date_time) unless @expired_date_time.nil?
+                writer.write_object_value("schedule", @schedule) unless @schedule.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_string_value("status", @status) unless @status.nil?
+                writer.write_object_value("target", @target) unless @target.nil?
             end
             ## 
             ## Gets the state property value. The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only. Supports $filter (eq).

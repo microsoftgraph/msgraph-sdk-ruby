@@ -62,8 +62,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("offsetInDays", @offset_in_days)
-                writer.write_enum_value("timeBasedAttribute", @time_based_attribute)
+                writer.write_number_value("offsetInDays", @offset_in_days) unless @offset_in_days.nil?
+                writer.write_enum_value("timeBasedAttribute", @time_based_attribute) unless @time_based_attribute.nil?
             end
             ## 
             ## Gets the timeBasedAttribute property value. The timeBasedAttribute property

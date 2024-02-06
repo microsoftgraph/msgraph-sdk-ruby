@@ -263,17 +263,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("assignments", @assignments)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("description", @description)
-                writer.write_collection_of_object_values("deviceSettingStateSummaries", @device_setting_state_summaries)
-                writer.write_object_value("deviceStatusOverview", @device_status_overview)
-                writer.write_collection_of_object_values("deviceStatuses", @device_statuses)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_object_value("userStatusOverview", @user_status_overview)
-                writer.write_collection_of_object_values("userStatuses", @user_statuses)
-                writer.write_number_value("version", @version)
+                writer.write_collection_of_object_values("assignments", @assignments) unless @assignments.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_collection_of_object_values("deviceSettingStateSummaries", @device_setting_state_summaries) unless @device_setting_state_summaries.nil?
+                writer.write_object_value("deviceStatusOverview", @device_status_overview) unless @device_status_overview.nil?
+                writer.write_collection_of_object_values("deviceStatuses", @device_statuses) unless @device_statuses.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_object_value("userStatusOverview", @user_status_overview) unless @user_status_overview.nil?
+                writer.write_collection_of_object_values("userStatuses", @user_statuses) unless @user_statuses.nil?
+                writer.write_number_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the userStatusOverview property value. Device Configuration users status overview

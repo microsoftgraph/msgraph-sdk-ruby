@@ -100,10 +100,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("filterQuery", @filter_query)
-                writer.write_boolean_value("includeNestedFolders", @include_nested_folders)
-                writer.write_boolean_value("isSupported", @is_supported)
-                writer.write_collection_of_primitive_values("sourceFolderIds", @source_folder_ids)
+                writer.write_string_value("filterQuery", @filter_query) unless @filter_query.nil?
+                writer.write_boolean_value("includeNestedFolders", @include_nested_folders) unless @include_nested_folders.nil?
+                writer.write_boolean_value("isSupported", @is_supported) unless @is_supported.nil?
+                writer.write_collection_of_primitive_values("sourceFolderIds", @source_folder_ids) unless @source_folder_ids.nil?
             end
             ## 
             ## Gets the sourceFolderIds property value. The mailbox folders that should be mined.

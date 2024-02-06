@@ -76,8 +76,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("ipRanges", @ip_ranges)
-                writer.write_boolean_value("isTrusted", @is_trusted)
+                writer.write_collection_of_object_values("ipRanges", @ip_ranges) unless @ip_ranges.nil?
+                writer.write_boolean_value("isTrusted", @is_trusted) unless @is_trusted.nil?
             end
         end
     end

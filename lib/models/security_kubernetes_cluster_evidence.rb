@@ -119,11 +119,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("cloudResource", @cloud_resource)
-                writer.write_string_value("distribution", @distribution)
-                writer.write_string_value("name", @name)
-                writer.write_enum_value("platform", @platform)
-                writer.write_string_value("version", @version)
+                writer.write_object_value("cloudResource", @cloud_resource) unless @cloud_resource.nil?
+                writer.write_string_value("distribution", @distribution) unless @distribution.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_enum_value("platform", @platform) unless @platform.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the version property value. The kubernetes version of the cluster.

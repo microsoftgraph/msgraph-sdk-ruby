@@ -118,11 +118,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("attendanceIntervals", @attendance_intervals)
-                writer.write_string_value("emailAddress", @email_address)
-                writer.write_object_value("identity", @identity)
-                writer.write_string_value("role", @role)
-                writer.write_number_value("totalAttendanceInSeconds", @total_attendance_in_seconds)
+                writer.write_collection_of_object_values("attendanceIntervals", @attendance_intervals) unless @attendance_intervals.nil?
+                writer.write_string_value("emailAddress", @email_address) unless @email_address.nil?
+                writer.write_object_value("identity", @identity) unless @identity.nil?
+                writer.write_string_value("role", @role) unless @role.nil?
+                writer.write_number_value("totalAttendanceInSeconds", @total_attendance_in_seconds) unless @total_attendance_in_seconds.nil?
             end
             ## 
             ## Gets the totalAttendanceInSeconds property value. Total duration of the attendances in seconds.

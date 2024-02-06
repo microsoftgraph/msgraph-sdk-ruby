@@ -205,17 +205,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appleId", @apple_id)
-                writer.write_boolean_value("automaticallyUpdateApps", @automatically_update_apps)
-                writer.write_string_value("countryOrRegion", @country_or_region)
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_date_time_value("lastSyncDateTime", @last_sync_date_time)
-                writer.write_enum_value("lastSyncStatus", @last_sync_status)
-                writer.write_string_value("organizationName", @organization_name)
-                writer.write_enum_value("state", @state)
-                writer.write_string_value("token", @token)
-                writer.write_enum_value("vppTokenAccountType", @vpp_token_account_type)
+                writer.write_string_value("appleId", @apple_id) unless @apple_id.nil?
+                writer.write_boolean_value("automaticallyUpdateApps", @automatically_update_apps) unless @automatically_update_apps.nil?
+                writer.write_string_value("countryOrRegion", @country_or_region) unless @country_or_region.nil?
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_date_time_value("lastSyncDateTime", @last_sync_date_time) unless @last_sync_date_time.nil?
+                writer.write_enum_value("lastSyncStatus", @last_sync_status) unless @last_sync_status.nil?
+                writer.write_string_value("organizationName", @organization_name) unless @organization_name.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_string_value("token", @token) unless @token.nil?
+                writer.write_enum_value("vppTokenAccountType", @vpp_token_account_type) unless @vpp_token_account_type.nil?
             end
             ## 
             ## Gets the state property value. Possible states associated with an Apple Volume Purchase Program token.

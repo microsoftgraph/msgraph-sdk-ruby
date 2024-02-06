@@ -119,11 +119,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("appDisplayName", @app_display_name)
-                writer.write_string_value("dataType", @data_type)
-                writer.write_boolean_value("isSyncedFromOnPremises", @is_synced_from_on_premises)
-                writer.write_string_value("name", @name)
-                writer.write_collection_of_primitive_values("targetObjects", @target_objects)
+                writer.write_string_value("appDisplayName", @app_display_name) unless @app_display_name.nil?
+                writer.write_string_value("dataType", @data_type) unless @data_type.nil?
+                writer.write_boolean_value("isSyncedFromOnPremises", @is_synced_from_on_premises) unless @is_synced_from_on_premises.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_collection_of_primitive_values("targetObjects", @target_objects) unless @target_objects.nil?
             end
             ## 
             ## Gets the targetObjects property value. Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization

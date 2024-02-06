@@ -260,20 +260,20 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("activationUrl", @activation_url)
-                writer.write_string_value("activitySourceHost", @activity_source_host)
-                writer.write_string_value("appActivityId", @app_activity_id)
-                writer.write_string_value("appDisplayName", @app_display_name)
-                writer.write_object_value("contentInfo", @content_info)
-                writer.write_string_value("contentUrl", @content_url)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_string_value("fallbackUrl", @fallback_url)
-                writer.write_collection_of_object_values("historyItems", @history_items)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_enum_value("status", @status)
-                writer.write_string_value("userTimezone", @user_timezone)
-                writer.write_object_value("visualElements", @visual_elements)
+                writer.write_string_value("activationUrl", @activation_url) unless @activation_url.nil?
+                writer.write_string_value("activitySourceHost", @activity_source_host) unless @activity_source_host.nil?
+                writer.write_string_value("appActivityId", @app_activity_id) unless @app_activity_id.nil?
+                writer.write_string_value("appDisplayName", @app_display_name) unless @app_display_name.nil?
+                writer.write_object_value("contentInfo", @content_info) unless @content_info.nil?
+                writer.write_string_value("contentUrl", @content_url) unless @content_url.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_string_value("fallbackUrl", @fallback_url) unless @fallback_url.nil?
+                writer.write_collection_of_object_values("historyItems", @history_items) unless @history_items.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
+                writer.write_string_value("userTimezone", @user_timezone) unless @user_timezone.nil?
+                writer.write_object_value("visualElements", @visual_elements) unless @visual_elements.nil?
             end
             ## 
             ## Gets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.

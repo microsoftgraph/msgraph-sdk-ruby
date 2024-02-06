@@ -85,10 +85,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("draftShift", @draft_shift)
-                writer.write_string_value("schedulingGroupId", @scheduling_group_id)
-                writer.write_object_value("sharedShift", @shared_shift)
-                writer.write_string_value("userId", @user_id)
+                writer.write_object_value("draftShift", @draft_shift) unless @draft_shift.nil?
+                writer.write_string_value("schedulingGroupId", @scheduling_group_id) unless @scheduling_group_id.nil?
+                writer.write_object_value("sharedShift", @shared_shift) unless @shared_shift.nil?
+                writer.write_string_value("userId", @user_id) unless @user_id.nil?
             end
             ## 
             ## Gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.

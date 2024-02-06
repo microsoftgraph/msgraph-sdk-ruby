@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("languageCode", @language_code)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("text", @text)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("languageCode", @language_code) unless @language_code.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("text", @text) unless @text.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the text property value. The question in the specific language. Required.

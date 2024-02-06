@@ -112,10 +112,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("initiator", @initiator)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("recordingStatus", @recording_status)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("initiator", @initiator) unless @initiator.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("recordingStatus", @recording_status) unless @recording_status.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

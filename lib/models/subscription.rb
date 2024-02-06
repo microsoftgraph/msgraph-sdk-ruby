@@ -305,20 +305,20 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("applicationId", @application_id)
-                writer.write_string_value("changeType", @change_type)
-                writer.write_string_value("clientState", @client_state)
-                writer.write_string_value("creatorId", @creator_id)
-                writer.write_string_value("encryptionCertificate", @encryption_certificate)
-                writer.write_string_value("encryptionCertificateId", @encryption_certificate_id)
-                writer.write_date_time_value("expirationDateTime", @expiration_date_time)
-                writer.write_boolean_value("includeResourceData", @include_resource_data)
-                writer.write_string_value("latestSupportedTlsVersion", @latest_supported_tls_version)
-                writer.write_string_value("lifecycleNotificationUrl", @lifecycle_notification_url)
-                writer.write_string_value("notificationQueryOptions", @notification_query_options)
-                writer.write_string_value("notificationUrl", @notification_url)
-                writer.write_string_value("notificationUrlAppId", @notification_url_app_id)
-                writer.write_string_value("resource", @resource)
+                writer.write_string_value("applicationId", @application_id) unless @application_id.nil?
+                writer.write_string_value("changeType", @change_type) unless @change_type.nil?
+                writer.write_string_value("clientState", @client_state) unless @client_state.nil?
+                writer.write_string_value("creatorId", @creator_id) unless @creator_id.nil?
+                writer.write_string_value("encryptionCertificate", @encryption_certificate) unless @encryption_certificate.nil?
+                writer.write_string_value("encryptionCertificateId", @encryption_certificate_id) unless @encryption_certificate_id.nil?
+                writer.write_date_time_value("expirationDateTime", @expiration_date_time) unless @expiration_date_time.nil?
+                writer.write_boolean_value("includeResourceData", @include_resource_data) unless @include_resource_data.nil?
+                writer.write_string_value("latestSupportedTlsVersion", @latest_supported_tls_version) unless @latest_supported_tls_version.nil?
+                writer.write_string_value("lifecycleNotificationUrl", @lifecycle_notification_url) unless @lifecycle_notification_url.nil?
+                writer.write_string_value("notificationQueryOptions", @notification_query_options) unless @notification_query_options.nil?
+                writer.write_string_value("notificationUrl", @notification_url) unless @notification_url.nil?
+                writer.write_string_value("notificationUrlAppId", @notification_url_app_id) unless @notification_url_app_id.nil?
+                writer.write_string_value("resource", @resource) unless @resource.nil?
             end
         end
     end

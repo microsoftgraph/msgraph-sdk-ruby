@@ -614,38 +614,38 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_primitive_values("bodyContains", @body_contains)
-                writer.write_collection_of_primitive_values("bodyOrSubjectContains", @body_or_subject_contains)
-                writer.write_collection_of_primitive_values("categories", @categories)
-                writer.write_collection_of_object_values("fromAddresses", @from_addresses)
-                writer.write_boolean_value("hasAttachments", @has_attachments)
-                writer.write_collection_of_primitive_values("headerContains", @header_contains)
-                writer.write_enum_value("importance", @importance)
-                writer.write_boolean_value("isApprovalRequest", @is_approval_request)
-                writer.write_boolean_value("isAutomaticForward", @is_automatic_forward)
-                writer.write_boolean_value("isAutomaticReply", @is_automatic_reply)
-                writer.write_boolean_value("isEncrypted", @is_encrypted)
-                writer.write_boolean_value("isMeetingRequest", @is_meeting_request)
-                writer.write_boolean_value("isMeetingResponse", @is_meeting_response)
-                writer.write_boolean_value("isNonDeliveryReport", @is_non_delivery_report)
-                writer.write_boolean_value("isPermissionControlled", @is_permission_controlled)
-                writer.write_boolean_value("isReadReceipt", @is_read_receipt)
-                writer.write_boolean_value("isSigned", @is_signed)
-                writer.write_boolean_value("isVoicemail", @is_voicemail)
-                writer.write_enum_value("messageActionFlag", @message_action_flag)
-                writer.write_boolean_value("notSentToMe", @not_sent_to_me)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_primitive_values("recipientContains", @recipient_contains)
-                writer.write_collection_of_primitive_values("senderContains", @sender_contains)
-                writer.write_enum_value("sensitivity", @sensitivity)
-                writer.write_boolean_value("sentCcMe", @sent_cc_me)
-                writer.write_boolean_value("sentOnlyToMe", @sent_only_to_me)
-                writer.write_collection_of_object_values("sentToAddresses", @sent_to_addresses)
-                writer.write_boolean_value("sentToMe", @sent_to_me)
-                writer.write_boolean_value("sentToOrCcMe", @sent_to_or_cc_me)
-                writer.write_collection_of_primitive_values("subjectContains", @subject_contains)
-                writer.write_object_value("withinSizeRange", @within_size_range)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_primitive_values("bodyContains", @body_contains) unless @body_contains.nil?
+                writer.write_collection_of_primitive_values("bodyOrSubjectContains", @body_or_subject_contains) unless @body_or_subject_contains.nil?
+                writer.write_collection_of_primitive_values("categories", @categories) unless @categories.nil?
+                writer.write_collection_of_object_values("fromAddresses", @from_addresses) unless @from_addresses.nil?
+                writer.write_boolean_value("hasAttachments", @has_attachments) unless @has_attachments.nil?
+                writer.write_collection_of_primitive_values("headerContains", @header_contains) unless @header_contains.nil?
+                writer.write_enum_value("importance", @importance) unless @importance.nil?
+                writer.write_boolean_value("isApprovalRequest", @is_approval_request) unless @is_approval_request.nil?
+                writer.write_boolean_value("isAutomaticForward", @is_automatic_forward) unless @is_automatic_forward.nil?
+                writer.write_boolean_value("isAutomaticReply", @is_automatic_reply) unless @is_automatic_reply.nil?
+                writer.write_boolean_value("isEncrypted", @is_encrypted) unless @is_encrypted.nil?
+                writer.write_boolean_value("isMeetingRequest", @is_meeting_request) unless @is_meeting_request.nil?
+                writer.write_boolean_value("isMeetingResponse", @is_meeting_response) unless @is_meeting_response.nil?
+                writer.write_boolean_value("isNonDeliveryReport", @is_non_delivery_report) unless @is_non_delivery_report.nil?
+                writer.write_boolean_value("isPermissionControlled", @is_permission_controlled) unless @is_permission_controlled.nil?
+                writer.write_boolean_value("isReadReceipt", @is_read_receipt) unless @is_read_receipt.nil?
+                writer.write_boolean_value("isSigned", @is_signed) unless @is_signed.nil?
+                writer.write_boolean_value("isVoicemail", @is_voicemail) unless @is_voicemail.nil?
+                writer.write_enum_value("messageActionFlag", @message_action_flag) unless @message_action_flag.nil?
+                writer.write_boolean_value("notSentToMe", @not_sent_to_me) unless @not_sent_to_me.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_primitive_values("recipientContains", @recipient_contains) unless @recipient_contains.nil?
+                writer.write_collection_of_primitive_values("senderContains", @sender_contains) unless @sender_contains.nil?
+                writer.write_enum_value("sensitivity", @sensitivity) unless @sensitivity.nil?
+                writer.write_boolean_value("sentCcMe", @sent_cc_me) unless @sent_cc_me.nil?
+                writer.write_boolean_value("sentOnlyToMe", @sent_only_to_me) unless @sent_only_to_me.nil?
+                writer.write_collection_of_object_values("sentToAddresses", @sent_to_addresses) unless @sent_to_addresses.nil?
+                writer.write_boolean_value("sentToMe", @sent_to_me) unless @sent_to_me.nil?
+                writer.write_boolean_value("sentToOrCcMe", @sent_to_or_cc_me) unless @sent_to_or_cc_me.nil?
+                writer.write_collection_of_primitive_values("subjectContains", @subject_contains) unless @subject_contains.nil?
+                writer.write_object_value("withinSizeRange", @within_size_range) unless @within_size_range.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the subjectContains property value. Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.

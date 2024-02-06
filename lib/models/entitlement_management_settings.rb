@@ -76,8 +76,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_duration_value("durationUntilExternalUserDeletedAfterBlocked", @duration_until_external_user_deleted_after_blocked)
-                writer.write_enum_value("externalUserLifecycleAction", @external_user_lifecycle_action)
+                writer.write_duration_value("durationUntilExternalUserDeletedAfterBlocked", @duration_until_external_user_deleted_after_blocked) unless @duration_until_external_user_deleted_after_blocked.nil?
+                writer.write_enum_value("externalUserLifecycleAction", @external_user_lifecycle_action) unless @external_user_lifecycle_action.nil?
             end
         end
     end

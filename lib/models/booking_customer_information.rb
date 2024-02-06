@@ -176,14 +176,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("customQuestionAnswers", @custom_question_answers)
-                writer.write_string_value("customerId", @customer_id)
-                writer.write_string_value("emailAddress", @email_address)
-                writer.write_object_value("location", @location)
-                writer.write_string_value("name", @name)
-                writer.write_string_value("notes", @notes)
-                writer.write_string_value("phone", @phone)
-                writer.write_string_value("timeZone", @time_zone)
+                writer.write_collection_of_object_values("customQuestionAnswers", @custom_question_answers) unless @custom_question_answers.nil?
+                writer.write_string_value("customerId", @customer_id) unless @customer_id.nil?
+                writer.write_string_value("emailAddress", @email_address) unless @email_address.nil?
+                writer.write_object_value("location", @location) unless @location.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("notes", @notes) unless @notes.nil?
+                writer.write_string_value("phone", @phone) unless @phone.nil?
+                writer.write_string_value("timeZone", @time_zone) unless @time_zone.nil?
             end
             ## 
             ## Gets the timeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.

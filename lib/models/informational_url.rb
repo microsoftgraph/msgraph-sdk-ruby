@@ -139,13 +139,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("logoUrl", @logo_url)
-                writer.write_string_value("marketingUrl", @marketing_url)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("privacyStatementUrl", @privacy_statement_url)
-                writer.write_string_value("supportUrl", @support_url)
-                writer.write_string_value("termsOfServiceUrl", @terms_of_service_url)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("logoUrl", @logo_url) unless @logo_url.nil?
+                writer.write_string_value("marketingUrl", @marketing_url) unless @marketing_url.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("privacyStatementUrl", @privacy_statement_url) unless @privacy_statement_url.nil?
+                writer.write_string_value("supportUrl", @support_url) unless @support_url.nil?
+                writer.write_string_value("termsOfServiceUrl", @terms_of_service_url) unless @terms_of_service_url.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support

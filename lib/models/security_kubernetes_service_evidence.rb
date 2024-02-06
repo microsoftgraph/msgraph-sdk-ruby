@@ -161,14 +161,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("clusterIP", @cluster_i_p)
-                writer.write_collection_of_object_values("externalIPs", @external_i_ps)
-                writer.write_object_value("labels", @labels)
-                writer.write_string_value("name", @name)
-                writer.write_object_value("namespace", @namespace)
-                writer.write_object_value("selector", @selector)
-                writer.write_collection_of_object_values("servicePorts", @service_ports)
-                writer.write_enum_value("serviceType", @service_type)
+                writer.write_object_value("clusterIP", @cluster_i_p) unless @cluster_i_p.nil?
+                writer.write_collection_of_object_values("externalIPs", @external_i_ps) unless @external_i_ps.nil?
+                writer.write_object_value("labels", @labels) unless @labels.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_object_value("namespace", @namespace) unless @namespace.nil?
+                writer.write_object_value("selector", @selector) unless @selector.nil?
+                writer.write_collection_of_object_values("servicePorts", @service_ports) unless @service_ports.nil?
+                writer.write_enum_value("serviceType", @service_type) unless @service_type.nil?
             end
             ## 
             ## Gets the servicePorts property value. The list of service ports.

@@ -173,14 +173,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("calendarSyncEnabled", @calendar_sync_enabled)
-                writer.write_object_value("deviceAccount", @device_account)
-                writer.write_string_value("deviceAccountEmail", @device_account_email)
-                writer.write_string_value("exchangeServer", @exchange_server)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("passwordRotationEnabled", @password_rotation_enabled)
-                writer.write_string_value("sessionInitiationProtocalAddress", @session_initiation_protocal_address)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("calendarSyncEnabled", @calendar_sync_enabled) unless @calendar_sync_enabled.nil?
+                writer.write_object_value("deviceAccount", @device_account) unless @device_account.nil?
+                writer.write_string_value("deviceAccountEmail", @device_account_email) unless @device_account_email.nil?
+                writer.write_string_value("exchangeServer", @exchange_server) unless @exchange_server.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("passwordRotationEnabled", @password_rotation_enabled) unless @password_rotation_enabled.nil?
+                writer.write_string_value("sessionInitiationProtocalAddress", @session_initiation_protocal_address) unless @session_initiation_protocal_address.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sessionInitiationProtocalAddress property value. Not yet documented

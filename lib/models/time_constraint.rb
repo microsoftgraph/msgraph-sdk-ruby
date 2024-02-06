@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_enum_value("activityDomain", @activity_domain)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("timeSlots", @time_slots)
-                writer.write_additional_data(@additional_data)
+                writer.write_enum_value("activityDomain", @activity_domain) unless @activity_domain.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("timeSlots", @time_slots) unless @time_slots.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the timeSlots property value. The timeSlots property

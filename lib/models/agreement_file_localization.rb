@@ -42,7 +42,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("versions", @versions)
+                writer.write_collection_of_object_values("versions", @versions) unless @versions.nil?
             end
             ## 
             ## Gets the versions property value. Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.

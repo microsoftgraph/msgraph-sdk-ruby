@@ -174,13 +174,13 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("appDataEncryptionType", @app_data_encryption_type)
-                writer.write_collection_of_object_values("apps", @apps)
-                writer.write_string_value("customBrowserProtocol", @custom_browser_protocol)
-                writer.write_number_value("deployedAppCount", @deployed_app_count)
-                writer.write_object_value("deploymentSummary", @deployment_summary)
-                writer.write_boolean_value("faceIdBlocked", @face_id_blocked)
-                writer.write_string_value("minimumRequiredSdkVersion", @minimum_required_sdk_version)
+                writer.write_enum_value("appDataEncryptionType", @app_data_encryption_type) unless @app_data_encryption_type.nil?
+                writer.write_collection_of_object_values("apps", @apps) unless @apps.nil?
+                writer.write_string_value("customBrowserProtocol", @custom_browser_protocol) unless @custom_browser_protocol.nil?
+                writer.write_number_value("deployedAppCount", @deployed_app_count) unless @deployed_app_count.nil?
+                writer.write_object_value("deploymentSummary", @deployment_summary) unless @deployment_summary.nil?
+                writer.write_boolean_value("faceIdBlocked", @face_id_blocked) unless @face_id_blocked.nil?
+                writer.write_string_value("minimumRequiredSdkVersion", @minimum_required_sdk_version) unless @minimum_required_sdk_version.nil?
             end
         end
     end

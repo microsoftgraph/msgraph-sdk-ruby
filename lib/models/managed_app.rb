@@ -80,8 +80,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("appAvailability", @app_availability)
-                writer.write_string_value("version", @version)
+                writer.write_enum_value("appAvailability", @app_availability) unless @app_availability.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the version property value. The Application's version.

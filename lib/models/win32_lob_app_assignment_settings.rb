@@ -117,10 +117,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("deliveryOptimizationPriority", @delivery_optimization_priority)
-                writer.write_object_value("installTimeSettings", @install_time_settings)
-                writer.write_enum_value("notifications", @notifications)
-                writer.write_object_value("restartSettings", @restart_settings)
+                writer.write_enum_value("deliveryOptimizationPriority", @delivery_optimization_priority) unless @delivery_optimization_priority.nil?
+                writer.write_object_value("installTimeSettings", @install_time_settings) unless @install_time_settings.nil?
+                writer.write_enum_value("notifications", @notifications) unless @notifications.nil?
+                writer.write_object_value("restartSettings", @restart_settings) unless @restart_settings.nil?
             end
         end
     end

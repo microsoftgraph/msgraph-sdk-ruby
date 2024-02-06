@@ -95,9 +95,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("alternateNotificationEmails", @alternate_notification_emails)
-                writer.write_number_value("groupLifetimeInDays", @group_lifetime_in_days)
-                writer.write_string_value("managedGroupTypes", @managed_group_types)
+                writer.write_string_value("alternateNotificationEmails", @alternate_notification_emails) unless @alternate_notification_emails.nil?
+                writer.write_number_value("groupLifetimeInDays", @group_lifetime_in_days) unless @group_lifetime_in_days.nil?
+                writer.write_string_value("managedGroupTypes", @managed_group_types) unless @managed_group_types.nil?
             end
         end
     end

@@ -180,15 +180,15 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("classification", @classification)
-                writer.write_string_value("feature", @feature)
-                writer.write_string_value("featureGroup", @feature_group)
-                writer.write_string_value("impactDescription", @impact_description)
-                writer.write_boolean_value("isResolved", @is_resolved)
-                writer.write_enum_value("origin", @origin)
-                writer.write_collection_of_object_values("posts", @posts)
-                writer.write_string_value("service", @service)
-                writer.write_enum_value("status", @status)
+                writer.write_enum_value("classification", @classification) unless @classification.nil?
+                writer.write_string_value("feature", @feature) unless @feature.nil?
+                writer.write_string_value("featureGroup", @feature_group) unless @feature_group.nil?
+                writer.write_string_value("impactDescription", @impact_description) unless @impact_description.nil?
+                writer.write_boolean_value("isResolved", @is_resolved) unless @is_resolved.nil?
+                writer.write_enum_value("origin", @origin) unless @origin.nil?
+                writer.write_collection_of_object_values("posts", @posts) unless @posts.nil?
+                writer.write_string_value("service", @service) unless @service.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the service property value. Indicates the service affected by the issue.

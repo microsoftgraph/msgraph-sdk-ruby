@@ -60,7 +60,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("limit", @limit)
+                writer.write_number_value("limit", @limit) unless @limit.nil?
             end
         end
     end

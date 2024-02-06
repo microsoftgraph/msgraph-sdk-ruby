@@ -274,20 +274,20 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("authorizedApplicationRulesFromGroupPolicyMerged", @authorized_application_rules_from_group_policy_merged)
-                writer.write_boolean_value("connectionSecurityRulesFromGroupPolicyMerged", @connection_security_rules_from_group_policy_merged)
-                writer.write_enum_value("firewallEnabled", @firewall_enabled)
-                writer.write_boolean_value("globalPortRulesFromGroupPolicyMerged", @global_port_rules_from_group_policy_merged)
-                writer.write_boolean_value("inboundConnectionsBlocked", @inbound_connections_blocked)
-                writer.write_boolean_value("inboundNotificationsBlocked", @inbound_notifications_blocked)
-                writer.write_boolean_value("incomingTrafficBlocked", @incoming_traffic_blocked)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("outboundConnectionsBlocked", @outbound_connections_blocked)
-                writer.write_boolean_value("policyRulesFromGroupPolicyMerged", @policy_rules_from_group_policy_merged)
-                writer.write_boolean_value("securedPacketExemptionAllowed", @secured_packet_exemption_allowed)
-                writer.write_boolean_value("stealthModeBlocked", @stealth_mode_blocked)
-                writer.write_boolean_value("unicastResponsesToMulticastBroadcastsBlocked", @unicast_responses_to_multicast_broadcasts_blocked)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("authorizedApplicationRulesFromGroupPolicyMerged", @authorized_application_rules_from_group_policy_merged) unless @authorized_application_rules_from_group_policy_merged.nil?
+                writer.write_boolean_value("connectionSecurityRulesFromGroupPolicyMerged", @connection_security_rules_from_group_policy_merged) unless @connection_security_rules_from_group_policy_merged.nil?
+                writer.write_enum_value("firewallEnabled", @firewall_enabled) unless @firewall_enabled.nil?
+                writer.write_boolean_value("globalPortRulesFromGroupPolicyMerged", @global_port_rules_from_group_policy_merged) unless @global_port_rules_from_group_policy_merged.nil?
+                writer.write_boolean_value("inboundConnectionsBlocked", @inbound_connections_blocked) unless @inbound_connections_blocked.nil?
+                writer.write_boolean_value("inboundNotificationsBlocked", @inbound_notifications_blocked) unless @inbound_notifications_blocked.nil?
+                writer.write_boolean_value("incomingTrafficBlocked", @incoming_traffic_blocked) unless @incoming_traffic_blocked.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("outboundConnectionsBlocked", @outbound_connections_blocked) unless @outbound_connections_blocked.nil?
+                writer.write_boolean_value("policyRulesFromGroupPolicyMerged", @policy_rules_from_group_policy_merged) unless @policy_rules_from_group_policy_merged.nil?
+                writer.write_boolean_value("securedPacketExemptionAllowed", @secured_packet_exemption_allowed) unless @secured_packet_exemption_allowed.nil?
+                writer.write_boolean_value("stealthModeBlocked", @stealth_mode_blocked) unless @stealth_mode_blocked.nil?
+                writer.write_boolean_value("unicastResponsesToMulticastBroadcastsBlocked", @unicast_responses_to_multicast_broadcasts_blocked) unless @unicast_responses_to_multicast_broadcasts_blocked.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the stealthModeBlocked property value. Prevent the server from operating in stealth mode. When StealthModeRequired and StealthModeBlocked are both true, StealthModeBlocked takes priority.

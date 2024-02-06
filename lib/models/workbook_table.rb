@@ -184,20 +184,20 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("columns", @columns)
-                writer.write_boolean_value("highlightFirstColumn", @highlight_first_column)
-                writer.write_boolean_value("highlightLastColumn", @highlight_last_column)
-                writer.write_string_value("legacyId", @legacy_id)
-                writer.write_string_value("name", @name)
-                writer.write_collection_of_object_values("rows", @rows)
-                writer.write_boolean_value("showBandedColumns", @show_banded_columns)
-                writer.write_boolean_value("showBandedRows", @show_banded_rows)
-                writer.write_boolean_value("showFilterButton", @show_filter_button)
-                writer.write_boolean_value("showHeaders", @show_headers)
-                writer.write_boolean_value("showTotals", @show_totals)
-                writer.write_object_value("sort", @sort)
-                writer.write_string_value("style", @style)
-                writer.write_object_value("worksheet", @worksheet)
+                writer.write_collection_of_object_values("columns", @columns) unless @columns.nil?
+                writer.write_boolean_value("highlightFirstColumn", @highlight_first_column) unless @highlight_first_column.nil?
+                writer.write_boolean_value("highlightLastColumn", @highlight_last_column) unless @highlight_last_column.nil?
+                writer.write_string_value("legacyId", @legacy_id) unless @legacy_id.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_collection_of_object_values("rows", @rows) unless @rows.nil?
+                writer.write_boolean_value("showBandedColumns", @show_banded_columns) unless @show_banded_columns.nil?
+                writer.write_boolean_value("showBandedRows", @show_banded_rows) unless @show_banded_rows.nil?
+                writer.write_boolean_value("showFilterButton", @show_filter_button) unless @show_filter_button.nil?
+                writer.write_boolean_value("showHeaders", @show_headers) unless @show_headers.nil?
+                writer.write_boolean_value("showTotals", @show_totals) unless @show_totals.nil?
+                writer.write_object_value("sort", @sort) unless @sort.nil?
+                writer.write_string_value("style", @style) unless @style.nil?
+                writer.write_object_value("worksheet", @worksheet) unless @worksheet.nil?
             end
             ## 
             ## Gets the showBandedColumns property value. Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.

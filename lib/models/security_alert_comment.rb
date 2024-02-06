@@ -132,11 +132,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("comment", @comment)
-                writer.write_string_value("createdByDisplayName", @created_by_display_name)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("comment", @comment) unless @comment.nil?
+                writer.write_string_value("createdByDisplayName", @created_by_display_name) unless @created_by_display_name.nil?
+                writer.write_date_time_value("createdDateTime", @created_date_time) unless @created_date_time.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

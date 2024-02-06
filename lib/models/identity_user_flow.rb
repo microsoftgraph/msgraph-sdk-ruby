@@ -54,8 +54,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("userFlowType", @user_flow_type)
-                writer.write_float_value("userFlowTypeVersion", @user_flow_type_version)
+                writer.write_enum_value("userFlowType", @user_flow_type) unless @user_flow_type.nil?
+                writer.write_float_value("userFlowTypeVersion", @user_flow_type_version) unless @user_flow_type_version.nil?
             end
             ## 
             ## Gets the userFlowType property value. The userFlowType property

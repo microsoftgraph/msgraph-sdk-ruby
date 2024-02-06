@@ -101,11 +101,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("name", @name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("valueType", @value_type)
-                writer.write_collection_of_primitive_values("values", @values)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("valueType", @value_type) unless @value_type.nil?
+                writer.write_collection_of_primitive_values("values", @values) unless @values.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the valueType property value. The valueType property

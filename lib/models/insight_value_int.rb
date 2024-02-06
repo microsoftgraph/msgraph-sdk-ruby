@@ -45,7 +45,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("value", @value)
+                writer.write_number_value("value", @value) unless @value.nil?
             end
             ## 
             ## Gets the value property value. The int value of the user experience analytics insight.

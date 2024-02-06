@@ -101,11 +101,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("operatorName", @operator_name)
-                writer.write_string_value("sourceOperandName", @source_operand_name)
-                writer.write_object_value("targetOperand", @target_operand)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("operatorName", @operator_name) unless @operator_name.nil?
+                writer.write_string_value("sourceOperandName", @source_operand_name) unless @source_operand_name.nil?
+                writer.write_object_value("targetOperand", @target_operand) unless @target_operand.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sourceOperandName property value. Name of source operand (the operand being tested). The source operand name must match one of the attribute names on the source object.

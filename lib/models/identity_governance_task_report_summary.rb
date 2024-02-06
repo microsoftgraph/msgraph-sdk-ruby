@@ -105,12 +105,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_number_value("failedTasks", @failed_tasks)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("successfulTasks", @successful_tasks)
-                writer.write_number_value("totalTasks", @total_tasks)
-                writer.write_number_value("unprocessedTasks", @unprocessed_tasks)
-                writer.write_additional_data(@additional_data)
+                writer.write_number_value("failedTasks", @failed_tasks) unless @failed_tasks.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("successfulTasks", @successful_tasks) unless @successful_tasks.nil?
+                writer.write_number_value("totalTasks", @total_tasks) unless @total_tasks.nil?
+                writer.write_number_value("unprocessedTasks", @unprocessed_tasks) unless @unprocessed_tasks.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the successfulTasks property value. The total number of successful tasks in a report.

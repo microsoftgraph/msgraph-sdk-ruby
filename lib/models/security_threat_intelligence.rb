@@ -213,16 +213,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("articleIndicators", @article_indicators)
-                writer.write_collection_of_object_values("articles", @articles)
-                writer.write_collection_of_object_values("hostComponents", @host_components)
-                writer.write_collection_of_object_values("hostCookies", @host_cookies)
-                writer.write_collection_of_object_values("hostTrackers", @host_trackers)
-                writer.write_collection_of_object_values("hosts", @hosts)
-                writer.write_collection_of_object_values("intelProfiles", @intel_profiles)
-                writer.write_collection_of_object_values("intelligenceProfileIndicators", @intelligence_profile_indicators)
-                writer.write_collection_of_object_values("passiveDnsRecords", @passive_dns_records)
-                writer.write_collection_of_object_values("vulnerabilities", @vulnerabilities)
+                writer.write_collection_of_object_values("articleIndicators", @article_indicators) unless @article_indicators.nil?
+                writer.write_collection_of_object_values("articles", @articles) unless @articles.nil?
+                writer.write_collection_of_object_values("hostComponents", @host_components) unless @host_components.nil?
+                writer.write_collection_of_object_values("hostCookies", @host_cookies) unless @host_cookies.nil?
+                writer.write_collection_of_object_values("hostTrackers", @host_trackers) unless @host_trackers.nil?
+                writer.write_collection_of_object_values("hosts", @hosts) unless @hosts.nil?
+                writer.write_collection_of_object_values("intelProfiles", @intel_profiles) unless @intel_profiles.nil?
+                writer.write_collection_of_object_values("intelligenceProfileIndicators", @intelligence_profile_indicators) unless @intelligence_profile_indicators.nil?
+                writer.write_collection_of_object_values("passiveDnsRecords", @passive_dns_records) unless @passive_dns_records.nil?
+                writer.write_collection_of_object_values("vulnerabilities", @vulnerabilities) unless @vulnerabilities.nil?
             end
             ## 
             ## Gets the vulnerabilities property value. Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.

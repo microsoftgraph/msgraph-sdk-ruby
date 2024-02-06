@@ -128,14 +128,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("conferenceId", @conference_id)
-                writer.write_string_value("dialinUrl", @dialin_url)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("tollFreeNumber", @toll_free_number)
-                writer.write_collection_of_primitive_values("tollFreeNumbers", @toll_free_numbers)
-                writer.write_string_value("tollNumber", @toll_number)
-                writer.write_collection_of_primitive_values("tollNumbers", @toll_numbers)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("conferenceId", @conference_id) unless @conference_id.nil?
+                writer.write_string_value("dialinUrl", @dialin_url) unless @dialin_url.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("tollFreeNumber", @toll_free_number) unless @toll_free_number.nil?
+                writer.write_collection_of_primitive_values("tollFreeNumbers", @toll_free_numbers) unless @toll_free_numbers.nil?
+                writer.write_string_value("tollNumber", @toll_number) unless @toll_number.nil?
+                writer.write_collection_of_primitive_values("tollNumbers", @toll_numbers) unless @toll_numbers.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the tollFreeNumber property value. The tollFreeNumber property

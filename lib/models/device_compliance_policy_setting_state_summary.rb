@@ -204,17 +204,17 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("compliantDeviceCount", @compliant_device_count)
-                writer.write_number_value("conflictDeviceCount", @conflict_device_count)
-                writer.write_collection_of_object_values("deviceComplianceSettingStates", @device_compliance_setting_states)
-                writer.write_number_value("errorDeviceCount", @error_device_count)
-                writer.write_number_value("nonCompliantDeviceCount", @non_compliant_device_count)
-                writer.write_number_value("notApplicableDeviceCount", @not_applicable_device_count)
-                writer.write_enum_value("platformType", @platform_type)
-                writer.write_number_value("remediatedDeviceCount", @remediated_device_count)
-                writer.write_string_value("setting", @setting)
-                writer.write_string_value("settingName", @setting_name)
-                writer.write_number_value("unknownDeviceCount", @unknown_device_count)
+                writer.write_number_value("compliantDeviceCount", @compliant_device_count) unless @compliant_device_count.nil?
+                writer.write_number_value("conflictDeviceCount", @conflict_device_count) unless @conflict_device_count.nil?
+                writer.write_collection_of_object_values("deviceComplianceSettingStates", @device_compliance_setting_states) unless @device_compliance_setting_states.nil?
+                writer.write_number_value("errorDeviceCount", @error_device_count) unless @error_device_count.nil?
+                writer.write_number_value("nonCompliantDeviceCount", @non_compliant_device_count) unless @non_compliant_device_count.nil?
+                writer.write_number_value("notApplicableDeviceCount", @not_applicable_device_count) unless @not_applicable_device_count.nil?
+                writer.write_enum_value("platformType", @platform_type) unless @platform_type.nil?
+                writer.write_number_value("remediatedDeviceCount", @remediated_device_count) unless @remediated_device_count.nil?
+                writer.write_string_value("setting", @setting) unless @setting.nil?
+                writer.write_string_value("settingName", @setting_name) unless @setting_name.nil?
+                writer.write_number_value("unknownDeviceCount", @unknown_device_count) unless @unknown_device_count.nil?
             end
             ## 
             ## Gets the setting property value. The setting class name and property name.

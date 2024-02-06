@@ -293,21 +293,21 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_number_value("compliantDeviceCount", @compliant_device_count)
-                writer.write_number_value("compliantUserCount", @compliant_user_count)
-                writer.write_number_value("conflictDeviceCount", @conflict_device_count)
-                writer.write_number_value("conflictUserCount", @conflict_user_count)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_number_value("errorDeviceCount", @error_device_count)
-                writer.write_number_value("errorUserCount", @error_user_count)
-                writer.write_number_value("nonCompliantDeviceCount", @non_compliant_device_count)
-                writer.write_number_value("nonCompliantUserCount", @non_compliant_user_count)
-                writer.write_number_value("notApplicableDeviceCount", @not_applicable_device_count)
-                writer.write_number_value("notApplicableUserCount", @not_applicable_user_count)
-                writer.write_number_value("remediatedDeviceCount", @remediated_device_count)
-                writer.write_number_value("remediatedUserCount", @remediated_user_count)
-                writer.write_number_value("unknownDeviceCount", @unknown_device_count)
-                writer.write_number_value("unknownUserCount", @unknown_user_count)
+                writer.write_number_value("compliantDeviceCount", @compliant_device_count) unless @compliant_device_count.nil?
+                writer.write_number_value("compliantUserCount", @compliant_user_count) unless @compliant_user_count.nil?
+                writer.write_number_value("conflictDeviceCount", @conflict_device_count) unless @conflict_device_count.nil?
+                writer.write_number_value("conflictUserCount", @conflict_user_count) unless @conflict_user_count.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_number_value("errorDeviceCount", @error_device_count) unless @error_device_count.nil?
+                writer.write_number_value("errorUserCount", @error_user_count) unless @error_user_count.nil?
+                writer.write_number_value("nonCompliantDeviceCount", @non_compliant_device_count) unless @non_compliant_device_count.nil?
+                writer.write_number_value("nonCompliantUserCount", @non_compliant_user_count) unless @non_compliant_user_count.nil?
+                writer.write_number_value("notApplicableDeviceCount", @not_applicable_device_count) unless @not_applicable_device_count.nil?
+                writer.write_number_value("notApplicableUserCount", @not_applicable_user_count) unless @not_applicable_user_count.nil?
+                writer.write_number_value("remediatedDeviceCount", @remediated_device_count) unless @remediated_device_count.nil?
+                writer.write_number_value("remediatedUserCount", @remediated_user_count) unless @remediated_user_count.nil?
+                writer.write_number_value("unknownDeviceCount", @unknown_device_count) unless @unknown_device_count.nil?
+                writer.write_number_value("unknownUserCount", @unknown_user_count) unless @unknown_user_count.nil?
             end
             ## 
             ## Gets the unknownDeviceCount property value. Number of unknown devices.

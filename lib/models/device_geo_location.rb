@@ -199,16 +199,16 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("altitude", @altitude)
-                writer.write_object_value("heading", @heading)
-                writer.write_object_value("horizontalAccuracy", @horizontal_accuracy)
-                writer.write_date_time_value("lastCollectedDateTime", @last_collected_date_time)
-                writer.write_object_value("latitude", @latitude)
-                writer.write_object_value("longitude", @longitude)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("speed", @speed)
-                writer.write_object_value("verticalAccuracy", @vertical_accuracy)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("altitude", @altitude) unless @altitude.nil?
+                writer.write_object_value("heading", @heading) unless @heading.nil?
+                writer.write_object_value("horizontalAccuracy", @horizontal_accuracy) unless @horizontal_accuracy.nil?
+                writer.write_date_time_value("lastCollectedDateTime", @last_collected_date_time) unless @last_collected_date_time.nil?
+                writer.write_object_value("latitude", @latitude) unless @latitude.nil?
+                writer.write_object_value("longitude", @longitude) unless @longitude.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("speed", @speed) unless @speed.nil?
+                writer.write_object_value("verticalAccuracy", @vertical_accuracy) unless @vertical_accuracy.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the speed property value. Speed the device is traveling in meters per second

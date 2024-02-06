@@ -305,20 +305,20 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("accessReviewId", @access_review_id)
-                writer.write_object_value("appliedBy", @applied_by)
-                writer.write_date_time_value("appliedDateTime", @applied_date_time)
-                writer.write_string_value("applyResult", @apply_result)
-                writer.write_string_value("decision", @decision)
-                writer.write_collection_of_object_values("insights", @insights)
-                writer.write_string_value("justification", @justification)
-                writer.write_object_value("principal", @principal)
-                writer.write_string_value("principalLink", @principal_link)
-                writer.write_string_value("recommendation", @recommendation)
-                writer.write_object_value("resource", @resource)
-                writer.write_string_value("resourceLink", @resource_link)
-                writer.write_object_value("reviewedBy", @reviewed_by)
-                writer.write_date_time_value("reviewedDateTime", @reviewed_date_time)
+                writer.write_string_value("accessReviewId", @access_review_id) unless @access_review_id.nil?
+                writer.write_object_value("appliedBy", @applied_by) unless @applied_by.nil?
+                writer.write_date_time_value("appliedDateTime", @applied_date_time) unless @applied_date_time.nil?
+                writer.write_string_value("applyResult", @apply_result) unless @apply_result.nil?
+                writer.write_string_value("decision", @decision) unless @decision.nil?
+                writer.write_collection_of_object_values("insights", @insights) unless @insights.nil?
+                writer.write_string_value("justification", @justification) unless @justification.nil?
+                writer.write_object_value("principal", @principal) unless @principal.nil?
+                writer.write_string_value("principalLink", @principal_link) unless @principal_link.nil?
+                writer.write_string_value("recommendation", @recommendation) unless @recommendation.nil?
+                writer.write_object_value("resource", @resource) unless @resource.nil?
+                writer.write_string_value("resourceLink", @resource_link) unless @resource_link.nil?
+                writer.write_object_value("reviewedBy", @reviewed_by) unless @reviewed_by.nil?
+                writer.write_date_time_value("reviewedDateTime", @reviewed_date_time) unless @reviewed_date_time.nil?
             end
         end
     end

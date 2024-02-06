@@ -85,10 +85,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("customExtensionStageInstanceDetail", @custom_extension_stage_instance_detail)
-                writer.write_string_value("customExtensionStageInstanceId", @custom_extension_stage_instance_id)
-                writer.write_enum_value("stage", @stage)
-                writer.write_string_value("state", @state)
+                writer.write_string_value("customExtensionStageInstanceDetail", @custom_extension_stage_instance_detail) unless @custom_extension_stage_instance_detail.nil?
+                writer.write_string_value("customExtensionStageInstanceId", @custom_extension_stage_instance_id) unless @custom_extension_stage_instance_id.nil?
+                writer.write_enum_value("stage", @stage) unless @stage.nil?
+                writer.write_string_value("state", @state) unless @state.nil?
             end
             ## 
             ## Gets the stage property value. Indicates the stage at which the custom callout extension will be executed. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.

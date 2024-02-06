@@ -310,25 +310,25 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("actionType", @action_type)
-                writer.write_string_value("actionUrl", @action_url)
-                writer.write_string_value("azureTenantId", @azure_tenant_id)
-                writer.write_collection_of_object_values("complianceInformation", @compliance_information)
-                writer.write_string_value("controlCategory", @control_category)
-                writer.write_collection_of_object_values("controlStateUpdates", @control_state_updates)
-                writer.write_boolean_value("deprecated", @deprecated)
-                writer.write_string_value("implementationCost", @implementation_cost)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_object_value("maxScore", @max_score)
-                writer.write_number_value("rank", @rank)
-                writer.write_string_value("remediation", @remediation)
-                writer.write_string_value("remediationImpact", @remediation_impact)
-                writer.write_string_value("service", @service)
-                writer.write_collection_of_primitive_values("threats", @threats)
-                writer.write_string_value("tier", @tier)
-                writer.write_string_value("title", @title)
-                writer.write_string_value("userImpact", @user_impact)
-                writer.write_object_value("vendorInformation", @vendor_information)
+                writer.write_string_value("actionType", @action_type) unless @action_type.nil?
+                writer.write_string_value("actionUrl", @action_url) unless @action_url.nil?
+                writer.write_string_value("azureTenantId", @azure_tenant_id) unless @azure_tenant_id.nil?
+                writer.write_collection_of_object_values("complianceInformation", @compliance_information) unless @compliance_information.nil?
+                writer.write_string_value("controlCategory", @control_category) unless @control_category.nil?
+                writer.write_collection_of_object_values("controlStateUpdates", @control_state_updates) unless @control_state_updates.nil?
+                writer.write_boolean_value("deprecated", @deprecated) unless @deprecated.nil?
+                writer.write_string_value("implementationCost", @implementation_cost) unless @implementation_cost.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_object_value("maxScore", @max_score) unless @max_score.nil?
+                writer.write_number_value("rank", @rank) unless @rank.nil?
+                writer.write_string_value("remediation", @remediation) unless @remediation.nil?
+                writer.write_string_value("remediationImpact", @remediation_impact) unless @remediation_impact.nil?
+                writer.write_string_value("service", @service) unless @service.nil?
+                writer.write_collection_of_primitive_values("threats", @threats) unless @threats.nil?
+                writer.write_string_value("tier", @tier) unless @tier.nil?
+                writer.write_string_value("title", @title) unless @title.nil?
+                writer.write_string_value("userImpact", @user_impact) unless @user_impact.nil?
+                writer.write_object_value("vendorInformation", @vendor_information) unless @vendor_information.nil?
             end
             ## 
             ## Gets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).

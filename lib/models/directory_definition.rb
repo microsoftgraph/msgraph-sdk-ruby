@@ -138,12 +138,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("discoverabilities", @discoverabilities)
-                writer.write_date_time_value("discoveryDateTime", @discovery_date_time)
-                writer.write_string_value("name", @name)
-                writer.write_collection_of_object_values("objects", @objects)
-                writer.write_boolean_value("readOnly", @read_only)
-                writer.write_string_value("version", @version)
+                writer.write_enum_value("discoverabilities", @discoverabilities) unless @discoverabilities.nil?
+                writer.write_date_time_value("discoveryDateTime", @discovery_date_time) unless @discovery_date_time.nil?
+                writer.write_string_value("name", @name) unless @name.nil?
+                writer.write_collection_of_object_values("objects", @objects) unless @objects.nil?
+                writer.write_boolean_value("readOnly", @read_only) unless @read_only.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
             end
             ## 
             ## Gets the version property value. Read only value that indicates version discovered. null if discovery has not yet occurred.

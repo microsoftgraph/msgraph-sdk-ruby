@@ -106,11 +106,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("licenseType", @license_type)
-                writer.write_string_value("packageIdentityName", @package_identity_name)
-                writer.write_string_value("productKey", @product_key)
-                writer.write_number_value("totalLicenseCount", @total_license_count)
-                writer.write_number_value("usedLicenseCount", @used_license_count)
+                writer.write_enum_value("licenseType", @license_type) unless @license_type.nil?
+                writer.write_string_value("packageIdentityName", @package_identity_name) unless @package_identity_name.nil?
+                writer.write_string_value("productKey", @product_key) unless @product_key.nil?
+                writer.write_number_value("totalLicenseCount", @total_license_count) unless @total_license_count.nil?
+                writer.write_number_value("usedLicenseCount", @used_license_count) unless @used_license_count.nil?
             end
             ## 
             ## Gets the totalLicenseCount property value. The total number of Microsoft Store for Business licenses.

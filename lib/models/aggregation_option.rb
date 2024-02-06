@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("bucketDefinition", @bucket_definition)
-                writer.write_string_value("field", @field)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("size", @size)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("bucketDefinition", @bucket_definition) unless @bucket_definition.nil?
+                writer.write_string_value("field", @field) unless @field.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("size", @size) unless @size.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.

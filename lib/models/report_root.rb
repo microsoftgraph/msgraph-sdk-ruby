@@ -188,14 +188,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("authenticationMethods", @authentication_methods)
-                writer.write_collection_of_object_values("dailyPrintUsageByPrinter", @daily_print_usage_by_printer)
-                writer.write_collection_of_object_values("dailyPrintUsageByUser", @daily_print_usage_by_user)
-                writer.write_collection_of_object_values("monthlyPrintUsageByPrinter", @monthly_print_usage_by_printer)
-                writer.write_collection_of_object_values("monthlyPrintUsageByUser", @monthly_print_usage_by_user)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("security", @security)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("authenticationMethods", @authentication_methods) unless @authentication_methods.nil?
+                writer.write_collection_of_object_values("dailyPrintUsageByPrinter", @daily_print_usage_by_printer) unless @daily_print_usage_by_printer.nil?
+                writer.write_collection_of_object_values("dailyPrintUsageByUser", @daily_print_usage_by_user) unless @daily_print_usage_by_user.nil?
+                writer.write_collection_of_object_values("monthlyPrintUsageByPrinter", @monthly_print_usage_by_printer) unless @monthly_print_usage_by_printer.nil?
+                writer.write_collection_of_object_values("monthlyPrintUsageByUser", @monthly_print_usage_by_user) unless @monthly_print_usage_by_user.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("security", @security) unless @security.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

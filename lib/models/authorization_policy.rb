@@ -191,14 +191,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("allowEmailVerifiedUsersToJoinOrganization", @allow_email_verified_users_to_join_organization)
-                writer.write_enum_value("allowInvitesFrom", @allow_invites_from)
-                writer.write_boolean_value("allowUserConsentForRiskyApps", @allow_user_consent_for_risky_apps)
-                writer.write_boolean_value("allowedToSignUpEmailBasedSubscriptions", @allowed_to_sign_up_email_based_subscriptions)
-                writer.write_boolean_value("allowedToUseSSPR", @allowed_to_use_s_s_p_r)
-                writer.write_boolean_value("blockMsolPowerShell", @block_msol_power_shell)
-                writer.write_object_value("defaultUserRolePermissions", @default_user_role_permissions)
-                writer.write_guid_value("guestUserRoleId", @guest_user_role_id)
+                writer.write_boolean_value("allowEmailVerifiedUsersToJoinOrganization", @allow_email_verified_users_to_join_organization) unless @allow_email_verified_users_to_join_organization.nil?
+                writer.write_enum_value("allowInvitesFrom", @allow_invites_from) unless @allow_invites_from.nil?
+                writer.write_boolean_value("allowUserConsentForRiskyApps", @allow_user_consent_for_risky_apps) unless @allow_user_consent_for_risky_apps.nil?
+                writer.write_boolean_value("allowedToSignUpEmailBasedSubscriptions", @allowed_to_sign_up_email_based_subscriptions) unless @allowed_to_sign_up_email_based_subscriptions.nil?
+                writer.write_boolean_value("allowedToUseSSPR", @allowed_to_use_s_s_p_r) unless @allowed_to_use_s_s_p_r.nil?
+                writer.write_boolean_value("blockMsolPowerShell", @block_msol_power_shell) unless @block_msol_power_shell.nil?
+                writer.write_object_value("defaultUserRolePermissions", @default_user_role_permissions) unless @default_user_role_permissions.nil?
+                writer.write_guid_value("guestUserRoleId", @guest_user_role_id) unless @guest_user_role_id.nil?
             end
         end
     end

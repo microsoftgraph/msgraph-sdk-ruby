@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("contactEmail", @contact_email)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("statementUrl", @statement_url)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("contactEmail", @contact_email) unless @contact_email.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("statementUrl", @statement_url) unless @statement_url.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the statementUrl property value. A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.

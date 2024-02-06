@@ -192,15 +192,15 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("attendeeAvailability", @attendee_availability)
-                writer.write_object_value("confidence", @confidence)
-                writer.write_collection_of_object_values("locations", @locations)
-                writer.write_object_value("meetingTimeSlot", @meeting_time_slot)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("order", @order)
-                writer.write_enum_value("organizerAvailability", @organizer_availability)
-                writer.write_string_value("suggestionReason", @suggestion_reason)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_object_values("attendeeAvailability", @attendee_availability) unless @attendee_availability.nil?
+                writer.write_object_value("confidence", @confidence) unless @confidence.nil?
+                writer.write_collection_of_object_values("locations", @locations) unless @locations.nil?
+                writer.write_object_value("meetingTimeSlot", @meeting_time_slot) unless @meeting_time_slot.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("order", @order) unless @order.nil?
+                writer.write_enum_value("organizerAvailability", @organizer_availability) unless @organizer_availability.nil?
+                writer.write_string_value("suggestionReason", @suggestion_reason) unless @suggestion_reason.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the suggestionReason property value. Reason for suggesting the meeting time.

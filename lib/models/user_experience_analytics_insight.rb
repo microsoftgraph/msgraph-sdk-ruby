@@ -107,12 +107,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("insightId", @insight_id)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("severity", @severity)
-                writer.write_string_value("userExperienceAnalyticsMetricId", @user_experience_analytics_metric_id)
-                writer.write_collection_of_object_values("values", @values)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("insightId", @insight_id) unless @insight_id.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("severity", @severity) unless @severity.nil?
+                writer.write_string_value("userExperienceAnalyticsMetricId", @user_experience_analytics_metric_id) unless @user_experience_analytics_metric_id.nil?
+                writer.write_collection_of_object_values("values", @values) unless @values.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the severity property value. Indicates severity of insights. Possible values are: None, Informational, Warning, Error.

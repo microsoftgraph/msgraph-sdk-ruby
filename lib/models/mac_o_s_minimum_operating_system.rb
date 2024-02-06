@@ -124,7 +124,7 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
                 writer.write_boolean_value("v10_10", @v10_10)
                 writer.write_boolean_value("v10_11", @v10_11)
                 writer.write_boolean_value("v10_12", @v10_12)
@@ -137,7 +137,7 @@ module MicrosoftGraph
                 writer.write_boolean_value("v11_0", @v11_0)
                 writer.write_boolean_value("v12_0", @v12_0)
                 writer.write_boolean_value("v13_0", @v13_0)
-                writer.write_additional_data(@additional_data)
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the v10_10 property value. When TRUE, indicates OS X 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.

@@ -86,11 +86,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("source", @source)
-                writer.write_string_value("value", @value)
-                writer.write_string_value("webUrl", @web_url)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("source", @source) unless @source.nil?
+                writer.write_string_value("value", @value) unless @value.nil?
+                writer.write_string_value("webUrl", @web_url) unless @web_url.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the source property value. Type of source. Possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.

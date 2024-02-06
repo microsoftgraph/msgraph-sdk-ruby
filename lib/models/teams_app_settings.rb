@@ -57,7 +57,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_boolean_value("allowUserRequestsForAppAccess", @allow_user_requests_for_app_access)
+                writer.write_boolean_value("allowUserRequestsForAppAccess", @allow_user_requests_for_app_access) unless @allow_user_requests_for_app_access.nil?
             end
         end
     end

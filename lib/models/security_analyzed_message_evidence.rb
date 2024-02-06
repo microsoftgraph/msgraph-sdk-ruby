@@ -292,24 +292,24 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("antiSpamDirection", @anti_spam_direction)
-                writer.write_object_value("attachmentsCount", @attachments_count)
-                writer.write_string_value("deliveryAction", @delivery_action)
-                writer.write_string_value("deliveryLocation", @delivery_location)
-                writer.write_string_value("internetMessageId", @internet_message_id)
-                writer.write_string_value("language", @language)
-                writer.write_string_value("networkMessageId", @network_message_id)
+                writer.write_string_value("antiSpamDirection", @anti_spam_direction) unless @anti_spam_direction.nil?
+                writer.write_object_value("attachmentsCount", @attachments_count) unless @attachments_count.nil?
+                writer.write_string_value("deliveryAction", @delivery_action) unless @delivery_action.nil?
+                writer.write_string_value("deliveryLocation", @delivery_location) unless @delivery_location.nil?
+                writer.write_string_value("internetMessageId", @internet_message_id) unless @internet_message_id.nil?
+                writer.write_string_value("language", @language) unless @language.nil?
+                writer.write_string_value("networkMessageId", @network_message_id) unless @network_message_id.nil?
                 writer.write_object_value("p1Sender", @p1_sender)
                 writer.write_object_value("p2Sender", @p2_sender)
-                writer.write_date_time_value("receivedDateTime", @received_date_time)
-                writer.write_string_value("recipientEmailAddress", @recipient_email_address)
-                writer.write_string_value("senderIp", @sender_ip)
-                writer.write_string_value("subject", @subject)
-                writer.write_collection_of_primitive_values("threatDetectionMethods", @threat_detection_methods)
-                writer.write_collection_of_primitive_values("threats", @threats)
-                writer.write_object_value("urlCount", @url_count)
-                writer.write_collection_of_primitive_values("urls", @urls)
-                writer.write_string_value("urn", @urn)
+                writer.write_date_time_value("receivedDateTime", @received_date_time) unless @received_date_time.nil?
+                writer.write_string_value("recipientEmailAddress", @recipient_email_address) unless @recipient_email_address.nil?
+                writer.write_string_value("senderIp", @sender_ip) unless @sender_ip.nil?
+                writer.write_string_value("subject", @subject) unless @subject.nil?
+                writer.write_collection_of_primitive_values("threatDetectionMethods", @threat_detection_methods) unless @threat_detection_methods.nil?
+                writer.write_collection_of_primitive_values("threats", @threats) unless @threats.nil?
+                writer.write_object_value("urlCount", @url_count) unless @url_count.nil?
+                writer.write_collection_of_primitive_values("urls", @urls) unless @urls.nil?
+                writer.write_string_value("urn", @urn) unless @urn.nil?
             end
             ## 
             ## Gets the subject property value. Subject of the email.

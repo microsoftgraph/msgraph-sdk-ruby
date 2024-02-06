@@ -153,12 +153,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("addToReviewSetOperation", @add_to_review_set_operation)
-                writer.write_collection_of_object_values("additionalSources", @additional_sources)
-                writer.write_collection_of_object_values("custodianSources", @custodian_sources)
-                writer.write_enum_value("dataSourceScopes", @data_source_scopes)
-                writer.write_object_value("lastEstimateStatisticsOperation", @last_estimate_statistics_operation)
-                writer.write_collection_of_object_values("noncustodialSources", @noncustodial_sources)
+                writer.write_object_value("addToReviewSetOperation", @add_to_review_set_operation) unless @add_to_review_set_operation.nil?
+                writer.write_collection_of_object_values("additionalSources", @additional_sources) unless @additional_sources.nil?
+                writer.write_collection_of_object_values("custodianSources", @custodian_sources) unless @custodian_sources.nil?
+                writer.write_enum_value("dataSourceScopes", @data_source_scopes) unless @data_source_scopes.nil?
+                writer.write_object_value("lastEstimateStatisticsOperation", @last_estimate_statistics_operation) unless @last_estimate_statistics_operation.nil?
+                writer.write_collection_of_object_values("noncustodialSources", @noncustodial_sources) unless @noncustodial_sources.nil?
             end
         end
     end

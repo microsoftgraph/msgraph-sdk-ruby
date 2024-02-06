@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_collection_of_object_values("assignedTrainingsInfos", @assigned_trainings_infos)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("trainingsAssignedUserCount", @trainings_assigned_user_count)
-                writer.write_additional_data(@additional_data)
+                writer.write_collection_of_object_values("assignedTrainingsInfos", @assigned_trainings_infos) unless @assigned_trainings_infos.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_number_value("trainingsAssignedUserCount", @trainings_assigned_user_count) unless @trainings_assigned_user_count.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the trainingsAssignedUserCount property value. Number of users who were assigned trainings in an attack simulation and training campaign.

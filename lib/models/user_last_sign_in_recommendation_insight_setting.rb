@@ -62,8 +62,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_duration_value("recommendationLookBackDuration", @recommendation_look_back_duration)
-                writer.write_enum_value("signInScope", @sign_in_scope)
+                writer.write_duration_value("recommendationLookBackDuration", @recommendation_look_back_duration) unless @recommendation_look_back_duration.nil?
+                writer.write_enum_value("signInScope", @sign_in_scope) unless @sign_in_scope.nil?
             end
             ## 
             ## Gets the signInScope property value. Indicates whether inactivity is calculated based on the user's inactivity in the tenant or in the application. The possible values are tenant, application, unknownFutureValue. application is only relevant when the access review is a review of an assignment to an application.

@@ -314,22 +314,22 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("azureAdDeviceId", @azure_ad_device_id)
-                writer.write_enum_value("defenderAvStatus", @defender_av_status)
-                writer.write_string_value("deviceDnsName", @device_dns_name)
-                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time)
-                writer.write_enum_value("healthStatus", @health_status)
-                writer.write_collection_of_primitive_values("ipInterfaces", @ip_interfaces)
-                writer.write_collection_of_object_values("loggedOnUsers", @logged_on_users)
-                writer.write_string_value("mdeDeviceId", @mde_device_id)
-                writer.write_enum_value("onboardingStatus", @onboarding_status)
-                writer.write_object_value("osBuild", @os_build)
-                writer.write_string_value("osPlatform", @os_platform)
-                writer.write_number_value("rbacGroupId", @rbac_group_id)
-                writer.write_string_value("rbacGroupName", @rbac_group_name)
-                writer.write_enum_value("riskScore", @risk_score)
-                writer.write_string_value("version", @version)
-                writer.write_object_value("vmMetadata", @vm_metadata)
+                writer.write_string_value("azureAdDeviceId", @azure_ad_device_id) unless @azure_ad_device_id.nil?
+                writer.write_enum_value("defenderAvStatus", @defender_av_status) unless @defender_av_status.nil?
+                writer.write_string_value("deviceDnsName", @device_dns_name) unless @device_dns_name.nil?
+                writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time) unless @first_seen_date_time.nil?
+                writer.write_enum_value("healthStatus", @health_status) unless @health_status.nil?
+                writer.write_collection_of_primitive_values("ipInterfaces", @ip_interfaces) unless @ip_interfaces.nil?
+                writer.write_collection_of_object_values("loggedOnUsers", @logged_on_users) unless @logged_on_users.nil?
+                writer.write_string_value("mdeDeviceId", @mde_device_id) unless @mde_device_id.nil?
+                writer.write_enum_value("onboardingStatus", @onboarding_status) unless @onboarding_status.nil?
+                writer.write_object_value("osBuild", @os_build) unless @os_build.nil?
+                writer.write_string_value("osPlatform", @os_platform) unless @os_platform.nil?
+                writer.write_number_value("rbacGroupId", @rbac_group_id) unless @rbac_group_id.nil?
+                writer.write_string_value("rbacGroupName", @rbac_group_name) unless @rbac_group_name.nil?
+                writer.write_enum_value("riskScore", @risk_score) unless @risk_score.nil?
+                writer.write_string_value("version", @version) unless @version.nil?
+                writer.write_object_value("vmMetadata", @vm_metadata) unless @vm_metadata.nil?
             end
             ## 
             ## Gets the version property value. The version of the operating system platform.

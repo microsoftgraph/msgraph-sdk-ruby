@@ -215,16 +215,16 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("detectionStatus", @detection_status)
-                writer.write_object_value("imageFile", @image_file)
-                writer.write_string_value("mdeDeviceId", @mde_device_id)
-                writer.write_date_time_value("parentProcessCreationDateTime", @parent_process_creation_date_time)
-                writer.write_object_value("parentProcessId", @parent_process_id)
-                writer.write_object_value("parentProcessImageFile", @parent_process_image_file)
-                writer.write_string_value("processCommandLine", @process_command_line)
-                writer.write_date_time_value("processCreationDateTime", @process_creation_date_time)
-                writer.write_object_value("processId", @process_id)
-                writer.write_object_value("userAccount", @user_account)
+                writer.write_enum_value("detectionStatus", @detection_status) unless @detection_status.nil?
+                writer.write_object_value("imageFile", @image_file) unless @image_file.nil?
+                writer.write_string_value("mdeDeviceId", @mde_device_id) unless @mde_device_id.nil?
+                writer.write_date_time_value("parentProcessCreationDateTime", @parent_process_creation_date_time) unless @parent_process_creation_date_time.nil?
+                writer.write_object_value("parentProcessId", @parent_process_id) unless @parent_process_id.nil?
+                writer.write_object_value("parentProcessImageFile", @parent_process_image_file) unless @parent_process_image_file.nil?
+                writer.write_string_value("processCommandLine", @process_command_line) unless @process_command_line.nil?
+                writer.write_date_time_value("processCreationDateTime", @process_creation_date_time) unless @process_creation_date_time.nil?
+                writer.write_object_value("processId", @process_id) unless @process_id.nil?
+                writer.write_object_value("userAccount", @user_account) unless @user_account.nil?
             end
             ## 
             ## Gets the userAccount property value. User details of the user that ran the process.

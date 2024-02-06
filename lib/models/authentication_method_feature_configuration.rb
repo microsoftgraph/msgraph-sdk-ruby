@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("excludeTarget", @exclude_target)
-                writer.write_object_value("includeTarget", @include_target)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("state", @state)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("excludeTarget", @exclude_target) unless @exclude_target.nil?
+                writer.write_object_value("includeTarget", @include_target) unless @include_target.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("state", @state) unless @state.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the state property value. Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.

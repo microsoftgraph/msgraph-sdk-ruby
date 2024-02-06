@@ -152,12 +152,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("administrativeUnits", @administrative_units)
-                writer.write_collection_of_object_values("attributeSets", @attribute_sets)
-                writer.write_collection_of_object_values("customSecurityAttributeDefinitions", @custom_security_attribute_definitions)
-                writer.write_collection_of_object_values("deletedItems", @deleted_items)
-                writer.write_collection_of_object_values("federationConfigurations", @federation_configurations)
-                writer.write_collection_of_object_values("onPremisesSynchronization", @on_premises_synchronization)
+                writer.write_collection_of_object_values("administrativeUnits", @administrative_units) unless @administrative_units.nil?
+                writer.write_collection_of_object_values("attributeSets", @attribute_sets) unless @attribute_sets.nil?
+                writer.write_collection_of_object_values("customSecurityAttributeDefinitions", @custom_security_attribute_definitions) unless @custom_security_attribute_definitions.nil?
+                writer.write_collection_of_object_values("deletedItems", @deleted_items) unless @deleted_items.nil?
+                writer.write_collection_of_object_values("federationConfigurations", @federation_configurations) unless @federation_configurations.nil?
+                writer.write_collection_of_object_values("onPremisesSynchronization", @on_premises_synchronization) unless @on_premises_synchronization.nil?
             end
         end
     end

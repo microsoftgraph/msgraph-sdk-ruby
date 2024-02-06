@@ -163,14 +163,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("enrolledByUser", @enrolled_by_user)
-                writer.write_date_time_value("expirationDateTimeUTC", @expiration_date_time_u_t_c)
-                writer.write_string_value("initiatedByUserPrincipalName", @initiated_by_user_principal_name)
-                writer.write_guid_value("managedDeviceId", @managed_device_id)
-                writer.write_date_time_value("receivedDateTimeUTC", @received_date_time_u_t_c)
-                writer.write_date_time_value("requestedDateTimeUTC", @requested_date_time_u_t_c)
-                writer.write_object_value("sizeInKB", @size_in_k_b)
-                writer.write_enum_value("status", @status)
+                writer.write_string_value("enrolledByUser", @enrolled_by_user) unless @enrolled_by_user.nil?
+                writer.write_date_time_value("expirationDateTimeUTC", @expiration_date_time_u_t_c) unless @expiration_date_time_u_t_c.nil?
+                writer.write_string_value("initiatedByUserPrincipalName", @initiated_by_user_principal_name) unless @initiated_by_user_principal_name.nil?
+                writer.write_guid_value("managedDeviceId", @managed_device_id) unless @managed_device_id.nil?
+                writer.write_date_time_value("receivedDateTimeUTC", @received_date_time_u_t_c) unless @received_date_time_u_t_c.nil?
+                writer.write_date_time_value("requestedDateTimeUTC", @requested_date_time_u_t_c) unless @requested_date_time_u_t_c.nil?
+                writer.write_object_value("sizeInKB", @size_in_k_b) unless @size_in_k_b.nil?
+                writer.write_enum_value("status", @status) unless @status.nil?
             end
             ## 
             ## Gets the sizeInKB property value. The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308

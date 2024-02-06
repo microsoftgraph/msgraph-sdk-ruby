@@ -81,9 +81,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("primaryAddress", @primary_address)
-                writer.write_object_value("userAccount", @user_account)
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("primaryAddress", @primary_address) unless @primary_address.nil?
+                writer.write_object_value("userAccount", @user_account) unless @user_account.nil?
             end
             ## 
             ## Gets the userAccount property value. The user account of the mailbox.

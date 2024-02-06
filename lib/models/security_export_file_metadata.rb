@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("downloadUrl", @download_url)
-                writer.write_string_value("fileName", @file_name)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("size", @size)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("downloadUrl", @download_url) unless @download_url.nil?
+                writer.write_string_value("fileName", @file_name) unless @file_name.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("size", @size) unless @size.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the size property value. The size property

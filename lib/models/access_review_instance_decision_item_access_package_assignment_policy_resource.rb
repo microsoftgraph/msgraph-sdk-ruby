@@ -77,8 +77,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("accessPackageDisplayName", @access_package_display_name)
-                writer.write_string_value("accessPackageId", @access_package_id)
+                writer.write_string_value("accessPackageDisplayName", @access_package_display_name) unless @access_package_display_name.nil?
+                writer.write_string_value("accessPackageId", @access_package_id) unless @access_package_id.nil?
             end
         end
     end

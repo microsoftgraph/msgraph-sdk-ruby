@@ -191,14 +191,14 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("authenticationMethodConfigurations", @authentication_method_configurations)
-                writer.write_string_value("description", @description)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-                writer.write_enum_value("policyMigrationState", @policy_migration_state)
-                writer.write_string_value("policyVersion", @policy_version)
-                writer.write_number_value("reconfirmationInDays", @reconfirmation_in_days)
-                writer.write_object_value("registrationEnforcement", @registration_enforcement)
+                writer.write_collection_of_object_values("authenticationMethodConfigurations", @authentication_method_configurations) unless @authentication_method_configurations.nil?
+                writer.write_string_value("description", @description) unless @description.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time) unless @last_modified_date_time.nil?
+                writer.write_enum_value("policyMigrationState", @policy_migration_state) unless @policy_migration_state.nil?
+                writer.write_string_value("policyVersion", @policy_version) unless @policy_version.nil?
+                writer.write_number_value("reconfirmationInDays", @reconfirmation_in_days) unless @reconfirmation_in_days.nil?
+                writer.write_object_value("registrationEnforcement", @registration_enforcement) unless @registration_enforcement.nil?
             end
         end
     end

@@ -115,10 +115,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("addToCalendarAction", @add_to_calendar_action)
-                writer.write_enum_value("addedStudentAction", @added_student_action)
-                writer.write_time_value("dueTime", @due_time)
-                writer.write_string_value("notificationChannelUrl", @notification_channel_url)
+                writer.write_enum_value("addToCalendarAction", @add_to_calendar_action) unless @add_to_calendar_action.nil?
+                writer.write_enum_value("addedStudentAction", @added_student_action) unless @added_student_action.nil?
+                writer.write_time_value("dueTime", @due_time) unless @due_time.nil?
+                writer.write_string_value("notificationChannelUrl", @notification_channel_url) unless @notification_channel_url.nil?
             end
         end
     end

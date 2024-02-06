@@ -282,22 +282,22 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("contactITEmailAddress", @contact_i_t_email_address)
-                writer.write_string_value("contactITName", @contact_i_t_name)
-                writer.write_string_value("contactITNotes", @contact_i_t_notes)
-                writer.write_string_value("contactITPhoneNumber", @contact_i_t_phone_number)
-                writer.write_object_value("darkBackgroundLogo", @dark_background_logo)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_object_value("lightBackgroundLogo", @light_background_logo)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("onlineSupportSiteName", @online_support_site_name)
-                writer.write_string_value("onlineSupportSiteUrl", @online_support_site_url)
-                writer.write_string_value("privacyUrl", @privacy_url)
-                writer.write_boolean_value("showDisplayNameNextToLogo", @show_display_name_next_to_logo)
-                writer.write_boolean_value("showLogo", @show_logo)
-                writer.write_boolean_value("showNameNextToLogo", @show_name_next_to_logo)
-                writer.write_object_value("themeColor", @theme_color)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("contactITEmailAddress", @contact_i_t_email_address) unless @contact_i_t_email_address.nil?
+                writer.write_string_value("contactITName", @contact_i_t_name) unless @contact_i_t_name.nil?
+                writer.write_string_value("contactITNotes", @contact_i_t_notes) unless @contact_i_t_notes.nil?
+                writer.write_string_value("contactITPhoneNumber", @contact_i_t_phone_number) unless @contact_i_t_phone_number.nil?
+                writer.write_object_value("darkBackgroundLogo", @dark_background_logo) unless @dark_background_logo.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_object_value("lightBackgroundLogo", @light_background_logo) unless @light_background_logo.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("onlineSupportSiteName", @online_support_site_name) unless @online_support_site_name.nil?
+                writer.write_string_value("onlineSupportSiteUrl", @online_support_site_url) unless @online_support_site_url.nil?
+                writer.write_string_value("privacyUrl", @privacy_url) unless @privacy_url.nil?
+                writer.write_boolean_value("showDisplayNameNextToLogo", @show_display_name_next_to_logo) unless @show_display_name_next_to_logo.nil?
+                writer.write_boolean_value("showLogo", @show_logo) unless @show_logo.nil?
+                writer.write_boolean_value("showNameNextToLogo", @show_name_next_to_logo) unless @show_name_next_to_logo.nil?
+                writer.write_object_value("themeColor", @theme_color) unless @theme_color.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.

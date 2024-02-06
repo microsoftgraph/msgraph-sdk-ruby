@@ -278,21 +278,21 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_enum_value("action", @action)
-                writer.write_object_value("appScope", @app_scope)
-                writer.write_string_value("appScopeId", @app_scope_id)
-                writer.write_object_value("directoryScope", @directory_scope)
-                writer.write_string_value("directoryScopeId", @directory_scope_id)
-                writer.write_boolean_value("isValidationOnly", @is_validation_only)
-                writer.write_string_value("justification", @justification)
-                writer.write_object_value("principal", @principal)
-                writer.write_string_value("principalId", @principal_id)
-                writer.write_object_value("roleDefinition", @role_definition)
-                writer.write_string_value("roleDefinitionId", @role_definition_id)
-                writer.write_object_value("scheduleInfo", @schedule_info)
-                writer.write_object_value("targetSchedule", @target_schedule)
-                writer.write_string_value("targetScheduleId", @target_schedule_id)
-                writer.write_object_value("ticketInfo", @ticket_info)
+                writer.write_enum_value("action", @action) unless @action.nil?
+                writer.write_object_value("appScope", @app_scope) unless @app_scope.nil?
+                writer.write_string_value("appScopeId", @app_scope_id) unless @app_scope_id.nil?
+                writer.write_object_value("directoryScope", @directory_scope) unless @directory_scope.nil?
+                writer.write_string_value("directoryScopeId", @directory_scope_id) unless @directory_scope_id.nil?
+                writer.write_boolean_value("isValidationOnly", @is_validation_only) unless @is_validation_only.nil?
+                writer.write_string_value("justification", @justification) unless @justification.nil?
+                writer.write_object_value("principal", @principal) unless @principal.nil?
+                writer.write_string_value("principalId", @principal_id) unless @principal_id.nil?
+                writer.write_object_value("roleDefinition", @role_definition) unless @role_definition.nil?
+                writer.write_string_value("roleDefinitionId", @role_definition_id) unless @role_definition_id.nil?
+                writer.write_object_value("scheduleInfo", @schedule_info) unless @schedule_info.nil?
+                writer.write_object_value("targetSchedule", @target_schedule) unless @target_schedule.nil?
+                writer.write_string_value("targetScheduleId", @target_schedule_id) unless @target_schedule_id.nil?
+                writer.write_object_value("ticketInfo", @ticket_info) unless @ticket_info.nil?
             end
             ## 
             ## Gets the targetSchedule property value. The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.

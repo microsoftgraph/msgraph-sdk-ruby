@@ -169,13 +169,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("accessConsent", @access_consent)
-                writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("emailAddress", @email_address)
-                writer.write_string_value("mobilePhone", @mobile_phone)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_enum_value("relationship", @relationship)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("accessConsent", @access_consent) unless @access_consent.nil?
+                writer.write_string_value("displayName", @display_name) unless @display_name.nil?
+                writer.write_string_value("emailAddress", @email_address) unless @email_address.nil?
+                writer.write_string_value("mobilePhone", @mobile_phone) unless @mobile_phone.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_enum_value("relationship", @relationship) unless @relationship.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
         end
     end

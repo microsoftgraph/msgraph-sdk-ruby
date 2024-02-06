@@ -85,10 +85,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("logicAppWorkflowName", @logic_app_workflow_name)
-                writer.write_string_value("resourceGroupName", @resource_group_name)
-                writer.write_string_value("subscriptionId", @subscription_id)
-                writer.write_string_value("url", @url)
+                writer.write_string_value("logicAppWorkflowName", @logic_app_workflow_name) unless @logic_app_workflow_name.nil?
+                writer.write_string_value("resourceGroupName", @resource_group_name) unless @resource_group_name.nil?
+                writer.write_string_value("subscriptionId", @subscription_id) unless @subscription_id.nil?
+                writer.write_string_value("url", @url) unless @url.nil?
             end
             ## 
             ## Gets the subscriptionId property value. Identifier of the Azure subscription for the logic app.

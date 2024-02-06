@@ -106,11 +106,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("androidRestriction", @android_restriction)
-                writer.write_object_value("iosRestriction", @ios_restriction)
-                writer.write_object_value("macOSRestriction", @mac_o_s_restriction)
-                writer.write_object_value("windowsMobileRestriction", @windows_mobile_restriction)
-                writer.write_object_value("windowsRestriction", @windows_restriction)
+                writer.write_object_value("androidRestriction", @android_restriction) unless @android_restriction.nil?
+                writer.write_object_value("iosRestriction", @ios_restriction) unless @ios_restriction.nil?
+                writer.write_object_value("macOSRestriction", @mac_o_s_restriction) unless @mac_o_s_restriction.nil?
+                writer.write_object_value("windowsMobileRestriction", @windows_mobile_restriction) unless @windows_mobile_restriction.nil?
+                writer.write_object_value("windowsRestriction", @windows_restriction) unless @windows_restriction.nil?
             end
             ## 
             ## Gets the windowsMobileRestriction property value. Windows mobile restrictions based on platform, platform operating system version, and device ownership

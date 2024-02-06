@@ -553,33 +553,33 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_collection_of_object_values("allowedDataStorageLocations", @allowed_data_storage_locations)
-                writer.write_enum_value("allowedInboundDataTransferSources", @allowed_inbound_data_transfer_sources)
-                writer.write_enum_value("allowedOutboundClipboardSharingLevel", @allowed_outbound_clipboard_sharing_level)
-                writer.write_enum_value("allowedOutboundDataTransferDestinations", @allowed_outbound_data_transfer_destinations)
-                writer.write_boolean_value("contactSyncBlocked", @contact_sync_blocked)
-                writer.write_boolean_value("dataBackupBlocked", @data_backup_blocked)
-                writer.write_boolean_value("deviceComplianceRequired", @device_compliance_required)
-                writer.write_boolean_value("disableAppPinIfDevicePinIsSet", @disable_app_pin_if_device_pin_is_set)
-                writer.write_boolean_value("fingerprintBlocked", @fingerprint_blocked)
-                writer.write_enum_value("managedBrowser", @managed_browser)
-                writer.write_boolean_value("managedBrowserToOpenLinksRequired", @managed_browser_to_open_links_required)
-                writer.write_number_value("maximumPinRetries", @maximum_pin_retries)
-                writer.write_number_value("minimumPinLength", @minimum_pin_length)
-                writer.write_string_value("minimumRequiredAppVersion", @minimum_required_app_version)
-                writer.write_string_value("minimumRequiredOsVersion", @minimum_required_os_version)
-                writer.write_string_value("minimumWarningAppVersion", @minimum_warning_app_version)
-                writer.write_string_value("minimumWarningOsVersion", @minimum_warning_os_version)
-                writer.write_boolean_value("organizationalCredentialsRequired", @organizational_credentials_required)
-                writer.write_duration_value("periodBeforePinReset", @period_before_pin_reset)
-                writer.write_duration_value("periodOfflineBeforeAccessCheck", @period_offline_before_access_check)
-                writer.write_duration_value("periodOfflineBeforeWipeIsEnforced", @period_offline_before_wipe_is_enforced)
-                writer.write_duration_value("periodOnlineBeforeAccessCheck", @period_online_before_access_check)
-                writer.write_enum_value("pinCharacterSet", @pin_character_set)
-                writer.write_boolean_value("pinRequired", @pin_required)
-                writer.write_boolean_value("printBlocked", @print_blocked)
-                writer.write_boolean_value("saveAsBlocked", @save_as_blocked)
-                writer.write_boolean_value("simplePinBlocked", @simple_pin_blocked)
+                writer.write_collection_of_object_values("allowedDataStorageLocations", @allowed_data_storage_locations) unless @allowed_data_storage_locations.nil?
+                writer.write_enum_value("allowedInboundDataTransferSources", @allowed_inbound_data_transfer_sources) unless @allowed_inbound_data_transfer_sources.nil?
+                writer.write_enum_value("allowedOutboundClipboardSharingLevel", @allowed_outbound_clipboard_sharing_level) unless @allowed_outbound_clipboard_sharing_level.nil?
+                writer.write_enum_value("allowedOutboundDataTransferDestinations", @allowed_outbound_data_transfer_destinations) unless @allowed_outbound_data_transfer_destinations.nil?
+                writer.write_boolean_value("contactSyncBlocked", @contact_sync_blocked) unless @contact_sync_blocked.nil?
+                writer.write_boolean_value("dataBackupBlocked", @data_backup_blocked) unless @data_backup_blocked.nil?
+                writer.write_boolean_value("deviceComplianceRequired", @device_compliance_required) unless @device_compliance_required.nil?
+                writer.write_boolean_value("disableAppPinIfDevicePinIsSet", @disable_app_pin_if_device_pin_is_set) unless @disable_app_pin_if_device_pin_is_set.nil?
+                writer.write_boolean_value("fingerprintBlocked", @fingerprint_blocked) unless @fingerprint_blocked.nil?
+                writer.write_enum_value("managedBrowser", @managed_browser) unless @managed_browser.nil?
+                writer.write_boolean_value("managedBrowserToOpenLinksRequired", @managed_browser_to_open_links_required) unless @managed_browser_to_open_links_required.nil?
+                writer.write_number_value("maximumPinRetries", @maximum_pin_retries) unless @maximum_pin_retries.nil?
+                writer.write_number_value("minimumPinLength", @minimum_pin_length) unless @minimum_pin_length.nil?
+                writer.write_string_value("minimumRequiredAppVersion", @minimum_required_app_version) unless @minimum_required_app_version.nil?
+                writer.write_string_value("minimumRequiredOsVersion", @minimum_required_os_version) unless @minimum_required_os_version.nil?
+                writer.write_string_value("minimumWarningAppVersion", @minimum_warning_app_version) unless @minimum_warning_app_version.nil?
+                writer.write_string_value("minimumWarningOsVersion", @minimum_warning_os_version) unless @minimum_warning_os_version.nil?
+                writer.write_boolean_value("organizationalCredentialsRequired", @organizational_credentials_required) unless @organizational_credentials_required.nil?
+                writer.write_duration_value("periodBeforePinReset", @period_before_pin_reset) unless @period_before_pin_reset.nil?
+                writer.write_duration_value("periodOfflineBeforeAccessCheck", @period_offline_before_access_check) unless @period_offline_before_access_check.nil?
+                writer.write_duration_value("periodOfflineBeforeWipeIsEnforced", @period_offline_before_wipe_is_enforced) unless @period_offline_before_wipe_is_enforced.nil?
+                writer.write_duration_value("periodOnlineBeforeAccessCheck", @period_online_before_access_check) unless @period_online_before_access_check.nil?
+                writer.write_enum_value("pinCharacterSet", @pin_character_set) unless @pin_character_set.nil?
+                writer.write_boolean_value("pinRequired", @pin_required) unless @pin_required.nil?
+                writer.write_boolean_value("printBlocked", @print_blocked) unless @print_blocked.nil?
+                writer.write_boolean_value("saveAsBlocked", @save_as_blocked) unless @save_as_blocked.nil?
+                writer.write_boolean_value("simplePinBlocked", @simple_pin_blocked) unless @simple_pin_blocked.nil?
             end
             ## 
             ## Gets the simplePinBlocked property value. Indicates whether simplePin is blocked.

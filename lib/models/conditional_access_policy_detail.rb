@@ -116,11 +116,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("conditions", @conditions)
-                writer.write_object_value("grantControls", @grant_controls)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_object_value("sessionControls", @session_controls)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("conditions", @conditions) unless @conditions.nil?
+                writer.write_object_value("grantControls", @grant_controls) unless @grant_controls.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_object_value("sessionControls", @session_controls) unless @session_controls.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the sessionControls property value. Represents a complex type of session controls that is enforced after sign-in.

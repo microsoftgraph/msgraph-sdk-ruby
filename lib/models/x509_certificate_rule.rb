@@ -101,11 +101,11 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("identifier", @identifier)
-                writer.write_string_value("@odata.type", @odata_type)
+                writer.write_string_value("identifier", @identifier) unless @identifier.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
                 writer.write_enum_value("x509CertificateAuthenticationMode", @x509_certificate_authentication_mode)
                 writer.write_enum_value("x509CertificateRuleType", @x509_certificate_rule_type)
-                writer.write_additional_data(@additional_data)
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the x509CertificateAuthenticationMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.

@@ -97,10 +97,10 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_object_value("attackSimulationUser", @attack_simulation_user)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_collection_of_object_values("userTrainings", @user_trainings)
-                writer.write_additional_data(@additional_data)
+                writer.write_object_value("attackSimulationUser", @attack_simulation_user) unless @attack_simulation_user.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_collection_of_object_values("userTrainings", @user_trainings) unless @user_trainings.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the userTrainings property value. List of assigned trainings and their statuses for the user.

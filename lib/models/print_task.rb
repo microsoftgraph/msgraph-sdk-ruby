@@ -84,10 +84,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_object_value("definition", @definition)
-                writer.write_string_value("parentUrl", @parent_url)
-                writer.write_object_value("status", @status)
-                writer.write_object_value("trigger", @trigger)
+                writer.write_object_value("definition", @definition) unless @definition.nil?
+                writer.write_string_value("parentUrl", @parent_url) unless @parent_url.nil?
+                writer.write_object_value("status", @status) unless @status.nil?
+                writer.write_object_value("trigger", @trigger) unless @trigger.nil?
             end
             ## 
             ## Gets the status property value. The status property

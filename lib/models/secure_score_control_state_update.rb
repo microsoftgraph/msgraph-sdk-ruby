@@ -125,13 +125,13 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_string_value("assignedTo", @assigned_to)
-                writer.write_string_value("comment", @comment)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_string_value("state", @state)
-                writer.write_string_value("updatedBy", @updated_by)
-                writer.write_date_time_value("updatedDateTime", @updated_date_time)
-                writer.write_additional_data(@additional_data)
+                writer.write_string_value("assignedTo", @assigned_to) unless @assigned_to.nil?
+                writer.write_string_value("comment", @comment) unless @comment.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_string_value("state", @state) unless @state.nil?
+                writer.write_string_value("updatedBy", @updated_by) unless @updated_by.nil?
+                writer.write_date_time_value("updatedDateTime", @updated_date_time) unless @updated_date_time.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the state property value. State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).

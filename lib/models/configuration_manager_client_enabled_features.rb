@@ -175,14 +175,14 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                writer.write_boolean_value("compliancePolicy", @compliance_policy)
-                writer.write_boolean_value("deviceConfiguration", @device_configuration)
-                writer.write_boolean_value("inventory", @inventory)
-                writer.write_boolean_value("modernApps", @modern_apps)
-                writer.write_string_value("@odata.type", @odata_type)
-                writer.write_boolean_value("resourceAccess", @resource_access)
-                writer.write_boolean_value("windowsUpdateForBusiness", @windows_update_for_business)
-                writer.write_additional_data(@additional_data)
+                writer.write_boolean_value("compliancePolicy", @compliance_policy) unless @compliance_policy.nil?
+                writer.write_boolean_value("deviceConfiguration", @device_configuration) unless @device_configuration.nil?
+                writer.write_boolean_value("inventory", @inventory) unless @inventory.nil?
+                writer.write_boolean_value("modernApps", @modern_apps) unless @modern_apps.nil?
+                writer.write_string_value("@odata.type", @odata_type) unless @odata_type.nil?
+                writer.write_boolean_value("resourceAccess", @resource_access) unless @resource_access.nil?
+                writer.write_boolean_value("windowsUpdateForBusiness", @windows_update_for_business) unless @windows_update_for_business.nil?
+                writer.write_additional_data(@additional_data) unless @additional_data.nil?
             end
             ## 
             ## Gets the windowsUpdateForBusiness property value. Whether Windows Update for Business is managed by Intune

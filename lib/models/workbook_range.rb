@@ -343,26 +343,26 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("address", @address)
-                writer.write_string_value("addressLocal", @address_local)
-                writer.write_number_value("cellCount", @cell_count)
-                writer.write_number_value("columnCount", @column_count)
-                writer.write_boolean_value("columnHidden", @column_hidden)
-                writer.write_number_value("columnIndex", @column_index)
-                writer.write_object_value("format", @format)
-                writer.write_object_value("formulas", @formulas)
-                writer.write_object_value("formulasLocal", @formulas_local)
+                writer.write_string_value("address", @address) unless @address.nil?
+                writer.write_string_value("addressLocal", @address_local) unless @address_local.nil?
+                writer.write_number_value("cellCount", @cell_count) unless @cell_count.nil?
+                writer.write_number_value("columnCount", @column_count) unless @column_count.nil?
+                writer.write_boolean_value("columnHidden", @column_hidden) unless @column_hidden.nil?
+                writer.write_number_value("columnIndex", @column_index) unless @column_index.nil?
+                writer.write_object_value("format", @format) unless @format.nil?
+                writer.write_object_value("formulas", @formulas) unless @formulas.nil?
+                writer.write_object_value("formulasLocal", @formulas_local) unless @formulas_local.nil?
                 writer.write_object_value("formulasR1C1", @formulas_r1_c1)
-                writer.write_boolean_value("hidden", @hidden)
-                writer.write_object_value("numberFormat", @number_format)
-                writer.write_number_value("rowCount", @row_count)
-                writer.write_boolean_value("rowHidden", @row_hidden)
-                writer.write_number_value("rowIndex", @row_index)
-                writer.write_object_value("sort", @sort)
-                writer.write_object_value("text", @text)
-                writer.write_object_value("valueTypes", @value_types)
-                writer.write_object_value("values", @values)
-                writer.write_object_value("worksheet", @worksheet)
+                writer.write_boolean_value("hidden", @hidden) unless @hidden.nil?
+                writer.write_object_value("numberFormat", @number_format) unless @number_format.nil?
+                writer.write_number_value("rowCount", @row_count) unless @row_count.nil?
+                writer.write_boolean_value("rowHidden", @row_hidden) unless @row_hidden.nil?
+                writer.write_number_value("rowIndex", @row_index) unless @row_index.nil?
+                writer.write_object_value("sort", @sort) unless @sort.nil?
+                writer.write_object_value("text", @text) unless @text.nil?
+                writer.write_object_value("valueTypes", @value_types) unless @value_types.nil?
+                writer.write_object_value("values", @values) unless @values.nil?
+                writer.write_object_value("worksheet", @worksheet) unless @worksheet.nil?
             end
             ## 
             ## Gets the sort property value. The worksheet containing the current range. Read-only.
