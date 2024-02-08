@@ -19,18 +19,18 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+            # The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
             @size
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @bucket_definition = value
             end
             ## 
-            ## Instantiates a new aggregationOption and sets the default values.
+            ## Instantiates a new AggregationOption and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -123,14 +123,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+            ## Gets the size property value. The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
             ## @return a integer
             ## 
             def size
                 return @size
             end
             ## 
-            ## Sets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+            ## Sets the size property value. The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. Optional.
             ## @param value Value to set for the size property.
             ## @return a void
             ## 

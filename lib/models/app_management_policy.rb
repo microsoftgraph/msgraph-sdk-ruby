@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @applies_to = value
             end
             ## 
-            ## Instantiates a new appManagementPolicy and sets the default values.
+            ## Instantiates a new AppManagementPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

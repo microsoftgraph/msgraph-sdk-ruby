@@ -22,7 +22,7 @@ module MicrosoftGraph
             # Identifier of the synchronization template this job is based on.
             @template_id
             ## 
-            ## Instantiates a new synchronizationJob and sets the default values.
+            ## Instantiates a new SynchronizationJob and sets the default values.
             ## @return a void
             ## 
             def initialize()

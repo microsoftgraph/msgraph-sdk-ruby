@@ -36,7 +36,7 @@ module MicrosoftGraph
                 @committed_content_version = value
             end
             ## 
-            ## Instantiates a new managedMobileLobApp and sets the default values.
+            ## Instantiates a new ManagedMobileLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

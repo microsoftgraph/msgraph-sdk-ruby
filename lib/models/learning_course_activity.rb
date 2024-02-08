@@ -59,7 +59,7 @@ module MicrosoftGraph
                 @completion_percentage = value
             end
             ## 
-            ## Instantiates a new learningCourseActivity and sets the default values.
+            ## Instantiates a new LearningCourseActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

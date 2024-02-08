@@ -113,7 +113,7 @@ module MicrosoftGraph
                 @catalog = value
             end
             ## 
-            ## Instantiates a new accessPackageAssignmentPolicy and sets the default values.
+            ## Instantiates a new AccessPackageAssignmentPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
