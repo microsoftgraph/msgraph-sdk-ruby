@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @configuration_deployment_summary_per_app = value
             end
             ## 
-            ## Instantiates a new managedAppPolicyDeploymentSummary and sets the default values.
+            ## Instantiates a new ManagedAppPolicyDeploymentSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

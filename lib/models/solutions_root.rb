@@ -19,15 +19,18 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # The virtualEvents property
+            @virtual_events
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -64,7 +67,7 @@ module MicrosoftGraph
                 @booking_currencies = value
             end
             ## 
-            ## Instantiates a new solutionsRoot and sets the default values.
+            ## Instantiates a new SolutionsRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -88,6 +91,7 @@ module MicrosoftGraph
                     "bookingBusinesses" => lambda {|n| @booking_businesses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingBusiness.create_from_discriminator_value(pn) }) },
                     "bookingCurrencies" => lambda {|n| @booking_currencies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingCurrency.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "virtualEvents" => lambda {|n| @virtual_events = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::VirtualEventsRoot.create_from_discriminator_value(pn) }) },
                 }
             end
             ## 
@@ -115,7 +119,23 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("bookingBusinesses", @booking_businesses)
                 writer.write_collection_of_object_values("bookingCurrencies", @booking_currencies)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_object_value("virtualEvents", @virtual_events)
                 writer.write_additional_data(@additional_data)
+            end
+            ## 
+            ## Gets the virtualEvents property value. The virtualEvents property
+            ## @return a virtual_events_root
+            ## 
+            def virtual_events
+                return @virtual_events
+            end
+            ## 
+            ## Sets the virtualEvents property value. The virtualEvents property
+            ## @param value Value to set for the virtualEvents property.
+            ## @return a void
+            ## 
+            def virtual_events=(value)
+                @virtual_events = value
             end
         end
     end

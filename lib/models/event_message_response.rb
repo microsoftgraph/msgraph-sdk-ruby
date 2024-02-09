@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The responseType property
             @response_type
             ## 
-            ## Instantiates a new eventMessageResponse and sets the default values.
+            ## Instantiates a new EventMessageResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

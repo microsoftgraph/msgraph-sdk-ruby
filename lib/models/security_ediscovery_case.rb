@@ -68,7 +68,7 @@ module MicrosoftGraph
                 @closed_date_time = value
             end
             ## 
-            ## Instantiates a new securityEdiscoveryCase and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryCase and sets the default values.
             ## @return a void
             ## 
             def initialize()

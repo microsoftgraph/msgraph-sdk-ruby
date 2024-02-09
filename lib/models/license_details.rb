@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
             @sku_part_number
             ## 
-            ## Instantiates a new licenseDetails and sets the default values.
+            ## Instantiates a new LicenseDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()

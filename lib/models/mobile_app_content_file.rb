@@ -67,7 +67,7 @@ module MicrosoftGraph
                 @azure_storage_uri_expiration_date_time = value
             end
             ## 
-            ## Instantiates a new mobileAppContentFile and sets the default values.
+            ## Instantiates a new MobileAppContentFile and sets the default values.
             ## @return a void
             ## 
             def initialize()

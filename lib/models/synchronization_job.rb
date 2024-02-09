@@ -7,6 +7,9 @@ module MicrosoftGraph
         class SynchronizationJob < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The bulkUpload property
+            @bulk_upload
+            ## 
             # Schedule used to run the job. Read-only.
             @schedule
             ## 
@@ -22,7 +25,22 @@ module MicrosoftGraph
             # Identifier of the synchronization template this job is based on.
             @template_id
             ## 
-            ## Instantiates a new synchronizationJob and sets the default values.
+            ## Gets the bulkUpload property value. The bulkUpload property
+            ## @return a bulk_upload
+            ## 
+            def bulk_upload
+                return @bulk_upload
+            end
+            ## 
+            ## Sets the bulkUpload property value. The bulkUpload property
+            ## @param value Value to set for the bulkUpload property.
+            ## @return a void
+            ## 
+            def bulk_upload=(value)
+                @bulk_upload = value
+            end
+            ## 
+            ## Instantiates a new SynchronizationJob and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -43,6 +61,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "bulkUpload" => lambda {|n| @bulk_upload = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::BulkUpload.create_from_discriminator_value(pn) }) },
                     "schedule" => lambda {|n| @schedule = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SynchronizationSchedule.create_from_discriminator_value(pn) }) },
                     "schema" => lambda {|n| @schema = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SynchronizationSchema.create_from_discriminator_value(pn) }) },
                     "status" => lambda {|n| @status = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SynchronizationStatus.create_from_discriminator_value(pn) }) },
@@ -88,6 +107,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("bulkUpload", @bulk_upload)
                 writer.write_object_value("schedule", @schedule)
                 writer.write_object_value("schema", @schema)
                 writer.write_object_value("status", @status)

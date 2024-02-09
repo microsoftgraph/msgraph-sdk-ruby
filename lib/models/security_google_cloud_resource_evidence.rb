@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The type of the resource.
             @resource_type
             ## 
-            ## Instantiates a new securityGoogleCloudResourceEvidence and sets the default values.
+            ## Instantiates a new SecurityGoogleCloudResourceEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

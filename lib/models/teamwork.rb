@@ -10,13 +10,13 @@ module MicrosoftGraph
             # The deleted team.
             @deleted_teams
             ## 
-            # The teamsAppSettings property
+            # Represents tenant-wide settings for all Teams apps in the tenant.
             @teams_app_settings
             ## 
             # The workforceIntegrations property
             @workforce_integrations
             ## 
-            ## Instantiates a new teamwork and sets the default values.
+            ## Instantiates a new Teamwork and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -70,14 +70,14 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("workforceIntegrations", @workforce_integrations)
             end
             ## 
-            ## Gets the teamsAppSettings property value. The teamsAppSettings property
+            ## Gets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
             ## @return a teams_app_settings
             ## 
             def teams_app_settings
                 return @teams_app_settings
             end
             ## 
-            ## Sets the teamsAppSettings property value. The teamsAppSettings property
+            ## Sets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
             ## @param value Value to set for the teamsAppSettings property.
             ## @return a void
             ## 
