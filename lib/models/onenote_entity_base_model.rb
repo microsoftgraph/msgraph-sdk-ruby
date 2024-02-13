@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The endpoint where you can get details about the page. Read-only.
             @self_escaped
             ## 
-            ## Instantiates a new onenoteEntityBaseModel and sets the default values.
+            ## Instantiates a new OnenoteEntityBaseModel and sets the default values.
             ## @return a void
             ## 
             def initialize()

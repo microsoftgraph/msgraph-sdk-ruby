@@ -85,7 +85,7 @@ module MicrosoftGraph
                 @categories = value
             end
             ## 
-            ## Instantiates a new mobileApp and sets the default values.
+            ## Instantiates a new MobileApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -129,6 +129,8 @@ module MicrosoftGraph
                             return IosStoreApp.new
                         when "#microsoft.graph.iosVppApp"
                             return IosVppApp.new
+                        when "#microsoft.graph.macOSDmgApp"
+                            return MacOSDmgApp.new
                         when "#microsoft.graph.macOSLobApp"
                             return MacOSLobApp.new
                         when "#microsoft.graph.macOSMicrosoftDefenderApp"

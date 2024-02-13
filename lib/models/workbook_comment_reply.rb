@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Indicates the type for the comment reply.
             @content_type
             ## 
-            ## Instantiates a new workbookCommentReply and sets the default values.
+            ## Instantiates a new WorkbookCommentReply and sets the default values.
             ## @return a void
             ## 
             def initialize()
