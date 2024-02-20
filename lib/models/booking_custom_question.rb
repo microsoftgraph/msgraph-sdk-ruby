@@ -48,7 +48,7 @@ module MicrosoftGraph
                 @answer_options = value
             end
             ## 
-            ## Instantiates a new bookingCustomQuestion and sets the default values.
+            ## Instantiates a new BookingCustomQuestion and sets the default values.
             ## @return a void
             ## 
             def initialize()

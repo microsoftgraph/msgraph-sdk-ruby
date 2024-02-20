@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Defines the scopes of the resources for which access is reviewed.
             @resource_scopes
             ## 
-            ## Instantiates a new principalResourceMembershipsScope and sets the default values.
+            ## Instantiates a new PrincipalResourceMembershipsScope and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -8,6 +8,7 @@ module MicrosoftGraph
             CaseResolved: :CaseResolved,
             ContentEstimate: :ContentEstimate,
             UnknownFutureValue: :UnknownFutureValue,
+            Approval: :Approval,
         }
     end
 end

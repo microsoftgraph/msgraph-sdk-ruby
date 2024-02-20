@@ -91,7 +91,7 @@ module MicrosoftGraph
                 @compatibility_mode = value
             end
             ## 
-            ## Instantiates a new browserSite and sets the default values.
+            ## Instantiates a new BrowserSite and sets the default values.
             ## @return a void
             ## 
             def initialize()
