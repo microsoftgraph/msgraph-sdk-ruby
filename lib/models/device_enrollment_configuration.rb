@@ -46,7 +46,7 @@ module MicrosoftGraph
                 @assignments = value
             end
             ## 
-            ## Instantiates a new deviceEnrollmentConfiguration and sets the default values.
+            ## Instantiates a new DeviceEnrollmentConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

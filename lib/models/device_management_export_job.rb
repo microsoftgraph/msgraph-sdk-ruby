@@ -40,7 +40,7 @@ module MicrosoftGraph
             # Temporary location of the exported report
             @url
             ## 
-            ## Instantiates a new deviceManagementExportJob and sets the default values.
+            ## Instantiates a new DeviceManagementExportJob and sets the default values.
             ## @return a void
             ## 
             def initialize()

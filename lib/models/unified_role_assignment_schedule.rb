@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @assignment_type = value
             end
             ## 
-            ## Instantiates a new unifiedRoleAssignmentSchedule and sets the default values.
+            ## Instantiates a new UnifiedRoleAssignmentSchedule and sets the default values.
             ## @return a void
             ## 
             def initialize()

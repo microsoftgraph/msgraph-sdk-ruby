@@ -7,7 +7,7 @@ module MicrosoftGraph
         class SearchEntity < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new searchEntity and sets the default values.
+            ## Instantiates a new SearchEntity and sets the default values.
             ## @return a void
             ## 
             def initialize()

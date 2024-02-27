@@ -57,7 +57,7 @@ module MicrosoftGraph
                 @comparison_value = value
             end
             ## 
-            ## Instantiates a new win32LobAppFileSystemRule and sets the default values.
+            ## Instantiates a new Win32LobAppFileSystemRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

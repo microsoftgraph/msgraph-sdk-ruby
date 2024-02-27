@@ -224,7 +224,7 @@ module MicrosoftGraph
                 @calendar = value
             end
             ## 
-            ## Instantiates a new event and sets the default values.
+            ## Instantiates a new Event and sets the default values.
             ## @return a void
             ## 
             def initialize()

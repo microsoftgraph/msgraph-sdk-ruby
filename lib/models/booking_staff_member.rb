@@ -48,7 +48,7 @@ module MicrosoftGraph
                 @availability_is_affected_by_personal_calendar = value
             end
             ## 
-            ## Instantiates a new bookingStaffMember and sets the default values.
+            ## Instantiates a new BookingStaffMember and sets the default values.
             ## @return a void
             ## 
             def initialize()
