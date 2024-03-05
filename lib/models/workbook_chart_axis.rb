@@ -31,7 +31,7 @@ module MicrosoftGraph
             # Represents the axis title. Read-only.
             @title
             ## 
-            ## Instantiates a new workbookChartAxis and sets the default values.
+            ## Instantiates a new WorkbookChartAxis and sets the default values.
             ## @return a void
             ## 
             def initialize()

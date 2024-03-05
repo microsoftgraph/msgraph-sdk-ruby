@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
             @self_service_sign_up
             ## 
-            ## Instantiates a new authenticationFlowsPolicy and sets the default values.
+            ## Instantiates a new AuthenticationFlowsPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The sharingHistory property
             @sharing_history
             ## 
-            ## Instantiates a new sharedInsight and sets the default values.
+            ## Instantiates a new SharedInsight and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -12,6 +12,7 @@ module MicrosoftGraph
             DataLossPrevention: :DataLossPrevention,
             UnknownFutureValue: :UnknownFutureValue,
             MicrosoftDefenderForCloud: :MicrosoftDefenderForCloud,
+            MicrosoftSentinel: :MicrosoftSentinel,
         }
     end
 end

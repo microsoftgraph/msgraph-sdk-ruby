@@ -31,6 +31,9 @@ module MicrosoftGraph
             # The externalColumns property
             @external_columns
             ## 
+            # Identifies whether the site is personal or not. Read-only.
+            @is_personal_site
+            ## 
             # Used to address any item contained in this site. This collection can't be enumerated.
             @items
             ## 
@@ -42,6 +45,9 @@ module MicrosoftGraph
             ## 
             # The collection of long-running operations on the site.
             @operations
+            ## 
+            # The pages property
+            @pages
             ## 
             # The permissions associated with the site. Nullable.
             @permissions
@@ -94,7 +100,7 @@ module MicrosoftGraph
                 @columns = value
             end
             ## 
-            ## Instantiates a new site and sets the default values.
+            ## Instantiates a new Site and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -214,10 +220,12 @@ module MicrosoftGraph
                     "drives" => lambda {|n| @drives = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }) },
                     "error" => lambda {|n| @error = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PublicError.create_from_discriminator_value(pn) }) },
                     "externalColumns" => lambda {|n| @external_columns = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ColumnDefinition.create_from_discriminator_value(pn) }) },
+                    "isPersonalSite" => lambda {|n| @is_personal_site = n.get_boolean_value() },
                     "items" => lambda {|n| @items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BaseItem.create_from_discriminator_value(pn) }) },
                     "lists" => lambda {|n| @lists = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::List.create_from_discriminator_value(pn) }) },
                     "onenote" => lambda {|n| @onenote = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Onenote.create_from_discriminator_value(pn) }) },
                     "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::RichLongRunningOperation.create_from_discriminator_value(pn) }) },
+                    "pages" => lambda {|n| @pages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BaseSitePage.create_from_discriminator_value(pn) }) },
                     "permissions" => lambda {|n| @permissions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Permission.create_from_discriminator_value(pn) }) },
                     "root" => lambda {|n| @root = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Root.create_from_discriminator_value(pn) }) },
                     "sharepointIds" => lambda {|n| @sharepoint_ids = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SharepointIds.create_from_discriminator_value(pn) }) },
@@ -226,6 +234,21 @@ module MicrosoftGraph
                     "termStore" => lambda {|n| @term_store = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TermStoreStore.create_from_discriminator_value(pn) }) },
                     "termStores" => lambda {|n| @term_stores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TermStoreStore.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the isPersonalSite property value. Identifies whether the site is personal or not. Read-only.
+            ## @return a boolean
+            ## 
+            def is_personal_site
+                return @is_personal_site
+            end
+            ## 
+            ## Sets the isPersonalSite property value. Identifies whether the site is personal or not. Read-only.
+            ## @param value Value to set for the isPersonalSite property.
+            ## @return a void
+            ## 
+            def is_personal_site=(value)
+                @is_personal_site = value
             end
             ## 
             ## Gets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
@@ -288,6 +311,21 @@ module MicrosoftGraph
                 @operations = value
             end
             ## 
+            ## Gets the pages property value. The pages property
+            ## @return a base_site_page
+            ## 
+            def pages
+                return @pages
+            end
+            ## 
+            ## Sets the pages property value. The pages property
+            ## @param value Value to set for the pages property.
+            ## @return a void
+            ## 
+            def pages=(value)
+                @pages = value
+            end
+            ## 
             ## Gets the permissions property value. The permissions associated with the site. Nullable.
             ## @return a permission
             ## 
@@ -333,10 +371,12 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("drives", @drives)
                 writer.write_object_value("error", @error)
                 writer.write_collection_of_object_values("externalColumns", @external_columns)
+                writer.write_boolean_value("isPersonalSite", @is_personal_site)
                 writer.write_collection_of_object_values("items", @items)
                 writer.write_collection_of_object_values("lists", @lists)
                 writer.write_object_value("onenote", @onenote)
                 writer.write_collection_of_object_values("operations", @operations)
+                writer.write_collection_of_object_values("pages", @pages)
                 writer.write_collection_of_object_values("permissions", @permissions)
                 writer.write_object_value("root", @root)
                 writer.write_object_value("sharepointIds", @sharepoint_ids)

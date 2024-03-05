@@ -60,7 +60,7 @@ module MicrosoftGraph
                 @apps = value
             end
             ## 
-            ## Instantiates a new iosManagedAppProtection and sets the default values.
+            ## Instantiates a new IosManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()

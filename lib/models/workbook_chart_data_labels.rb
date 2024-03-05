@@ -34,7 +34,7 @@ module MicrosoftGraph
             # Boolean value representing if the data label value is visible or not.
             @show_value
             ## 
-            ## Instantiates a new workbookChartDataLabels and sets the default values.
+            ## Instantiates a new WorkbookChartDataLabels and sets the default values.
             ## @return a void
             ## 
             def initialize()

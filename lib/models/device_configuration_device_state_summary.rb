@@ -58,7 +58,7 @@ module MicrosoftGraph
                 @conflict_device_count = value
             end
             ## 
-            ## Instantiates a new deviceConfigurationDeviceStateSummary and sets the default values.
+            ## Instantiates a new DeviceConfigurationDeviceStateSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -32,7 +32,7 @@ module MicrosoftGraph
             # Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
             @online_meeting_info
             ## 
-            # The permissionGrants property
+            # A collection of permissions granted to apps for the chat.
             @permission_grants
             ## 
             # A collection of all the pinned messages in the chat. Nullable.
@@ -68,7 +68,7 @@ module MicrosoftGraph
                 @chat_type = value
             end
             ## 
-            ## Instantiates a new chat and sets the default values.
+            ## Instantiates a new Chat and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -212,14 +212,14 @@ module MicrosoftGraph
                 @online_meeting_info = value
             end
             ## 
-            ## Gets the permissionGrants property value. The permissionGrants property
+            ## Gets the permissionGrants property value. A collection of permissions granted to apps for the chat.
             ## @return a resource_specific_permission_grant
             ## 
             def permission_grants
                 return @permission_grants
             end
             ## 
-            ## Sets the permissionGrants property value. The permissionGrants property
+            ## Sets the permissionGrants property value. A collection of permissions granted to apps for the chat.
             ## @param value Value to set for the permissionGrants property.
             ## @return a void
             ## 
