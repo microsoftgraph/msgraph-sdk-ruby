@@ -12,7 +12,7 @@ module MicrosoftGraph
             # Pin to unlock the client
             @unlock_pin
             ## 
-            ## Instantiates a new remoteLockActionResult and sets the default values.
+            ## Instantiates a new RemoteLockActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

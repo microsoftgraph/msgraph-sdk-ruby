@@ -154,7 +154,7 @@ module MicrosoftGraph
                 @columns = value
             end
             ## 
-            ## Instantiates a new contentType and sets the default values.
+            ## Instantiates a new ContentType and sets the default values.
             ## @return a void
             ## 
             def initialize()

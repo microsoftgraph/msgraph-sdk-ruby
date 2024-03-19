@@ -7,13 +7,16 @@ module MicrosoftGraph
         class SecurityIpEvidence < MicrosoftGraph::Models::SecurityAlertEvidence
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+            # The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.
             @country_letter_code
             ## 
             # The value of the IP Address, can be either in V4 address or V6 address format.
             @ip_address
             ## 
-            ## Instantiates a new securityIpEvidence and sets the default values.
+            # The stream property
+            @stream
+            ## 
+            ## Instantiates a new SecurityIpEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -21,14 +24,14 @@ module MicrosoftGraph
                 @odata_type = "#microsoft.graph.security.ipEvidence"
             end
             ## 
-            ## Gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+            ## Gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.
             ## @return a string
             ## 
             def country_letter_code
                 return @country_letter_code
             end
             ## 
-            ## Sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
+            ## Sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.
             ## @param value Value to set for the countryLetterCode property.
             ## @return a void
             ## 
@@ -52,6 +55,7 @@ module MicrosoftGraph
                 return super.merge({
                     "countryLetterCode" => lambda {|n| @country_letter_code = n.get_string_value() },
                     "ipAddress" => lambda {|n| @ip_address = n.get_string_value() },
+                    "stream" => lambda {|n| @stream = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityStream.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -79,6 +83,22 @@ module MicrosoftGraph
                 super
                 writer.write_string_value("countryLetterCode", @country_letter_code)
                 writer.write_string_value("ipAddress", @ip_address)
+                writer.write_object_value("stream", @stream)
+            end
+            ## 
+            ## Gets the stream property value. The stream property
+            ## @return a security_stream
+            ## 
+            def stream
+                return @stream
+            end
+            ## 
+            ## Sets the stream property value. The stream property
+            ## @param value Value to set for the stream property.
+            ## @return a void
+            ## 
+            def stream=(value)
+                @stream = value
             end
         end
     end

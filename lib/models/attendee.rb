@@ -7,13 +7,13 @@ module MicrosoftGraph
         class Attendee < MicrosoftGraph::Models::AttendeeBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property is not included in a response of a GET event.
+            # An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property isn't included in a response of a GET event.
             @proposed_new_time
             ## 
             # The attendee's response (none, accepted, declined, etc.) for the event and date-time that the response was sent.
             @status
             ## 
-            ## Instantiates a new attendee and sets the default values.
+            ## Instantiates a new Attendee and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -40,14 +40,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the proposedNewTime property value. An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property is not included in a response of a GET event.
+            ## Gets the proposedNewTime property value. An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property isn't included in a response of a GET event.
             ## @return a time_slot
             ## 
             def proposed_new_time
                 return @proposed_new_time
             end
             ## 
-            ## Sets the proposedNewTime property value. An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property is not included in a response of a GET event.
+            ## Sets the proposedNewTime property value. An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn't proposed another time, then this property isn't included in a response of a GET event.
             ## @param value Value to set for the proposedNewTime property.
             ## @return a void
             ## 

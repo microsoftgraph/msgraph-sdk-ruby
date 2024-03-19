@@ -38,7 +38,7 @@ module MicrosoftGraph
             # Status of the attack simulation automation. Supports $filter and $orderby. The possible values are: unknown, draft, notRunning, running, completed, unknownFutureValue.
             @status
             ## 
-            ## Instantiates a new simulationAutomation and sets the default values.
+            ## Instantiates a new SimulationAutomation and sets the default values.
             ## @return a void
             ## 
             def initialize()
