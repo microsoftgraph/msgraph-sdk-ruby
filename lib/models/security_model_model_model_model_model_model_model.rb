@@ -28,6 +28,9 @@ module MicrosoftGraph
             # The secureScores property
             @secure_scores
             ## 
+            # The subjectRightsRequests property
+            @subject_rights_requests
+            ## 
             # The threatIntelligence property
             @threat_intelligence
             ## 
@@ -97,7 +100,7 @@ module MicrosoftGraph
                 @cases = value
             end
             ## 
-            ## Instantiates a new securityModelModelModelModelModelModelModel and sets the default values.
+            ## Instantiates a new SecurityModelModelModelModelModelModelModel and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -125,6 +128,7 @@ module MicrosoftGraph
                     "incidents" => lambda {|n| @incidents = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecurityIncident.create_from_discriminator_value(pn) }) },
                     "secureScoreControlProfiles" => lambda {|n| @secure_score_control_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecureScoreControlProfile.create_from_discriminator_value(pn) }) },
                     "secureScores" => lambda {|n| @secure_scores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecureScore.create_from_discriminator_value(pn) }) },
+                    "subjectRightsRequests" => lambda {|n| @subject_rights_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SubjectRightsRequest.create_from_discriminator_value(pn) }) },
                     "threatIntelligence" => lambda {|n| @threat_intelligence = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityThreatIntelligence.create_from_discriminator_value(pn) }) },
                     "triggerTypes" => lambda {|n| @trigger_types = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityTriggerTypesRoot.create_from_discriminator_value(pn) }) },
                     "triggers" => lambda {|n| @triggers = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityTriggersRoot.create_from_discriminator_value(pn) }) },
@@ -190,9 +194,25 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("incidents", @incidents)
                 writer.write_collection_of_object_values("secureScoreControlProfiles", @secure_score_control_profiles)
                 writer.write_collection_of_object_values("secureScores", @secure_scores)
+                writer.write_collection_of_object_values("subjectRightsRequests", @subject_rights_requests)
                 writer.write_object_value("threatIntelligence", @threat_intelligence)
                 writer.write_object_value("triggerTypes", @trigger_types)
                 writer.write_object_value("triggers", @triggers)
+            end
+            ## 
+            ## Gets the subjectRightsRequests property value. The subjectRightsRequests property
+            ## @return a subject_rights_request
+            ## 
+            def subject_rights_requests
+                return @subject_rights_requests
+            end
+            ## 
+            ## Sets the subjectRightsRequests property value. The subjectRightsRequests property
+            ## @param value Value to set for the subjectRightsRequests property.
+            ## @return a void
+            ## 
+            def subject_rights_requests=(value)
+                @subject_rights_requests = value
             end
             ## 
             ## Gets the threatIntelligence property value. The threatIntelligence property

@@ -67,7 +67,7 @@ module MicrosoftGraph
                 @azure_storage_uri_expiration_date_time = value
             end
             ## 
-            ## Instantiates a new mobileAppContentFile and sets the default values.
+            ## Instantiates a new MobileAppContentFile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -167,10 +167,6 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("azureStorageUri", @azure_storage_uri)
-                writer.write_date_time_value("azureStorageUriExpirationDateTime", @azure_storage_uri_expiration_date_time)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_boolean_value("isCommitted", @is_committed)
                 writer.write_object_value("manifest", @manifest)
                 writer.write_string_value("name", @name)
                 writer.write_object_value("size", @size)

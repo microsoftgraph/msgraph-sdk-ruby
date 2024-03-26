@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @associated_teams = value
             end
             ## 
-            ## Instantiates a new userTeamwork and sets the default values.
+            ## Instantiates a new UserTeamwork and sets the default values.
             ## @return a void
             ## 
             def initialize()
