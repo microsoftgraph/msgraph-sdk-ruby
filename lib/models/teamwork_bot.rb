@@ -7,7 +7,7 @@ module MicrosoftGraph
         class TeamworkBot < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new teamworkBot and sets the default values.
+            ## Instantiates a new TeamworkBot and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -16,7 +16,7 @@ module MicrosoftGraph
             # List of source participant ids.
             @sources
             ## 
-            ## Instantiates a new audioRoutingGroup and sets the default values.
+            ## Instantiates a new AudioRoutingGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

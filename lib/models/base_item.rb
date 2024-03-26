@@ -8,7 +8,7 @@ module MicrosoftGraph
         class BaseItem < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Identity of the user, device, or application which created the item. Read-only.
+            # Identity of the user, device, or application that created the item. Read-only.
             @created_by
             ## 
             # Identity of the user who created the item. Read-only.
@@ -23,7 +23,7 @@ module MicrosoftGraph
             # ETag for the item. Read-only.
             @e_tag
             ## 
-            # Identity of the user, device, and application which last modified the item. Read-only.
+            # Identity of the user, device, and application that last modified the item. Read-only.
             @last_modified_by
             ## 
             # Identity of the user who last modified the item. Read-only.
@@ -38,24 +38,24 @@ module MicrosoftGraph
             # Parent information, if the item has a parent. Read-write.
             @parent_reference
             ## 
-            # URL that displays the resource in the browser. Read-only.
+            # URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.
             @web_url
             ## 
-            ## Instantiates a new baseItem and sets the default values.
+            ## Instantiates a new BaseItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdBy property value. Identity of the user, device, or application which created the item. Read-only.
+            ## Gets the createdBy property value. Identity of the user, device, or application that created the item. Read-only.
             ## @return a identity_set
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. Identity of the user, device, or application which created the item. Read-only.
+            ## Sets the createdBy property value. Identity of the user, device, or application that created the item. Read-only.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -103,6 +103,8 @@ module MicrosoftGraph
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.baseSitePage"
+                            return BaseSitePage.new
                         when "#microsoft.graph.drive"
                             return Drive.new
                         when "#microsoft.graph.driveItem"
@@ -115,6 +117,8 @@ module MicrosoftGraph
                             return SharedDriveItem.new
                         when "#microsoft.graph.site"
                             return Site.new
+                        when "#microsoft.graph.sitePage"
+                            return SitePage.new
                     end
                 end
                 return BaseItem.new
@@ -169,14 +173,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
+            ## Gets the lastModifiedBy property value. Identity of the user, device, and application that last modified the item. Read-only.
             ## @return a identity_set
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
+            ## Sets the lastModifiedBy property value. Identity of the user, device, and application that last modified the item. Read-only.
             ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
@@ -264,14 +268,14 @@ module MicrosoftGraph
                 writer.write_string_value("webUrl", @web_url)
             end
             ## 
-            ## Gets the webUrl property value. URL that displays the resource in the browser. Read-only.
+            ## Gets the webUrl property value. URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.
             ## @return a string
             ## 
             def web_url
                 return @web_url
             end
             ## 
-            ## Sets the webUrl property value. URL that displays the resource in the browser. Read-only.
+            ## Sets the webUrl property value. URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.
             ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 

@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The name of the printer represented by these statistics.
             @printer_name
             ## 
-            ## Instantiates a new printUsageByPrinter and sets the default values.
+            ## Instantiates a new PrintUsageByPrinter and sets the default values.
             ## @return a void
             ## 
             def initialize()

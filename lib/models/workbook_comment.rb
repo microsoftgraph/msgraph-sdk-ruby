@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The replies property
             @replies
             ## 
-            ## Instantiates a new workbookComment and sets the default values.
+            ## Instantiates a new WorkbookComment and sets the default values.
             ## @return a void
             ## 
             def initialize()

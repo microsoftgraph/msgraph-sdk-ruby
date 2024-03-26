@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The geographic region code for where this site collection resides. Read-only.
+            # The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
             @data_location_code
             ## 
             # The hostname for the site collection. Read-only.
@@ -22,22 +22,22 @@ module MicrosoftGraph
             # If present, indicates that this is a root site collection in SharePoint. Read-only.
             @root
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new siteCollection and sets the default values.
+            ## Instantiates a new SiteCollection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,14 +53,14 @@ module MicrosoftGraph
                 return SiteCollection.new
             end
             ## 
-            ## Gets the dataLocationCode property value. The geographic region code for where this site collection resides. Read-only.
+            ## Gets the dataLocationCode property value. The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
             ## @return a string
             ## 
             def data_location_code
                 return @data_location_code
             end
             ## 
-            ## Sets the dataLocationCode property value. The geographic region code for where this site collection resides. Read-only.
+            ## Sets the dataLocationCode property value. The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
             ## @param value Value to set for the dataLocationCode property.
             ## @return a void
             ## 

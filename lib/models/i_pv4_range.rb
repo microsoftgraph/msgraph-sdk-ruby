@@ -15,7 +15,7 @@ module MicrosoftGraph
             # Upper address.
             @upper_address
             ## 
-            ## Instantiates a new iPv4Range and sets the default values.
+            ## Instantiates a new IPv4Range and sets the default values.
             ## @return a void
             ## 
             def initialize()

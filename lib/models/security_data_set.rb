@@ -17,7 +17,7 @@ module MicrosoftGraph
             # The displayName property
             @display_name
             ## 
-            ## Instantiates a new securityDataSet and sets the default values.
+            ## Instantiates a new SecurityDataSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,10 +13,10 @@ module MicrosoftGraph
             # Represents a collection of credentials to access provisioned cloud applications.
             @secrets
             ## 
-            # Pre-configured synchronization settings for a particular application.
+            # Preconfigured synchronization settings for a particular application.
             @templates
             ## 
-            ## Instantiates a new synchronization and sets the default values.
+            ## Instantiates a new Synchronization and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -85,14 +85,14 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("templates", @templates)
             end
             ## 
-            ## Gets the templates property value. Pre-configured synchronization settings for a particular application.
+            ## Gets the templates property value. Preconfigured synchronization settings for a particular application.
             ## @return a synchronization_template
             ## 
             def templates
                 return @templates
             end
             ## 
-            ## Sets the templates property value. Pre-configured synchronization settings for a particular application.
+            ## Sets the templates property value. Preconfigured synchronization settings for a particular application.
             ## @param value Value to set for the templates property.
             ## @return a void
             ## 

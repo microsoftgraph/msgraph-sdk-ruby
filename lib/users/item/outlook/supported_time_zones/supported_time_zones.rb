@@ -1,1 +1,1 @@
-require_relative 'supported_time_zones_response'
+require_relative 'supported_time_zones_get_response'

@@ -13,10 +13,10 @@ module MicrosoftGraph
             # The exportFileMetadata property
             @export_file_metadata
             ## 
-            # The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement,  tags.
+            # The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement,  tags.
             @export_options
             ## 
-            # The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
+            # The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
             @export_structure
             ## 
             # The name provided for the export.
@@ -25,10 +25,10 @@ module MicrosoftGraph
             # Review set from where documents are exported.
             @review_set
             ## 
-            # The review set query which is used to filter the documents for export.
+            # The review set query that is used to filter the documents for export.
             @review_set_query
             ## 
-            ## Instantiates a new securityEdiscoveryExportOperation and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryExportOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,14 +74,14 @@ module MicrosoftGraph
                 @export_file_metadata = value
             end
             ## 
-            ## Gets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement,  tags.
+            ## Gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement,  tags.
             ## @return a security_export_options
             ## 
             def export_options
                 return @export_options
             end
             ## 
-            ## Sets the exportOptions property value. The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement,  tags.
+            ## Sets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement,  tags.
             ## @param value Value to set for the exportOptions property.
             ## @return a void
             ## 
@@ -89,14 +89,14 @@ module MicrosoftGraph
                 @export_options = value
             end
             ## 
-            ## Gets the exportStructure property value. The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
+            ## Gets the exportStructure property value. The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
             ## @return a security_export_file_structure
             ## 
             def export_structure
                 return @export_structure
             end
             ## 
-            ## Sets the exportStructure property value. The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
+            ## Sets the exportStructure property value. The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
             ## @param value Value to set for the exportStructure property.
             ## @return a void
             ## 
@@ -111,7 +111,7 @@ module MicrosoftGraph
                 return super.merge({
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "exportFileMetadata" => lambda {|n| @export_file_metadata = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecurityExportFileMetadata.create_from_discriminator_value(pn) }) },
-                    "exportOptions" => lambda {|n| @export_options = n.get_enum_value(MicrosoftGraph::Models::SecurityExportOptions) },
+                    "exportOptions" => lambda {|n| @export_options = n.get_enum_values(MicrosoftGraph::Models::SecurityExportOptions) },
                     "exportStructure" => lambda {|n| @export_structure = n.get_enum_value(MicrosoftGraph::Models::SecurityExportFileStructure) },
                     "outputName" => lambda {|n| @output_name = n.get_string_value() },
                     "reviewSet" => lambda {|n| @review_set = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryReviewSet.create_from_discriminator_value(pn) }) },
@@ -149,14 +149,14 @@ module MicrosoftGraph
                 @review_set = value
             end
             ## 
-            ## Gets the reviewSetQuery property value. The review set query which is used to filter the documents for export.
+            ## Gets the reviewSetQuery property value. The review set query that is used to filter the documents for export.
             ## @return a security_ediscovery_review_set_query
             ## 
             def review_set_query
                 return @review_set_query
             end
             ## 
-            ## Sets the reviewSetQuery property value. The review set query which is used to filter the documents for export.
+            ## Sets the reviewSetQuery property value. The review set query that is used to filter the documents for export.
             ## @param value Value to set for the reviewSetQuery property.
             ## @return a void
             ## 

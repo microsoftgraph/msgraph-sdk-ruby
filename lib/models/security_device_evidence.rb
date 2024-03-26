@@ -8,7 +8,7 @@ module MicrosoftGraph
         class SecurityDeviceEvidence < MicrosoftGraph::Models::SecurityAlertEvidence
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
+            # A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
             @azure_ad_device_id
             ## 
             # State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
@@ -20,7 +20,7 @@ module MicrosoftGraph
             # The date and time when the device was first seen.
             @first_seen_date_time
             ## 
-            # The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+            # The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
             @health_status
             ## 
             # Ip interfaces of the device during the time of the alert.
@@ -32,7 +32,7 @@ module MicrosoftGraph
             # A unique identifier assigned to a device by Microsoft Defender for Endpoint.
             @mde_device_id
             ## 
-            # The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+            # The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
             @onboarding_status
             ## 
             # The build version for the operating system the device is running.
@@ -56,14 +56,14 @@ module MicrosoftGraph
             # Metadata of the virtual machine (VM) on which Microsoft Defender for Endpoint is running.
             @vm_metadata
             ## 
-            ## Gets the azureAdDeviceId property value. A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
+            ## Gets the azureAdDeviceId property value. A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
             ## @return a string
             ## 
             def azure_ad_device_id
                 return @azure_ad_device_id
             end
             ## 
-            ## Sets the azureAdDeviceId property value. A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
+            ## Sets the azureAdDeviceId property value. A unique identifier assigned to a device by Microsoft Entra ID when device is Microsoft Entra joined.
             ## @param value Value to set for the azureAdDeviceId property.
             ## @return a void
             ## 
@@ -71,7 +71,7 @@ module MicrosoftGraph
                 @azure_ad_device_id = value
             end
             ## 
-            ## Instantiates a new securityDeviceEvidence and sets the default values.
+            ## Instantiates a new SecurityDeviceEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -157,14 +157,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the healthStatus property value. The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+            ## Gets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
             ## @return a security_device_health_status
             ## 
             def health_status
                 return @health_status
             end
             ## 
-            ## Sets the healthStatus property value. The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
+            ## Sets the healthStatus property value. The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
             ## @param value Value to set for the healthStatus property.
             ## @return a void
             ## 
@@ -217,14 +217,14 @@ module MicrosoftGraph
                 @mde_device_id = value
             end
             ## 
-            ## Gets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+            ## Gets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
             ## @return a security_onboarding_status
             ## 
             def onboarding_status
                 return @onboarding_status
             end
             ## 
-            ## Sets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
+            ## Sets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
             ## @param value Value to set for the onboardingStatus property.
             ## @return a void
             ## 

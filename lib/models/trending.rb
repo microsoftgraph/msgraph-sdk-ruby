@@ -23,7 +23,7 @@ module MicrosoftGraph
             # Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
             @weight
             ## 
-            ## Instantiates a new trending and sets the default values.
+            ## Instantiates a new Trending and sets the default values.
             ## @return a void
             ## 
             def initialize()

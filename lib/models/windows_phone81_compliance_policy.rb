@@ -42,7 +42,7 @@ module MicrosoftGraph
             # Require encryption on windows phone devices.
             @storage_require_encryption
             ## 
-            ## Instantiates a new windowsPhone81CompliancePolicy and sets the default values.
+            ## Instantiates a new WindowsPhone81CompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

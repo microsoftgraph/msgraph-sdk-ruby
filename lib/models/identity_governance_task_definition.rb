@@ -40,7 +40,7 @@ module MicrosoftGraph
                 @category = value
             end
             ## 
-            ## Instantiates a new identityGovernanceTaskDefinition and sets the default values.
+            ## Instantiates a new IdentityGovernanceTaskDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -106,7 +106,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraph::Models::IdentityGovernanceLifecycleTaskCategory) },
+                    "category" => lambda {|n| @category = n.get_enum_values(MicrosoftGraph::Models::IdentityGovernanceLifecycleTaskCategory) },
                     "continueOnError" => lambda {|n| @continue_on_error = n.get_boolean_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },

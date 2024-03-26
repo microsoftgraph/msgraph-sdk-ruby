@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @additional_sources = value
             end
             ## 
-            ## Instantiates a new securityEdiscoverySearch and sets the default values.
+            ## Instantiates a new SecurityEdiscoverySearch and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -110,7 +110,7 @@ module MicrosoftGraph
                     "addToReviewSetOperation" => lambda {|n| @add_to_review_set_operation = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryAddToReviewSetOperation.create_from_discriminator_value(pn) }) },
                     "additionalSources" => lambda {|n| @additional_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecurityDataSource.create_from_discriminator_value(pn) }) },
                     "custodianSources" => lambda {|n| @custodian_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecurityDataSource.create_from_discriminator_value(pn) }) },
-                    "dataSourceScopes" => lambda {|n| @data_source_scopes = n.get_enum_value(MicrosoftGraph::Models::SecurityDataSourceScopes) },
+                    "dataSourceScopes" => lambda {|n| @data_source_scopes = n.get_enum_values(MicrosoftGraph::Models::SecurityDataSourceScopes) },
                     "lastEstimateStatisticsOperation" => lambda {|n| @last_estimate_statistics_operation = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryEstimateOperation.create_from_discriminator_value(pn) }) },
                     "noncustodialSources" => lambda {|n| @noncustodial_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoveryNoncustodialDataSource.create_from_discriminator_value(pn) }) },
                 })

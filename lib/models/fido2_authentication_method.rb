@@ -71,7 +71,7 @@ module MicrosoftGraph
                 @attestation_level = value
             end
             ## 
-            ## Instantiates a new fido2AuthenticationMethod and sets the default values.
+            ## Instantiates a new Fido2AuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()

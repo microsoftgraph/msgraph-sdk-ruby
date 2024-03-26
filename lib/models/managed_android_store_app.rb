@@ -33,7 +33,7 @@ module MicrosoftGraph
                 @app_store_url = value
             end
             ## 
-            ## Instantiates a new managedAndroidStoreApp and sets the default values.
+            ## Instantiates a new ManagedAndroidStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

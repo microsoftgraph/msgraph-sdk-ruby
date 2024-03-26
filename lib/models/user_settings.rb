@@ -16,7 +16,10 @@ module MicrosoftGraph
             # The shiftPreferences property
             @shift_preferences
             ## 
-            ## Instantiates a new userSettings and sets the default values.
+            # The windows property
+            @windows
+            ## 
+            ## Instantiates a new UserSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -70,6 +73,7 @@ module MicrosoftGraph
                     "contributionToContentDiscoveryAsOrganizationDisabled" => lambda {|n| @contribution_to_content_discovery_as_organization_disabled = n.get_boolean_value() },
                     "contributionToContentDiscoveryDisabled" => lambda {|n| @contribution_to_content_discovery_disabled = n.get_boolean_value() },
                     "shiftPreferences" => lambda {|n| @shift_preferences = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ShiftPreferences.create_from_discriminator_value(pn) }) },
+                    "windows" => lambda {|n| @windows = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsSetting.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -83,6 +87,7 @@ module MicrosoftGraph
                 writer.write_boolean_value("contributionToContentDiscoveryAsOrganizationDisabled", @contribution_to_content_discovery_as_organization_disabled)
                 writer.write_boolean_value("contributionToContentDiscoveryDisabled", @contribution_to_content_discovery_disabled)
                 writer.write_object_value("shiftPreferences", @shift_preferences)
+                writer.write_collection_of_object_values("windows", @windows)
             end
             ## 
             ## Gets the shiftPreferences property value. The shiftPreferences property
@@ -98,6 +103,21 @@ module MicrosoftGraph
             ## 
             def shift_preferences=(value)
                 @shift_preferences = value
+            end
+            ## 
+            ## Gets the windows property value. The windows property
+            ## @return a windows_setting
+            ## 
+            def windows
+                return @windows
+            end
+            ## 
+            ## Sets the windows property value. The windows property
+            ## @param value Value to set for the windows property.
+            ## @return a void
+            ## 
+            def windows=(value)
+                @windows = value
             end
         end
     end

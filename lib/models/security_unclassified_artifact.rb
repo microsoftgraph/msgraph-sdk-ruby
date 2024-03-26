@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The value for this unclassifiedArtifact.
             @value
             ## 
-            ## Instantiates a new securityUnclassifiedArtifact and sets the default values.
+            ## Instantiates a new SecurityUnclassifiedArtifact and sets the default values.
             ## @return a void
             ## 
             def initialize()

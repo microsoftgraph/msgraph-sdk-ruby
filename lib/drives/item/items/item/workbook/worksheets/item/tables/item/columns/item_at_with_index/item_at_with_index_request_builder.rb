@@ -12,7 +12,12 @@ require_relative '../../../../item'
 require_relative '../../../tables'
 require_relative '../../item'
 require_relative '../columns'
+require_relative './data_body_range/data_body_range_request_builder'
+require_relative './filter/filter_request_builder'
+require_relative './header_row_range/header_row_range_request_builder'
 require_relative './item_at_with_index'
+require_relative './range/range_request_builder'
+require_relative './total_row_range/total_row_range_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -30,6 +35,31 @@ module MicrosoftGraph
                                                 # Provides operations to call the itemAt method.
                                                 class ItemAtWithIndexRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                                     
+                                                    ## 
+                                                    # Provides operations to call the dataBodyRange method.
+                                                    def data_body_range()
+                                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::ItemAtWithIndex::DataBodyRange::DataBodyRangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                                    end
+                                                    ## 
+                                                    # Provides operations to manage the filter property of the microsoft.graph.workbookTableColumn entity.
+                                                    def filter()
+                                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::ItemAtWithIndex::Filter::FilterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                    end
+                                                    ## 
+                                                    # Provides operations to call the headerRowRange method.
+                                                    def header_row_range()
+                                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::ItemAtWithIndex::HeaderRowRange::HeaderRowRangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                                    end
+                                                    ## 
+                                                    # Provides operations to call the range method.
+                                                    def range()
+                                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::ItemAtWithIndex::Range::RangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                                    end
+                                                    ## 
+                                                    # Provides operations to call the totalRowRange method.
+                                                    def total_row_range()
+                                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::ItemAtWithIndex::TotalRowRange::TotalRowRangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                                    end
                                                     ## 
                                                     ## Instantiates a new ItemAtWithIndexRequestBuilder and sets the default values.
                                                     ## @param index Usage: index={index}
@@ -50,8 +80,7 @@ module MicrosoftGraph
                                                             request_configuration
                                                         )
                                                         error_mapping = Hash.new
-                                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookTableColumn.create_from_discriminator_value(pn) }, error_mapping)
                                                     end
                                                     ## 
@@ -61,15 +90,24 @@ module MicrosoftGraph
                                                     ## 
                                                     def to_get_request_information(request_configuration=nil)
                                                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                                        request_info.url_template = @url_template
-                                                        request_info.path_parameters = @path_parameters
-                                                        request_info.http_method = :GET
-                                                        request_info.headers.add('Accept', 'application/json')
                                                         unless request_configuration.nil?
                                                             request_info.add_headers_from_raw_object(request_configuration.headers)
                                                             request_info.add_request_options(request_configuration.options)
                                                         end
+                                                        request_info.url_template = @url_template
+                                                        request_info.path_parameters = @path_parameters
+                                                        request_info.http_method = :GET
+                                                        request_info.headers.try_add('Accept', 'application/json')
                                                         return request_info
+                                                    end
+                                                    ## 
+                                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                                    ## @param raw_url The raw URL to use for the request builder.
+                                                    ## @return a item_at_with_index_request_builder
+                                                    ## 
+                                                    def with_url(raw_url)
+                                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                                        return ItemAtWithIndexRequestBuilder.new(raw_url, @request_adapter)
                                                     end
                                                 end
                                             end

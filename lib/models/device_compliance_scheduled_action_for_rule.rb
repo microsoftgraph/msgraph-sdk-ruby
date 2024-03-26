@@ -15,7 +15,7 @@ module MicrosoftGraph
             # The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
             @scheduled_action_configurations
             ## 
-            ## Instantiates a new deviceComplianceScheduledActionForRule and sets the default values.
+            ## Instantiates a new DeviceComplianceScheduledActionForRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

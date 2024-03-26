@@ -1,0 +1,2 @@
+require_relative 'secrets_put_request_body'
+require_relative 'secrets_put_response'

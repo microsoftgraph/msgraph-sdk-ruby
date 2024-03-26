@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Initiator of the event.
             @initiator
             ## 
-            ## Instantiates a new conversationMemberRoleUpdatedEventMessageDetail and sets the default values.
+            ## Instantiates a new ConversationMemberRoleUpdatedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

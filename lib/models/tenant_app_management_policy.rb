@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @application_restrictions = value
             end
             ## 
-            ## Instantiates a new tenantAppManagementPolicy and sets the default values.
+            ## Instantiates a new TenantAppManagementPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

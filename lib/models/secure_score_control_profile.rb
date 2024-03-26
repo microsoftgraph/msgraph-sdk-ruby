@@ -47,7 +47,7 @@ module MicrosoftGraph
             # Description of the impact on users of the remediation.
             @remediation_impact
             ## 
-            # Service that owns the control (Exchange, Sharepoint, Azure AD).
+            # Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             @service
             ## 
             # List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
@@ -125,7 +125,7 @@ module MicrosoftGraph
                 @compliance_information = value
             end
             ## 
-            ## Instantiates a new secureScoreControlProfile and sets the default values.
+            ## Instantiates a new SecureScoreControlProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -331,14 +331,14 @@ module MicrosoftGraph
                 writer.write_object_value("vendorInformation", @vendor_information)
             end
             ## 
-            ## Gets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
+            ## Gets the service property value. Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             ## @return a string
             ## 
             def service
                 return @service
             end
             ## 
-            ## Sets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
+            ## Sets the service property value. Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             ## @param value Value to set for the service property.
             ## @return a void
             ## 

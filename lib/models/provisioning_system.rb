@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Details of the system.
             @details
             ## 
-            ## Instantiates a new provisioningSystem and sets the default values.
+            ## Instantiates a new ProvisioningSystem and sets the default values.
             ## @return a void
             ## 
             def initialize()

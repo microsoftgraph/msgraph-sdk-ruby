@@ -9,7 +9,7 @@ module MicrosoftGraph
         class IosManagedAppRegistration < MicrosoftGraph::Models::ManagedAppRegistration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new iosManagedAppRegistration and sets the default values.
+            ## Instantiates a new IosManagedAppRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()

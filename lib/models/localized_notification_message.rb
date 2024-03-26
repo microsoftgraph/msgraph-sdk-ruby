@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The Message Template Subject.
             @subject
             ## 
-            ## Instantiates a new localizedNotificationMessage and sets the default values.
+            ## Instantiates a new LocalizedNotificationMessage and sets the default values.
             ## @return a void
             ## 
             def initialize()

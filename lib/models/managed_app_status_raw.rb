@@ -12,7 +12,7 @@ module MicrosoftGraph
             # Status report content.
             @content
             ## 
-            ## Instantiates a new managedAppStatusRaw and sets the default values.
+            ## Instantiates a new ManagedAppStatusRaw and sets the default values.
             ## @return a void
             ## 
             def initialize()

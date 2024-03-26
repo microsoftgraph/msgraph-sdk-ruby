@@ -18,7 +18,7 @@ module MicrosoftGraph
             # The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
             @customer_time_zone
             ## 
-            # A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+            # A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             @customers
             ## 
             # The length of the appointment, denoted in ISO8601 format.
@@ -39,7 +39,7 @@ module MicrosoftGraph
             # The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
             @maximum_attendees_count
             ## 
-            # If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+            # If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
             @opt_out_of_customer_email
             ## 
             # The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
@@ -66,7 +66,7 @@ module MicrosoftGraph
             # The location where the service is delivered.
             @service_location
             ## 
-            # The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+            # The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it's computed from the service associated with the appointment by the serviceId property.
             @service_name
             ## 
             # Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
@@ -111,7 +111,7 @@ module MicrosoftGraph
                 @anonymous_join_web_url = value
             end
             ## 
-            ## Instantiates a new bookingAppointment and sets the default values.
+            ## Instantiates a new BookingAppointment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -142,14 +142,14 @@ module MicrosoftGraph
                 @customer_time_zone = value
             end
             ## 
-            ## Gets the customers property value. A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+            ## Gets the customers property value. A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             ## @return a booking_customer_information_base
             ## 
             def customers
                 return @customers
             end
             ## 
-            ## Sets the customers property value. A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+            ## Sets the customers property value. A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             ## @param value Value to set for the customers property.
             ## @return a void
             ## 
@@ -279,14 +279,14 @@ module MicrosoftGraph
                 @maximum_attendees_count = value
             end
             ## 
-            ## Gets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+            ## Gets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
             ## @return a boolean
             ## 
             def opt_out_of_customer_email
                 return @opt_out_of_customer_email
             end
             ## 
-            ## Sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+            ## Sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
             ## @param value Value to set for the optOutOfCustomerEmail property.
             ## @return a void
             ## 
@@ -445,14 +445,14 @@ module MicrosoftGraph
                 @service_location = value
             end
             ## 
-            ## Gets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+            ## Gets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it's computed from the service associated with the appointment by the serviceId property.
             ## @return a string
             ## 
             def service_name
                 return @service_name
             end
             ## 
-            ## Sets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+            ## Sets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it's computed from the service associated with the appointment by the serviceId property.
             ## @param value Value to set for the serviceName property.
             ## @return a void
             ## 

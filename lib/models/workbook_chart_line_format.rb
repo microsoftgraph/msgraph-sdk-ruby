@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @color = value
             end
             ## 
-            ## Instantiates a new workbookChartLineFormat and sets the default values.
+            ## Instantiates a new WorkbookChartLineFormat and sets the default values.
             ## @return a void
             ## 
             def initialize()

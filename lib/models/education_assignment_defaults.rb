@@ -17,7 +17,7 @@ module MicrosoftGraph
             # Class-level default value for due time field. Default value is 23:59:00.
             @due_time
             ## 
-            # Default Teams channel to which notifications will be sent. Default value is null.
+            # Default Teams channel to which notifications are sent. Default value is null.
             @notification_channel_url
             ## 
             ## Gets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
@@ -50,7 +50,7 @@ module MicrosoftGraph
                 @added_student_action = value
             end
             ## 
-            ## Instantiates a new educationAssignmentDefaults and sets the default values.
+            ## Instantiates a new EducationAssignmentDefaults and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -93,14 +93,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
+            ## Gets the notificationChannelUrl property value. Default Teams channel to which notifications are sent. Default value is null.
             ## @return a string
             ## 
             def notification_channel_url
                 return @notification_channel_url
             end
             ## 
-            ## Sets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
+            ## Sets the notificationChannelUrl property value. Default Teams channel to which notifications are sent. Default value is null.
             ## @param value Value to set for the notificationChannelUrl property.
             ## @return a void
             ## 

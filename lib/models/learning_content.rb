@@ -77,7 +77,7 @@ module MicrosoftGraph
                 @additional_tags = value
             end
             ## 
-            ## Instantiates a new learningContent and sets the default values.
+            ## Instantiates a new LearningContent and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The trigger property
             @trigger
             ## 
-            ## Instantiates a new printTask and sets the default values.
+            ## Instantiates a new PrintTask and sets the default values.
             ## @return a void
             ## 
             def initialize()

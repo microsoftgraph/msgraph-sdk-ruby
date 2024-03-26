@@ -1,1 +1,1 @@
-require_relative 'get_audit_categories_response'
+require_relative 'get_audit_categories_get_response'

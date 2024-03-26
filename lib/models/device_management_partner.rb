@@ -37,7 +37,7 @@ module MicrosoftGraph
             # DateTime in UTC when PartnerDevices will be removed
             @when_partner_devices_will_be_removed_date_time
             ## 
-            ## Instantiates a new deviceManagementPartner and sets the default values.
+            ## Instantiates a new DeviceManagementPartner and sets the default values.
             ## @return a void
             ## 
             def initialize()

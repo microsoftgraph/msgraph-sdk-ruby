@@ -16,7 +16,7 @@ module MicrosoftGraph
             # A boolean that specifies the visibility of an axis title.
             @visible
             ## 
-            ## Instantiates a new workbookChartAxisTitle and sets the default values.
+            ## Instantiates a new WorkbookChartAxisTitle and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The URL of the user's OneDrive for Business site. Read-only.
             @site_web_url
             ## 
-            ## Instantiates a new securityUserSource and sets the default values.
+            ## Instantiates a new SecurityUserSource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,7 +54,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "email" => lambda {|n| @email = n.get_string_value() },
-                    "includedSources" => lambda {|n| @included_sources = n.get_enum_value(MicrosoftGraph::Models::SecuritySourceType) },
+                    "includedSources" => lambda {|n| @included_sources = n.get_enum_values(MicrosoftGraph::Models::SecuritySourceType) },
                     "siteWebUrl" => lambda {|n| @site_web_url = n.get_string_value() },
                 })
             end
