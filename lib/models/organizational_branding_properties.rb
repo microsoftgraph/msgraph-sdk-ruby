@@ -58,7 +58,7 @@ module MicrosoftGraph
             # A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
             @custom_terms_of_use_url
             ## 
-            # A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+            # A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
             @favicon
             ## 
             # A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
@@ -187,7 +187,7 @@ module MicrosoftGraph
                 @cdn_list = value
             end
             ## 
-            ## Instantiates a new organizationalBrandingProperties and sets the default values.
+            ## Instantiates a new OrganizationalBrandingProperties and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -378,14 +378,14 @@ module MicrosoftGraph
                 @custom_terms_of_use_url = value
             end
             ## 
-            ## Gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+            ## Gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
             ## @return a base64url
             ## 
             def favicon
                 return @favicon
             end
             ## 
-            ## Sets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+            ## Sets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
             ## @param value Value to set for the favicon property.
             ## @return a void
             ## 

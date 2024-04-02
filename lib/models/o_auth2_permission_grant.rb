@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @consent_type = value
             end
             ## 
-            ## Instantiates a new oAuth2PermissionGrant and sets the default values.
+            ## Instantiates a new OAuth2PermissionGrant and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Id of the workbook session.
+            # ID of the workbook session.
             @id
             ## 
             # The OdataType property
@@ -19,22 +19,22 @@ module MicrosoftGraph
             # true for persistent session. false for non-persistent session (view mode)
             @persist_changes
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new workbookSessionInfo and sets the default values.
+            ## Instantiates a new WorkbookSessionInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -61,14 +61,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the id property value. Id of the workbook session.
+            ## Gets the id property value. ID of the workbook session.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. Id of the workbook session.
+            ## Sets the id property value. ID of the workbook session.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

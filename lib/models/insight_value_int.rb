@@ -12,7 +12,7 @@ module MicrosoftGraph
             # The int value of the user experience analytics insight.
             @value
             ## 
-            ## Instantiates a new insightValueInt and sets the default values.
+            ## Instantiates a new InsightValueInt and sets the default values.
             ## @return a void
             ## 
             def initialize()

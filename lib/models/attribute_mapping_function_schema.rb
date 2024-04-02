@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Collection of function parameters.
             @parameters
             ## 
-            ## Instantiates a new attributeMappingFunctionSchema and sets the default values.
+            ## Instantiates a new AttributeMappingFunctionSchema and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -24,7 +24,7 @@ module MicrosoftGraph
             # User name.
             @user_name
             ## 
-            ## Instantiates a new userInstallStateSummary and sets the default values.
+            ## Instantiates a new UserInstallStateSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

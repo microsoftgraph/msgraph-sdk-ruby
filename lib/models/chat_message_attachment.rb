@@ -13,43 +13,43 @@ module MicrosoftGraph
             # The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
             @content
             ## 
-            # The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+            # The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
             @content_type
             ## 
-            # URL for the content of the attachment. Supported protocols: http, https, file and data.
+            # The URL for the content of the attachment.
             @content_url
             ## 
-            # Read-only. Unique id of the attachment.
+            # Read-only. The unique id of the attachment.
             @id
             ## 
-            # Name of the attachment.
+            # The name of the attachment.
             @name
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+            # The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.
             @teams_app_id
             ## 
-            # URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
+            # The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.
             @thumbnail_url
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new chatMessageAttachment and sets the default values.
+            ## Instantiates a new ChatMessageAttachment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,14 +71,14 @@ module MicrosoftGraph
                 @content = value
             end
             ## 
-            ## Gets the contentType property value. The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+            ## Gets the contentType property value. The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
             ## @return a string
             ## 
             def content_type
                 return @content_type
             end
             ## 
-            ## Sets the contentType property value. The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
+            ## Sets the contentType property value. The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
             ## @param value Value to set for the contentType property.
             ## @return a void
             ## 
@@ -86,14 +86,14 @@ module MicrosoftGraph
                 @content_type = value
             end
             ## 
-            ## Gets the contentUrl property value. URL for the content of the attachment. Supported protocols: http, https, file and data.
+            ## Gets the contentUrl property value. The URL for the content of the attachment.
             ## @return a string
             ## 
             def content_url
                 return @content_url
             end
             ## 
-            ## Sets the contentUrl property value. URL for the content of the attachment. Supported protocols: http, https, file and data.
+            ## Sets the contentUrl property value. The URL for the content of the attachment.
             ## @param value Value to set for the contentUrl property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the id property value. Read-only. Unique id of the attachment.
+            ## Gets the id property value. Read-only. The unique id of the attachment.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. Read-only. Unique id of the attachment.
+            ## Sets the id property value. Read-only. The unique id of the attachment.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 
@@ -141,14 +141,14 @@ module MicrosoftGraph
                 @id = value
             end
             ## 
-            ## Gets the name property value. Name of the attachment.
+            ## Gets the name property value. The name of the attachment.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. Name of the attachment.
+            ## Sets the name property value. The name of the attachment.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -188,14 +188,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+            ## Gets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.
             ## @return a string
             ## 
             def teams_app_id
                 return @teams_app_id
             end
             ## 
-            ## Sets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+            ## Sets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.
             ## @param value Value to set for the teamsAppId property.
             ## @return a void
             ## 
@@ -203,14 +203,14 @@ module MicrosoftGraph
                 @teams_app_id = value
             end
             ## 
-            ## Gets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
+            ## Gets the thumbnailUrl property value. The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.
             ## @return a string
             ## 
             def thumbnail_url
                 return @thumbnail_url
             end
             ## 
-            ## Sets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
+            ## Sets the thumbnailUrl property value. The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.
             ## @param value Value to set for the thumbnailUrl property.
             ## @return a void
             ## 

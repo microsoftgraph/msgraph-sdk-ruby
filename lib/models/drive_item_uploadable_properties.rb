@@ -13,11 +13,17 @@ module MicrosoftGraph
             # Provides a user-visible description of the item. Read-write. Only on OneDrive Personal.
             @description
             ## 
-            # Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
+            # Information about the drive item source. Read-write. Only on OneDrive for Business and SharePoint.
+            @drive_item_source
+            ## 
+            # Provides an expected file size to perform a quota check before uploading. Only on OneDrive Personal.
             @file_size
             ## 
             # File system information on client. Read-write.
             @file_system_info
+            ## 
+            # Media source information. Read-write. Only on OneDrive for Business and SharePoint.
+            @media_source
             ## 
             # The name of the item (filename and extension). Read-write.
             @name
@@ -25,22 +31,22 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new driveItemUploadableProperties and sets the default values.
+            ## Instantiates a new DriveItemUploadableProperties and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,14 +77,29 @@ module MicrosoftGraph
                 @description = value
             end
             ## 
-            ## Gets the fileSize property value. Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
+            ## Gets the driveItemSource property value. Information about the drive item source. Read-write. Only on OneDrive for Business and SharePoint.
+            ## @return a drive_item_source
+            ## 
+            def drive_item_source
+                return @drive_item_source
+            end
+            ## 
+            ## Sets the driveItemSource property value. Information about the drive item source. Read-write. Only on OneDrive for Business and SharePoint.
+            ## @param value Value to set for the driveItemSource property.
+            ## @return a void
+            ## 
+            def drive_item_source=(value)
+                @drive_item_source = value
+            end
+            ## 
+            ## Gets the fileSize property value. Provides an expected file size to perform a quota check before uploading. Only on OneDrive Personal.
             ## @return a int64
             ## 
             def file_size
                 return @file_size
             end
             ## 
-            ## Sets the fileSize property value. Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
+            ## Sets the fileSize property value. Provides an expected file size to perform a quota check before uploading. Only on OneDrive Personal.
             ## @param value Value to set for the fileSize property.
             ## @return a void
             ## 
@@ -107,11 +128,28 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "description" => lambda {|n| @description = n.get_string_value() },
+                    "driveItemSource" => lambda {|n| @drive_item_source = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DriveItemSource.create_from_discriminator_value(pn) }) },
                     "fileSize" => lambda {|n| @file_size = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "fileSystemInfo" => lambda {|n| @file_system_info = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::FileSystemInfo.create_from_discriminator_value(pn) }) },
+                    "mediaSource" => lambda {|n| @media_source = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::MediaSource.create_from_discriminator_value(pn) }) },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
+            end
+            ## 
+            ## Gets the mediaSource property value. Media source information. Read-write. Only on OneDrive for Business and SharePoint.
+            ## @return a media_source
+            ## 
+            def media_source
+                return @media_source
+            end
+            ## 
+            ## Sets the mediaSource property value. Media source information. Read-write. Only on OneDrive for Business and SharePoint.
+            ## @param value Value to set for the mediaSource property.
+            ## @return a void
+            ## 
+            def media_source=(value)
+                @media_source = value
             end
             ## 
             ## Gets the name property value. The name of the item (filename and extension). Read-write.
@@ -151,8 +189,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("description", @description)
+                writer.write_object_value("driveItemSource", @drive_item_source)
                 writer.write_object_value("fileSize", @file_size)
                 writer.write_object_value("fileSystemInfo", @file_system_info)
+                writer.write_object_value("mediaSource", @media_source)
                 writer.write_string_value("name", @name)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)

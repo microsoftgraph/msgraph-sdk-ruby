@@ -13,16 +13,16 @@ module MicrosoftGraph
             # Value used when configuring the name of the DNS record at the DNS host.
             @label
             ## 
-            # Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
+            # Indicates what type of DNS record this entity represents. The value can be CName, Mx, Srv, or Txt.
             @record_type
             ## 
-            # Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
+            # Microsoft Online Service or feature that has a dependency on this DNS record. Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
             @supported_service
             ## 
             # Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.
             @ttl
             ## 
-            ## Instantiates a new domainDnsRecord and sets the default values.
+            ## Instantiates a new DomainDnsRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -97,14 +97,14 @@ module MicrosoftGraph
                 @label = value
             end
             ## 
-            ## Gets the recordType property value. Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
+            ## Gets the recordType property value. Indicates what type of DNS record this entity represents. The value can be CName, Mx, Srv, or Txt.
             ## @return a string
             ## 
             def record_type
                 return @record_type
             end
             ## 
-            ## Sets the recordType property value. Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
+            ## Sets the recordType property value. Indicates what type of DNS record this entity represents. The value can be CName, Mx, Srv, or Txt.
             ## @param value Value to set for the recordType property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraph
                 writer.write_number_value("ttl", @ttl)
             end
             ## 
-            ## Gets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
+            ## Gets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record. Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
             ## @return a string
             ## 
             def supported_service
                 return @supported_service
             end
             ## 
-            ## Sets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
+            ## Sets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record. Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
             ## @param value Value to set for the supportedService property.
             ## @return a void
             ## 

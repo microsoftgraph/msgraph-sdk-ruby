@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Applications and user actions included in and excluded from the policy. Required.
             @applications
             ## 
-            # Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+            # Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.
             @client_app_types
             ## 
             # Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
@@ -43,15 +43,15 @@ module MicrosoftGraph
             # Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
             @users
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,14 +73,14 @@ module MicrosoftGraph
                 @applications = value
             end
             ## 
-            ## Gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+            ## Gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.
             ## @return a conditional_access_client_app
             ## 
             def client_app_types
                 return @client_app_types
             end
             ## 
-            ## Sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+            ## Sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.
             ## @param value Value to set for the clientAppTypes property.
             ## @return a void
             ## 
@@ -103,7 +103,7 @@ module MicrosoftGraph
                 @client_applications = value
             end
             ## 
-            ## Instantiates a new conditionalAccessConditionSet and sets the default values.
+            ## Instantiates a new ConditionalAccessConditionSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

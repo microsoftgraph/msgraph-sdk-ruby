@@ -7,16 +7,19 @@ module MicrosoftGraph
         class Teamwork < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # A collection of deleted chats.
+            @deleted_chats
+            ## 
             # The deleted team.
             @deleted_teams
             ## 
-            # The teamsAppSettings property
+            # Represents tenant-wide settings for all Teams apps in the tenant.
             @teams_app_settings
             ## 
             # The workforceIntegrations property
             @workforce_integrations
             ## 
-            ## Instantiates a new teamwork and sets the default values.
+            ## Instantiates a new Teamwork and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -30,6 +33,21 @@ module MicrosoftGraph
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
                 return Teamwork.new
+            end
+            ## 
+            ## Gets the deletedChats property value. A collection of deleted chats.
+            ## @return a deleted_chat
+            ## 
+            def deleted_chats
+                return @deleted_chats
+            end
+            ## 
+            ## Sets the deletedChats property value. A collection of deleted chats.
+            ## @param value Value to set for the deletedChats property.
+            ## @return a void
+            ## 
+            def deleted_chats=(value)
+                @deleted_chats = value
             end
             ## 
             ## Gets the deletedTeams property value. The deleted team.
@@ -52,6 +70,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "deletedChats" => lambda {|n| @deleted_chats = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeletedChat.create_from_discriminator_value(pn) }) },
                     "deletedTeams" => lambda {|n| @deleted_teams = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeletedTeam.create_from_discriminator_value(pn) }) },
                     "teamsAppSettings" => lambda {|n| @teams_app_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamsAppSettings.create_from_discriminator_value(pn) }) },
                     "workforceIntegrations" => lambda {|n| @workforce_integrations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WorkforceIntegration.create_from_discriminator_value(pn) }) },
@@ -65,19 +84,20 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_collection_of_object_values("deletedChats", @deleted_chats)
                 writer.write_collection_of_object_values("deletedTeams", @deleted_teams)
                 writer.write_object_value("teamsAppSettings", @teams_app_settings)
                 writer.write_collection_of_object_values("workforceIntegrations", @workforce_integrations)
             end
             ## 
-            ## Gets the teamsAppSettings property value. The teamsAppSettings property
+            ## Gets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
             ## @return a teams_app_settings
             ## 
             def teams_app_settings
                 return @teams_app_settings
             end
             ## 
-            ## Sets the teamsAppSettings property value. The teamsAppSettings property
+            ## Sets the teamsAppSettings property value. Represents tenant-wide settings for all Teams apps in the tenant.
             ## @param value Value to set for the teamsAppSettings property.
             ## @return a void
             ## 
