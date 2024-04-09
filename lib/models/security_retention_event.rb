@@ -44,7 +44,7 @@ module MicrosoftGraph
             # Specifies the event that will start the retention period for labels that use this event type when an event is created.
             @retention_event_type
             ## 
-            ## Instantiates a new securityRetentionEvent and sets the default values.
+            ## Instantiates a new SecurityRetentionEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

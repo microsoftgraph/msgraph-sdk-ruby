@@ -85,7 +85,7 @@ module MicrosoftGraph
                 @best_practices_metrics = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsBaseline and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsBaseline and sets the default values.
             ## @return a void
             ## 
             def initialize()
