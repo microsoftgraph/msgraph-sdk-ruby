@@ -17,7 +17,7 @@ module MicrosoftGraph
             # Indicates the publication status of this particular version. Read-only.
             @publication
             ## 
-            ## Instantiates a new baseItemVersion and sets the default values.
+            ## Instantiates a new BaseItemVersion and sets the default values.
             ## @return a void
             ## 
             def initialize()

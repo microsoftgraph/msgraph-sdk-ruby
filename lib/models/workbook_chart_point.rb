@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Returns the value of a chart point. Read-only.
             @value
             ## 
-            ## Instantiates a new workbookChartPoint and sets the default values.
+            ## Instantiates a new WorkbookChartPoint and sets the default values.
             ## @return a void
             ## 
             def initialize()

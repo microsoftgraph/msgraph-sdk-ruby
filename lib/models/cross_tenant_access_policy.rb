@@ -10,10 +10,10 @@ module MicrosoftGraph
             # Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
             @allowed_cloud_endpoints
             ## 
-            # Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+            # Defines the default configuration for how your organization interacts with external Microsoft Entra organizations.
             @default
             ## 
-            # Defines partner-specific configurations for external Azure Active Directory organizations.
+            # Defines partner-specific configurations for external Microsoft Entra organizations.
             @partners
             ## 
             ## Gets the allowedCloudEndpoints property value. Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @allowed_cloud_endpoints = value
             end
             ## 
-            ## Instantiates a new crossTenantAccessPolicy and sets the default values.
+            ## Instantiates a new CrossTenantAccessPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,14 +48,14 @@ module MicrosoftGraph
                 return CrossTenantAccessPolicy.new
             end
             ## 
-            ## Gets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+            ## Gets the default property value. Defines the default configuration for how your organization interacts with external Microsoft Entra organizations.
             ## @return a cross_tenant_access_policy_configuration_default
             ## 
             def default
                 return @default
             end
             ## 
-            ## Sets the default property value. Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+            ## Sets the default property value. Defines the default configuration for how your organization interacts with external Microsoft Entra organizations.
             ## @param value Value to set for the default property.
             ## @return a void
             ## 
@@ -74,14 +74,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
+            ## Gets the partners property value. Defines partner-specific configurations for external Microsoft Entra organizations.
             ## @return a cross_tenant_access_policy_configuration_partner
             ## 
             def partners
                 return @partners
             end
             ## 
-            ## Sets the partners property value. Defines partner-specific configurations for external Azure Active Directory organizations.
+            ## Sets the partners property value. Defines partner-specific configurations for external Microsoft Entra organizations.
             ## @param value Value to set for the partners property.
             ## @return a void
             ## 

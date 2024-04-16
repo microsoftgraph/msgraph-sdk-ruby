@@ -22,6 +22,9 @@ module MicrosoftGraph
             # A value indicating whether the file is committed.
             @is_committed
             ## 
+            # Indicates whether this content file is a dependency for the main content file. TRUE means that the content file is a dependency, FALSE means that the content file is not a dependency and is the main content file. Defaults to FALSE.
+            @is_dependency
+            ## 
             # The manifest information.
             @manifest
             ## 
@@ -67,7 +70,7 @@ module MicrosoftGraph
                 @azure_storage_uri_expiration_date_time = value
             end
             ## 
-            ## Instantiates a new mobileAppContentFile and sets the default values.
+            ## Instantiates a new MobileAppContentFile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -107,6 +110,7 @@ module MicrosoftGraph
                     "azureStorageUriExpirationDateTime" => lambda {|n| @azure_storage_uri_expiration_date_time = n.get_date_time_value() },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "isCommitted" => lambda {|n| @is_committed = n.get_boolean_value() },
+                    "isDependency" => lambda {|n| @is_dependency = n.get_boolean_value() },
                     "manifest" => lambda {|n| @manifest = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "size" => lambda {|n| @size = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
@@ -128,6 +132,21 @@ module MicrosoftGraph
             ## 
             def is_committed=(value)
                 @is_committed = value
+            end
+            ## 
+            ## Gets the isDependency property value. Indicates whether this content file is a dependency for the main content file. TRUE means that the content file is a dependency, FALSE means that the content file is not a dependency and is the main content file. Defaults to FALSE.
+            ## @return a boolean
+            ## 
+            def is_dependency
+                return @is_dependency
+            end
+            ## 
+            ## Sets the isDependency property value. Indicates whether this content file is a dependency for the main content file. TRUE means that the content file is a dependency, FALSE means that the content file is not a dependency and is the main content file. Defaults to FALSE.
+            ## @param value Value to set for the isDependency property.
+            ## @return a void
+            ## 
+            def is_dependency=(value)
+                @is_dependency = value
             end
             ## 
             ## Gets the manifest property value. The manifest information.
@@ -167,10 +186,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
-                writer.write_string_value("azureStorageUri", @azure_storage_uri)
-                writer.write_date_time_value("azureStorageUriExpirationDateTime", @azure_storage_uri_expiration_date_time)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
-                writer.write_boolean_value("isCommitted", @is_committed)
+                writer.write_boolean_value("isDependency", @is_dependency)
                 writer.write_object_value("manifest", @manifest)
                 writer.write_string_value("name", @name)
                 writer.write_object_value("size", @size)
