@@ -56,7 +56,7 @@ module MicrosoftGraph
                 @caller = value
             end
             ## 
-            ## Instantiates a new callRecordsSegment and sets the default values.
+            ## Instantiates a new CallRecordsSegment and sets the default values.
             ## @return a void
             ## 
             def initialize()

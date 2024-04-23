@@ -17,7 +17,7 @@ module MicrosoftGraph
             # The threat assessment result type. Possible values are: checkPolicy, rescan.
             @result_type
             ## 
-            ## Instantiates a new threatAssessmentResult and sets the default values.
+            ## Instantiates a new ThreatAssessmentResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -23,10 +23,10 @@ module MicrosoftGraph
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            super(path_parameters, request_adapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/drive{?%24select,%24expand}")
+                            super(path_parameters, request_adapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/drive{?%24expand,%24select}")
                         end
                         ## 
-                        ## Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+                        ## Allows access to the list as a drive resource with driveItems. Only present on document libraries.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of drive
                         ## 
@@ -35,31 +35,39 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+                        ## Allows access to the list as a drive resource with driveItems. Only present on document libraries.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
                         def to_get_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :GET
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :GET
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a drive_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return DriveRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 
-                        # Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+                        # Allows access to the list as a drive resource with driveItems. Only present on document libraries.
                         class DriveRequestBuilderGetQueryParameters
                             
                             ## 

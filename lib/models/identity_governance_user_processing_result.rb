@@ -56,7 +56,7 @@ module MicrosoftGraph
                 @completed_date_time = value
             end
             ## 
-            ## Instantiates a new identityGovernanceUserProcessingResult and sets the default values.
+            ## Instantiates a new IdentityGovernanceUserProcessingResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

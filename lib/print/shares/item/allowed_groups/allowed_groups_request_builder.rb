@@ -31,7 +31,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Gets an item from the MicrosoftGraph.print.shares.item.allowedGroups.item collection
-                        ## @param group_id Unique identifier of the item
+                        ## @param group_id The unique identifier of group
                         ## @return a group_item_request_builder
                         ## 
                         def by_group_id(group_id)
@@ -47,10 +47,10 @@ module MicrosoftGraph
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            super(path_parameters, request_adapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
+                            super(path_parameters, request_adapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}")
                         end
                         ## 
-                        ## Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+                        ## The groups whose users have access to print using the printer.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of group_collection_response
                         ## 
@@ -59,31 +59,39 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::GroupCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+                        ## The groups whose users have access to print using the printer.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
                         def to_get_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :GET
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :GET
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a allowed_groups_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return AllowedGroupsRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 
-                        # Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+                        # The groups whose users have access to print using the printer.
                         class AllowedGroupsRequestBuilderGetQueryParameters
                             
                             ## 

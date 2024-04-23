@@ -75,7 +75,7 @@ module MicrosoftGraph
                 @compliant_apps_list = value
             end
             ## 
-            ## Instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
