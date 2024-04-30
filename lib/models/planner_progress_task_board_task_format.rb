@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.
             @order_hint
             ## 
-            ## Instantiates a new plannerProgressTaskBoardTaskFormat and sets the default values.
+            ## Instantiates a new PlannerProgressTaskBoardTaskFormat and sets the default values.
             ## @return a void
             ## 
             def initialize()

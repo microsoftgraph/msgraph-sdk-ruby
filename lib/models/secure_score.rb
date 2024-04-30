@@ -83,7 +83,7 @@ module MicrosoftGraph
                 @azure_tenant_id = value
             end
             ## 
-            ## Instantiates a new secureScore and sets the default values.
+            ## Instantiates a new SecureScore and sets the default values.
             ## @return a void
             ## 
             def initialize()

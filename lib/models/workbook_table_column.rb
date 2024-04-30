@@ -19,7 +19,7 @@ module MicrosoftGraph
             # Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
             @values
             ## 
-            ## Instantiates a new workbookTableColumn and sets the default values.
+            ## Instantiates a new WorkbookTableColumn and sets the default values.
             ## @return a void
             ## 
             def initialize()

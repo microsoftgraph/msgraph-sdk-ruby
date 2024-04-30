@@ -6,7 +6,10 @@ require_relative '../../../../education'
 require_relative '../../../classes'
 require_relative '../../item'
 require_relative '../assignments'
+require_relative './activate/activate_request_builder'
 require_relative './categories/categories_request_builder'
+require_relative './deactivate/deactivate_request_builder'
+require_relative './grading_category/grading_category_request_builder'
 require_relative './item'
 require_relative './publish/publish_request_builder'
 require_relative './resources/resources_request_builder'
@@ -26,9 +29,24 @@ module MicrosoftGraph
                         class EducationAssignmentItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
                             ## 
+                            # Provides operations to call the activate method.
+                            def activate()
+                                return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Activate::ActivateRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
                             # Provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.
                             def categories()
                                 return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Categories::CategoriesRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to call the deactivate method.
+                            def deactivate()
+                                return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Deactivate::DeactivateRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to manage the gradingCategory property of the microsoft.graph.educationAssignment entity.
+                            def grading_category()
+                                return MicrosoftGraph::Education::Classes::Item::Assignments::Item::GradingCategory::GradingCategoryRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             # Provides operations to call the publish method.
@@ -67,10 +85,10 @@ module MicrosoftGraph
                             ## @return a void
                             ## 
                             def initialize(path_parameters, request_adapter)
-                                super(path_parameters, request_adapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}{?%24select,%24expand}")
+                                super(path_parameters, request_adapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}{?%24expand,%24select}")
                             end
                             ## 
-                            ## Delete an existing assignment. Only teachers within a class can delete assignments.
+                            ## Delete navigation property assignments for education
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -79,12 +97,11 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class.
+                            ## All assignments associated with this class. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of education_assignment
                             ## 
@@ -93,12 +110,11 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationAssignment.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update an educationAssignment object.  Only teachers can perform this action.  Alternatively, request to change the status of an assignment with publish action. Don't use a PATCH operation for this purpose.
+                            ## Update the navigation property assignments in education
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of education_assignment
@@ -109,46 +125,46 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationAssignment.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete an existing assignment. Only teachers within a class can delete assignments.
+                            ## Delete navigation property assignments for education
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_delete_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :DELETE
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :DELETE
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
                             end
                             ## 
-                            ## Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class.
+                            ## All assignments associated with this class. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_get_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :GET
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :GET
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
                             end
                             ## 
-                            ## Update an educationAssignment object.  Only teachers can perform this action.  Alternatively, request to change the status of an assignment with publish action. Don't use a PATCH operation for this purpose.
+                            ## Update the navigation property assignments in education
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -156,20 +172,29 @@ module MicrosoftGraph
                             def to_patch_request_information(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :PATCH
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
-                                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :PATCH
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a education_assignment_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return EducationAssignmentItemRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 
-                            # Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class.
+                            # All assignments associated with this class. Nullable.
                             class EducationAssignmentItemRequestBuilderGetQueryParameters
                                 
                                 ## 

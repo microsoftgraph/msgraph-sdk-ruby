@@ -38,7 +38,7 @@ module MicrosoftGraph
             # Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
             @version
             ## 
-            ## Instantiates a new callRecordsCallRecord and sets the default values.
+            ## Instantiates a new CallRecordsCallRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()

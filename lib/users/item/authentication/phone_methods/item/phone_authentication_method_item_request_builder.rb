@@ -37,10 +37,10 @@ module MicrosoftGraph
                             ## @return a void
                             ## 
                             def initialize(path_parameters, request_adapter)
-                                super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/authentication/phoneMethods/{phoneAuthenticationMethod%2Did}{?%24select,%24expand}")
+                                super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/authentication/phoneMethods/{phoneAuthenticationMethod%2Did}{?%24expand,%24select}")
                             end
                             ## 
-                            ## Delete a user's phone authentication method. This removes the phone number from the user and they will no longer be able to use the number for authentication, whether via SMS or voice calls. A user cannot have an alternateMobile number without a mobile number. If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number. If the phone number is the user's default Azure multi-factor authentication (MFA) authentication method, it cannot be deleted. Have the user change their default authentication method, and then delete the number.
+                            ## Delete navigation property phoneMethods for users
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -49,12 +49,11 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Retrieve a single phoneAuthenticationMethod object for a user. This method is available only for standard Azure AD and B2B users, but not B2C users.
+                            ## The phone numbers registered to a user for authentication.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of phone_authentication_method
                             ## 
@@ -63,12 +62,11 @@ module MicrosoftGraph
                                     request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PhoneAuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update a user's phone number associated with a phone authentication method object. You can't change a phone's type. To change a phone's type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system.
+                            ## Update the navigation property phoneMethods in users
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of phone_authentication_method
@@ -79,46 +77,46 @@ module MicrosoftGraph
                                     body, request_configuration
                                 )
                                 error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PhoneAuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete a user's phone authentication method. This removes the phone number from the user and they will no longer be able to use the number for authentication, whether via SMS or voice calls. A user cannot have an alternateMobile number without a mobile number. If you want to remove a mobile number from a user that also has an alternateMobile number, first update the mobile number to the new number, then delete the alternateMobile number. If the phone number is the user's default Azure multi-factor authentication (MFA) authentication method, it cannot be deleted. Have the user change their default authentication method, and then delete the number.
+                            ## Delete navigation property phoneMethods for users
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_delete_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :DELETE
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :DELETE
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
                             end
                             ## 
-                            ## Retrieve a single phoneAuthenticationMethod object for a user. This method is available only for standard Azure AD and B2B users, but not B2C users.
+                            ## The phone numbers registered to a user for authentication.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_get_request_information(request_configuration=nil)
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :GET
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                     request_info.add_request_options(request_configuration.options)
                                 end
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :GET
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
                             end
                             ## 
-                            ## Update a user's phone number associated with a phone authentication method object. You can't change a phone's type. To change a phone's type, add a new number of the desired type and then delete the object with the original type. If a user is enabled by policy to use SMS to sign in and the mobile number is changed, the system will attempt to register the number for use in that system.
+                            ## Update the navigation property phoneMethods in users
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -126,20 +124,29 @@ module MicrosoftGraph
                             def to_patch_request_information(body, request_configuration=nil)
                                 raise StandardError, 'body cannot be null' if body.nil?
                                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :PATCH
-                                request_info.headers.add('Accept', 'application/json')
                                 unless request_configuration.nil?
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
-                                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                                request_info.url_template = @url_template
+                                request_info.path_parameters = @path_parameters
+                                request_info.http_method = :PATCH
+                                request_info.headers.try_add('Accept', 'application/json')
                                 return request_info
+                            end
+                            ## 
+                            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                            ## @param raw_url The raw URL to use for the request builder.
+                            ## @return a phone_authentication_method_item_request_builder
+                            ## 
+                            def with_url(raw_url)
+                                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                return PhoneAuthenticationMethodItemRequestBuilder.new(raw_url, @request_adapter)
                             end
 
                             ## 
-                            # Retrieve a single phoneAuthenticationMethod object for a user. This method is available only for standard Azure AD and B2B users, but not B2C users.
+                            # The phone numbers registered to a user for authentication.
                             class PhoneAuthenticationMethodItemRequestBuilderGetQueryParameters
                                 
                                 ## 

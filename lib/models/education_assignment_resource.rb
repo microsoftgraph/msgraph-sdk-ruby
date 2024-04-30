@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Resource object that has been associated with this assignment.
             @resource
             ## 
-            ## Instantiates a new educationAssignmentResource and sets the default values.
+            ## Instantiates a new EducationAssignmentResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,24 +13,24 @@ module MicrosoftGraph
             # The bucketDefinition property
             @bucket_definition
             ## 
-            # Computes aggregation on the field while the field exists in current entity type. Required.
+            # Computes aggregation on the field while the field exists in the current entity type. Required.
             @field
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+            # The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.
             @size
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @bucket_definition = value
             end
             ## 
-            ## Instantiates a new aggregationOption and sets the default values.
+            ## Instantiates a new AggregationOption and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -68,14 +68,14 @@ module MicrosoftGraph
                 return AggregationOption.new
             end
             ## 
-            ## Gets the field property value. Computes aggregation on the field while the field exists in current entity type. Required.
+            ## Gets the field property value. Computes aggregation on the field while the field exists in the current entity type. Required.
             ## @return a string
             ## 
             def field
                 return @field
             end
             ## 
-            ## Sets the field property value. Computes aggregation on the field while the field exists in current entity type. Required.
+            ## Sets the field property value. Computes aggregation on the field while the field exists in the current entity type. Required.
             ## @param value Value to set for the field property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+            ## Gets the size property value. The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.
             ## @return a integer
             ## 
             def size
                 return @size
             end
             ## 
-            ## Sets the size property value. The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+            ## Sets the size property value. The number of searchBucket resources to be returned. This isn't required when the range is provided manually in the search request. The minimum accepted size is 1, and the maximum is 65535. Optional.
             ## @param value Value to set for the size property.
             ## @return a void
             ## 
