@@ -7,6 +7,7 @@ module MicrosoftGraph
             Available: :Available,
             Enabled: :Enabled,
             Unresponsive: :Unresponsive,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

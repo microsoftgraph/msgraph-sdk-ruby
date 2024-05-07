@@ -35,7 +35,7 @@ module MicrosoftGraph
             # The collection of qualities making up this rubric.
             @qualities
             ## 
-            ## Instantiates a new educationRubric and sets the default values.
+            ## Instantiates a new EducationRubric and sets the default values.
             ## @return a void
             ## 
             def initialize()

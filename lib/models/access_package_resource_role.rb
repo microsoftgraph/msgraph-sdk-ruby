@@ -22,7 +22,7 @@ module MicrosoftGraph
             # The resource property
             @resource
             ## 
-            ## Instantiates a new accessPackageResourceRole and sets the default values.
+            ## Instantiates a new AccessPackageResourceRole and sets the default values.
             ## @return a void
             ## 
             def initialize()

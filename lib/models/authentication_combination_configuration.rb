@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @applies_to_combinations = value
             end
             ## 
-            ## Instantiates a new authenticationCombinationConfiguration and sets the default values.
+            ## Instantiates a new AuthenticationCombinationConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
