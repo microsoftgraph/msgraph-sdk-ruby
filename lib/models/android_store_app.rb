@@ -33,7 +33,7 @@ module MicrosoftGraph
                 @app_store_url = value
             end
             ## 
-            ## Instantiates a new androidStoreApp and sets the default values.
+            ## Instantiates a new AndroidStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -100,7 +100,6 @@ module MicrosoftGraph
                 super
                 writer.write_string_value("appStoreUrl", @app_store_url)
                 writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system)
-                writer.write_string_value("packageId", @package_id)
             end
         end
     end

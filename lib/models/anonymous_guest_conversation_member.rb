@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @anonymous_guest_id = value
             end
             ## 
-            ## Instantiates a new anonymousGuestConversationMember and sets the default values.
+            ## Instantiates a new AnonymousGuestConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()

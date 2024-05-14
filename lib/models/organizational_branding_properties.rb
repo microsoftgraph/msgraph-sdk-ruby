@@ -25,6 +25,9 @@ module MicrosoftGraph
             # A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
             @cdn_list
             ## 
+            # The contentCustomization property
+            @content_customization
+            ## 
             # A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
             @custom_account_reset_credentials_url
             ## 
@@ -58,7 +61,7 @@ module MicrosoftGraph
             # A custom URL to replace the default URL of the 'Terms of Use' hyperlink in the footer. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128characters.
             @custom_terms_of_use_url
             ## 
-            # A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+            # A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
             @favicon
             ## 
             # A relative url for the favicon above that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
@@ -187,11 +190,26 @@ module MicrosoftGraph
                 @cdn_list = value
             end
             ## 
-            ## Instantiates a new organizationalBrandingProperties and sets the default values.
+            ## Instantiates a new OrganizationalBrandingProperties and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+            end
+            ## 
+            ## Gets the contentCustomization property value. The contentCustomization property
+            ## @return a content_customization
+            ## 
+            def content_customization
+                return @content_customization
+            end
+            ## 
+            ## Sets the contentCustomization property value. The contentCustomization property
+            ## @param value Value to set for the contentCustomization property.
+            ## @return a void
+            ## 
+            def content_customization=(value)
+                @content_customization = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -378,14 +396,14 @@ module MicrosoftGraph
                 @custom_terms_of_use_url = value
             end
             ## 
-            ## Gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+            ## Gets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
             ## @return a base64url
             ## 
             def favicon
                 return @favicon
             end
             ## 
-            ## Sets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on an Azure AD tenant.
+            ## Sets the favicon property value. A custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
             ## @param value Value to set for the favicon property.
             ## @return a void
             ## 
@@ -419,6 +437,7 @@ module MicrosoftGraph
                     "bannerLogo" => lambda {|n| @banner_logo = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "bannerLogoRelativeUrl" => lambda {|n| @banner_logo_relative_url = n.get_string_value() },
                     "cdnList" => lambda {|n| @cdn_list = n.get_collection_of_primitive_values(String) },
+                    "contentCustomization" => lambda {|n| @content_customization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ContentCustomization.create_from_discriminator_value(pn) }) },
                     "customAccountResetCredentialsUrl" => lambda {|n| @custom_account_reset_credentials_url = n.get_string_value() },
                     "customCSS" => lambda {|n| @custom_c_s_s = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "customCSSRelativeUrl" => lambda {|n| @custom_c_s_s_relative_url = n.get_string_value() },
@@ -534,6 +553,7 @@ module MicrosoftGraph
                 writer.write_object_value("bannerLogo", @banner_logo)
                 writer.write_string_value("bannerLogoRelativeUrl", @banner_logo_relative_url)
                 writer.write_collection_of_primitive_values("cdnList", @cdn_list)
+                writer.write_object_value("contentCustomization", @content_customization)
                 writer.write_string_value("customAccountResetCredentialsUrl", @custom_account_reset_credentials_url)
                 writer.write_object_value("customCSS", @custom_c_s_s)
                 writer.write_string_value("customCSSRelativeUrl", @custom_c_s_s_relative_url)

@@ -25,7 +25,7 @@ module MicrosoftGraph
             # Name of the device used by the media endpoint.
             @name
             ## 
-            ## Instantiates a new callRecordsParticipantEndpoint and sets the default values.
+            ## Instantiates a new CallRecordsParticipantEndpoint and sets the default values.
             ## @return a void
             ## 
             def initialize()

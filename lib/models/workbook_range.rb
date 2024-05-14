@@ -7,7 +7,7 @@ module MicrosoftGraph
         class WorkbookRange < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.
+            # Represents the range reference in A1-style. Address value contains the Sheet reference (for example, Sheet1!A1:B4). Read-only.
             @address
             ## 
             # Represents range reference for the specified range in the language of the user. Read-only.
@@ -55,26 +55,26 @@ module MicrosoftGraph
             # The worksheet containing the current range. Read-only.
             @sort
             ## 
-            # Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
+            # Text values of the specified range. The Text value doesn't depend on the cell width. The # sign substitution that happens in Excel UI doesn't affect the text value returned by the API. Read-only.
             @text
             ## 
             # Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
             @value_types
             ## 
-            # Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+            # Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
             @values
             ## 
             # The worksheet containing the current range. Read-only.
             @worksheet
             ## 
-            ## Gets the address property value. Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.
+            ## Gets the address property value. Represents the range reference in A1-style. Address value contains the Sheet reference (for example, Sheet1!A1:B4). Read-only.
             ## @return a string
             ## 
             def address
                 return @address
             end
             ## 
-            ## Sets the address property value. Represents the range reference in A1-style. Address value will contain the Sheet reference (e.g. Sheet1!A1:B4). Read-only.
+            ## Sets the address property value. Represents the range reference in A1-style. Address value contains the Sheet reference (for example, Sheet1!A1:B4). Read-only.
             ## @param value Value to set for the address property.
             ## @return a void
             ## 
@@ -157,7 +157,7 @@ module MicrosoftGraph
                 @column_index = value
             end
             ## 
-            ## Instantiates a new workbookRange and sets the default values.
+            ## Instantiates a new WorkbookRange and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -380,14 +380,14 @@ module MicrosoftGraph
                 @sort = value
             end
             ## 
-            ## Gets the text property value. Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
+            ## Gets the text property value. Text values of the specified range. The Text value doesn't depend on the cell width. The # sign substitution that happens in Excel UI doesn't affect the text value returned by the API. Read-only.
             ## @return a json
             ## 
             def text
                 return @text
             end
             ## 
-            ## Sets the text property value. Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
+            ## Sets the text property value. Text values of the specified range. The Text value doesn't depend on the cell width. The # sign substitution that happens in Excel UI doesn't affect the text value returned by the API. Read-only.
             ## @param value Value to set for the text property.
             ## @return a void
             ## 
@@ -410,14 +410,14 @@ module MicrosoftGraph
                 @value_types = value
             end
             ## 
-            ## Gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+            ## Gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
             ## @return a json
             ## 
             def values
                 return @values
             end
             ## 
-            ## Sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+            ## Sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contains an error returns the error string.
             ## @param value Value to set for the values property.
             ## @return a void
             ## 
