@@ -7,10 +7,10 @@ module MicrosoftGraph
         class UnifiedRoleAssignment < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+            # Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
             @app_scope
             ## 
-            # Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
+            # Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog. For example, /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example, /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'.
             @app_scope_id
             ## 
             # The condition property
@@ -19,29 +19,29 @@ module MicrosoftGraph
             # The directory object that is the scope of the assignment. Read-only. Supports $expand.
             @directory_scope
             ## 
-            # Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
+            # Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).
             @directory_scope_id
             ## 
             # Referencing the assigned principal. Read-only. Supports $expand.
             @principal
             ## 
-            # Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
+            # Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).
             @principal_id
             ## 
-            # The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+            # The roleDefinition the assignment is for.  Supports $expand.
             @role_definition
             ## 
-            # Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
+            # Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).
             @role_definition_id
             ## 
-            ## Gets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+            ## Gets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
             ## @return a app_scope
             ## 
             def app_scope
                 return @app_scope
             end
             ## 
-            ## Sets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+            ## Sets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
             ## @param value Value to set for the appScope property.
             ## @return a void
             ## 
@@ -49,14 +49,14 @@ module MicrosoftGraph
                 @app_scope = value
             end
             ## 
-            ## Gets the appScopeId property value. Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
+            ## Gets the appScopeId property value. Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog. For example, /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example, /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'.
             ## @return a string
             ## 
             def app_scope_id
                 return @app_scope_id
             end
             ## 
-            ## Sets the appScopeId property value. Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
+            ## Sets the appScopeId property value. Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog. For example, /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example, /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'.
             ## @param value Value to set for the appScopeId property.
             ## @return a void
             ## 
@@ -79,7 +79,7 @@ module MicrosoftGraph
                 @condition = value
             end
             ## 
-            ## Instantiates a new unifiedRoleAssignment and sets the default values.
+            ## Instantiates a new UnifiedRoleAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -110,14 +110,14 @@ module MicrosoftGraph
                 @directory_scope = value
             end
             ## 
-            ## Gets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
+            ## Gets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).
             ## @return a string
             ## 
             def directory_scope_id
                 return @directory_scope_id
             end
             ## 
-            ## Sets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).
+            ## Sets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).
             ## @param value Value to set for the directoryScopeId property.
             ## @return a void
             ## 
@@ -157,14 +157,14 @@ module MicrosoftGraph
                 @principal = value
             end
             ## 
-            ## Gets the principalId property value. Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
+            ## Gets the principalId property value. Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).
             ## @return a string
             ## 
             def principal_id
                 return @principal_id
             end
             ## 
-            ## Sets the principalId property value. Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).
+            ## Sets the principalId property value. Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).
             ## @param value Value to set for the principalId property.
             ## @return a void
             ## 
@@ -172,14 +172,14 @@ module MicrosoftGraph
                 @principal_id = value
             end
             ## 
-            ## Gets the roleDefinition property value. The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+            ## Gets the roleDefinition property value. The roleDefinition the assignment is for.  Supports $expand.
             ## @return a unified_role_definition
             ## 
             def role_definition
                 return @role_definition
             end
             ## 
-            ## Sets the roleDefinition property value. The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+            ## Sets the roleDefinition property value. The roleDefinition the assignment is for.  Supports $expand.
             ## @param value Value to set for the roleDefinition property.
             ## @return a void
             ## 
@@ -187,14 +187,14 @@ module MicrosoftGraph
                 @role_definition = value
             end
             ## 
-            ## Gets the roleDefinitionId property value. Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
+            ## Gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).
             ## @return a string
             ## 
             def role_definition_id
                 return @role_definition_id
             end
             ## 
-            ## Sets the roleDefinitionId property value. Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).
+            ## Sets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).
             ## @param value Value to set for the roleDefinitionId property.
             ## @return a void
             ## 

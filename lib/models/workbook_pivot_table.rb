@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The worksheet containing the current PivotTable. Read-only.
             @worksheet
             ## 
-            ## Instantiates a new workbookPivotTable and sets the default values.
+            ## Instantiates a new WorkbookPivotTable and sets the default values.
             ## @return a void
             ## 
             def initialize()

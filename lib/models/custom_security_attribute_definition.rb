@@ -64,7 +64,7 @@ module MicrosoftGraph
                 @attribute_set = value
             end
             ## 
-            ## Instantiates a new customSecurityAttributeDefinition and sets the default values.
+            ## Instantiates a new CustomSecurityAttributeDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

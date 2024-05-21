@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Read-only. Nullable. Returns the plannerPlans owned by the group.
             @plans
             ## 
-            ## Instantiates a new plannerGroup and sets the default values.
+            ## Instantiates a new PlannerGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

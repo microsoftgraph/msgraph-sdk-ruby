@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Indicates whether the last column contains special formatting.
             @highlight_last_column
             ## 
-            # Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
+            # Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
             @legacy_id
             ## 
             # Name of the table.
@@ -43,7 +43,7 @@ module MicrosoftGraph
             # Represents the sorting for the table. Read-only.
             @sort
             ## 
-            # Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+            # Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
             @style
             ## 
             # The worksheet containing the current table. Read-only.
@@ -64,7 +64,7 @@ module MicrosoftGraph
                 @columns = value
             end
             ## 
-            ## Instantiates a new workbookTable and sets the default values.
+            ## Instantiates a new WorkbookTable and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -132,14 +132,14 @@ module MicrosoftGraph
                 @highlight_last_column = value
             end
             ## 
-            ## Gets the legacyId property value. Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
+            ## Gets the legacyId property value. Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
             ## @return a string
             ## 
             def legacy_id
                 return @legacy_id
             end
             ## 
-            ## Sets the legacyId property value. Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.
+            ## Sets the legacyId property value. Legacy ID used in older Excel clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and shouldn't be parsed to any other type. Read-only.
             ## @param value Value to set for the legacyId property.
             ## @return a void
             ## 
@@ -290,14 +290,14 @@ module MicrosoftGraph
                 @sort = value
             end
             ## 
-            ## Gets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+            ## Gets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
             ## @return a string
             ## 
             def style
                 return @style
             end
             ## 
-            ## Sets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
+            ## Sets the style property value. Constant value that represents the Table style. The possible values are: TableStyleLight1 through TableStyleLight21, TableStyleMedium1 through TableStyleMedium28, TableStyleStyleDark1 through TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.
             ## @param value Value to set for the style property.
             ## @return a void
             ## 

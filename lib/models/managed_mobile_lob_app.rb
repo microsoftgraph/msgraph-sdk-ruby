@@ -36,7 +36,7 @@ module MicrosoftGraph
                 @committed_content_version = value
             end
             ## 
-            ## Instantiates a new managedMobileLobApp and sets the default values.
+            ## Instantiates a new ManagedMobileLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -115,7 +115,6 @@ module MicrosoftGraph
                 writer.write_string_value("committedContentVersion", @committed_content_version)
                 writer.write_collection_of_object_values("contentVersions", @content_versions)
                 writer.write_string_value("fileName", @file_name)
-                writer.write_object_value("size", @size)
             end
             ## 
             ## Gets the size property value. The total size, including all uploaded files.
