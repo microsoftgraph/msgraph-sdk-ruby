@@ -14,7 +14,7 @@ module MicrosoftGraph
             # URL that shows certification details for the application.
             @certification_details_url
             ## 
-            # The timestamp when the current certification for the application will expire.
+            # The timestamp when the current certification for the application expires.
             @certification_expiration_date_time
             ## 
             # Indicates whether the application is certified by Microsoft.
@@ -29,15 +29,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -59,14 +59,14 @@ module MicrosoftGraph
                 @certification_details_url = value
             end
             ## 
-            ## Gets the certificationExpirationDateTime property value. The timestamp when the current certification for the application will expire.
+            ## Gets the certificationExpirationDateTime property value. The timestamp when the current certification for the application expires.
             ## @return a date_time
             ## 
             def certification_expiration_date_time
                 return @certification_expiration_date_time
             end
             ## 
-            ## Sets the certificationExpirationDateTime property value. The timestamp when the current certification for the application will expire.
+            ## Sets the certificationExpirationDateTime property value. The timestamp when the current certification for the application expires.
             ## @param value Value to set for the certificationExpirationDateTime property.
             ## @return a void
             ## 
@@ -74,7 +74,7 @@ module MicrosoftGraph
                 @certification_expiration_date_time = value
             end
             ## 
-            ## Instantiates a new certification and sets the default values.
+            ## Instantiates a new Certification and sets the default values.
             ## @return a void
             ## 
             def initialize()

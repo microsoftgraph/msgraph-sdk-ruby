@@ -1,0 +1,1 @@
+require_relative 'rank_avg_post_request_body'

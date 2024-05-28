@@ -19,7 +19,7 @@ module MicrosoftGraph
             # A boolean value the represents the visibility of a ChartLegend object.
             @visible
             ## 
-            ## Instantiates a new workbookChartLegend and sets the default values.
+            ## Instantiates a new WorkbookChartLegend and sets the default values.
             ## @return a void
             ## 
             def initialize()

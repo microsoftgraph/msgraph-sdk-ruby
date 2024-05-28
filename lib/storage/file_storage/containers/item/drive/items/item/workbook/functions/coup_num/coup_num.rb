@@ -1,0 +1,1 @@
+require_relative 'coup_num_post_request_body'

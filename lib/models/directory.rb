@@ -19,11 +19,17 @@ module MicrosoftGraph
             # Recently deleted items. Read-only. Nullable.
             @deleted_items
             ## 
+            # The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+            @device_local_credentials
+            ## 
             # Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
             @federation_configurations
             ## 
             # A container for on-premises directory synchronization functionalities that are available for the organization.
             @on_premises_synchronization
+            ## 
+            # The subscriptions property
+            @subscriptions
             ## 
             ## Gets the administrativeUnits property value. Conceptual container for user and group directory objects.
             ## @return a administrative_unit
@@ -55,7 +61,7 @@ module MicrosoftGraph
                 @attribute_sets = value
             end
             ## 
-            ## Instantiates a new directory and sets the default values.
+            ## Instantiates a new Directory and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -101,6 +107,21 @@ module MicrosoftGraph
                 @deleted_items = value
             end
             ## 
+            ## Gets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+            ## @return a device_local_credential_info
+            ## 
+            def device_local_credentials
+                return @device_local_credentials
+            end
+            ## 
+            ## Sets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+            ## @param value Value to set for the deviceLocalCredentials property.
+            ## @return a void
+            ## 
+            def device_local_credentials=(value)
+                @device_local_credentials = value
+            end
+            ## 
             ## Gets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
             ## @return a identity_provider_base
             ## 
@@ -125,8 +146,10 @@ module MicrosoftGraph
                     "attributeSets" => lambda {|n| @attribute_sets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AttributeSet.create_from_discriminator_value(pn) }) },
                     "customSecurityAttributeDefinitions" => lambda {|n| @custom_security_attribute_definitions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CustomSecurityAttributeDefinition.create_from_discriminator_value(pn) }) },
                     "deletedItems" => lambda {|n| @deleted_items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
+                    "deviceLocalCredentials" => lambda {|n| @device_local_credentials = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceLocalCredentialInfo.create_from_discriminator_value(pn) }) },
                     "federationConfigurations" => lambda {|n| @federation_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::IdentityProviderBase.create_from_discriminator_value(pn) }) },
                     "onPremisesSynchronization" => lambda {|n| @on_premises_synchronization = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::OnPremisesDirectorySynchronization.create_from_discriminator_value(pn) }) },
+                    "subscriptions" => lambda {|n| @subscriptions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CompanySubscription.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -156,8 +179,25 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("attributeSets", @attribute_sets)
                 writer.write_collection_of_object_values("customSecurityAttributeDefinitions", @custom_security_attribute_definitions)
                 writer.write_collection_of_object_values("deletedItems", @deleted_items)
+                writer.write_collection_of_object_values("deviceLocalCredentials", @device_local_credentials)
                 writer.write_collection_of_object_values("federationConfigurations", @federation_configurations)
                 writer.write_collection_of_object_values("onPremisesSynchronization", @on_premises_synchronization)
+                writer.write_collection_of_object_values("subscriptions", @subscriptions)
+            end
+            ## 
+            ## Gets the subscriptions property value. The subscriptions property
+            ## @return a company_subscription
+            ## 
+            def subscriptions
+                return @subscriptions
+            end
+            ## 
+            ## Sets the subscriptions property value. The subscriptions property
+            ## @param value Value to set for the subscriptions property.
+            ## @return a void
+            ## 
+            def subscriptions=(value)
+                @subscriptions = value
             end
         end
     end

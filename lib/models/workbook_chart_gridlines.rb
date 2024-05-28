@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Boolean value representing if the axis gridlines are visible or not.
             @visible
             ## 
-            ## Instantiates a new workbookChartGridlines and sets the default values.
+            ## Instantiates a new WorkbookChartGridlines and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -46,7 +46,7 @@ module MicrosoftGraph
                 @charts = value
             end
             ## 
-            ## Instantiates a new workbookWorksheet and sets the default values.
+            ## Instantiates a new WorkbookWorksheet and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,10 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The geographic region code for where this site collection resides. Read-only.
+            # The archivalDetails property
+            @archival_details
+            ## 
+            # The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
             @data_location_code
             ## 
             # The hostname for the site collection. Read-only.
@@ -22,22 +25,37 @@ module MicrosoftGraph
             # If present, indicates that this is a root site collection in SharePoint. Read-only.
             @root
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new siteCollection and sets the default values.
+            ## Gets the archivalDetails property value. The archivalDetails property
+            ## @return a site_archival_details
+            ## 
+            def archival_details
+                return @archival_details
+            end
+            ## 
+            ## Sets the archivalDetails property value. The archivalDetails property
+            ## @param value Value to set for the archivalDetails property.
+            ## @return a void
+            ## 
+            def archival_details=(value)
+                @archival_details = value
+            end
+            ## 
+            ## Instantiates a new SiteCollection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,14 +71,14 @@ module MicrosoftGraph
                 return SiteCollection.new
             end
             ## 
-            ## Gets the dataLocationCode property value. The geographic region code for where this site collection resides. Read-only.
+            ## Gets the dataLocationCode property value. The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
             ## @return a string
             ## 
             def data_location_code
                 return @data_location_code
             end
             ## 
-            ## Sets the dataLocationCode property value. The geographic region code for where this site collection resides. Read-only.
+            ## Sets the dataLocationCode property value. The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.
             ## @param value Value to set for the dataLocationCode property.
             ## @return a void
             ## 
@@ -73,6 +91,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "archivalDetails" => lambda {|n| @archival_details = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SiteArchivalDetails.create_from_discriminator_value(pn) }) },
                     "dataLocationCode" => lambda {|n| @data_location_code = n.get_string_value() },
                     "hostname" => lambda {|n| @hostname = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -131,6 +150,7 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("archivalDetails", @archival_details)
                 writer.write_string_value("dataLocationCode", @data_location_code)
                 writer.write_string_value("hostname", @hostname)
                 writer.write_string_value("@odata.type", @odata_type)

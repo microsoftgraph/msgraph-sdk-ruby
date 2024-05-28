@@ -21,6 +21,9 @@ module MicrosoftGraph
             # True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
             @is_email_notification_enabled
             ## 
+            # The membershipStatus property
+            @membership_status
+            ## 
             # The role property
             @role
             ## 
@@ -48,7 +51,7 @@ module MicrosoftGraph
                 @availability_is_affected_by_personal_calendar = value
             end
             ## 
-            ## Instantiates a new bookingStaffMember and sets the default values.
+            ## Instantiates a new BookingStaffMember and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -104,6 +107,7 @@ module MicrosoftGraph
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "emailAddress" => lambda {|n| @email_address = n.get_string_value() },
                     "isEmailNotificationEnabled" => lambda {|n| @is_email_notification_enabled = n.get_boolean_value() },
+                    "membershipStatus" => lambda {|n| @membership_status = n.get_enum_value(MicrosoftGraph::Models::BookingStaffMembershipStatus) },
                     "role" => lambda {|n| @role = n.get_enum_value(MicrosoftGraph::Models::BookingStaffRole) },
                     "timeZone" => lambda {|n| @time_zone = n.get_string_value() },
                     "useBusinessHours" => lambda {|n| @use_business_hours = n.get_boolean_value() },
@@ -124,6 +128,21 @@ module MicrosoftGraph
             ## 
             def is_email_notification_enabled=(value)
                 @is_email_notification_enabled = value
+            end
+            ## 
+            ## Gets the membershipStatus property value. The membershipStatus property
+            ## @return a booking_staff_membership_status
+            ## 
+            def membership_status
+                return @membership_status
+            end
+            ## 
+            ## Sets the membershipStatus property value. The membershipStatus property
+            ## @param value Value to set for the membershipStatus property.
+            ## @return a void
+            ## 
+            def membership_status=(value)
+                @membership_status = value
             end
             ## 
             ## Gets the role property value. The role property
@@ -152,6 +171,7 @@ module MicrosoftGraph
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("emailAddress", @email_address)
                 writer.write_boolean_value("isEmailNotificationEnabled", @is_email_notification_enabled)
+                writer.write_enum_value("membershipStatus", @membership_status)
                 writer.write_enum_value("role", @role)
                 writer.write_string_value("timeZone", @time_zone)
                 writer.write_boolean_value("useBusinessHours", @use_business_hours)

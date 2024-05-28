@@ -10,38 +10,38 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The attendees property
+            # Information about the meeting attendees.
             @attendees
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The organizer property
+            # Information about the meeting organizer.
             @organizer
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the attendees property value. The attendees property
+            ## Gets the attendees property value. Information about the meeting attendees.
             ## @return a meeting_participant_info
             ## 
             def attendees
                 return @attendees
             end
             ## 
-            ## Sets the attendees property value. The attendees property
+            ## Sets the attendees property value. Information about the meeting attendees.
             ## @param value Value to set for the attendees property.
             ## @return a void
             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @attendees = value
             end
             ## 
-            ## Instantiates a new meetingParticipants and sets the default values.
+            ## Instantiates a new MeetingParticipants and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -91,14 +91,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the organizer property value. The organizer property
+            ## Gets the organizer property value. Information about the meeting organizer.
             ## @return a meeting_participant_info
             ## 
             def organizer
                 return @organizer
             end
             ## 
-            ## Sets the organizer property value. The organizer property
+            ## Sets the organizer property value. Information about the meeting organizer.
             ## @param value Value to set for the organizer property.
             ## @return a void
             ## 
