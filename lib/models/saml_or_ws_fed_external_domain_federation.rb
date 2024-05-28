@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Collection of domain names of the external organizations that the tenant is federating with. Supports $filter (eq).
             @domains
             ## 
-            ## Instantiates a new samlOrWsFedExternalDomainFederation and sets the default values.
+            ## Instantiates a new SamlOrWsFedExternalDomainFederation and sets the default values.
             ## @return a void
             ## 
             def initialize()

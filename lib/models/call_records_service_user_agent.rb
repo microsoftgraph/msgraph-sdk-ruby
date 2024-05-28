@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The role property
             @role
             ## 
-            ## Instantiates a new callRecordsServiceUserAgent and sets the default values.
+            ## Instantiates a new CallRecordsServiceUserAgent and sets the default values.
             ## @return a void
             ## 
             def initialize()

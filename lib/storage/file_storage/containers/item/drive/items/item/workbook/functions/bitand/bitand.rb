@@ -1,0 +1,1 @@
+require_relative 'bitand_post_request_body'

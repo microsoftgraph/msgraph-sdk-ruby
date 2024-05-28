@@ -1,0 +1,1 @@
+require_relative 'geo_mean_post_request_body'

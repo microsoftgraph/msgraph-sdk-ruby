@@ -32,6 +32,9 @@ module MicrosoftGraph
             # The state property
             @state
             ## 
+            # The templateId property
+            @template_id
+            ## 
             ## Gets the conditions property value. The conditions property
             ## @return a conditional_access_condition_set
             ## 
@@ -47,7 +50,7 @@ module MicrosoftGraph
                 @conditions = value
             end
             ## 
-            ## Instantiates a new conditionalAccessPolicy and sets the default values.
+            ## Instantiates a new ConditionalAccessPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -121,6 +124,7 @@ module MicrosoftGraph
                     "modifiedDateTime" => lambda {|n| @modified_date_time = n.get_date_time_value() },
                     "sessionControls" => lambda {|n| @session_controls = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessSessionControls.create_from_discriminator_value(pn) }) },
                     "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::ConditionalAccessPolicyState) },
+                    "templateId" => lambda {|n| @template_id = n.get_string_value() },
                 })
             end
             ## 
@@ -169,6 +173,7 @@ module MicrosoftGraph
                 writer.write_date_time_value("modifiedDateTime", @modified_date_time)
                 writer.write_object_value("sessionControls", @session_controls)
                 writer.write_enum_value("state", @state)
+                writer.write_string_value("templateId", @template_id)
             end
             ## 
             ## Gets the sessionControls property value. Specifies the session controls that are enforced after sign-in.
@@ -199,6 +204,21 @@ module MicrosoftGraph
             ## 
             def state=(value)
                 @state = value
+            end
+            ## 
+            ## Gets the templateId property value. The templateId property
+            ## @return a string
+            ## 
+            def template_id
+                return @template_id
+            end
+            ## 
+            ## Sets the templateId property value. The templateId property
+            ## @param value Value to set for the templateId property.
+            ## @return a void
+            ## 
+            def template_id=(value)
+                @template_id = value
             end
         end
     end

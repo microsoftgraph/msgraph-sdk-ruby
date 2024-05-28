@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The container registry for this image.
             @registry
             ## 
-            ## Instantiates a new securityContainerImageEvidence and sets the default values.
+            ## Instantiates a new SecurityContainerImageEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
