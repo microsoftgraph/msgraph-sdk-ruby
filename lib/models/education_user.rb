@@ -44,7 +44,7 @@ module MicrosoftGraph
             # The given name (first name) of the user. Supports $filter.
             @given_name
             ## 
-            # The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
+            # The SMTP address for the user, for example, jeff@contoso.com. Read-Only. Supports $filter.
             @mail
             ## 
             # The mail alias for the user. This property must be specified when a user is created. Supports $filter.
@@ -59,10 +59,10 @@ module MicrosoftGraph
             # The primary cellular telephone number for the user.
             @mobile_phone
             ## 
-            # The officeLocation property
+            # The office location for the user.
             @office_location
             ## 
-            # Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
+            # Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
             @on_premises_info
             ## 
             # Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two can be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.
@@ -80,7 +80,7 @@ module MicrosoftGraph
             # The plans that are provisioned for the user. Read-only. Not nullable.
             @provisioned_plans
             ## 
-            # The refreshTokensValidFromDateTime property
+            # Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Returned only on $select. Read-only.
             @refresh_tokens_valid_from_date_time
             ## 
             # Related records associated with the user. Read-only.
@@ -212,7 +212,7 @@ module MicrosoftGraph
                 @classes = value
             end
             ## 
-            ## Instantiates a new educationUser and sets the default values.
+            ## Instantiates a new EducationUser and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -364,14 +364,14 @@ module MicrosoftGraph
                 @given_name = value
             end
             ## 
-            ## Gets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
+            ## Gets the mail property value. The SMTP address for the user, for example, jeff@contoso.com. Read-Only. Supports $filter.
             ## @return a string
             ## 
             def mail
                 return @mail
             end
             ## 
-            ## Sets the mail property value. The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
+            ## Sets the mail property value. The SMTP address for the user, for example, jeff@contoso.com. Read-Only. Supports $filter.
             ## @param value Value to set for the mail property.
             ## @return a void
             ## 
@@ -439,14 +439,14 @@ module MicrosoftGraph
                 @mobile_phone = value
             end
             ## 
-            ## Gets the officeLocation property value. The officeLocation property
+            ## Gets the officeLocation property value. The office location for the user.
             ## @return a string
             ## 
             def office_location
                 return @office_location
             end
             ## 
-            ## Sets the officeLocation property value. The officeLocation property
+            ## Sets the officeLocation property value. The office location for the user.
             ## @param value Value to set for the officeLocation property.
             ## @return a void
             ## 
@@ -454,14 +454,14 @@ module MicrosoftGraph
                 @office_location = value
             end
             ## 
-            ## Gets the onPremisesInfo property value. Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
+            ## Gets the onPremisesInfo property value. Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
             ## @return a education_on_premises_info
             ## 
             def on_premises_info
                 return @on_premises_info
             end
             ## 
-            ## Sets the onPremisesInfo property value. Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
+            ## Sets the onPremisesInfo property value. Additional information used to associate the Microsoft Entra user with its Active Directory counterpart.
             ## @param value Value to set for the onPremisesInfo property.
             ## @return a void
             ## 
@@ -544,14 +544,14 @@ module MicrosoftGraph
                 @provisioned_plans = value
             end
             ## 
-            ## Gets the refreshTokensValidFromDateTime property value. The refreshTokensValidFromDateTime property
+            ## Gets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Returned only on $select. Read-only.
             ## @return a date_time
             ## 
             def refresh_tokens_valid_from_date_time
                 return @refresh_tokens_valid_from_date_time
             end
             ## 
-            ## Sets the refreshTokensValidFromDateTime property value. The refreshTokensValidFromDateTime property
+            ## Sets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Returned only on $select. Read-only.
             ## @param value Value to set for the refreshTokensValidFromDateTime property.
             ## @return a void
             ## 

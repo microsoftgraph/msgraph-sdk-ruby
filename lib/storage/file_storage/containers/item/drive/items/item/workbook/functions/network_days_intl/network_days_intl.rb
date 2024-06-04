@@ -1,0 +1,1 @@
+require_relative 'network_days_intl_post_request_body'

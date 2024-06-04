@@ -1,0 +1,1 @@
+require_relative 'rank_eq_post_request_body'

@@ -10,28 +10,28 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The Azure AD-generated password.
+            # The Microsoft Entra ID-generated password.
             @new_password
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new passwordResetResponse and sets the default values.
+            ## Instantiates a new PasswordResetResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -57,14 +57,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the newPassword property value. The Azure AD-generated password.
+            ## Gets the newPassword property value. The Microsoft Entra ID-generated password.
             ## @return a string
             ## 
             def new_password
                 return @new_password
             end
             ## 
-            ## Sets the newPassword property value. The Azure AD-generated password.
+            ## Sets the newPassword property value. The Microsoft Entra ID-generated password.
             ## @param value Value to set for the newPassword property.
             ## @return a void
             ## 

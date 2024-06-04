@@ -1,0 +1,1 @@
+require_relative 'fisher_inv_post_request_body'

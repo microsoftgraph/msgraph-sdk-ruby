@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @connected_organization_id = value
             end
             ## 
-            ## Instantiates a new connectedOrganizationMembers and sets the default values.
+            ## Instantiates a new ConnectedOrganizationMembers and sets the default values.
             ## @return a void
             ## 
             def initialize()

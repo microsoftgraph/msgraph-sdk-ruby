@@ -15,10 +15,22 @@ module MicrosoftGraph
             # The URL of the meeting to join anonymously.
             @anonymous_join_web_url
             ## 
+            # The customerEmailAddress property
+            @customer_email_address
+            ## 
+            # The customerName property
+            @customer_name
+            ## 
+            # Notes from the customer associated with this appointment.
+            @customer_notes
+            ## 
+            # The customerPhone property
+            @customer_phone
+            ## 
             # The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
             @customer_time_zone
             ## 
-            # A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+            # A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             @customers
             ## 
             # The length of the appointment, denoted in ISO8601 format.
@@ -39,7 +51,7 @@ module MicrosoftGraph
             # The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
             @maximum_attendees_count
             ## 
-            # If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+            # If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
             @opt_out_of_customer_email
             ## 
             # The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
@@ -66,7 +78,7 @@ module MicrosoftGraph
             # The location where the service is delivered.
             @service_location
             ## 
-            # The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+            # The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it's computed from the service associated with the appointment by the serviceId property.
             @service_name
             ## 
             # Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
@@ -111,7 +123,7 @@ module MicrosoftGraph
                 @anonymous_join_web_url = value
             end
             ## 
-            ## Instantiates a new bookingAppointment and sets the default values.
+            ## Instantiates a new BookingAppointment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -125,6 +137,66 @@ module MicrosoftGraph
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
                 return BookingAppointment.new
+            end
+            ## 
+            ## Gets the customerEmailAddress property value. The customerEmailAddress property
+            ## @return a string
+            ## 
+            def customer_email_address
+                return @customer_email_address
+            end
+            ## 
+            ## Sets the customerEmailAddress property value. The customerEmailAddress property
+            ## @param value Value to set for the customerEmailAddress property.
+            ## @return a void
+            ## 
+            def customer_email_address=(value)
+                @customer_email_address = value
+            end
+            ## 
+            ## Gets the customerName property value. The customerName property
+            ## @return a string
+            ## 
+            def customer_name
+                return @customer_name
+            end
+            ## 
+            ## Sets the customerName property value. The customerName property
+            ## @param value Value to set for the customerName property.
+            ## @return a void
+            ## 
+            def customer_name=(value)
+                @customer_name = value
+            end
+            ## 
+            ## Gets the customerNotes property value. Notes from the customer associated with this appointment.
+            ## @return a string
+            ## 
+            def customer_notes
+                return @customer_notes
+            end
+            ## 
+            ## Sets the customerNotes property value. Notes from the customer associated with this appointment.
+            ## @param value Value to set for the customerNotes property.
+            ## @return a void
+            ## 
+            def customer_notes=(value)
+                @customer_notes = value
+            end
+            ## 
+            ## Gets the customerPhone property value. The customerPhone property
+            ## @return a string
+            ## 
+            def customer_phone
+                return @customer_phone
+            end
+            ## 
+            ## Sets the customerPhone property value. The customerPhone property
+            ## @param value Value to set for the customerPhone property.
+            ## @return a void
+            ## 
+            def customer_phone=(value)
+                @customer_phone = value
             end
             ## 
             ## Gets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
@@ -142,14 +214,14 @@ module MicrosoftGraph
                 @customer_time_zone = value
             end
             ## 
-            ## Gets the customers property value. A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+            ## Gets the customers property value. A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             ## @return a booking_customer_information_base
             ## 
             def customers
                 return @customers
             end
             ## 
-            ## Sets the customers property value. A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+            ## Sets the customers property value. A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             ## @param value Value to set for the customers property.
             ## @return a void
             ## 
@@ -209,6 +281,10 @@ module MicrosoftGraph
                 return super.merge({
                     "additionalInformation" => lambda {|n| @additional_information = n.get_string_value() },
                     "anonymousJoinWebUrl" => lambda {|n| @anonymous_join_web_url = n.get_string_value() },
+                    "customerEmailAddress" => lambda {|n| @customer_email_address = n.get_string_value() },
+                    "customerName" => lambda {|n| @customer_name = n.get_string_value() },
+                    "customerNotes" => lambda {|n| @customer_notes = n.get_string_value() },
+                    "customerPhone" => lambda {|n| @customer_phone = n.get_string_value() },
                     "customerTimeZone" => lambda {|n| @customer_time_zone = n.get_string_value() },
                     "customers" => lambda {|n| @customers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingCustomerInformationBase.create_from_discriminator_value(pn) }) },
                     "duration" => lambda {|n| @duration = n.get_duration_value() },
@@ -279,14 +355,14 @@ module MicrosoftGraph
                 @maximum_attendees_count = value
             end
             ## 
-            ## Gets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+            ## Gets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
             ## @return a boolean
             ## 
             def opt_out_of_customer_email
                 return @opt_out_of_customer_email
             end
             ## 
-            ## Sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+            ## Sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
             ## @param value Value to set for the optOutOfCustomerEmail property.
             ## @return a void
             ## 
@@ -393,6 +469,10 @@ module MicrosoftGraph
                 super
                 writer.write_string_value("additionalInformation", @additional_information)
                 writer.write_string_value("anonymousJoinWebUrl", @anonymous_join_web_url)
+                writer.write_string_value("customerEmailAddress", @customer_email_address)
+                writer.write_string_value("customerName", @customer_name)
+                writer.write_string_value("customerNotes", @customer_notes)
+                writer.write_string_value("customerPhone", @customer_phone)
                 writer.write_string_value("customerTimeZone", @customer_time_zone)
                 writer.write_collection_of_object_values("customers", @customers)
                 writer.write_object_value("endDateTime", @end_date_time)
@@ -445,14 +525,14 @@ module MicrosoftGraph
                 @service_location = value
             end
             ## 
-            ## Gets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+            ## Gets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it's computed from the service associated with the appointment by the serviceId property.
             ## @return a string
             ## 
             def service_name
                 return @service_name
             end
             ## 
-            ## Sets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+            ## Sets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it's computed from the service associated with the appointment by the serviceId property.
             ## @param value Value to set for the serviceName property.
             ## @return a void
             ## 

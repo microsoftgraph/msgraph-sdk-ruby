@@ -25,7 +25,7 @@ module MicrosoftGraph
             # Data type, such as binary or string, of the registry value that the recorded action was applied to.
             @registry_value_type
             ## 
-            ## Instantiates a new securityRegistryValueEvidence and sets the default values.
+            ## Instantiates a new SecurityRegistryValueEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

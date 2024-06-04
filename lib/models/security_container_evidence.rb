@@ -58,7 +58,7 @@ module MicrosoftGraph
                 @command = value
             end
             ## 
-            ## Instantiates a new securityContainerEvidence and sets the default values.
+            ## Instantiates a new SecurityContainerEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
