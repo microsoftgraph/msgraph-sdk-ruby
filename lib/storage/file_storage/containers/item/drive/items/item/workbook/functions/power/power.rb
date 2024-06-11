@@ -1,0 +1,1 @@
+require_relative 'power_post_request_body'

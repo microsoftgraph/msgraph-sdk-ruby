@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: 'User', 'Company'.
             @applies_to
             ## 
-            # Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer cancelled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
+            # Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer canceled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
             @capability_status
             ## 
             # The number of licenses that have been assigned.
@@ -34,7 +34,7 @@ module MicrosoftGraph
             # The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
             @sku_part_number
             ## 
-            # The subscriptionIds property
+            # A list of all subscription IDs associated with this SKU.
             @subscription_ids
             ## 
             ## Gets the accountId property value. The unique ID of the account this SKU belongs to.
@@ -82,14 +82,14 @@ module MicrosoftGraph
                 @applies_to = value
             end
             ## 
-            ## Gets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer cancelled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
+            ## Gets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer canceled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
             ## @return a string
             ## 
             def capability_status
                 return @capability_status
             end
             ## 
-            ## Sets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer cancelled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
+            ## Sets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer canceled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
             ## @param value Value to set for the capabilityStatus property.
             ## @return a void
             ## 
@@ -97,7 +97,7 @@ module MicrosoftGraph
                 @capability_status = value
             end
             ## 
-            ## Instantiates a new subscribedSku and sets the default values.
+            ## Instantiates a new SubscribedSku and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -225,14 +225,14 @@ module MicrosoftGraph
                 @sku_part_number = value
             end
             ## 
-            ## Gets the subscriptionIds property value. The subscriptionIds property
+            ## Gets the subscriptionIds property value. A list of all subscription IDs associated with this SKU.
             ## @return a string
             ## 
             def subscription_ids
                 return @subscription_ids
             end
             ## 
-            ## Sets the subscriptionIds property value. The subscriptionIds property
+            ## Sets the subscriptionIds property value. A list of all subscription IDs associated with this SKU.
             ## @param value Value to set for the subscriptionIds property.
             ## @return a void
             ## 

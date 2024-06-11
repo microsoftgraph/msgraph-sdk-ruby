@@ -1,0 +1,1 @@
+require_relative 'cot_post_request_body'

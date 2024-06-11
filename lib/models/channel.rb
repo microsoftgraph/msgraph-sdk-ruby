@@ -23,7 +23,7 @@ module MicrosoftGraph
             # Metadata for the location where the channel's files are stored.
             @files_folder
             ## 
-            # Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
+            # Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.
             @is_favorite_by_default
             ## 
             # A collection of membership records associated with the channel.
@@ -38,16 +38,19 @@ module MicrosoftGraph
             # A collection of teams with which a channel is shared.
             @shared_with_teams
             ## 
+            # Contains summary information about the channel, including number of owners, members, guests, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.
+            @summary
+            ## 
             # A collection of all the tabs in the channel. A navigation property.
             @tabs
             ## 
-            # The ID of the Azure Active Directory tenant.
+            # The ID of the Microsoft Entra tenant.
             @tenant_id
             ## 
             # A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
             @web_url
             ## 
-            ## Instantiates a new channel and sets the default values.
+            ## Instantiates a new Channel and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -153,20 +156,21 @@ module MicrosoftGraph
                     "membershipType" => lambda {|n| @membership_type = n.get_enum_value(MicrosoftGraph::Models::ChannelMembershipType) },
                     "messages" => lambda {|n| @messages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ChatMessage.create_from_discriminator_value(pn) }) },
                     "sharedWithTeams" => lambda {|n| @shared_with_teams = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SharedWithChannelTeamInfo.create_from_discriminator_value(pn) }) },
+                    "summary" => lambda {|n| @summary = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ChannelSummary.create_from_discriminator_value(pn) }) },
                     "tabs" => lambda {|n| @tabs = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TeamsTab.create_from_discriminator_value(pn) }) },
                     "tenantId" => lambda {|n| @tenant_id = n.get_string_value() },
                     "webUrl" => lambda {|n| @web_url = n.get_string_value() },
                 })
             end
             ## 
-            ## Gets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
+            ## Gets the isFavoriteByDefault property value. Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.
             ## @return a boolean
             ## 
             def is_favorite_by_default
                 return @is_favorite_by_default
             end
             ## 
-            ## Sets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
+            ## Sets the isFavoriteByDefault property value. Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.
             ## @param value Value to set for the isFavoriteByDefault property.
             ## @return a void
             ## 
@@ -236,6 +240,7 @@ module MicrosoftGraph
                 writer.write_enum_value("membershipType", @membership_type)
                 writer.write_collection_of_object_values("messages", @messages)
                 writer.write_collection_of_object_values("sharedWithTeams", @shared_with_teams)
+                writer.write_object_value("summary", @summary)
                 writer.write_collection_of_object_values("tabs", @tabs)
                 writer.write_string_value("tenantId", @tenant_id)
                 writer.write_string_value("webUrl", @web_url)
@@ -256,6 +261,21 @@ module MicrosoftGraph
                 @shared_with_teams = value
             end
             ## 
+            ## Gets the summary property value. Contains summary information about the channel, including number of owners, members, guests, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.
+            ## @return a channel_summary
+            ## 
+            def summary
+                return @summary
+            end
+            ## 
+            ## Sets the summary property value. Contains summary information about the channel, including number of owners, members, guests, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.
+            ## @param value Value to set for the summary property.
+            ## @return a void
+            ## 
+            def summary=(value)
+                @summary = value
+            end
+            ## 
             ## Gets the tabs property value. A collection of all the tabs in the channel. A navigation property.
             ## @return a teams_tab
             ## 
@@ -271,14 +291,14 @@ module MicrosoftGraph
                 @tabs = value
             end
             ## 
-            ## Gets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Gets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Sets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

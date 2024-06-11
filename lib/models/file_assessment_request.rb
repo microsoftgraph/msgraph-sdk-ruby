@@ -7,13 +7,13 @@ module MicrosoftGraph
         class FileAssessmentRequest < MicrosoftGraph::Models::ThreatAssessmentRequest
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Base64 encoded file content. The file content cannot fetch back because it isn't stored.
+            # Base64 encoded file content. The file content can't fetch back because it isn't stored.
             @content_data
             ## 
             # The file name.
             @file_name
             ## 
-            ## Instantiates a new fileAssessmentRequest and sets the default values.
+            ## Instantiates a new FileAssessmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -21,14 +21,14 @@ module MicrosoftGraph
                 @odata_type = "#microsoft.graph.fileAssessmentRequest"
             end
             ## 
-            ## Gets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
+            ## Gets the contentData property value. Base64 encoded file content. The file content can't fetch back because it isn't stored.
             ## @return a string
             ## 
             def content_data
                 return @content_data
             end
             ## 
-            ## Sets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
+            ## Sets the contentData property value. Base64 encoded file content. The file content can't fetch back because it isn't stored.
             ## @param value Value to set for the contentData property.
             ## @return a void
             ## 
