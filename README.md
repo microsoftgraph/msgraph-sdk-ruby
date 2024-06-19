@@ -10,7 +10,7 @@ Get started with the Microsoft Graph SDK for Ruby by integrating the [Microsoft 
 
 ## 1. Installation
 
-run `gem install microsoft_graph` or include `gem microsoft_graph` in your gemfile.
+run `gem install microsoft_graph` or include `gem microsoft_graph, "~> 0.22.2"` in your gemfile.
 
 ## 2. Getting started
 
