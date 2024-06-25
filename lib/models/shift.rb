@@ -7,19 +7,19 @@ module MicrosoftGraph
         class Shift < MicrosoftGraph::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The draft version of this shift that is viewable by managers. Required.
+            # Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.
             @draft_shift
             ## 
             # ID of the scheduling group the shift is part of. Required.
             @scheduling_group_id
             ## 
-            # The shared version of this shift that is viewable by both employees and managers. Required.
+            # The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.
             @shared_shift
             ## 
             # ID of the user assigned to the shift. Required.
             @user_id
             ## 
-            ## Instantiates a new shift and sets the default values.
+            ## Instantiates a new Shift and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -36,14 +36,14 @@ module MicrosoftGraph
                 return Shift.new
             end
             ## 
-            ## Gets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
+            ## Gets the draftShift property value. Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.
             ## @return a shift_item
             ## 
             def draft_shift
                 return @draft_shift
             end
             ## 
-            ## Sets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
+            ## Sets the draftShift property value. Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.
             ## @param value Value to set for the draftShift property.
             ## @return a void
             ## 
@@ -91,14 +91,14 @@ module MicrosoftGraph
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
+            ## Gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.
             ## @return a shift_item
             ## 
             def shared_shift
                 return @shared_shift
             end
             ## 
-            ## Sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
+            ## Sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.
             ## @param value Value to set for the sharedShift property.
             ## @return a void
             ## 

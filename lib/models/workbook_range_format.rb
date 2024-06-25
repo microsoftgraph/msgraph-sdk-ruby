@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Collection of border objects that apply to the overall range selected Read-only.
             @borders
             ## 
-            # Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.
+            # Gets or sets the width of all columns within the range. If the column widths aren't uniform, null will be returned.
             @column_width
             ## 
             # Returns the fill object defined on the overall range. Read-only.
@@ -25,7 +25,7 @@ module MicrosoftGraph
             # Returns the format protection object for a range. Read-only.
             @protection
             ## 
-            # Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
+            # Gets or sets the height of all rows in the range. If the row heights aren't uniform null will be returned.
             @row_height
             ## 
             # Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
@@ -49,14 +49,14 @@ module MicrosoftGraph
                 @borders = value
             end
             ## 
-            ## Gets the columnWidth property value. Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.
+            ## Gets the columnWidth property value. Gets or sets the width of all columns within the range. If the column widths aren't uniform, null will be returned.
             ## @return a double
             ## 
             def column_width
                 return @column_width
             end
             ## 
-            ## Sets the columnWidth property value. Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.
+            ## Sets the columnWidth property value. Gets or sets the width of all columns within the range. If the column widths aren't uniform, null will be returned.
             ## @param value Value to set for the columnWidth property.
             ## @return a void
             ## 
@@ -64,7 +64,7 @@ module MicrosoftGraph
                 @column_width = value
             end
             ## 
-            ## Instantiates a new workbookRangeFormat and sets the default values.
+            ## Instantiates a new WorkbookRangeFormat and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -157,14 +157,14 @@ module MicrosoftGraph
                 @protection = value
             end
             ## 
-            ## Gets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
+            ## Gets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights aren't uniform null will be returned.
             ## @return a double
             ## 
             def row_height
                 return @row_height
             end
             ## 
-            ## Sets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
+            ## Sets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights aren't uniform null will be returned.
             ## @param value Value to set for the rowHeight property.
             ## @return a void
             ## 

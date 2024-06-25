@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The user ID of the member.
             @user_id
             ## 
-            ## Instantiates a new teamworkTagMember and sets the default values.
+            ## Instantiates a new TeamworkTagMember and sets the default values.
             ## @return a void
             ## 
             def initialize()

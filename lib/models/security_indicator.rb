@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @artifact = value
             end
             ## 
-            ## Instantiates a new securityIndicator and sets the default values.
+            ## Instantiates a new SecurityIndicator and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # User ID of the user to whom the submission is assigned.
             @user_id
             ## 
-            ## Instantiates a new educationSubmissionIndividualRecipient and sets the default values.
+            ## Instantiates a new EducationSubmissionIndividualRecipient and sets the default values.
             ## @return a void
             ## 
             def initialize()

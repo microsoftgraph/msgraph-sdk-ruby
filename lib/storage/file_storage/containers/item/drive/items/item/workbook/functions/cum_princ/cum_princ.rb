@@ -1,0 +1,1 @@
+require_relative 'cum_princ_post_request_body'

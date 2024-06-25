@@ -47,7 +47,7 @@ module MicrosoftGraph
                 @attempts_count = value
             end
             ## 
-            ## Instantiates a new teamsAsyncOperation and sets the default values.
+            ## Instantiates a new TeamsAsyncOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

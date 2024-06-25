@@ -1,0 +1,1 @@
+require_relative 'gamma_dist_post_request_body'

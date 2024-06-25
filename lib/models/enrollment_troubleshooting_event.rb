@@ -33,7 +33,7 @@ module MicrosoftGraph
             # Identifier for the user that tried to enroll the device.
             @user_id
             ## 
-            ## Instantiates a new enrollmentTroubleshootingEvent and sets the default values.
+            ## Instantiates a new EnrollmentTroubleshootingEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

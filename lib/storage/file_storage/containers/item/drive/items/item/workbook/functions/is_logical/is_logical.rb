@@ -1,0 +1,1 @@
+require_relative 'is_logical_post_request_body'

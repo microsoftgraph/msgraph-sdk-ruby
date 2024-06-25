@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,28 +22,22 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The lowerLimit property
-                                    @lower_limit
-                                    ## 
-                                    # The upperLimit property
-                                    @upper_limit
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new erfPostRequestBody and sets the default values.
+                                    ## Instantiates a new ErfPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -65,24 +58,7 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "lowerLimit" => lambda {|n| @lower_limit = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "upperLimit" => lambda {|n| @upper_limit = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
-                                    end
-                                    ## 
-                                    ## Gets the lowerLimit property value. The lowerLimit property
-                                    ## @return a json
-                                    ## 
-                                    def lower_limit
-                                        return @lower_limit
-                                    end
-                                    ## 
-                                    ## Sets the lowerLimit property value. The lowerLimit property
-                                    ## @param value Value to set for the lowerLimit property.
-                                    ## @return a void
-                                    ## 
-                                    def lower_limit=(value)
-                                        @lower_limit = value
                                     end
                                     ## 
                                     ## Serializes information the current object
@@ -91,24 +67,7 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("lowerLimit", @lower_limit)
-                                        writer.write_object_value("upperLimit", @upper_limit)
                                         writer.write_additional_data(@additional_data)
-                                    end
-                                    ## 
-                                    ## Gets the upperLimit property value. The upperLimit property
-                                    ## @return a json
-                                    ## 
-                                    def upper_limit
-                                        return @upper_limit
-                                    end
-                                    ## 
-                                    ## Sets the upperLimit property value. The upperLimit property
-                                    ## @param value Value to set for the upperLimit property.
-                                    ## @return a void
-                                    ## 
-                                    def upper_limit=(value)
-                                        @upper_limit = value
                                     end
                                 end
                             end

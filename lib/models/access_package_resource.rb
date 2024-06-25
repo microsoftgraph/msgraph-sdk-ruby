@@ -8,6 +8,9 @@ module MicrosoftGraph
         class AccessPackageResource < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Contains information about the attributes to be collected from the requestor and sent to the resource application.
+            @attributes
+            ## 
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @created_date_time
             ## 
@@ -23,7 +26,7 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @modified_date_time
             ## 
-            # The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            # The unique identifier of the resource in the origin system. For a Microsoft Entra group, this is the identifier of the group.
             @origin_id
             ## 
             # The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
@@ -35,7 +38,22 @@ module MicrosoftGraph
             # Read-only. Nullable. Supports $expand.
             @scopes
             ## 
-            ## Instantiates a new accessPackageResource and sets the default values.
+            ## Gets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.
+            ## @return a access_package_resource_attribute
+            ## 
+            def attributes
+                return @attributes
+            end
+            ## 
+            ## Sets the attributes property value. Contains information about the attributes to be collected from the requestor and sent to the resource application.
+            ## @param value Value to set for the attributes property.
+            ## @return a void
+            ## 
+            def attributes=(value)
+                @attributes = value
+            end
+            ## 
+            ## Instantiates a new AccessPackageResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -116,6 +134,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "attributes" => lambda {|n| @attributes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResourceAttribute.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
@@ -143,14 +162,14 @@ module MicrosoftGraph
                 @modified_date_time = value
             end
             ## 
-            ## Gets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            ## Gets the originId property value. The unique identifier of the resource in the origin system. For a Microsoft Entra group, this is the identifier of the group.
             ## @return a string
             ## 
             def origin_id
                 return @origin_id
             end
             ## 
-            ## Sets the originId property value. The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+            ## Sets the originId property value. The unique identifier of the resource in the origin system. For a Microsoft Entra group, this is the identifier of the group.
             ## @param value Value to set for the originId property.
             ## @return a void
             ## 
@@ -210,6 +229,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_collection_of_object_values("attributes", @attributes)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)

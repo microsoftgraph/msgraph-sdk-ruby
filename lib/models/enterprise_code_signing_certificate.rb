@@ -32,7 +32,7 @@ module MicrosoftGraph
             # The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
             @upload_date_time
             ## 
-            ## Instantiates a new enterpriseCodeSigningCertificate and sets the default values.
+            ## Instantiates a new EnterpriseCodeSigningCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()

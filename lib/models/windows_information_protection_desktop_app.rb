@@ -63,7 +63,7 @@ module MicrosoftGraph
                 @binary_version_low = value
             end
             ## 
-            ## Instantiates a new windowsInformationProtectionDesktopApp and sets the default values.
+            ## Instantiates a new WindowsInformationProtectionDesktopApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

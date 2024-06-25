@@ -16,10 +16,10 @@ module MicrosoftGraph
             # Represents the title text of a chart.
             @text
             ## 
-            # A boolean value the represents the visibility of a chart title object.
+            # A boolean value that represents the visibility of a chart title object.
             @visible
             ## 
-            ## Instantiates a new workbookChartTitle and sets the default values.
+            ## Instantiates a new WorkbookChartTitle and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -105,14 +105,14 @@ module MicrosoftGraph
                 @text = value
             end
             ## 
-            ## Gets the visible property value. A boolean value the represents the visibility of a chart title object.
+            ## Gets the visible property value. A boolean value that represents the visibility of a chart title object.
             ## @return a boolean
             ## 
             def visible
                 return @visible
             end
             ## 
-            ## Sets the visible property value. A boolean value the represents the visibility of a chart title object.
+            ## Sets the visible property value. A boolean value that represents the visibility of a chart title object.
             ## @param value Value to set for the visible property.
             ## @return a void
             ## 

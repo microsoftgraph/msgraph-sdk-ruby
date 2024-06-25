@@ -13,7 +13,7 @@ module MicrosoftGraph
             # List of members deleted.
             @members
             ## 
-            ## Instantiates a new membersDeletedEventMessageDetail and sets the default values.
+            ## Instantiates a new MembersDeletedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

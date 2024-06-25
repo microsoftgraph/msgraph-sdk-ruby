@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.
             @authentication_mode_configuration
             ## 
-            # Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
+            # Defines fields in the X.509 certificate that map to attributes of the Microsoft Entra user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
             @certificate_user_bindings
             ## 
             # A collection of groups that are enabled to use the authentication method.
@@ -31,14 +31,14 @@ module MicrosoftGraph
                 @authentication_mode_configuration = value
             end
             ## 
-            ## Gets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
+            ## Gets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Microsoft Entra user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
             ## @return a x509_certificate_user_binding
             ## 
             def certificate_user_bindings
                 return @certificate_user_bindings
             end
             ## 
-            ## Sets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
+            ## Sets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Microsoft Entra user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
             ## @param value Value to set for the certificateUserBindings property.
             ## @return a void
             ## 
@@ -46,7 +46,7 @@ module MicrosoftGraph
                 @certificate_user_bindings = value
             end
             ## 
-            ## Instantiates a new x509CertificateAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new X509CertificateAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

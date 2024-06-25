@@ -1,0 +1,1 @@
+require_relative 'chi_sq_inv_post_request_body'

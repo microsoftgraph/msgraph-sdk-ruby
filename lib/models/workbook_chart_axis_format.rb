@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Represents chart line formatting. Read-only.
             @line
             ## 
-            ## Instantiates a new workbookChartAxisFormat and sets the default values.
+            ## Instantiates a new WorkbookChartAxisFormat and sets the default values.
             ## @return a void
             ## 
             def initialize()

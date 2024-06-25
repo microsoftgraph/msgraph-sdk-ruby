@@ -11,7 +11,7 @@ module MicrosoftGraph
             # Date and time when this object was deleted. Always null when the object hasn't been deleted.
             @deleted_date_time
             ## 
-            ## Instantiates a new directoryObject and sets the default values.
+            ## Instantiates a new DirectoryObject and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -66,6 +66,8 @@ module MicrosoftGraph
                             return HomeRealmDiscoveryPolicy.new
                         when "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy"
                             return IdentitySecurityDefaultsEnforcementPolicy.new
+                        when "#microsoft.graph.multiTenantOrganizationMember"
+                            return MultiTenantOrganizationMember.new
                         when "#microsoft.graph.organization"
                             return Organization.new
                         when "#microsoft.graph.orgContact"

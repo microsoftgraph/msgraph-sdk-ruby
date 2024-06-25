@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,43 +22,22 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The averageRange property
-                                    @average_range
-                                    ## 
-                                    # The values property
-                                    @values
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Gets the averageRange property value. The averageRange property
-                                    ## @return a json
-                                    ## 
-                                    def average_range
-                                        return @average_range
-                                    end
-                                    ## 
-                                    ## Sets the averageRange property value. The averageRange property
-                                    ## @param value Value to set for the averageRange property.
-                                    ## @return a void
-                                    ## 
-                                    def average_range=(value)
-                                        @average_range = value
-                                    end
-                                    ## 
-                                    ## Instantiates a new averageIfsPostRequestBody and sets the default values.
+                                    ## Instantiates a new AverageIfsPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -80,8 +58,6 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "averageRange" => lambda {|n| @average_range = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "values" => lambda {|n| @values = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
                                     end
                                     ## 
@@ -91,24 +67,7 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("averageRange", @average_range)
-                                        writer.write_object_value("values", @values)
                                         writer.write_additional_data(@additional_data)
-                                    end
-                                    ## 
-                                    ## Gets the values property value. The values property
-                                    ## @return a json
-                                    ## 
-                                    def values
-                                        return @values
-                                    end
-                                    ## 
-                                    ## Sets the values property value. The values property
-                                    ## @param value Value to set for the values property.
-                                    ## @return a void
-                                    ## 
-                                    def values=(value)
-                                        @values = value
                                     end
                                 end
                             end

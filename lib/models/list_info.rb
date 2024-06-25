@@ -13,7 +13,7 @@ module MicrosoftGraph
             # If true, indicates that content types are enabled for this list.
             @content_types_enabled
             ## 
-            # If true, indicates that the list is not normally visible in the SharePoint user experience.
+            # If true, indicates that the list isn't normally visible in the SharePoint user experience.
             @hidden
             ## 
             # The OdataType property
@@ -22,22 +22,22 @@ module MicrosoftGraph
             # An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
             @template
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new listInfo and sets the default values.
+            ## Instantiates a new ListInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -80,14 +80,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the hidden property value. If true, indicates that the list is not normally visible in the SharePoint user experience.
+            ## Gets the hidden property value. If true, indicates that the list isn't normally visible in the SharePoint user experience.
             ## @return a boolean
             ## 
             def hidden
                 return @hidden
             end
             ## 
-            ## Sets the hidden property value. If true, indicates that the list is not normally visible in the SharePoint user experience.
+            ## Sets the hidden property value. If true, indicates that the list isn't normally visible in the SharePoint user experience.
             ## @param value Value to set for the hidden property.
             ## @return a void
             ## 

@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @applies_to_combinations = value
             end
             ## 
-            ## Instantiates a new authenticationCombinationConfiguration and sets the default values.
+            ## Instantiates a new AuthenticationCombinationConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,6 +44,8 @@ module MicrosoftGraph
                     case mapping_value
                         when "#microsoft.graph.fido2CombinationConfiguration"
                             return Fido2CombinationConfiguration.new
+                        when "#microsoft.graph.x509CertificateCombinationConfiguration"
+                            return X509CertificateCombinationConfiguration.new
                     end
                 end
                 return AuthenticationCombinationConfiguration.new

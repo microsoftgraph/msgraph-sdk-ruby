@@ -20,7 +20,7 @@ module MicrosoftGraph
             # When this instance starts.
             @start_date_time
             ## 
-            ## Instantiates a new unifiedRoleEligibilityScheduleInstance and sets the default values.
+            ## Instantiates a new UnifiedRoleEligibilityScheduleInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()

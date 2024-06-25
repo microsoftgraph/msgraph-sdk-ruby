@@ -10,13 +10,13 @@ module MicrosoftGraph
             # Represents the bold status of font.
             @bold
             ## 
-            # HTML color code representation of the text color. E.g. #FF0000 represents Red.
+            # HTML color code representation of the text color. for example #FF0000 represents Red.
             @color
             ## 
             # Represents the italic status of the font.
             @italic
             ## 
-            # Font name (e.g. 'Calibri')
+            # Font name (for example 'Calibri')
             @name
             ## 
             # Font size.
@@ -40,14 +40,14 @@ module MicrosoftGraph
                 @bold = value
             end
             ## 
-            ## Gets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
+            ## Gets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
             ## @return a string
             ## 
             def color
                 return @color
             end
             ## 
-            ## Sets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
+            ## Sets the color property value. HTML color code representation of the text color. for example #FF0000 represents Red.
             ## @param value Value to set for the color property.
             ## @return a void
             ## 
@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @color = value
             end
             ## 
-            ## Instantiates a new workbookRangeFont and sets the default values.
+            ## Instantiates a new WorkbookRangeFont and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -100,14 +100,14 @@ module MicrosoftGraph
                 @italic = value
             end
             ## 
-            ## Gets the name property value. Font name (e.g. 'Calibri')
+            ## Gets the name property value. Font name (for example 'Calibri')
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. Font name (e.g. 'Calibri')
+            ## Sets the name property value. Font name (for example 'Calibri')
             ## @param value Value to set for the name property.
             ## @return a void
             ## 

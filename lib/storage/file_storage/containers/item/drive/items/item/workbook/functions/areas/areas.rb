@@ -1,0 +1,1 @@
+require_relative 'areas_post_request_body'

@@ -4,6 +4,7 @@ module MicrosoftGraph
             IssuerSubject: :IssuerSubject,
             PolicyOID: :PolicyOID,
             UnknownFutureValue: :UnknownFutureValue,
+            IssuerSubjectAndPolicyOID: :IssuerSubjectAndPolicyOID,
         }
     end
 end

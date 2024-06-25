@@ -7,7 +7,7 @@ module MicrosoftGraph
         class UnmuteParticipantOperation < MicrosoftGraph::Models::CommsOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new unmuteParticipantOperation and sets the default values.
+            ## Instantiates a new UnmuteParticipantOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

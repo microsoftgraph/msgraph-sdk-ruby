@@ -10,10 +10,7 @@ module MicrosoftGraph
             # Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.
             @index
             ## 
-            # Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-            @values
-            ## 
-            ## Instantiates a new workbookTableRow and sets the default values.
+            ## Instantiates a new WorkbookTableRow and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,7 +32,6 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "index" => lambda {|n| @index = n.get_number_value() },
-                    "values" => lambda {|n| @values = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -62,22 +58,6 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_number_value("index", @index)
-                writer.write_object_value("values", @values)
-            end
-            ## 
-            ## Gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-            ## @return a json
-            ## 
-            def values
-                return @values
-            end
-            ## 
-            ## Sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-            ## @param value Value to set for the values property.
-            ## @return a void
-            ## 
-            def values=(value)
-                @values = value
             end
         end
     end

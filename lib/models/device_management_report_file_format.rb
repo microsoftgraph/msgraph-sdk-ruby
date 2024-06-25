@@ -1,7 +1,7 @@
 module MicrosoftGraph
     module Models
         ## 
-        # Possible values for the file format of a report
+        # Possible values for the file format of a report.
         DeviceManagementReportFileFormat = {
             Csv: :Csv,
             Pdf: :Pdf,

@@ -1,0 +1,1 @@
+require_relative 'bin2_oct_post_request_body'

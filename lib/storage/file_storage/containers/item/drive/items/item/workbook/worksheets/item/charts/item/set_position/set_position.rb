@@ -1,0 +1,1 @@
+require_relative 'set_position_post_request_body'

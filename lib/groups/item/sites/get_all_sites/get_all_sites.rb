@@ -1,1 +1,1 @@
-require_relative 'get_all_sites_response'
+require_relative 'get_all_sites_get_response'

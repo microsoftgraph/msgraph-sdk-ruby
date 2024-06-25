@@ -7,7 +7,7 @@ module MicrosoftGraph
         class WorkbookChartFill < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new workbookChartFill and sets the default values.
+            ## Instantiates a new WorkbookChartFill and sets the default values.
             ## @return a void
             ## 
             def initialize()

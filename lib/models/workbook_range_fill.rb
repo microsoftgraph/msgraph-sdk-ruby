@@ -7,17 +7,17 @@ module MicrosoftGraph
         class WorkbookRangeFill < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange')
+            # HTML color code representing the color of the border line, of the form #RRGGBB (for example 'FFA500') or as a named HTML color (for example 'orange')
             @color
             ## 
-            ## Gets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange')
+            ## Gets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (for example 'FFA500') or as a named HTML color (for example 'orange')
             ## @return a string
             ## 
             def color
                 return @color
             end
             ## 
-            ## Sets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange')
+            ## Sets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (for example 'FFA500') or as a named HTML color (for example 'orange')
             ## @param value Value to set for the color property.
             ## @return a void
             ## 
@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @color = value
             end
             ## 
-            ## Instantiates a new workbookRangeFill and sets the default values.
+            ## Instantiates a new WorkbookRangeFill and sets the default values.
             ## @return a void
             ## 
             def initialize()

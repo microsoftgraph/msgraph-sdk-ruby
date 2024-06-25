@@ -13,10 +13,10 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The user object identifier in Azure Active Directory (Azure AD).
+            # The user object identifier in Microsoft Entra ID.
             @azure_ad_user_id
             ## 
-            # The user display name in Azure AD.
+            # The user display name in Microsoft Entra ID.
             @display_name
             ## 
             # The name of the Active Directory domain of which the user is a member.
@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The user principal name of the account in Azure AD.
+            # The user principal name of the account in Microsoft Entra ID.
             @user_principal_name
             ## 
             # The local security identifier of the user account.
@@ -46,29 +46,29 @@ module MicrosoftGraph
                 @account_name = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the azureAdUserId property value. The user object identifier in Azure Active Directory (Azure AD).
+            ## Gets the azureAdUserId property value. The user object identifier in Microsoft Entra ID.
             ## @return a string
             ## 
             def azure_ad_user_id
                 return @azure_ad_user_id
             end
             ## 
-            ## Sets the azureAdUserId property value. The user object identifier in Azure Active Directory (Azure AD).
+            ## Sets the azureAdUserId property value. The user object identifier in Microsoft Entra ID.
             ## @param value Value to set for the azureAdUserId property.
             ## @return a void
             ## 
@@ -76,7 +76,7 @@ module MicrosoftGraph
                 @azure_ad_user_id = value
             end
             ## 
-            ## Instantiates a new securityUserAccount and sets the default values.
+            ## Instantiates a new SecurityUserAccount and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -92,14 +92,14 @@ module MicrosoftGraph
                 return SecurityUserAccount.new
             end
             ## 
-            ## Gets the displayName property value. The user display name in Azure AD.
+            ## Gets the displayName property value. The user display name in Microsoft Entra ID.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The user display name in Azure AD.
+            ## Sets the displayName property value. The user display name in Microsoft Entra ID.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -168,14 +168,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the userPrincipalName property value. The user principal name of the account in Azure AD.
+            ## Gets the userPrincipalName property value. The user principal name of the account in Microsoft Entra ID.
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. The user principal name of the account in Azure AD.
+            ## Sets the userPrincipalName property value. The user principal name of the account in Microsoft Entra ID.
             ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 

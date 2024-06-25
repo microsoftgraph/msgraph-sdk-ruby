@@ -50,7 +50,7 @@ module MicrosoftGraph
                 @configuration = value
             end
             ## 
-            ## Instantiates a new printJob and sets the default values.
+            ## Instantiates a new PrintJob and sets the default values.
             ## @return a void
             ## 
             def initialize()

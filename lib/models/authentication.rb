@@ -22,13 +22,13 @@ module MicrosoftGraph
             # Represents the status of a long-running operation.
             @operations
             ## 
-            # Represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
+            # Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.
             @password_methods
             ## 
             # The phone numbers registered to a user for authentication.
             @phone_methods
             ## 
-            # The software OATH TOTP applications registered to a user for authentication.
+            # The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
             @software_oath_methods
             ## 
             # Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
@@ -37,7 +37,7 @@ module MicrosoftGraph
             # Represents the Windows Hello for Business authentication method registered to a user for authentication.
             @windows_hello_for_business_methods
             ## 
-            ## Instantiates a new authentication and sets the default values.
+            ## Instantiates a new Authentication and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -146,14 +146,14 @@ module MicrosoftGraph
                 @operations = value
             end
             ## 
-            ## Gets the passwordMethods property value. Represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
+            ## Gets the passwordMethods property value. Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.
             ## @return a password_authentication_method
             ## 
             def password_methods
                 return @password_methods
             end
             ## 
-            ## Sets the passwordMethods property value. Represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
+            ## Sets the passwordMethods property value. Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.
             ## @param value Value to set for the passwordMethods property.
             ## @return a void
             ## 
@@ -195,14 +195,14 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("windowsHelloForBusinessMethods", @windows_hello_for_business_methods)
             end
             ## 
-            ## Gets the softwareOathMethods property value. The software OATH TOTP applications registered to a user for authentication.
+            ## Gets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
             ## @return a software_oath_authentication_method
             ## 
             def software_oath_methods
                 return @software_oath_methods
             end
             ## 
-            ## Sets the softwareOathMethods property value. The software OATH TOTP applications registered to a user for authentication.
+            ## Sets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
             ## @param value Value to set for the softwareOathMethods property.
             ## @return a void
             ## 

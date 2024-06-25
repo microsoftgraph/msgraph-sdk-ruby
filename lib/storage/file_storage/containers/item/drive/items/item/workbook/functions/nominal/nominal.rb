@@ -1,0 +1,1 @@
+require_relative 'nominal_post_request_body'

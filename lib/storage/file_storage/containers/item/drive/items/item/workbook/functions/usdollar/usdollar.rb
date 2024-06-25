@@ -1,0 +1,1 @@
+require_relative 'usdollar_post_request_body'

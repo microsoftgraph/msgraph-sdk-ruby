@@ -22,6 +22,9 @@ module MicrosoftGraph
             # The identifier of the SaaS application.
             @saas_app_id
             ## 
+            # The stream property
+            @stream
+            ## 
             ## Gets the appId property value. Unique identifier of the application.
             ## @return a int64
             ## 
@@ -37,7 +40,7 @@ module MicrosoftGraph
                 @app_id = value
             end
             ## 
-            ## Instantiates a new securityCloudApplicationEvidence and sets the default values.
+            ## Instantiates a new SecurityCloudApplicationEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -79,6 +82,7 @@ module MicrosoftGraph
                     "instanceId" => lambda {|n| @instance_id = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "instanceName" => lambda {|n| @instance_name = n.get_string_value() },
                     "saasAppId" => lambda {|n| @saas_app_id = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                    "stream" => lambda {|n| @stream = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityStream.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -139,6 +143,22 @@ module MicrosoftGraph
                 writer.write_object_value("instanceId", @instance_id)
                 writer.write_string_value("instanceName", @instance_name)
                 writer.write_object_value("saasAppId", @saas_app_id)
+                writer.write_object_value("stream", @stream)
+            end
+            ## 
+            ## Gets the stream property value. The stream property
+            ## @return a security_stream
+            ## 
+            def stream
+                return @stream
+            end
+            ## 
+            ## Sets the stream property value. The stream property
+            ## @param value Value to set for the stream property.
+            ## @return a void
+            ## 
+            def stream=(value)
+                @stream = value
             end
         end
     end

@@ -58,7 +58,7 @@ module MicrosoftGraph
                 @assignments = value
             end
             ## 
-            ## Instantiates a new managedDeviceMobileAppConfiguration and sets the default values.
+            ## Instantiates a new ManagedDeviceMobileAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

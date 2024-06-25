@@ -1,0 +1,1 @@
+require_relative 'bitor_post_request_body'

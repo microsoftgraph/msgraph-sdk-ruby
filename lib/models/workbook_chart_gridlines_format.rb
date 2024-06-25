@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Represents chart line formatting. Read-only.
             @line
             ## 
-            ## Instantiates a new workbookChartGridlinesFormat and sets the default values.
+            ## Instantiates a new WorkbookChartGridlinesFormat and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.
             @used
             ## 
-            ## Instantiates a new officeGraphInsights and sets the default values.
+            ## Instantiates a new OfficeGraphInsights and sets the default values.
             ## @return a void
             ## 
             def initialize()

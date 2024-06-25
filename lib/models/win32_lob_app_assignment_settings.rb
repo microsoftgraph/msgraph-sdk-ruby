@@ -21,7 +21,7 @@ module MicrosoftGraph
             # The reboot settings to apply for this app assignment.
             @restart_settings
             ## 
-            ## Instantiates a new win32LobAppAssignmentSettings and sets the default values.
+            ## Instantiates a new Win32LobAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraph
         class UserFlowLanguagePage < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new userFlowLanguagePage and sets the default values.
+            ## Instantiates a new UserFlowLanguagePage and sets the default values.
             ## @return a void
             ## 
             def initialize()

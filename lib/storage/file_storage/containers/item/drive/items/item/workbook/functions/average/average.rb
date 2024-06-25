@@ -1,0 +1,1 @@
+require_relative 'average_post_request_body'
