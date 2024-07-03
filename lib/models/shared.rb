@@ -17,7 +17,7 @@ module MicrosoftGraph
             # The identity of the owner of the shared item. Read-only.
             @owner
             ## 
-            # Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
+            # Indicates the scope of how the item is shared. The possible values are: anonymous, organization, or users. Read-only.
             @scope
             ## 
             # The identity of the user who shared the item. Read-only.
@@ -26,22 +26,22 @@ module MicrosoftGraph
             # The UTC date and time when the item was shared. Read-only.
             @shared_date_time
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new shared and sets the default values.
+            ## Instantiates a new Shared and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -100,14 +100,14 @@ module MicrosoftGraph
                 @owner = value
             end
             ## 
-            ## Gets the scope property value. Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
+            ## Gets the scope property value. Indicates the scope of how the item is shared. The possible values are: anonymous, organization, or users. Read-only.
             ## @return a string
             ## 
             def scope
                 return @scope
             end
             ## 
-            ## Sets the scope property value. Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
+            ## Sets the scope property value. Indicates the scope of how the item is shared. The possible values are: anonymous, organization, or users. Read-only.
             ## @param value Value to set for the scope property.
             ## @return a void
             ## 

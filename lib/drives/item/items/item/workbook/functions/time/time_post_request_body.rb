@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,31 +22,22 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The hour property
-                                    @hour
-                                    ## 
-                                    # The minute property
-                                    @minute
-                                    ## 
-                                    # The second property
-                                    @second
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new timePostRequestBody and sets the default values.
+                                    ## Instantiates a new TimePostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -68,55 +58,7 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "hour" => lambda {|n| @hour = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "minute" => lambda {|n| @minute = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "second" => lambda {|n| @second = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
-                                    end
-                                    ## 
-                                    ## Gets the hour property value. The hour property
-                                    ## @return a json
-                                    ## 
-                                    def hour
-                                        return @hour
-                                    end
-                                    ## 
-                                    ## Sets the hour property value. The hour property
-                                    ## @param value Value to set for the hour property.
-                                    ## @return a void
-                                    ## 
-                                    def hour=(value)
-                                        @hour = value
-                                    end
-                                    ## 
-                                    ## Gets the minute property value. The minute property
-                                    ## @return a json
-                                    ## 
-                                    def minute
-                                        return @minute
-                                    end
-                                    ## 
-                                    ## Sets the minute property value. The minute property
-                                    ## @param value Value to set for the minute property.
-                                    ## @return a void
-                                    ## 
-                                    def minute=(value)
-                                        @minute = value
-                                    end
-                                    ## 
-                                    ## Gets the second property value. The second property
-                                    ## @return a json
-                                    ## 
-                                    def second
-                                        return @second
-                                    end
-                                    ## 
-                                    ## Sets the second property value. The second property
-                                    ## @param value Value to set for the second property.
-                                    ## @return a void
-                                    ## 
-                                    def second=(value)
-                                        @second = value
                                     end
                                     ## 
                                     ## Serializes information the current object
@@ -125,9 +67,6 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("hour", @hour)
-                                        writer.write_object_value("minute", @minute)
-                                        writer.write_object_value("second", @second)
                                         writer.write_additional_data(@additional_data)
                                     end
                                 end

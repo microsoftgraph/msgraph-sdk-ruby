@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @certificate_authorities = value
             end
             ## 
-            ## Instantiates a new certificateBasedAuthConfiguration and sets the default values.
+            ## Instantiates a new CertificateBasedAuthConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

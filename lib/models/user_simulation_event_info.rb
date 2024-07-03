@@ -29,15 +29,15 @@ module MicrosoftGraph
             # The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
             @os_platform_device_details
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph
                 @browser = value
             end
             ## 
-            ## Instantiates a new userSimulationEventInfo and sets the default values.
+            ## Instantiates a new UserSimulationEventInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
