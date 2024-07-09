@@ -1,0 +1,1 @@
+require_relative 'multi_nomial_post_request_body'

@@ -1,7 +1,7 @@
 module MicrosoftGraph
     module Models
         ## 
-        # Possible statuses associated with a generated report
+        # Possible statuses associated with a generated report.
         DeviceManagementReportStatus = {
             Unknown: :Unknown,
             NotStarted: :NotStarted,

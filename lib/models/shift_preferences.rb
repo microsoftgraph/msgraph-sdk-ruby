@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @availability = value
             end
             ## 
-            ## Instantiates a new shiftPreferences and sets the default values.
+            ## Instantiates a new ShiftPreferences and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -46,7 +46,7 @@ module MicrosoftGraph
                 @client_secret = value
             end
             ## 
-            ## Instantiates a new socialIdentityProvider and sets the default values.
+            ## Instantiates a new SocialIdentityProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()
