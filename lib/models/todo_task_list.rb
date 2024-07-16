@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The wellknownListName property
             @wellknown_list_name
             ## 
-            ## Instantiates a new todoTaskList and sets the default values.
+            ## Instantiates a new TodoTaskList and sets the default values.
             ## @return a void
             ## 
             def initialize()

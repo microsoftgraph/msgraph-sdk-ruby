@@ -3,6 +3,7 @@ module MicrosoftGraph
         DelegatedAdminRelationshipOperationType = {
             DelegatedAdminAccessAssignmentUpdate: :DelegatedAdminAccessAssignmentUpdate,
             UnknownFutureValue: :UnknownFutureValue,
+            DelegatedAdminRelationshipUpdate: :DelegatedAdminRelationshipUpdate,
         }
     end
 end

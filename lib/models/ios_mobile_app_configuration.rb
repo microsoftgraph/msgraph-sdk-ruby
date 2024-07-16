@@ -15,7 +15,7 @@ module MicrosoftGraph
             # app configuration setting items.
             @settings
             ## 
-            ## Instantiates a new iosMobileAppConfiguration and sets the default values.
+            ## Instantiates a new IosMobileAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

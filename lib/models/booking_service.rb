@@ -87,7 +87,7 @@ module MicrosoftGraph
                 @additional_information = value
             end
             ## 
-            ## Instantiates a new bookingService and sets the default values.
+            ## Instantiates a new BookingService and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,0 +1,1 @@
+require_relative 'amor_degrc_post_request_body'

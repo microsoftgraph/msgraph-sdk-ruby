@@ -1,6 +1,7 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
+require_relative '../../../../../models/drive_recipient'
 require_relative '../../../../drives'
 require_relative '../../../item'
 require_relative '../../items'
@@ -28,31 +29,37 @@ module MicrosoftGraph
                             # The password property
                             @password
                             ## 
+                            # The recipients property
+                            @recipients
+                            ## 
                             # The retainInheritedPermissions property
                             @retain_inherited_permissions
                             ## 
                             # The scope property
                             @scope
                             ## 
+                            # The sendNotification property
+                            @send_notification
+                            ## 
                             # The type property
                             @type
                             ## 
-                            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                             ## @return a i_dictionary
                             ## 
                             def additional_data
                                 return @additional_data
                             end
                             ## 
-                            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                            ## @param value Value to set for the additionalData property.
+                            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            ## @param value Value to set for the AdditionalData property.
                             ## @return a void
                             ## 
                             def additional_data=(value)
                                 @additional_data = value
                             end
                             ## 
-                            ## Instantiates a new createLinkPostRequestBody and sets the default values.
+                            ## Instantiates a new CreateLinkPostRequestBody and sets the default values.
                             ## @return a void
                             ## 
                             def initialize()
@@ -91,8 +98,10 @@ module MicrosoftGraph
                                     "expirationDateTime" => lambda {|n| @expiration_date_time = n.get_date_time_value() },
                                     "message" => lambda {|n| @message = n.get_string_value() },
                                     "password" => lambda {|n| @password = n.get_string_value() },
+                                    "recipients" => lambda {|n| @recipients = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DriveRecipient.create_from_discriminator_value(pn) }) },
                                     "retainInheritedPermissions" => lambda {|n| @retain_inherited_permissions = n.get_boolean_value() },
                                     "scope" => lambda {|n| @scope = n.get_string_value() },
+                                    "sendNotification" => lambda {|n| @send_notification = n.get_boolean_value() },
                                     "type" => lambda {|n| @type = n.get_string_value() },
                                 }
                             end
@@ -127,6 +136,21 @@ module MicrosoftGraph
                                 @password = value
                             end
                             ## 
+                            ## Gets the recipients property value. The recipients property
+                            ## @return a drive_recipient
+                            ## 
+                            def recipients
+                                return @recipients
+                            end
+                            ## 
+                            ## Sets the recipients property value. The recipients property
+                            ## @param value Value to set for the recipients property.
+                            ## @return a void
+                            ## 
+                            def recipients=(value)
+                                @recipients = value
+                            end
+                            ## 
                             ## Gets the retainInheritedPermissions property value. The retainInheritedPermissions property
                             ## @return a boolean
                             ## 
@@ -157,6 +181,21 @@ module MicrosoftGraph
                                 @scope = value
                             end
                             ## 
+                            ## Gets the sendNotification property value. The sendNotification property
+                            ## @return a boolean
+                            ## 
+                            def send_notification
+                                return @send_notification
+                            end
+                            ## 
+                            ## Sets the sendNotification property value. The sendNotification property
+                            ## @param value Value to set for the sendNotification property.
+                            ## @return a void
+                            ## 
+                            def send_notification=(value)
+                                @send_notification = value
+                            end
+                            ## 
                             ## Serializes information the current object
                             ## @param writer Serialization writer to use to serialize this model
                             ## @return a void
@@ -166,8 +205,10 @@ module MicrosoftGraph
                                 writer.write_date_time_value("expirationDateTime", @expiration_date_time)
                                 writer.write_string_value("message", @message)
                                 writer.write_string_value("password", @password)
+                                writer.write_collection_of_object_values("recipients", @recipients)
                                 writer.write_boolean_value("retainInheritedPermissions", @retain_inherited_permissions)
                                 writer.write_string_value("scope", @scope)
+                                writer.write_boolean_value("sendNotification", @send_notification)
                                 writer.write_string_value("type", @type)
                                 writer.write_additional_data(@additional_data)
                             end
