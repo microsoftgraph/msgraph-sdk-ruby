@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
@@ -12,6 +13,9 @@ module MicrosoftGraph
             # True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
             @availability_is_affected_by_personal_calendar
             ## 
+            # The createdDateTime property
+            @created_date_time
+            ## 
             # The name of the staff member, as displayed to customers. Required.
             @display_name
             ## 
@@ -20,6 +24,12 @@ module MicrosoftGraph
             ## 
             # True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
             @is_email_notification_enabled
+            ## 
+            # The lastUpdatedDateTime property
+            @last_updated_date_time
+            ## 
+            # The membershipStatus property
+            @membership_status
             ## 
             # The role property
             @role
@@ -48,12 +58,27 @@ module MicrosoftGraph
                 @availability_is_affected_by_personal_calendar = value
             end
             ## 
-            ## Instantiates a new bookingStaffMember and sets the default values.
+            ## Instantiates a new BookingStaffMember and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
                 @odata_type = "#microsoft.graph.bookingStaffMember"
+            end
+            ## 
+            ## Gets the createdDateTime property value. The createdDateTime property
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The createdDateTime property
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -101,9 +126,12 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "availabilityIsAffectedByPersonalCalendar" => lambda {|n| @availability_is_affected_by_personal_calendar = n.get_boolean_value() },
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "emailAddress" => lambda {|n| @email_address = n.get_string_value() },
                     "isEmailNotificationEnabled" => lambda {|n| @is_email_notification_enabled = n.get_boolean_value() },
+                    "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
+                    "membershipStatus" => lambda {|n| @membership_status = n.get_enum_value(MicrosoftGraph::Models::BookingStaffMembershipStatus) },
                     "role" => lambda {|n| @role = n.get_enum_value(MicrosoftGraph::Models::BookingStaffRole) },
                     "timeZone" => lambda {|n| @time_zone = n.get_string_value() },
                     "useBusinessHours" => lambda {|n| @use_business_hours = n.get_boolean_value() },
@@ -124,6 +152,36 @@ module MicrosoftGraph
             ## 
             def is_email_notification_enabled=(value)
                 @is_email_notification_enabled = value
+            end
+            ## 
+            ## Gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+            ## @return a date_time
+            ## 
+            def last_updated_date_time
+                return @last_updated_date_time
+            end
+            ## 
+            ## Sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+            ## @param value Value to set for the lastUpdatedDateTime property.
+            ## @return a void
+            ## 
+            def last_updated_date_time=(value)
+                @last_updated_date_time = value
+            end
+            ## 
+            ## Gets the membershipStatus property value. The membershipStatus property
+            ## @return a booking_staff_membership_status
+            ## 
+            def membership_status
+                return @membership_status
+            end
+            ## 
+            ## Sets the membershipStatus property value. The membershipStatus property
+            ## @param value Value to set for the membershipStatus property.
+            ## @return a void
+            ## 
+            def membership_status=(value)
+                @membership_status = value
             end
             ## 
             ## Gets the role property value. The role property
@@ -149,9 +207,12 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_boolean_value("availabilityIsAffectedByPersonalCalendar", @availability_is_affected_by_personal_calendar)
+                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("emailAddress", @email_address)
                 writer.write_boolean_value("isEmailNotificationEnabled", @is_email_notification_enabled)
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
+                writer.write_enum_value("membershipStatus", @membership_status)
                 writer.write_enum_value("role", @role)
                 writer.write_string_value("timeZone", @time_zone)
                 writer.write_boolean_value("useBusinessHours", @use_business_hours)

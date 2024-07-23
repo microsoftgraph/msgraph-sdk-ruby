@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.
             @max_attributes_per_set
             ## 
-            ## Instantiates a new attributeSet and sets the default values.
+            ## Instantiates a new AttributeSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

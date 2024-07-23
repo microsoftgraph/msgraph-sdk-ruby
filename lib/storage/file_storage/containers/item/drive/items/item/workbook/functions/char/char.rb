@@ -1,0 +1,1 @@
+require_relative 'char_post_request_body'
