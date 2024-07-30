@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
@@ -5,7 +6,7 @@ require_relative './models'
 module MicrosoftGraph
     module Models
         ## 
-        # Represents a Microsot Bookings Business.
+        # Represents a Microsoft Bookings Business.
         class BookingBusiness < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -15,6 +16,9 @@ module MicrosoftGraph
             # All the appointments of this business. Read-only. Nullable.
             @appointments
             ## 
+            # The bookingPageSettings property
+            @booking_page_settings
+            ## 
             # The hours of operation for the business.
             @business_hours
             ## 
@@ -23,6 +27,9 @@ module MicrosoftGraph
             ## 
             # The set of appointments of this business in a specified date range. Read-only. Nullable.
             @calendar_view
+            ## 
+            # The createdDateTime property
+            @created_date_time
             ## 
             # All the custom questions of this business. Read-only. Nullable.
             @custom_questions
@@ -44,6 +51,9 @@ module MicrosoftGraph
             ## 
             # The language of the self-service booking page.
             @language_tag
+            ## 
+            # The lastUpdatedDateTime property
+            @last_updated_date_time
             ## 
             # The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
             @phone
@@ -93,6 +103,21 @@ module MicrosoftGraph
                 @appointments = value
             end
             ## 
+            ## Gets the bookingPageSettings property value. The bookingPageSettings property
+            ## @return a booking_page_settings
+            ## 
+            def booking_page_settings
+                return @booking_page_settings
+            end
+            ## 
+            ## Sets the bookingPageSettings property value. The bookingPageSettings property
+            ## @param value Value to set for the bookingPageSettings property.
+            ## @return a void
+            ## 
+            def booking_page_settings=(value)
+                @booking_page_settings = value
+            end
+            ## 
             ## Gets the businessHours property value. The hours of operation for the business.
             ## @return a booking_work_hours
             ## 
@@ -138,11 +163,26 @@ module MicrosoftGraph
                 @calendar_view = value
             end
             ## 
-            ## Instantiates a new bookingBusiness and sets the default values.
+            ## Instantiates a new BookingBusiness and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+            end
+            ## 
+            ## Gets the createdDateTime property value. The createdDateTime property
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The createdDateTime property
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -236,9 +276,11 @@ module MicrosoftGraph
                 return super.merge({
                     "address" => lambda {|n| @address = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PhysicalAddress.create_from_discriminator_value(pn) }) },
                     "appointments" => lambda {|n| @appointments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingAppointment.create_from_discriminator_value(pn) }) },
+                    "bookingPageSettings" => lambda {|n| @booking_page_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::BookingPageSettings.create_from_discriminator_value(pn) }) },
                     "businessHours" => lambda {|n| @business_hours = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingWorkHours.create_from_discriminator_value(pn) }) },
                     "businessType" => lambda {|n| @business_type = n.get_string_value() },
                     "calendarView" => lambda {|n| @calendar_view = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingAppointment.create_from_discriminator_value(pn) }) },
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "customQuestions" => lambda {|n| @custom_questions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingCustomQuestion.create_from_discriminator_value(pn) }) },
                     "customers" => lambda {|n| @customers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingCustomerBase.create_from_discriminator_value(pn) }) },
                     "defaultCurrencyIso" => lambda {|n| @default_currency_iso = n.get_string_value() },
@@ -246,6 +288,7 @@ module MicrosoftGraph
                     "email" => lambda {|n| @email = n.get_string_value() },
                     "isPublished" => lambda {|n| @is_published = n.get_boolean_value() },
                     "languageTag" => lambda {|n| @language_tag = n.get_string_value() },
+                    "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "phone" => lambda {|n| @phone = n.get_string_value() },
                     "publicUrl" => lambda {|n| @public_url = n.get_string_value() },
                     "schedulingPolicy" => lambda {|n| @scheduling_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::BookingSchedulingPolicy.create_from_discriminator_value(pn) }) },
@@ -283,6 +326,21 @@ module MicrosoftGraph
             ## 
             def language_tag=(value)
                 @language_tag = value
+            end
+            ## 
+            ## Gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+            ## @return a date_time
+            ## 
+            def last_updated_date_time
+                return @last_updated_date_time
+            end
+            ## 
+            ## Sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+            ## @param value Value to set for the lastUpdatedDateTime property.
+            ## @return a void
+            ## 
+            def last_updated_date_time=(value)
+                @last_updated_date_time = value
             end
             ## 
             ## Gets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
@@ -339,15 +397,18 @@ module MicrosoftGraph
                 super
                 writer.write_object_value("address", @address)
                 writer.write_collection_of_object_values("appointments", @appointments)
+                writer.write_object_value("bookingPageSettings", @booking_page_settings)
                 writer.write_collection_of_object_values("businessHours", @business_hours)
                 writer.write_string_value("businessType", @business_type)
                 writer.write_collection_of_object_values("calendarView", @calendar_view)
+                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_collection_of_object_values("customQuestions", @custom_questions)
                 writer.write_collection_of_object_values("customers", @customers)
                 writer.write_string_value("defaultCurrencyIso", @default_currency_iso)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("email", @email)
                 writer.write_string_value("languageTag", @language_tag)
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_string_value("phone", @phone)
                 writer.write_object_value("schedulingPolicy", @scheduling_policy)
                 writer.write_collection_of_object_values("services", @services)

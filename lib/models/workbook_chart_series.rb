@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Represents a collection of all points in the series. Read-only.
             @points
             ## 
-            ## Instantiates a new workbookChartSeries and sets the default values.
+            ## Instantiates a new WorkbookChartSeries and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Determines the allowed target users for this policy. For more information about the syntax of the membership rule, see Membership Rules syntax.
             @membership_rule
             ## 
-            ## Instantiates a new attributeRuleMembers and sets the default values.
+            ## Instantiates a new AttributeRuleMembers and sets the default values.
             ## @return a void
             ## 
             def initialize()
