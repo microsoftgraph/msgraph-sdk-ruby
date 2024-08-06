@@ -111,7 +111,7 @@ module MicrosoftGraph
             # Password is required or not for work profile
             @work_profile_require_password
             ## 
-            ## Instantiates a new androidWorkProfileGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new AndroidWorkProfileGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

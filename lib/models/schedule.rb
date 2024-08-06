@@ -64,7 +64,7 @@ module MicrosoftGraph
             # The workforceIntegrationIds property
             @workforce_integration_ids
             ## 
-            ## Instantiates a new schedule and sets the default values.
+            ## Instantiates a new Schedule and sets the default values.
             ## @return a void
             ## 
             def initialize()

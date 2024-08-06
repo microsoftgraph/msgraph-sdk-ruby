@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Container for navigation properties for Azure AD authentication methods resources.
+            # Container for navigation properties for Microsoft Entra authentication methods resources.
             @authentication_methods
             ## 
             # Retrieve a list of daily print usage summaries, grouped by printer.
@@ -28,32 +28,35 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
+            # Represents billing details for a Microsoft direct partner.
+            @partners
+            ## 
             # Represents an abstract type that contains resources for attack simulation and training reports.
             @security
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+            ## Gets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
             ## @return a authentication_methods_root
             ## 
             def authentication_methods
                 return @authentication_methods
             end
             ## 
-            ## Sets the authenticationMethods property value. Container for navigation properties for Azure AD authentication methods resources.
+            ## Sets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
             ## @param value Value to set for the authenticationMethods property.
             ## @return a void
             ## 
@@ -61,7 +64,7 @@ module MicrosoftGraph
                 @authentication_methods = value
             end
             ## 
-            ## Instantiates a new reportRoot and sets the default values.
+            ## Instantiates a new ReportRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -118,6 +121,7 @@ module MicrosoftGraph
                     "monthlyPrintUsageByPrinter" => lambda {|n| @monthly_print_usage_by_printer = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrintUsageByPrinter.create_from_discriminator_value(pn) }) },
                     "monthlyPrintUsageByUser" => lambda {|n| @monthly_print_usage_by_user = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrintUsageByUser.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "partners" => lambda {|n| @partners = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PartnersModelModelModelModelModelModelModelModel.create_from_discriminator_value(pn) }) },
                     "security" => lambda {|n| @security = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityReportsRoot.create_from_discriminator_value(pn) }) },
                 }
             end
@@ -167,6 +171,21 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
+            ## Gets the partners property value. Represents billing details for a Microsoft direct partner.
+            ## @return a partners_model_model_model_model_model_model_model_model
+            ## 
+            def partners
+                return @partners
+            end
+            ## 
+            ## Sets the partners property value. Represents billing details for a Microsoft direct partner.
+            ## @param value Value to set for the partners property.
+            ## @return a void
+            ## 
+            def partners=(value)
+                @partners = value
+            end
+            ## 
             ## Gets the security property value. Represents an abstract type that contains resources for attack simulation and training reports.
             ## @return a security_reports_root
             ## 
@@ -194,6 +213,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("monthlyPrintUsageByPrinter", @monthly_print_usage_by_printer)
                 writer.write_collection_of_object_values("monthlyPrintUsageByUser", @monthly_print_usage_by_user)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_object_value("partners", @partners)
                 writer.write_object_value("security", @security)
                 writer.write_additional_data(@additional_data)
             end

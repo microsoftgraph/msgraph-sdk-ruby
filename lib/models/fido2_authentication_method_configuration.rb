@@ -19,7 +19,7 @@ module MicrosoftGraph
             # Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.
             @key_restrictions
             ## 
-            ## Instantiates a new fido2AuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new Fido2AuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

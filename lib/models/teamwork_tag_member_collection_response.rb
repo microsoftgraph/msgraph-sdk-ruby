@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new teamworkTagMemberCollectionResponse and sets the default values.
+            ## Instantiates a new TeamworkTagMemberCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

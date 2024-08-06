@@ -12,7 +12,7 @@ module MicrosoftGraph
             # The list of ids of role member security groups. These are IDs from Azure Active Directory.
             @members
             ## 
-            ## Instantiates a new deviceAndAppManagementRoleAssignment and sets the default values.
+            ## Instantiates a new DeviceAndAppManagementRoleAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

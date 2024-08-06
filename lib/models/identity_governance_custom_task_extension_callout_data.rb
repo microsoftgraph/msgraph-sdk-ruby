@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The workflow property
             @workflow
             ## 
-            ## Instantiates a new identityGovernanceCustomTaskExtensionCalloutData and sets the default values.
+            ## Instantiates a new IdentityGovernanceCustomTaskExtensionCalloutData and sets the default values.
             ## @return a void
             ## 
             def initialize()

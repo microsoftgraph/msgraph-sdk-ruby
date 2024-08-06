@@ -31,7 +31,7 @@ module MicrosoftGraph
             # Finishing processes to use when printing.
             @finishings
             ## 
-            # The fitPdfToPage property
+            # True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
             @fit_pdf_to_page
             ## 
             # The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
@@ -40,45 +40,45 @@ module MicrosoftGraph
             # The margin settings to use when printing.
             @margin
             ## 
-            # The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+            # The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
             @media_size
             ## 
-            # The mediaType property
+            # The default media (such as paper) type to print the document on.
             @media_type
             ## 
-            # The multipageLayout property
+            # The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
             @multipage_layout
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The orientation property
+            # The orientation setting the printer should use when printing the job. Valid values are described in the following table.
             @orientation
             ## 
-            # The outputBin property
+            # The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
             @output_bin
             ## 
-            # The pageRanges property
+            # The page ranges to print. Read-only.
             @page_ranges
             ## 
-            # The pagesPerSheet property
+            # The number of document pages to print on each sheet.
             @pages_per_sheet
             ## 
-            # The quality property
+            # The print quality to use when printing the job. Valid values are described in the table below. Read-only.
             @quality
             ## 
-            # The scaling property
+            # Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
             @scaling
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
                 @color_mode = value
             end
             ## 
-            ## Instantiates a new printJobConfiguration and sets the default values.
+            ## Instantiates a new PrintJobConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -206,14 +206,14 @@ module MicrosoftGraph
                 @finishings = value
             end
             ## 
-            ## Gets the fitPdfToPage property value. The fitPdfToPage property
+            ## Gets the fitPdfToPage property value. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
             ## @return a boolean
             ## 
             def fit_pdf_to_page
                 return @fit_pdf_to_page
             end
             ## 
-            ## Sets the fitPdfToPage property value. The fitPdfToPage property
+            ## Sets the fitPdfToPage property value. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
             ## @param value Value to set for the fitPdfToPage property.
             ## @return a void
             ## 
@@ -279,14 +279,14 @@ module MicrosoftGraph
                 @margin = value
             end
             ## 
-            ## Gets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+            ## Gets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
             ## @return a string
             ## 
             def media_size
                 return @media_size
             end
             ## 
-            ## Sets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+            ## Sets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
             ## @param value Value to set for the mediaSize property.
             ## @return a void
             ## 
@@ -294,14 +294,14 @@ module MicrosoftGraph
                 @media_size = value
             end
             ## 
-            ## Gets the mediaType property value. The mediaType property
+            ## Gets the mediaType property value. The default media (such as paper) type to print the document on.
             ## @return a string
             ## 
             def media_type
                 return @media_type
             end
             ## 
-            ## Sets the mediaType property value. The mediaType property
+            ## Sets the mediaType property value. The default media (such as paper) type to print the document on.
             ## @param value Value to set for the mediaType property.
             ## @return a void
             ## 
@@ -309,14 +309,14 @@ module MicrosoftGraph
                 @media_type = value
             end
             ## 
-            ## Gets the multipageLayout property value. The multipageLayout property
+            ## Gets the multipageLayout property value. The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
             ## @return a print_multipage_layout
             ## 
             def multipage_layout
                 return @multipage_layout
             end
             ## 
-            ## Sets the multipageLayout property value. The multipageLayout property
+            ## Sets the multipageLayout property value. The direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
             ## @param value Value to set for the multipageLayout property.
             ## @return a void
             ## 
@@ -339,14 +339,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the orientation property value. The orientation property
+            ## Gets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.
             ## @return a print_orientation
             ## 
             def orientation
                 return @orientation
             end
             ## 
-            ## Sets the orientation property value. The orientation property
+            ## Sets the orientation property value. The orientation setting the printer should use when printing the job. Valid values are described in the following table.
             ## @param value Value to set for the orientation property.
             ## @return a void
             ## 
@@ -354,14 +354,14 @@ module MicrosoftGraph
                 @orientation = value
             end
             ## 
-            ## Gets the outputBin property value. The outputBin property
+            ## Gets the outputBin property value. The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
             ## @return a string
             ## 
             def output_bin
                 return @output_bin
             end
             ## 
-            ## Sets the outputBin property value. The outputBin property
+            ## Sets the outputBin property value. The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
             ## @param value Value to set for the outputBin property.
             ## @return a void
             ## 
@@ -369,14 +369,14 @@ module MicrosoftGraph
                 @output_bin = value
             end
             ## 
-            ## Gets the pageRanges property value. The pageRanges property
+            ## Gets the pageRanges property value. The page ranges to print. Read-only.
             ## @return a integer_range
             ## 
             def page_ranges
                 return @page_ranges
             end
             ## 
-            ## Sets the pageRanges property value. The pageRanges property
+            ## Sets the pageRanges property value. The page ranges to print. Read-only.
             ## @param value Value to set for the pageRanges property.
             ## @return a void
             ## 
@@ -384,14 +384,14 @@ module MicrosoftGraph
                 @page_ranges = value
             end
             ## 
-            ## Gets the pagesPerSheet property value. The pagesPerSheet property
+            ## Gets the pagesPerSheet property value. The number of document pages to print on each sheet.
             ## @return a integer
             ## 
             def pages_per_sheet
                 return @pages_per_sheet
             end
             ## 
-            ## Sets the pagesPerSheet property value. The pagesPerSheet property
+            ## Sets the pagesPerSheet property value. The number of document pages to print on each sheet.
             ## @param value Value to set for the pagesPerSheet property.
             ## @return a void
             ## 
@@ -399,14 +399,14 @@ module MicrosoftGraph
                 @pages_per_sheet = value
             end
             ## 
-            ## Gets the quality property value. The quality property
+            ## Gets the quality property value. The print quality to use when printing the job. Valid values are described in the table below. Read-only.
             ## @return a print_quality
             ## 
             def quality
                 return @quality
             end
             ## 
-            ## Sets the quality property value. The quality property
+            ## Sets the quality property value. The print quality to use when printing the job. Valid values are described in the table below. Read-only.
             ## @param value Value to set for the quality property.
             ## @return a void
             ## 
@@ -414,14 +414,14 @@ module MicrosoftGraph
                 @quality = value
             end
             ## 
-            ## Gets the scaling property value. The scaling property
+            ## Gets the scaling property value. Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
             ## @return a print_scaling
             ## 
             def scaling
                 return @scaling
             end
             ## 
-            ## Sets the scaling property value. The scaling property
+            ## Sets the scaling property value. Specifies how the printer should scale the document data to fit the requested media. Valid values are described in the following table.
             ## @param value Value to set for the scaling property.
             ## @return a void
             ## 

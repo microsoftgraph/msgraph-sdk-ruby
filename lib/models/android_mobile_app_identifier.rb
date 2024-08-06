@@ -12,7 +12,7 @@ module MicrosoftGraph
             # The identifier for an app, as specified in the play store.
             @package_id
             ## 
-            ## Instantiates a new androidMobileAppIdentifier and sets the default values.
+            ## Instantiates a new AndroidMobileAppIdentifier and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -31,7 +31,7 @@ module MicrosoftGraph
             # The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
             @fit_pdf_to_page
             ## 
-            # The inputBin property
+            # The default input bin that serves as the paper source.
             @input_bin
             ## 
             # The default media (such as paper) color to print the document on.
@@ -64,15 +64,15 @@ module MicrosoftGraph
             # Specifies how the printer scales the document data to fit the requested media. Valid values are described in the following table.
             @scaling
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
                 @color_mode = value
             end
             ## 
-            ## Instantiates a new printerDefaults and sets the default values.
+            ## Instantiates a new PrinterDefaults and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -226,14 +226,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the inputBin property value. The inputBin property
+            ## Gets the inputBin property value. The default input bin that serves as the paper source.
             ## @return a string
             ## 
             def input_bin
                 return @input_bin
             end
             ## 
-            ## Sets the inputBin property value. The inputBin property
+            ## Sets the inputBin property value. The default input bin that serves as the paper source.
             ## @param value Value to set for the inputBin property.
             ## @return a void
             ## 

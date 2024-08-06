@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The workflows in the lifecycle workflows instance.
             @workflows
             ## 
-            ## Instantiates a new identityGovernanceLifecycleWorkflowsContainer and sets the default values.
+            ## Instantiates a new IdentityGovernanceLifecycleWorkflowsContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()

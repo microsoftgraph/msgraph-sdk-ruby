@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The identity providers included in the user flow.
             @identity_providers
             ## 
-            # The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+            # The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
             @languages
             ## 
             # The user attribute assignments included in the user flow.
@@ -37,7 +37,7 @@ module MicrosoftGraph
                 @api_connector_configuration = value
             end
             ## 
-            ## Instantiates a new b2xIdentityUserFlow and sets the default values.
+            ## Instantiates a new B2xIdentityUserFlow and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -81,14 +81,14 @@ module MicrosoftGraph
                 @identity_providers = value
             end
             ## 
-            ## Gets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+            ## Gets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
             ## @return a user_flow_language_configuration
             ## 
             def languages
                 return @languages
             end
             ## 
-            ## Sets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
+            ## Sets the languages property value. The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You can't create custom languages in self-service sign-up user flows.
             ## @param value Value to set for the languages property.
             ## @return a void
             ## 

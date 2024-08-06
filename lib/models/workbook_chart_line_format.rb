@@ -7,17 +7,17 @@ module MicrosoftGraph
         class WorkbookChartLineFormat < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # HTML color code representing the color of lines in the chart.
+            # The HTML color code that represents the color of lines in the chart.
             @color
             ## 
-            ## Gets the color property value. HTML color code representing the color of lines in the chart.
+            ## Gets the color property value. The HTML color code that represents the color of lines in the chart.
             ## @return a string
             ## 
             def color
                 return @color
             end
             ## 
-            ## Sets the color property value. HTML color code representing the color of lines in the chart.
+            ## Sets the color property value. The HTML color code that represents the color of lines in the chart.
             ## @param value Value to set for the color property.
             ## @return a void
             ## 
@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @color = value
             end
             ## 
-            ## Instantiates a new workbookChartLineFormat and sets the default values.
+            ## Instantiates a new WorkbookChartLineFormat and sets the default values.
             ## @return a void
             ## 
             def initialize()

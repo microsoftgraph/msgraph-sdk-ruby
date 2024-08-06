@@ -12,7 +12,7 @@ module MicrosoftGraph
             # Entity representing a job to export a report
             @export_jobs
             ## 
-            ## Instantiates a new deviceManagementReports and sets the default values.
+            ## Instantiates a new DeviceManagementReports and sets the default values.
             ## @return a void
             ## 
             def initialize()

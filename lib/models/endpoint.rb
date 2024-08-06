@@ -37,7 +37,7 @@ module MicrosoftGraph
                 @capability = value
             end
             ## 
-            ## Instantiates a new endpoint and sets the default values.
+            ## Instantiates a new Endpoint and sets the default values.
             ## @return a void
             ## 
             def initialize()

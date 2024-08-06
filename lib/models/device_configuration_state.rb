@@ -27,7 +27,7 @@ module MicrosoftGraph
             # The version of the policy
             @version
             ## 
-            ## Instantiates a new deviceConfigurationState and sets the default values.
+            ## Instantiates a new DeviceConfigurationState and sets the default values.
             ## @return a void
             ## 
             def initialize()

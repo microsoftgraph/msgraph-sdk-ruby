@@ -28,7 +28,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
+            # Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).
             @os
             ## 
             # Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
@@ -40,22 +40,22 @@ module MicrosoftGraph
             # Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
             @risk_score
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new hostSecurityState and sets the default values.
+            ## Instantiates a new HostSecurityState and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -179,14 +179,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
+            ## Gets the os property value. Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).
             ## @return a string
             ## 
             def os
                 return @os
             end
             ## 
-            ## Sets the os property value. Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
+            ## Sets the os property value. Host Operating System. (For example, Windows 10, macOS, RHEL, etc.).
             ## @param value Value to set for the os property.
             ## @return a void
             ## 

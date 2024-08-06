@@ -7,32 +7,32 @@ module MicrosoftGraph
         class WorkbookRangeFont < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents the bold status of font.
+            # Inidicates whether the font is bold.
             @bold
             ## 
-            # HTML color code representation of the text color. E.g. #FF0000 represents Red.
+            # The HTML color code representation of the text color. For example, #FF0000 represents the color red.
             @color
             ## 
-            # Represents the italic status of the font.
+            # Inidicates whether the font is italic.
             @italic
             ## 
-            # Font name (e.g. 'Calibri')
+            # The font name. For example, 'Calibri'.
             @name
             ## 
-            # Font size.
+            # The font size.
             @size
             ## 
-            # Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+            # The type of underlining applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
             @underline
             ## 
-            ## Gets the bold property value. Represents the bold status of font.
+            ## Gets the bold property value. Inidicates whether the font is bold.
             ## @return a boolean
             ## 
             def bold
                 return @bold
             end
             ## 
-            ## Sets the bold property value. Represents the bold status of font.
+            ## Sets the bold property value. Inidicates whether the font is bold.
             ## @param value Value to set for the bold property.
             ## @return a void
             ## 
@@ -40,14 +40,14 @@ module MicrosoftGraph
                 @bold = value
             end
             ## 
-            ## Gets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
+            ## Gets the color property value. The HTML color code representation of the text color. For example, #FF0000 represents the color red.
             ## @return a string
             ## 
             def color
                 return @color
             end
             ## 
-            ## Sets the color property value. HTML color code representation of the text color. E.g. #FF0000 represents Red.
+            ## Sets the color property value. The HTML color code representation of the text color. For example, #FF0000 represents the color red.
             ## @param value Value to set for the color property.
             ## @return a void
             ## 
@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @color = value
             end
             ## 
-            ## Instantiates a new workbookRangeFont and sets the default values.
+            ## Instantiates a new WorkbookRangeFont and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -85,14 +85,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the italic property value. Represents the italic status of the font.
+            ## Gets the italic property value. Inidicates whether the font is italic.
             ## @return a boolean
             ## 
             def italic
                 return @italic
             end
             ## 
-            ## Sets the italic property value. Represents the italic status of the font.
+            ## Sets the italic property value. Inidicates whether the font is italic.
             ## @param value Value to set for the italic property.
             ## @return a void
             ## 
@@ -100,14 +100,14 @@ module MicrosoftGraph
                 @italic = value
             end
             ## 
-            ## Gets the name property value. Font name (e.g. 'Calibri')
+            ## Gets the name property value. The font name. For example, 'Calibri'.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. Font name (e.g. 'Calibri')
+            ## Sets the name property value. The font name. For example, 'Calibri'.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -130,14 +130,14 @@ module MicrosoftGraph
                 writer.write_string_value("underline", @underline)
             end
             ## 
-            ## Gets the size property value. Font size.
+            ## Gets the size property value. The font size.
             ## @return a double
             ## 
             def size
                 return @size
             end
             ## 
-            ## Sets the size property value. Font size.
+            ## Sets the size property value. The font size.
             ## @param value Value to set for the size property.
             ## @return a void
             ## 
@@ -145,14 +145,14 @@ module MicrosoftGraph
                 @size = value
             end
             ## 
-            ## Gets the underline property value. Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+            ## Gets the underline property value. The type of underlining applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
             ## @return a string
             ## 
             def underline
                 return @underline
             end
             ## 
-            ## Sets the underline property value. Type of underline applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
+            ## Sets the underline property value. The type of underlining applied to the font. The possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.
             ## @param value Value to set for the underline property.
             ## @return a void
             ## 

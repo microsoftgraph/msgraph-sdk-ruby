@@ -13,10 +13,19 @@ module MicrosoftGraph
             # When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
             @contribution_to_content_discovery_disabled
             ## 
+            # The itemInsights property
+            @item_insights
+            ## 
             # The shiftPreferences property
             @shift_preferences
             ## 
-            ## Instantiates a new userSettings and sets the default values.
+            # The storage property
+            @storage
+            ## 
+            # The windows property
+            @windows
+            ## 
+            ## Instantiates a new UserSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -69,8 +78,26 @@ module MicrosoftGraph
                 return super.merge({
                     "contributionToContentDiscoveryAsOrganizationDisabled" => lambda {|n| @contribution_to_content_discovery_as_organization_disabled = n.get_boolean_value() },
                     "contributionToContentDiscoveryDisabled" => lambda {|n| @contribution_to_content_discovery_disabled = n.get_boolean_value() },
+                    "itemInsights" => lambda {|n| @item_insights = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserInsightsSettings.create_from_discriminator_value(pn) }) },
                     "shiftPreferences" => lambda {|n| @shift_preferences = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ShiftPreferences.create_from_discriminator_value(pn) }) },
+                    "storage" => lambda {|n| @storage = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserStorage.create_from_discriminator_value(pn) }) },
+                    "windows" => lambda {|n| @windows = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsSetting.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the itemInsights property value. The itemInsights property
+            ## @return a user_insights_settings
+            ## 
+            def item_insights
+                return @item_insights
+            end
+            ## 
+            ## Sets the itemInsights property value. The itemInsights property
+            ## @param value Value to set for the itemInsights property.
+            ## @return a void
+            ## 
+            def item_insights=(value)
+                @item_insights = value
             end
             ## 
             ## Serializes information the current object
@@ -82,7 +109,10 @@ module MicrosoftGraph
                 super
                 writer.write_boolean_value("contributionToContentDiscoveryAsOrganizationDisabled", @contribution_to_content_discovery_as_organization_disabled)
                 writer.write_boolean_value("contributionToContentDiscoveryDisabled", @contribution_to_content_discovery_disabled)
+                writer.write_object_value("itemInsights", @item_insights)
                 writer.write_object_value("shiftPreferences", @shift_preferences)
+                writer.write_object_value("storage", @storage)
+                writer.write_collection_of_object_values("windows", @windows)
             end
             ## 
             ## Gets the shiftPreferences property value. The shiftPreferences property
@@ -98,6 +128,36 @@ module MicrosoftGraph
             ## 
             def shift_preferences=(value)
                 @shift_preferences = value
+            end
+            ## 
+            ## Gets the storage property value. The storage property
+            ## @return a user_storage
+            ## 
+            def storage
+                return @storage
+            end
+            ## 
+            ## Sets the storage property value. The storage property
+            ## @param value Value to set for the storage property.
+            ## @return a void
+            ## 
+            def storage=(value)
+                @storage = value
+            end
+            ## 
+            ## Gets the windows property value. The windows property
+            ## @return a windows_setting
+            ## 
+            def windows
+                return @windows
+            end
+            ## 
+            ## Sets the windows property value. The windows property
+            ## @param value Value to set for the windows property.
+            ## @return a void
+            ## 
+            def windows=(value)
+                @windows = value
             end
         end
     end

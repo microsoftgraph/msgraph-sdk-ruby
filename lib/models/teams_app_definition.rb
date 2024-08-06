@@ -26,7 +26,7 @@ module MicrosoftGraph
             # The lastModifiedDateTime property
             @last_modified_date_time
             ## 
-            # The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+            # The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected—The admin rejected the request to publish the specific version of the Teams app.
             @publishing_state
             ## 
             # Short description of the application.
@@ -68,7 +68,7 @@ module MicrosoftGraph
                 @bot = value
             end
             ## 
-            ## Instantiates a new teamsAppDefinition and sets the default values.
+            ## Instantiates a new TeamsAppDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -162,14 +162,14 @@ module MicrosoftGraph
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+            ## Gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected—The admin rejected the request to publish the specific version of the Teams app.
             ## @return a teams_app_publishing_state
             ## 
             def publishing_state
                 return @publishing_state
             end
             ## 
-            ## Sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+            ## Sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected—The admin rejected the request to publish the specific version of the Teams app.
             ## @param value Value to set for the publishingState property.
             ## @return a void
             ## 

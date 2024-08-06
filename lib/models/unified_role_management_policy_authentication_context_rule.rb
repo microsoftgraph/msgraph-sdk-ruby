@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value of the authentication context claim.
             @claim_value
             ## 
-            # Whether this rule is enabled.
+            # Determines whether this rule is enabled.
             @is_enabled
             ## 
             ## Gets the claimValue property value. The value of the authentication context claim.
@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @claim_value = value
             end
             ## 
-            ## Instantiates a new unifiedRoleManagementPolicyAuthenticationContextRule and sets the default values.
+            ## Instantiates a new UnifiedRoleManagementPolicyAuthenticationContextRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -55,14 +55,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isEnabled property value. Whether this rule is enabled.
+            ## Gets the isEnabled property value. Determines whether this rule is enabled.
             ## @return a boolean
             ## 
             def is_enabled
                 return @is_enabled
             end
             ## 
-            ## Sets the isEnabled property value. Whether this rule is enabled.
+            ## Sets the isEnabled property value. Determines whether this rule is enabled.
             ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 

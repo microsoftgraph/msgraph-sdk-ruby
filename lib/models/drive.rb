@@ -7,7 +7,7 @@ module MicrosoftGraph
         class Drive < MicrosoftGraph::Models::BaseItem
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+            # Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
             @bundles
             ## 
             # Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
@@ -40,14 +40,14 @@ module MicrosoftGraph
             # If present, indicates that this is a system-managed drive. Read-only.
             @system
             ## 
-            ## Gets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+            ## Gets the bundles property value. Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
             ## @return a drive_item
             ## 
             def bundles
                 return @bundles
             end
             ## 
-            ## Sets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+            ## Sets the bundles property value. Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
             ## @param value Value to set for the bundles property.
             ## @return a void
             ## 
@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @bundles = value
             end
             ## 
-            ## Instantiates a new drive and sets the default values.
+            ## Instantiates a new Drive and sets the default values.
             ## @return a void
             ## 
             def initialize()

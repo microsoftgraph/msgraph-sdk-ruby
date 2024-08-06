@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @cidr_address = value
             end
             ## 
-            ## Instantiates a new iPv6CidrRange and sets the default values.
+            ## Instantiates a new IPv6CidrRange and sets the default values.
             ## @return a void
             ## 
             def initialize()

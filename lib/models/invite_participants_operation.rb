@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The participants to invite.
             @participants
             ## 
-            ## Instantiates a new inviteParticipantsOperation and sets the default values.
+            ## Instantiates a new InviteParticipantsOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

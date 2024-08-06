@@ -13,28 +13,28 @@ module MicrosoftGraph
             # DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.
             @position
             ## 
-            # String representing the separator used for the data labels on a chart.
+            # String that represents the separator used for the data labels on a chart.
             @separator
             ## 
-            # Boolean value representing if the data label bubble size is visible or not.
+            # Boolean value that represents whether the data label bubble size is visible.
             @show_bubble_size
             ## 
-            # Boolean value representing if the data label category name is visible or not.
+            # Boolean value that represents whether the data label category name is visible.
             @show_category_name
             ## 
-            # Boolean value representing if the data label legend key is visible or not.
+            # Boolean value that represents whether the data label legend key is visible.
             @show_legend_key
             ## 
-            # Boolean value representing if the data label percentage is visible or not.
+            # Boolean value that represents whether the data label percentage is visible.
             @show_percentage
             ## 
-            # Boolean value representing if the data label series name is visible or not.
+            # Boolean value that represents whether the data label series name is visible.
             @show_series_name
             ## 
-            # Boolean value representing if the data label value is visible or not.
+            # Boolean value that represents whether the data label value is visible.
             @show_value
             ## 
-            ## Instantiates a new workbookChartDataLabels and sets the default values.
+            ## Instantiates a new WorkbookChartDataLabels and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -97,14 +97,14 @@ module MicrosoftGraph
                 @position = value
             end
             ## 
-            ## Gets the separator property value. String representing the separator used for the data labels on a chart.
+            ## Gets the separator property value. String that represents the separator used for the data labels on a chart.
             ## @return a string
             ## 
             def separator
                 return @separator
             end
             ## 
-            ## Sets the separator property value. String representing the separator used for the data labels on a chart.
+            ## Sets the separator property value. String that represents the separator used for the data labels on a chart.
             ## @param value Value to set for the separator property.
             ## @return a void
             ## 
@@ -130,14 +130,14 @@ module MicrosoftGraph
                 writer.write_boolean_value("showValue", @show_value)
             end
             ## 
-            ## Gets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.
+            ## Gets the showBubbleSize property value. Boolean value that represents whether the data label bubble size is visible.
             ## @return a boolean
             ## 
             def show_bubble_size
                 return @show_bubble_size
             end
             ## 
-            ## Sets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.
+            ## Sets the showBubbleSize property value. Boolean value that represents whether the data label bubble size is visible.
             ## @param value Value to set for the showBubbleSize property.
             ## @return a void
             ## 
@@ -145,14 +145,14 @@ module MicrosoftGraph
                 @show_bubble_size = value
             end
             ## 
-            ## Gets the showCategoryName property value. Boolean value representing if the data label category name is visible or not.
+            ## Gets the showCategoryName property value. Boolean value that represents whether the data label category name is visible.
             ## @return a boolean
             ## 
             def show_category_name
                 return @show_category_name
             end
             ## 
-            ## Sets the showCategoryName property value. Boolean value representing if the data label category name is visible or not.
+            ## Sets the showCategoryName property value. Boolean value that represents whether the data label category name is visible.
             ## @param value Value to set for the showCategoryName property.
             ## @return a void
             ## 
@@ -160,14 +160,14 @@ module MicrosoftGraph
                 @show_category_name = value
             end
             ## 
-            ## Gets the showLegendKey property value. Boolean value representing if the data label legend key is visible or not.
+            ## Gets the showLegendKey property value. Boolean value that represents whether the data label legend key is visible.
             ## @return a boolean
             ## 
             def show_legend_key
                 return @show_legend_key
             end
             ## 
-            ## Sets the showLegendKey property value. Boolean value representing if the data label legend key is visible or not.
+            ## Sets the showLegendKey property value. Boolean value that represents whether the data label legend key is visible.
             ## @param value Value to set for the showLegendKey property.
             ## @return a void
             ## 
@@ -175,14 +175,14 @@ module MicrosoftGraph
                 @show_legend_key = value
             end
             ## 
-            ## Gets the showPercentage property value. Boolean value representing if the data label percentage is visible or not.
+            ## Gets the showPercentage property value. Boolean value that represents whether the data label percentage is visible.
             ## @return a boolean
             ## 
             def show_percentage
                 return @show_percentage
             end
             ## 
-            ## Sets the showPercentage property value. Boolean value representing if the data label percentage is visible or not.
+            ## Sets the showPercentage property value. Boolean value that represents whether the data label percentage is visible.
             ## @param value Value to set for the showPercentage property.
             ## @return a void
             ## 
@@ -190,14 +190,14 @@ module MicrosoftGraph
                 @show_percentage = value
             end
             ## 
-            ## Gets the showSeriesName property value. Boolean value representing if the data label series name is visible or not.
+            ## Gets the showSeriesName property value. Boolean value that represents whether the data label series name is visible.
             ## @return a boolean
             ## 
             def show_series_name
                 return @show_series_name
             end
             ## 
-            ## Sets the showSeriesName property value. Boolean value representing if the data label series name is visible or not.
+            ## Sets the showSeriesName property value. Boolean value that represents whether the data label series name is visible.
             ## @param value Value to set for the showSeriesName property.
             ## @return a void
             ## 
@@ -205,14 +205,14 @@ module MicrosoftGraph
                 @show_series_name = value
             end
             ## 
-            ## Gets the showValue property value. Boolean value representing if the data label value is visible or not.
+            ## Gets the showValue property value. Boolean value that represents whether the data label value is visible.
             ## @return a boolean
             ## 
             def show_value
                 return @show_value
             end
             ## 
-            ## Sets the showValue property value. Boolean value representing if the data label value is visible or not.
+            ## Sets the showValue property value. Boolean value that represents whether the data label value is visible.
             ## @param value Value to set for the showValue property.
             ## @return a void
             ## 

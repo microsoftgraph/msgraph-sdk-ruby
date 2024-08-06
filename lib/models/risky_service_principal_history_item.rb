@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @activity = value
             end
             ## 
-            ## Instantiates a new riskyServicePrincipalHistoryItem and sets the default values.
+            ## Instantiates a new RiskyServicePrincipalHistoryItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

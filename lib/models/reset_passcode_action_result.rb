@@ -9,10 +9,13 @@ module MicrosoftGraph
         class ResetPasscodeActionResult < MicrosoftGraph::Models::DeviceActionResult
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # RotateBitLockerKeys action error code. Valid values 0 to 2147483647
+            @error_code
+            ## 
             # Newly generated passcode for the device
             @passcode
             ## 
-            ## Instantiates a new resetPasscodeActionResult and sets the default values.
+            ## Instantiates a new ResetPasscodeActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -28,11 +31,27 @@ module MicrosoftGraph
                 return ResetPasscodeActionResult.new
             end
             ## 
+            ## Gets the errorCode property value. RotateBitLockerKeys action error code. Valid values 0 to 2147483647
+            ## @return a integer
+            ## 
+            def error_code
+                return @error_code
+            end
+            ## 
+            ## Sets the errorCode property value. RotateBitLockerKeys action error code. Valid values 0 to 2147483647
+            ## @param value Value to set for the errorCode property.
+            ## @return a void
+            ## 
+            def error_code=(value)
+                @error_code = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "errorCode" => lambda {|n| @error_code = n.get_number_value() },
                     "passcode" => lambda {|n| @passcode = n.get_string_value() },
                 })
             end
@@ -59,6 +78,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_number_value("errorCode", @error_code)
                 writer.write_string_value("passcode", @passcode)
             end
         end

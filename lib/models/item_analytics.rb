@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @all_time = value
             end
             ## 
-            ## Instantiates a new itemAnalytics and sets the default values.
+            ## Instantiates a new ItemAnalytics and sets the default values.
             ## @return a void
             ## 
             def initialize()

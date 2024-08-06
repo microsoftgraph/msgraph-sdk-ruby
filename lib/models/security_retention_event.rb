@@ -20,13 +20,13 @@ module MicrosoftGraph
             # Name of the event.
             @display_name
             ## 
-            # The eventPropagationResults property
+            # Represents the success status of a created event and additional information.
             @event_propagation_results
             ## 
             # Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
             @event_queries
             ## 
-            # The eventStatus property
+            # Status of event propogation to the scoped locations after the event has been created.
             @event_status
             ## 
             # Optional time when the event should be triggered.
@@ -44,7 +44,7 @@ module MicrosoftGraph
             # Specifies the event that will start the retention period for labels that use this event type when an event is created.
             @retention_event_type
             ## 
-            ## Instantiates a new securityRetentionEvent and sets the default values.
+            ## Instantiates a new SecurityRetentionEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -120,14 +120,14 @@ module MicrosoftGraph
                 @display_name = value
             end
             ## 
-            ## Gets the eventPropagationResults property value. The eventPropagationResults property
+            ## Gets the eventPropagationResults property value. Represents the success status of a created event and additional information.
             ## @return a security_event_propagation_result
             ## 
             def event_propagation_results
                 return @event_propagation_results
             end
             ## 
-            ## Sets the eventPropagationResults property value. The eventPropagationResults property
+            ## Sets the eventPropagationResults property value. Represents the success status of a created event and additional information.
             ## @param value Value to set for the eventPropagationResults property.
             ## @return a void
             ## 
@@ -150,14 +150,14 @@ module MicrosoftGraph
                 @event_queries = value
             end
             ## 
-            ## Gets the eventStatus property value. The eventStatus property
+            ## Gets the eventStatus property value. Status of event propogation to the scoped locations after the event has been created.
             ## @return a security_retention_event_status
             ## 
             def event_status
                 return @event_status
             end
             ## 
-            ## Sets the eventStatus property value. The eventStatus property
+            ## Sets the eventStatus property value. Status of event propogation to the scoped locations after the event has been created.
             ## @param value Value to set for the eventStatus property.
             ## @return a void
             ## 

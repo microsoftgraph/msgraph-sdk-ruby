@@ -11,7 +11,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The maxLifetime property
+            # Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.
             @max_lifetime
             ## 
             # The OdataType property
@@ -23,22 +23,22 @@ module MicrosoftGraph
             # The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
             @restriction_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new keyCredentialConfiguration and sets the default values.
+            ## Instantiates a new KeyCredentialConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -66,14 +66,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the maxLifetime property value. The maxLifetime property
+            ## Gets the maxLifetime property value. Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def max_lifetime
                 return @max_lifetime
             end
             ## 
-            ## Sets the maxLifetime property value. The maxLifetime property
+            ## Sets the maxLifetime property value. Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.
             ## @param value Value to set for the maxLifetime property.
             ## @return a void
             ## 

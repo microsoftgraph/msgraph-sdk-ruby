@@ -130,7 +130,7 @@ module MicrosoftGraph
                 @connect_app_block_auto_launch = value
             end
             ## 
-            ## Instantiates a new windows10TeamGeneralConfiguration and sets the default values.
+            ## Instantiates a new Windows10TeamGeneralConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,19 +7,19 @@ module MicrosoftGraph
         class WorkbookChartTitle < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents the formatting of a chart title, which includes fill and font formatting. Read-only.
+            # The formatting of a chart title, which includes fill and font formatting. Read-only.
             @format
             ## 
-            # Boolean value representing if the chart title will overlay the chart or not.
+            # Indicates whether the chart title will overlay the chart or not.
             @overlay
             ## 
-            # Represents the title text of a chart.
+            # The title text of the chart.
             @text
             ## 
-            # A boolean value the represents the visibility of a chart title object.
+            # Indicates whether the chart title is visible.
             @visible
             ## 
-            ## Instantiates a new workbookChartTitle and sets the default values.
+            ## Instantiates a new WorkbookChartTitle and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,14 +35,14 @@ module MicrosoftGraph
                 return WorkbookChartTitle.new
             end
             ## 
-            ## Gets the format property value. Represents the formatting of a chart title, which includes fill and font formatting. Read-only.
+            ## Gets the format property value. The formatting of a chart title, which includes fill and font formatting. Read-only.
             ## @return a workbook_chart_title_format
             ## 
             def format
                 return @format
             end
             ## 
-            ## Sets the format property value. Represents the formatting of a chart title, which includes fill and font formatting. Read-only.
+            ## Sets the format property value. The formatting of a chart title, which includes fill and font formatting. Read-only.
             ## @param value Value to set for the format property.
             ## @return a void
             ## 
@@ -62,14 +62,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the overlay property value. Boolean value representing if the chart title will overlay the chart or not.
+            ## Gets the overlay property value. Indicates whether the chart title will overlay the chart or not.
             ## @return a boolean
             ## 
             def overlay
                 return @overlay
             end
             ## 
-            ## Sets the overlay property value. Boolean value representing if the chart title will overlay the chart or not.
+            ## Sets the overlay property value. Indicates whether the chart title will overlay the chart or not.
             ## @param value Value to set for the overlay property.
             ## @return a void
             ## 
@@ -90,14 +90,14 @@ module MicrosoftGraph
                 writer.write_boolean_value("visible", @visible)
             end
             ## 
-            ## Gets the text property value. Represents the title text of a chart.
+            ## Gets the text property value. The title text of the chart.
             ## @return a string
             ## 
             def text
                 return @text
             end
             ## 
-            ## Sets the text property value. Represents the title text of a chart.
+            ## Sets the text property value. The title text of the chart.
             ## @param value Value to set for the text property.
             ## @return a void
             ## 
@@ -105,14 +105,14 @@ module MicrosoftGraph
                 @text = value
             end
             ## 
-            ## Gets the visible property value. A boolean value the represents the visibility of a chart title object.
+            ## Gets the visible property value. Indicates whether the chart title is visible.
             ## @return a boolean
             ## 
             def visible
                 return @visible
             end
             ## 
-            ## Sets the visible property value. A boolean value the represents the visibility of a chart title object.
+            ## Sets the visible property value. Indicates whether the chart title is visible.
             ## @param value Value to set for the visible property.
             ## @return a void
             ## 

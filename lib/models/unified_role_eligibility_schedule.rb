@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The period of the role eligibility.
             @schedule_info
             ## 
-            ## Instantiates a new unifiedRoleEligibilitySchedule and sets the default values.
+            ## Instantiates a new UnifiedRoleEligibilitySchedule and sets the default values.
             ## @return a void
             ## 
             def initialize()

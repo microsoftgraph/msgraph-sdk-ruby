@@ -26,7 +26,7 @@ module MicrosoftGraph
             # All sets under the group in a term [store].
             @sets
             ## 
-            ## Instantiates a new termStoreGroup and sets the default values.
+            ## Instantiates a new TermStoreGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

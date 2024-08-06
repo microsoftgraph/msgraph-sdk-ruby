@@ -9,7 +9,7 @@ module MicrosoftGraph
         class BookingCustomerBase < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new bookingCustomerBase and sets the default values.
+            ## Instantiates a new BookingCustomerBase and sets the default values.
             ## @return a void
             ## 
             def initialize()
