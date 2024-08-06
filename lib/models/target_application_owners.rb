@@ -7,7 +7,7 @@ module MicrosoftGraph
         class TargetApplicationOwners < MicrosoftGraph::Models::SubjectSet
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new targetApplicationOwners and sets the default values.
+            ## Instantiates a new TargetApplicationOwners and sets the default values.
             ## @return a void
             ## 
             def initialize()

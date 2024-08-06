@@ -124,7 +124,7 @@ module MicrosoftGraph
                 @available_managed_paths_for_site_creation = value
             end
             ## 
-            ## Instantiates a new sharepointSettings and sets the default values.
+            ## Instantiates a new SharepointSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

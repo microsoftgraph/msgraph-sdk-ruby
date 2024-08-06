@@ -27,7 +27,7 @@ module MicrosoftGraph
                 @app_user_model_id = value
             end
             ## 
-            ## Instantiates a new windowsUniversalAppXContainedApp and sets the default values.
+            ## Instantiates a new WindowsUniversalAppXContainedApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
