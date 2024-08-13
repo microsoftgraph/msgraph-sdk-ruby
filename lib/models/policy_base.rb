@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Display name for this policy. Required.
             @display_name
             ## 
-            ## Instantiates a new policyBase and sets the default values.
+            ## Instantiates a new PolicyBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

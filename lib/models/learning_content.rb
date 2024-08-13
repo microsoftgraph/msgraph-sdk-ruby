@@ -47,6 +47,9 @@ module MicrosoftGraph
             # The date and time when the learning content was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.
             @last_modified_date_time
             ## 
+            # The difficulty level of the learning content. Possible values are: Beginner, Intermediate, Advanced, unknownFutureValue. Optional.
+            @level
+            ## 
             # The number of pages of the learning content, for example, 9. Optional.
             @number_of_pages
             ## 
@@ -77,7 +80,7 @@ module MicrosoftGraph
                 @additional_tags = value
             end
             ## 
-            ## Instantiates a new learningContent and sets the default values.
+            ## Instantiates a new LearningContent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -216,6 +219,7 @@ module MicrosoftGraph
                     "isSearchable" => lambda {|n| @is_searchable = n.get_boolean_value() },
                     "languageTag" => lambda {|n| @language_tag = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
+                    "level" => lambda {|n| @level = n.get_enum_value(MicrosoftGraph::Models::Level) },
                     "numberOfPages" => lambda {|n| @number_of_pages = n.get_number_value() },
                     "skillTags" => lambda {|n| @skill_tags = n.get_collection_of_primitive_values(String) },
                     "sourceName" => lambda {|n| @source_name = n.get_string_value() },
@@ -299,6 +303,21 @@ module MicrosoftGraph
                 @last_modified_date_time = value
             end
             ## 
+            ## Gets the level property value. The difficulty level of the learning content. Possible values are: Beginner, Intermediate, Advanced, unknownFutureValue. Optional.
+            ## @return a level
+            ## 
+            def level
+                return @level
+            end
+            ## 
+            ## Sets the level property value. The difficulty level of the learning content. Possible values are: Beginner, Intermediate, Advanced, unknownFutureValue. Optional.
+            ## @param value Value to set for the level property.
+            ## @return a void
+            ## 
+            def level=(value)
+                @level = value
+            end
+            ## 
             ## Gets the numberOfPages property value. The number of pages of the learning content, for example, 9. Optional.
             ## @return a integer
             ## 
@@ -334,6 +353,7 @@ module MicrosoftGraph
                 writer.write_boolean_value("isSearchable", @is_searchable)
                 writer.write_string_value("languageTag", @language_tag)
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
+                writer.write_enum_value("level", @level)
                 writer.write_number_value("numberOfPages", @number_of_pages)
                 writer.write_collection_of_primitive_values("skillTags", @skill_tags)
                 writer.write_string_value("sourceName", @source_name)
