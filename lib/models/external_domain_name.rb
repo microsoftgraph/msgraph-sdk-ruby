@@ -7,7 +7,7 @@ module MicrosoftGraph
         class ExternalDomainName < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new externalDomainName and sets the default values.
+            ## Instantiates a new ExternalDomainName and sets the default values.
             ## @return a void
             ## 
             def initialize()

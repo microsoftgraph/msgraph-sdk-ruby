@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The name associated with the place.
             @display_name
             ## 
-            # Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
+            # Specifies the place location in latitude, longitude, and (optionally) altitude coordinates.
             @geo_coordinates
             ## 
             # The phone number of the place.
@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @address = value
             end
             ## 
-            ## Instantiates a new place and sets the default values.
+            ## Instantiates a new Place and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -75,14 +75,14 @@ module MicrosoftGraph
                 @display_name = value
             end
             ## 
-            ## Gets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
+            ## Gets the geoCoordinates property value. Specifies the place location in latitude, longitude, and (optionally) altitude coordinates.
             ## @return a outlook_geo_coordinates
             ## 
             def geo_coordinates
                 return @geo_coordinates
             end
             ## 
-            ## Sets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
+            ## Sets the geoCoordinates property value. Specifies the place location in latitude, longitude, and (optionally) altitude coordinates.
             ## @param value Value to set for the geoCoordinates property.
             ## @return a void
             ## 

@@ -94,7 +94,7 @@ module MicrosoftGraph
                 @company_name = value
             end
             ## 
-            ## Instantiates a new person and sets the default values.
+            ## Instantiates a new Person and sets the default values.
             ## @return a void
             ## 
             def initialize()
