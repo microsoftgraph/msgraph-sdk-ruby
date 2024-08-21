@@ -21,7 +21,7 @@ module MicrosoftGraph
             # Override the default access rule when allowing a device to ensure access is granted.
             @override_default_rule
             ## 
-            ## Instantiates a new onPremisesConditionalAccessSettings and sets the default values.
+            ## Instantiates a new OnPremisesConditionalAccessSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

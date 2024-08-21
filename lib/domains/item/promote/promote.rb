@@ -1,1 +1,1 @@
-require_relative 'promote_response'
+require_relative 'promote_post_response'
