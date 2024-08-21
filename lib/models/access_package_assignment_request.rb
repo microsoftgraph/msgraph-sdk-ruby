@@ -14,7 +14,7 @@ module MicrosoftGraph
             # Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
             @answers
             ## 
-            # For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created.  For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+            # For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created. For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
             @assignment
             ## 
             # The date of the end of processing, either successful or failure, of a request. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -26,13 +26,13 @@ module MicrosoftGraph
             # Information about all the custom extension calls that were made during the access package assignment workflow.
             @custom_extension_callout_instances
             ## 
-            # The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
+            # The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. Requests from the user have a requestType of userAdd, userUpdate, or userRemove. This property can't be changed once set.
             @request_type
             ## 
             # The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
             @requestor
             ## 
-            # The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
+            # The range of dates that access is to be assigned to the requestor. This property can't be changed once set.
             @schedule
             ## 
             # The state of the request. The possible values are: submitted, pendingApproval, delivering, delivered, deliveryFailed, denied, scheduled, canceled, partiallyDelivered, unknownFutureValue. Read-only. Supports $filter (eq).
@@ -71,14 +71,14 @@ module MicrosoftGraph
                 @answers = value
             end
             ## 
-            ## Gets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created.  For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+            ## Gets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created. For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
             ## @return a access_package_assignment
             ## 
             def assignment
                 return @assignment
             end
             ## 
-            ## Sets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created.  For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+            ## Sets the assignment property value. For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created. For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
             ## @param value Value to set for the assignment property.
             ## @return a void
             ## 
@@ -101,7 +101,7 @@ module MicrosoftGraph
                 @completed_date_time = value
             end
             ## 
-            ## Instantiates a new accessPackageAssignmentRequest and sets the default values.
+            ## Instantiates a new AccessPackageAssignmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -166,14 +166,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
+            ## Gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. Requests from the user have a requestType of userAdd, userUpdate, or userRemove. This property can't be changed once set.
             ## @return a access_package_request_type
             ## 
             def request_type
                 return @request_type
             end
             ## 
-            ## Sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
+            ## Sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. Requests from the user have a requestType of userAdd, userUpdate, or userRemove. This property can't be changed once set.
             ## @param value Value to set for the requestType property.
             ## @return a void
             ## 
@@ -196,14 +196,14 @@ module MicrosoftGraph
                 @requestor = value
             end
             ## 
-            ## Gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
+            ## Gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set.
             ## @return a entitlement_management_schedule
             ## 
             def schedule
                 return @schedule
             end
             ## 
-            ## Sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
+            ## Sets the schedule property value. The range of dates that access is to be assigned to the requestor. This property can't be changed once set.
             ## @param value Value to set for the schedule property.
             ## @return a void
             ## 

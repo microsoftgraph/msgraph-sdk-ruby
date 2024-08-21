@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,28 +22,22 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The number property
-                                    @number
-                                    ## 
-                                    # The shiftAmount property
-                                    @shift_amount
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new bitrshiftPostRequestBody and sets the default values.
+                                    ## Instantiates a new BitrshiftPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -65,24 +58,7 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "number" => lambda {|n| @number = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "shiftAmount" => lambda {|n| @shift_amount = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
-                                    end
-                                    ## 
-                                    ## Gets the number property value. The number property
-                                    ## @return a json
-                                    ## 
-                                    def number
-                                        return @number
-                                    end
-                                    ## 
-                                    ## Sets the number property value. The number property
-                                    ## @param value Value to set for the number property.
-                                    ## @return a void
-                                    ## 
-                                    def number=(value)
-                                        @number = value
                                     end
                                     ## 
                                     ## Serializes information the current object
@@ -91,24 +67,7 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("number", @number)
-                                        writer.write_object_value("shiftAmount", @shift_amount)
                                         writer.write_additional_data(@additional_data)
-                                    end
-                                    ## 
-                                    ## Gets the shiftAmount property value. The shiftAmount property
-                                    ## @return a json
-                                    ## 
-                                    def shift_amount
-                                        return @shift_amount
-                                    end
-                                    ## 
-                                    ## Sets the shiftAmount property value. The shiftAmount property
-                                    ## @param value Value to set for the shiftAmount property.
-                                    ## @return a void
-                                    ## 
-                                    def shift_amount=(value)
-                                        @shift_amount = value
                                     end
                                 end
                             end

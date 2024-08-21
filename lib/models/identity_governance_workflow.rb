@@ -11,13 +11,13 @@ module MicrosoftGraph
             # When the workflow was deleted.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
             @deleted_date_time
             ## 
-            # The unique identifier of the Azure AD identity that last modified the workflow object.
+            # The unique identifier of the Microsoft Entra identity that last modified the workflow object.
             @execution_scope
             ## 
             # Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.
             @id
             ## 
-            # The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.
+            # The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
             @next_schedule_run_date_time
             ## 
             # Workflow runs.
@@ -35,7 +35,7 @@ module MicrosoftGraph
             # The workflow versions that are available.
             @versions
             ## 
-            ## Instantiates a new identityGovernanceWorkflow and sets the default values.
+            ## Instantiates a new IdentityGovernanceWorkflow and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -67,14 +67,14 @@ module MicrosoftGraph
                 @deleted_date_time = value
             end
             ## 
-            ## Gets the executionScope property value. The unique identifier of the Azure AD identity that last modified the workflow object.
+            ## Gets the executionScope property value. The unique identifier of the Microsoft Entra identity that last modified the workflow object.
             ## @return a identity_governance_user_processing_result
             ## 
             def execution_scope
                 return @execution_scope
             end
             ## 
-            ## Sets the executionScope property value. The unique identifier of the Azure AD identity that last modified the workflow object.
+            ## Sets the executionScope property value. The unique identifier of the Microsoft Entra identity that last modified the workflow object.
             ## @param value Value to set for the executionScope property.
             ## @return a void
             ## 
@@ -114,14 +114,14 @@ module MicrosoftGraph
                 @id = value
             end
             ## 
-            ## Gets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.
+            ## Gets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
             ## @return a date_time
             ## 
             def next_schedule_run_date_time
                 return @next_schedule_run_date_time
             end
             ## 
-            ## Sets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.
+            ## Sets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
             ## @param value Value to set for the nextScheduleRunDateTime property.
             ## @return a void
             ## 
