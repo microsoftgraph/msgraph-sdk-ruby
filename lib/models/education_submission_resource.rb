@@ -7,20 +7,20 @@ module MicrosoftGraph
         class EducationSubmissionResource < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
+            # Pointer to the assignment from which the resource was copied, and if null, the student uploaded the resource.
             @assignment_resource_url
             ## 
             # Resource object.
             @resource
             ## 
-            ## Gets the assignmentResourceUrl property value. Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
+            ## Gets the assignmentResourceUrl property value. Pointer to the assignment from which the resource was copied, and if null, the student uploaded the resource.
             ## @return a string
             ## 
             def assignment_resource_url
                 return @assignment_resource_url
             end
             ## 
-            ## Sets the assignmentResourceUrl property value. Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
+            ## Sets the assignmentResourceUrl property value. Pointer to the assignment from which the resource was copied, and if null, the student uploaded the resource.
             ## @param value Value to set for the assignmentResourceUrl property.
             ## @return a void
             ## 
@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @assignment_resource_url = value
             end
             ## 
-            ## Instantiates a new educationSubmissionResource and sets the default values.
+            ## Instantiates a new EducationSubmissionResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
