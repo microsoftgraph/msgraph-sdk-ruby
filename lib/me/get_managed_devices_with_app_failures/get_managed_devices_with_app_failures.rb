@@ -1,1 +1,0 @@
-require_relative 'get_managed_devices_with_app_failures_response'

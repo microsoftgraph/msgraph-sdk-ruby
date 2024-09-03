@@ -7,26 +7,26 @@ module MicrosoftGraph
         class WorkbookRangeBorder < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').
+            # The HTML color code that represents the color of the border line. Can either be of the form #RRGGBB, for example 'FFA500', or a named HTML color, for example 'orange'.
             @color
             ## 
-            # Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
+            # Indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
             @side_index
             ## 
-            # One of the constants of line style specifying the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
+            # Indicates the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
             @style
             ## 
-            # Specifies the weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.
+            # The weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.
             @weight
             ## 
-            ## Gets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').
+            ## Gets the color property value. The HTML color code that represents the color of the border line. Can either be of the form #RRGGBB, for example 'FFA500', or a named HTML color, for example 'orange'.
             ## @return a string
             ## 
             def color
                 return @color
             end
             ## 
-            ## Sets the color property value. HTML color code representing the color of the border line, of the form #RRGGBB (e.g. 'FFA500') or as a named HTML color (e.g. 'orange').
+            ## Sets the color property value. The HTML color code that represents the color of the border line. Can either be of the form #RRGGBB, for example 'FFA500', or a named HTML color, for example 'orange'.
             ## @param value Value to set for the color property.
             ## @return a void
             ## 
@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @color = value
             end
             ## 
-            ## Instantiates a new workbookRangeBorder and sets the default values.
+            ## Instantiates a new WorkbookRangeBorder and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -75,14 +75,14 @@ module MicrosoftGraph
                 writer.write_string_value("weight", @weight)
             end
             ## 
-            ## Gets the sideIndex property value. Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
+            ## Gets the sideIndex property value. Indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
             ## @return a string
             ## 
             def side_index
                 return @side_index
             end
             ## 
-            ## Sets the sideIndex property value. Constant value that indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
+            ## Sets the sideIndex property value. Indicates the specific side of the border. The possible values are: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp. Read-only.
             ## @param value Value to set for the sideIndex property.
             ## @return a void
             ## 
@@ -90,14 +90,14 @@ module MicrosoftGraph
                 @side_index = value
             end
             ## 
-            ## Gets the style property value. One of the constants of line style specifying the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
+            ## Gets the style property value. Indicates the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
             ## @return a string
             ## 
             def style
                 return @style
             end
             ## 
-            ## Sets the style property value. One of the constants of line style specifying the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
+            ## Sets the style property value. Indicates the line style for the border. The possible values are: None, Continuous, Dash, DashDot, DashDotDot, Dot, Double, SlantDashDot.
             ## @param value Value to set for the style property.
             ## @return a void
             ## 
@@ -105,14 +105,14 @@ module MicrosoftGraph
                 @style = value
             end
             ## 
-            ## Gets the weight property value. Specifies the weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.
+            ## Gets the weight property value. The weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.
             ## @return a string
             ## 
             def weight
                 return @weight
             end
             ## 
-            ## Sets the weight property value. Specifies the weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.
+            ## Sets the weight property value. The weight of the border around a range. The possible values are: Hairline, Thin, Medium, Thick.
             ## @param value Value to set for the weight property.
             ## @return a void
             ## 

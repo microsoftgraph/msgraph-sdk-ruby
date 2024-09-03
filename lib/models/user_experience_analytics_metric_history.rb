@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The user experience analytics metric type.
             @metric_type
             ## 
-            ## Instantiates a new userExperienceAnalyticsMetricHistory and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsMetricHistory and sets the default values.
             ## @return a void
             ## 
             def initialize()

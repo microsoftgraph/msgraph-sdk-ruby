@@ -7,13 +7,13 @@ module MicrosoftGraph
         class PermissionGrantPolicy < MicrosoftGraph::Models::PolicyBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+            # Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
             @excludes
             ## 
-            # Condition sets which are included in this permission grant policy. Automatically expanded on GET.
+            # Condition sets that are included in this permission grant policy. Automatically expanded on GET.
             @includes
             ## 
-            ## Instantiates a new permissionGrantPolicy and sets the default values.
+            ## Instantiates a new PermissionGrantPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -30,14 +30,14 @@ module MicrosoftGraph
                 return PermissionGrantPolicy.new
             end
             ## 
-            ## Gets the excludes property value. Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+            ## Gets the excludes property value. Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
             ## @return a permission_grant_condition_set
             ## 
             def excludes
                 return @excludes
             end
             ## 
-            ## Sets the excludes property value. Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+            ## Sets the excludes property value. Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
             ## @param value Value to set for the excludes property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the includes property value. Condition sets which are included in this permission grant policy. Automatically expanded on GET.
+            ## Gets the includes property value. Condition sets that are included in this permission grant policy. Automatically expanded on GET.
             ## @return a permission_grant_condition_set
             ## 
             def includes
                 return @includes
             end
             ## 
-            ## Sets the includes property value. Condition sets which are included in this permission grant policy. Automatically expanded on GET.
+            ## Sets the includes property value. Condition sets that are included in this permission grant policy. Automatically expanded on GET.
             ## @param value Value to set for the includes property.
             ## @return a void
             ## 
