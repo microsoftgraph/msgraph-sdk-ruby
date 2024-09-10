@@ -156,6 +156,9 @@ module MicrosoftGraph
             # User experience analytics device Startup History
             @user_experience_analytics_device_startup_history
             ## 
+            # User experience analytics device Startup Process Performance
+            @user_experience_analytics_device_startup_process_performance
+            ## 
             # User experience analytics device Startup Processes
             @user_experience_analytics_device_startup_processes
             ## 
@@ -182,6 +185,9 @@ module MicrosoftGraph
             ## 
             # The user experience analytics work from anywhere model performance
             @user_experience_analytics_work_from_anywhere_model_performance
+            ## 
+            # Virtual endpoint
+            @virtual_endpoint
             ## 
             # The Windows autopilot device identities contained collection.
             @windows_autopilot_device_identities
@@ -258,7 +264,7 @@ module MicrosoftGraph
                 @conditional_access_settings = value
             end
             ## 
-            ## Instantiates a new deviceManagement and sets the default values.
+            ## Instantiates a new DeviceManagement and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -493,6 +499,7 @@ module MicrosoftGraph
                     "userExperienceAnalyticsDevicePerformance" => lambda {|n| @user_experience_analytics_device_performance = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDevicePerformance.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsDeviceScores" => lambda {|n| @user_experience_analytics_device_scores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDeviceScores.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsDeviceStartupHistory" => lambda {|n| @user_experience_analytics_device_startup_history = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDeviceStartupHistory.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsDeviceStartupProcessPerformance" => lambda {|n| @user_experience_analytics_device_startup_process_performance = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDeviceStartupProcessPerformance.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsDeviceStartupProcesses" => lambda {|n| @user_experience_analytics_device_startup_processes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDeviceStartupProcess.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsMetricHistory" => lambda {|n| @user_experience_analytics_metric_history = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsMetricHistory.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsModelScores" => lambda {|n| @user_experience_analytics_model_scores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsModelScores.create_from_discriminator_value(pn) }) },
@@ -502,6 +509,7 @@ module MicrosoftGraph
                     "userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric" => lambda {|n| @user_experience_analytics_work_from_anywhere_hardware_readiness_metric = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsWorkFromAnywhereMetrics" => lambda {|n| @user_experience_analytics_work_from_anywhere_metrics = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsWorkFromAnywhereMetric.create_from_discriminator_value(pn) }) },
                     "userExperienceAnalyticsWorkFromAnywhereModelPerformance" => lambda {|n| @user_experience_analytics_work_from_anywhere_model_performance = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsWorkFromAnywhereModelPerformance.create_from_discriminator_value(pn) }) },
+                    "virtualEndpoint" => lambda {|n| @virtual_endpoint = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::VirtualEndpoint.create_from_discriminator_value(pn) }) },
                     "windowsAutopilotDeviceIdentities" => lambda {|n| @windows_autopilot_device_identities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsAutopilotDeviceIdentity.create_from_discriminator_value(pn) }) },
                     "windowsInformationProtectionAppLearningSummaries" => lambda {|n| @windows_information_protection_app_learning_summaries = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsInformationProtectionAppLearningSummary.create_from_discriminator_value(pn) }) },
                     "windowsInformationProtectionNetworkLearningSummaries" => lambda {|n| @windows_information_protection_network_learning_summaries = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsInformationProtectionNetworkLearningSummary.create_from_discriminator_value(pn) }) },
@@ -776,6 +784,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("userExperienceAnalyticsDevicePerformance", @user_experience_analytics_device_performance)
                 writer.write_collection_of_object_values("userExperienceAnalyticsDeviceScores", @user_experience_analytics_device_scores)
                 writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupHistory", @user_experience_analytics_device_startup_history)
+                writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupProcessPerformance", @user_experience_analytics_device_startup_process_performance)
                 writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupProcesses", @user_experience_analytics_device_startup_processes)
                 writer.write_collection_of_object_values("userExperienceAnalyticsMetricHistory", @user_experience_analytics_metric_history)
                 writer.write_collection_of_object_values("userExperienceAnalyticsModelScores", @user_experience_analytics_model_scores)
@@ -785,6 +794,7 @@ module MicrosoftGraph
                 writer.write_object_value("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric", @user_experience_analytics_work_from_anywhere_hardware_readiness_metric)
                 writer.write_collection_of_object_values("userExperienceAnalyticsWorkFromAnywhereMetrics", @user_experience_analytics_work_from_anywhere_metrics)
                 writer.write_collection_of_object_values("userExperienceAnalyticsWorkFromAnywhereModelPerformance", @user_experience_analytics_work_from_anywhere_model_performance)
+                writer.write_object_value("virtualEndpoint", @virtual_endpoint)
                 writer.write_collection_of_object_values("windowsAutopilotDeviceIdentities", @windows_autopilot_device_identities)
                 writer.write_collection_of_object_values("windowsInformationProtectionAppLearningSummaries", @windows_information_protection_app_learning_summaries)
                 writer.write_collection_of_object_values("windowsInformationProtectionNetworkLearningSummaries", @windows_information_protection_network_learning_summaries)
@@ -1092,6 +1102,21 @@ module MicrosoftGraph
                 @user_experience_analytics_device_startup_history = value
             end
             ## 
+            ## Gets the userExperienceAnalyticsDeviceStartupProcessPerformance property value. User experience analytics device Startup Process Performance
+            ## @return a user_experience_analytics_device_startup_process_performance
+            ## 
+            def user_experience_analytics_device_startup_process_performance
+                return @user_experience_analytics_device_startup_process_performance
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsDeviceStartupProcessPerformance property value. User experience analytics device Startup Process Performance
+            ## @param value Value to set for the userExperienceAnalyticsDeviceStartupProcessPerformance property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_device_startup_process_performance=(value)
+                @user_experience_analytics_device_startup_process_performance = value
+            end
+            ## 
             ## Gets the userExperienceAnalyticsDeviceStartupProcesses property value. User experience analytics device Startup Processes
             ## @return a user_experience_analytics_device_startup_process
             ## 
@@ -1225,6 +1250,21 @@ module MicrosoftGraph
             ## 
             def user_experience_analytics_work_from_anywhere_model_performance=(value)
                 @user_experience_analytics_work_from_anywhere_model_performance = value
+            end
+            ## 
+            ## Gets the virtualEndpoint property value. Virtual endpoint
+            ## @return a virtual_endpoint
+            ## 
+            def virtual_endpoint
+                return @virtual_endpoint
+            end
+            ## 
+            ## Sets the virtualEndpoint property value. Virtual endpoint
+            ## @param value Value to set for the virtualEndpoint property.
+            ## @return a void
+            ## 
+            def virtual_endpoint=(value)
+                @virtual_endpoint = value
             end
             ## 
             ## Gets the windowsAutopilotDeviceIdentities property value. The Windows autopilot device identities contained collection.

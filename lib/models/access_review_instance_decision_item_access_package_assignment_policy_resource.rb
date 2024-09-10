@@ -43,7 +43,7 @@ module MicrosoftGraph
                 @access_package_id = value
             end
             ## 
-            ## Instantiates a new accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource and sets the default values.
+            ## Instantiates a new AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

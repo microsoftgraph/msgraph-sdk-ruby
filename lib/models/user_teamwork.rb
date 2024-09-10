@@ -13,6 +13,12 @@ module MicrosoftGraph
             # The apps installed in the personal scope of this user.
             @installed_apps
             ## 
+            # Represents the location that a user selected in Microsoft Teams and doesn't follow the Office's locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.
+            @locale
+            ## 
+            # Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user's region (if available). For users without multigeo licenses, the property contains the organization's region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, Spain, Mexico, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.
+            @region
+            ## 
             ## Gets the associatedTeams property value. The list of associatedTeamInfo objects that a user is associated with.
             ## @return a associated_team_info
             ## 
@@ -28,7 +34,7 @@ module MicrosoftGraph
                 @associated_teams = value
             end
             ## 
-            ## Instantiates a new userTeamwork and sets the default values.
+            ## Instantiates a new UserTeamwork and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -51,6 +57,8 @@ module MicrosoftGraph
                 return super.merge({
                     "associatedTeams" => lambda {|n| @associated_teams = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AssociatedTeamInfo.create_from_discriminator_value(pn) }) },
                     "installedApps" => lambda {|n| @installed_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserScopeTeamsAppInstallation.create_from_discriminator_value(pn) }) },
+                    "locale" => lambda {|n| @locale = n.get_string_value() },
+                    "region" => lambda {|n| @region = n.get_string_value() },
                 })
             end
             ## 
@@ -69,6 +77,36 @@ module MicrosoftGraph
                 @installed_apps = value
             end
             ## 
+            ## Gets the locale property value. Represents the location that a user selected in Microsoft Teams and doesn't follow the Office's locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.
+            ## @return a string
+            ## 
+            def locale
+                return @locale
+            end
+            ## 
+            ## Sets the locale property value. Represents the location that a user selected in Microsoft Teams and doesn't follow the Office's locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.
+            ## @param value Value to set for the locale property.
+            ## @return a void
+            ## 
+            def locale=(value)
+                @locale = value
+            end
+            ## 
+            ## Gets the region property value. Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user's region (if available). For users without multigeo licenses, the property contains the organization's region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, Spain, Mexico, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.
+            ## @return a string
+            ## 
+            def region
+                return @region
+            end
+            ## 
+            ## Sets the region property value. Represents the region of the organization or the user. For users with multigeo licenses, the property contains the user's region (if available). For users without multigeo licenses, the property contains the organization's region.The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, Spain, Mexico, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.
+            ## @param value Value to set for the region property.
+            ## @return a void
+            ## 
+            def region=(value)
+                @region = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -78,6 +116,8 @@ module MicrosoftGraph
                 super
                 writer.write_collection_of_object_values("associatedTeams", @associated_teams)
                 writer.write_collection_of_object_values("installedApps", @installed_apps)
+                writer.write_string_value("locale", @locale)
+                writer.write_string_value("region", @region)
             end
         end
     end

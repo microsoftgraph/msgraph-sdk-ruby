@@ -7,13 +7,13 @@ module MicrosoftGraph
         class WorkbookFormatProtection < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
+            # Indicates whether Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
             @formula_hidden
             ## 
-            # Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
+            # Indicates whether Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
             @locked
             ## 
-            ## Instantiates a new workbookFormatProtection and sets the default values.
+            ## Instantiates a new WorkbookFormatProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -29,14 +29,14 @@ module MicrosoftGraph
                 return WorkbookFormatProtection.new
             end
             ## 
-            ## Gets the formulaHidden property value. Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
+            ## Gets the formulaHidden property value. Indicates whether Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
             ## @return a boolean
             ## 
             def formula_hidden
                 return @formula_hidden
             end
             ## 
-            ## Sets the formulaHidden property value. Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
+            ## Sets the formulaHidden property value. Indicates whether Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
             ## @param value Value to set for the formulaHidden property.
             ## @return a void
             ## 
@@ -54,14 +54,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the locked property value. Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
+            ## Gets the locked property value. Indicates whether Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
             ## @return a boolean
             ## 
             def locked
                 return @locked
             end
             ## 
-            ## Sets the locked property value. Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
+            ## Sets the locked property value. Indicates whether Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
             ## @param value Value to set for the locked property.
             ## @return a void
             ## 
