@@ -24,11 +24,11 @@ require_relative './get_activities_by_interval_with_start_date_time_with_end_dat
 require_relative './invite/invite_request_builder'
 require_relative './item'
 require_relative './last_modified_by_user/last_modified_by_user_request_builder'
-require_relative './list_item/list_item_request_builder'
 require_relative './permanent_delete/permanent_delete_request_builder'
 require_relative './permissions/permissions_request_builder'
 require_relative './preview/preview_request_builder'
 require_relative './restore/restore_request_builder'
+require_relative './retention_label/retention_label_request_builder'
 require_relative './search_with_q/search_with_q_request_builder'
 require_relative './subscriptions/subscriptions_request_builder'
 require_relative './thumbnails/thumbnails_request_builder'
@@ -129,7 +129,7 @@ module MicrosoftGraph
                         ## 
                         # Provides operations to manage the listItem property of the microsoft.graph.driveItem entity.
                         def list_item()
-                            return MicrosoftGraph::Drives::Item::Items::Item::ListItem::ListItemRequestBuilder.new(@path_parameters, @request_adapter)
+                            return ListItem_EscapedRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Provides operations to call the permanentDelete method.
@@ -150,6 +150,11 @@ module MicrosoftGraph
                         # Provides operations to call the restore method.
                         def restore()
                             return MicrosoftGraph::Drives::Item::Items::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the retentionLabel property of the microsoft.graph.driveItem entity.
+                        def retention_label()
+                            return MicrosoftGraph::Drives::Item::Items::Item::RetentionLabel::RetentionLabelRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.
@@ -188,10 +193,10 @@ module MicrosoftGraph
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}{?%24select,%24expand}")
+                            super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}{?%24expand,%24select}")
                         end
                         ## 
-                        ## Delete a DriveItem by using its ID or path.Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
+                        ## Delete navigation property items for drives
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -200,8 +205,7 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
@@ -223,8 +227,7 @@ module MicrosoftGraph
                                 request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DriveItem.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -241,7 +244,7 @@ module MicrosoftGraph
                             return GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, interval, startDateTime)
                         end
                         ## 
-                        ## Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
+                        ## Update the navigation property items in drives
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of drive_item
@@ -252,8 +255,7 @@ module MicrosoftGraph
                                 body, request_configuration
                             )
                             error_mapping = Hash.new
-                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DriveItem.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
@@ -266,19 +268,20 @@ module MicrosoftGraph
                             return SearchWithQRequestBuilder.new(@path_parameters, @request_adapter, q)
                         end
                         ## 
-                        ## Delete a DriveItem by using its ID or path.Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
+                        ## Delete navigation property items for drives
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
                         def to_delete_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :DELETE
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :DELETE
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
                         end
                         ## 
@@ -288,19 +291,19 @@ module MicrosoftGraph
                         ## 
                         def to_get_request_information(request_configuration=nil)
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :GET
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :GET
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
                         end
                         ## 
-                        ## Update the metadata for a driveItem by ID or path. You can also use update to move an item to another parent by updating the item's parentReference property.
+                        ## Update the navigation property items in drives
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -308,16 +311,25 @@ module MicrosoftGraph
                         def to_patch_request_information(body, request_configuration=nil)
                             raise StandardError, 'body cannot be null' if body.nil?
                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                            request_info.url_template = @url_template
-                            request_info.path_parameters = @path_parameters
-                            request_info.http_method = :PATCH
-                            request_info.headers.add('Accept', 'application/json')
                             unless request_configuration.nil?
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
-                            request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                            request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :PATCH
+                            request_info.headers.try_add('Accept', 'application/json')
                             return request_info
+                        end
+                        ## 
+                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                        ## @param raw_url The raw URL to use for the request builder.
+                        ## @return a drive_item_item_request_builder
+                        ## 
+                        def with_url(raw_url)
+                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                            return DriveItemItemRequestBuilder.new(raw_url, @request_adapter)
                         end
 
                         ## 

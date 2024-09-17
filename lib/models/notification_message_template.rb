@@ -43,7 +43,7 @@ module MicrosoftGraph
                 @branding_options = value
             end
             ## 
-            ## Instantiates a new notificationMessageTemplate and sets the default values.
+            ## Instantiates a new NotificationMessageTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -94,7 +94,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "brandingOptions" => lambda {|n| @branding_options = n.get_enum_value(MicrosoftGraph::Models::NotificationTemplateBrandingOptions) },
+                    "brandingOptions" => lambda {|n| @branding_options = n.get_enum_values(MicrosoftGraph::Models::NotificationTemplateBrandingOptions) },
                     "defaultLocale" => lambda {|n| @default_locale = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
