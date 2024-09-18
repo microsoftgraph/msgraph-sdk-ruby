@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Defines details of scope that's targeted by role management policy rule. The details can include the principal type, the role assignment type, and actions affecting a role. Supports $filter (eq, ne).
             @target
             ## 
-            ## Instantiates a new unifiedRoleManagementPolicyRule and sets the default values.
+            ## Instantiates a new UnifiedRoleManagementPolicyRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

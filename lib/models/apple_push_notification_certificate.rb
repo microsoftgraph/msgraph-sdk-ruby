@@ -109,7 +109,7 @@ module MicrosoftGraph
                 @certificate_upload_status = value
             end
             ## 
-            ## Instantiates a new applePushNotificationCertificate and sets the default values.
+            ## Instantiates a new ApplePushNotificationCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()
