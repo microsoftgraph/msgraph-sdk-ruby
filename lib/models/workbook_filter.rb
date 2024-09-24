@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The currently applied filter on the given column. Read-only.
             @criteria
             ## 
-            ## Instantiates a new workbookFilter and sets the default values.
+            ## Instantiates a new WorkbookFilter and sets the default values.
             ## @return a void
             ## 
             def initialize()

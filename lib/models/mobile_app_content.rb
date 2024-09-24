@@ -15,7 +15,7 @@ module MicrosoftGraph
             # The list of files for this app content version.
             @files
             ## 
-            ## Instantiates a new mobileAppContent and sets the default values.
+            ## Instantiates a new MobileAppContent and sets the default values.
             ## @return a void
             ## 
             def initialize()

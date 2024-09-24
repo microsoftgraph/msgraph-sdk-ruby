@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @call = value
             end
             ## 
-            ## Instantiates a new participantJoiningNotification and sets the default values.
+            ## Instantiates a new ParticipantJoiningNotification and sets the default values.
             ## @return a void
             ## 
             def initialize()
