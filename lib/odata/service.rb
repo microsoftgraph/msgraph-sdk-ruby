@@ -185,7 +185,13 @@ module OData
     end
 
     def entity_set_by_name(name)
-      entity_sets.find { |entity_set| entity_set.name == name }
+      result = entity_sets.find { |entity_set| entity_set.name == name }
+
+      if result.nil?
+        Rails.logger.warn "EntitySet \"#{name}\" not found. Sets are #{entity_sets.map(&:name)}"
+      end
+
+      result
     end
 
     def properties_for_type(type_name)
