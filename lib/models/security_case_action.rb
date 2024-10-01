@@ -10,6 +10,8 @@ module MicrosoftGraph
             HoldUpdate: :HoldUpdate,
             UnknownFutureValue: :UnknownFutureValue,
             PurgeData: :PurgeData,
+            ExportReport: :ExportReport,
+            ExportResult: :ExportResult,
         }
     end
 end

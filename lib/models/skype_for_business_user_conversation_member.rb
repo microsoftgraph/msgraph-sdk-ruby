@@ -10,10 +10,10 @@ module MicrosoftGraph
             # ID of the tenant that the user belongs to.
             @tenant_id
             ## 
-            # Azure Active Directory ID of the user.
+            # Microsoft Entra ID of the user.
             @user_id
             ## 
-            ## Instantiates a new skypeForBusinessUserConversationMember and sets the default values.
+            ## Instantiates a new SkypeForBusinessUserConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -66,14 +66,14 @@ module MicrosoftGraph
                 @tenant_id = value
             end
             ## 
-            ## Gets the userId property value. Azure Active Directory ID of the user.
+            ## Gets the userId property value. Microsoft Entra ID of the user.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. Azure Active Directory ID of the user.
+            ## Sets the userId property value. Microsoft Entra ID of the user.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 

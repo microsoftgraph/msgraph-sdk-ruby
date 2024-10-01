@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @app_id = value
             end
             ## 
-            ## Instantiates a new securityOauthApplicationEvidence and sets the default values.
+            ## Instantiates a new SecurityOauthApplicationEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
