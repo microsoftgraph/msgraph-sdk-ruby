@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The email address registered to this user.
             @email_address
             ## 
-            ## Instantiates a new emailAuthenticationMethod and sets the default values.
+            ## Instantiates a new EmailAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()

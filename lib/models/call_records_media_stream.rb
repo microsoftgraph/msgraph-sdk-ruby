@@ -17,7 +17,7 @@ module MicrosoftGraph
             # Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.
             @average_audio_degradation
             ## 
-            # Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            # Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             @average_audio_network_jitter
             ## 
             # Average estimated bandwidth available between two endpoints in bits per second.
@@ -26,7 +26,7 @@ module MicrosoftGraph
             # Average duration of the received freezing time in the video stream.
             @average_freeze_duration
             ## 
-            # Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            # Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             @average_jitter
             ## 
             # Average packet loss rate for stream.
@@ -38,7 +38,7 @@ module MicrosoftGraph
             # Average frames per second received for all video streams computed over the duration of the session.
             @average_received_frame_rate
             ## 
-            # Average network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            # Average network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             @average_round_trip_time
             ## 
             # Average percentage of video frames lost as displayed to the user.
@@ -47,10 +47,10 @@ module MicrosoftGraph
             # Average frames per second received for a video stream, computed over the duration of the session.
             @average_video_frame_rate
             ## 
-            # Average fraction of packets lost, as specified in [RFC 3550][], computed over the duration of the session.
+            # Average fraction of packets lost, as specified in RFC 3550, computed over the duration of the session.
             @average_video_packet_loss_rate
             ## 
-            # UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             @end_date_time
             ## 
             # Indicates whether the forward error correction (FEC) was used at some point during the session. The default value is null.
@@ -62,10 +62,10 @@ module MicrosoftGraph
             # Fraction of the call that the client is running less than 70% expected video processing capability.
             @low_video_processing_capability_ratio
             ## 
-            # Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            # Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             @max_audio_network_jitter
             ## 
-            # Maximum jitter for the stream computed as specified in RFC 3550, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            # Maximum jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             @max_jitter
             ## 
             # Maximum packet loss rate for the stream.
@@ -74,7 +74,7 @@ module MicrosoftGraph
             # Maximum ratio of packets concealed by the healer.
             @max_ratio_of_concealed_samples
             ## 
-            # Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            # Maximum network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             @max_round_trip_time
             ## 
             # The OdataType property
@@ -89,7 +89,7 @@ module MicrosoftGraph
             # Average duration of the received freezing time in the video stream represented in root mean square.
             @rms_freeze_duration
             ## 
-            # UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             @start_date_time
             ## 
             # The streamDirection property
@@ -104,15 +104,15 @@ module MicrosoftGraph
             # True if the media stream bypassed the Mediation Server and went straight between client and PSTN Gateway/PBX, false otherwise.
             @was_media_bypassed
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the averageAudioDegradation property value. Average Network Mean Opinion Score degradation for stream. Represents how much the network loss and jitter has impacted the quality of received audio.
-            ## @return a float
+            ## @return a media_stream_average_audio_degradation
             ## 
             def average_audio_degradation
                 return @average_audio_degradation
@@ -149,14 +149,14 @@ module MicrosoftGraph
                 @average_audio_degradation = value
             end
             ## 
-            ## Gets the averageAudioNetworkJitter property value. Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Gets the averageAudioNetworkJitter property value. Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def average_audio_network_jitter
                 return @average_audio_network_jitter
             end
             ## 
-            ## Sets the averageAudioNetworkJitter property value. Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Sets the averageAudioNetworkJitter property value. Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @param value Value to set for the averageAudioNetworkJitter property.
             ## @return a void
             ## 
@@ -194,14 +194,14 @@ module MicrosoftGraph
                 @average_freeze_duration = value
             end
             ## 
-            ## Gets the averageJitter property value. Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Gets the averageJitter property value. Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def average_jitter
                 return @average_jitter
             end
             ## 
-            ## Sets the averageJitter property value. Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Sets the averageJitter property value. Average jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @param value Value to set for the averageJitter property.
             ## @return a void
             ## 
@@ -210,7 +210,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the averagePacketLossRate property value. Average packet loss rate for stream.
-            ## @return a float
+            ## @return a media_stream_average_packet_loss_rate
             ## 
             def average_packet_loss_rate
                 return @average_packet_loss_rate
@@ -225,7 +225,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the averageRatioOfConcealedSamples property value. Ratio of the number of audio frames with samples generated by packet loss concealment to the total number of audio frames.
-            ## @return a float
+            ## @return a media_stream_average_ratio_of_concealed_samples
             ## 
             def average_ratio_of_concealed_samples
                 return @average_ratio_of_concealed_samples
@@ -240,7 +240,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the averageReceivedFrameRate property value. Average frames per second received for all video streams computed over the duration of the session.
-            ## @return a float
+            ## @return a media_stream_average_received_frame_rate
             ## 
             def average_received_frame_rate
                 return @average_received_frame_rate
@@ -254,14 +254,14 @@ module MicrosoftGraph
                 @average_received_frame_rate = value
             end
             ## 
-            ## Gets the averageRoundTripTime property value. Average network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Gets the averageRoundTripTime property value. Average network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def average_round_trip_time
                 return @average_round_trip_time
             end
             ## 
-            ## Sets the averageRoundTripTime property value. Average network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Sets the averageRoundTripTime property value. Average network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @param value Value to set for the averageRoundTripTime property.
             ## @return a void
             ## 
@@ -270,7 +270,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the averageVideoFrameLossPercentage property value. Average percentage of video frames lost as displayed to the user.
-            ## @return a float
+            ## @return a media_stream_average_video_frame_loss_percentage
             ## 
             def average_video_frame_loss_percentage
                 return @average_video_frame_loss_percentage
@@ -285,7 +285,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the averageVideoFrameRate property value. Average frames per second received for a video stream, computed over the duration of the session.
-            ## @return a float
+            ## @return a media_stream_average_video_frame_rate
             ## 
             def average_video_frame_rate
                 return @average_video_frame_rate
@@ -299,14 +299,14 @@ module MicrosoftGraph
                 @average_video_frame_rate = value
             end
             ## 
-            ## Gets the averageVideoPacketLossRate property value. Average fraction of packets lost, as specified in [RFC 3550][], computed over the duration of the session.
-            ## @return a float
+            ## Gets the averageVideoPacketLossRate property value. Average fraction of packets lost, as specified in RFC 3550, computed over the duration of the session.
+            ## @return a media_stream_average_video_packet_loss_rate
             ## 
             def average_video_packet_loss_rate
                 return @average_video_packet_loss_rate
             end
             ## 
-            ## Sets the averageVideoPacketLossRate property value. Average fraction of packets lost, as specified in [RFC 3550][], computed over the duration of the session.
+            ## Sets the averageVideoPacketLossRate property value. Average fraction of packets lost, as specified in RFC 3550, computed over the duration of the session.
             ## @param value Value to set for the averageVideoPacketLossRate property.
             ## @return a void
             ## 
@@ -314,7 +314,7 @@ module MicrosoftGraph
                 @average_video_packet_loss_rate = value
             end
             ## 
-            ## Instantiates a new callRecordsMediaStream and sets the default values.
+            ## Instantiates a new CallRecordsMediaStream and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -330,14 +330,14 @@ module MicrosoftGraph
                 return CallRecordsMediaStream.new
             end
             ## 
-            ## Gets the endDateTime property value. UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the endDateTime property value. UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             ## @return a date_time
             ## 
             def end_date_time
                 return @end_date_time
             end
             ## 
-            ## Sets the endDateTime property value. UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the endDateTime property value. UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
@@ -351,30 +351,30 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "audioCodec" => lambda {|n| @audio_codec = n.get_enum_value(MicrosoftGraph::Models::CallRecordsAudioCodec) },
-                    "averageAudioDegradation" => lambda {|n| @average_audio_degradation = n.get_float_value() },
+                    "averageAudioDegradation" => lambda {|n| @average_audio_degradation = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamAverageAudioDegradation.create_from_discriminator_value(pn) }) },
                     "averageAudioNetworkJitter" => lambda {|n| @average_audio_network_jitter = n.get_duration_value() },
                     "averageBandwidthEstimate" => lambda {|n| @average_bandwidth_estimate = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "averageFreezeDuration" => lambda {|n| @average_freeze_duration = n.get_duration_value() },
                     "averageJitter" => lambda {|n| @average_jitter = n.get_duration_value() },
-                    "averagePacketLossRate" => lambda {|n| @average_packet_loss_rate = n.get_float_value() },
-                    "averageRatioOfConcealedSamples" => lambda {|n| @average_ratio_of_concealed_samples = n.get_float_value() },
-                    "averageReceivedFrameRate" => lambda {|n| @average_received_frame_rate = n.get_float_value() },
+                    "averagePacketLossRate" => lambda {|n| @average_packet_loss_rate = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamAveragePacketLossRate.create_from_discriminator_value(pn) }) },
+                    "averageRatioOfConcealedSamples" => lambda {|n| @average_ratio_of_concealed_samples = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamAverageRatioOfConcealedSamples.create_from_discriminator_value(pn) }) },
+                    "averageReceivedFrameRate" => lambda {|n| @average_received_frame_rate = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamAverageReceivedFrameRate.create_from_discriminator_value(pn) }) },
                     "averageRoundTripTime" => lambda {|n| @average_round_trip_time = n.get_duration_value() },
-                    "averageVideoFrameLossPercentage" => lambda {|n| @average_video_frame_loss_percentage = n.get_float_value() },
-                    "averageVideoFrameRate" => lambda {|n| @average_video_frame_rate = n.get_float_value() },
-                    "averageVideoPacketLossRate" => lambda {|n| @average_video_packet_loss_rate = n.get_float_value() },
+                    "averageVideoFrameLossPercentage" => lambda {|n| @average_video_frame_loss_percentage = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamAverageVideoFrameLossPercentage.create_from_discriminator_value(pn) }) },
+                    "averageVideoFrameRate" => lambda {|n| @average_video_frame_rate = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamAverageVideoFrameRate.create_from_discriminator_value(pn) }) },
+                    "averageVideoPacketLossRate" => lambda {|n| @average_video_packet_loss_rate = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamAverageVideoPacketLossRate.create_from_discriminator_value(pn) }) },
                     "endDateTime" => lambda {|n| @end_date_time = n.get_date_time_value() },
                     "isAudioForwardErrorCorrectionUsed" => lambda {|n| @is_audio_forward_error_correction_used = n.get_boolean_value() },
-                    "lowFrameRateRatio" => lambda {|n| @low_frame_rate_ratio = n.get_float_value() },
-                    "lowVideoProcessingCapabilityRatio" => lambda {|n| @low_video_processing_capability_ratio = n.get_float_value() },
+                    "lowFrameRateRatio" => lambda {|n| @low_frame_rate_ratio = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamLowFrameRateRatio.create_from_discriminator_value(pn) }) },
+                    "lowVideoProcessingCapabilityRatio" => lambda {|n| @low_video_processing_capability_ratio = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamLowVideoProcessingCapabilityRatio.create_from_discriminator_value(pn) }) },
                     "maxAudioNetworkJitter" => lambda {|n| @max_audio_network_jitter = n.get_duration_value() },
                     "maxJitter" => lambda {|n| @max_jitter = n.get_duration_value() },
-                    "maxPacketLossRate" => lambda {|n| @max_packet_loss_rate = n.get_float_value() },
-                    "maxRatioOfConcealedSamples" => lambda {|n| @max_ratio_of_concealed_samples = n.get_float_value() },
+                    "maxPacketLossRate" => lambda {|n| @max_packet_loss_rate = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamMaxPacketLossRate.create_from_discriminator_value(pn) }) },
+                    "maxRatioOfConcealedSamples" => lambda {|n| @max_ratio_of_concealed_samples = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamMaxRatioOfConcealedSamples.create_from_discriminator_value(pn) }) },
                     "maxRoundTripTime" => lambda {|n| @max_round_trip_time = n.get_duration_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "packetUtilization" => lambda {|n| @packet_utilization = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
-                    "postForwardErrorCorrectionPacketLossRate" => lambda {|n| @post_forward_error_correction_packet_loss_rate = n.get_float_value() },
+                    "postForwardErrorCorrectionPacketLossRate" => lambda {|n| @post_forward_error_correction_packet_loss_rate = n.get_object_value(lambda {|pn| CallRecordsMediaStream::MediaStreamPostForwardErrorCorrectionPacketLossRate.create_from_discriminator_value(pn) }) },
                     "rmsFreezeDuration" => lambda {|n| @rms_freeze_duration = n.get_duration_value() },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "streamDirection" => lambda {|n| @stream_direction = n.get_enum_value(MicrosoftGraph::Models::CallRecordsMediaStreamDirection) },
@@ -400,7 +400,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the lowFrameRateRatio property value. Fraction of the call where frame rate is less than 7.5 frames per second.
-            ## @return a float
+            ## @return a media_stream_low_frame_rate_ratio
             ## 
             def low_frame_rate_ratio
                 return @low_frame_rate_ratio
@@ -415,7 +415,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the lowVideoProcessingCapabilityRatio property value. Fraction of the call that the client is running less than 70% expected video processing capability.
-            ## @return a float
+            ## @return a media_stream_low_video_processing_capability_ratio
             ## 
             def low_video_processing_capability_ratio
                 return @low_video_processing_capability_ratio
@@ -429,14 +429,14 @@ module MicrosoftGraph
                 @low_video_processing_capability_ratio = value
             end
             ## 
-            ## Gets the maxAudioNetworkJitter property value. Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Gets the maxAudioNetworkJitter property value. Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def max_audio_network_jitter
                 return @max_audio_network_jitter
             end
             ## 
-            ## Sets the maxAudioNetworkJitter property value. Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Sets the maxAudioNetworkJitter property value. Maximum of audio network jitter computed over each of the 20 second windows during the session, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @param value Value to set for the maxAudioNetworkJitter property.
             ## @return a void
             ## 
@@ -444,14 +444,14 @@ module MicrosoftGraph
                 @max_audio_network_jitter = value
             end
             ## 
-            ## Gets the maxJitter property value. Maximum jitter for the stream computed as specified in RFC 3550, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Gets the maxJitter property value. Maximum jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def max_jitter
                 return @max_jitter
             end
             ## 
-            ## Sets the maxJitter property value. Maximum jitter for the stream computed as specified in RFC 3550, denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Sets the maxJitter property value. Maximum jitter for the stream computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @param value Value to set for the maxJitter property.
             ## @return a void
             ## 
@@ -460,7 +460,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the maxPacketLossRate property value. Maximum packet loss rate for the stream.
-            ## @return a float
+            ## @return a media_stream_max_packet_loss_rate
             ## 
             def max_packet_loss_rate
                 return @max_packet_loss_rate
@@ -475,7 +475,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the maxRatioOfConcealedSamples property value. Maximum ratio of packets concealed by the healer.
-            ## @return a float
+            ## @return a media_stream_max_ratio_of_concealed_samples
             ## 
             def max_ratio_of_concealed_samples
                 return @max_ratio_of_concealed_samples
@@ -489,14 +489,14 @@ module MicrosoftGraph
                 @max_ratio_of_concealed_samples = value
             end
             ## 
-            ## Gets the maxRoundTripTime property value. Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Gets the maxRoundTripTime property value. Maximum network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def max_round_trip_time
                 return @max_round_trip_time
             end
             ## 
-            ## Sets the maxRoundTripTime property value. Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
+            ## Sets the maxRoundTripTime property value. Maximum network propagation round-trip time computed as specified in RFC 3550, denoted in ISO 8601 format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
             ## @param value Value to set for the maxRoundTripTime property.
             ## @return a void
             ## 
@@ -535,7 +535,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the postForwardErrorCorrectionPacketLossRate property value. Packet loss rate after FEC has been applied aggregated across all video streams and codecs.
-            ## @return a float
+            ## @return a media_stream_post_forward_error_correction_packet_loss_rate
             ## 
             def post_forward_error_correction_packet_loss_rate
                 return @post_forward_error_correction_packet_loss_rate
@@ -571,30 +571,30 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_enum_value("audioCodec", @audio_codec)
-                writer.write_float_value("averageAudioDegradation", @average_audio_degradation)
+                writer.write_object_value("averageAudioDegradation", @average_audio_degradation)
                 writer.write_duration_value("averageAudioNetworkJitter", @average_audio_network_jitter)
                 writer.write_object_value("averageBandwidthEstimate", @average_bandwidth_estimate)
                 writer.write_duration_value("averageFreezeDuration", @average_freeze_duration)
                 writer.write_duration_value("averageJitter", @average_jitter)
-                writer.write_float_value("averagePacketLossRate", @average_packet_loss_rate)
-                writer.write_float_value("averageRatioOfConcealedSamples", @average_ratio_of_concealed_samples)
-                writer.write_float_value("averageReceivedFrameRate", @average_received_frame_rate)
+                writer.write_object_value("averagePacketLossRate", @average_packet_loss_rate)
+                writer.write_object_value("averageRatioOfConcealedSamples", @average_ratio_of_concealed_samples)
+                writer.write_object_value("averageReceivedFrameRate", @average_received_frame_rate)
                 writer.write_duration_value("averageRoundTripTime", @average_round_trip_time)
-                writer.write_float_value("averageVideoFrameLossPercentage", @average_video_frame_loss_percentage)
-                writer.write_float_value("averageVideoFrameRate", @average_video_frame_rate)
-                writer.write_float_value("averageVideoPacketLossRate", @average_video_packet_loss_rate)
+                writer.write_object_value("averageVideoFrameLossPercentage", @average_video_frame_loss_percentage)
+                writer.write_object_value("averageVideoFrameRate", @average_video_frame_rate)
+                writer.write_object_value("averageVideoPacketLossRate", @average_video_packet_loss_rate)
                 writer.write_date_time_value("endDateTime", @end_date_time)
                 writer.write_boolean_value("isAudioForwardErrorCorrectionUsed", @is_audio_forward_error_correction_used)
-                writer.write_float_value("lowFrameRateRatio", @low_frame_rate_ratio)
-                writer.write_float_value("lowVideoProcessingCapabilityRatio", @low_video_processing_capability_ratio)
+                writer.write_object_value("lowFrameRateRatio", @low_frame_rate_ratio)
+                writer.write_object_value("lowVideoProcessingCapabilityRatio", @low_video_processing_capability_ratio)
                 writer.write_duration_value("maxAudioNetworkJitter", @max_audio_network_jitter)
                 writer.write_duration_value("maxJitter", @max_jitter)
-                writer.write_float_value("maxPacketLossRate", @max_packet_loss_rate)
-                writer.write_float_value("maxRatioOfConcealedSamples", @max_ratio_of_concealed_samples)
+                writer.write_object_value("maxPacketLossRate", @max_packet_loss_rate)
+                writer.write_object_value("maxRatioOfConcealedSamples", @max_ratio_of_concealed_samples)
                 writer.write_duration_value("maxRoundTripTime", @max_round_trip_time)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_object_value("packetUtilization", @packet_utilization)
-                writer.write_float_value("postForwardErrorCorrectionPacketLossRate", @post_forward_error_correction_packet_loss_rate)
+                writer.write_object_value("postForwardErrorCorrectionPacketLossRate", @post_forward_error_correction_packet_loss_rate)
                 writer.write_duration_value("rmsFreezeDuration", @rms_freeze_duration)
                 writer.write_date_time_value("startDateTime", @start_date_time)
                 writer.write_enum_value("streamDirection", @stream_direction)
@@ -604,14 +604,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the startDateTime property value. UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the startDateTime property value. UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             ## @return a date_time
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the startDateTime property value. UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This field is only available for streams that use the SIP protocol.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
@@ -677,6 +677,1194 @@ module MicrosoftGraph
             ## 
             def was_media_bypassed=(value)
                 @was_media_bypassed = value
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamAverageAudioDegradation
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_average_audio_degradation
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamAverageAudioDegradation.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamAveragePacketLossRate
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_average_packet_loss_rate
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamAveragePacketLossRate.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamAverageRatioOfConcealedSamples
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_average_ratio_of_concealed_samples
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamAverageRatioOfConcealedSamples.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamAverageReceivedFrameRate
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_average_received_frame_rate
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamAverageReceivedFrameRate.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamAverageVideoFrameLossPercentage
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_average_video_frame_loss_percentage
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamAverageVideoFrameLossPercentage.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamAverageVideoFrameRate
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_average_video_frame_rate
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamAverageVideoFrameRate.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamAverageVideoPacketLossRate
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_average_video_packet_loss_rate
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamAverageVideoPacketLossRate.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamLowFrameRateRatio
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_low_frame_rate_ratio
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamLowFrameRateRatio.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamLowVideoProcessingCapabilityRatio
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_low_video_processing_capability_ratio
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamLowVideoProcessingCapabilityRatio.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamMaxPacketLossRate
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_max_packet_loss_rate
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamMaxPacketLossRate.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamMaxRatioOfConcealedSamples
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_max_ratio_of_concealed_samples
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamMaxRatioOfConcealedSamples.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes float, ReferenceNumeric, string
+            class MediaStreamPostForwardErrorCorrectionPacketLossRate
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type float
+                @float
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a media_stream_post_forward_error_correction_packet_loss_rate
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return MediaStreamPostForwardErrorCorrectionPacketLossRate.new
+                end
+                ## 
+                ## Gets the float property value. Composed type representation for type float
+                ## @return a float
+                ## 
+                def float
+                    return @float
+                end
+                ## 
+                ## Sets the float property value. Composed type representation for type float
+                ## @param value Value to set for the float property.
+                ## @return a void
+                ## 
+                def float=(value)
+                    @float = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "float" => lambda {|n| @float = n.get_float_value() },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_float_value("float", @float)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
             end
         end
     end

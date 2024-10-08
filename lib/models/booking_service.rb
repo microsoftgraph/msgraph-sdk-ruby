@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
@@ -11,6 +12,9 @@ module MicrosoftGraph
             ## 
             # Additional information that is sent to the customer when an appointment is confirmed.
             @additional_information
+            ## 
+            # The date, time, and time zone when the service was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            @created_date_time
             ## 
             # Contains the set of custom questions associated with a particular service.
             @custom_questions
@@ -36,17 +40,23 @@ module MicrosoftGraph
             # A service name.
             @display_name
             ## 
-            # True if the URL to join the appointment anonymously (anonymousJoinWebUrl) will be generated for the appointment booked for this service.
+            # Indicates if an anonymousJoinWebUrl(webrtcUrl) is generated for the appointment booked for this service. The default value is false.
             @is_anonymous_join_enabled
             ## 
-            # True means this service is not available to customers for booking.
+            # Indicates that the customer can manage bookings created by the staff. The default value is false.
+            @is_customer_allowed_to_manage_booking
+            ## 
+            # True indicates that this service isn't available to customers for booking.
             @is_hidden_from_customers
             ## 
-            # True indicates that the appointments for the service will be held online. Default value is false.
+            # Indicates that the appointments for the service are held online. The default value is false.
             @is_location_online
             ## 
             # The language of the self-service booking page.
             @language_tag
+            ## 
+            # The date, time, and time zone when the service was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            @last_updated_date_time
             ## 
             # The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
             @maximum_attendees_count
@@ -87,11 +97,26 @@ module MicrosoftGraph
                 @additional_information = value
             end
             ## 
-            ## Instantiates a new bookingService and sets the default values.
+            ## Instantiates a new BookingService and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+            end
+            ## 
+            ## Gets the createdDateTime property value. The date, time, and time zone when the service was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The date, time, and time zone when the service was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -149,7 +174,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the defaultPrice property value. The default monetary price for the service.
-            ## @return a double
+            ## @return a booking_service_default_price
             ## 
             def default_price
                 return @default_price
@@ -229,18 +254,21 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "additionalInformation" => lambda {|n| @additional_information = n.get_string_value() },
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "customQuestions" => lambda {|n| @custom_questions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingQuestionAssignment.create_from_discriminator_value(pn) }) },
                     "defaultDuration" => lambda {|n| @default_duration = n.get_duration_value() },
                     "defaultLocation" => lambda {|n| @default_location = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Location.create_from_discriminator_value(pn) }) },
-                    "defaultPrice" => lambda {|n| @default_price = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "defaultPrice" => lambda {|n| @default_price = n.get_object_value(lambda {|pn| BookingService::BookingServiceDefaultPrice.create_from_discriminator_value(pn) }) },
                     "defaultPriceType" => lambda {|n| @default_price_type = n.get_enum_value(MicrosoftGraph::Models::BookingPriceType) },
                     "defaultReminders" => lambda {|n| @default_reminders = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingReminder.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "isAnonymousJoinEnabled" => lambda {|n| @is_anonymous_join_enabled = n.get_boolean_value() },
+                    "isCustomerAllowedToManageBooking" => lambda {|n| @is_customer_allowed_to_manage_booking = n.get_boolean_value() },
                     "isHiddenFromCustomers" => lambda {|n| @is_hidden_from_customers = n.get_boolean_value() },
                     "isLocationOnline" => lambda {|n| @is_location_online = n.get_boolean_value() },
                     "languageTag" => lambda {|n| @language_tag = n.get_string_value() },
+                    "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "maximumAttendeesCount" => lambda {|n| @maximum_attendees_count = n.get_number_value() },
                     "notes" => lambda {|n| @notes = n.get_string_value() },
                     "postBuffer" => lambda {|n| @post_buffer = n.get_duration_value() },
@@ -252,14 +280,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isAnonymousJoinEnabled property value. True if the URL to join the appointment anonymously (anonymousJoinWebUrl) will be generated for the appointment booked for this service.
+            ## Gets the isAnonymousJoinEnabled property value. Indicates if an anonymousJoinWebUrl(webrtcUrl) is generated for the appointment booked for this service. The default value is false.
             ## @return a boolean
             ## 
             def is_anonymous_join_enabled
                 return @is_anonymous_join_enabled
             end
             ## 
-            ## Sets the isAnonymousJoinEnabled property value. True if the URL to join the appointment anonymously (anonymousJoinWebUrl) will be generated for the appointment booked for this service.
+            ## Sets the isAnonymousJoinEnabled property value. Indicates if an anonymousJoinWebUrl(webrtcUrl) is generated for the appointment booked for this service. The default value is false.
             ## @param value Value to set for the isAnonymousJoinEnabled property.
             ## @return a void
             ## 
@@ -267,14 +295,29 @@ module MicrosoftGraph
                 @is_anonymous_join_enabled = value
             end
             ## 
-            ## Gets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+            ## Gets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
+            ## @return a boolean
+            ## 
+            def is_customer_allowed_to_manage_booking
+                return @is_customer_allowed_to_manage_booking
+            end
+            ## 
+            ## Sets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
+            ## @param value Value to set for the isCustomerAllowedToManageBooking property.
+            ## @return a void
+            ## 
+            def is_customer_allowed_to_manage_booking=(value)
+                @is_customer_allowed_to_manage_booking = value
+            end
+            ## 
+            ## Gets the isHiddenFromCustomers property value. True indicates that this service isn't available to customers for booking.
             ## @return a boolean
             ## 
             def is_hidden_from_customers
                 return @is_hidden_from_customers
             end
             ## 
-            ## Sets the isHiddenFromCustomers property value. True means this service is not available to customers for booking.
+            ## Sets the isHiddenFromCustomers property value. True indicates that this service isn't available to customers for booking.
             ## @param value Value to set for the isHiddenFromCustomers property.
             ## @return a void
             ## 
@@ -282,14 +325,14 @@ module MicrosoftGraph
                 @is_hidden_from_customers = value
             end
             ## 
-            ## Gets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
+            ## Gets the isLocationOnline property value. Indicates that the appointments for the service are held online. The default value is false.
             ## @return a boolean
             ## 
             def is_location_online
                 return @is_location_online
             end
             ## 
-            ## Sets the isLocationOnline property value. True indicates that the appointments for the service will be held online. Default value is false.
+            ## Sets the isLocationOnline property value. Indicates that the appointments for the service are held online. The default value is false.
             ## @param value Value to set for the isLocationOnline property.
             ## @return a void
             ## 
@@ -310,6 +353,21 @@ module MicrosoftGraph
             ## 
             def language_tag=(value)
                 @language_tag = value
+            end
+            ## 
+            ## Gets the lastUpdatedDateTime property value. The date, time, and time zone when the service was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @return a date_time
+            ## 
+            def last_updated_date_time
+                return @last_updated_date_time
+            end
+            ## 
+            ## Sets the lastUpdatedDateTime property value. The date, time, and time zone when the service was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @param value Value to set for the lastUpdatedDateTime property.
+            ## @return a void
+            ## 
+            def last_updated_date_time=(value)
+                @last_updated_date_time = value
             end
             ## 
             ## Gets the maximumAttendeesCount property value. The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
@@ -395,6 +453,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("additionalInformation", @additional_information)
+                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_collection_of_object_values("customQuestions", @custom_questions)
                 writer.write_duration_value("defaultDuration", @default_duration)
                 writer.write_object_value("defaultLocation", @default_location)
@@ -404,9 +463,11 @@ module MicrosoftGraph
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_boolean_value("isAnonymousJoinEnabled", @is_anonymous_join_enabled)
+                writer.write_boolean_value("isCustomerAllowedToManageBooking", @is_customer_allowed_to_manage_booking)
                 writer.write_boolean_value("isHiddenFromCustomers", @is_hidden_from_customers)
                 writer.write_boolean_value("isLocationOnline", @is_location_online)
                 writer.write_string_value("languageTag", @language_tag)
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_number_value("maximumAttendeesCount", @maximum_attendees_count)
                 writer.write_string_value("notes", @notes)
                 writer.write_duration_value("postBuffer", @post_buffer)
@@ -459,6 +520,105 @@ module MicrosoftGraph
             ## 
             def web_url=(value)
                 @web_url = value
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class BookingServiceDefaultPrice
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a booking_service_default_price
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return BookingServiceDefaultPrice.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
             end
         end
     end

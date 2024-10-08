@@ -13,10 +13,10 @@ module MicrosoftGraph
             # The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).
             @display_name
             ## 
-            # Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+            # Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
             @inherits_permissions_from
             ## 
-            # Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).
+            # Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (eq, in).
             @is_built_in
             ## 
             # Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
@@ -34,7 +34,7 @@ module MicrosoftGraph
             # Indicates version of the role definition. Read-only when isBuiltIn is true.
             @version
             ## 
-            ## Instantiates a new unifiedRoleDefinition and sets the default values.
+            ## Instantiates a new UnifiedRoleDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -97,14 +97,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+            ## Gets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
             ## @return a unified_role_definition
             ## 
             def inherits_permissions_from
                 return @inherits_permissions_from
             end
             ## 
-            ## Sets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+            ## Sets the inheritsPermissionsFrom property value. Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
             ## @param value Value to set for the inheritsPermissionsFrom property.
             ## @return a void
             ## 
@@ -112,14 +112,14 @@ module MicrosoftGraph
                 @inherits_permissions_from = value
             end
             ## 
-            ## Gets the isBuiltIn property value. Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).
+            ## Gets the isBuiltIn property value. Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (eq, in).
             ## @return a boolean
             ## 
             def is_built_in
                 return @is_built_in
             end
             ## 
-            ## Sets the isBuiltIn property value. Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).
+            ## Sets the isBuiltIn property value. Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (eq, in).
             ## @param value Value to set for the isBuiltIn property.
             ## @return a void
             ## 

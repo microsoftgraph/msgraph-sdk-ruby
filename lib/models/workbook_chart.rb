@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Represents chart axes. Read-only.
             @axes
             ## 
-            # Represents the datalabels on the chart. Read-only.
+            # Represents the data labels on the chart. Read-only.
             @data_labels
             ## 
             # Encapsulates the format properties for the chart area. Read-only.
@@ -31,7 +31,7 @@ module MicrosoftGraph
             # Represents either a single series or collection of series in the chart. Read-only.
             @series
             ## 
-            # Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+            # Represents the title of the specified chart, including the text, visibility, position and formatting of the title. Read-only.
             @title
             ## 
             # Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).
@@ -58,7 +58,7 @@ module MicrosoftGraph
                 @axes = value
             end
             ## 
-            ## Instantiates a new workbookChart and sets the default values.
+            ## Instantiates a new WorkbookChart and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,14 +74,14 @@ module MicrosoftGraph
                 return WorkbookChart.new
             end
             ## 
-            ## Gets the dataLabels property value. Represents the datalabels on the chart. Read-only.
+            ## Gets the dataLabels property value. Represents the data labels on the chart. Read-only.
             ## @return a workbook_chart_data_labels
             ## 
             def data_labels
                 return @data_labels
             end
             ## 
-            ## Sets the dataLabels property value. Represents the datalabels on the chart. Read-only.
+            ## Sets the dataLabels property value. Represents the data labels on the chart. Read-only.
             ## @param value Value to set for the dataLabels property.
             ## @return a void
             ## 
@@ -112,20 +112,20 @@ module MicrosoftGraph
                     "axes" => lambda {|n| @axes = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookChartAxes.create_from_discriminator_value(pn) }) },
                     "dataLabels" => lambda {|n| @data_labels = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookChartDataLabels.create_from_discriminator_value(pn) }) },
                     "format" => lambda {|n| @format = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookChartAreaFormat.create_from_discriminator_value(pn) }) },
-                    "height" => lambda {|n| @height = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
-                    "left" => lambda {|n| @left = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "height" => lambda {|n| @height = n.get_object_value(lambda {|pn| WorkbookChart::WorkbookChartHeight.create_from_discriminator_value(pn) }) },
+                    "left" => lambda {|n| @left = n.get_object_value(lambda {|pn| WorkbookChart::WorkbookChartLeft.create_from_discriminator_value(pn) }) },
                     "legend" => lambda {|n| @legend = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookChartLegend.create_from_discriminator_value(pn) }) },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "series" => lambda {|n| @series = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WorkbookChartSeries.create_from_discriminator_value(pn) }) },
                     "title" => lambda {|n| @title = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookChartTitle.create_from_discriminator_value(pn) }) },
-                    "top" => lambda {|n| @top = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
-                    "width" => lambda {|n| @width = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "top" => lambda {|n| @top = n.get_object_value(lambda {|pn| WorkbookChart::WorkbookChartTop.create_from_discriminator_value(pn) }) },
+                    "width" => lambda {|n| @width = n.get_object_value(lambda {|pn| WorkbookChart::WorkbookChartWidth.create_from_discriminator_value(pn) }) },
                     "worksheet" => lambda {|n| @worksheet = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookWorksheet.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
             ## Gets the height property value. Represents the height, in points, of the chart object.
-            ## @return a double
+            ## @return a workbook_chart_height
             ## 
             def height
                 return @height
@@ -140,7 +140,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the left property value. The distance, in points, from the left side of the chart to the worksheet origin.
-            ## @return a double
+            ## @return a workbook_chart_left
             ## 
             def left
                 return @left
@@ -220,14 +220,14 @@ module MicrosoftGraph
                 @series = value
             end
             ## 
-            ## Gets the title property value. Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+            ## Gets the title property value. Represents the title of the specified chart, including the text, visibility, position and formatting of the title. Read-only.
             ## @return a workbook_chart_title
             ## 
             def title
                 return @title
             end
             ## 
-            ## Sets the title property value. Represents the title of the specified chart, including the text, visibility, position and formating of the title. Read-only.
+            ## Sets the title property value. Represents the title of the specified chart, including the text, visibility, position and formatting of the title. Read-only.
             ## @param value Value to set for the title property.
             ## @return a void
             ## 
@@ -236,7 +236,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the top property value. Represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).
-            ## @return a double
+            ## @return a workbook_chart_top
             ## 
             def top
                 return @top
@@ -251,7 +251,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the width property value. Represents the width, in points, of the chart object.
-            ## @return a double
+            ## @return a workbook_chart_width
             ## 
             def width
                 return @width
@@ -278,6 +278,402 @@ module MicrosoftGraph
             ## 
             def worksheet=(value)
                 @worksheet = value
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class WorkbookChartHeight
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a workbook_chart_height
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return WorkbookChartHeight.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class WorkbookChartLeft
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a workbook_chart_left
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return WorkbookChartLeft.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class WorkbookChartTop
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a workbook_chart_top
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return WorkbookChartTop.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class WorkbookChartWidth
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a workbook_chart_width
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return WorkbookChartWidth.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
             end
         end
     end

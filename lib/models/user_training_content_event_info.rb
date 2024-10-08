@@ -29,15 +29,15 @@ module MicrosoftGraph
             # Potential improvement in the tenant security posture after completion of the training by the user.
             @potential_score_impact
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph
                 @browser = value
             end
             ## 
-            ## Instantiates a new userTrainingContentEventInfo and sets the default values.
+            ## Instantiates a new UserTrainingContentEventInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -100,7 +100,7 @@ module MicrosoftGraph
                     "ipAddress" => lambda {|n| @ip_address = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "osPlatformDeviceDetails" => lambda {|n| @os_platform_device_details = n.get_string_value() },
-                    "potentialScoreImpact" => lambda {|n| @potential_score_impact = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "potentialScoreImpact" => lambda {|n| @potential_score_impact = n.get_object_value(lambda {|pn| UserTrainingContentEventInfo::UserTrainingContentEventInfoPotentialScoreImpact.create_from_discriminator_value(pn) }) },
                 }
             end
             ## 
@@ -150,7 +150,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the potentialScoreImpact property value. Potential improvement in the tenant security posture after completion of the training by the user.
-            ## @return a double
+            ## @return a user_training_content_event_info_potential_score_impact
             ## 
             def potential_score_impact
                 return @potential_score_impact
@@ -177,6 +177,105 @@ module MicrosoftGraph
                 writer.write_string_value("osPlatformDeviceDetails", @os_platform_device_details)
                 writer.write_object_value("potentialScoreImpact", @potential_score_impact)
                 writer.write_additional_data(@additional_data)
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserTrainingContentEventInfoPotentialScoreImpact
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_training_content_event_info_potential_score_impact
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserTrainingContentEventInfoPotentialScoreImpact.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
             end
         end
     end

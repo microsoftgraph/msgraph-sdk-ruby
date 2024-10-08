@@ -37,7 +37,7 @@ module MicrosoftGraph
             @work_from_anywhere_score
             ## 
             ## Gets the cloudIdentityScore property value. The cloud identity score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-            ## @return a double
+            ## @return a user_experience_analytics_work_from_anywhere_model_performance_cloud_identity_score
             ## 
             def cloud_identity_score
                 return @cloud_identity_score
@@ -52,7 +52,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the cloudManagementScore property value. The cloud management score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-            ## @return a double
+            ## @return a user_experience_analytics_work_from_anywhere_model_performance_cloud_management_score
             ## 
             def cloud_management_score
                 return @cloud_management_score
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the cloudProvisioningScore property value. The cloud provisioning score of the device model.  Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-            ## @return a double
+            ## @return a user_experience_analytics_work_from_anywhere_model_performance_cloud_provisioning_score
             ## 
             def cloud_provisioning_score
                 return @cloud_provisioning_score
@@ -81,7 +81,7 @@ module MicrosoftGraph
                 @cloud_provisioning_score = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsWorkFromAnywhereModelPerformance and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsWorkFromAnywhereModelPerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -102,15 +102,15 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "cloudIdentityScore" => lambda {|n| @cloud_identity_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
-                    "cloudManagementScore" => lambda {|n| @cloud_management_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
-                    "cloudProvisioningScore" => lambda {|n| @cloud_provisioning_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "cloudIdentityScore" => lambda {|n| @cloud_identity_score = n.get_object_value(lambda {|pn| UserExperienceAnalyticsWorkFromAnywhereModelPerformance::UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCloudIdentityScore.create_from_discriminator_value(pn) }) },
+                    "cloudManagementScore" => lambda {|n| @cloud_management_score = n.get_object_value(lambda {|pn| UserExperienceAnalyticsWorkFromAnywhereModelPerformance::UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCloudManagementScore.create_from_discriminator_value(pn) }) },
+                    "cloudProvisioningScore" => lambda {|n| @cloud_provisioning_score = n.get_object_value(lambda {|pn| UserExperienceAnalyticsWorkFromAnywhereModelPerformance::UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCloudProvisioningScore.create_from_discriminator_value(pn) }) },
                     "healthStatus" => lambda {|n| @health_status = n.get_enum_value(MicrosoftGraph::Models::UserExperienceAnalyticsHealthState) },
                     "manufacturer" => lambda {|n| @manufacturer = n.get_string_value() },
                     "model" => lambda {|n| @model = n.get_string_value() },
                     "modelDeviceCount" => lambda {|n| @model_device_count = n.get_number_value() },
-                    "windowsScore" => lambda {|n| @windows_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
-                    "workFromAnywhereScore" => lambda {|n| @work_from_anywhere_score = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "windowsScore" => lambda {|n| @windows_score = n.get_object_value(lambda {|pn| UserExperienceAnalyticsWorkFromAnywhereModelPerformance::UserExperienceAnalyticsWorkFromAnywhereModelPerformanceWindowsScore.create_from_discriminator_value(pn) }) },
+                    "workFromAnywhereScore" => lambda {|n| @work_from_anywhere_score = n.get_object_value(lambda {|pn| UserExperienceAnalyticsWorkFromAnywhereModelPerformance::UserExperienceAnalyticsWorkFromAnywhereModelPerformanceWorkFromAnywhereScore.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -193,7 +193,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the windowsScore property value. The window score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-            ## @return a double
+            ## @return a user_experience_analytics_work_from_anywhere_model_performance_windows_score
             ## 
             def windows_score
                 return @windows_score
@@ -208,7 +208,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the workFromAnywhereScore property value. The work from anywhere score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-            ## @return a double
+            ## @return a user_experience_analytics_work_from_anywhere_model_performance_work_from_anywhere_score
             ## 
             def work_from_anywhere_score
                 return @work_from_anywhere_score
@@ -220,6 +220,501 @@ module MicrosoftGraph
             ## 
             def work_from_anywhere_score=(value)
                 @work_from_anywhere_score = value
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCloudIdentityScore
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_work_from_anywhere_model_performance_cloud_identity_score
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCloudIdentityScore.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCloudManagementScore
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_work_from_anywhere_model_performance_cloud_management_score
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCloudManagementScore.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCloudProvisioningScore
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_work_from_anywhere_model_performance_cloud_provisioning_score
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsWorkFromAnywhereModelPerformanceCloudProvisioningScore.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceWindowsScore
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_work_from_anywhere_model_performance_windows_score
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsWorkFromAnywhereModelPerformanceWindowsScore.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
+            end
+
+            ## 
+            # Composed type wrapper for classes Double, ReferenceNumeric, string
+            class UserExperienceAnalyticsWorkFromAnywhereModelPerformanceWorkFromAnywhereScore
+                include MicrosoftKiotaAbstractions::Parsable
+                ## 
+                # Composed type representation for type Double
+                @double
+                ## 
+                # Composed type representation for type ReferenceNumeric
+                @reference_numeric
+                ## 
+                # Composed type representation for type string
+                @string
+                ## 
+                ## Creates a new instance of the appropriate class based on discriminator value
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
+                ## @return a user_experience_analytics_work_from_anywhere_model_performance_work_from_anywhere_score
+                ## 
+                def self.create_from_discriminator_value(parse_node)
+                    raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                    mapping_value_node = parse_node.get_child_node("")
+                    unless mapping_value_node.nil? then
+                        mapping_value = mapping_value_node.get_string_value
+                        case mapping_value
+                            when "ReferenceNumeric"
+                                return ReferenceNumeric.new
+                        end
+                    end
+                    return UserExperienceAnalyticsWorkFromAnywhereModelPerformanceWorkFromAnywhereScore.new
+                end
+                ## 
+                ## Gets the double property value. Composed type representation for type Double
+                ## @return a double
+                ## 
+                def double
+                    return @double
+                end
+                ## 
+                ## Sets the double property value. Composed type representation for type Double
+                ## @param value Value to set for the double property.
+                ## @return a void
+                ## 
+                def double=(value)
+                    @double = value
+                end
+                ## 
+                ## The deserialization information for the current model
+                ## @return a i_dictionary
+                ## 
+                def get_field_deserializers()
+                    return {
+                        "double" => lambda {|n| @double = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                        "ReferenceNumeric" => lambda {|n| @reference_numeric = n.get_enum_value(MicrosoftGraph::Models::ReferenceNumeric) },
+                        "string" => lambda {|n| @string = n.get_string_value() },
+                    }
+                end
+                ## 
+                ## Gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @return a reference_numeric
+                ## 
+                def reference_numeric
+                    return @reference_numeric
+                end
+                ## 
+                ## Sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+                ## @param value Value to set for the ReferenceNumeric property.
+                ## @return a void
+                ## 
+                def reference_numeric=(value)
+                    @reference_numeric = value
+                end
+                ## 
+                ## Serializes information the current object
+                ## @param writer Serialization writer to use to serialize this model
+                ## @return a void
+                ## 
+                def serialize(writer)
+                    raise StandardError, 'writer cannot be null' if writer.nil?
+                    writer.write_object_value("double", @double)
+                    writer.write_enum_value("ReferenceNumeric", @reference_numeric)
+                    writer.write_string_value("string", @string)
+                end
+                ## 
+                ## Gets the string property value. Composed type representation for type string
+                ## @return a string
+                ## 
+                def string
+                    return @string
+                end
+                ## 
+                ## Sets the string property value. Composed type representation for type string
+                ## @param value Value to set for the string property.
+                ## @return a void
+                ## 
+                def string=(value)
+                    @string = value
+                end
             end
         end
     end
