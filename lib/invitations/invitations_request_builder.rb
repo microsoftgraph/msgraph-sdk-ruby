@@ -5,7 +5,8 @@ require_relative '../models/invitation_collection_response'
 require_relative '../models/o_data_errors_o_data_error'
 require_relative './count/count_request_builder'
 require_relative './invitations'
-require_relative './item/invitation_item_request_builder'
+require_relative './invited_user/invited_user_request_builder'
+require_relative './invited_user_sponsors/invited_user_sponsors_request_builder'
 
 module MicrosoftGraph
     module Invitations
@@ -19,15 +20,14 @@ module MicrosoftGraph
                 return MicrosoftGraph::Invitations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
-            ## Provides operations to manage the collection of invitation entities.
-            ## @param invitation_id The unique identifier of invitation
-            ## @return a invitation_item_request_builder
+            # Provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.
+            def invited_user()
+                return MicrosoftGraph::Invitations::InvitedUser::InvitedUserRequestBuilder.new(@path_parameters, @request_adapter)
+            end
             ## 
-            def by_invitation_id(invitation_id)
-                raise StandardError, 'invitation_id cannot be null' if invitation_id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["invitation%2Did"] = invitation_id
-                return MicrosoftGraph::Invitations::Item::InvitationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            # Provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.
+            def invited_user_sponsors()
+                return MicrosoftGraph::Invitations::InvitedUserSponsors::InvitedUserSponsorsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             ## Instantiates a new InvitationsRequestBuilder and sets the default values.
@@ -36,7 +36,7 @@ module MicrosoftGraph
             ## @return a void
             ## 
             def initialize(path_parameters, request_adapter)
-                super(path_parameters, request_adapter, "{+baseurl}/invitations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
+                super(path_parameters, request_adapter, "{+baseurl}/invitations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}")
             end
             ## 
             ## Get entities from invitations
@@ -48,12 +48,11 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::InvitationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation you have several options available:
+            ## Use this API to create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of invitation
@@ -64,8 +63,7 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Invitation.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -75,19 +73,19 @@ module MicrosoftGraph
             ## 
             def to_get_request_information(request_configuration=nil)
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :GET
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                     request_info.add_request_options(request_configuration.options)
                 end
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
-            ## Use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation you have several options available:
+            ## Use this API to create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available:
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
@@ -95,16 +93,25 @@ module MicrosoftGraph
             def to_post_request_information(body, request_configuration=nil)
                 raise StandardError, 'body cannot be null' if body.nil?
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :POST
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
-                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :POST
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a invitations_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return InvitationsRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

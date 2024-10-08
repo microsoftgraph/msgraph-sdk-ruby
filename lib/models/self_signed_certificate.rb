@@ -11,52 +11,52 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The customKeyIdentifier property
+            # Custom key identifier.
             @custom_key_identifier
             ## 
-            # The displayName property
+            # The friendly name for the key.
             @display_name
             ## 
-            # The endDateTime property
+            # The date and time at which the credential expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.
             @end_date_time
             ## 
-            # The key property
+            # The value for the key credential. Should be a Base-64 encoded value.
             @key
             ## 
-            # The keyId property
+            # The unique identifier (GUID) for the key.
             @key_id
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The startDateTime property
+            # The date and time at which the credential becomes valid. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.
             @start_date_time
             ## 
-            # The thumbprint property
+            # The thumbprint value for the key.
             @thumbprint
             ## 
-            # The type property
+            # The type of key credential. AsymmetricX509Cert.
             @type
             ## 
-            # The usage property
+            # A string that describes the purpose for which the key can be used. The possible value is Verify.
             @usage
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new selfSignedCertificate and sets the default values.
+            ## Instantiates a new SelfSignedCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -72,14 +72,14 @@ module MicrosoftGraph
                 return SelfSignedCertificate.new
             end
             ## 
-            ## Gets the customKeyIdentifier property value. The customKeyIdentifier property
+            ## Gets the customKeyIdentifier property value. Custom key identifier.
             ## @return a base64url
             ## 
             def custom_key_identifier
                 return @custom_key_identifier
             end
             ## 
-            ## Sets the customKeyIdentifier property value. The customKeyIdentifier property
+            ## Sets the customKeyIdentifier property value. Custom key identifier.
             ## @param value Value to set for the customKeyIdentifier property.
             ## @return a void
             ## 
@@ -87,14 +87,14 @@ module MicrosoftGraph
                 @custom_key_identifier = value
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the displayName property value. The friendly name for the key.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. The friendly name for the key.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -102,14 +102,14 @@ module MicrosoftGraph
                 @display_name = value
             end
             ## 
-            ## Gets the endDateTime property value. The endDateTime property
+            ## Gets the endDateTime property value. The date and time at which the credential expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def end_date_time
                 return @end_date_time
             end
             ## 
-            ## Sets the endDateTime property value. The endDateTime property
+            ## Sets the endDateTime property value. The date and time at which the credential expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
@@ -135,14 +135,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the key property value. The key property
+            ## Gets the key property value. The value for the key credential. Should be a Base-64 encoded value.
             ## @return a base64url
             ## 
             def key
                 return @key
             end
             ## 
-            ## Sets the key property value. The key property
+            ## Sets the key property value. The value for the key credential. Should be a Base-64 encoded value.
             ## @param value Value to set for the key property.
             ## @return a void
             ## 
@@ -150,14 +150,14 @@ module MicrosoftGraph
                 @key = value
             end
             ## 
-            ## Gets the keyId property value. The keyId property
+            ## Gets the keyId property value. The unique identifier (GUID) for the key.
             ## @return a guid
             ## 
             def key_id
                 return @key_id
             end
             ## 
-            ## Sets the keyId property value. The keyId property
+            ## Sets the keyId property value. The unique identifier (GUID) for the key.
             ## @param value Value to set for the keyId property.
             ## @return a void
             ## 
@@ -199,14 +199,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the startDateTime property value. The startDateTime property
+            ## Gets the startDateTime property value. The date and time at which the credential becomes valid. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. The startDateTime property
+            ## Sets the startDateTime property value. The date and time at which the credential becomes valid. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
@@ -214,14 +214,14 @@ module MicrosoftGraph
                 @start_date_time = value
             end
             ## 
-            ## Gets the thumbprint property value. The thumbprint property
+            ## Gets the thumbprint property value. The thumbprint value for the key.
             ## @return a string
             ## 
             def thumbprint
                 return @thumbprint
             end
             ## 
-            ## Sets the thumbprint property value. The thumbprint property
+            ## Sets the thumbprint property value. The thumbprint value for the key.
             ## @param value Value to set for the thumbprint property.
             ## @return a void
             ## 
@@ -229,14 +229,14 @@ module MicrosoftGraph
                 @thumbprint = value
             end
             ## 
-            ## Gets the type property value. The type property
+            ## Gets the type property value. The type of key credential. AsymmetricX509Cert.
             ## @return a string
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. The type property
+            ## Sets the type property value. The type of key credential. AsymmetricX509Cert.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 
@@ -244,14 +244,14 @@ module MicrosoftGraph
                 @type = value
             end
             ## 
-            ## Gets the usage property value. The usage property
+            ## Gets the usage property value. A string that describes the purpose for which the key can be used. The possible value is Verify.
             ## @return a string
             ## 
             def usage
                 return @usage
             end
             ## 
-            ## Sets the usage property value. The usage property
+            ## Sets the usage property value. A string that describes the purpose for which the key can be used. The possible value is Verify.
             ## @param value Value to set for the usage property.
             ## @return a void
             ## 
