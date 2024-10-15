@@ -41,15 +41,15 @@ module MicrosoftGraph
             # Represents the date and time the photo was taken. Read-only.
             @taken_date_time
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
                 @camera_model = value
             end
             ## 
-            ## Instantiates a new photo and sets the default values.
+            ## Instantiates a new Photo and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -175,7 +175,7 @@ module MicrosoftGraph
                     "focalLength" => lambda {|n| @focal_length = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
                     "iso" => lambda {|n| @iso = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "orientation" => lambda {|n| @orientation = n.get_number_value() },
+                    "orientation" => lambda {|n| @orientation = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
                     "takenDateTime" => lambda {|n| @taken_date_time = n.get_date_time_value() },
                 }
             end
@@ -211,7 +211,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the orientation property value. The orientation value from the camera. Writable on OneDrive Personal.
-            ## @return a integer
+            ## @return a double
             ## 
             def orientation
                 return @orientation
@@ -239,7 +239,7 @@ module MicrosoftGraph
                 writer.write_object_value("focalLength", @focal_length)
                 writer.write_number_value("iso", @iso)
                 writer.write_string_value("@odata.type", @odata_type)
-                writer.write_number_value("orientation", @orientation)
+                writer.write_object_value("orientation", @orientation)
                 writer.write_date_time_value("takenDateTime", @taken_date_time)
                 writer.write_additional_data(@additional_data)
             end

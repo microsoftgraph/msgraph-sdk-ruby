@@ -13,10 +13,10 @@ module MicrosoftGraph
             # Represents the axis title.
             @text
             ## 
-            # A boolean that specifies the visibility of an axis title.
+            # A Boolean that specifies the visibility of an axis title.
             @visible
             ## 
-            ## Instantiates a new workbookChartAxisTitle and sets the default values.
+            ## Instantiates a new WorkbookChartAxisTitle and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -85,14 +85,14 @@ module MicrosoftGraph
                 @text = value
             end
             ## 
-            ## Gets the visible property value. A boolean that specifies the visibility of an axis title.
+            ## Gets the visible property value. A Boolean that specifies the visibility of an axis title.
             ## @return a boolean
             ## 
             def visible
                 return @visible
             end
             ## 
-            ## Sets the visible property value. A boolean that specifies the visibility of an axis title.
+            ## Sets the visible property value. A Boolean that specifies the visibility of an axis title.
             ## @param value Value to set for the visible property.
             ## @return a void
             ## 

@@ -30,7 +30,7 @@ module MicrosoftGraph
                 @app_availability = value
             end
             ## 
-            ## Instantiates a new managedApp and sets the default values.
+            ## Instantiates a new ManagedApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

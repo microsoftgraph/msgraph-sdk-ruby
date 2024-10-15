@@ -16,7 +16,7 @@ module MicrosoftGraph
             # A published open shift.
             @shared_open_shift
             ## 
-            ## Instantiates a new openShift and sets the default values.
+            ## Instantiates a new OpenShift and sets the default values.
             ## @return a void
             ## 
             def initialize()
