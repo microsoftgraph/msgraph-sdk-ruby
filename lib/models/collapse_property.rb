@@ -19,22 +19,22 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new collapseProperty and sets the default values.
+            ## Instantiates a new CollapseProperty and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,13 +71,13 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "fields" => lambda {|n| @fields = n.get_collection_of_primitive_values(String) },
-                    "limit" => lambda {|n| @limit = n.get_number_value() },
+                    "limit" => lambda {|n| @limit = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
             ## 
             ## Gets the limit property value. Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
-            ## @return a integer
+            ## @return a double
             ## 
             def limit
                 return @limit
@@ -113,7 +113,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_collection_of_primitive_values("fields", @fields)
-                writer.write_number_value("limit", @limit)
+                writer.write_object_value("limit", @limit)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)
             end

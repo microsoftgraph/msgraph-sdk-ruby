@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,24 +22,15 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The mode property
-                                    @mode
-                                    ## 
-                                    # The number property
-                                    @number
-                                    ## 
-                                    # The significance property
-                                    @significance
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -68,40 +58,7 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "mode" => lambda {|n| @mode = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "number" => lambda {|n| @number = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "significance" => lambda {|n| @significance = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
-                                    end
-                                    ## 
-                                    ## Gets the mode property value. The mode property
-                                    ## @return a json
-                                    ## 
-                                    def mode
-                                        return @mode
-                                    end
-                                    ## 
-                                    ## Sets the mode property value. The mode property
-                                    ## @param value Value to set for the mode property.
-                                    ## @return a void
-                                    ## 
-                                    def mode=(value)
-                                        @mode = value
-                                    end
-                                    ## 
-                                    ## Gets the number property value. The number property
-                                    ## @return a json
-                                    ## 
-                                    def number
-                                        return @number
-                                    end
-                                    ## 
-                                    ## Sets the number property value. The number property
-                                    ## @param value Value to set for the number property.
-                                    ## @return a void
-                                    ## 
-                                    def number=(value)
-                                        @number = value
                                     end
                                     ## 
                                     ## Serializes information the current object
@@ -110,25 +67,7 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("mode", @mode)
-                                        writer.write_object_value("number", @number)
-                                        writer.write_object_value("significance", @significance)
                                         writer.write_additional_data(@additional_data)
-                                    end
-                                    ## 
-                                    ## Gets the significance property value. The significance property
-                                    ## @return a json
-                                    ## 
-                                    def significance
-                                        return @significance
-                                    end
-                                    ## 
-                                    ## Sets the significance property value. The significance property
-                                    ## @param value Value to set for the significance property.
-                                    ## @return a void
-                                    ## 
-                                    def significance=(value)
-                                        @significance = value
                                     end
                                 end
                             end

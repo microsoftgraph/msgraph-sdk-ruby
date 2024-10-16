@@ -61,15 +61,15 @@ module MicrosoftGraph
             # The year the audio file was recorded.
             @year
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
                 @composers = value
             end
             ## 
-            ## Instantiates a new audio and sets the default values.
+            ## Instantiates a new Audio and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -183,7 +183,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the disc property value. The number of the disc this audio file came from.
-            ## @return a integer
+            ## @return a double
             ## 
             def disc
                 return @disc
@@ -198,7 +198,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the discCount property value. The total number of discs in this album.
-            ## @return a integer
+            ## @return a double
             ## 
             def disc_count
                 return @disc_count
@@ -253,8 +253,8 @@ module MicrosoftGraph
                     "bitrate" => lambda {|n| @bitrate = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "composers" => lambda {|n| @composers = n.get_string_value() },
                     "copyright" => lambda {|n| @copyright = n.get_string_value() },
-                    "disc" => lambda {|n| @disc = n.get_number_value() },
-                    "discCount" => lambda {|n| @disc_count = n.get_number_value() },
+                    "disc" => lambda {|n| @disc = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
+                    "discCount" => lambda {|n| @disc_count = n.get_object_value(lambda {|pn| Double.create_from_discriminator_value(pn) }) },
                     "duration" => lambda {|n| @duration = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "genre" => lambda {|n| @genre = n.get_string_value() },
                     "hasDrm" => lambda {|n| @has_drm = n.get_boolean_value() },
@@ -324,8 +324,8 @@ module MicrosoftGraph
                 writer.write_object_value("bitrate", @bitrate)
                 writer.write_string_value("composers", @composers)
                 writer.write_string_value("copyright", @copyright)
-                writer.write_number_value("disc", @disc)
-                writer.write_number_value("discCount", @disc_count)
+                writer.write_object_value("disc", @disc)
+                writer.write_object_value("discCount", @disc_count)
                 writer.write_object_value("duration", @duration)
                 writer.write_string_value("genre", @genre)
                 writer.write_boolean_value("hasDrm", @has_drm)

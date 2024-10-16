@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The document's size in bytes. Read-only.
             @size
             ## 
-            ## Instantiates a new printDocument and sets the default values.
+            ## Instantiates a new PrintDocument and sets the default values.
             ## @return a void
             ## 
             def initialize()

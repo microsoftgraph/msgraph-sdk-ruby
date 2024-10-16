@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # The status of a long-running operation.
         class RichLongRunningOperation < MicrosoftGraph::Models::LongRunningOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -19,7 +21,7 @@ module MicrosoftGraph
             # The type of the operation.
             @type
             ## 
-            ## Instantiates a new richLongRunningOperation and sets the default values.
+            ## Instantiates a new RichLongRunningOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

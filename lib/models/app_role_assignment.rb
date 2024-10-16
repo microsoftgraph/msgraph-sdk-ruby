@@ -8,7 +8,7 @@ module MicrosoftGraph
         class AppRoleAssignment < MicrosoftGraph::Models::DirectoryObject
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
+            # The identifier (id) for the app role that's assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application hasn't declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
             @app_role_id
             ## 
             # The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -29,14 +29,14 @@ module MicrosoftGraph
             # The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
             @resource_id
             ## 
-            ## Gets the appRoleId property value. The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
+            ## Gets the appRoleId property value. The identifier (id) for the app role that's assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application hasn't declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
             ## @return a guid
             ## 
             def app_role_id
                 return @app_role_id
             end
             ## 
-            ## Sets the appRoleId property value. The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
+            ## Sets the appRoleId property value. The identifier (id) for the app role that's assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application hasn't declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
             ## @param value Value to set for the appRoleId property.
             ## @return a void
             ## 
@@ -44,7 +44,7 @@ module MicrosoftGraph
                 @app_role_id = value
             end
             ## 
-            ## Instantiates a new appRoleAssignment and sets the default values.
+            ## Instantiates a new AppRoleAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()
