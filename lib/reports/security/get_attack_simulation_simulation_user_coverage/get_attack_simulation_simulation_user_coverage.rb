@@ -1,1 +1,1 @@
-require_relative 'get_attack_simulation_simulation_user_coverage_response'
+require_relative 'get_attack_simulation_simulation_user_coverage_get_response'
