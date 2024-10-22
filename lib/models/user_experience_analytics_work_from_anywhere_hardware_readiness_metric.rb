@@ -42,7 +42,7 @@ module MicrosoftGraph
             # The count of devices in an organization eligible for windows upgrade. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
             @upgrade_eligible_device_count
             ## 
-            ## Instantiates a new userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,9 +13,12 @@ module MicrosoftGraph
             Hidden: :Hidden,
             AdminConfirmedUserCompromised: :AdminConfirmedUserCompromised,
             UnknownFutureValue: :UnknownFutureValue,
+            M365DAdminDismissedDetection: :M365DAdminDismissedDetection,
             AdminConfirmedServicePrincipalCompromised: :AdminConfirmedServicePrincipalCompromised,
             AdminDismissedAllRiskForServicePrincipal: :AdminDismissedAllRiskForServicePrincipal,
-            M365DAdminDismissedDetection: :M365DAdminDismissedDetection,
+            UserChangedPasswordOnPremises: :UserChangedPasswordOnPremises,
+            AdminDismissedRiskForSignIn: :AdminDismissedRiskForSignIn,
+            AdminConfirmedAccountSafe: :AdminConfirmedAccountSafe,
         }
     end
 end

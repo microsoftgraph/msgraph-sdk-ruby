@@ -26,7 +26,7 @@ module MicrosoftGraph
             # Latest status of the dataSourceContainer. Possible values are: Active, Released.
             @status
             ## 
-            ## Instantiates a new securityDataSourceContainer and sets the default values.
+            ## Instantiates a new SecurityDataSourceContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()
