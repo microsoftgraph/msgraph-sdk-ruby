@@ -85,7 +85,7 @@ module MicrosoftGraph
                 @categories = value
             end
             ## 
-            ## Instantiates a new mobileApp and sets the default values.
+            ## Instantiates a new MobileApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -129,6 +129,8 @@ module MicrosoftGraph
                             return IosStoreApp.new
                         when "#microsoft.graph.iosVppApp"
                             return IosVppApp.new
+                        when "#microsoft.graph.macOSDmgApp"
+                            return MacOSDmgApp.new
                         when "#microsoft.graph.macOSLobApp"
                             return MacOSLobApp.new
                         when "#microsoft.graph.macOSMicrosoftDefenderApp"
@@ -384,14 +386,12 @@ module MicrosoftGraph
                 super
                 writer.write_collection_of_object_values("assignments", @assignments)
                 writer.write_collection_of_object_values("categories", @categories)
-                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("developer", @developer)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("informationUrl", @information_url)
                 writer.write_boolean_value("isFeatured", @is_featured)
                 writer.write_object_value("largeIcon", @large_icon)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
                 writer.write_string_value("notes", @notes)
                 writer.write_string_value("owner", @owner)
                 writer.write_string_value("privacyInformationUrl", @privacy_information_url)
