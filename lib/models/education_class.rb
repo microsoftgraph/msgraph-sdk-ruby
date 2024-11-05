@@ -43,7 +43,7 @@ module MicrosoftGraph
             # How this class was created. Possible values are: sis, manual.
             @external_source
             ## 
-            # The name of the external source this resources was generated from.
+            # The name of the external source this resource was generated from.
             @external_source_detail
             ## 
             # Grade level of the class.
@@ -57,6 +57,9 @@ module MicrosoftGraph
             ## 
             # All users in the class. Nullable.
             @members
+            ## 
+            # All modules in the class. Nullable.
+            @modules
             ## 
             # All schools that this class is associated with. Nullable.
             @schools
@@ -142,7 +145,7 @@ module MicrosoftGraph
                 @class_code = value
             end
             ## 
-            ## Instantiates a new educationClass and sets the default values.
+            ## Instantiates a new EducationClass and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -263,14 +266,14 @@ module MicrosoftGraph
                 @external_source = value
             end
             ## 
-            ## Gets the externalSourceDetail property value. The name of the external source this resources was generated from.
+            ## Gets the externalSourceDetail property value. The name of the external source this resource was generated from.
             ## @return a string
             ## 
             def external_source_detail
                 return @external_source_detail
             end
             ## 
-            ## Sets the externalSourceDetail property value. The name of the external source this resources was generated from.
+            ## Sets the externalSourceDetail property value. The name of the external source this resource was generated from.
             ## @param value Value to set for the externalSourceDetail property.
             ## @return a void
             ## 
@@ -300,6 +303,7 @@ module MicrosoftGraph
                     "group" => lambda {|n| @group = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Group.create_from_discriminator_value(pn) }) },
                     "mailNickname" => lambda {|n| @mail_nickname = n.get_string_value() },
                     "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EducationUser.create_from_discriminator_value(pn) }) },
+                    "modules" => lambda {|n| @modules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EducationModule.create_from_discriminator_value(pn) }) },
                     "schools" => lambda {|n| @schools = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EducationSchool.create_from_discriminator_value(pn) }) },
                     "teachers" => lambda {|n| @teachers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EducationUser.create_from_discriminator_value(pn) }) },
                     "term" => lambda {|n| @term = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EducationTerm.create_from_discriminator_value(pn) }) },
@@ -366,6 +370,21 @@ module MicrosoftGraph
                 @members = value
             end
             ## 
+            ## Gets the modules property value. All modules in the class. Nullable.
+            ## @return a education_module
+            ## 
+            def modules
+                return @modules
+            end
+            ## 
+            ## Sets the modules property value. All modules in the class. Nullable.
+            ## @param value Value to set for the modules property.
+            ## @return a void
+            ## 
+            def modules=(value)
+                @modules = value
+            end
+            ## 
             ## Gets the schools property value. All schools that this class is associated with. Nullable.
             ## @return a education_school
             ## 
@@ -405,6 +424,7 @@ module MicrosoftGraph
                 writer.write_object_value("group", @group)
                 writer.write_string_value("mailNickname", @mail_nickname)
                 writer.write_collection_of_object_values("members", @members)
+                writer.write_collection_of_object_values("modules", @modules)
                 writer.write_collection_of_object_values("schools", @schools)
                 writer.write_collection_of_object_values("teachers", @teachers)
                 writer.write_object_value("term", @term)

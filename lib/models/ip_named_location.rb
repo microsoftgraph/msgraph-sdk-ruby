@@ -7,13 +7,13 @@ module MicrosoftGraph
         class IpNamedLocation < MicrosoftGraph::Models::NamedLocation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
+            # List of IP address ranges in IPv4 CIDR format (for example, 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
             @ip_ranges
             ## 
             # true if this location is explicitly trusted. Optional. Default value is false.
             @is_trusted
             ## 
-            ## Instantiates a new ipNamedLocation and sets the default values.
+            ## Instantiates a new IpNamedLocation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -39,14 +39,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
+            ## Gets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (for example, 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
             ## @return a ip_range
             ## 
             def ip_ranges
                 return @ip_ranges
             end
             ## 
-            ## Sets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
+            ## Sets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (for example, 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
             ## @param value Value to set for the ipRanges property.
             ## @return a void
             ## 

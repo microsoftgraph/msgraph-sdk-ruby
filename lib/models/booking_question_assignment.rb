@@ -10,31 +10,31 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The ID of the custom question.
+            # Indicates whether it's mandatory to answer the custom question.
             @is_required
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Indicates whether it is mandatory to answer the custom question.
+            # The ID of the custom question.
             @question_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new bookingQuestionAssignment and sets the default values.
+            ## Instantiates a new BookingQuestionAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -61,14 +61,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the isRequired property value. The ID of the custom question.
+            ## Gets the isRequired property value. Indicates whether it's mandatory to answer the custom question.
             ## @return a boolean
             ## 
             def is_required
                 return @is_required
             end
             ## 
-            ## Sets the isRequired property value. The ID of the custom question.
+            ## Sets the isRequired property value. Indicates whether it's mandatory to answer the custom question.
             ## @param value Value to set for the isRequired property.
             ## @return a void
             ## 
@@ -91,14 +91,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the questionId property value. Indicates whether it is mandatory to answer the custom question.
+            ## Gets the questionId property value. The ID of the custom question.
             ## @return a string
             ## 
             def question_id
                 return @question_id
             end
             ## 
-            ## Sets the questionId property value. Indicates whether it is mandatory to answer the custom question.
+            ## Sets the questionId property value. The ID of the custom question.
             ## @param value Value to set for the questionId property.
             ## @return a void
             ## 

@@ -23,7 +23,7 @@ module MicrosoftGraph
             # The size property
             @size
             ## 
-            ## Instantiates a new serviceAnnouncementAttachment and sets the default values.
+            ## Instantiates a new ServiceAnnouncementAttachment and sets the default values.
             ## @return a void
             ## 
             def initialize()

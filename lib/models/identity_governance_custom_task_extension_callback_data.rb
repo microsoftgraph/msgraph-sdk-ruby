@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.
             @operation_status
             ## 
-            ## Instantiates a new identityGovernanceCustomTaskExtensionCallbackData and sets the default values.
+            ## Instantiates a new IdentityGovernanceCustomTaskExtensionCallbackData and sets the default values.
             ## @return a void
             ## 
             def initialize()
