@@ -4,11 +4,19 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Represents a container that exposes navigation properties for employee experience resources.
         class EmployeeExperience
             include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
             ## 
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
+            ## 
+            # A collection of communities in Viva Engage.
+            @communities
+            ## 
+            # A collection of long-running, asynchronous operations related to Viva Engage.
+            @engagement_async_operations
             ## 
             # The learningCourseActivities property
             @learning_course_activities
@@ -19,22 +27,37 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new employeeExperience and sets the default values.
+            ## Gets the communities property value. A collection of communities in Viva Engage.
+            ## @return a community
+            ## 
+            def communities
+                return @communities
+            end
+            ## 
+            ## Sets the communities property value. A collection of communities in Viva Engage.
+            ## @param value Value to set for the communities property.
+            ## @return a void
+            ## 
+            def communities=(value)
+                @communities = value
+            end
+            ## 
+            ## Instantiates a new EmployeeExperience and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -50,11 +73,28 @@ module MicrosoftGraph
                 return EmployeeExperience.new
             end
             ## 
+            ## Gets the engagementAsyncOperations property value. A collection of long-running, asynchronous operations related to Viva Engage.
+            ## @return a engagement_async_operation
+            ## 
+            def engagement_async_operations
+                return @engagement_async_operations
+            end
+            ## 
+            ## Sets the engagementAsyncOperations property value. A collection of long-running, asynchronous operations related to Viva Engage.
+            ## @param value Value to set for the engagementAsyncOperations property.
+            ## @return a void
+            ## 
+            def engagement_async_operations=(value)
+                @engagement_async_operations = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return {
+                    "communities" => lambda {|n| @communities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Community.create_from_discriminator_value(pn) }) },
+                    "engagementAsyncOperations" => lambda {|n| @engagement_async_operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EngagementAsyncOperation.create_from_discriminator_value(pn) }) },
                     "learningCourseActivities" => lambda {|n| @learning_course_activities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::LearningCourseActivity.create_from_discriminator_value(pn) }) },
                     "learningProviders" => lambda {|n| @learning_providers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::LearningProvider.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -112,6 +152,8 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_collection_of_object_values("communities", @communities)
+                writer.write_collection_of_object_values("engagementAsyncOperations", @engagement_async_operations)
                 writer.write_collection_of_object_values("learningCourseActivities", @learning_course_activities)
                 writer.write_collection_of_object_values("learningProviders", @learning_providers)
                 writer.write_string_value("@odata.type", @odata_type)

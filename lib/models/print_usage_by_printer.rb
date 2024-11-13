@@ -7,13 +7,13 @@ module MicrosoftGraph
         class PrintUsageByPrinter < MicrosoftGraph::Models::PrintUsage
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The printerId property
+            # The ID of the printer represented by these statistics.
             @printer_id
             ## 
             # The name of the printer represented by these statistics.
             @printer_name
             ## 
-            ## Instantiates a new printUsageByPrinter and sets the default values.
+            ## Instantiates a new PrintUsageByPrinter and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -40,14 +40,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the printerId property value. The printerId property
+            ## Gets the printerId property value. The ID of the printer represented by these statistics.
             ## @return a string
             ## 
             def printer_id
                 return @printer_id
             end
             ## 
-            ## Sets the printerId property value. The printerId property
+            ## Sets the printerId property value. The ID of the printer represented by these statistics.
             ## @param value Value to set for the printerId property.
             ## @return a void
             ## 

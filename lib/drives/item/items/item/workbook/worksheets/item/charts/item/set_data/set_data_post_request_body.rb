@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../../../models/json'
 require_relative '../../../../../../../../../drives'
 require_relative '../../../../../../../../item'
 require_relative '../../../../../../../items'
@@ -32,25 +31,22 @@ module MicrosoftGraph
                                                 # The seriesBy property
                                                 @series_by
                                                 ## 
-                                                # The sourceData property
-                                                @source_data
-                                                ## 
-                                                ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                                ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                                 ## @return a i_dictionary
                                                 ## 
                                                 def additional_data
                                                     return @additional_data
                                                 end
                                                 ## 
-                                                ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                                ## @param value Value to set for the additionalData property.
+                                                ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                                ## @param value Value to set for the AdditionalData property.
                                                 ## @return a void
                                                 ## 
                                                 def additional_data=(value)
                                                     @additional_data = value
                                                 end
                                                 ## 
-                                                ## Instantiates a new setDataPostRequestBody and sets the default values.
+                                                ## Instantiates a new SetDataPostRequestBody and sets the default values.
                                                 ## @return a void
                                                 ## 
                                                 def initialize()
@@ -72,7 +68,6 @@ module MicrosoftGraph
                                                 def get_field_deserializers()
                                                     return {
                                                         "seriesBy" => lambda {|n| @series_by = n.get_string_value() },
-                                                        "sourceData" => lambda {|n| @source_data = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                                     }
                                                 end
                                                 ## 
@@ -83,7 +78,6 @@ module MicrosoftGraph
                                                 def serialize(writer)
                                                     raise StandardError, 'writer cannot be null' if writer.nil?
                                                     writer.write_string_value("seriesBy", @series_by)
-                                                    writer.write_object_value("sourceData", @source_data)
                                                     writer.write_additional_data(@additional_data)
                                                 end
                                                 ## 
@@ -100,21 +94,6 @@ module MicrosoftGraph
                                                 ## 
                                                 def series_by=(value)
                                                     @series_by = value
-                                                end
-                                                ## 
-                                                ## Gets the sourceData property value. The sourceData property
-                                                ## @return a json
-                                                ## 
-                                                def source_data
-                                                    return @source_data
-                                                end
-                                                ## 
-                                                ## Sets the sourceData property value. The sourceData property
-                                                ## @param value Value to set for the sourceData property.
-                                                ## @return a void
-                                                ## 
-                                                def source_data=(value)
-                                                    @source_data = value
                                                 end
                                             end
                                         end
