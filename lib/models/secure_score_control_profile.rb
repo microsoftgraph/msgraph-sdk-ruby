@@ -47,22 +47,22 @@ module MicrosoftGraph
             # Description of the impact on users of the remediation.
             @remediation_impact
             ## 
-            # Service that owns the control (Exchange, Sharepoint, Azure AD).
+            # Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             @service
             ## 
-            # List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
+            # List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
             @threats
             ## 
-            # The tier property
+            # Control tier (Core, Defense in Depth, Advanced.)
             @tier
             ## 
-            # The title property
+            # Title of the control.
             @title
             ## 
-            # The userImpact property
+            # User impact of implementing control (low, moderate, high).
             @user_impact
             ## 
-            # The vendorInformation property
+            # Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
             @vendor_information
             ## 
             ## Gets the actionType property value. Control action type (Config, Review, Behavior).
@@ -125,7 +125,7 @@ module MicrosoftGraph
                 @compliance_information = value
             end
             ## 
-            ## Instantiates a new secureScoreControlProfile and sets the default values.
+            ## Instantiates a new SecureScoreControlProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -331,14 +331,14 @@ module MicrosoftGraph
                 writer.write_object_value("vendorInformation", @vendor_information)
             end
             ## 
-            ## Gets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
+            ## Gets the service property value. Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             ## @return a string
             ## 
             def service
                 return @service
             end
             ## 
-            ## Sets the service property value. Service that owns the control (Exchange, Sharepoint, Azure AD).
+            ## Sets the service property value. Service that owns the control (Exchange, Sharepoint, Microsoft Entra ID).
             ## @param value Value to set for the service property.
             ## @return a void
             ## 
@@ -346,14 +346,14 @@ module MicrosoftGraph
                 @service = value
             end
             ## 
-            ## Gets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
+            ## Gets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
             ## @return a string
             ## 
             def threats
                 return @threats
             end
             ## 
-            ## Sets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
+            ## Sets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
             ## @param value Value to set for the threats property.
             ## @return a void
             ## 
@@ -361,14 +361,14 @@ module MicrosoftGraph
                 @threats = value
             end
             ## 
-            ## Gets the tier property value. The tier property
+            ## Gets the tier property value. Control tier (Core, Defense in Depth, Advanced.)
             ## @return a string
             ## 
             def tier
                 return @tier
             end
             ## 
-            ## Sets the tier property value. The tier property
+            ## Sets the tier property value. Control tier (Core, Defense in Depth, Advanced.)
             ## @param value Value to set for the tier property.
             ## @return a void
             ## 
@@ -376,14 +376,14 @@ module MicrosoftGraph
                 @tier = value
             end
             ## 
-            ## Gets the title property value. The title property
+            ## Gets the title property value. Title of the control.
             ## @return a string
             ## 
             def title
                 return @title
             end
             ## 
-            ## Sets the title property value. The title property
+            ## Sets the title property value. Title of the control.
             ## @param value Value to set for the title property.
             ## @return a void
             ## 
@@ -391,14 +391,14 @@ module MicrosoftGraph
                 @title = value
             end
             ## 
-            ## Gets the userImpact property value. The userImpact property
+            ## Gets the userImpact property value. User impact of implementing control (low, moderate, high).
             ## @return a string
             ## 
             def user_impact
                 return @user_impact
             end
             ## 
-            ## Sets the userImpact property value. The userImpact property
+            ## Sets the userImpact property value. User impact of implementing control (low, moderate, high).
             ## @param value Value to set for the userImpact property.
             ## @return a void
             ## 
@@ -406,14 +406,14 @@ module MicrosoftGraph
                 @user_impact = value
             end
             ## 
-            ## Gets the vendorInformation property value. The vendorInformation property
+            ## Gets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
             ## @return a security_vendor_information
             ## 
             def vendor_information
                 return @vendor_information
             end
             ## 
-            ## Sets the vendorInformation property value. The vendorInformation property
+            ## Sets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
             ## @param value Value to set for the vendorInformation property.
             ## @return a void
             ## 

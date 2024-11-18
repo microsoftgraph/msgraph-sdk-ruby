@@ -12,7 +12,7 @@ module MicrosoftGraph
             # The maximum number of devices that a user can enroll
             @limit
             ## 
-            ## Instantiates a new deviceEnrollmentLimitConfiguration and sets the default values.
+            ## Instantiates a new DeviceEnrollmentLimitConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

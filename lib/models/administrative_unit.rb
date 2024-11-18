@@ -10,22 +10,34 @@ module MicrosoftGraph
             # An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
             @description
             ## 
-            # Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            # Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             @display_name
             ## 
             # The collection of open extensions defined for this administrative unit. Nullable.
             @extensions
             ## 
+            # The isMemberManagementRestricted property
+            @is_member_management_restricted
+            ## 
             # Users and groups that are members of this administrative unit. Supports $expand.
             @members
+            ## 
+            # The dynamic membership rule for the administrative unit. For more information about the rules you can use for dynamic administrative units and dynamic groups, see Manage rules for dynamic membership groups in Microsoft Entra ID.
+            @membership_rule
+            ## 
+            # Controls whether the dynamic membership rule is actively processed. Set to On to activate the dynamic membership rule, or Paused to stop updating membership dynamically.
+            @membership_rule_processing_state
+            ## 
+            # Indicates the membership type for the administrative unit. The possible values are: dynamic, assigned. If not set, the default value is null and the default behavior is assigned.
+            @membership_type
             ## 
             # Scoped-role members of this administrative unit.
             @scoped_role_members
             ## 
-            # Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+            # Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set, the default value is null and the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
             @visibility
             ## 
-            ## Instantiates a new administrativeUnit and sets the default values.
+            ## Instantiates a new AdministrativeUnit and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -57,14 +69,14 @@ module MicrosoftGraph
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Gets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+            ## Sets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -95,10 +107,29 @@ module MicrosoftGraph
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "extensions" => lambda {|n| @extensions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Extension.create_from_discriminator_value(pn) }) },
+                    "isMemberManagementRestricted" => lambda {|n| @is_member_management_restricted = n.get_boolean_value() },
                     "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
+                    "membershipRule" => lambda {|n| @membership_rule = n.get_string_value() },
+                    "membershipRuleProcessingState" => lambda {|n| @membership_rule_processing_state = n.get_string_value() },
+                    "membershipType" => lambda {|n| @membership_type = n.get_string_value() },
                     "scopedRoleMembers" => lambda {|n| @scoped_role_members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ScopedRoleMembership.create_from_discriminator_value(pn) }) },
                     "visibility" => lambda {|n| @visibility = n.get_string_value() },
                 })
+            end
+            ## 
+            ## Gets the isMemberManagementRestricted property value. The isMemberManagementRestricted property
+            ## @return a boolean
+            ## 
+            def is_member_management_restricted
+                return @is_member_management_restricted
+            end
+            ## 
+            ## Sets the isMemberManagementRestricted property value. The isMemberManagementRestricted property
+            ## @param value Value to set for the isMemberManagementRestricted property.
+            ## @return a void
+            ## 
+            def is_member_management_restricted=(value)
+                @is_member_management_restricted = value
             end
             ## 
             ## Gets the members property value. Users and groups that are members of this administrative unit. Supports $expand.
@@ -114,6 +145,51 @@ module MicrosoftGraph
             ## 
             def members=(value)
                 @members = value
+            end
+            ## 
+            ## Gets the membershipRule property value. The dynamic membership rule for the administrative unit. For more information about the rules you can use for dynamic administrative units and dynamic groups, see Manage rules for dynamic membership groups in Microsoft Entra ID.
+            ## @return a string
+            ## 
+            def membership_rule
+                return @membership_rule
+            end
+            ## 
+            ## Sets the membershipRule property value. The dynamic membership rule for the administrative unit. For more information about the rules you can use for dynamic administrative units and dynamic groups, see Manage rules for dynamic membership groups in Microsoft Entra ID.
+            ## @param value Value to set for the membershipRule property.
+            ## @return a void
+            ## 
+            def membership_rule=(value)
+                @membership_rule = value
+            end
+            ## 
+            ## Gets the membershipRuleProcessingState property value. Controls whether the dynamic membership rule is actively processed. Set to On to activate the dynamic membership rule, or Paused to stop updating membership dynamically.
+            ## @return a string
+            ## 
+            def membership_rule_processing_state
+                return @membership_rule_processing_state
+            end
+            ## 
+            ## Sets the membershipRuleProcessingState property value. Controls whether the dynamic membership rule is actively processed. Set to On to activate the dynamic membership rule, or Paused to stop updating membership dynamically.
+            ## @param value Value to set for the membershipRuleProcessingState property.
+            ## @return a void
+            ## 
+            def membership_rule_processing_state=(value)
+                @membership_rule_processing_state = value
+            end
+            ## 
+            ## Gets the membershipType property value. Indicates the membership type for the administrative unit. The possible values are: dynamic, assigned. If not set, the default value is null and the default behavior is assigned.
+            ## @return a string
+            ## 
+            def membership_type
+                return @membership_type
+            end
+            ## 
+            ## Sets the membershipType property value. Indicates the membership type for the administrative unit. The possible values are: dynamic, assigned. If not set, the default value is null and the default behavior is assigned.
+            ## @param value Value to set for the membershipType property.
+            ## @return a void
+            ## 
+            def membership_type=(value)
+                @membership_type = value
             end
             ## 
             ## Gets the scopedRoleMembers property value. Scoped-role members of this administrative unit.
@@ -141,19 +217,23 @@ module MicrosoftGraph
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_collection_of_object_values("extensions", @extensions)
+                writer.write_boolean_value("isMemberManagementRestricted", @is_member_management_restricted)
                 writer.write_collection_of_object_values("members", @members)
+                writer.write_string_value("membershipRule", @membership_rule)
+                writer.write_string_value("membershipRuleProcessingState", @membership_rule_processing_state)
+                writer.write_string_value("membershipType", @membership_type)
                 writer.write_collection_of_object_values("scopedRoleMembers", @scoped_role_members)
                 writer.write_string_value("visibility", @visibility)
             end
             ## 
-            ## Gets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+            ## Gets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set, the default value is null and the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
             ## @return a string
             ## 
             def visibility
                 return @visibility
             end
             ## 
-            ## Sets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+            ## Sets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set, the default value is null and the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
             ## @param value Value to set for the visibility property.
             ## @return a void
             ## 

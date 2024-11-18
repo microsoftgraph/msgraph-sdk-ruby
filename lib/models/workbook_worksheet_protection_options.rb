@@ -10,65 +10,65 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Represents the worksheet protection option of allowing using auto filter feature.
+            # Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
             @allow_auto_filter
             ## 
-            # Represents the worksheet protection option of allowing deleting columns.
+            # Indicates whether the worksheet protection option to allow deleting columns is enabled.
             @allow_delete_columns
             ## 
-            # Represents the worksheet protection option of allowing deleting rows.
+            # Indicates whether the worksheet protection option to allow deleting rows is enabled.
             @allow_delete_rows
             ## 
-            # Represents the worksheet protection option of allowing formatting cells.
+            # Indicates whether the worksheet protection option to allow formatting cells is enabled.
             @allow_format_cells
             ## 
-            # Represents the worksheet protection option of allowing formatting columns.
+            # Indicates whether the worksheet protection option to allow formatting columns is enabled.
             @allow_format_columns
             ## 
-            # Represents the worksheet protection option of allowing formatting rows.
+            # Indicates whether the worksheet protection option to allow formatting rows is enabled.
             @allow_format_rows
             ## 
-            # Represents the worksheet protection option of allowing inserting columns.
+            # Indicates whether the worksheet protection option to allow inserting columns is enabled.
             @allow_insert_columns
             ## 
-            # Represents the worksheet protection option of allowing inserting hyperlinks.
+            # Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
             @allow_insert_hyperlinks
             ## 
-            # Represents the worksheet protection option of allowing inserting rows.
+            # Indicates whether the worksheet protection option to allow inserting rows is enabled.
             @allow_insert_rows
             ## 
-            # Represents the worksheet protection option of allowing using pivot table feature.
+            # Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
             @allow_pivot_tables
             ## 
-            # Represents the worksheet protection option of allowing using sort feature.
+            # Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
             @allow_sort
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.
+            ## Gets the allowAutoFilter property value. Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
             ## @return a boolean
             ## 
             def allow_auto_filter
                 return @allow_auto_filter
             end
             ## 
-            ## Sets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.
+            ## Sets the allowAutoFilter property value. Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.
             ## @param value Value to set for the allowAutoFilter property.
             ## @return a void
             ## 
@@ -76,14 +76,14 @@ module MicrosoftGraph
                 @allow_auto_filter = value
             end
             ## 
-            ## Gets the allowDeleteColumns property value. Represents the worksheet protection option of allowing deleting columns.
+            ## Gets the allowDeleteColumns property value. Indicates whether the worksheet protection option to allow deleting columns is enabled.
             ## @return a boolean
             ## 
             def allow_delete_columns
                 return @allow_delete_columns
             end
             ## 
-            ## Sets the allowDeleteColumns property value. Represents the worksheet protection option of allowing deleting columns.
+            ## Sets the allowDeleteColumns property value. Indicates whether the worksheet protection option to allow deleting columns is enabled.
             ## @param value Value to set for the allowDeleteColumns property.
             ## @return a void
             ## 
@@ -91,14 +91,14 @@ module MicrosoftGraph
                 @allow_delete_columns = value
             end
             ## 
-            ## Gets the allowDeleteRows property value. Represents the worksheet protection option of allowing deleting rows.
+            ## Gets the allowDeleteRows property value. Indicates whether the worksheet protection option to allow deleting rows is enabled.
             ## @return a boolean
             ## 
             def allow_delete_rows
                 return @allow_delete_rows
             end
             ## 
-            ## Sets the allowDeleteRows property value. Represents the worksheet protection option of allowing deleting rows.
+            ## Sets the allowDeleteRows property value. Indicates whether the worksheet protection option to allow deleting rows is enabled.
             ## @param value Value to set for the allowDeleteRows property.
             ## @return a void
             ## 
@@ -106,14 +106,14 @@ module MicrosoftGraph
                 @allow_delete_rows = value
             end
             ## 
-            ## Gets the allowFormatCells property value. Represents the worksheet protection option of allowing formatting cells.
+            ## Gets the allowFormatCells property value. Indicates whether the worksheet protection option to allow formatting cells is enabled.
             ## @return a boolean
             ## 
             def allow_format_cells
                 return @allow_format_cells
             end
             ## 
-            ## Sets the allowFormatCells property value. Represents the worksheet protection option of allowing formatting cells.
+            ## Sets the allowFormatCells property value. Indicates whether the worksheet protection option to allow formatting cells is enabled.
             ## @param value Value to set for the allowFormatCells property.
             ## @return a void
             ## 
@@ -121,14 +121,14 @@ module MicrosoftGraph
                 @allow_format_cells = value
             end
             ## 
-            ## Gets the allowFormatColumns property value. Represents the worksheet protection option of allowing formatting columns.
+            ## Gets the allowFormatColumns property value. Indicates whether the worksheet protection option to allow formatting columns is enabled.
             ## @return a boolean
             ## 
             def allow_format_columns
                 return @allow_format_columns
             end
             ## 
-            ## Sets the allowFormatColumns property value. Represents the worksheet protection option of allowing formatting columns.
+            ## Sets the allowFormatColumns property value. Indicates whether the worksheet protection option to allow formatting columns is enabled.
             ## @param value Value to set for the allowFormatColumns property.
             ## @return a void
             ## 
@@ -136,14 +136,14 @@ module MicrosoftGraph
                 @allow_format_columns = value
             end
             ## 
-            ## Gets the allowFormatRows property value. Represents the worksheet protection option of allowing formatting rows.
+            ## Gets the allowFormatRows property value. Indicates whether the worksheet protection option to allow formatting rows is enabled.
             ## @return a boolean
             ## 
             def allow_format_rows
                 return @allow_format_rows
             end
             ## 
-            ## Sets the allowFormatRows property value. Represents the worksheet protection option of allowing formatting rows.
+            ## Sets the allowFormatRows property value. Indicates whether the worksheet protection option to allow formatting rows is enabled.
             ## @param value Value to set for the allowFormatRows property.
             ## @return a void
             ## 
@@ -151,14 +151,14 @@ module MicrosoftGraph
                 @allow_format_rows = value
             end
             ## 
-            ## Gets the allowInsertColumns property value. Represents the worksheet protection option of allowing inserting columns.
+            ## Gets the allowInsertColumns property value. Indicates whether the worksheet protection option to allow inserting columns is enabled.
             ## @return a boolean
             ## 
             def allow_insert_columns
                 return @allow_insert_columns
             end
             ## 
-            ## Sets the allowInsertColumns property value. Represents the worksheet protection option of allowing inserting columns.
+            ## Sets the allowInsertColumns property value. Indicates whether the worksheet protection option to allow inserting columns is enabled.
             ## @param value Value to set for the allowInsertColumns property.
             ## @return a void
             ## 
@@ -166,14 +166,14 @@ module MicrosoftGraph
                 @allow_insert_columns = value
             end
             ## 
-            ## Gets the allowInsertHyperlinks property value. Represents the worksheet protection option of allowing inserting hyperlinks.
+            ## Gets the allowInsertHyperlinks property value. Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
             ## @return a boolean
             ## 
             def allow_insert_hyperlinks
                 return @allow_insert_hyperlinks
             end
             ## 
-            ## Sets the allowInsertHyperlinks property value. Represents the worksheet protection option of allowing inserting hyperlinks.
+            ## Sets the allowInsertHyperlinks property value. Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.
             ## @param value Value to set for the allowInsertHyperlinks property.
             ## @return a void
             ## 
@@ -181,14 +181,14 @@ module MicrosoftGraph
                 @allow_insert_hyperlinks = value
             end
             ## 
-            ## Gets the allowInsertRows property value. Represents the worksheet protection option of allowing inserting rows.
+            ## Gets the allowInsertRows property value. Indicates whether the worksheet protection option to allow inserting rows is enabled.
             ## @return a boolean
             ## 
             def allow_insert_rows
                 return @allow_insert_rows
             end
             ## 
-            ## Sets the allowInsertRows property value. Represents the worksheet protection option of allowing inserting rows.
+            ## Sets the allowInsertRows property value. Indicates whether the worksheet protection option to allow inserting rows is enabled.
             ## @param value Value to set for the allowInsertRows property.
             ## @return a void
             ## 
@@ -196,14 +196,14 @@ module MicrosoftGraph
                 @allow_insert_rows = value
             end
             ## 
-            ## Gets the allowPivotTables property value. Represents the worksheet protection option of allowing using pivot table feature.
+            ## Gets the allowPivotTables property value. Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
             ## @return a boolean
             ## 
             def allow_pivot_tables
                 return @allow_pivot_tables
             end
             ## 
-            ## Sets the allowPivotTables property value. Represents the worksheet protection option of allowing using pivot table feature.
+            ## Sets the allowPivotTables property value. Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.
             ## @param value Value to set for the allowPivotTables property.
             ## @return a void
             ## 
@@ -211,14 +211,14 @@ module MicrosoftGraph
                 @allow_pivot_tables = value
             end
             ## 
-            ## Gets the allowSort property value. Represents the worksheet protection option of allowing using sort feature.
+            ## Gets the allowSort property value. Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
             ## @return a boolean
             ## 
             def allow_sort
                 return @allow_sort
             end
             ## 
-            ## Sets the allowSort property value. Represents the worksheet protection option of allowing using sort feature.
+            ## Sets the allowSort property value. Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.
             ## @param value Value to set for the allowSort property.
             ## @return a void
             ## 
@@ -226,7 +226,7 @@ module MicrosoftGraph
                 @allow_sort = value
             end
             ## 
-            ## Instantiates a new workbookWorksheetProtectionOptions and sets the default values.
+            ## Instantiates a new WorkbookWorksheetProtectionOptions and sets the default values.
             ## @return a void
             ## 
             def initialize()

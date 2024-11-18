@@ -10,10 +10,10 @@ module MicrosoftGraph
             # Write only. Bytes for the hosted content (such as images).
             @content_bytes
             ## 
-            # Write only. Content type. sicj as image/png, image/jpg.
+            # Write only. Content type. such as image/png, image/jpg.
             @content_type
             ## 
-            ## Instantiates a new teamworkHostedContent and sets the default values.
+            ## Instantiates a new TeamworkHostedContent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,14 +35,14 @@ module MicrosoftGraph
                 @content_bytes = value
             end
             ## 
-            ## Gets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
+            ## Gets the contentType property value. Write only. Content type. such as image/png, image/jpg.
             ## @return a string
             ## 
             def content_type
                 return @content_type
             end
             ## 
-            ## Sets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
+            ## Sets the contentType property value. Write only. Content type. such as image/png, image/jpg.
             ## @param value Value to set for the contentType property.
             ## @return a void
             ## 

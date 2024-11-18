@@ -5,6 +5,8 @@ require_relative '../../../models/o_data_errors_o_data_error'
 require_relative '../../communications'
 require_relative '../call_records'
 require_relative './item'
+require_relative './organizer_v2/organizer_v2_request_builder'
+require_relative './participants_v2/participants_v2_request_builder'
 require_relative './sessions/sessions_request_builder'
 
 module MicrosoftGraph
@@ -15,6 +17,16 @@ module MicrosoftGraph
                 # Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
                 class CallRecordItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
+                    ## 
+                    # Provides operations to manage the organizer_v2 property of the microsoft.graph.callRecords.callRecord entity.
+                    def organizer_v2()
+                        return MicrosoftGraph::Communications::CallRecords::Item::Organizer_v2::OrganizerV2RequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the participants_v2 property of the microsoft.graph.callRecords.callRecord entity.
+                    def participants_v2()
+                        return MicrosoftGraph::Communications::CallRecords::Item::Participants_v2::ParticipantsV2RequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     # Provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
                     def sessions()
@@ -27,7 +39,7 @@ module MicrosoftGraph
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        super(path_parameters, request_adapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}{?%24select,%24expand}")
+                        super(path_parameters, request_adapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}{?%24expand,%24select}")
                     end
                     ## 
                     ## Delete navigation property callRecords for communications
@@ -39,12 +51,11 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
+                    ## Retrieve the properties and relationships of a callRecord object. You can get the id of a callRecord in two ways:* Subscribe to change notifications to the /communications/callRecords endpoint.* Use the callChainId property of a call. The call record is available only after the associated call is completed.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of call_records_call_record
                     ## 
@@ -53,8 +64,7 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecordsCallRecord.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -69,8 +79,7 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecordsCallRecord.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
@@ -80,31 +89,32 @@ module MicrosoftGraph
                     ## 
                     def to_delete_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :DELETE
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :DELETE
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
-                    ## Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
+                    ## Retrieve the properties and relationships of a callRecord object. You can get the id of a callRecord in two ways:* Subscribe to change notifications to the /communications/callRecords endpoint.* Use the callChainId property of a call. The call record is available only after the associated call is completed.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
@@ -116,20 +126,29 @@ module MicrosoftGraph
                     def to_patch_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :PATCH
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
-                        request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :PATCH
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a call_record_item_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return CallRecordItemRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 
-                    # Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
+                    # Retrieve the properties and relationships of a callRecord object. You can get the id of a callRecord in two ways:* Subscribe to change notifications to the /communications/callRecords endpoint.* Use the callChainId property of a call. The call record is available only after the associated call is completed.
                     class CallRecordItemRequestBuilderGetQueryParameters
                         
                         ## 

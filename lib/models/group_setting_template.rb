@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
             @values
             ## 
-            ## Instantiates a new groupSettingTemplate and sets the default values.
+            ## Instantiates a new GroupSettingTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()
