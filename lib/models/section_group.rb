@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The URL for the sections navigation property, which returns all the sections in the section group. Read-only.
             @sections_url
             ## 
-            ## Instantiates a new sectionGroup and sets the default values.
+            ## Instantiates a new SectionGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()
