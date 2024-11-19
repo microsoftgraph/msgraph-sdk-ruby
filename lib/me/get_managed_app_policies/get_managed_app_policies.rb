@@ -1,1 +1,0 @@
-require_relative 'get_managed_app_policies_response'

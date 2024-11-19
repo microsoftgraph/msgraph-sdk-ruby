@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @consented_permission_set = value
             end
             ## 
-            ## Instantiates a new teamsAppInstallation and sets the default values.
+            ## Instantiates a new TeamsAppInstallation and sets the default values.
             ## @return a void
             ## 
             def initialize()

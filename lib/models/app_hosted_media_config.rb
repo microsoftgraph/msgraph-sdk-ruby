@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @blob = value
             end
             ## 
-            ## Instantiates a new appHostedMediaConfig and sets the default values.
+            ## Instantiates a new AppHostedMediaConfig and sets the default values.
             ## @return a void
             ## 
             def initialize()
