@@ -10,53 +10,53 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Indicates the browser information of the used for signing in.
+            # Indicates the browser information of the used in the sign-in. Populated for devices registered in Microsoft Entra.
             @browser
             ## 
-            # Refers to the UniqueID of the device used for signing in.
+            # Refers to the unique ID of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
             @device_id
             ## 
-            # Refers to the name of the device used for signing in.
+            # Refers to the name of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
             @display_name
             ## 
-            # Indicates whether the device is compliant.
+            # Indicates whether the device is compliant or not.
             @is_compliant
             ## 
-            # Indicates whether the device is managed.
+            # Indicates if the device is managed or not.
             @is_managed
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Indicates the operating system name and version used for signing in.
+            # Indicates the OS name and version used in the sign-in.
             @operating_system
             ## 
-            # Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
+            # Indicates information on whether the device used in the sign-in is workplace-joined, Microsoft Entra-joined, domain-joined.
             @trust_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the browser property value. Indicates the browser information of the used for signing in.
+            ## Gets the browser property value. Indicates the browser information of the used in the sign-in. Populated for devices registered in Microsoft Entra.
             ## @return a string
             ## 
             def browser
                 return @browser
             end
             ## 
-            ## Sets the browser property value. Indicates the browser information of the used for signing in.
+            ## Sets the browser property value. Indicates the browser information of the used in the sign-in. Populated for devices registered in Microsoft Entra.
             ## @param value Value to set for the browser property.
             ## @return a void
             ## 
@@ -64,7 +64,7 @@ module MicrosoftGraph
                 @browser = value
             end
             ## 
-            ## Instantiates a new deviceDetail and sets the default values.
+            ## Instantiates a new DeviceDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -80,14 +80,14 @@ module MicrosoftGraph
                 return DeviceDetail.new
             end
             ## 
-            ## Gets the deviceId property value. Refers to the UniqueID of the device used for signing in.
+            ## Gets the deviceId property value. Refers to the unique ID of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
             ## @return a string
             ## 
             def device_id
                 return @device_id
             end
             ## 
-            ## Sets the deviceId property value. Refers to the UniqueID of the device used for signing in.
+            ## Sets the deviceId property value. Refers to the unique ID of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
             ## @param value Value to set for the deviceId property.
             ## @return a void
             ## 
@@ -95,14 +95,14 @@ module MicrosoftGraph
                 @device_id = value
             end
             ## 
-            ## Gets the displayName property value. Refers to the name of the device used for signing in.
+            ## Gets the displayName property value. Refers to the name of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Refers to the name of the device used for signing in.
+            ## Sets the displayName property value. Refers to the name of the device used in the sign-in. Populated for devices registered in Microsoft Entra.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -126,14 +126,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the isCompliant property value. Indicates whether the device is compliant.
+            ## Gets the isCompliant property value. Indicates whether the device is compliant or not.
             ## @return a boolean
             ## 
             def is_compliant
                 return @is_compliant
             end
             ## 
-            ## Sets the isCompliant property value. Indicates whether the device is compliant.
+            ## Sets the isCompliant property value. Indicates whether the device is compliant or not.
             ## @param value Value to set for the isCompliant property.
             ## @return a void
             ## 
@@ -141,14 +141,14 @@ module MicrosoftGraph
                 @is_compliant = value
             end
             ## 
-            ## Gets the isManaged property value. Indicates whether the device is managed.
+            ## Gets the isManaged property value. Indicates if the device is managed or not.
             ## @return a boolean
             ## 
             def is_managed
                 return @is_managed
             end
             ## 
-            ## Sets the isManaged property value. Indicates whether the device is managed.
+            ## Sets the isManaged property value. Indicates if the device is managed or not.
             ## @param value Value to set for the isManaged property.
             ## @return a void
             ## 
@@ -171,14 +171,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the operatingSystem property value. Indicates the operating system name and version used for signing in.
+            ## Gets the operatingSystem property value. Indicates the OS name and version used in the sign-in.
             ## @return a string
             ## 
             def operating_system
                 return @operating_system
             end
             ## 
-            ## Sets the operatingSystem property value. Indicates the operating system name and version used for signing in.
+            ## Sets the operatingSystem property value. Indicates the OS name and version used in the sign-in.
             ## @param value Value to set for the operatingSystem property.
             ## @return a void
             ## 
@@ -203,14 +203,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the trustType property value. Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
+            ## Gets the trustType property value. Indicates information on whether the device used in the sign-in is workplace-joined, Microsoft Entra-joined, domain-joined.
             ## @return a string
             ## 
             def trust_type
                 return @trust_type
             end
             ## 
-            ## Sets the trustType property value. Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
+            ## Sets the trustType property value. Indicates information on whether the device used in the sign-in is workplace-joined, Microsoft Entra-joined, domain-joined.
             ## @param value Value to set for the trustType property.
             ## @return a void
             ## 

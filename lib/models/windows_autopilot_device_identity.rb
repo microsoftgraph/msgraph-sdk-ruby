@@ -88,7 +88,7 @@ module MicrosoftGraph
                 @azure_active_directory_device_id = value
             end
             ## 
-            ## Instantiates a new windowsAutopilotDeviceIdentity and sets the default values.
+            ## Instantiates a new WindowsAutopilotDeviceIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()
