@@ -12,7 +12,7 @@ module MicrosoftGraph
             # The work from anywhere metric devices. Read-only.
             @metric_devices
             ## 
-            ## Instantiates a new userExperienceAnalyticsWorkFromAnywhereMetric and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsWorkFromAnywhereMetric and sets the default values.
             ## @return a void
             ## 
             def initialize()

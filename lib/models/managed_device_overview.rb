@@ -24,7 +24,7 @@ module MicrosoftGraph
             # The number of devices enrolled in MDM
             @mdm_enrolled_count
             ## 
-            ## Instantiates a new managedDeviceOverview and sets the default values.
+            ## Instantiates a new ManagedDeviceOverview and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -20,7 +20,7 @@ module MicrosoftGraph
             # User ID of the sender of the offer shift request.
             @sender_shift_id
             ## 
-            ## Instantiates a new offerShiftRequest and sets the default values.
+            ## Instantiates a new OfferShiftRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

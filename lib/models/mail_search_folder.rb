@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The mailbox folders that should be mined.
             @source_folder_ids
             ## 
-            ## Instantiates a new mailSearchFolder and sets the default values.
+            ## Instantiates a new MailSearchFolder and sets the default values.
             ## @return a void
             ## 
             def initialize()

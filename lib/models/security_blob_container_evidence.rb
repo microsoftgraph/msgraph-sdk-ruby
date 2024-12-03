@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The full URL representation of the blob container.
             @url
             ## 
-            ## Instantiates a new securityBlobContainerEvidence and sets the default values.
+            ## Instantiates a new SecurityBlobContainerEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

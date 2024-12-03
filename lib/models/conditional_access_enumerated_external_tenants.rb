@@ -10,7 +10,7 @@ module MicrosoftGraph
             # A collection of tenant IDs that define the scope of a policy targeting conditional access for guests and external users.
             @members
             ## 
-            ## Instantiates a new conditionalAccessEnumeratedExternalTenants and sets the default values.
+            ## Instantiates a new ConditionalAccessEnumeratedExternalTenants and sets the default values.
             ## @return a void
             ## 
             def initialize()
