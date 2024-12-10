@@ -7,16 +7,16 @@ module MicrosoftGraph
         class OpenShift < MicrosoftGraph::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # An unpublished open shift.
+            # Draft changes in the openShift are only visible to managers until they're shared.
             @draft_open_shift
             ## 
-            # ID for the scheduling group that the open shift belongs to.
+            # The ID of the schedulingGroup that contains the openShift.
             @scheduling_group_id
             ## 
-            # A published open shift.
+            # The shared version of this openShift that is viewable by both employees and managers.
             @shared_open_shift
             ## 
-            ## Instantiates a new openShift and sets the default values.
+            ## Instantiates a new OpenShift and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -33,14 +33,14 @@ module MicrosoftGraph
                 return OpenShift.new
             end
             ## 
-            ## Gets the draftOpenShift property value. An unpublished open shift.
+            ## Gets the draftOpenShift property value. Draft changes in the openShift are only visible to managers until they're shared.
             ## @return a open_shift_item
             ## 
             def draft_open_shift
                 return @draft_open_shift
             end
             ## 
-            ## Sets the draftOpenShift property value. An unpublished open shift.
+            ## Sets the draftOpenShift property value. Draft changes in the openShift are only visible to managers until they're shared.
             ## @param value Value to set for the draftOpenShift property.
             ## @return a void
             ## 
@@ -59,14 +59,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
+            ## Gets the schedulingGroupId property value. The ID of the schedulingGroup that contains the openShift.
             ## @return a string
             ## 
             def scheduling_group_id
                 return @scheduling_group_id
             end
             ## 
-            ## Sets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
+            ## Sets the schedulingGroupId property value. The ID of the schedulingGroup that contains the openShift.
             ## @param value Value to set for the schedulingGroupId property.
             ## @return a void
             ## 
@@ -86,14 +86,14 @@ module MicrosoftGraph
                 writer.write_object_value("sharedOpenShift", @shared_open_shift)
             end
             ## 
-            ## Gets the sharedOpenShift property value. A published open shift.
+            ## Gets the sharedOpenShift property value. The shared version of this openShift that is viewable by both employees and managers.
             ## @return a open_shift_item
             ## 
             def shared_open_shift
                 return @shared_open_shift
             end
             ## 
-            ## Sets the sharedOpenShift property value. A published open shift.
+            ## Sets the sharedOpenShift property value. The shared version of this openShift that is viewable by both employees and managers.
             ## @param value Value to set for the sharedOpenShift property.
             ## @return a void
             ## 

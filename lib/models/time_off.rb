@@ -7,16 +7,16 @@ module MicrosoftGraph
         class TimeOff < MicrosoftGraph::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The draft version of this timeOff that is viewable by managers. Required.
+            # The draft version of this timeOff item that is viewable by managers. It must be shared before it's visible to team members. Required.
             @draft_time_off
             ## 
-            # The shared version of this timeOff that is viewable by both employees and managers. Required.
+            # The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.
             @shared_time_off
             ## 
             # ID of the user assigned to the timeOff. Required.
             @user_id
             ## 
-            ## Instantiates a new timeOff and sets the default values.
+            ## Instantiates a new TimeOff and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -33,14 +33,14 @@ module MicrosoftGraph
                 return TimeOff.new
             end
             ## 
-            ## Gets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
+            ## Gets the draftTimeOff property value. The draft version of this timeOff item that is viewable by managers. It must be shared before it's visible to team members. Required.
             ## @return a time_off_item
             ## 
             def draft_time_off
                 return @draft_time_off
             end
             ## 
-            ## Sets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
+            ## Sets the draftTimeOff property value. The draft version of this timeOff item that is viewable by managers. It must be shared before it's visible to team members. Required.
             ## @param value Value to set for the draftTimeOff property.
             ## @return a void
             ## 
@@ -71,14 +71,14 @@ module MicrosoftGraph
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
+            ## Gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.
             ## @return a time_off_item
             ## 
             def shared_time_off
                 return @shared_time_off
             end
             ## 
-            ## Sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
+            ## Sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.
             ## @param value Value to set for the sharedTimeOff property.
             ## @return a void
             ## 
