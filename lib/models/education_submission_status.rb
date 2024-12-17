@@ -7,6 +7,7 @@ module MicrosoftGraph
             Returned: :Returned,
             UnknownFutureValue: :UnknownFutureValue,
             Reassigned: :Reassigned,
+            Excused: :Excused,
         }
     end
 end

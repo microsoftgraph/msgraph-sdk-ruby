@@ -7,16 +7,16 @@ module MicrosoftGraph
         class WorkbookChartSeries < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+            # The formatting of a chart series, which includes fill and line formatting. Read-only.
             @format
             ## 
-            # Represents the name of a series in a chart.
+            # The name of a series in a chart.
             @name
             ## 
-            # Represents a collection of all points in the series. Read-only.
+            # A collection of all points in the series. Read-only.
             @points
             ## 
-            ## Instantiates a new workbookChartSeries and sets the default values.
+            ## Instantiates a new WorkbookChartSeries and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,14 +32,14 @@ module MicrosoftGraph
                 return WorkbookChartSeries.new
             end
             ## 
-            ## Gets the format property value. Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+            ## Gets the format property value. The formatting of a chart series, which includes fill and line formatting. Read-only.
             ## @return a workbook_chart_series_format
             ## 
             def format
                 return @format
             end
             ## 
-            ## Sets the format property value. Represents the formatting of a chart series, which includes fill and line formatting. Read-only.
+            ## Sets the format property value. The formatting of a chart series, which includes fill and line formatting. Read-only.
             ## @param value Value to set for the format property.
             ## @return a void
             ## 
@@ -58,14 +58,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the name property value. Represents the name of a series in a chart.
+            ## Gets the name property value. The name of a series in a chart.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. Represents the name of a series in a chart.
+            ## Sets the name property value. The name of a series in a chart.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -73,14 +73,14 @@ module MicrosoftGraph
                 @name = value
             end
             ## 
-            ## Gets the points property value. Represents a collection of all points in the series. Read-only.
+            ## Gets the points property value. A collection of all points in the series. Read-only.
             ## @return a workbook_chart_point
             ## 
             def points
                 return @points
             end
             ## 
-            ## Sets the points property value. Represents a collection of all points in the series. Read-only.
+            ## Sets the points property value. A collection of all points in the series. Read-only.
             ## @param value Value to set for the points property.
             ## @return a void
             ## 

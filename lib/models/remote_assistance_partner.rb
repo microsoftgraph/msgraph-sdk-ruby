@@ -22,7 +22,7 @@ module MicrosoftGraph
             # URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
             @onboarding_url
             ## 
-            ## Instantiates a new remoteAssistancePartner and sets the default values.
+            ## Instantiates a new RemoteAssistancePartner and sets the default values.
             ## @return a void
             ## 
             def initialize()

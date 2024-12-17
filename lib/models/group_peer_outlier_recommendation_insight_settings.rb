@@ -7,7 +7,7 @@ module MicrosoftGraph
         class GroupPeerOutlierRecommendationInsightSettings < MicrosoftGraph::Models::AccessReviewRecommendationInsightSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new groupPeerOutlierRecommendationInsightSettings and sets the default values.
+            ## Instantiates a new GroupPeerOutlierRecommendationInsightSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
