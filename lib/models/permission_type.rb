@@ -1,9 +1,9 @@
 module MicrosoftGraph
     module Models
         PermissionType = {
-            Application: :Application,
-            Delegated: :Delegated,
             DelegatedUserConsentable: :DelegatedUserConsentable,
+            Delegated: :Delegated,
+            Application: :Application,
         }
     end
 end

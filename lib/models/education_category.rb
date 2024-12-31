@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Unique identifier for the category.
             @display_name
             ## 
-            ## Instantiates a new educationCategory and sets the default values.
+            ## Instantiates a new EducationCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -19,15 +19,15 @@ module MicrosoftGraph
             # The list of users and groups targeted with your cross-tenant access policy.
             @users_and_groups
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @applications = value
             end
             ## 
-            ## Instantiates a new crossTenantAccessPolicyB2BSetting and sets the default values.
+            ## Instantiates a new CrossTenantAccessPolicyB2BSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -62,6 +62,14 @@ module MicrosoftGraph
             ## 
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                mapping_value_node = parse_node.get_child_node("@odata.type")
+                unless mapping_value_node.nil? then
+                    mapping_value = mapping_value_node.get_string_value
+                    case mapping_value
+                        when "#microsoft.graph.crossTenantAccessPolicyTenantRestrictions"
+                            return CrossTenantAccessPolicyTenantRestrictions.new
+                    end
+                end
                 return CrossTenantAccessPolicyB2BSetting.new
             end
             ## 
