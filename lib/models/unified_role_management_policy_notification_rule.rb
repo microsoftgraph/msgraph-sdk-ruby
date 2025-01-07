@@ -22,7 +22,7 @@ module MicrosoftGraph
             # The type of recipient of the notification. The possible values are Requestor, Approver, Admin.
             @recipient_type
             ## 
-            ## Instantiates a new unifiedRoleManagementPolicyNotificationRule and sets the default values.
+            ## Instantiates a new UnifiedRoleManagementPolicyNotificationRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
