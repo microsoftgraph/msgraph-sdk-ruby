@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The width of the photo. Read-only.
             @width
             ## 
-            ## Instantiates a new profilePhoto and sets the default values.
+            ## Instantiates a new ProfilePhoto and sets the default values.
             ## @return a void
             ## 
             def initialize()

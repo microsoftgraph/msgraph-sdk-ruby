@@ -17,7 +17,7 @@ module MicrosoftGraph
             # The scope property
             @scope
             ## 
-            ## Instantiates a new accessPackageResourceRoleScope and sets the default values.
+            ## Instantiates a new AccessPackageResourceRoleScope and sets the default values.
             ## @return a void
             ## 
             def initialize()
