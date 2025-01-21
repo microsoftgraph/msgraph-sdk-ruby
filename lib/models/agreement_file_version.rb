@@ -7,7 +7,7 @@ module MicrosoftGraph
         class AgreementFileVersion < MicrosoftGraph::Models::AgreementFileProperties
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new agreementFileVersion and sets the default values.
+            ## Instantiates a new AgreementFileVersion and sets the default values.
             ## @return a void
             ## 
             def initialize()

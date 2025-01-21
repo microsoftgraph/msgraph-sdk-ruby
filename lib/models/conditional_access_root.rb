@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @authentication_strength = value
             end
             ## 
-            ## Instantiates a new conditionalAccessRoot and sets the default values.
+            ## Instantiates a new ConditionalAccessRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

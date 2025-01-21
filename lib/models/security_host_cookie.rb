@@ -23,7 +23,7 @@ module MicrosoftGraph
             # The name of the cookie, for example, JSESSIONID or SEARCH_NAMESITE.
             @name
             ## 
-            ## Instantiates a new securityHostCookie and sets the default values.
+            ## Instantiates a new SecurityHostCookie and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,31 +7,31 @@ module MicrosoftGraph
         class Domain < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.
+            # Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Microsoft Entra ID performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.  To update this property in delegated scenarios, the calling app must be assigned the Directory.AccessAsUser.All delegated permission.
             @authentication_type
             ## 
             # This property is always null except when the verify action is used. When the verify action is used, a domain entity is returned in the response. The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
             @availability_status
             ## 
-            # The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+            # The objects such as users and groups that reference the domain ID. Read-only, Nullable. Doesn't support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
             @domain_name_references
             ## 
-            # Domain settings configured by a customer when federated with Azure AD. Supports $expand.
+            # Domain settings configured by a customer when federated with Microsoft Entra ID. Doesn't support $expand.
             @federation_configuration
             ## 
-            # The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
+            # The value of the property is false if the DNS record management of the domain is delegated to Microsoft 365. Otherwise, the value is true. Not nullable
             @is_admin_managed
             ## 
-            # true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
+            # true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable.
             @is_default
             ## 
-            # true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
+            # true if this is the initial domain created by Microsoft Online Services (contoso.com). There's only one initial domain per company. Not nullable
             @is_initial
             ## 
-            # true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+            # true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable.
             @is_root
             ## 
-            # true if the domain has completed domain ownership verification. Not nullable
+            # true if the domain completed domain ownership verification. Not nullable.
             @is_verified
             ## 
             # The manufacturer property
@@ -40,32 +40,35 @@ module MicrosoftGraph
             # The model property
             @model
             ## 
-            # Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
+            # Specifies the number of days before a user receives notification that their password expires. If the property isn't set, a default value of 14 days is used.
             @password_notification_window_in_days
             ## 
-            # Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
+            # Specifies the length of time that a password is valid before it must be changed. If the property isn't set, a default value of 90 days is used.
             @password_validity_period_in_days
             ## 
-            # DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
+            # Root domain of a subdomain. Read-only, Nullable. Supports $expand.
+            @root_domain
+            ## 
+            # DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Doesn't support $expand.
             @service_configuration_records
             ## 
             # Status of asynchronous operations scheduled for the domain.
             @state
             ## 
-            # The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
+            # The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values that you can add or remove using the API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
             @supported_services
             ## 
-            # DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
+            # DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Doesn't support $expand.
             @verification_dns_records
             ## 
-            ## Gets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.
+            ## Gets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Microsoft Entra ID performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.  To update this property in delegated scenarios, the calling app must be assigned the Directory.AccessAsUser.All delegated permission.
             ## @return a string
             ## 
             def authentication_type
                 return @authentication_type
             end
             ## 
-            ## Sets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.
+            ## Sets the authenticationType property value. Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Microsoft Entra ID performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant's on-premises Active Directory via Active Directory Federation Services. Not nullable.  To update this property in delegated scenarios, the calling app must be assigned the Directory.AccessAsUser.All delegated permission.
             ## @param value Value to set for the authenticationType property.
             ## @return a void
             ## 
@@ -88,7 +91,7 @@ module MicrosoftGraph
                 @availability_status = value
             end
             ## 
-            ## Instantiates a new domain and sets the default values.
+            ## Instantiates a new Domain and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -104,14 +107,14 @@ module MicrosoftGraph
                 return Domain.new
             end
             ## 
-            ## Gets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+            ## Gets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Doesn't support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
             ## @return a directory_object
             ## 
             def domain_name_references
                 return @domain_name_references
             end
             ## 
-            ## Sets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+            ## Sets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Doesn't support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
             ## @param value Value to set for the domainNameReferences property.
             ## @return a void
             ## 
@@ -119,14 +122,14 @@ module MicrosoftGraph
                 @domain_name_references = value
             end
             ## 
-            ## Gets the federationConfiguration property value. Domain settings configured by a customer when federated with Azure AD. Supports $expand.
+            ## Gets the federationConfiguration property value. Domain settings configured by a customer when federated with Microsoft Entra ID. Doesn't support $expand.
             ## @return a internal_domain_federation
             ## 
             def federation_configuration
                 return @federation_configuration
             end
             ## 
-            ## Sets the federationConfiguration property value. Domain settings configured by a customer when federated with Azure AD. Supports $expand.
+            ## Sets the federationConfiguration property value. Domain settings configured by a customer when federated with Microsoft Entra ID. Doesn't support $expand.
             ## @param value Value to set for the federationConfiguration property.
             ## @return a void
             ## 
@@ -152,6 +155,7 @@ module MicrosoftGraph
                     "model" => lambda {|n| @model = n.get_string_value() },
                     "passwordNotificationWindowInDays" => lambda {|n| @password_notification_window_in_days = n.get_number_value() },
                     "passwordValidityPeriodInDays" => lambda {|n| @password_validity_period_in_days = n.get_number_value() },
+                    "rootDomain" => lambda {|n| @root_domain = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Domain.create_from_discriminator_value(pn) }) },
                     "serviceConfigurationRecords" => lambda {|n| @service_configuration_records = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DomainDnsRecord.create_from_discriminator_value(pn) }) },
                     "state" => lambda {|n| @state = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DomainState.create_from_discriminator_value(pn) }) },
                     "supportedServices" => lambda {|n| @supported_services = n.get_collection_of_primitive_values(String) },
@@ -159,14 +163,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
+            ## Gets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain is delegated to Microsoft 365. Otherwise, the value is true. Not nullable
             ## @return a boolean
             ## 
             def is_admin_managed
                 return @is_admin_managed
             end
             ## 
-            ## Sets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain has been delegated to Microsoft 365. Otherwise, the value is true. Not nullable
+            ## Sets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain is delegated to Microsoft 365. Otherwise, the value is true. Not nullable
             ## @param value Value to set for the isAdminManaged property.
             ## @return a void
             ## 
@@ -174,14 +178,14 @@ module MicrosoftGraph
                 @is_admin_managed = value
             end
             ## 
-            ## Gets the isDefault property value. true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
+            ## Gets the isDefault property value. true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable.
             ## @return a boolean
             ## 
             def is_default
                 return @is_default
             end
             ## 
-            ## Sets the isDefault property value. true if this is the default domain that is used for user creation. There is only one default domain per company. Not nullable
+            ## Sets the isDefault property value. true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable.
             ## @param value Value to set for the isDefault property.
             ## @return a void
             ## 
@@ -189,14 +193,14 @@ module MicrosoftGraph
                 @is_default = value
             end
             ## 
-            ## Gets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
+            ## Gets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (contoso.com). There's only one initial domain per company. Not nullable
             ## @return a boolean
             ## 
             def is_initial
                 return @is_initial
             end
             ## 
-            ## Sets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable
+            ## Sets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (contoso.com). There's only one initial domain per company. Not nullable
             ## @param value Value to set for the isInitial property.
             ## @return a void
             ## 
@@ -204,14 +208,14 @@ module MicrosoftGraph
                 @is_initial = value
             end
             ## 
-            ## Gets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+            ## Gets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable.
             ## @return a boolean
             ## 
             def is_root
                 return @is_root
             end
             ## 
-            ## Sets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+            ## Sets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable.
             ## @param value Value to set for the isRoot property.
             ## @return a void
             ## 
@@ -219,14 +223,14 @@ module MicrosoftGraph
                 @is_root = value
             end
             ## 
-            ## Gets the isVerified property value. true if the domain has completed domain ownership verification. Not nullable
+            ## Gets the isVerified property value. true if the domain completed domain ownership verification. Not nullable.
             ## @return a boolean
             ## 
             def is_verified
                 return @is_verified
             end
             ## 
-            ## Sets the isVerified property value. true if the domain has completed domain ownership verification. Not nullable
+            ## Sets the isVerified property value. true if the domain completed domain ownership verification. Not nullable.
             ## @param value Value to set for the isVerified property.
             ## @return a void
             ## 
@@ -264,14 +268,14 @@ module MicrosoftGraph
                 @model = value
             end
             ## 
-            ## Gets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
+            ## Gets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password expires. If the property isn't set, a default value of 14 days is used.
             ## @return a integer
             ## 
             def password_notification_window_in_days
                 return @password_notification_window_in_days
             end
             ## 
-            ## Sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
+            ## Sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password expires. If the property isn't set, a default value of 14 days is used.
             ## @param value Value to set for the passwordNotificationWindowInDays property.
             ## @return a void
             ## 
@@ -279,19 +283,34 @@ module MicrosoftGraph
                 @password_notification_window_in_days = value
             end
             ## 
-            ## Gets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
+            ## Gets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property isn't set, a default value of 90 days is used.
             ## @return a integer
             ## 
             def password_validity_period_in_days
                 return @password_validity_period_in_days
             end
             ## 
-            ## Sets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property is not set, a default value of 90 days will be used.
+            ## Sets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property isn't set, a default value of 90 days is used.
             ## @param value Value to set for the passwordValidityPeriodInDays property.
             ## @return a void
             ## 
             def password_validity_period_in_days=(value)
                 @password_validity_period_in_days = value
+            end
+            ## 
+            ## Gets the rootDomain property value. Root domain of a subdomain. Read-only, Nullable. Supports $expand.
+            ## @return a domain
+            ## 
+            def root_domain
+                return @root_domain
+            end
+            ## 
+            ## Sets the rootDomain property value. Root domain of a subdomain. Read-only, Nullable. Supports $expand.
+            ## @param value Value to set for the rootDomain property.
+            ## @return a void
+            ## 
+            def root_domain=(value)
+                @root_domain = value
             end
             ## 
             ## Serializes information the current object
@@ -314,20 +333,21 @@ module MicrosoftGraph
                 writer.write_string_value("model", @model)
                 writer.write_number_value("passwordNotificationWindowInDays", @password_notification_window_in_days)
                 writer.write_number_value("passwordValidityPeriodInDays", @password_validity_period_in_days)
+                writer.write_object_value("rootDomain", @root_domain)
                 writer.write_collection_of_object_values("serviceConfigurationRecords", @service_configuration_records)
                 writer.write_object_value("state", @state)
                 writer.write_collection_of_primitive_values("supportedServices", @supported_services)
                 writer.write_collection_of_object_values("verificationDnsRecords", @verification_dns_records)
             end
             ## 
-            ## Gets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
+            ## Gets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Doesn't support $expand.
             ## @return a domain_dns_record
             ## 
             def service_configuration_records
                 return @service_configuration_records
             end
             ## 
-            ## Sets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
+            ## Sets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Doesn't support $expand.
             ## @param value Value to set for the serviceConfigurationRecords property.
             ## @return a void
             ## 
@@ -350,14 +370,14 @@ module MicrosoftGraph
                 @state = value
             end
             ## 
-            ## Gets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
+            ## Gets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values that you can add or remove using the API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
             ## @return a string
             ## 
             def supported_services
                 return @supported_services
             end
             ## 
-            ## Sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
+            ## Sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values that you can add or remove using the API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
             ## @param value Value to set for the supportedServices property.
             ## @return a void
             ## 
@@ -365,14 +385,14 @@ module MicrosoftGraph
                 @supported_services = value
             end
             ## 
-            ## Gets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
+            ## Gets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Doesn't support $expand.
             ## @return a domain_dns_record
             ## 
             def verification_dns_records
                 return @verification_dns_records
             end
             ## 
-            ## Sets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.
+            ## Sets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Doesn't support $expand.
             ## @param value Value to set for the verificationDnsRecords property.
             ## @return a void
             ## 
