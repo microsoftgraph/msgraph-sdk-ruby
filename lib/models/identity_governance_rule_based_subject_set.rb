@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The rule for the subject set. Lifecycle Workflows supports a rich set of user properties for configuring the rules using $filter query expressions. For more information, see supported user and query parameters.
             @rule
             ## 
-            ## Instantiates a new identityGovernanceRuleBasedSubjectSet and sets the default values.
+            ## Instantiates a new IdentityGovernanceRuleBasedSubjectSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

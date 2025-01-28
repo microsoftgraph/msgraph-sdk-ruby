@@ -11,10 +11,13 @@ module MicrosoftGraph
             # The adversary or activity group that is associated with this alert.
             @actor_display_name
             ## 
-            # The alertPolicyId property
+            # A collection of other alert properties, including user-defined properties. Any custom details defined in the alert, and any dynamic content in the alert details, are stored here.
+            @additional_data_property
+            ## 
+            # The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
             @alert_policy_id
             ## 
-            # URL for the alert page in the Microsoft 365 Defender portal.
+            # URL for the Microsoft 365 Defender portal alert page.
             @alert_web_url
             ## 
             # Owner of the alert, or null if no owner is assigned.
@@ -23,7 +26,7 @@ module MicrosoftGraph
             # The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
             @category
             ## 
-            # Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
+            # Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
             @classification
             ## 
             # Array of comments created by the Security Operations (SecOps) team during the alert management process.
@@ -35,13 +38,13 @@ module MicrosoftGraph
             # String value describing each alert.
             @description
             ## 
-            # Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud.
+            # Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl.
             @detection_source
             ## 
             # The ID of the detector that triggered the alert.
             @detector_id
             ## 
-            # Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+            # Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
             @determination
             ## 
             # Collection of evidence related to the alert.
@@ -65,6 +68,9 @@ module MicrosoftGraph
             # The attack techniques, as aligned with the MITRE ATT&CK framework.
             @mitre_techniques
             ## 
+            # The name of the product which published this alert.
+            @product_name
+            ## 
             # The ID of the alert as it appears in the security provider product that generated the alert.
             @provider_alert_id
             ## 
@@ -83,7 +89,10 @@ module MicrosoftGraph
             # The status property
             @status
             ## 
-            # The Azure Active Directory tenant the alert was created in.
+            # The system tags associated with the alert.
+            @system_tags
+            ## 
+            # The Microsoft Entra tenant the alert was created in.
             @tenant_id
             ## 
             # The threat associated with this alert.
@@ -110,14 +119,29 @@ module MicrosoftGraph
                 @actor_display_name = value
             end
             ## 
-            ## Gets the alertPolicyId property value. The alertPolicyId property
+            ## Gets the additionalData property value. A collection of other alert properties, including user-defined properties. Any custom details defined in the alert, and any dynamic content in the alert details, are stored here.
+            ## @return a security_dictionary
+            ## 
+            def additional_data_property
+                return @additional_data_property
+            end
+            ## 
+            ## Sets the additionalData property value. A collection of other alert properties, including user-defined properties. Any custom details defined in the alert, and any dynamic content in the alert details, are stored here.
+            ## @param value Value to set for the additionalData property.
+            ## @return a void
+            ## 
+            def additional_data_property=(value)
+                @additional_data_property = value
+            end
+            ## 
+            ## Gets the alertPolicyId property value. The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
             ## @return a string
             ## 
             def alert_policy_id
                 return @alert_policy_id
             end
             ## 
-            ## Sets the alertPolicyId property value. The alertPolicyId property
+            ## Sets the alertPolicyId property value. The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
             ## @param value Value to set for the alertPolicyId property.
             ## @return a void
             ## 
@@ -125,14 +149,14 @@ module MicrosoftGraph
                 @alert_policy_id = value
             end
             ## 
-            ## Gets the alertWebUrl property value. URL for the alert page in the Microsoft 365 Defender portal.
+            ## Gets the alertWebUrl property value. URL for the Microsoft 365 Defender portal alert page.
             ## @return a string
             ## 
             def alert_web_url
                 return @alert_web_url
             end
             ## 
-            ## Sets the alertWebUrl property value. URL for the alert page in the Microsoft 365 Defender portal.
+            ## Sets the alertWebUrl property value. URL for the Microsoft 365 Defender portal alert page.
             ## @param value Value to set for the alertWebUrl property.
             ## @return a void
             ## 
@@ -170,14 +194,14 @@ module MicrosoftGraph
                 @category = value
             end
             ## 
-            ## Gets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
+            ## Gets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
             ## @return a security_alert_classification
             ## 
             def classification
                 return @classification
             end
             ## 
-            ## Sets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
+            ## Sets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
             ## @param value Value to set for the classification property.
             ## @return a void
             ## 
@@ -200,7 +224,7 @@ module MicrosoftGraph
                 @comments = value
             end
             ## 
-            ## Instantiates a new securityAlert and sets the default values.
+            ## Instantiates a new SecurityAlert and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -246,14 +270,14 @@ module MicrosoftGraph
                 @description = value
             end
             ## 
-            ## Gets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud.
+            ## Gets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl.
             ## @return a security_detection_source
             ## 
             def detection_source
                 return @detection_source
             end
             ## 
-            ## Sets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud.
+            ## Sets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl.
             ## @param value Value to set for the detectionSource property.
             ## @return a void
             ## 
@@ -276,14 +300,14 @@ module MicrosoftGraph
                 @detector_id = value
             end
             ## 
-            ## Gets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+            ## Gets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
             ## @return a security_alert_determination
             ## 
             def determination
                 return @determination
             end
             ## 
-            ## Sets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+            ## Sets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
             ## @param value Value to set for the determination property.
             ## @return a void
             ## 
@@ -327,6 +351,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "actorDisplayName" => lambda {|n| @actor_display_name = n.get_string_value() },
+                    "additionalData" => lambda {|n| @additional_data_property = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityDictionary.create_from_discriminator_value(pn) }) },
                     "alertPolicyId" => lambda {|n| @alert_policy_id = n.get_string_value() },
                     "alertWebUrl" => lambda {|n| @alert_web_url = n.get_string_value() },
                     "assignedTo" => lambda {|n| @assigned_to = n.get_string_value() },
@@ -345,12 +370,14 @@ module MicrosoftGraph
                     "lastActivityDateTime" => lambda {|n| @last_activity_date_time = n.get_date_time_value() },
                     "lastUpdateDateTime" => lambda {|n| @last_update_date_time = n.get_date_time_value() },
                     "mitreTechniques" => lambda {|n| @mitre_techniques = n.get_collection_of_primitive_values(String) },
+                    "productName" => lambda {|n| @product_name = n.get_string_value() },
                     "providerAlertId" => lambda {|n| @provider_alert_id = n.get_string_value() },
                     "recommendedActions" => lambda {|n| @recommended_actions = n.get_string_value() },
                     "resolvedDateTime" => lambda {|n| @resolved_date_time = n.get_date_time_value() },
                     "serviceSource" => lambda {|n| @service_source = n.get_enum_value(MicrosoftGraph::Models::SecurityServiceSource) },
                     "severity" => lambda {|n| @severity = n.get_enum_value(MicrosoftGraph::Models::SecurityAlertSeverity) },
                     "status" => lambda {|n| @status = n.get_enum_value(MicrosoftGraph::Models::SecurityAlertStatus) },
+                    "systemTags" => lambda {|n| @system_tags = n.get_collection_of_primitive_values(String) },
                     "tenantId" => lambda {|n| @tenant_id = n.get_string_value() },
                     "threatDisplayName" => lambda {|n| @threat_display_name = n.get_string_value() },
                     "threatFamilyName" => lambda {|n| @threat_family_name = n.get_string_value() },
@@ -433,6 +460,21 @@ module MicrosoftGraph
                 @mitre_techniques = value
             end
             ## 
+            ## Gets the productName property value. The name of the product which published this alert.
+            ## @return a string
+            ## 
+            def product_name
+                return @product_name
+            end
+            ## 
+            ## Sets the productName property value. The name of the product which published this alert.
+            ## @param value Value to set for the productName property.
+            ## @return a void
+            ## 
+            def product_name=(value)
+                @product_name = value
+            end
+            ## 
             ## Gets the providerAlertId property value. The ID of the alert as it appears in the security provider product that generated the alert.
             ## @return a string
             ## 
@@ -486,6 +528,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("actorDisplayName", @actor_display_name)
+                writer.write_object_value("additionalData", @additional_data_property)
                 writer.write_string_value("alertPolicyId", @alert_policy_id)
                 writer.write_string_value("alertWebUrl", @alert_web_url)
                 writer.write_string_value("assignedTo", @assigned_to)
@@ -504,12 +547,14 @@ module MicrosoftGraph
                 writer.write_date_time_value("lastActivityDateTime", @last_activity_date_time)
                 writer.write_date_time_value("lastUpdateDateTime", @last_update_date_time)
                 writer.write_collection_of_primitive_values("mitreTechniques", @mitre_techniques)
+                writer.write_string_value("productName", @product_name)
                 writer.write_string_value("providerAlertId", @provider_alert_id)
                 writer.write_string_value("recommendedActions", @recommended_actions)
                 writer.write_date_time_value("resolvedDateTime", @resolved_date_time)
                 writer.write_enum_value("serviceSource", @service_source)
                 writer.write_enum_value("severity", @severity)
                 writer.write_enum_value("status", @status)
+                writer.write_collection_of_primitive_values("systemTags", @system_tags)
                 writer.write_string_value("tenantId", @tenant_id)
                 writer.write_string_value("threatDisplayName", @threat_display_name)
                 writer.write_string_value("threatFamilyName", @threat_family_name)
@@ -561,14 +606,29 @@ module MicrosoftGraph
                 @status = value
             end
             ## 
-            ## Gets the tenantId property value. The Azure Active Directory tenant the alert was created in.
+            ## Gets the systemTags property value. The system tags associated with the alert.
+            ## @return a string
+            ## 
+            def system_tags
+                return @system_tags
+            end
+            ## 
+            ## Sets the systemTags property value. The system tags associated with the alert.
+            ## @param value Value to set for the systemTags property.
+            ## @return a void
+            ## 
+            def system_tags=(value)
+                @system_tags = value
+            end
+            ## 
+            ## Gets the tenantId property value. The Microsoft Entra tenant the alert was created in.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The Azure Active Directory tenant the alert was created in.
+            ## Sets the tenantId property value. The Microsoft Entra tenant the alert was created in.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

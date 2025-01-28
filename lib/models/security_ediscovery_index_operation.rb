@@ -7,7 +7,7 @@ module MicrosoftGraph
         class SecurityEdiscoveryIndexOperation < MicrosoftGraph::Models::SecurityCaseOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityEdiscoveryIndexOperation and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryIndexOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

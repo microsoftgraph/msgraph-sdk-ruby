@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Represents the font attributes (font name, font size, color, etc.) for a chart data label. Read-only.
             @font
             ## 
-            ## Instantiates a new workbookChartDataLabelFormat and sets the default values.
+            ## Instantiates a new WorkbookChartDataLabelFormat and sets the default values.
             ## @return a void
             ## 
             def initialize()

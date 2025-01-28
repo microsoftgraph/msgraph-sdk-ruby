@@ -18,7 +18,7 @@ module MicrosoftGraph
             # This is the unique identifier (Id) of the VPN Configuration to apply to the app.
             @vpn_configuration_id
             ## 
-            ## Instantiates a new iosStoreAppAssignmentSettings and sets the default values.
+            ## Instantiates a new IosStoreAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

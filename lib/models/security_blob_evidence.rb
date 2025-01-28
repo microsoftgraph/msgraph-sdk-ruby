@@ -37,7 +37,7 @@ module MicrosoftGraph
                 @blob_container = value
             end
             ## 
-            ## Instantiates a new securityBlobEvidence and sets the default values.
+            ## Instantiates a new SecurityBlobEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

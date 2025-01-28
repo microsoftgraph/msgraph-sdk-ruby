@@ -8,7 +8,7 @@ module MicrosoftGraph
         class SecurityCaseOperation < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
+            # The type of action the operation represents. Possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.
             @action
             ## 
             # The date and time the operation was completed.
@@ -29,14 +29,14 @@ module MicrosoftGraph
             # The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
             @status
             ## 
-            ## Gets the action property value. The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
+            ## Gets the action property value. The type of action the operation represents. Possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.
             ## @return a security_case_action
             ## 
             def action
                 return @action
             end
             ## 
-            ## Sets the action property value. The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
+            ## Sets the action property value. The type of action the operation represents. Possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.
             ## @param value Value to set for the action property.
             ## @return a void
             ## 
@@ -59,7 +59,7 @@ module MicrosoftGraph
                 @completed_date_time = value
             end
             ## 
-            ## Instantiates a new securityCaseOperation and sets the default values.
+            ## Instantiates a new SecurityCaseOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -118,6 +118,8 @@ module MicrosoftGraph
                             return SecurityEdiscoveryIndexOperation.new
                         when "#microsoft.graph.security.ediscoveryPurgeDataOperation"
                             return SecurityEdiscoveryPurgeDataOperation.new
+                        when "#microsoft.graph.security.ediscoverySearchExportOperation"
+                            return SecurityEdiscoverySearchExportOperation.new
                         when "#microsoft.graph.security.ediscoveryTagOperation"
                             return SecurityEdiscoveryTagOperation.new
                     end

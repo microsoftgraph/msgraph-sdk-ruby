@@ -13,7 +13,7 @@ module MicrosoftGraph
             # What triggers a workflow to run.
             @trigger
             ## 
-            ## Instantiates a new identityGovernanceTriggerAndScopeBasedConditions and sets the default values.
+            ## Instantiates a new IdentityGovernanceTriggerAndScopeBasedConditions and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -26,7 +26,7 @@ module MicrosoftGraph
             # The state of the access package assignment. The possible values are: delivering, partiallyDelivered, delivered, expired, deliveryFailed, unknownFutureValue. Read-only. Supports $filter (eq).
             @state
             ## 
-            # More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
+            # More information about the assignment lifecycle. Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered. Read-only.
             @status
             ## 
             # The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
@@ -62,7 +62,7 @@ module MicrosoftGraph
                 @assignment_policy = value
             end
             ## 
-            ## Instantiates a new accessPackageAssignment and sets the default values.
+            ## Instantiates a new AccessPackageAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -171,14 +171,14 @@ module MicrosoftGraph
                 @state = value
             end
             ## 
-            ## Gets the status property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
+            ## Gets the status property value. More information about the assignment lifecycle. Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered. Read-only.
             ## @return a string
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
+            ## Sets the status property value. More information about the assignment lifecycle. Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered. Read-only.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The status property
             @status
             ## 
-            ## Instantiates a new importedWindowsAutopilotDeviceIdentityUpload and sets the default values.
+            ## Instantiates a new ImportedWindowsAutopilotDeviceIdentityUpload and sets the default values.
             ## @return a void
             ## 
             def initialize()

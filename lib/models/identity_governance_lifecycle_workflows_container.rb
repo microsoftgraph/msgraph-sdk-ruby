@@ -13,6 +13,9 @@ module MicrosoftGraph
             # Deleted workflows in your lifecycle workflows instance.
             @deleted_items
             ## 
+            # The insight container holding workflow insight summaries for a tenant.
+            @insights
+            ## 
             # The settings property
             @settings
             ## 
@@ -25,7 +28,7 @@ module MicrosoftGraph
             # The workflows in the lifecycle workflows instance.
             @workflows
             ## 
-            ## Instantiates a new identityGovernanceLifecycleWorkflowsContainer and sets the default values.
+            ## Instantiates a new IdentityGovernanceLifecycleWorkflowsContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -78,11 +81,27 @@ module MicrosoftGraph
                 return super.merge({
                     "customTaskExtensions" => lambda {|n| @custom_task_extensions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::IdentityGovernanceCustomTaskExtension.create_from_discriminator_value(pn) }) },
                     "deletedItems" => lambda {|n| @deleted_items = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DeletedItemContainer.create_from_discriminator_value(pn) }) },
+                    "insights" => lambda {|n| @insights = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentityGovernanceInsights.create_from_discriminator_value(pn) }) },
                     "settings" => lambda {|n| @settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentityGovernanceLifecycleManagementSettings.create_from_discriminator_value(pn) }) },
                     "taskDefinitions" => lambda {|n| @task_definitions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::IdentityGovernanceTaskDefinition.create_from_discriminator_value(pn) }) },
                     "workflowTemplates" => lambda {|n| @workflow_templates = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::IdentityGovernanceWorkflowTemplate.create_from_discriminator_value(pn) }) },
                     "workflows" => lambda {|n| @workflows = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::IdentityGovernanceWorkflow.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the insights property value. The insight container holding workflow insight summaries for a tenant.
+            ## @return a identity_governance_insights
+            ## 
+            def insights
+                return @insights
+            end
+            ## 
+            ## Sets the insights property value. The insight container holding workflow insight summaries for a tenant.
+            ## @param value Value to set for the insights property.
+            ## @return a void
+            ## 
+            def insights=(value)
+                @insights = value
             end
             ## 
             ## Serializes information the current object
@@ -94,6 +113,7 @@ module MicrosoftGraph
                 super
                 writer.write_collection_of_object_values("customTaskExtensions", @custom_task_extensions)
                 writer.write_object_value("deletedItems", @deleted_items)
+                writer.write_object_value("insights", @insights)
                 writer.write_object_value("settings", @settings)
                 writer.write_collection_of_object_values("taskDefinitions", @task_definitions)
                 writer.write_collection_of_object_values("workflowTemplates", @workflow_templates)

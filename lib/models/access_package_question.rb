@@ -22,7 +22,7 @@ module MicrosoftGraph
             # The text of the question to show to the requestor.
             @text
             ## 
-            ## Instantiates a new accessPackageQuestion and sets the default values.
+            ## Instantiates a new AccessPackageQuestion and sets the default values.
             ## @return a void
             ## 
             def initialize()

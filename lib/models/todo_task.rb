@@ -173,7 +173,7 @@ module MicrosoftGraph
                 @completed_date_time = value
             end
             ## 
-            ## Instantiates a new todoTask and sets the default values.
+            ## Instantiates a new TodoTask and sets the default values.
             ## @return a void
             ## 
             def initialize()

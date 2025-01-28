@@ -21,7 +21,7 @@ module MicrosoftGraph
             # Windows 10 Edition type.
             @target_edition
             ## 
-            ## Instantiates a new editionUpgradeConfiguration and sets the default values.
+            ## Instantiates a new EditionUpgradeConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

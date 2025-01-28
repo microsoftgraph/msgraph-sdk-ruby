@@ -10,7 +10,7 @@ module MicrosoftGraph
             # A collection of the fields and values for this version of the list item.
             @fields
             ## 
-            ## Instantiates a new listItemVersion and sets the default values.
+            ## Instantiates a new ListItemVersion and sets the default values.
             ## @return a void
             ## 
             def initialize()

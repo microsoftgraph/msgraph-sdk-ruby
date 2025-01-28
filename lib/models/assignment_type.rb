@@ -4,6 +4,7 @@ module MicrosoftGraph
             Required: :Required,
             Recommended: :Recommended,
             UnknownFutureValue: :UnknownFutureValue,
+            PeerRecommended: :PeerRecommended,
         }
     end
 end

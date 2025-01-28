@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @authorized_apps = value
             end
             ## 
-            ## Instantiates a new identityGovernanceCustomTaskExtensionCallbackConfiguration and sets the default values.
+            ## Instantiates a new IdentityGovernanceCustomTaskExtensionCallbackConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

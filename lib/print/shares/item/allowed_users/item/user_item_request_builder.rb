@@ -7,6 +7,7 @@ require_relative '../allowed_users'
 require_relative './item'
 require_relative './mailbox_settings/mailbox_settings_request_builder'
 require_relative './ref/ref_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 
 module MicrosoftGraph
     module Print
@@ -27,6 +28,11 @@ module MicrosoftGraph
                             # Provides operations to manage the collection of print entities.
                             def ref()
                                 return MicrosoftGraph::Print::Shares::Item::AllowedUsers::Item::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # The serviceProvisioningErrors property
+                            def service_provisioning_errors()
+                                return MicrosoftGraph::Print::Shares::Item::AllowedUsers::Item::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new UserItemRequestBuilder and sets the default values.

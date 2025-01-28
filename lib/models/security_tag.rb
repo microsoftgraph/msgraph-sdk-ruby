@@ -20,7 +20,7 @@ module MicrosoftGraph
             # The lastModifiedDateTime property
             @last_modified_date_time
             ## 
-            ## Instantiates a new securityTag and sets the default values.
+            ## Instantiates a new SecurityTag and sets the default values.
             ## @return a void
             ## 
             def initialize()

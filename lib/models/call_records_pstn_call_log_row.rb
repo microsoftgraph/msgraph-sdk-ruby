@@ -11,13 +11,13 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
+            # The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator can provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
             @call_duration_source
             ## 
             # Call identifier. Not guaranteed to be unique.
             @call_id
             ## 
-            # Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
+            # Indicates whether the call was a PSTN outbound or inbound call and the type of call, such as a call placed by a user or an audio conference.
             @call_type
             ## 
             # Number dialed in E.164 format.
@@ -38,7 +38,7 @@ module MicrosoftGraph
             # Type of currency used to calculate the cost of the call. For details, see (ISO 4217.
             @currency
             ## 
-            # Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
+            # Whether the call was domestic (within a country or region) or international (outside a country or region), based on the user's location.
             @destination_context
             ## 
             # Country or region dialed.
@@ -62,7 +62,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+            # The telecommunications operator which provided PSTN services for this call. This might be Microsoft, or it might be a third-party operator via the Operator Connect Program.
             @operator
             ## 
             # Call start time.
@@ -77,35 +77,35 @@ module MicrosoftGraph
             # Display name of the user.
             @user_display_name
             ## 
-            # Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
+            # Calling user's ID in Microsoft Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
             @user_id
             ## 
-            # The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+            # The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be the same as the user's email address.
             @user_principal_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
+            ## Gets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator can provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
             ## @return a call_records_pstn_call_duration_source
             ## 
             def call_duration_source
                 return @call_duration_source
             end
             ## 
-            ## Sets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
+            ## Sets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator can provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
             ## @param value Value to set for the callDurationSource property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraph
                 @call_id = value
             end
             ## 
-            ## Gets the callType property value. Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
+            ## Gets the callType property value. Indicates whether the call was a PSTN outbound or inbound call and the type of call, such as a call placed by a user or an audio conference.
             ## @return a string
             ## 
             def call_type
                 return @call_type
             end
             ## 
-            ## Sets the callType property value. Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
+            ## Sets the callType property value. Indicates whether the call was a PSTN outbound or inbound call and the type of call, such as a call placed by a user or an audio conference.
             ## @param value Value to set for the callType property.
             ## @return a void
             ## 
@@ -218,7 +218,7 @@ module MicrosoftGraph
                 @connection_charge = value
             end
             ## 
-            ## Instantiates a new callRecordsPstnCallLogRow and sets the default values.
+            ## Instantiates a new CallRecordsPstnCallLogRow and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -249,14 +249,14 @@ module MicrosoftGraph
                 @currency = value
             end
             ## 
-            ## Gets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
+            ## Gets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region), based on the user's location.
             ## @return a string
             ## 
             def destination_context
                 return @destination_context
             end
             ## 
-            ## Sets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
+            ## Sets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region), based on the user's location.
             ## @param value Value to set for the destinationContext property.
             ## @return a void
             ## 
@@ -401,14 +401,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the operator property value. The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+            ## Gets the operator property value. The telecommunications operator which provided PSTN services for this call. This might be Microsoft, or it might be a third-party operator via the Operator Connect Program.
             ## @return a string
             ## 
             def operator
                 return @operator
             end
             ## 
-            ## Sets the operator property value. The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+            ## Sets the operator property value. The telecommunications operator which provided PSTN services for this call. This might be Microsoft, or it might be a third-party operator via the Operator Connect Program.
             ## @param value Value to set for the operator property.
             ## @return a void
             ## 
@@ -509,14 +509,14 @@ module MicrosoftGraph
                 @user_display_name = value
             end
             ## 
-            ## Gets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
+            ## Gets the userId property value. Calling user's ID in Microsoft Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
+            ## Sets the userId property value. Calling user's ID in Microsoft Graph. GUID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 
@@ -524,14 +524,14 @@ module MicrosoftGraph
                 @user_id = value
             end
             ## 
-            ## Gets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+            ## Gets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be the same as the user's email address.
             ## @return a string
             ## 
             def user_principal_name
                 return @user_principal_name
             end
             ## 
-            ## Sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+            ## Sets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be the same as the user's email address.
             ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 

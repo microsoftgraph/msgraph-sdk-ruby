@@ -12,7 +12,7 @@ module MicrosoftGraph
             # Value.
             @value
             ## 
-            ## Instantiates a new omaSettingString and sets the default values.
+            ## Instantiates a new OmaSettingString and sets the default values.
             ## @return a void
             ## 
             def initialize()

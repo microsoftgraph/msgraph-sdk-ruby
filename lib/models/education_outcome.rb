@@ -14,7 +14,7 @@ module MicrosoftGraph
             # The moment in time when the resource was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
             @last_modified_date_time
             ## 
-            ## Instantiates a new educationOutcome and sets the default values.
+            ## Instantiates a new EducationOutcome and sets the default values.
             ## @return a void
             ## 
             def initialize()

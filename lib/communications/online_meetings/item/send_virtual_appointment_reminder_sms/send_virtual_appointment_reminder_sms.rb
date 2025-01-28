@@ -1,0 +1,1 @@
+require_relative 'send_virtual_appointment_reminder_sms_post_request_body'

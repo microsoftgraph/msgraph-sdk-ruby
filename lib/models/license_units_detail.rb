@@ -13,34 +13,34 @@ module MicrosoftGraph
             # The number of units that are enabled for the active subscription of the service SKU.
             @enabled
             ## 
-            # The number of units that are locked out because the customer cancelled their subscription of the service SKU.
+            # The number of units that are locked out because the customer canceled their subscription of the service SKU.
             @locked_out
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
+            # The number of units that are suspended because the subscription of the service SKU has been canceled. The units can't be assigned but can still be reactivated before they're deleted.
             @suspended
             ## 
-            # The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).
+            # The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it's canceled (moved to a suspended state).
             @warning
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new licenseUnitsDetail and sets the default values.
+            ## Instantiates a new LicenseUnitsDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,14 +84,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the lockedOut property value. The number of units that are locked out because the customer cancelled their subscription of the service SKU.
+            ## Gets the lockedOut property value. The number of units that are locked out because the customer canceled their subscription of the service SKU.
             ## @return a integer
             ## 
             def locked_out
                 return @locked_out
             end
             ## 
-            ## Sets the lockedOut property value. The number of units that are locked out because the customer cancelled their subscription of the service SKU.
+            ## Sets the lockedOut property value. The number of units that are locked out because the customer canceled their subscription of the service SKU.
             ## @param value Value to set for the lockedOut property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
+            ## Gets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been canceled. The units can't be assigned but can still be reactivated before they're deleted.
             ## @return a integer
             ## 
             def suspended
                 return @suspended
             end
             ## 
-            ## Sets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
+            ## Sets the suspended property value. The number of units that are suspended because the subscription of the service SKU has been canceled. The units can't be assigned but can still be reactivated before they're deleted.
             ## @param value Value to set for the suspended property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraph
                 @suspended = value
             end
             ## 
-            ## Gets the warning property value. The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).
+            ## Gets the warning property value. The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it's canceled (moved to a suspended state).
             ## @return a integer
             ## 
             def warning
                 return @warning
             end
             ## 
-            ## Sets the warning property value. The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).
+            ## Sets the warning property value. The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it's canceled (moved to a suspended state).
             ## @param value Value to set for the warning property.
             ## @return a void
             ## 

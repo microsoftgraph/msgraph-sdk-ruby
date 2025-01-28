@@ -10,28 +10,31 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The max number of retries that Microsoft Entra ID makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.
+            @maximum_retries
+            ## 
             # The OdataType property
             @odata_type
             ## 
-            # The max duration in milliseconds that Azure AD will wait for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+            # The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
             @timeout_in_milliseconds
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new customExtensionClientConfiguration and sets the default values.
+            ## Instantiates a new CustomExtensionClientConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -52,9 +55,25 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "maximumRetries" => lambda {|n| @maximum_retries = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "timeoutInMilliseconds" => lambda {|n| @timeout_in_milliseconds = n.get_number_value() },
                 }
+            end
+            ## 
+            ## Gets the maximumRetries property value. The max number of retries that Microsoft Entra ID makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.
+            ## @return a integer
+            ## 
+            def maximum_retries
+                return @maximum_retries
+            end
+            ## 
+            ## Sets the maximumRetries property value. The max number of retries that Microsoft Entra ID makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.
+            ## @param value Value to set for the maximumRetries property.
+            ## @return a void
+            ## 
+            def maximum_retries=(value)
+                @maximum_retries = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -78,19 +97,20 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_number_value("maximumRetries", @maximum_retries)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_number_value("timeoutInMilliseconds", @timeout_in_milliseconds)
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+            ## Gets the timeoutInMilliseconds property value. The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
             ## @return a integer
             ## 
             def timeout_in_milliseconds
                 return @timeout_in_milliseconds
             end
             ## 
-            ## Sets the timeoutInMilliseconds property value. The max duration in milliseconds that Azure AD will wait for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+            ## Sets the timeoutInMilliseconds property value. The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
             ## @param value Value to set for the timeoutInMilliseconds property.
             ## @return a void
             ## 
