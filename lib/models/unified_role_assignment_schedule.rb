@@ -7,26 +7,26 @@ module MicrosoftGraph
         class UnifiedRoleAssignmentSchedule < MicrosoftGraph::Models::UnifiedRoleScheduleBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
+            # If the request is from an eligible administrator to activate a role, this parameter shows the related eligible assignment for that activation. Otherwise, it's null. Supports $expand.
             @activated_using
             ## 
-            # Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+            # The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
             @assignment_type
             ## 
-            # How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+            # How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
             @member_type
             ## 
             # The period of the role assignment. It can represent a single occurrence or multiple recurrences.
             @schedule_info
             ## 
-            ## Gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
+            ## Gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter shows the related eligible assignment for that activation. Otherwise, it's null. Supports $expand.
             ## @return a unified_role_eligibility_schedule
             ## 
             def activated_using
                 return @activated_using
             end
             ## 
-            ## Sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
+            ## Sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter shows the related eligible assignment for that activation. Otherwise, it's null. Supports $expand.
             ## @param value Value to set for the activatedUsing property.
             ## @return a void
             ## 
@@ -34,14 +34,14 @@ module MicrosoftGraph
                 @activated_using = value
             end
             ## 
-            ## Gets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+            ## Gets the assignmentType property value. The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
             ## @return a string
             ## 
             def assignment_type
                 return @assignment_type
             end
             ## 
-            ## Sets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
+            ## Sets the assignmentType property value. The type of the assignment that can either be Assigned or Activated. Supports $filter (eq, ne).
             ## @param value Value to set for the assignmentType property.
             ## @return a void
             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @assignment_type = value
             end
             ## 
-            ## Instantiates a new unifiedRoleAssignmentSchedule and sets the default values.
+            ## Instantiates a new UnifiedRoleAssignmentSchedule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -77,14 +77,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the memberType property value. How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+            ## Gets the memberType property value. How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
             ## @return a string
             ## 
             def member_type
                 return @member_type
             end
             ## 
-            ## Sets the memberType property value. How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
+            ## Sets the memberType property value. How the assignment is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
             ## @param value Value to set for the memberType property.
             ## @return a void
             ## 

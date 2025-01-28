@@ -9,6 +9,9 @@ module MicrosoftGraph
             OpenShiftRequest: :OpenShiftRequest,
             OfferShiftRequest: :OfferShiftRequest,
             UnknownFutureValue: :UnknownFutureValue,
+            TimeOffReason: :TimeOffReason,
+            TimeOff: :TimeOff,
+            TimeOffRequest: :TimeOffRequest,
         }
     end
 end
