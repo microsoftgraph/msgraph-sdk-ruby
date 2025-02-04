@@ -7,13 +7,13 @@ module MicrosoftGraph
         class SecurityEdiscoveryNoncustodialDataSource < MicrosoftGraph::Models::SecurityDataSourceContainer
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # User source or SharePoint site data source as non-custodial data source.
+            # User source or SharePoint site data source as noncustodial data source.
             @data_source
             ## 
-            # Operation entity that represents the latest indexing for the non-custodial data source.
+            # Operation entity that represents the latest indexing for the noncustodial data source.
             @last_index_operation
             ## 
-            ## Instantiates a new securityEdiscoveryNoncustodialDataSource and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryNoncustodialDataSource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -30,14 +30,14 @@ module MicrosoftGraph
                 return SecurityEdiscoveryNoncustodialDataSource.new
             end
             ## 
-            ## Gets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
+            ## Gets the dataSource property value. User source or SharePoint site data source as noncustodial data source.
             ## @return a security_data_source
             ## 
             def data_source
                 return @data_source
             end
             ## 
-            ## Sets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
+            ## Sets the dataSource property value. User source or SharePoint site data source as noncustodial data source.
             ## @param value Value to set for the dataSource property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the lastIndexOperation property value. Operation entity that represents the latest indexing for the non-custodial data source.
+            ## Gets the lastIndexOperation property value. Operation entity that represents the latest indexing for the noncustodial data source.
             ## @return a security_ediscovery_index_operation
             ## 
             def last_index_operation
                 return @last_index_operation
             end
             ## 
-            ## Sets the lastIndexOperation property value. Operation entity that represents the latest indexing for the non-custodial data source.
+            ## Sets the lastIndexOperation property value. Operation entity that represents the latest indexing for the noncustodial data source.
             ## @param value Value to set for the lastIndexOperation property.
             ## @return a void
             ## 

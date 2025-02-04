@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Microsoft Account ID of the user.
             @user_id
             ## 
-            ## Instantiates a new microsoftAccountUserConversationMember and sets the default values.
+            ## Instantiates a new MicrosoftAccountUserConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -77,7 +77,7 @@ module MicrosoftGraph
                 @body = value
             end
             ## 
-            ## Instantiates a new post and sets the default values.
+            ## Instantiates a new Post and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -12,7 +12,7 @@ module MicrosoftGraph
             # Represents an assignment to managed devices in the tenant
             @target
             ## 
-            ## Instantiates a new enrollmentConfigurationAssignment and sets the default values.
+            ## Instantiates a new EnrollmentConfigurationAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

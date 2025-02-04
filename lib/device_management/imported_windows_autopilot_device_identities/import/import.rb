@@ -1,2 +1,2 @@
 require_relative 'import_post_request_body'
-require_relative 'import_response'
+require_relative 'import_post_response'

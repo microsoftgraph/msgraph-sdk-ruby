@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Registry key that the recorded action was applied to.
             @registry_key
             ## 
-            ## Instantiates a new securityRegistryKeyEvidence and sets the default values.
+            ## Instantiates a new SecurityRegistryKeyEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

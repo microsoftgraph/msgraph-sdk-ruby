@@ -7,16 +7,19 @@ module MicrosoftGraph
         class OpenShift < MicrosoftGraph::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # An unpublished open shift.
+            # Draft changes in the openShift are only visible to managers until they're shared.
             @draft_open_shift
             ## 
-            # ID for the scheduling group that the open shift belongs to.
+            # The openShift is marked for deletion, a process that is finalized when the schedule is shared.
+            @is_staged_for_deletion
+            ## 
+            # The ID of the schedulingGroup that contains the openShift.
             @scheduling_group_id
             ## 
-            # A published open shift.
+            # The shared version of this openShift that is viewable by both employees and managers.
             @shared_open_shift
             ## 
-            ## Instantiates a new openShift and sets the default values.
+            ## Instantiates a new OpenShift and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -33,14 +36,14 @@ module MicrosoftGraph
                 return OpenShift.new
             end
             ## 
-            ## Gets the draftOpenShift property value. An unpublished open shift.
+            ## Gets the draftOpenShift property value. Draft changes in the openShift are only visible to managers until they're shared.
             ## @return a open_shift_item
             ## 
             def draft_open_shift
                 return @draft_open_shift
             end
             ## 
-            ## Sets the draftOpenShift property value. An unpublished open shift.
+            ## Sets the draftOpenShift property value. Draft changes in the openShift are only visible to managers until they're shared.
             ## @param value Value to set for the draftOpenShift property.
             ## @return a void
             ## 
@@ -54,19 +57,35 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "draftOpenShift" => lambda {|n| @draft_open_shift = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::OpenShiftItem.create_from_discriminator_value(pn) }) },
+                    "isStagedForDeletion" => lambda {|n| @is_staged_for_deletion = n.get_boolean_value() },
                     "schedulingGroupId" => lambda {|n| @scheduling_group_id = n.get_string_value() },
                     "sharedOpenShift" => lambda {|n| @shared_open_shift = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::OpenShiftItem.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
+            ## Gets the isStagedForDeletion property value. The openShift is marked for deletion, a process that is finalized when the schedule is shared.
+            ## @return a boolean
+            ## 
+            def is_staged_for_deletion
+                return @is_staged_for_deletion
+            end
+            ## 
+            ## Sets the isStagedForDeletion property value. The openShift is marked for deletion, a process that is finalized when the schedule is shared.
+            ## @param value Value to set for the isStagedForDeletion property.
+            ## @return a void
+            ## 
+            def is_staged_for_deletion=(value)
+                @is_staged_for_deletion = value
+            end
+            ## 
+            ## Gets the schedulingGroupId property value. The ID of the schedulingGroup that contains the openShift.
             ## @return a string
             ## 
             def scheduling_group_id
                 return @scheduling_group_id
             end
             ## 
-            ## Sets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
+            ## Sets the schedulingGroupId property value. The ID of the schedulingGroup that contains the openShift.
             ## @param value Value to set for the schedulingGroupId property.
             ## @return a void
             ## 
@@ -82,18 +101,19 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_object_value("draftOpenShift", @draft_open_shift)
+                writer.write_boolean_value("isStagedForDeletion", @is_staged_for_deletion)
                 writer.write_string_value("schedulingGroupId", @scheduling_group_id)
                 writer.write_object_value("sharedOpenShift", @shared_open_shift)
             end
             ## 
-            ## Gets the sharedOpenShift property value. A published open shift.
+            ## Gets the sharedOpenShift property value. The shared version of this openShift that is viewable by both employees and managers.
             ## @return a open_shift_item
             ## 
             def shared_open_shift
                 return @shared_open_shift
             end
             ## 
-            ## Sets the sharedOpenShift property value. A published open shift.
+            ## Sets the sharedOpenShift property value. The shared version of this openShift that is viewable by both employees and managers.
             ## @param value Value to set for the sharedOpenShift property.
             ## @return a void
             ## 

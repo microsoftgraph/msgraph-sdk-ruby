@@ -19,7 +19,7 @@ module MicrosoftGraph
             # Properties that you can use to visualize the document in your experience. Read-only
             @resource_visualization
             ## 
-            ## Instantiates a new usedInsight and sets the default values.
+            ## Instantiates a new UsedInsight and sets the default values.
             ## @return a void
             ## 
             def initialize()

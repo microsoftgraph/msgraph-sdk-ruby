@@ -7,30 +7,30 @@ module MicrosoftGraph
         class WorkbookComment < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The content of comment.
+            # The content of the comment.
             @content
             ## 
-            # Indicates the type for the comment.
+            # The content type of the comment.
             @content_type
             ## 
-            # The replies property
+            # The list of replies to the comment. Read-only. Nullable.
             @replies
             ## 
-            ## Instantiates a new workbookComment and sets the default values.
+            ## Instantiates a new WorkbookComment and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the content property value. The content of comment.
+            ## Gets the content property value. The content of the comment.
             ## @return a string
             ## 
             def content
                 return @content
             end
             ## 
-            ## Sets the content property value. The content of comment.
+            ## Sets the content property value. The content of the comment.
             ## @param value Value to set for the content property.
             ## @return a void
             ## 
@@ -38,14 +38,14 @@ module MicrosoftGraph
                 @content = value
             end
             ## 
-            ## Gets the contentType property value. Indicates the type for the comment.
+            ## Gets the contentType property value. The content type of the comment.
             ## @return a string
             ## 
             def content_type
                 return @content_type
             end
             ## 
-            ## Sets the contentType property value. Indicates the type for the comment.
+            ## Sets the contentType property value. The content type of the comment.
             ## @param value Value to set for the contentType property.
             ## @return a void
             ## 
@@ -73,14 +73,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the replies property value. The replies property
+            ## Gets the replies property value. The list of replies to the comment. Read-only. Nullable.
             ## @return a workbook_comment_reply
             ## 
             def replies
                 return @replies
             end
             ## 
-            ## Sets the replies property value. The replies property
+            ## Sets the replies property value. The list of replies to the comment. Read-only. Nullable.
             ## @param value Value to set for the replies property.
             ## @return a void
             ## 

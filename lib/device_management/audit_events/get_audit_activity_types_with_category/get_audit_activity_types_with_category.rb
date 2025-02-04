@@ -1,1 +1,1 @@
-require_relative 'get_audit_activity_types_with_category_response'
+require_relative 'get_audit_activity_types_with_category_get_response'

@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @chat_id = value
             end
             ## 
-            ## Instantiates a new chatMembersNotificationRecipient and sets the default values.
+            ## Instantiates a new ChatMembersNotificationRecipient and sets the default values.
             ## @return a void
             ## 
             def initialize()

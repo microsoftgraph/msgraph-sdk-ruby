@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Max points possible for this assignment.
             @max_points
             ## 
-            ## Instantiates a new educationAssignmentPointsGradeType and sets the default values.
+            ## Instantiates a new EducationAssignmentPointsGradeType and sets the default values.
             ## @return a void
             ## 
             def initialize()

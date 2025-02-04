@@ -7,16 +7,16 @@ module MicrosoftGraph
         class WorkbookTableSort < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents the current conditions used to last sort the table. Read-only.
+            # The list of the current conditions last used to sort the table. Read-only.
             @fields
             ## 
-            # Represents whether the casing impacted the last sort of the table. Read-only.
+            # Indicates whether the casing impacted the last sort of the table. Read-only.
             @match_case
             ## 
-            # Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
+            # The Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
             @method
             ## 
-            ## Instantiates a new workbookTableSort and sets the default values.
+            ## Instantiates a new WorkbookTableSort and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,14 +32,14 @@ module MicrosoftGraph
                 return WorkbookTableSort.new
             end
             ## 
-            ## Gets the fields property value. Represents the current conditions used to last sort the table. Read-only.
+            ## Gets the fields property value. The list of the current conditions last used to sort the table. Read-only.
             ## @return a workbook_sort_field
             ## 
             def fields
                 return @fields
             end
             ## 
-            ## Sets the fields property value. Represents the current conditions used to last sort the table. Read-only.
+            ## Sets the fields property value. The list of the current conditions last used to sort the table. Read-only.
             ## @param value Value to set for the fields property.
             ## @return a void
             ## 
@@ -58,14 +58,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the matchCase property value. Represents whether the casing impacted the last sort of the table. Read-only.
+            ## Gets the matchCase property value. Indicates whether the casing impacted the last sort of the table. Read-only.
             ## @return a boolean
             ## 
             def match_case
                 return @match_case
             end
             ## 
-            ## Sets the matchCase property value. Represents whether the casing impacted the last sort of the table. Read-only.
+            ## Sets the matchCase property value. Indicates whether the casing impacted the last sort of the table. Read-only.
             ## @param value Value to set for the matchCase property.
             ## @return a void
             ## 
@@ -73,14 +73,14 @@ module MicrosoftGraph
                 @match_case = value
             end
             ## 
-            ## Gets the method property value. Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
+            ## Gets the method property value. The Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
             ## @return a string
             ## 
             def method
                 return @method
             end
             ## 
-            ## Sets the method property value. Represents Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
+            ## Sets the method property value. The Chinese character ordering method last used to sort the table. The possible values are: PinYin, StrokeCount. Read-only.
             ## @param value Value to set for the method property.
             ## @return a void
             ## 

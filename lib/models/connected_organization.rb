@@ -20,7 +20,7 @@ module MicrosoftGraph
             # The externalSponsors property
             @external_sponsors
             ## 
-            # The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
+            # The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.
             @identity_sources
             ## 
             # The internalSponsors property
@@ -32,7 +32,7 @@ module MicrosoftGraph
             # The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not.  The possible values are: configured, proposed, unknownFutureValue.
             @state
             ## 
-            ## Instantiates a new connectedOrganization and sets the default values.
+            ## Instantiates a new ConnectedOrganization and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -124,14 +124,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
+            ## Gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.
             ## @return a identity_source
             ## 
             def identity_sources
                 return @identity_sources
             end
             ## 
-            ## Sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
+            ## Sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Nullable.
             ## @param value Value to set for the identitySources property.
             ## @return a void
             ## 

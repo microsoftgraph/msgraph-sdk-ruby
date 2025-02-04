@@ -65,7 +65,7 @@ module MicrosoftGraph
                 @actor = value
             end
             ## 
-            ## Instantiates a new itemActivity and sets the default values.
+            ## Instantiates a new ItemActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

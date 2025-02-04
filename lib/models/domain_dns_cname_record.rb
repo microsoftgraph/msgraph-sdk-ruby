@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @canonical_name = value
             end
             ## 
-            ## Instantiates a new domainDnsCnameRecord and sets the default values.
+            ## Instantiates a new DomainDnsCnameRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()

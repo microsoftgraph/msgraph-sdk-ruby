@@ -42,7 +42,7 @@ module MicrosoftGraph
             # Indicates whether or not to require encryption on a windows 8.1 device.
             @storage_require_encryption
             ## 
-            ## Instantiates a new windows81CompliancePolicy and sets the default values.
+            ## Instantiates a new Windows81CompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

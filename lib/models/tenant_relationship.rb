@@ -16,25 +16,28 @@ module MicrosoftGraph
             # The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
             @delegated_admin_relationships
             ## 
+            # Defines an organization with more than one instance of Microsoft Entra ID.
+            @multi_tenant_organization
+            ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new tenantRelationship and sets the default values.
+            ## Instantiates a new TenantRelationship and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -87,8 +90,24 @@ module MicrosoftGraph
                 return {
                     "delegatedAdminCustomers" => lambda {|n| @delegated_admin_customers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DelegatedAdminCustomer.create_from_discriminator_value(pn) }) },
                     "delegatedAdminRelationships" => lambda {|n| @delegated_admin_relationships = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DelegatedAdminRelationship.create_from_discriminator_value(pn) }) },
+                    "multiTenantOrganization" => lambda {|n| @multi_tenant_organization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::MultiTenantOrganization.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
+            end
+            ## 
+            ## Gets the multiTenantOrganization property value. Defines an organization with more than one instance of Microsoft Entra ID.
+            ## @return a multi_tenant_organization
+            ## 
+            def multi_tenant_organization
+                return @multi_tenant_organization
+            end
+            ## 
+            ## Sets the multiTenantOrganization property value. Defines an organization with more than one instance of Microsoft Entra ID.
+            ## @param value Value to set for the multiTenantOrganization property.
+            ## @return a void
+            ## 
+            def multi_tenant_organization=(value)
+                @multi_tenant_organization = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -114,6 +133,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_collection_of_object_values("delegatedAdminCustomers", @delegated_admin_customers)
                 writer.write_collection_of_object_values("delegatedAdminRelationships", @delegated_admin_relationships)
+                writer.write_object_value("multiTenantOrganization", @multi_tenant_organization)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)
             end

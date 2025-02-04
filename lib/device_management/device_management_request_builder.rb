@@ -49,6 +49,7 @@ require_relative './user_experience_analytics_device_performance/user_experience
 require_relative './user_experience_analytics_device_scores/user_experience_analytics_device_scores_request_builder'
 require_relative './user_experience_analytics_device_startup_history/user_experience_analytics_device_startup_history_request_builder'
 require_relative './user_experience_analytics_device_startup_processes/user_experience_analytics_device_startup_processes_request_builder'
+require_relative './user_experience_analytics_device_startup_process_performance/user_experience_analytics_device_startup_process_performance_request_builder'
 require_relative './user_experience_analytics_metric_history/user_experience_analytics_metric_history_request_builder'
 require_relative './user_experience_analytics_model_scores/user_experience_analytics_model_scores_request_builder'
 require_relative './user_experience_analytics_overview/user_experience_analytics_overview_request_builder'
@@ -58,6 +59,7 @@ require_relative './user_experience_analytics_work_from_anywhere_hardware_readin
 require_relative './user_experience_analytics_work_from_anywhere_metrics/user_experience_analytics_work_from_anywhere_metrics_request_builder'
 require_relative './user_experience_analytics_work_from_anywhere_model_performance/user_experience_analytics_work_from_anywhere_model_performance_request_builder'
 require_relative './verify_windows_enrollment_auto_discovery_with_domain_name/verify_windows_enrollment_auto_discovery_with_domain_name_request_builder'
+require_relative './virtual_endpoint/virtual_endpoint_request_builder'
 require_relative './windows_autopilot_device_identities/windows_autopilot_device_identities_request_builder'
 require_relative './windows_information_protection_app_learning_summaries/windows_information_protection_app_learning_summaries_request_builder'
 require_relative './windows_information_protection_network_learning_summaries/windows_information_protection_network_learning_summaries_request_builder'
@@ -295,6 +297,11 @@ module MicrosoftGraph
                 return MicrosoftGraph::DeviceManagement::UserExperienceAnalyticsDeviceStartupProcesses::UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the userExperienceAnalyticsDeviceStartupProcessPerformance property of the microsoft.graph.deviceManagement entity.
+            def user_experience_analytics_device_startup_process_performance()
+                return MicrosoftGraph::DeviceManagement::UserExperienceAnalyticsDeviceStartupProcessPerformance::UserExperienceAnalyticsDeviceStartupProcessPerformanceRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the userExperienceAnalyticsMetricHistory property of the microsoft.graph.deviceManagement entity.
             def user_experience_analytics_metric_history()
                 return MicrosoftGraph::DeviceManagement::UserExperienceAnalyticsMetricHistory::UserExperienceAnalyticsMetricHistoryRequestBuilder.new(@path_parameters, @request_adapter)
@@ -335,6 +342,11 @@ module MicrosoftGraph
                 return MicrosoftGraph::DeviceManagement::UserExperienceAnalyticsWorkFromAnywhereModelPerformance::UserExperienceAnalyticsWorkFromAnywhereModelPerformanceRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the virtualEndpoint property of the microsoft.graph.deviceManagement entity.
+            def virtual_endpoint()
+                return MicrosoftGraph::DeviceManagement::VirtualEndpoint::VirtualEndpointRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
             def windows_autopilot_device_identities()
                 return MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::WindowsAutopilotDeviceIdentitiesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -361,7 +373,7 @@ module MicrosoftGraph
             ## @return a void
             ## 
             def initialize(path_parameters, request_adapter)
-                super(path_parameters, request_adapter, "{+baseurl}/deviceManagement{?%24select,%24expand}")
+                super(path_parameters, request_adapter, "{+baseurl}/deviceManagement{?%24expand,%24select}")
             end
             ## 
             ## Read properties and relationships of the deviceManagement object.
@@ -373,8 +385,7 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceManagement.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -398,8 +409,7 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceManagement.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -409,15 +419,15 @@ module MicrosoftGraph
             ## 
             def to_get_request_information(request_configuration=nil)
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :GET
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                     request_info.add_request_options(request_configuration.options)
                 end
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -429,15 +439,15 @@ module MicrosoftGraph
             def to_patch_request_information(body, request_configuration=nil)
                 raise StandardError, 'body cannot be null' if body.nil?
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :PATCH
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
-                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :PATCH
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -448,6 +458,15 @@ module MicrosoftGraph
             def verify_windows_enrollment_auto_discovery_with_domain_name(domain_name)
                 raise StandardError, 'domain_name cannot be null' if domain_name.nil?
                 return VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder.new(@path_parameters, @request_adapter, domainName)
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a device_management_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return DeviceManagementRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

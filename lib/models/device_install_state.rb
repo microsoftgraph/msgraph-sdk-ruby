@@ -34,7 +34,7 @@ module MicrosoftGraph
             # Device User Name.
             @user_name
             ## 
-            ## Instantiates a new deviceInstallState and sets the default values.
+            ## Instantiates a new DeviceInstallState and sets the default values.
             ## @return a void
             ## 
             def initialize()

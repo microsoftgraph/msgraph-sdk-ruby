@@ -7,10 +7,10 @@ module MicrosoftGraph
         class EducationExternalResource < MicrosoftGraph::Models::EducationResource
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Location of the resource. Required
+            # Location of the resource. Required.
             @web_url
             ## 
-            ## Instantiates a new educationExternalResource and sets the default values.
+            ## Instantiates a new EducationExternalResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -46,14 +46,14 @@ module MicrosoftGraph
                 writer.write_string_value("webUrl", @web_url)
             end
             ## 
-            ## Gets the webUrl property value. Location of the resource. Required
+            ## Gets the webUrl property value. Location of the resource. Required.
             ## @return a string
             ## 
             def web_url
                 return @web_url
             end
             ## 
-            ## Sets the webUrl property value. Location of the resource. Required
+            ## Sets the webUrl property value. Location of the resource. Required.
             ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 

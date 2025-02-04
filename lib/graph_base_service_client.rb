@@ -6,7 +6,9 @@ require_relative './agreements/agreements_request_builder'
 require_relative './app_catalogs/app_catalogs_request_builder'
 require_relative './applications/applications_request_builder'
 require_relative './applications_with_app_id/applications_with_app_id_request_builder'
+require_relative './applications_with_unique_name/applications_with_unique_name_request_builder'
 require_relative './application_templates/application_templates_request_builder'
+require_relative './app_role_assignments/app_role_assignments_request_builder'
 require_relative './audit_logs/audit_logs_request_builder'
 require_relative './authentication_method_configurations/authentication_method_configurations_request_builder'
 require_relative './authentication_methods_policy/authentication_methods_policy_request_builder'
@@ -39,13 +41,13 @@ require_relative './group_lifecycle_policies/group_lifecycle_policies_request_bu
 require_relative './groups/groups_request_builder'
 require_relative './group_settings/group_settings_request_builder'
 require_relative './group_setting_templates/group_setting_templates_request_builder'
+require_relative './groups_with_unique_name/groups_with_unique_name_request_builder'
 require_relative './identity/identity_request_builder'
 require_relative './identity_governance/identity_governance_request_builder'
 require_relative './identity_protection/identity_protection_request_builder'
 require_relative './identity_providers/identity_providers_request_builder'
 require_relative './information_protection/information_protection_request_builder'
 require_relative './invitations/invitations_request_builder'
-require_relative './me/me_request_builder'
 require_relative './microsoft_graph'
 require_relative './oauth2_permission_grants/oauth2_permission_grants_request_builder'
 require_relative './organization/organization_request_builder'
@@ -66,6 +68,7 @@ require_relative './service_principals_with_app_id/service_principals_with_app_i
 require_relative './shares/shares_request_builder'
 require_relative './sites/sites_request_builder'
 require_relative './solutions/solutions_request_builder'
+require_relative './storage/storage_request_builder'
 require_relative './subscribed_skus/subscribed_skus_request_builder'
 require_relative './subscriptions/subscriptions_request_builder'
 require_relative './teams/teams_request_builder'
@@ -73,6 +76,7 @@ require_relative './teams_templates/teams_templates_request_builder'
 require_relative './teamwork/teamwork_request_builder'
 require_relative './tenant_relationships/tenant_relationships_request_builder'
 require_relative './users/users_request_builder'
+require_relative './users_with_user_principal_name/users_with_user_principal_name_request_builder'
 
 module MicrosoftGraph
     ## 
@@ -108,6 +112,11 @@ module MicrosoftGraph
         # Provides operations to manage the collection of applicationTemplate entities.
         def application_templates()
             return MicrosoftGraph::ApplicationTemplates::ApplicationTemplatesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to manage the collection of appRoleAssignment entities.
+        def app_role_assignments()
+            return MicrosoftGraph::AppRoleAssignments::AppRoleAssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the auditLogRoot singleton.
@@ -290,11 +299,6 @@ module MicrosoftGraph
             return MicrosoftGraph::Invitations::InvitationsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to manage the user singleton.
-        def me()
-            return MicrosoftGraph::Me::MeRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the collection of oAuth2PermissionGrant entities.
         def oauth2_permission_grants()
             return MicrosoftGraph::Oauth2PermissionGrants::Oauth2PermissionGrantsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -385,6 +389,11 @@ module MicrosoftGraph
             return MicrosoftGraph::Solutions::SolutionsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to manage the storage singleton.
+        def storage()
+            return MicrosoftGraph::Storage::StorageRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to manage the collection of subscribedSku entities.
         def subscribed_skus()
             return MicrosoftGraph::SubscribedSkus::SubscribedSkusRequestBuilder.new(@path_parameters, @request_adapter)
@@ -429,6 +438,15 @@ module MicrosoftGraph
             return ApplicationsWithAppIdRequestBuilder.new(@path_parameters, @request_adapter, appId)
         end
         ## 
+        ## Provides operations to manage the collection of application entities.
+        ## @param unique_name Alternate key of application
+        ## @return a applications_with_unique_name_request_builder
+        ## 
+        def applications_with_unique_name(unique_name)
+            raise StandardError, 'unique_name cannot be null' if unique_name.nil?
+            return ApplicationsWithUniqueNameRequestBuilder.new(@path_parameters, @request_adapter, uniqueName)
+        end
+        ## 
         ## Instantiates a new GraphBaseServiceClient and sets the default values.
         ## @param request_adapter The request adapter to use to execute the requests.
         ## @return a void
@@ -461,6 +479,15 @@ module MicrosoftGraph
             return DirectoryRolesWithRoleTemplateIdRequestBuilder.new(@path_parameters, @request_adapter, roleTemplateId)
         end
         ## 
+        ## Provides operations to manage the collection of group entities.
+        ## @param unique_name Alternate key of group
+        ## @return a groups_with_unique_name_request_builder
+        ## 
+        def groups_with_unique_name(unique_name)
+            raise StandardError, 'unique_name cannot be null' if unique_name.nil?
+            return GroupsWithUniqueNameRequestBuilder.new(@path_parameters, @request_adapter, uniqueName)
+        end
+        ## 
         ## Provides operations to manage the collection of servicePrincipal entities.
         ## @param app_id Alternate key of servicePrincipal
         ## @return a service_principals_with_app_id_request_builder
@@ -468,6 +495,15 @@ module MicrosoftGraph
         def service_principals_with_app_id(app_id)
             raise StandardError, 'app_id cannot be null' if app_id.nil?
             return ServicePrincipalsWithAppIdRequestBuilder.new(@path_parameters, @request_adapter, appId)
+        end
+        ## 
+        ## Provides operations to manage the collection of user entities.
+        ## @param user_principal_name Alternate key of user
+        ## @return a users_with_user_principal_name_request_builder
+        ## 
+        def users_with_user_principal_name(user_principal_name)
+            raise StandardError, 'user_principal_name cannot be null' if user_principal_name.nil?
+            return UsersWithUserPrincipalNameRequestBuilder.new(@path_parameters, @request_adapter, userPrincipalName)
         end
     end
 end

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The category property
             @category
             ## 
-            # The continueOnError property
+            # Defines if the workflow will continue if the task has an error.
             @continue_on_error
             ## 
             # The description of the taskDefinition.
@@ -40,21 +40,21 @@ module MicrosoftGraph
                 @category = value
             end
             ## 
-            ## Instantiates a new identityGovernanceTaskDefinition and sets the default values.
+            ## Instantiates a new IdentityGovernanceTaskDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the continueOnError property value. The continueOnError property
+            ## Gets the continueOnError property value. Defines if the workflow will continue if the task has an error.
             ## @return a boolean
             ## 
             def continue_on_error
                 return @continue_on_error
             end
             ## 
-            ## Sets the continueOnError property value. The continueOnError property
+            ## Sets the continueOnError property value. Defines if the workflow will continue if the task has an error.
             ## @param value Value to set for the continueOnError property.
             ## @return a void
             ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraph::Models::IdentityGovernanceLifecycleTaskCategory) },
+                    "category" => lambda {|n| @category = n.get_enum_values(MicrosoftGraph::Models::IdentityGovernanceLifecycleTaskCategory) },
                     "continueOnError" => lambda {|n| @continue_on_error = n.get_boolean_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },

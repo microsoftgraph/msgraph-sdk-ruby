@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Represents the font attributes (font name, font size, color, etc.) for the current object. Read-only.
             @font
             ## 
-            ## Instantiates a new workbookChartTitleFormat and sets the default values.
+            ## Instantiates a new WorkbookChartTitleFormat and sets the default values.
             ## @return a void
             ## 
             def initialize()

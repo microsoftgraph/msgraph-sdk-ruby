@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Represents the type of the operation on the role assignment request. The possible values are: adminAssign, adminUpdate, adminRemove, selfActivate, selfDeactivate, adminExtend, adminRenew, selfExtend, selfRenew, unknownFutureValue. adminAssign: For administrators to assign roles to principals.adminRemove: For administrators to remove principals from roles. adminUpdate: For administrators to change existing role assignments.adminExtend: For administrators to extend expiring assignments.adminRenew: For administrators to renew expired assignments.selfActivate: For principals to activate their assignments.selfDeactivate: For principals to deactivate their active assignments.selfExtend: For principals to request to extend their expiring assignments.selfRenew: For principals to request to renew their expired assignments.
             @action
             ## 
-            # If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand.
+            # If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand and $select nested in $expand.
             @activated_using
             ## 
             # Read-only property with details of the app-specific scope when the assignment is scoped to an app. Nullable. Supports $expand.
@@ -31,13 +31,13 @@ module MicrosoftGraph
             # A message provided by users and administrators when create they create the unifiedRoleAssignmentScheduleRequest object.
             @justification
             ## 
-            # The principal that's getting a role assignment through the request. Supports $expand.
+            # The principal that's getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
             @principal
             ## 
             # Identifier of the principal that has been granted the assignment. Can be a user, role-assignable group, or a service principal. Supports $filter (eq, ne).
             @principal_id
             ## 
-            # Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
+            # Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand and $select nested in $expand.
             @role_definition
             ## 
             # Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).
@@ -46,7 +46,7 @@ module MicrosoftGraph
             # The period of the role assignment. Recurring schedules are currently unsupported.
             @schedule_info
             ## 
-            # The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
+            # The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand and $select nested in $expand.
             @target_schedule
             ## 
             # Identifier of the schedule object that's linked to the assignment request. Supports $filter (eq, ne).
@@ -70,14 +70,14 @@ module MicrosoftGraph
                 @action = value
             end
             ## 
-            ## Gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand.
+            ## Gets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand and $select nested in $expand.
             ## @return a unified_role_eligibility_schedule
             ## 
             def activated_using
                 return @activated_using
             end
             ## 
-            ## Sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand.
+            ## Sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it's null. Supports $expand and $select nested in $expand.
             ## @param value Value to set for the activatedUsing property.
             ## @return a void
             ## 
@@ -115,7 +115,7 @@ module MicrosoftGraph
                 @app_scope_id = value
             end
             ## 
-            ## Instantiates a new unifiedRoleAssignmentScheduleRequest and sets the default values.
+            ## Instantiates a new UnifiedRoleAssignmentScheduleRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -215,14 +215,14 @@ module MicrosoftGraph
                 @justification = value
             end
             ## 
-            ## Gets the principal property value. The principal that's getting a role assignment through the request. Supports $expand.
+            ## Gets the principal property value. The principal that's getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
             ## @return a directory_object
             ## 
             def principal
                 return @principal
             end
             ## 
-            ## Sets the principal property value. The principal that's getting a role assignment through the request. Supports $expand.
+            ## Sets the principal property value. The principal that's getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
             ## @param value Value to set for the principal property.
             ## @return a void
             ## 
@@ -245,14 +245,14 @@ module MicrosoftGraph
                 @principal_id = value
             end
             ## 
-            ## Gets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
+            ## Gets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand and $select nested in $expand.
             ## @return a unified_role_definition
             ## 
             def role_definition
                 return @role_definition
             end
             ## 
-            ## Sets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
+            ## Sets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand and $select nested in $expand.
             ## @param value Value to set for the roleDefinition property.
             ## @return a void
             ## 
@@ -315,14 +315,14 @@ module MicrosoftGraph
                 writer.write_object_value("ticketInfo", @ticket_info)
             end
             ## 
-            ## Gets the targetSchedule property value. The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
+            ## Gets the targetSchedule property value. The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand and $select nested in $expand.
             ## @return a unified_role_assignment_schedule
             ## 
             def target_schedule
                 return @target_schedule
             end
             ## 
-            ## Sets the targetSchedule property value. The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand.
+            ## Sets the targetSchedule property value. The schedule for an eligible role assignment that is referenced through the targetScheduleId property. Supports $expand and $select nested in $expand.
             ## @param value Value to set for the targetSchedule property.
             ## @return a void
             ## 

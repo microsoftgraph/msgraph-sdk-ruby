@@ -17,16 +17,16 @@ module MicrosoftGraph
             # Set by the server. DateTime in UTC when the object was created on the server.
             @created_date_time
             ## 
-            # Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+            # Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
             @expiration_date_time
             ## 
-            # Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.
+            # Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.
             @last_active_date_time
             ## 
             # Set by the server. DateTime in UTC when the object was modified on the server.
             @last_modified_date_time
             ## 
-            # Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+            # Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
             @started_date_time
             ## 
             # Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
@@ -65,7 +65,7 @@ module MicrosoftGraph
                 @activity = value
             end
             ## 
-            ## Instantiates a new activityHistoryItem and sets the default values.
+            ## Instantiates a new ActivityHistoryItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -96,14 +96,14 @@ module MicrosoftGraph
                 return ActivityHistoryItem.new
             end
             ## 
-            ## Gets the expirationDateTime property value. Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+            ## Gets the expirationDateTime property value. Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.
+            ## Sets the expirationDateTime property value. Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
             ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the lastActiveDateTime property value. Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.
+            ## Gets the lastActiveDateTime property value. Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.
             ## @return a date_time
             ## 
             def last_active_date_time
                 return @last_active_date_time
             end
             ## 
-            ## Sets the lastActiveDateTime property value. Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.
+            ## Sets the lastActiveDateTime property value. Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.
             ## @param value Value to set for the lastActiveDateTime property.
             ## @return a void
             ## 
@@ -176,14 +176,14 @@ module MicrosoftGraph
                 writer.write_string_value("userTimezone", @user_timezone)
             end
             ## 
-            ## Gets the startedDateTime property value. Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+            ## Gets the startedDateTime property value. Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
             ## @return a date_time
             ## 
             def started_date_time
                 return @started_date_time
             end
             ## 
-            ## Sets the startedDateTime property value. Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.
+            ## Sets the startedDateTime property value. Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
             ## @param value Value to set for the startedDateTime property.
             ## @return a void
             ## 

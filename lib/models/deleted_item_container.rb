@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Deleted workflows that end up in the deletedItemsContainer.
             @workflows
             ## 
-            ## Instantiates a new deletedItemContainer and sets the default values.
+            ## Instantiates a new DeletedItemContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()

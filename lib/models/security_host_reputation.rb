@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @classification = value
             end
             ## 
-            ## Instantiates a new securityHostReputation and sets the default values.
+            ## Instantiates a new SecurityHostReputation and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -46,7 +46,7 @@ module MicrosoftGraph
                 @chat_id = value
             end
             ## 
-            ## Instantiates a new chatRenamedEventMessageDetail and sets the default values.
+            ## Instantiates a new ChatRenamedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

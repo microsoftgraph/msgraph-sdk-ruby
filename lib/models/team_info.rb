@@ -13,10 +13,10 @@ module MicrosoftGraph
             # The team property
             @team
             ## 
-            # The ID of the Azure Active Directory tenant.
+            # The ID of the Microsoft Entra tenant.
             @tenant_id
             ## 
-            ## Instantiates a new teamInfo and sets the default values.
+            ## Instantiates a new TeamInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -95,14 +95,14 @@ module MicrosoftGraph
                 @team = value
             end
             ## 
-            ## Gets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Gets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Sets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

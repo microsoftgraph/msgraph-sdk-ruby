@@ -130,7 +130,7 @@ module MicrosoftGraph
                 @android_mobile_application_management_enabled = value
             end
             ## 
-            ## Instantiates a new mobileThreatDefenseConnector and sets the default values.
+            ## Instantiates a new MobileThreatDefenseConnector and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Read-only. Nullable. Returns the plannerPlans shared with the user.
             @tasks
             ## 
-            ## Instantiates a new plannerUser and sets the default values.
+            ## Instantiates a new PlannerUser and sets the default values.
             ## @return a void
             ## 
             def initialize()

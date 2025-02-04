@@ -19,7 +19,7 @@ module MicrosoftGraph
             # true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
             @case_exact
             ## 
-            # The defaultValue property
+            # The default value of the attribute.
             @default_value
             ## 
             # 'true' to allow null values for attributes.
@@ -49,15 +49,15 @@ module MicrosoftGraph
             # The type property
             @type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
                 @case_exact = value
             end
             ## 
-            ## Instantiates a new attributeDefinition and sets the default values.
+            ## Instantiates a new AttributeDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -125,14 +125,14 @@ module MicrosoftGraph
                 return AttributeDefinition.new
             end
             ## 
-            ## Gets the defaultValue property value. The defaultValue property
+            ## Gets the defaultValue property value. The default value of the attribute.
             ## @return a string
             ## 
             def default_value
                 return @default_value
             end
             ## 
-            ## Sets the defaultValue property value. The defaultValue property
+            ## Sets the defaultValue property value. The default value of the attribute.
             ## @param value Value to set for the defaultValue property.
             ## @return a void
             ## 

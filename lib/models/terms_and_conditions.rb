@@ -100,7 +100,7 @@ module MicrosoftGraph
                 @body_text = value
             end
             ## 
-            ## Instantiates a new termsAndConditions and sets the default values.
+            ## Instantiates a new TermsAndConditions and sets the default values.
             ## @return a void
             ## 
             def initialize()
