@@ -61,10 +61,10 @@ module MicrosoftGraph
             # The instances of times off in the schedule.
             @times_off
             ## 
-            # The workforceIntegrationIds property
+            # The IDs for the workforce integrations associated with this schedule.
             @workforce_integration_ids
             ## 
-            ## Instantiates a new schedule and sets the default values.
+            ## Instantiates a new Schedule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -403,14 +403,14 @@ module MicrosoftGraph
                 @times_off = value
             end
             ## 
-            ## Gets the workforceIntegrationIds property value. The workforceIntegrationIds property
+            ## Gets the workforceIntegrationIds property value. The IDs for the workforce integrations associated with this schedule.
             ## @return a string
             ## 
             def workforce_integration_ids
                 return @workforce_integration_ids
             end
             ## 
-            ## Sets the workforceIntegrationIds property value. The workforceIntegrationIds property
+            ## Sets the workforceIntegrationIds property value. The IDs for the workforce integrations associated with this schedule.
             ## @param value Value to set for the workforceIntegrationIds property.
             ## @return a void
             ## 

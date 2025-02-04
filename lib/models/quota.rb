@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # Total space remaining before reaching the quota limit, in bytes. Read-only.
+            # Total space remaining before reaching the capacity limit, in bytes. Read-only.
             @remaining
             ## 
             # Enumeration value that indicates the state of the storage space. Read-only.
@@ -31,22 +31,22 @@ module MicrosoftGraph
             # Total space used, in bytes. Read-only.
             @used
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new quota and sets the default values.
+            ## Instantiates a new Quota and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -107,14 +107,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the remaining property value. Total space remaining before reaching the quota limit, in bytes. Read-only.
+            ## Gets the remaining property value. Total space remaining before reaching the capacity limit, in bytes. Read-only.
             ## @return a int64
             ## 
             def remaining
                 return @remaining
             end
             ## 
-            ## Sets the remaining property value. Total space remaining before reaching the quota limit, in bytes. Read-only.
+            ## Sets the remaining property value. Total space remaining before reaching the capacity limit, in bytes. Read-only.
             ## @param value Value to set for the remaining property.
             ## @return a void
             ## 
