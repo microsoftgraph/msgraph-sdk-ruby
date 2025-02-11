@@ -34,7 +34,7 @@ module MicrosoftGraph
             # AppLogUploadStatus
             @status
             ## 
-            ## Instantiates a new deviceLogCollectionResponse and sets the default values.
+            ## Instantiates a new DeviceLogCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

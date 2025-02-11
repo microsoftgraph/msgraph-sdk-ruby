@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Collection of border objects that apply to the overall range selected Read-only.
             @borders
             ## 
-            # Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.
+            # The width of all columns within the range. If the column widths aren't uniform, null will be returned.
             @column_width
             ## 
             # Returns the fill object defined on the overall range. Read-only.
@@ -19,19 +19,19 @@ module MicrosoftGraph
             # Returns the font object defined on the overall range selected Read-only.
             @font
             ## 
-            # Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+            # The horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
             @horizontal_alignment
             ## 
             # Returns the format protection object for a range. Read-only.
             @protection
             ## 
-            # Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
+            # The height of all rows in the range. If the row heights aren't uniform null will be returned.
             @row_height
             ## 
-            # Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
+            # The vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
             @vertical_alignment
             ## 
-            # Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
+            # Indicates whether Excel wraps the text in the object. A null value indicates that the entire range doesn't have a uniform wrap setting.
             @wrap_text
             ## 
             ## Gets the borders property value. Collection of border objects that apply to the overall range selected Read-only.
@@ -49,14 +49,14 @@ module MicrosoftGraph
                 @borders = value
             end
             ## 
-            ## Gets the columnWidth property value. Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.
+            ## Gets the columnWidth property value. The width of all columns within the range. If the column widths aren't uniform, null will be returned.
             ## @return a double
             ## 
             def column_width
                 return @column_width
             end
             ## 
-            ## Sets the columnWidth property value. Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.
+            ## Sets the columnWidth property value. The width of all columns within the range. If the column widths aren't uniform, null will be returned.
             ## @param value Value to set for the columnWidth property.
             ## @return a void
             ## 
@@ -64,7 +64,7 @@ module MicrosoftGraph
                 @column_width = value
             end
             ## 
-            ## Instantiates a new workbookRangeFormat and sets the default values.
+            ## Instantiates a new WorkbookRangeFormat and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -127,14 +127,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+            ## Gets the horizontalAlignment property value. The horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
             ## @return a string
             ## 
             def horizontal_alignment
                 return @horizontal_alignment
             end
             ## 
-            ## Sets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
+            ## Sets the horizontalAlignment property value. The horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
             ## @param value Value to set for the horizontalAlignment property.
             ## @return a void
             ## 
@@ -157,14 +157,14 @@ module MicrosoftGraph
                 @protection = value
             end
             ## 
-            ## Gets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
+            ## Gets the rowHeight property value. The height of all rows in the range. If the row heights aren't uniform null will be returned.
             ## @return a double
             ## 
             def row_height
                 return @row_height
             end
             ## 
-            ## Sets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
+            ## Sets the rowHeight property value. The height of all rows in the range. If the row heights aren't uniform null will be returned.
             ## @param value Value to set for the rowHeight property.
             ## @return a void
             ## 
@@ -190,14 +190,14 @@ module MicrosoftGraph
                 writer.write_boolean_value("wrapText", @wrap_text)
             end
             ## 
-            ## Gets the verticalAlignment property value. Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
+            ## Gets the verticalAlignment property value. The vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
             ## @return a string
             ## 
             def vertical_alignment
                 return @vertical_alignment
             end
             ## 
-            ## Sets the verticalAlignment property value. Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
+            ## Sets the verticalAlignment property value. The vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.
             ## @param value Value to set for the verticalAlignment property.
             ## @return a void
             ## 
@@ -205,14 +205,14 @@ module MicrosoftGraph
                 @vertical_alignment = value
             end
             ## 
-            ## Gets the wrapText property value. Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
+            ## Gets the wrapText property value. Indicates whether Excel wraps the text in the object. A null value indicates that the entire range doesn't have a uniform wrap setting.
             ## @return a boolean
             ## 
             def wrap_text
                 return @wrap_text
             end
             ## 
-            ## Sets the wrapText property value. Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
+            ## Sets the wrapText property value. Indicates whether Excel wraps the text in the object. A null value indicates that the entire range doesn't have a uniform wrap setting.
             ## @param value Value to set for the wrapText property.
             ## @return a void
             ## 

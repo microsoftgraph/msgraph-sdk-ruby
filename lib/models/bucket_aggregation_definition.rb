@@ -22,28 +22,28 @@ module MicrosoftGraph
             # A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
             @prefix_filter
             ## 
-            # Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
+            # Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.
             @ranges
             ## 
             # The sortBy property
             @sort_by
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new bucketAggregationDefinition and sets the default values.
+            ## Instantiates a new BucketAggregationDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -133,14 +133,14 @@ module MicrosoftGraph
                 @prefix_filter = value
             end
             ## 
-            ## Gets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
+            ## Gets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.
             ## @return a bucket_aggregation_range
             ## 
             def ranges
                 return @ranges
             end
             ## 
-            ## Sets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
+            ## Sets the ranges property value. Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.
             ## @param value Value to set for the ranges property.
             ## @return a void
             ## 
