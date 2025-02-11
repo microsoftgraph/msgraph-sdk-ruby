@@ -9,6 +9,8 @@ module MicrosoftGraph
             UnknownFutureValue: :UnknownFutureValue,
             TeamifyGroup: :TeamifyGroup,
             CreateChannel: :CreateChannel,
+            ArchiveChannel: :ArchiveChannel,
+            UnarchiveChannel: :UnarchiveChannel,
         }
     end
 end

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new securityEdiscoveryReviewSetQueryCollectionResponse and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryReviewSetQueryCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()
