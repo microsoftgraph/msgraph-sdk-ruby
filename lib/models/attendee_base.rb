@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
             @type
             ## 
-            ## Instantiates a new attendeeBase and sets the default values.
+            ## Instantiates a new AttendeeBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

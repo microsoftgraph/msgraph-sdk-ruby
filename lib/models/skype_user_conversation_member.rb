@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Skype ID of the user.
             @skype_id
             ## 
-            ## Instantiates a new skypeUserConversationMember and sets the default values.
+            ## Instantiates a new SkypeUserConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()

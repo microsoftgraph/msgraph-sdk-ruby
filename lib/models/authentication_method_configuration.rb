@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The state of the policy. Possible values are: enabled, disabled.
             @state
             ## 
-            ## Instantiates a new authenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new AuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

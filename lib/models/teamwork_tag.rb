@@ -7,10 +7,10 @@ module MicrosoftGraph
         class TeamworkTag < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+            # The description of the tag as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
             @description
             ## 
-            # The name of the tag as it will appear to the user in Microsoft Teams.
+            # The name of the tag as it appears to the user in Microsoft Teams.
             @display_name
             ## 
             # The number of users assigned to the tag.
@@ -25,7 +25,7 @@ module MicrosoftGraph
             # ID of the team in which the tag is defined.
             @team_id
             ## 
-            ## Instantiates a new teamworkTag and sets the default values.
+            ## Instantiates a new TeamworkTag and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -41,14 +41,14 @@ module MicrosoftGraph
                 return TeamworkTag.new
             end
             ## 
-            ## Gets the description property value. The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+            ## Gets the description property value. The description of the tag as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
+            ## Sets the description property value. The description of the tag as it appears to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -56,14 +56,14 @@ module MicrosoftGraph
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The name of the tag as it will appear to the user in Microsoft Teams.
+            ## Gets the displayName property value. The name of the tag as it appears to the user in Microsoft Teams.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The name of the tag as it will appear to the user in Microsoft Teams.
+            ## Sets the displayName property value. The name of the tag as it appears to the user in Microsoft Teams.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

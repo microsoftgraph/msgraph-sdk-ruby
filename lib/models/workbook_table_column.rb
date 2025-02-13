@@ -7,19 +7,16 @@ module MicrosoftGraph
         class WorkbookTableColumn < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Retrieve the filter applied to the column. Read-only.
+            # The filter applied to the column. Read-only.
             @filter
             ## 
-            # Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.
+            # The index of the column within the columns collection of the table. Zero-indexed. Read-only.
             @index
             ## 
-            # Returns the name of the table column.
+            # The name of the table column.
             @name
             ## 
-            # Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-            @values
-            ## 
-            ## Instantiates a new workbookTableColumn and sets the default values.
+            ## Instantiates a new WorkbookTableColumn and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,14 +32,14 @@ module MicrosoftGraph
                 return WorkbookTableColumn.new
             end
             ## 
-            ## Gets the filter property value. Retrieve the filter applied to the column. Read-only.
+            ## Gets the filter property value. The filter applied to the column. Read-only.
             ## @return a workbook_filter
             ## 
             def filter
                 return @filter
             end
             ## 
-            ## Sets the filter property value. Retrieve the filter applied to the column. Read-only.
+            ## Sets the filter property value. The filter applied to the column. Read-only.
             ## @param value Value to set for the filter property.
             ## @return a void
             ## 
@@ -58,18 +55,17 @@ module MicrosoftGraph
                     "filter" => lambda {|n| @filter = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookFilter.create_from_discriminator_value(pn) }) },
                     "index" => lambda {|n| @index = n.get_number_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },
-                    "values" => lambda {|n| @values = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the index property value. Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.
+            ## Gets the index property value. The index of the column within the columns collection of the table. Zero-indexed. Read-only.
             ## @return a integer
             ## 
             def index
                 return @index
             end
             ## 
-            ## Sets the index property value. Returns the index number of the column within the columns collection of the table. Zero-indexed. Read-only.
+            ## Sets the index property value. The index of the column within the columns collection of the table. Zero-indexed. Read-only.
             ## @param value Value to set for the index property.
             ## @return a void
             ## 
@@ -77,14 +73,14 @@ module MicrosoftGraph
                 @index = value
             end
             ## 
-            ## Gets the name property value. Returns the name of the table column.
+            ## Gets the name property value. The name of the table column.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. Returns the name of the table column.
+            ## Sets the name property value. The name of the table column.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -102,22 +98,6 @@ module MicrosoftGraph
                 writer.write_object_value("filter", @filter)
                 writer.write_number_value("index", @index)
                 writer.write_string_value("name", @name)
-                writer.write_object_value("values", @values)
-            end
-            ## 
-            ## Gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-            ## @return a json
-            ## 
-            def values
-                return @values
-            end
-            ## 
-            ## Sets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-            ## @param value Value to set for the values property.
-            ## @return a void
-            ## 
-            def values=(value)
-                @values = value
             end
         end
     end

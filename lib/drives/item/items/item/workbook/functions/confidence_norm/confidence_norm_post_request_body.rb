@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,43 +22,19 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The alpha property
-                                    @alpha
-                                    ## 
-                                    # The size property
-                                    @size
-                                    ## 
-                                    # The standardDev property
-                                    @standard_dev
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
                                         @additional_data = value
-                                    end
-                                    ## 
-                                    ## Gets the alpha property value. The alpha property
-                                    ## @return a json
-                                    ## 
-                                    def alpha
-                                        return @alpha
-                                    end
-                                    ## 
-                                    ## Sets the alpha property value. The alpha property
-                                    ## @param value Value to set for the alpha property.
-                                    ## @return a void
-                                    ## 
-                                    def alpha=(value)
-                                        @alpha = value
                                     end
                                     ## 
                                     ## Instantiates a new ConfidenceNormPostRequestBody and sets the default values.
@@ -83,9 +58,6 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "alpha" => lambda {|n| @alpha = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "size" => lambda {|n| @size = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "standardDev" => lambda {|n| @standard_dev = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
                                     end
                                     ## 
@@ -95,40 +67,7 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("alpha", @alpha)
-                                        writer.write_object_value("size", @size)
-                                        writer.write_object_value("standardDev", @standard_dev)
                                         writer.write_additional_data(@additional_data)
-                                    end
-                                    ## 
-                                    ## Gets the size property value. The size property
-                                    ## @return a json
-                                    ## 
-                                    def size
-                                        return @size
-                                    end
-                                    ## 
-                                    ## Sets the size property value. The size property
-                                    ## @param value Value to set for the size property.
-                                    ## @return a void
-                                    ## 
-                                    def size=(value)
-                                        @size = value
-                                    end
-                                    ## 
-                                    ## Gets the standardDev property value. The standardDev property
-                                    ## @return a json
-                                    ## 
-                                    def standard_dev
-                                        return @standard_dev
-                                    end
-                                    ## 
-                                    ## Sets the standardDev property value. The standardDev property
-                                    ## @param value Value to set for the standardDev property.
-                                    ## @return a void
-                                    ## 
-                                    def standard_dev=(value)
-                                        @standard_dev = value
                                     end
                                 end
                             end

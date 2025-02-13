@@ -45,7 +45,7 @@ module MicrosoftGraph
             # Boolean value that sets Windows Hello for Business as a method for signing into Windows.
             @windows_hello_for_business_blocked
             ## 
-            ## Instantiates a new windowsInformationProtectionPolicy and sets the default values.
+            ## Instantiates a new WindowsInformationProtectionPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

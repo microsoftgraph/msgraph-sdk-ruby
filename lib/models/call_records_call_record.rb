@@ -20,11 +20,17 @@ module MicrosoftGraph
             # List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
             @modalities
             ## 
-            # The organizing party's identity.
+            # The organizing party's identity. The organizer property is deprecated and will stop returning data on June 30, 2026. Going forward, use the organizer_v2 relationship.
             @organizer
             ## 
-            # List of distinct identities involved in the call.
+            # Identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
+            @organizer_v2
+            ## 
+            # List of distinct identities involved in the call. Limited to 130 entries. The participants property is deprecated and will stop returning data on June 30, 2026. Going forward, use the participants_v2 relationship.
             @participants
+            ## 
+            # List of distinct participants in the call.
+            @participants_v2
             ## 
             # List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
             @sessions
@@ -38,7 +44,7 @@ module MicrosoftGraph
             # Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
             @version
             ## 
-            ## Instantiates a new callRecordsCallRecord and sets the default values.
+            ## Instantiates a new CallRecordsCallRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -79,7 +85,9 @@ module MicrosoftGraph
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "modalities" => lambda {|n| @modalities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CallRecordsModality.create_from_discriminator_value(pn) }) },
                     "organizer" => lambda {|n| @organizer = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
+                    "organizer_v2" => lambda {|n| @organizer_v2 = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CallRecordsOrganizer.create_from_discriminator_value(pn) }) },
                     "participants" => lambda {|n| @participants = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
+                    "participants_v2" => lambda {|n| @participants_v2 = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CallRecordsParticipant.create_from_discriminator_value(pn) }) },
                     "sessions" => lambda {|n| @sessions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CallRecordsSession.create_from_discriminator_value(pn) }) },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "type" => lambda {|n| @type = n.get_enum_value(MicrosoftGraph::Models::CallRecordsCallType) },
@@ -132,14 +140,14 @@ module MicrosoftGraph
                 @modalities = value
             end
             ## 
-            ## Gets the organizer property value. The organizing party's identity.
+            ## Gets the organizer property value. The organizing party's identity. The organizer property is deprecated and will stop returning data on June 30, 2026. Going forward, use the organizer_v2 relationship.
             ## @return a identity_set
             ## 
             def organizer
                 return @organizer
             end
             ## 
-            ## Sets the organizer property value. The organizing party's identity.
+            ## Sets the organizer property value. The organizing party's identity. The organizer property is deprecated and will stop returning data on June 30, 2026. Going forward, use the organizer_v2 relationship.
             ## @param value Value to set for the organizer property.
             ## @return a void
             ## 
@@ -147,19 +155,49 @@ module MicrosoftGraph
                 @organizer = value
             end
             ## 
-            ## Gets the participants property value. List of distinct identities involved in the call.
+            ## Gets the organizer_v2 property value. Identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
+            ## @return a call_records_organizer
+            ## 
+            def organizer_v2
+                return @organizer_v2
+            end
+            ## 
+            ## Sets the organizer_v2 property value. Identity of the organizer of the call. This relationship is expanded by default in callRecord methods.
+            ## @param value Value to set for the organizer_v2 property.
+            ## @return a void
+            ## 
+            def organizer_v2=(value)
+                @organizer_v2 = value
+            end
+            ## 
+            ## Gets the participants property value. List of distinct identities involved in the call. Limited to 130 entries. The participants property is deprecated and will stop returning data on June 30, 2026. Going forward, use the participants_v2 relationship.
             ## @return a identity_set
             ## 
             def participants
                 return @participants
             end
             ## 
-            ## Sets the participants property value. List of distinct identities involved in the call.
+            ## Sets the participants property value. List of distinct identities involved in the call. Limited to 130 entries. The participants property is deprecated and will stop returning data on June 30, 2026. Going forward, use the participants_v2 relationship.
             ## @param value Value to set for the participants property.
             ## @return a void
             ## 
             def participants=(value)
                 @participants = value
+            end
+            ## 
+            ## Gets the participants_v2 property value. List of distinct participants in the call.
+            ## @return a call_records_participant
+            ## 
+            def participants_v2
+                return @participants_v2
+            end
+            ## 
+            ## Sets the participants_v2 property value. List of distinct participants in the call.
+            ## @param value Value to set for the participants_v2 property.
+            ## @return a void
+            ## 
+            def participants_v2=(value)
+                @participants_v2 = value
             end
             ## 
             ## Serializes information the current object
@@ -174,7 +212,9 @@ module MicrosoftGraph
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
                 writer.write_collection_of_object_values("modalities", @modalities)
                 writer.write_object_value("organizer", @organizer)
+                writer.write_object_value("organizer_v2", @organizer_v2)
                 writer.write_collection_of_object_values("participants", @participants)
+                writer.write_collection_of_object_values("participants_v2", @participants_v2)
                 writer.write_collection_of_object_values("sessions", @sessions)
                 writer.write_date_time_value("startDateTime", @start_date_time)
                 writer.write_enum_value("type", @type)

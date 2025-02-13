@@ -1,1 +1,1 @@
-require_relative 'get_compatible_hub_content_types_response'
+require_relative 'get_compatible_hub_content_types_get_response'

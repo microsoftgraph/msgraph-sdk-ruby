@@ -66,7 +66,7 @@ module MicrosoftGraph
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new managedIOSStoreApp and sets the default values.
+            ## Instantiates a new ManagedIOSStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

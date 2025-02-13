@@ -88,7 +88,7 @@ module MicrosoftGraph
                 @anti_malware_version = value
             end
             ## 
-            ## Instantiates a new windowsProtectionState and sets the default values.
+            ## Instantiates a new WindowsProtectionState and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -186,7 +186,7 @@ module MicrosoftGraph
                 return super.merge({
                     "antiMalwareVersion" => lambda {|n| @anti_malware_version = n.get_string_value() },
                     "detectedMalwareState" => lambda {|n| @detected_malware_state = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsDeviceMalwareState.create_from_discriminator_value(pn) }) },
-                    "deviceState" => lambda {|n| @device_state = n.get_enum_value(MicrosoftGraph::Models::WindowsDeviceHealthState) },
+                    "deviceState" => lambda {|n| @device_state = n.get_enum_values(MicrosoftGraph::Models::WindowsDeviceHealthState) },
                     "engineVersion" => lambda {|n| @engine_version = n.get_string_value() },
                     "fullScanOverdue" => lambda {|n| @full_scan_overdue = n.get_boolean_value() },
                     "fullScanRequired" => lambda {|n| @full_scan_required = n.get_boolean_value() },
@@ -198,7 +198,7 @@ module MicrosoftGraph
                     "lastReportedDateTime" => lambda {|n| @last_reported_date_time = n.get_date_time_value() },
                     "malwareProtectionEnabled" => lambda {|n| @malware_protection_enabled = n.get_boolean_value() },
                     "networkInspectionSystemEnabled" => lambda {|n| @network_inspection_system_enabled = n.get_boolean_value() },
-                    "productStatus" => lambda {|n| @product_status = n.get_enum_value(MicrosoftGraph::Models::WindowsDefenderProductStatus) },
+                    "productStatus" => lambda {|n| @product_status = n.get_enum_values(MicrosoftGraph::Models::WindowsDefenderProductStatus) },
                     "quickScanOverdue" => lambda {|n| @quick_scan_overdue = n.get_boolean_value() },
                     "realTimeProtectionEnabled" => lambda {|n| @real_time_protection_enabled = n.get_boolean_value() },
                     "rebootRequired" => lambda {|n| @reboot_required = n.get_boolean_value() },

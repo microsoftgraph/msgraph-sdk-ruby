@@ -19,27 +19,27 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The tollFreeNumber property
+            # The toll-free number that connects to the Audio Conference Provider.
             @toll_free_number
             ## 
             # List of toll-free numbers that are displayed in the meeting invite.
             @toll_free_numbers
             ## 
-            # The tollNumber property
+            # The toll number that connects to the Audio Conference Provider.
             @toll_number
             ## 
             # List of toll numbers that are displayed in the meeting invite.
             @toll_numbers
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph
                 @conference_id = value
             end
             ## 
-            ## Instantiates a new audioConferencing and sets the default values.
+            ## Instantiates a new AudioConferencing and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -138,14 +138,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the tollFreeNumber property value. The tollFreeNumber property
+            ## Gets the tollFreeNumber property value. The toll-free number that connects to the Audio Conference Provider.
             ## @return a string
             ## 
             def toll_free_number
                 return @toll_free_number
             end
             ## 
-            ## Sets the tollFreeNumber property value. The tollFreeNumber property
+            ## Sets the tollFreeNumber property value. The toll-free number that connects to the Audio Conference Provider.
             ## @param value Value to set for the tollFreeNumber property.
             ## @return a void
             ## 
@@ -168,14 +168,14 @@ module MicrosoftGraph
                 @toll_free_numbers = value
             end
             ## 
-            ## Gets the tollNumber property value. The tollNumber property
+            ## Gets the tollNumber property value. The toll number that connects to the Audio Conference Provider.
             ## @return a string
             ## 
             def toll_number
                 return @toll_number
             end
             ## 
-            ## Sets the tollNumber property value. The tollNumber property
+            ## Sets the tollNumber property value. The toll number that connects to the Audio Conference Provider.
             ## @param value Value to set for the tollNumber property.
             ## @return a void
             ## 

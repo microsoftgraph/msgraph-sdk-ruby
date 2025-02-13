@@ -8,10 +8,10 @@ module MicrosoftGraph
         class MicrosoftAuthenticatorAuthenticationMethod < MicrosoftGraph::Models::AuthenticationMethod
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
+            # The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In.
             @created_date_time
             ## 
-            # The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
+            # The registered device on which Microsoft Authenticator resides. This property is null if the device isn't registered for passwordless Phone Sign-In.
             @device
             ## 
             # Tags containing app metadata.
@@ -23,7 +23,7 @@ module MicrosoftGraph
             # Numerical version of this instance of the Authenticator app.
             @phone_app_version
             ## 
-            ## Instantiates a new microsoftAuthenticatorAuthenticationMethod and sets the default values.
+            ## Instantiates a new MicrosoftAuthenticatorAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -31,14 +31,14 @@ module MicrosoftGraph
                 @odata_type = "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod"
             end
             ## 
-            ## Gets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
+            ## Gets the createdDateTime property value. The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
+            ## Sets the createdDateTime property value. The date and time that this app was registered. This property is null if the device isn't registered for passwordless Phone Sign-In.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraph
                 return MicrosoftAuthenticatorAuthenticationMethod.new
             end
             ## 
-            ## Gets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
+            ## Gets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device isn't registered for passwordless Phone Sign-In.
             ## @return a device
             ## 
             def device
                 return @device
             end
             ## 
-            ## Sets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
+            ## Sets the device property value. The registered device on which Microsoft Authenticator resides. This property is null if the device isn't registered for passwordless Phone Sign-In.
             ## @param value Value to set for the device property.
             ## @return a void
             ## 

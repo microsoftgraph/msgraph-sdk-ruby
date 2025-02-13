@@ -7,7 +7,7 @@ module MicrosoftGraph
         class SecurityArtifact < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new securityArtifact and sets the default values.
+            ## Instantiates a new SecurityArtifact and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,12 +32,16 @@ module MicrosoftGraph
                             return SecurityHostCookie.new
                         when "#microsoft.graph.security.hostname"
                             return SecurityHostname.new
+                        when "#microsoft.graph.security.hostSslCertificate"
+                            return SecurityHostSslCertificate.new
                         when "#microsoft.graph.security.hostTracker"
                             return SecurityHostTracker.new
                         when "#microsoft.graph.security.ipAddress"
                             return SecurityIpAddress.new
                         when "#microsoft.graph.security.passiveDnsRecord"
                             return SecurityPassiveDnsRecord.new
+                        when "#microsoft.graph.security.sslCertificate"
+                            return SecuritySslCertificate.new
                         when "#microsoft.graph.security.unclassifiedArtifact"
                             return SecurityUnclassifiedArtifact.new
                     end

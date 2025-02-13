@@ -40,7 +40,7 @@ module MicrosoftGraph
                 @app_authorized = value
             end
             ## 
-            ## Instantiates a new telecomExpenseManagementPartner and sets the default values.
+            ## Instantiates a new TelecomExpenseManagementPartner and sets the default values.
             ## @return a void
             ## 
             def initialize()

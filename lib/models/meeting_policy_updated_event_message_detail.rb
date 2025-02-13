@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Unique identifier of the meeting chat.
             @meeting_chat_id
             ## 
-            ## Instantiates a new meetingPolicyUpdatedEventMessageDetail and sets the default values.
+            ## Instantiates a new MeetingPolicyUpdatedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

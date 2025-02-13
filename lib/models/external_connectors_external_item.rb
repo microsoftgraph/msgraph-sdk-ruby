@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @activities = value
             end
             ## 
-            ## Instantiates a new externalConnectorsExternalItem and sets the default values.
+            ## Instantiates a new ExternalConnectorsExternalItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

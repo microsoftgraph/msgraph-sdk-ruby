@@ -7,6 +7,9 @@ module MicrosoftGraph
         class TimeOffReason < MicrosoftGraph::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The code of the timeOffReason to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.
+            @code
+            ## 
             # The name of the timeOffReason. Required.
             @display_name
             ## 
@@ -16,7 +19,22 @@ module MicrosoftGraph
             # Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
             @is_active
             ## 
-            ## Instantiates a new timeOffReason and sets the default values.
+            ## Gets the code property value. The code of the timeOffReason to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.
+            ## @return a string
+            ## 
+            def code
+                return @code
+            end
+            ## 
+            ## Sets the code property value. The code of the timeOffReason to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.
+            ## @param value Value to set for the code property.
+            ## @return a void
+            ## 
+            def code=(value)
+                @code = value
+            end
+            ## 
+            ## Instantiates a new TimeOffReason and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,6 +71,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "code" => lambda {|n| @code = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "iconType" => lambda {|n| @icon_type = n.get_enum_value(MicrosoftGraph::Models::TimeOffReasonIconType) },
                     "isActive" => lambda {|n| @is_active = n.get_boolean_value() },
@@ -96,6 +115,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_string_value("code", @code)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_enum_value("iconType", @icon_type)
                 writer.write_boolean_value("isActive", @is_active)

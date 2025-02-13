@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
@@ -15,10 +16,28 @@ module MicrosoftGraph
             # The URL of the meeting to join anonymously.
             @anonymous_join_web_url
             ## 
+            # The custom label that can be stamped on this appointment by users.
+            @appointment_label
+            ## 
+            # The date, time, and time zone when the appointment was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            @created_date_time
+            ## 
+            # The SMTP address of the bookingCustomer who books the appointment.
+            @customer_email_address
+            ## 
+            # The customer's name.
+            @customer_name
+            ## 
+            # Notes from the customer associated with this appointment. You can get the value only when you read this bookingAppointment by its ID. You can set this property only when you initially create an appointment with a new customer.
+            @customer_notes
+            ## 
+            # The customer's phone number.
+            @customer_phone
+            ## 
             # The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
             @customer_time_zone
             ## 
-            # A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+            # A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             @customers
             ## 
             # The length of the appointment, denoted in ISO8601 format.
@@ -27,19 +46,25 @@ module MicrosoftGraph
             # The endDateTime property
             @end_date_time
             ## 
-            # The current number of customers in the appointment
+            # The current number of customers in the appointment.
             @filled_attendees_count
             ## 
-            # If true, indicates that the appointment will be held online. Default value is false.
+            # Indicates that the customer can manage bookings created by the staff. The default value is false.
+            @is_customer_allowed_to_manage_booking
+            ## 
+            # Indicates that the appointment is held online. The default value is false.
             @is_location_online
             ## 
             # The URL of the online meeting for the appointment.
             @join_web_url
             ## 
+            # The date, time, and time zone when the booking business was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            @last_updated_date_time
+            ## 
             # The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
             @maximum_attendees_count
             ## 
-            # If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+            # If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
             @opt_out_of_customer_email
             ## 
             # The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
@@ -57,7 +82,7 @@ module MicrosoftGraph
             # The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
             @reminders
             ## 
-            # An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
+            # Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of the customer.
             @self_service_appointment_id
             ## 
             # The ID of the bookingService associated with this appointment.
@@ -66,7 +91,7 @@ module MicrosoftGraph
             # The location where the service is delivered.
             @service_location
             ## 
-            # The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+            # The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it's computed from the service associated with the appointment by the serviceId property.
             @service_name
             ## 
             # Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
@@ -111,11 +136,41 @@ module MicrosoftGraph
                 @anonymous_join_web_url = value
             end
             ## 
-            ## Instantiates a new bookingAppointment and sets the default values.
+            ## Gets the appointmentLabel property value. The custom label that can be stamped on this appointment by users.
+            ## @return a string
+            ## 
+            def appointment_label
+                return @appointment_label
+            end
+            ## 
+            ## Sets the appointmentLabel property value. The custom label that can be stamped on this appointment by users.
+            ## @param value Value to set for the appointmentLabel property.
+            ## @return a void
+            ## 
+            def appointment_label=(value)
+                @appointment_label = value
+            end
+            ## 
+            ## Instantiates a new BookingAppointment and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+            end
+            ## 
+            ## Gets the createdDateTime property value. The date, time, and time zone when the appointment was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The date, time, and time zone when the appointment was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -125,6 +180,66 @@ module MicrosoftGraph
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
                 return BookingAppointment.new
+            end
+            ## 
+            ## Gets the customerEmailAddress property value. The SMTP address of the bookingCustomer who books the appointment.
+            ## @return a string
+            ## 
+            def customer_email_address
+                return @customer_email_address
+            end
+            ## 
+            ## Sets the customerEmailAddress property value. The SMTP address of the bookingCustomer who books the appointment.
+            ## @param value Value to set for the customerEmailAddress property.
+            ## @return a void
+            ## 
+            def customer_email_address=(value)
+                @customer_email_address = value
+            end
+            ## 
+            ## Gets the customerName property value. The customer's name.
+            ## @return a string
+            ## 
+            def customer_name
+                return @customer_name
+            end
+            ## 
+            ## Sets the customerName property value. The customer's name.
+            ## @param value Value to set for the customerName property.
+            ## @return a void
+            ## 
+            def customer_name=(value)
+                @customer_name = value
+            end
+            ## 
+            ## Gets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when you read this bookingAppointment by its ID. You can set this property only when you initially create an appointment with a new customer.
+            ## @return a string
+            ## 
+            def customer_notes
+                return @customer_notes
+            end
+            ## 
+            ## Sets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when you read this bookingAppointment by its ID. You can set this property only when you initially create an appointment with a new customer.
+            ## @param value Value to set for the customerNotes property.
+            ## @return a void
+            ## 
+            def customer_notes=(value)
+                @customer_notes = value
+            end
+            ## 
+            ## Gets the customerPhone property value. The customer's phone number.
+            ## @return a string
+            ## 
+            def customer_phone
+                return @customer_phone
+            end
+            ## 
+            ## Sets the customerPhone property value. The customer's phone number.
+            ## @param value Value to set for the customerPhone property.
+            ## @return a void
+            ## 
+            def customer_phone=(value)
+                @customer_phone = value
             end
             ## 
             ## Gets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
@@ -142,14 +257,14 @@ module MicrosoftGraph
                 @customer_time_zone = value
             end
             ## 
-            ## Gets the customers property value. A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+            ## Gets the customers property value. A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             ## @return a booking_customer_information_base
             ## 
             def customers
                 return @customers
             end
             ## 
-            ## Sets the customers property value. A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+            ## Sets the customers property value. A collection of customer properties for an appointment. An appointment contains a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             ## @param value Value to set for the customers property.
             ## @return a void
             ## 
@@ -187,14 +302,14 @@ module MicrosoftGraph
                 @end_date_time = value
             end
             ## 
-            ## Gets the filledAttendeesCount property value. The current number of customers in the appointment
+            ## Gets the filledAttendeesCount property value. The current number of customers in the appointment.
             ## @return a integer
             ## 
             def filled_attendees_count
                 return @filled_attendees_count
             end
             ## 
-            ## Sets the filledAttendeesCount property value. The current number of customers in the appointment
+            ## Sets the filledAttendeesCount property value. The current number of customers in the appointment.
             ## @param value Value to set for the filledAttendeesCount property.
             ## @return a void
             ## 
@@ -209,13 +324,21 @@ module MicrosoftGraph
                 return super.merge({
                     "additionalInformation" => lambda {|n| @additional_information = n.get_string_value() },
                     "anonymousJoinWebUrl" => lambda {|n| @anonymous_join_web_url = n.get_string_value() },
+                    "appointmentLabel" => lambda {|n| @appointment_label = n.get_string_value() },
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
+                    "customerEmailAddress" => lambda {|n| @customer_email_address = n.get_string_value() },
+                    "customerName" => lambda {|n| @customer_name = n.get_string_value() },
+                    "customerNotes" => lambda {|n| @customer_notes = n.get_string_value() },
+                    "customerPhone" => lambda {|n| @customer_phone = n.get_string_value() },
                     "customerTimeZone" => lambda {|n| @customer_time_zone = n.get_string_value() },
                     "customers" => lambda {|n| @customers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingCustomerInformationBase.create_from_discriminator_value(pn) }) },
                     "duration" => lambda {|n| @duration = n.get_duration_value() },
                     "endDateTime" => lambda {|n| @end_date_time = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                     "filledAttendeesCount" => lambda {|n| @filled_attendees_count = n.get_number_value() },
+                    "isCustomerAllowedToManageBooking" => lambda {|n| @is_customer_allowed_to_manage_booking = n.get_boolean_value() },
                     "isLocationOnline" => lambda {|n| @is_location_online = n.get_boolean_value() },
                     "joinWebUrl" => lambda {|n| @join_web_url = n.get_string_value() },
+                    "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "maximumAttendeesCount" => lambda {|n| @maximum_attendees_count = n.get_number_value() },
                     "optOutOfCustomerEmail" => lambda {|n| @opt_out_of_customer_email = n.get_boolean_value() },
                     "postBuffer" => lambda {|n| @post_buffer = n.get_duration_value() },
@@ -234,14 +357,29 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
+            ## Gets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
+            ## @return a boolean
+            ## 
+            def is_customer_allowed_to_manage_booking
+                return @is_customer_allowed_to_manage_booking
+            end
+            ## 
+            ## Sets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
+            ## @param value Value to set for the isCustomerAllowedToManageBooking property.
+            ## @return a void
+            ## 
+            def is_customer_allowed_to_manage_booking=(value)
+                @is_customer_allowed_to_manage_booking = value
+            end
+            ## 
+            ## Gets the isLocationOnline property value. Indicates that the appointment is held online. The default value is false.
             ## @return a boolean
             ## 
             def is_location_online
                 return @is_location_online
             end
             ## 
-            ## Sets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
+            ## Sets the isLocationOnline property value. Indicates that the appointment is held online. The default value is false.
             ## @param value Value to set for the isLocationOnline property.
             ## @return a void
             ## 
@@ -264,6 +402,21 @@ module MicrosoftGraph
                 @join_web_url = value
             end
             ## 
+            ## Gets the lastUpdatedDateTime property value. The date, time, and time zone when the booking business was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @return a date_time
+            ## 
+            def last_updated_date_time
+                return @last_updated_date_time
+            end
+            ## 
+            ## Sets the lastUpdatedDateTime property value. The date, time, and time zone when the booking business was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @param value Value to set for the lastUpdatedDateTime property.
+            ## @return a void
+            ## 
+            def last_updated_date_time=(value)
+                @last_updated_date_time = value
+            end
+            ## 
             ## Gets the maximumAttendeesCount property value. The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
             ## @return a integer
             ## 
@@ -279,14 +432,14 @@ module MicrosoftGraph
                 @maximum_attendees_count = value
             end
             ## 
-            ## Gets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+            ## Gets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
             ## @return a boolean
             ## 
             def opt_out_of_customer_email
                 return @opt_out_of_customer_email
             end
             ## 
-            ## Sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+            ## Sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment doesn't wish to receive a confirmation for this appointment.
             ## @param value Value to set for the optOutOfCustomerEmail property.
             ## @return a void
             ## 
@@ -369,14 +522,14 @@ module MicrosoftGraph
                 @reminders = value
             end
             ## 
-            ## Gets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
+            ## Gets the selfServiceAppointmentId property value. Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of the customer.
             ## @return a string
             ## 
             def self_service_appointment_id
                 return @self_service_appointment_id
             end
             ## 
-            ## Sets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
+            ## Sets the selfServiceAppointmentId property value. Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of the customer.
             ## @param value Value to set for the selfServiceAppointmentId property.
             ## @return a void
             ## 
@@ -393,11 +546,19 @@ module MicrosoftGraph
                 super
                 writer.write_string_value("additionalInformation", @additional_information)
                 writer.write_string_value("anonymousJoinWebUrl", @anonymous_join_web_url)
+                writer.write_string_value("appointmentLabel", @appointment_label)
+                writer.write_date_time_value("createdDateTime", @created_date_time)
+                writer.write_string_value("customerEmailAddress", @customer_email_address)
+                writer.write_string_value("customerName", @customer_name)
+                writer.write_string_value("customerNotes", @customer_notes)
+                writer.write_string_value("customerPhone", @customer_phone)
                 writer.write_string_value("customerTimeZone", @customer_time_zone)
                 writer.write_collection_of_object_values("customers", @customers)
                 writer.write_object_value("endDateTime", @end_date_time)
+                writer.write_boolean_value("isCustomerAllowedToManageBooking", @is_customer_allowed_to_manage_booking)
                 writer.write_boolean_value("isLocationOnline", @is_location_online)
                 writer.write_string_value("joinWebUrl", @join_web_url)
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_number_value("maximumAttendeesCount", @maximum_attendees_count)
                 writer.write_boolean_value("optOutOfCustomerEmail", @opt_out_of_customer_email)
                 writer.write_duration_value("postBuffer", @post_buffer)
@@ -445,14 +606,14 @@ module MicrosoftGraph
                 @service_location = value
             end
             ## 
-            ## Gets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+            ## Gets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it's computed from the service associated with the appointment by the serviceId property.
             ## @return a string
             ## 
             def service_name
                 return @service_name
             end
             ## 
-            ## Sets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+            ## Sets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it's computed from the service associated with the appointment by the serviceId property.
             ## @param value Value to set for the serviceName property.
             ## @return a void
             ## 

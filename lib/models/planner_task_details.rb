@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @checklist = value
             end
             ## 
-            ## Instantiates a new plannerTaskDetails and sets the default values.
+            ## Instantiates a new PlannerTaskDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()

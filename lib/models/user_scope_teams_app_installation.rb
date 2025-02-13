@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @chat = value
             end
             ## 
-            ## Instantiates a new userScopeTeamsAppInstallation and sets the default values.
+            ## Instantiates a new UserScopeTeamsAppInstallation and sets the default values.
             ## @return a void
             ## 
             def initialize()

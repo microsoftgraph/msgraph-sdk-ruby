@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The resourceActions property
             @resource_actions
             ## 
-            ## Instantiates a new unifiedRbacResourceNamespace and sets the default values.
+            ## Instantiates a new UnifiedRbacResourceNamespace and sets the default values.
             ## @return a void
             ## 
             def initialize()

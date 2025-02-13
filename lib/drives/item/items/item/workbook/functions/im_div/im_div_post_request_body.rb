@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,28 +22,22 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The inumber1 property
-                                    @inumber1
-                                    ## 
-                                    # The inumber2 property
-                                    @inumber2
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new imDivPostRequestBody and sets the default values.
+                                    ## Instantiates a new ImDivPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -65,39 +58,7 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "inumber1" => lambda {|n| @inumber1 = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "inumber2" => lambda {|n| @inumber2 = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
-                                    end
-                                    ## 
-                                    ## Gets the inumber1 property value. The inumber1 property
-                                    ## @return a json
-                                    ## 
-                                    def inumber1
-                                        return @inumber1
-                                    end
-                                    ## 
-                                    ## Sets the inumber1 property value. The inumber1 property
-                                    ## @param value Value to set for the inumber1 property.
-                                    ## @return a void
-                                    ## 
-                                    def inumber1=(value)
-                                        @inumber1 = value
-                                    end
-                                    ## 
-                                    ## Gets the inumber2 property value. The inumber2 property
-                                    ## @return a json
-                                    ## 
-                                    def inumber2
-                                        return @inumber2
-                                    end
-                                    ## 
-                                    ## Sets the inumber2 property value. The inumber2 property
-                                    ## @param value Value to set for the inumber2 property.
-                                    ## @return a void
-                                    ## 
-                                    def inumber2=(value)
-                                        @inumber2 = value
                                     end
                                     ## 
                                     ## Serializes information the current object
@@ -106,8 +67,6 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("inumber1", @inumber1)
-                                        writer.write_object_value("inumber2", @inumber2)
                                         writer.write_additional_data(@additional_data)
                                     end
                                 end

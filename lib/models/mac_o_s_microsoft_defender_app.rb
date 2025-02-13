@@ -9,7 +9,7 @@ module MicrosoftGraph
         class MacOSMicrosoftDefenderApp < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new macOSMicrosoftDefenderApp and sets the default values.
+            ## Instantiates a new MacOSMicrosoftDefenderApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

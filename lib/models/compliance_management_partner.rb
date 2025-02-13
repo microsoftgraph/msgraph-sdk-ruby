@@ -67,7 +67,7 @@ module MicrosoftGraph
                 @android_onboarded = value
             end
             ## 
-            ## Instantiates a new complianceManagementPartner and sets the default values.
+            ## Instantiates a new ComplianceManagementPartner and sets the default values.
             ## @return a void
             ## 
             def initialize()

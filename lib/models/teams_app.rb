@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @app_definitions = value
             end
             ## 
-            ## Instantiates a new teamsApp and sets the default values.
+            ## Instantiates a new TeamsApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

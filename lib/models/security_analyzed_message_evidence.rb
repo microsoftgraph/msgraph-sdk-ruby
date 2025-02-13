@@ -92,7 +92,7 @@ module MicrosoftGraph
                 @attachments_count = value
             end
             ## 
-            ## Instantiates a new securityAnalyzedMessageEvidence and sets the default values.
+            ## Instantiates a new SecurityAnalyzedMessageEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

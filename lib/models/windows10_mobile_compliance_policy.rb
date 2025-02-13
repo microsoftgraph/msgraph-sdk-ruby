@@ -87,7 +87,7 @@ module MicrosoftGraph
                 @code_integrity_enabled = value
             end
             ## 
-            ## Instantiates a new windows10MobileCompliancePolicy and sets the default values.
+            ## Instantiates a new Windows10MobileCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

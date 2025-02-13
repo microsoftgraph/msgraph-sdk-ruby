@@ -30,7 +30,7 @@ module MicrosoftGraph
                 @assignments = value
             end
             ## 
-            ## Instantiates a new targetedManagedAppProtection and sets the default values.
+            ## Instantiates a new TargetedManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()

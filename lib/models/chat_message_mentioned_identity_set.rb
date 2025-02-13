@@ -7,10 +7,10 @@ module MicrosoftGraph
         class ChatMessageMentionedIdentitySet < MicrosoftGraph::Models::IdentitySet
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # If present, represents a conversation (for example, team or channel) @mentioned in a message.
+            # If present, represents a conversation (for example, team, channel, or chat) @mentioned in a message.
             @conversation
             ## 
-            ## Instantiates a new chatMessageMentionedIdentitySet and sets the default values.
+            ## Instantiates a new ChatMessageMentionedIdentitySet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -18,14 +18,14 @@ module MicrosoftGraph
                 @odata_type = "#microsoft.graph.chatMessageMentionedIdentitySet"
             end
             ## 
-            ## Gets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
+            ## Gets the conversation property value. If present, represents a conversation (for example, team, channel, or chat) @mentioned in a message.
             ## @return a teamwork_conversation_identity
             ## 
             def conversation
                 return @conversation
             end
             ## 
-            ## Sets the conversation property value. If present, represents a conversation (for example, team or channel) @mentioned in a message.
+            ## Sets the conversation property value. If present, represents a conversation (for example, team, channel, or chat) @mentioned in a message.
             ## @param value Value to set for the conversation property.
             ## @return a void
             ## 

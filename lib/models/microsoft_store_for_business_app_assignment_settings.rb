@@ -12,7 +12,7 @@ module MicrosoftGraph
             # Whether or not to use device execution context for Microsoft Store for Business mobile app.
             @use_device_context
             ## 
-            ## Instantiates a new microsoftStoreForBusinessAppAssignmentSettings and sets the default values.
+            ## Instantiates a new MicrosoftStoreForBusinessAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

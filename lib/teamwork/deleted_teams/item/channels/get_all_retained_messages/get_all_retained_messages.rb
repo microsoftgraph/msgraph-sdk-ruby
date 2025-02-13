@@ -1,0 +1,1 @@
+require_relative 'get_all_retained_messages_get_response'

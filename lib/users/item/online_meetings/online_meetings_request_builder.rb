@@ -7,6 +7,8 @@ require_relative '../../users'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './create_or_get/create_or_get_request_builder'
+require_relative './i056e0011aad1cfd99d94f2d6b75f21d85f8b7cfe3c3983a69234033a5ffcd08b/e61b2d5484df5c99782598f88bad613fa3840c5ed2a29782329c8b045393beae'
+require_relative './ibe4c23e921ad9fcaa5c959c34e393ba839c959ee578ec95fd69bc2d9aa0b2597/93b7daca5be018c77b93b12567ae342e4db62833cf6672535af71a36cfe6bba1'
 require_relative './item/online_meeting_item_request_builder'
 require_relative './online_meetings'
 
@@ -29,6 +31,16 @@ module MicrosoftGraph
                         return MicrosoftGraph::Users::Item::OnlineMeetings::CreateOrGet::CreateOrGetRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to call the getAllRecordings method.
+                    def get_all_recordingsmeeting_organizer_user_id_meeting_organizer_user_id_with_start_date_time_with_end_date_time()
+                        return MicrosoftGraph::Users::Item::OnlineMeetings::Ibe4c23e921ad9fcaa5c959c34e393ba839c959ee578ec95fd69bc2d9aa0b2597::GetAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the getAllTranscripts method.
+                    def get_all_transcriptsmeeting_organizer_user_id_meeting_organizer_user_id_with_start_date_time_with_end_date_time()
+                        return MicrosoftGraph::Users::Item::OnlineMeetings::I056e0011aad1cfd99d94f2d6b75f21d85f8b7cfe3c3983a69234033a5ffcd08b::GetAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     ## Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
                     ## @param online_meeting_id The unique identifier of onlineMeeting
                     ## @return a online_meeting_item_request_builder
@@ -46,10 +58,10 @@ module MicrosoftGraph
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/onlineMeetings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
+                        super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/onlineMeetings{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}")
                     end
                     ## 
-                    ## Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+                    ## Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of online_meeting_collection_response
                     ## 
@@ -58,12 +70,11 @@ module MicrosoftGraph
                             request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnlineMeetingCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create an online meeting on behalf of a user.
+                    ## Create new navigation property to onlineMeetings for users
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of online_meeting
@@ -74,30 +85,29 @@ module MicrosoftGraph
                             body, request_configuration
                         )
                         error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnlineMeeting.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+                    ## Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :GET
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                             request_info.add_request_options(request_configuration.options)
                         end
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :GET
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
                     ## 
-                    ## Create an online meeting on behalf of a user.
+                    ## Create new navigation property to onlineMeetings for users
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -105,20 +115,29 @@ module MicrosoftGraph
                     def to_post_request_information(body, request_configuration=nil)
                         raise StandardError, 'body cannot be null' if body.nil?
                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :POST
-                        request_info.headers.add('Accept', 'application/json')
                         unless request_configuration.nil?
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
-                        request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :POST
+                        request_info.headers.try_add('Accept', 'application/json')
                         return request_info
+                    end
+                    ## 
+                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                    ## @param raw_url The raw URL to use for the request builder.
+                    ## @return a online_meetings_request_builder
+                    ## 
+                    def with_url(raw_url)
+                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                        return OnlineMeetingsRequestBuilder.new(raw_url, @request_adapter)
                     end
 
                     ## 
-                    # Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+                    # Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
                     class OnlineMeetingsRequestBuilderGetQueryParameters
                         
                         ## 

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The token used to join the call.
             @token
             ## 
-            ## Instantiates a new tokenMeetingInfo and sets the default values.
+            ## Instantiates a new TokenMeetingInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

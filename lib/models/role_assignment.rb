@@ -21,7 +21,7 @@ module MicrosoftGraph
             # Role definition this assignment is part of.
             @role_definition
             ## 
-            ## Instantiates a new roleAssignment and sets the default values.
+            ## Instantiates a new RoleAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()
