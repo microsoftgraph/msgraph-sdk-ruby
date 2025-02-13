@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @certificate_list = value
             end
             ## 
-            ## Instantiates a new clientCertificateAuthentication and sets the default values.
+            ## Instantiates a new ClientCertificateAuthentication and sets the default values.
             ## @return a void
             ## 
             def initialize()

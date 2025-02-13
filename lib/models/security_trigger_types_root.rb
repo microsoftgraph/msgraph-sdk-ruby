@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The retentionEventTypes property
             @retention_event_types
             ## 
-            ## Instantiates a new securityTriggerTypesRoot and sets the default values.
+            ## Instantiates a new SecurityTriggerTypesRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

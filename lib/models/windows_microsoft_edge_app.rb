@@ -30,7 +30,7 @@ module MicrosoftGraph
                 @channel = value
             end
             ## 
-            ## Instantiates a new windowsMicrosoftEdgeApp and sets the default values.
+            ## Instantiates a new WindowsMicrosoftEdgeApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
