@@ -40,7 +40,7 @@ module MicrosoftGraph
             # Specifies a nickname for the room, for example, 'conf room'.
             @nickname
             ## 
-            # Specifies additional features of the room, for example, details like the type of view or furniture type.
+            # Specifies other features of the room, for example, details like the type of view or furniture type.
             @tags
             ## 
             # Specifies the name of the video device in the room.
@@ -106,7 +106,7 @@ module MicrosoftGraph
                 @capacity = value
             end
             ## 
-            ## Instantiates a new room and sets the default values.
+            ## Instantiates a new Room and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -271,14 +271,14 @@ module MicrosoftGraph
                 writer.write_string_value("videoDeviceName", @video_device_name)
             end
             ## 
-            ## Gets the tags property value. Specifies additional features of the room, for example, details like the type of view or furniture type.
+            ## Gets the tags property value. Specifies other features of the room, for example, details like the type of view or furniture type.
             ## @return a string
             ## 
             def tags
                 return @tags
             end
             ## 
-            ## Sets the tags property value. Specifies additional features of the room, for example, details like the type of view or furniture type.
+            ## Sets the tags property value. Specifies other features of the room, for example, details like the type of view or furniture type.
             ## @param value Value to set for the tags property.
             ## @return a void
             ## 

@@ -7,7 +7,7 @@ module MicrosoftGraph
         class WorkbookNamedItem < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Represents the comment associated with this name.
+            # The comment associated with this name.
             @comment
             ## 
             # The name of the object. Read-only.
@@ -16,26 +16,23 @@ module MicrosoftGraph
             # Indicates whether the name is scoped to the workbook or to a specific worksheet. Read-only.
             @scope
             ## 
-            # Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
+            # The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
             @type
             ## 
-            # Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
-            @value
-            ## 
-            # Specifies whether the object is visible or not.
+            # Indicates whether the object is visible.
             @visible
             ## 
-            # Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
+            # Returns the worksheet to which the named item is scoped. Available only if the item is scoped to the worksheet. Read-only.
             @worksheet
             ## 
-            ## Gets the comment property value. Represents the comment associated with this name.
+            ## Gets the comment property value. The comment associated with this name.
             ## @return a string
             ## 
             def comment
                 return @comment
             end
             ## 
-            ## Sets the comment property value. Represents the comment associated with this name.
+            ## Sets the comment property value. The comment associated with this name.
             ## @param value Value to set for the comment property.
             ## @return a void
             ## 
@@ -43,7 +40,7 @@ module MicrosoftGraph
                 @comment = value
             end
             ## 
-            ## Instantiates a new workbookNamedItem and sets the default values.
+            ## Instantiates a new WorkbookNamedItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -68,7 +65,6 @@ module MicrosoftGraph
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "scope" => lambda {|n| @scope = n.get_string_value() },
                     "type" => lambda {|n| @type = n.get_string_value() },
-                    "value" => lambda {|n| @value = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                     "visible" => lambda {|n| @visible = n.get_boolean_value() },
                     "worksheet" => lambda {|n| @worksheet = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookWorksheet.create_from_discriminator_value(pn) }) },
                 })
@@ -115,19 +111,18 @@ module MicrosoftGraph
                 writer.write_string_value("name", @name)
                 writer.write_string_value("scope", @scope)
                 writer.write_string_value("type", @type)
-                writer.write_object_value("value", @value)
                 writer.write_boolean_value("visible", @visible)
                 writer.write_object_value("worksheet", @worksheet)
             end
             ## 
-            ## Gets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
+            ## Gets the type property value. The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
             ## @return a string
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. Indicates what type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.
+            ## Sets the type property value. The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 
@@ -135,29 +130,14 @@ module MicrosoftGraph
                 @type = value
             end
             ## 
-            ## Gets the value property value. Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
-            ## @return a json
-            ## 
-            def value
-                return @value
-            end
-            ## 
-            ## Sets the value property value. Represents the formula that the name is defined to refer to. E.g. =Sheet14!$B$2:$H$12, =4.75, etc. Read-only.
-            ## @param value Value to set for the value property.
-            ## @return a void
-            ## 
-            def value=(value)
-                @value = value
-            end
-            ## 
-            ## Gets the visible property value. Specifies whether the object is visible or not.
+            ## Gets the visible property value. Indicates whether the object is visible.
             ## @return a boolean
             ## 
             def visible
                 return @visible
             end
             ## 
-            ## Sets the visible property value. Specifies whether the object is visible or not.
+            ## Sets the visible property value. Indicates whether the object is visible.
             ## @param value Value to set for the visible property.
             ## @return a void
             ## 
@@ -165,14 +145,14 @@ module MicrosoftGraph
                 @visible = value
             end
             ## 
-            ## Gets the worksheet property value. Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
+            ## Gets the worksheet property value. Returns the worksheet to which the named item is scoped. Available only if the item is scoped to the worksheet. Read-only.
             ## @return a workbook_worksheet
             ## 
             def worksheet
                 return @worksheet
             end
             ## 
-            ## Sets the worksheet property value. Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.
+            ## Sets the worksheet property value. Returns the worksheet to which the named item is scoped. Available only if the item is scoped to the worksheet. Read-only.
             ## @param value Value to set for the worksheet property.
             ## @return a void
             ## 

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The name of the column  in this content type.
             @name
             ## 
-            ## Instantiates a new columnLink and sets the default values.
+            ## Instantiates a new ColumnLink and sets the default values.
             ## @return a void
             ## 
             def initialize()
