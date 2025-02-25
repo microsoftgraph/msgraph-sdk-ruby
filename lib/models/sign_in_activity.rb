@@ -11,37 +11,43 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+            # The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
             @last_non_interactive_sign_in_date_time
             ## 
             # Request identifier of the last non-interactive sign-in performed by this user.
             @last_non_interactive_sign_in_request_id
             ## 
-            # The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+            # The last interactive sign-in date and time for a specific user. This property records the last time a user attempted an interactive sign-in to the directory—whether the attempt was successful or not. Note: Since unsuccessful attempts are also logged, this value might not accurately reflect actual system usage. For tracking actual account access, please use the lastSuccessfulSignInDateTime property. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_sign_in_date_time
             ## 
             # Request identifier of the last interactive sign-in performed by this user.
             @last_sign_in_request_id
             ## 
+            # The date and time of the user's most recent successful interactive sign-in. Use this property if you need to determine when the account was truly accessed. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
+            @last_successful_sign_in_date_time
+            ## 
+            # The request ID of the last successful sign-in.
+            @last_successful_sign_in_request_id
+            ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new signInActivity and sets the default values.
+            ## Instantiates a new SignInActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -66,18 +72,20 @@ module MicrosoftGraph
                     "lastNonInteractiveSignInRequestId" => lambda {|n| @last_non_interactive_sign_in_request_id = n.get_string_value() },
                     "lastSignInDateTime" => lambda {|n| @last_sign_in_date_time = n.get_date_time_value() },
                     "lastSignInRequestId" => lambda {|n| @last_sign_in_request_id = n.get_string_value() },
+                    "lastSuccessfulSignInDateTime" => lambda {|n| @last_successful_sign_in_date_time = n.get_date_time_value() },
+                    "lastSuccessfulSignInRequestId" => lambda {|n| @last_successful_sign_in_request_id = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end
             ## 
-            ## Gets the lastNonInteractiveSignInDateTime property value. The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+            ## Gets the lastNonInteractiveSignInDateTime property value. The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
             ## @return a date_time
             ## 
             def last_non_interactive_sign_in_date_time
                 return @last_non_interactive_sign_in_date_time
             end
             ## 
-            ## Sets the lastNonInteractiveSignInDateTime property value. The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+            ## Sets the lastNonInteractiveSignInDateTime property value. The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted (either successfully or unsuccessfully) to sign in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
             ## @param value Value to set for the lastNonInteractiveSignInDateTime property.
             ## @return a void
             ## 
@@ -100,14 +108,14 @@ module MicrosoftGraph
                 @last_non_interactive_sign_in_request_id = value
             end
             ## 
-            ## Gets the lastSignInDateTime property value. The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+            ## Gets the lastSignInDateTime property value. The last interactive sign-in date and time for a specific user. This property records the last time a user attempted an interactive sign-in to the directory—whether the attempt was successful or not. Note: Since unsuccessful attempts are also logged, this value might not accurately reflect actual system usage. For tracking actual account access, please use the lastSuccessfulSignInDateTime property. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_sign_in_date_time
                 return @last_sign_in_date_time
             end
             ## 
-            ## Sets the lastSignInDateTime property value. The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
+            ## Sets the lastSignInDateTime property value. The last interactive sign-in date and time for a specific user. This property records the last time a user attempted an interactive sign-in to the directory—whether the attempt was successful or not. Note: Since unsuccessful attempts are also logged, this value might not accurately reflect actual system usage. For tracking actual account access, please use the lastSuccessfulSignInDateTime property. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastSignInDateTime property.
             ## @return a void
             ## 
@@ -128,6 +136,36 @@ module MicrosoftGraph
             ## 
             def last_sign_in_request_id=(value)
                 @last_sign_in_request_id = value
+            end
+            ## 
+            ## Gets the lastSuccessfulSignInDateTime property value. The date and time of the user's most recent successful interactive sign-in. Use this property if you need to determine when the account was truly accessed. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
+            ## @return a date_time
+            ## 
+            def last_successful_sign_in_date_time
+                return @last_successful_sign_in_date_time
+            end
+            ## 
+            ## Sets the lastSuccessfulSignInDateTime property value. The date and time of the user's most recent successful interactive sign-in. Use this property if you need to determine when the account was truly accessed. This field can be used to build reports, such as inactive users. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Microsoft Entra ID maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Microsoft Entra ID.
+            ## @param value Value to set for the lastSuccessfulSignInDateTime property.
+            ## @return a void
+            ## 
+            def last_successful_sign_in_date_time=(value)
+                @last_successful_sign_in_date_time = value
+            end
+            ## 
+            ## Gets the lastSuccessfulSignInRequestId property value. The request ID of the last successful sign-in.
+            ## @return a string
+            ## 
+            def last_successful_sign_in_request_id
+                return @last_successful_sign_in_request_id
+            end
+            ## 
+            ## Sets the lastSuccessfulSignInRequestId property value. The request ID of the last successful sign-in.
+            ## @param value Value to set for the lastSuccessfulSignInRequestId property.
+            ## @return a void
+            ## 
+            def last_successful_sign_in_request_id=(value)
+                @last_successful_sign_in_request_id = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -155,6 +193,8 @@ module MicrosoftGraph
                 writer.write_string_value("lastNonInteractiveSignInRequestId", @last_non_interactive_sign_in_request_id)
                 writer.write_date_time_value("lastSignInDateTime", @last_sign_in_date_time)
                 writer.write_string_value("lastSignInRequestId", @last_sign_in_request_id)
+                writer.write_date_time_value("lastSuccessfulSignInDateTime", @last_successful_sign_in_date_time)
+                writer.write_string_value("lastSuccessfulSignInRequestId", @last_successful_sign_in_request_id)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)
             end

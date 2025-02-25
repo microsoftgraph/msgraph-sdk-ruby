@@ -5,7 +5,7 @@ require_relative './models'
 module MicrosoftGraph
     module Models
         ## 
-        # Device Configuration State for a given device.
+        # Support for this Entity is being deprecated starting May 2026 & will no longer be supported.
         class DeviceConfigurationState < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -27,7 +27,7 @@ module MicrosoftGraph
             # The version of the policy
             @version
             ## 
-            ## Instantiates a new deviceConfigurationState and sets the default values.
+            ## Instantiates a new DeviceConfigurationState and sets the default values.
             ## @return a void
             ## 
             def initialize()

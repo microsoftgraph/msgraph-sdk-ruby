@@ -58,7 +58,7 @@ module MicrosoftGraph
                 @comments = value
             end
             ## 
-            ## Instantiates a new workbook and sets the default values.
+            ## Instantiates a new Workbook and sets the default values.
             ## @return a void
             ## 
             def initialize()

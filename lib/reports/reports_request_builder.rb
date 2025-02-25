@@ -49,6 +49,7 @@ require_relative './get_one_drive_usage_account_detail_with_period/get_one_drive
 require_relative './get_one_drive_usage_file_counts_with_period/get_one_drive_usage_file_counts_with_period_request_builder'
 require_relative './get_one_drive_usage_storage_with_period/get_one_drive_usage_storage_with_period_request_builder'
 require_relative './get_printer_archived_print_jobs_with_printer_id_with_start_date_time_with_end_date_time/6d9539f5873fb3fdd65d5d7371db08ed4d7ab3072dd5edea9896d64da7c61b1f'
+require_relative './get_relying_party_detailed_summary_with_period/get_relying_party_detailed_summary_with_period_request_builder'
 require_relative './get_share_point_activity_file_counts_with_period/get_share_point_activity_file_counts_with_period_request_builder'
 require_relative './get_share_point_activity_pages_with_period/get_share_point_activity_pages_with_period_request_builder'
 require_relative './get_share_point_activity_user_counts_with_period/get_share_point_activity_user_counts_with_period_request_builder'
@@ -109,6 +110,7 @@ require_relative './managed_device_enrollment_top_failures/managed_device_enroll
 require_relative './managed_device_enrollment_top_failures_with_period/managed_device_enrollment_top_failures_with_period_request_builder'
 require_relative './monthly_print_usage_by_printer/monthly_print_usage_by_printer_request_builder'
 require_relative './monthly_print_usage_by_user/monthly_print_usage_by_user_request_builder'
+require_relative './partners/partners_request_builder'
 require_relative './reports'
 require_relative './security/security_request_builder'
 
@@ -179,6 +181,11 @@ module MicrosoftGraph
                 return MicrosoftGraph::Reports::MonthlyPrintUsageByUser::MonthlyPrintUsageByUserRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the partners property of the microsoft.graph.reportRoot entity.
+            def partners()
+                return MicrosoftGraph::Reports::Partners::PartnersRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the security property of the microsoft.graph.reportRoot entity.
             def security()
                 return MicrosoftGraph::Reports::Security::SecurityRequestBuilder.new(@path_parameters, @request_adapter)
@@ -190,7 +197,7 @@ module MicrosoftGraph
             ## @return a void
             ## 
             def initialize(path_parameters, request_adapter)
-                super(path_parameters, request_adapter, "{+baseurl}/reports{?%24select,%24expand}")
+                super(path_parameters, request_adapter, "{+baseurl}/reports{?%24expand,%24select}")
             end
             ## 
             ## Read properties and relationships of the reportRoot object.
@@ -202,8 +209,7 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ReportRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -555,6 +561,15 @@ module MicrosoftGraph
                 raise StandardError, 'printer_id cannot be null' if printer_id.nil?
                 raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
                 return GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, printerId, startDateTime)
+            end
+            ## 
+            ## Provides operations to call the getRelyingPartyDetailedSummary method.
+            ## @param period Usage: period='{period}'
+            ## @return a get_relying_party_detailed_summary_with_period_request_builder
+            ## 
+            def get_relying_party_detailed_summary_with_period(period)
+                raise StandardError, 'period cannot be null' if period.nil?
+                return GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
             end
             ## 
             ## Provides operations to call the getSharePointActivityFileCounts method.
@@ -1082,8 +1097,7 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ReportRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -1093,15 +1107,15 @@ module MicrosoftGraph
             ## 
             def to_get_request_information(request_configuration=nil)
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :GET
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                     request_info.add_request_options(request_configuration.options)
                 end
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -1113,16 +1127,25 @@ module MicrosoftGraph
             def to_patch_request_information(body, request_configuration=nil)
                 raise StandardError, 'body cannot be null' if body.nil?
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :PATCH
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
-                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :PATCH
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a reports_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return ReportsRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 
