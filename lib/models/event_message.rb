@@ -10,13 +10,13 @@ module MicrosoftGraph
             # The endDateTime property
             @end_date_time
             ## 
-            # The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
+            # The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property. Read-only.
             @event
             ## 
             # The isAllDay property
             @is_all_day
             ## 
-            # The isDelegated property
+            # True if this meeting request is accessible to a delegate, false otherwise. The default is false.
             @is_delegated
             ## 
             # The isOutOfDate property
@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The location property
             @location
             ## 
-            # The meetingMessageType property
+            # The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTenativelyAccepted, meetingDeclined.
             @meeting_message_type
             ## 
             # The recurrence property
@@ -37,7 +37,7 @@ module MicrosoftGraph
             # The type property
             @type
             ## 
-            ## Instantiates a new eventMessage and sets the default values.
+            ## Instantiates a new EventMessage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -79,14 +79,14 @@ module MicrosoftGraph
                 @end_date_time = value
             end
             ## 
-            ## Gets the event property value. The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
+            ## Gets the event property value. The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property. Read-only.
             ## @return a event
             ## 
             def event
                 return @event
             end
             ## 
-            ## Sets the event property value. The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
+            ## Sets the event property value. The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property. Read-only.
             ## @param value Value to set for the event property.
             ## @return a void
             ## 
@@ -127,14 +127,14 @@ module MicrosoftGraph
                 @is_all_day = value
             end
             ## 
-            ## Gets the isDelegated property value. The isDelegated property
+            ## Gets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. The default is false.
             ## @return a boolean
             ## 
             def is_delegated
                 return @is_delegated
             end
             ## 
-            ## Sets the isDelegated property value. The isDelegated property
+            ## Sets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. The default is false.
             ## @param value Value to set for the isDelegated property.
             ## @return a void
             ## 
@@ -172,14 +172,14 @@ module MicrosoftGraph
                 @location = value
             end
             ## 
-            ## Gets the meetingMessageType property value. The meetingMessageType property
+            ## Gets the meetingMessageType property value. The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTenativelyAccepted, meetingDeclined.
             ## @return a meeting_message_type
             ## 
             def meeting_message_type
                 return @meeting_message_type
             end
             ## 
-            ## Sets the meetingMessageType property value. The meetingMessageType property
+            ## Sets the meetingMessageType property value. The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTenativelyAccepted, meetingDeclined.
             ## @param value Value to set for the meetingMessageType property.
             ## @return a void
             ## 

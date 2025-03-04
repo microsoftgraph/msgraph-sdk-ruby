@@ -1,1 +1,1 @@
-require_relative 'get_applicable_policy_requirements_response'
+require_relative 'get_applicable_policy_requirements_post_response'
