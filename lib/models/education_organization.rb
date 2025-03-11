@@ -16,10 +16,10 @@ module MicrosoftGraph
             # Source where this organization was created from. Possible values are: sis, manual.
             @external_source
             ## 
-            # The name of the external source this resources was generated from.
+            # The name of the external source this resource was generated from.
             @external_source_detail
             ## 
-            ## Instantiates a new educationOrganization and sets the default values.
+            ## Instantiates a new EducationOrganization and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -88,14 +88,14 @@ module MicrosoftGraph
                 @external_source = value
             end
             ## 
-            ## Gets the externalSourceDetail property value. The name of the external source this resources was generated from.
+            ## Gets the externalSourceDetail property value. The name of the external source this resource was generated from.
             ## @return a string
             ## 
             def external_source_detail
                 return @external_source_detail
             end
             ## 
-            ## Sets the externalSourceDetail property value. The name of the external source this resources was generated from.
+            ## Sets the externalSourceDetail property value. The name of the external source this resource was generated from.
             ## @param value Value to set for the externalSourceDetail property.
             ## @return a void
             ## 

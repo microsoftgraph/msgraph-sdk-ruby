@@ -10,37 +10,37 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Primary domain name of an Azure AD tenant.
+            # Primary domain name of a Microsoft Entra tenant.
             @default_domain_name
             ## 
-            # Display name of an Azure AD tenant.
+            # Display name of a Microsoft Entra tenant.
             @display_name
             ## 
-            # Name shown to users that sign in to an Azure AD tenant.
+            # Name shown to users that sign in to a Microsoft Entra tenant.
             @federation_brand_name
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Unique identifier of an Azure AD tenant.
+            # Unique identifier of a Microsoft Entra tenant.
             @tenant_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new tenantInformation and sets the default values.
+            ## Instantiates a new TenantInformation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,14 +56,14 @@ module MicrosoftGraph
                 return TenantInformation.new
             end
             ## 
-            ## Gets the defaultDomainName property value. Primary domain name of an Azure AD tenant.
+            ## Gets the defaultDomainName property value. Primary domain name of a Microsoft Entra tenant.
             ## @return a string
             ## 
             def default_domain_name
                 return @default_domain_name
             end
             ## 
-            ## Sets the defaultDomainName property value. Primary domain name of an Azure AD tenant.
+            ## Sets the defaultDomainName property value. Primary domain name of a Microsoft Entra tenant.
             ## @param value Value to set for the defaultDomainName property.
             ## @return a void
             ## 
@@ -71,14 +71,14 @@ module MicrosoftGraph
                 @default_domain_name = value
             end
             ## 
-            ## Gets the displayName property value. Display name of an Azure AD tenant.
+            ## Gets the displayName property value. Display name of a Microsoft Entra tenant.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Display name of an Azure AD tenant.
+            ## Sets the displayName property value. Display name of a Microsoft Entra tenant.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -86,14 +86,14 @@ module MicrosoftGraph
                 @display_name = value
             end
             ## 
-            ## Gets the federationBrandName property value. Name shown to users that sign in to an Azure AD tenant.
+            ## Gets the federationBrandName property value. Name shown to users that sign in to a Microsoft Entra tenant.
             ## @return a string
             ## 
             def federation_brand_name
                 return @federation_brand_name
             end
             ## 
-            ## Sets the federationBrandName property value. Name shown to users that sign in to an Azure AD tenant.
+            ## Sets the federationBrandName property value. Name shown to users that sign in to a Microsoft Entra tenant.
             ## @param value Value to set for the federationBrandName property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the tenantId property value. Unique identifier of an Azure AD tenant.
+            ## Gets the tenantId property value. Unique identifier of a Microsoft Entra tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. Unique identifier of an Azure AD tenant.
+            ## Sets the tenantId property value. Unique identifier of a Microsoft Entra tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

@@ -9,6 +9,9 @@ module MicrosoftGraph
         class Win32LobAppAssignmentSettings < MicrosoftGraph::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The auto-update settings to apply for this app assignment.
+            @auto_update_settings
+            ## 
             # Contains value for delivery optimization priority.
             @delivery_optimization_priority
             ## 
@@ -21,7 +24,22 @@ module MicrosoftGraph
             # The reboot settings to apply for this app assignment.
             @restart_settings
             ## 
-            ## Instantiates a new win32LobAppAssignmentSettings and sets the default values.
+            ## Gets the autoUpdateSettings property value. The auto-update settings to apply for this app assignment.
+            ## @return a win32_lob_app_auto_update_settings
+            ## 
+            def auto_update_settings
+                return @auto_update_settings
+            end
+            ## 
+            ## Sets the autoUpdateSettings property value. The auto-update settings to apply for this app assignment.
+            ## @param value Value to set for the autoUpdateSettings property.
+            ## @return a void
+            ## 
+            def auto_update_settings=(value)
+                @auto_update_settings = value
+            end
+            ## 
+            ## Instantiates a new Win32LobAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -58,6 +76,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "autoUpdateSettings" => lambda {|n| @auto_update_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Win32LobAppAutoUpdateSettings.create_from_discriminator_value(pn) }) },
                     "deliveryOptimizationPriority" => lambda {|n| @delivery_optimization_priority = n.get_enum_value(MicrosoftGraph::Models::Win32LobAppDeliveryOptimizationPriority) },
                     "installTimeSettings" => lambda {|n| @install_time_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::MobileAppInstallTimeSettings.create_from_discriminator_value(pn) }) },
                     "notifications" => lambda {|n| @notifications = n.get_enum_value(MicrosoftGraph::Models::Win32LobAppNotification) },
@@ -117,6 +136,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("autoUpdateSettings", @auto_update_settings)
                 writer.write_enum_value("deliveryOptimizationPriority", @delivery_optimization_priority)
                 writer.write_object_value("installTimeSettings", @install_time_settings)
                 writer.write_enum_value("notifications", @notifications)
