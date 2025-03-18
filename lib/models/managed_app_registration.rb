@@ -100,7 +100,7 @@ module MicrosoftGraph
                 @applied_policies = value
             end
             ## 
-            ## Instantiates a new managedAppRegistration and sets the default values.
+            ## Instantiates a new ManagedAppRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()

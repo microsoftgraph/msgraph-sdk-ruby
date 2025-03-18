@@ -10,10 +10,10 @@ module MicrosoftGraph
             # Represents the formatting of chart gridlines. Read-only.
             @format
             ## 
-            # Boolean value representing if the axis gridlines are visible or not.
+            # Indicates whether the axis gridlines are visible.
             @visible
             ## 
-            ## Instantiates a new workbookChartGridlines and sets the default values.
+            ## Instantiates a new WorkbookChartGridlines and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -65,14 +65,14 @@ module MicrosoftGraph
                 writer.write_boolean_value("visible", @visible)
             end
             ## 
-            ## Gets the visible property value. Boolean value representing if the axis gridlines are visible or not.
+            ## Gets the visible property value. Indicates whether the axis gridlines are visible.
             ## @return a boolean
             ## 
             def visible
                 return @visible
             end
             ## 
-            ## Sets the visible property value. Boolean value representing if the axis gridlines are visible or not.
+            ## Sets the visible property value. Indicates whether the axis gridlines are visible.
             ## @param value Value to set for the visible property.
             ## @return a void
             ## 

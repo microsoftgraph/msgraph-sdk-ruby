@@ -1,1 +1,0 @@
-require_relative 'supported_time_zones_with_time_zone_standard_response'

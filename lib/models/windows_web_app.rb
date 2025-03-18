@@ -27,7 +27,7 @@ module MicrosoftGraph
                 @app_url = value
             end
             ## 
-            ## Instantiates a new windowsWebApp and sets the default values.
+            ## Instantiates a new WindowsWebApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

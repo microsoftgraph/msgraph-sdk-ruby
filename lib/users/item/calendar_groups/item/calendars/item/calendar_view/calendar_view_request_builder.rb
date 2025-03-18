@@ -53,10 +53,10 @@ module MicrosoftGraph
                                     ## @return a void
                                     ## 
                                     def initialize(path_parameters, request_adapter)
-                                        super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
+                                        super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}")
                                     end
                                     ## 
-                                    ## Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user's default calendar (../me/calendarView) or some other calendar of the user's.
+                                    ## The calendar view for the calendar. Navigation property. Read-only.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of event_collection_response
                                     ## 
@@ -65,36 +65,50 @@ module MicrosoftGraph
                                             request_configuration
                                         )
                                         error_mapping = Hash.new
-                                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                        error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EventCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user's default calendar (../me/calendarView) or some other calendar of the user's.
+                                    ## The calendar view for the calendar. Navigation property. Read-only.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
                                     def to_get_request_information(request_configuration=nil)
                                         request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                        request_info.url_template = @url_template
-                                        request_info.path_parameters = @path_parameters
-                                        request_info.http_method = :GET
-                                        request_info.headers.add('Accept', 'application/json')
                                         unless request_configuration.nil?
                                             request_info.add_headers_from_raw_object(request_configuration.headers)
                                             request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                             request_info.add_request_options(request_configuration.options)
                                         end
+                                        request_info.url_template = @url_template
+                                        request_info.path_parameters = @path_parameters
+                                        request_info.http_method = :GET
+                                        request_info.headers.try_add('Accept', 'application/json')
                                         return request_info
+                                    end
+                                    ## 
+                                    ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                    ## @param raw_url The raw URL to use for the request builder.
+                                    ## @return a calendar_view_request_builder
+                                    ## 
+                                    def with_url(raw_url)
+                                        raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                        return CalendarViewRequestBuilder.new(raw_url, @request_adapter)
                                     end
 
                                     ## 
-                                    # Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user's default calendar (../me/calendarView) or some other calendar of the user's.
+                                    # The calendar view for the calendar. Navigation property. Read-only.
                                     class CalendarViewRequestBuilderGetQueryParameters
                                         
                                         ## 
                                         # Include count of items
                                         attr_accessor :count
+                                        ## 
+                                        # The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
+                                        attr_accessor :end_date_time
+                                        ## 
+                                        # Expand related entities
+                                        attr_accessor :expand
                                         ## 
                                         # Filter items by property values
                                         attr_accessor :filter
@@ -102,11 +116,17 @@ module MicrosoftGraph
                                         # Order items by property values
                                         attr_accessor :orderby
                                         ## 
+                                        # Search items by search phrases
+                                        attr_accessor :search
+                                        ## 
                                         # Select properties to be returned
                                         attr_accessor :select
                                         ## 
                                         # Skip the first n items
                                         attr_accessor :skip
+                                        ## 
+                                        # The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
+                                        attr_accessor :start_date_time
                                         ## 
                                         # Show only the first n items
                                         attr_accessor :top
@@ -120,14 +140,22 @@ module MicrosoftGraph
                                             case original_name
                                                 when "count"
                                                     return "%24count"
+                                                when "end_date_time"
+                                                    return "endDateTime"
+                                                when "expand"
+                                                    return "%24expand"
                                                 when "filter"
                                                     return "%24filter"
                                                 when "orderby"
                                                     return "%24orderby"
+                                                when "search"
+                                                    return "%24search"
                                                 when "select"
                                                     return "%24select"
                                                 when "skip"
                                                     return "%24skip"
+                                                when "start_date_time"
+                                                    return "startDateTime"
                                                 when "top"
                                                     return "%24top"
                                                 else
