@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @alternate_notification_emails = value
             end
             ## 
-            ## Instantiates a new groupLifecyclePolicy and sets the default values.
+            ## Instantiates a new GroupLifecyclePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

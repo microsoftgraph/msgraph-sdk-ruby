@@ -7,13 +7,13 @@ module MicrosoftGraph
         class WorkbookPivotTable < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Name of the PivotTable.
+            # The name of the pivot table.
             @name
             ## 
-            # The worksheet containing the current PivotTable. Read-only.
+            # The worksheet that contains the current pivot table. Read-only.
             @worksheet
             ## 
-            ## Instantiates a new workbookPivotTable and sets the default values.
+            ## Instantiates a new WorkbookPivotTable and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -39,14 +39,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the name property value. Name of the PivotTable.
+            ## Gets the name property value. The name of the pivot table.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. Name of the PivotTable.
+            ## Sets the name property value. The name of the pivot table.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 
@@ -65,14 +65,14 @@ module MicrosoftGraph
                 writer.write_object_value("worksheet", @worksheet)
             end
             ## 
-            ## Gets the worksheet property value. The worksheet containing the current PivotTable. Read-only.
+            ## Gets the worksheet property value. The worksheet that contains the current pivot table. Read-only.
             ## @return a workbook_worksheet
             ## 
             def worksheet
                 return @worksheet
             end
             ## 
-            ## Sets the worksheet property value. The worksheet containing the current PivotTable. Read-only.
+            ## Sets the worksheet property value. The worksheet that contains the current pivot table. Read-only.
             ## @param value Value to set for the worksheet property.
             ## @return a void
             ## 

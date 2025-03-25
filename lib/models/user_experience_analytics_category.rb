@@ -15,7 +15,7 @@ module MicrosoftGraph
             # The metric values for the user experience analytics category. Read-only.
             @metric_values
             ## 
-            ## Instantiates a new userExperienceAnalyticsCategory and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

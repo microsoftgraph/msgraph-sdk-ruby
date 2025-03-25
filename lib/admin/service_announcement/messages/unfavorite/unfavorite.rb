@@ -1,2 +1,2 @@
 require_relative 'unfavorite_post_request_body'
-require_relative 'unfavorite_response'
+require_relative 'unfavorite_post_response'

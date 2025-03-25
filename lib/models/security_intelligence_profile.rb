@@ -53,7 +53,7 @@ module MicrosoftGraph
                 @aliases = value
             end
             ## 
-            ## Instantiates a new securityIntelligenceProfile and sets the default values.
+            ## Instantiates a new SecurityIntelligenceProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()
