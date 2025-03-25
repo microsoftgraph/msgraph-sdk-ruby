@@ -1,6 +1,7 @@
 module MicrosoftGraph
     module Models
         ExternalConnectorsRuleOperation = {
+            Null: :Null,
             Equals: :Equals,
             NotEquals: :NotEquals,
             Contains: :Contains,

@@ -1,1 +1,1 @@
-require_relative 'functions_response'
+require_relative 'functionsget_response'

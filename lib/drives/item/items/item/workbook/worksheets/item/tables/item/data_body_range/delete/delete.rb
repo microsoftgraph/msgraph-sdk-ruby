@@ -1,0 +1,1 @@
+require_relative 'delete_post_request_body'

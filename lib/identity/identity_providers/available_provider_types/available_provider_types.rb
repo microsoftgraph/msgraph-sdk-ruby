@@ -1,1 +1,1 @@
-require_relative 'available_provider_types_response'
+require_relative 'available_provider_typesget_response'

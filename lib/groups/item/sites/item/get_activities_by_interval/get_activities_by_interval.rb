@@ -1,1 +1,1 @@
-require_relative 'get_activities_by_interval_response'
+require_relative 'get_activities_by_intervalget_response'

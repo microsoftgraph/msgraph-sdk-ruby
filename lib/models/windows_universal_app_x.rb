@@ -5,14 +5,14 @@ require_relative './models'
 module MicrosoftGraph
     module Models
         ## 
-        # Contains properties and inherited properties for Windows Universal AppX Line Of Business apps.
+        # Contains properties and inherited properties for Windows Universal AppX Line Of Business apps. Inherits from `mobileLobApp`.
         class WindowsUniversalAppX < MicrosoftGraph::Models::MobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Contains properties for Windows architecture.
             @applicable_architectures
             ## 
-            # Contains properties for Windows device type.
+            # Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
             @applicable_device_types
             ## 
             # The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
@@ -51,14 +51,14 @@ module MicrosoftGraph
                 @applicable_architectures = value
             end
             ## 
-            ## Gets the applicableDeviceTypes property value. Contains properties for Windows device type.
+            ## Gets the applicableDeviceTypes property value. Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
             ## @return a windows_device_type
             ## 
             def applicable_device_types
                 return @applicable_device_types
             end
             ## 
-            ## Sets the applicableDeviceTypes property value. Contains properties for Windows device type.
+            ## Sets the applicableDeviceTypes property value. Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.
             ## @param value Value to set for the applicableDeviceTypes property.
             ## @return a void
             ## 
@@ -81,7 +81,7 @@ module MicrosoftGraph
                 @committed_contained_apps = value
             end
             ## 
-            ## Instantiates a new windowsUniversalAppX and sets the default values.
+            ## Instantiates a new WindowsUniversalAppX and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -103,8 +103,8 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_value(MicrosoftGraph::Models::WindowsArchitecture) },
-                    "applicableDeviceTypes" => lambda {|n| @applicable_device_types = n.get_enum_value(MicrosoftGraph::Models::WindowsDeviceType) },
+                    "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_values(MicrosoftGraph::Models::WindowsArchitecture) },
+                    "applicableDeviceTypes" => lambda {|n| @applicable_device_types = n.get_enum_values(MicrosoftGraph::Models::WindowsDeviceType) },
                     "committedContainedApps" => lambda {|n| @committed_contained_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MobileContainedApp.create_from_discriminator_value(pn) }) },
                     "identityName" => lambda {|n| @identity_name = n.get_string_value() },
                     "identityPublisherHash" => lambda {|n| @identity_publisher_hash = n.get_string_value() },

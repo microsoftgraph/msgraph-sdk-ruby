@@ -1,0 +1,1 @@
+require_relative 'get_audit_activity_typesget_response'
