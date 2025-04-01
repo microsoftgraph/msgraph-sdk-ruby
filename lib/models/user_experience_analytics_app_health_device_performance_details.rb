@@ -76,7 +76,7 @@ module MicrosoftGraph
                 @app_version = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsAppHealthDevicePerformanceDetails and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsAppHealthDevicePerformanceDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()

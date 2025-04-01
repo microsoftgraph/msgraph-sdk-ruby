@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Represents details about the chat message that is pinned.
             @message
             ## 
-            ## Instantiates a new pinnedChatMessageInfo and sets the default values.
+            ## Instantiates a new PinnedChatMessageInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
