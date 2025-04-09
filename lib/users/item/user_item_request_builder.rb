@@ -16,6 +16,7 @@ require_relative './change_password/change_password_request_builder'
 require_relative './chats/chats_request_builder'
 require_relative './check_member_groups/check_member_groups_request_builder'
 require_relative './check_member_objects/check_member_objects_request_builder'
+require_relative './cloud_clipboard/cloud_clipboard_request_builder'
 require_relative './contact_folders/contact_folders_request_builder'
 require_relative './contacts/contacts_request_builder'
 require_relative './created_objects/created_objects_request_builder'
@@ -56,6 +57,7 @@ require_relative './outlook/outlook_request_builder'
 require_relative './owned_devices/owned_devices_request_builder'
 require_relative './owned_objects/owned_objects_request_builder'
 require_relative './people/people_request_builder'
+require_relative './permission_grants/permission_grants_request_builder'
 require_relative './photo/photo_request_builder'
 require_relative './photos/photos_request_builder'
 require_relative './planner/planner_request_builder'
@@ -65,10 +67,14 @@ require_relative './reminder_view_with_start_date_time_with_end_date_time/remind
 require_relative './remove_all_devices_from_management/remove_all_devices_from_management_request_builder'
 require_relative './reprocess_license_assignment/reprocess_license_assignment_request_builder'
 require_relative './restore/restore_request_builder'
+require_relative './retry_service_provisioning/retry_service_provisioning_request_builder'
 require_relative './revoke_sign_in_sessions/revoke_sign_in_sessions_request_builder'
 require_relative './scoped_role_member_of/scoped_role_member_of_request_builder'
 require_relative './send_mail/send_mail_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 require_relative './settings/settings_request_builder'
+require_relative './solutions/solutions_request_builder'
+require_relative './sponsors/sponsors_request_builder'
 require_relative './teamwork/teamwork_request_builder'
 require_relative './todo/todo_request_builder'
 require_relative './transitive_member_of/transitive_member_of_request_builder'
@@ -146,6 +152,11 @@ module MicrosoftGraph
                 # Provides operations to call the checkMemberObjects method.
                 def check_member_objects()
                     return MicrosoftGraph::Users::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the cloudClipboard property of the microsoft.graph.user entity.
+                def cloud_clipboard()
+                    return MicrosoftGraph::Users::Item::CloudClipboard::CloudClipboardRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the contactFolders property of the microsoft.graph.user entity.
@@ -338,6 +349,11 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::People::PeopleRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the permissionGrants property of the microsoft.graph.user entity.
+                def permission_grants()
+                    return MicrosoftGraph::Users::Item::PermissionGrants::PermissionGrantsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the photo property of the microsoft.graph.user entity.
                 def photo()
                     return MicrosoftGraph::Users::Item::Photo::PhotoRequestBuilder.new(@path_parameters, @request_adapter)
@@ -378,6 +394,11 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to call the retryServiceProvisioning method.
+                def retry_service_provisioning()
+                    return MicrosoftGraph::Users::Item::RetryServiceProvisioning::RetryServiceProvisioningRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to call the revokeSignInSessions method.
                 def revoke_sign_in_sessions()
                     return MicrosoftGraph::Users::Item::RevokeSignInSessions::RevokeSignInSessionsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -393,9 +414,24 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::SendMail::SendMailRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # The serviceProvisioningErrors property
+                def service_provisioning_errors()
+                    return MicrosoftGraph::Users::Item::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the settings property of the microsoft.graph.user entity.
                 def settings()
                     return MicrosoftGraph::Users::Item::Settings::SettingsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the solutions property of the microsoft.graph.user entity.
+                def solutions()
+                    return MicrosoftGraph::Users::Item::Solutions::SolutionsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the sponsors property of the microsoft.graph.user entity.
+                def sponsors()
+                    return MicrosoftGraph::Users::Item::Sponsors::SponsorsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the teamwork property of the microsoft.graph.user entity.
@@ -429,10 +465,10 @@ module MicrosoftGraph
                 ## @return a void
                 ## 
                 def initialize(path_parameters, request_adapter)
-                    super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}{?%24select,%24expand}")
+                    super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}{?%24expand,%24select}")
                 end
                 ## 
-                ## Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
+                ## Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of void
                 ## 
@@ -441,8 +477,7 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
@@ -466,12 +501,11 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::User.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
+                ## Update the properties of a user object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of user
@@ -482,8 +516,7 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::User.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -498,19 +531,19 @@ module MicrosoftGraph
                     return ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder.new(@path_parameters, @request_adapter, EndDateTime, StartDateTime)
                 end
                 ## 
-                ## Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
+                ## Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_delete_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :DELETE
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :DELETE
                     return request_info
                 end
                 ## 
@@ -520,19 +553,19 @@ module MicrosoftGraph
                 ## 
                 def to_get_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :GET
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :GET
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
-                ## Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
+                ## Update the properties of a user object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -540,16 +573,25 @@ module MicrosoftGraph
                 def to_patch_request_information(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :PATCH
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
-                    request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                    request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :PATCH
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a user_item_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return UserItemRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

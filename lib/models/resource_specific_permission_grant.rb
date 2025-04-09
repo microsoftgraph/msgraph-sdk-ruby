@@ -7,10 +7,10 @@ module MicrosoftGraph
         class ResourceSpecificPermissionGrant < MicrosoftGraph::Models::DirectoryObject
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # ID of the service principal of the Azure AD app that has been granted access. Read-only.
+            # ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
             @client_app_id
             ## 
-            # ID of the Azure AD app that has been granted access. Read-only.
+            # ID of the Microsoft Entra app that has been granted access. Read-only.
             @client_id
             ## 
             # The name of the resource-specific permission. Read-only.
@@ -19,17 +19,17 @@ module MicrosoftGraph
             # The type of permission. Possible values are: Application, Delegated. Read-only.
             @permission_type
             ## 
-            # ID of the Azure AD app that is hosting the resource. Read-only.
+            # ID of the Microsoft Entra app that is hosting the resource. Read-only.
             @resource_app_id
             ## 
-            ## Gets the clientAppId property value. ID of the service principal of the Azure AD app that has been granted access. Read-only.
+            ## Gets the clientAppId property value. ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
             ## @return a string
             ## 
             def client_app_id
                 return @client_app_id
             end
             ## 
-            ## Sets the clientAppId property value. ID of the service principal of the Azure AD app that has been granted access. Read-only.
+            ## Sets the clientAppId property value. ID of the service principal of the Microsoft Entra app that has been granted access. Read-only.
             ## @param value Value to set for the clientAppId property.
             ## @return a void
             ## 
@@ -37,14 +37,14 @@ module MicrosoftGraph
                 @client_app_id = value
             end
             ## 
-            ## Gets the clientId property value. ID of the Azure AD app that has been granted access. Read-only.
+            ## Gets the clientId property value. ID of the Microsoft Entra app that has been granted access. Read-only.
             ## @return a string
             ## 
             def client_id
                 return @client_id
             end
             ## 
-            ## Sets the clientId property value. ID of the Azure AD app that has been granted access. Read-only.
+            ## Sets the clientId property value. ID of the Microsoft Entra app that has been granted access. Read-only.
             ## @param value Value to set for the clientId property.
             ## @return a void
             ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @client_id = value
             end
             ## 
-            ## Instantiates a new resourceSpecificPermissionGrant and sets the default values.
+            ## Instantiates a new ResourceSpecificPermissionGrant and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -112,14 +112,14 @@ module MicrosoftGraph
                 @permission_type = value
             end
             ## 
-            ## Gets the resourceAppId property value. ID of the Azure AD app that is hosting the resource. Read-only.
+            ## Gets the resourceAppId property value. ID of the Microsoft Entra app that is hosting the resource. Read-only.
             ## @return a string
             ## 
             def resource_app_id
                 return @resource_app_id
             end
             ## 
-            ## Sets the resourceAppId property value. ID of the Azure AD app that is hosting the resource. Read-only.
+            ## Sets the resourceAppId property value. ID of the Microsoft Entra app that is hosting the resource. Read-only.
             ## @param value Value to set for the resourceAppId property.
             ## @return a void
             ## 

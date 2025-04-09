@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Represents the font attributes such as font name, font size, color, etc. of a chart legend. Read-only.
             @font
             ## 
-            ## Instantiates a new workbookChartLegendFormat and sets the default values.
+            ## Instantiates a new WorkbookChartLegendFormat and sets the default values.
             ## @return a void
             ## 
             def initialize()
