@@ -13,7 +13,10 @@ module MicrosoftGraph
             # Applications and user actions included in and excluded from the policy. Required.
             @applications
             ## 
-            # Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+            # Authentication flows included in the policy scope.
+            @authentication_flows
+            ## 
+            # Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
             @client_app_types
             ## 
             # Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
@@ -21,6 +24,9 @@ module MicrosoftGraph
             ## 
             # Devices in the policy.
             @devices
+            ## 
+            # Insider risk levels included in the policy. The possible values are: minor, moderate, elevated, unknownFutureValue.
+            @insider_risk_levels
             ## 
             # Locations included in and excluded from the policy.
             @locations
@@ -43,15 +49,15 @@ module MicrosoftGraph
             # Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
             @users
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,14 +79,29 @@ module MicrosoftGraph
                 @applications = value
             end
             ## 
-            ## Gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+            ## Gets the authenticationFlows property value. Authentication flows included in the policy scope.
+            ## @return a conditional_access_authentication_flows
+            ## 
+            def authentication_flows
+                return @authentication_flows
+            end
+            ## 
+            ## Sets the authenticationFlows property value. Authentication flows included in the policy scope.
+            ## @param value Value to set for the authenticationFlows property.
+            ## @return a void
+            ## 
+            def authentication_flows=(value)
+                @authentication_flows = value
+            end
+            ## 
+            ## Gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
             ## @return a conditional_access_client_app
             ## 
             def client_app_types
                 return @client_app_types
             end
             ## 
-            ## Sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+            ## Sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
             ## @param value Value to set for the clientAppTypes property.
             ## @return a void
             ## 
@@ -103,7 +124,7 @@ module MicrosoftGraph
                 @client_applications = value
             end
             ## 
-            ## Instantiates a new conditionalAccessConditionSet and sets the default values.
+            ## Instantiates a new ConditionalAccessConditionSet and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -140,9 +161,11 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "applications" => lambda {|n| @applications = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessApplications.create_from_discriminator_value(pn) }) },
+                    "authenticationFlows" => lambda {|n| @authentication_flows = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessAuthenticationFlows.create_from_discriminator_value(pn) }) },
                     "clientAppTypes" => lambda {|n| @client_app_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessClientApp.create_from_discriminator_value(pn) }) },
                     "clientApplications" => lambda {|n| @client_applications = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessClientApplications.create_from_discriminator_value(pn) }) },
                     "devices" => lambda {|n| @devices = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessDevices.create_from_discriminator_value(pn) }) },
+                    "insiderRiskLevels" => lambda {|n| @insider_risk_levels = n.get_enum_values(MicrosoftGraph::Models::ConditionalAccessInsiderRiskLevels) },
                     "locations" => lambda {|n| @locations = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessLocations.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "platforms" => lambda {|n| @platforms = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessPlatforms.create_from_discriminator_value(pn) }) },
@@ -151,6 +174,21 @@ module MicrosoftGraph
                     "userRiskLevels" => lambda {|n| @user_risk_levels = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::RiskLevel.create_from_discriminator_value(pn) }) },
                     "users" => lambda {|n| @users = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessUsers.create_from_discriminator_value(pn) }) },
                 }
+            end
+            ## 
+            ## Gets the insiderRiskLevels property value. Insider risk levels included in the policy. The possible values are: minor, moderate, elevated, unknownFutureValue.
+            ## @return a conditional_access_insider_risk_levels
+            ## 
+            def insider_risk_levels
+                return @insider_risk_levels
+            end
+            ## 
+            ## Sets the insiderRiskLevels property value. Insider risk levels included in the policy. The possible values are: minor, moderate, elevated, unknownFutureValue.
+            ## @param value Value to set for the insiderRiskLevels property.
+            ## @return a void
+            ## 
+            def insider_risk_levels=(value)
+                @insider_risk_levels = value
             end
             ## 
             ## Gets the locations property value. Locations included in and excluded from the policy.
@@ -205,9 +243,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_object_value("applications", @applications)
+                writer.write_object_value("authenticationFlows", @authentication_flows)
                 writer.write_collection_of_object_values("clientAppTypes", @client_app_types)
                 writer.write_object_value("clientApplications", @client_applications)
                 writer.write_object_value("devices", @devices)
+                writer.write_enum_value("insiderRiskLevels", @insider_risk_levels)
                 writer.write_object_value("locations", @locations)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_object_value("platforms", @platforms)

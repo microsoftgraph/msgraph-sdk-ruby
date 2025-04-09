@@ -15,7 +15,7 @@ module MicrosoftGraph
             # The value of the user experience analytics metric.
             @value
             ## 
-            ## Instantiates a new userExperienceAnalyticsMetric and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsMetric and sets the default values.
             ## @return a void
             ## 
             def initialize()

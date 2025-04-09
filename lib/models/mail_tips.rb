@@ -49,15 +49,15 @@ module MicrosoftGraph
             # The number of members if the recipient is a distribution list.
             @total_member_count
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
                 @automatic_replies = value
             end
             ## 
-            ## Instantiates a new mailTips and sets the default values.
+            ## Instantiates a new MailTips and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -185,7 +185,7 @@ module MicrosoftGraph
                     "mailboxFull" => lambda {|n| @mailbox_full = n.get_boolean_value() },
                     "maxMessageSize" => lambda {|n| @max_message_size = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "recipientScope" => lambda {|n| @recipient_scope = n.get_enum_value(MicrosoftGraph::Models::RecipientScopeType) },
+                    "recipientScope" => lambda {|n| @recipient_scope = n.get_enum_values(MicrosoftGraph::Models::RecipientScopeType) },
                     "recipientSuggestions" => lambda {|n| @recipient_suggestions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Recipient.create_from_discriminator_value(pn) }) },
                     "totalMemberCount" => lambda {|n| @total_member_count = n.get_number_value() },
                 }

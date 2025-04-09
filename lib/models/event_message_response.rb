@@ -7,13 +7,13 @@ module MicrosoftGraph
         class EventMessageResponse < MicrosoftGraph::Models::EventMessage
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The proposedNewTime property
+            # An alternate date/time proposed by an invitee for a meeting request to start and end. Read-only. Not filterable.
             @proposed_new_time
             ## 
-            # The responseType property
+            # Specifies the type of response to a meeting request. Possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.
             @response_type
             ## 
-            ## Instantiates a new eventMessageResponse and sets the default values.
+            ## Instantiates a new EventMessageResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -40,14 +40,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the proposedNewTime property value. The proposedNewTime property
+            ## Gets the proposedNewTime property value. An alternate date/time proposed by an invitee for a meeting request to start and end. Read-only. Not filterable.
             ## @return a time_slot
             ## 
             def proposed_new_time
                 return @proposed_new_time
             end
             ## 
-            ## Sets the proposedNewTime property value. The proposedNewTime property
+            ## Sets the proposedNewTime property value. An alternate date/time proposed by an invitee for a meeting request to start and end. Read-only. Not filterable.
             ## @param value Value to set for the proposedNewTime property.
             ## @return a void
             ## 
@@ -55,14 +55,14 @@ module MicrosoftGraph
                 @proposed_new_time = value
             end
             ## 
-            ## Gets the responseType property value. The responseType property
+            ## Gets the responseType property value. Specifies the type of response to a meeting request. Possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.
             ## @return a response_type
             ## 
             def response_type
                 return @response_type
             end
             ## 
-            ## Sets the responseType property value. The responseType property
+            ## Sets the responseType property value. Specifies the type of response to a meeting request. Possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.
             ## @param value Value to set for the responseType property.
             ## @return a void
             ## 

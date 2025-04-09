@@ -38,6 +38,9 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @modified_date_time
             ## 
+            # The notificationSettings property
+            @notification_settings
+            ## 
             # Questions that are posed to the  requestor.
             @questions
             ## 
@@ -113,7 +116,7 @@ module MicrosoftGraph
                 @catalog = value
             end
             ## 
-            ## Instantiates a new accessPackageAssignmentPolicy and sets the default values.
+            ## Instantiates a new AccessPackageAssignmentPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -219,6 +222,7 @@ module MicrosoftGraph
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "expiration" => lambda {|n| @expiration = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ExpirationPattern.create_from_discriminator_value(pn) }) },
                     "modifiedDateTime" => lambda {|n| @modified_date_time = n.get_date_time_value() },
+                    "notificationSettings" => lambda {|n| @notification_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageNotificationSettings.create_from_discriminator_value(pn) }) },
                     "questions" => lambda {|n| @questions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageQuestion.create_from_discriminator_value(pn) }) },
                     "requestApprovalSettings" => lambda {|n| @request_approval_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignmentApprovalSettings.create_from_discriminator_value(pn) }) },
                     "requestorSettings" => lambda {|n| @requestor_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignmentRequestorSettings.create_from_discriminator_value(pn) }) },
@@ -240,6 +244,21 @@ module MicrosoftGraph
             ## 
             def modified_date_time=(value)
                 @modified_date_time = value
+            end
+            ## 
+            ## Gets the notificationSettings property value. The notificationSettings property
+            ## @return a access_package_notification_settings
+            ## 
+            def notification_settings
+                return @notification_settings
+            end
+            ## 
+            ## Sets the notificationSettings property value. The notificationSettings property
+            ## @param value Value to set for the notificationSettings property.
+            ## @return a void
+            ## 
+            def notification_settings=(value)
+                @notification_settings = value
             end
             ## 
             ## Gets the questions property value. Questions that are posed to the  requestor.
@@ -319,6 +338,7 @@ module MicrosoftGraph
                 writer.write_string_value("displayName", @display_name)
                 writer.write_object_value("expiration", @expiration)
                 writer.write_date_time_value("modifiedDateTime", @modified_date_time)
+                writer.write_object_value("notificationSettings", @notification_settings)
                 writer.write_collection_of_object_values("questions", @questions)
                 writer.write_object_value("requestApprovalSettings", @request_approval_settings)
                 writer.write_object_value("requestorSettings", @requestor_settings)
