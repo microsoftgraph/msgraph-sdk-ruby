@@ -23,7 +23,7 @@ module MicrosoftGraph
             # The status property
             @status
             ## 
-            ## Instantiates a new delegatedAdminRelationshipOperation and sets the default values.
+            ## Instantiates a new DelegatedAdminRelationshipOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

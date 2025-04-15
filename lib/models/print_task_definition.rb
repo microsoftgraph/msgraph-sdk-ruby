@@ -16,7 +16,7 @@ module MicrosoftGraph
             # A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
             @tasks
             ## 
-            ## Instantiates a new printTaskDefinition and sets the default values.
+            ## Instantiates a new PrintTaskDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

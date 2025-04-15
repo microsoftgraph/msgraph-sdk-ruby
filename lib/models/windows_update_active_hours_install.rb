@@ -44,7 +44,7 @@ module MicrosoftGraph
                 @active_hours_start = value
             end
             ## 
-            ## Instantiates a new windowsUpdateActiveHoursInstall and sets the default values.
+            ## Instantiates a new WindowsUpdateActiveHoursInstall and sets the default values.
             ## @return a void
             ## 
             def initialize()

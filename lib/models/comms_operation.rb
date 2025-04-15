@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @client_context = value
             end
             ## 
-            ## Instantiates a new commsOperation and sets the default values.
+            ## Instantiates a new CommsOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -60,6 +60,8 @@ module MicrosoftGraph
                             return PlayPromptOperation.new
                         when "#microsoft.graph.recordOperation"
                             return RecordOperation.new
+                        when "#microsoft.graph.sendDtmfTonesOperation"
+                            return SendDtmfTonesOperation.new
                         when "#microsoft.graph.startHoldMusicOperation"
                             return StartHoldMusicOperation.new
                         when "#microsoft.graph.stopHoldMusicOperation"

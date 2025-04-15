@@ -1,1 +1,1 @@
-require_relative 'verify_windows_enrollment_auto_discovery_with_domain_name_response'
+require_relative 'verify_windows_enrollment_auto_discovery_with_domain_name_get_response'

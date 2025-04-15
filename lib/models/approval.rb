@@ -10,7 +10,7 @@ module MicrosoftGraph
             # A collection of stages in the approval decision.
             @stages
             ## 
-            ## Instantiates a new approval and sets the default values.
+            ## Instantiates a new Approval and sets the default values.
             ## @return a void
             ## 
             def initialize()
