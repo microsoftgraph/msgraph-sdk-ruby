@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @applies_to = value
             end
             ## 
-            ## Instantiates a new appManagementPolicy and sets the default values.
+            ## Instantiates a new AppManagementPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -55,7 +55,7 @@ module MicrosoftGraph
                 return super.merge({
                     "appliesTo" => lambda {|n| @applies_to = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
                     "isEnabled" => lambda {|n| @is_enabled = n.get_boolean_value() },
-                    "restrictions" => lambda {|n| @restrictions = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AppManagementConfiguration.create_from_discriminator_value(pn) }) },
+                    "restrictions" => lambda {|n| @restrictions = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CustomAppManagementConfiguration.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the restrictions property value. Restrictions that apply to an application or service principal object.
-            ## @return a app_management_configuration
+            ## @return a custom_app_management_configuration
             ## 
             def restrictions
                 return @restrictions

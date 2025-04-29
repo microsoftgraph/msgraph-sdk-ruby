@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
             @bandwidth_low_event_ratio
             ## 
-            # The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
+            # The wireless LAN basic service set identifier of the media endpoint used to connect to the network. This property isn't available if the user disables precise location sharing in their operating system or Microsoft Teams app settings.
             @basic_service_set_identifier
             ## 
             # The connectionType property
@@ -31,7 +31,7 @@ module MicrosoftGraph
             # Link speed in bits per second reported by the network adapter used by the media endpoint.
             @link_speed
             ## 
-            # The media access control (MAC) address of the media endpoint's network device.
+            # The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
             @mac_address
             ## 
             # The networkTransportProtocol property
@@ -91,15 +91,15 @@ module MicrosoftGraph
             # Version of the WiFi driver used by the media endpoint.
             @wifi_vendor_driver_version
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -121,14 +121,14 @@ module MicrosoftGraph
                 @bandwidth_low_event_ratio = value
             end
             ## 
-            ## Gets the basicServiceSetIdentifier property value. The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
+            ## Gets the basicServiceSetIdentifier property value. The wireless LAN basic service set identifier of the media endpoint used to connect to the network. This property isn't available if the user disables precise location sharing in their operating system or Microsoft Teams app settings.
             ## @return a string
             ## 
             def basic_service_set_identifier
                 return @basic_service_set_identifier
             end
             ## 
-            ## Sets the basicServiceSetIdentifier property value. The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
+            ## Sets the basicServiceSetIdentifier property value. The wireless LAN basic service set identifier of the media endpoint used to connect to the network. This property isn't available if the user disables precise location sharing in their operating system or Microsoft Teams app settings.
             ## @param value Value to set for the basicServiceSetIdentifier property.
             ## @return a void
             ## 
@@ -151,7 +151,7 @@ module MicrosoftGraph
                 @connection_type = value
             end
             ## 
-            ## Instantiates a new callRecordsNetworkInfo and sets the default values.
+            ## Instantiates a new CallRecordsNetworkInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -262,14 +262,14 @@ module MicrosoftGraph
                 @link_speed = value
             end
             ## 
-            ## Gets the macAddress property value. The media access control (MAC) address of the media endpoint's network device.
+            ## Gets the macAddress property value. The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
             ## @return a string
             ## 
             def mac_address
                 return @mac_address
             end
             ## 
-            ## Sets the macAddress property value. The media access control (MAC) address of the media endpoint's network device.
+            ## Sets the macAddress property value. The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
             ## @param value Value to set for the macAddress property.
             ## @return a void
             ## 

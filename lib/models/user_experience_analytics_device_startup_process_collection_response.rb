@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new userExperienceAnalyticsDeviceStartupProcessCollectionResponse and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsDeviceStartupProcessCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

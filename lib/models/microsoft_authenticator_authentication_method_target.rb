@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @authentication_mode = value
             end
             ## 
-            ## Instantiates a new microsoftAuthenticatorAuthenticationMethodTarget and sets the default values.
+            ## Instantiates a new MicrosoftAuthenticatorAuthenticationMethodTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,1 +1,1 @@
-require_relative 'get_all_messages_response'
+require_relative 'get_all_messages_get_response'

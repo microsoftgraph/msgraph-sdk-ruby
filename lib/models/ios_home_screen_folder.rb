@@ -12,7 +12,7 @@ module MicrosoftGraph
             # Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.
             @pages
             ## 
-            ## Instantiates a new iosHomeScreenFolder and sets the default values.
+            ## Instantiates a new IosHomeScreenFolder and sets the default values.
             ## @return a void
             ## 
             def initialize()
