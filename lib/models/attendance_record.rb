@@ -13,8 +13,14 @@ module MicrosoftGraph
             # Email address of the user associated with this attendance record.
             @email_address
             ## 
+            # The externalRegistrationInformation property
+            @external_registration_information
+            ## 
             # Identity of the user associated with this attendance record.
             @identity
+            ## 
+            # The registrationId property
+            @registration_id
             ## 
             # Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
             @role
@@ -37,7 +43,7 @@ module MicrosoftGraph
                 @attendance_intervals = value
             end
             ## 
-            ## Instantiates a new attendanceRecord and sets the default values.
+            ## Instantiates a new AttendanceRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -68,6 +74,21 @@ module MicrosoftGraph
                 @email_address = value
             end
             ## 
+            ## Gets the externalRegistrationInformation property value. The externalRegistrationInformation property
+            ## @return a virtual_event_external_registration_information
+            ## 
+            def external_registration_information
+                return @external_registration_information
+            end
+            ## 
+            ## Sets the externalRegistrationInformation property value. The externalRegistrationInformation property
+            ## @param value Value to set for the externalRegistrationInformation property.
+            ## @return a void
+            ## 
+            def external_registration_information=(value)
+                @external_registration_information = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -75,7 +96,9 @@ module MicrosoftGraph
                 return super.merge({
                     "attendanceIntervals" => lambda {|n| @attendance_intervals = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AttendanceInterval.create_from_discriminator_value(pn) }) },
                     "emailAddress" => lambda {|n| @email_address = n.get_string_value() },
+                    "externalRegistrationInformation" => lambda {|n| @external_registration_information = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::VirtualEventExternalRegistrationInformation.create_from_discriminator_value(pn) }) },
                     "identity" => lambda {|n| @identity = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Identity.create_from_discriminator_value(pn) }) },
+                    "registrationId" => lambda {|n| @registration_id = n.get_string_value() },
                     "role" => lambda {|n| @role = n.get_string_value() },
                     "totalAttendanceInSeconds" => lambda {|n| @total_attendance_in_seconds = n.get_number_value() },
                 })
@@ -94,6 +117,21 @@ module MicrosoftGraph
             ## 
             def identity=(value)
                 @identity = value
+            end
+            ## 
+            ## Gets the registrationId property value. The registrationId property
+            ## @return a string
+            ## 
+            def registration_id
+                return @registration_id
+            end
+            ## 
+            ## Sets the registrationId property value. The registrationId property
+            ## @param value Value to set for the registrationId property.
+            ## @return a void
+            ## 
+            def registration_id=(value)
+                @registration_id = value
             end
             ## 
             ## Gets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
@@ -120,7 +158,9 @@ module MicrosoftGraph
                 super
                 writer.write_collection_of_object_values("attendanceIntervals", @attendance_intervals)
                 writer.write_string_value("emailAddress", @email_address)
+                writer.write_object_value("externalRegistrationInformation", @external_registration_information)
                 writer.write_object_value("identity", @identity)
+                writer.write_string_value("registrationId", @registration_id)
                 writer.write_string_value("role", @role)
                 writer.write_number_value("totalAttendanceInSeconds", @total_attendance_in_seconds)
             end
