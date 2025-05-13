@@ -13,10 +13,13 @@ module MicrosoftGraph
             # The primary email address of the mailbox.
             @primary_address
             ## 
+            # The user principal name of the mailbox.
+            @upn
+            ## 
             # The user account of the mailbox.
             @user_account
             ## 
-            ## Instantiates a new securityMailboxEvidence and sets the default values.
+            ## Instantiates a new SecurityMailboxEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -55,6 +58,7 @@ module MicrosoftGraph
                 return super.merge({
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "primaryAddress" => lambda {|n| @primary_address = n.get_string_value() },
+                    "upn" => lambda {|n| @upn = n.get_string_value() },
                     "userAccount" => lambda {|n| @user_account = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityUserAccount.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -83,7 +87,23 @@ module MicrosoftGraph
                 super
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("primaryAddress", @primary_address)
+                writer.write_string_value("upn", @upn)
                 writer.write_object_value("userAccount", @user_account)
+            end
+            ## 
+            ## Gets the upn property value. The user principal name of the mailbox.
+            ## @return a string
+            ## 
+            def upn
+                return @upn
+            end
+            ## 
+            ## Sets the upn property value. The user principal name of the mailbox.
+            ## @param value Value to set for the upn property.
+            ## @return a void
+            ## 
+            def upn=(value)
+                @upn = value
             end
             ## 
             ## Gets the userAccount property value. The user account of the mailbox.

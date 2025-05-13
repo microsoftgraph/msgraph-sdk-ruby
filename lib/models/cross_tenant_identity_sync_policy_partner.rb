@@ -10,34 +10,34 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD (Azure Active Directory) tenant to easily identify the policy. Optional.
+            # Display name for the cross-tenant user synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
             @display_name
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Tenant identifier for the partner Azure AD organization. Read-only.
+            # Tenant identifier for the partner Microsoft Entra organization. Read-only.
             @tenant_id
             ## 
             # Defines whether users can be synchronized from the partner tenant. Key.
             @user_sync_inbound
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new crossTenantIdentitySyncPolicyPartner and sets the default values.
+            ## Instantiates a new CrossTenantIdentitySyncPolicyPartner and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,14 +53,14 @@ module MicrosoftGraph
                 return CrossTenantIdentitySyncPolicyPartner.new
             end
             ## 
-            ## Gets the displayName property value. Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD (Azure Active Directory) tenant to easily identify the policy. Optional.
+            ## Gets the displayName property value. Display name for the cross-tenant user synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD (Azure Active Directory) tenant to easily identify the policy. Optional.
+            ## Sets the displayName property value. Display name for the cross-tenant user synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -108,14 +108,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the tenantId property value. Tenant identifier for the partner Azure AD organization. Read-only.
+            ## Gets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Read-only.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. Tenant identifier for the partner Azure AD organization. Read-only.
+            ## Sets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Read-only.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

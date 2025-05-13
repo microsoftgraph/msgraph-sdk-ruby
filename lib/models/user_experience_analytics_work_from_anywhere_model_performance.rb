@@ -81,7 +81,7 @@ module MicrosoftGraph
                 @cloud_provisioning_score = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsWorkFromAnywhereModelPerformance and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsWorkFromAnywhereModelPerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()

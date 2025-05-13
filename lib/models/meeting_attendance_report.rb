@@ -11,6 +11,9 @@ module MicrosoftGraph
             # List of attendance records of an attendance report. Read-only.
             @attendance_records
             ## 
+            # The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
+            @external_event_information
+            ## 
             # UTC time when the meeting ended. Read-only.
             @meeting_end_date_time
             ## 
@@ -35,7 +38,7 @@ module MicrosoftGraph
                 @attendance_records = value
             end
             ## 
-            ## Instantiates a new meetingAttendanceReport and sets the default values.
+            ## Instantiates a new MeetingAttendanceReport and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -51,12 +54,28 @@ module MicrosoftGraph
                 return MeetingAttendanceReport.new
             end
             ## 
+            ## Gets the externalEventInformation property value. The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
+            ## @return a virtual_event_external_information
+            ## 
+            def external_event_information
+                return @external_event_information
+            end
+            ## 
+            ## Sets the externalEventInformation property value. The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.
+            ## @param value Value to set for the externalEventInformation property.
+            ## @return a void
+            ## 
+            def external_event_information=(value)
+                @external_event_information = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
                     "attendanceRecords" => lambda {|n| @attendance_records = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AttendanceRecord.create_from_discriminator_value(pn) }) },
+                    "externalEventInformation" => lambda {|n| @external_event_information = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::VirtualEventExternalInformation.create_from_discriminator_value(pn) }) },
                     "meetingEndDateTime" => lambda {|n| @meeting_end_date_time = n.get_date_time_value() },
                     "meetingStartDateTime" => lambda {|n| @meeting_start_date_time = n.get_date_time_value() },
                     "totalParticipantCount" => lambda {|n| @total_participant_count = n.get_number_value() },
@@ -101,6 +120,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_collection_of_object_values("attendanceRecords", @attendance_records)
+                writer.write_collection_of_object_values("externalEventInformation", @external_event_information)
                 writer.write_date_time_value("meetingEndDateTime", @meeting_end_date_time)
                 writer.write_date_time_value("meetingStartDateTime", @meeting_start_date_time)
                 writer.write_number_value("totalParticipantCount", @total_participant_count)

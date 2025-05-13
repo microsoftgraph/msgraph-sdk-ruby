@@ -13,16 +13,16 @@ module MicrosoftGraph
             # The display name of the resource role such as the role defined by the application.
             @display_name
             ## 
-            # The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
+            # The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId is the sequence number of the role in the site.
             @origin_id
             ## 
-            # The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+            # The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
             @origin_system
             ## 
             # The resource property
             @resource
             ## 
-            ## Instantiates a new accessPackageResourceRole and sets the default values.
+            ## Instantiates a new AccessPackageResourceRole and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -81,14 +81,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
+            ## Gets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId is the sequence number of the role in the site.
             ## @return a string
             ## 
             def origin_id
                 return @origin_id
             end
             ## 
-            ## Sets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
+            ## Sets the originId property value. The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId is the sequence number of the role in the site.
             ## @param value Value to set for the originId property.
             ## @return a void
             ## 
@@ -96,14 +96,14 @@ module MicrosoftGraph
                 @origin_id = value
             end
             ## 
-            ## Gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+            ## Gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
             ## @return a string
             ## 
             def origin_system
                 return @origin_system
             end
             ## 
-            ## Sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+            ## Sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
             ## @param value Value to set for the originSystem property.
             ## @return a void
             ## 

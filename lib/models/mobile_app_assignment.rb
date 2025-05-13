@@ -18,7 +18,7 @@ module MicrosoftGraph
             # The target group assignment defined by the admin.
             @target
             ## 
-            ## Instantiates a new mobileAppAssignment and sets the default values.
+            ## Instantiates a new MobileAppAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,35 +7,38 @@ module MicrosoftGraph
         class InternalDomainFederation < MicrosoftGraph::Models::SamlOrWsFedProvider
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Azure Active Directory (Azure AD). Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+            # URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
             @active_sign_in_uri
             ## 
-            # Determines whether Azure AD accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: acceptIfMfaDoneByFederatedIdp, enforceMfaByFederatedIdp, rejectMfaByFederatedIdp, unknownFutureValue. For more information, see federatedIdpMfaBehavior values.
+            # Determines whether Microsoft Entra ID accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: acceptIfMfaDoneByFederatedIdp, enforceMfaByFederatedIdp, rejectMfaByFederatedIdp, unknownFutureValue. For more information, see federatedIdpMfaBehavior values.
             @federated_idp_mfa_behavior
             ## 
-            # If true, when SAML authentication requests are sent to the federated SAML IdP, Azure AD will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP are not signed.
+            # If true, when SAML authentication requests are sent to the federated SAML IdP, Microsoft Entra ID will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP aren't signed.
             @is_signed_authentication_request_required
             ## 
-            # Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate is not present in the federation properties after the federation service certificate has been updated.
+            # Fallback token signing certificate that can also be used to sign tokens, for example when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.
             @next_signing_certificate
+            ## 
+            # The passwordResetUri property
+            @password_reset_uri
             ## 
             # Sets the preferred behavior for the sign-in prompt. The possible values are: translateToFreshPasswordAuthentication, nativeSupport, disabled, unknownFutureValue.
             @prompt_login_behavior
             ## 
-            # URI that clients are redirected to when they sign out of Azure AD services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+            # URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
             @sign_out_uri
             ## 
             # Provides status and timestamp of the last update of the signing certificate.
             @signing_certificate_update_status
             ## 
-            ## Gets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Azure Active Directory (Azure AD). Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+            ## Gets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
             ## @return a string
             ## 
             def active_sign_in_uri
                 return @active_sign_in_uri
             end
             ## 
-            ## Sets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Azure Active Directory (Azure AD). Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+            ## Sets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
             ## @param value Value to set for the activeSignInUri property.
             ## @return a void
             ## 
@@ -43,7 +46,7 @@ module MicrosoftGraph
                 @active_sign_in_uri = value
             end
             ## 
-            ## Instantiates a new internalDomainFederation and sets the default values.
+            ## Instantiates a new InternalDomainFederation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -60,14 +63,14 @@ module MicrosoftGraph
                 return InternalDomainFederation.new
             end
             ## 
-            ## Gets the federatedIdpMfaBehavior property value. Determines whether Azure AD accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: acceptIfMfaDoneByFederatedIdp, enforceMfaByFederatedIdp, rejectMfaByFederatedIdp, unknownFutureValue. For more information, see federatedIdpMfaBehavior values.
+            ## Gets the federatedIdpMfaBehavior property value. Determines whether Microsoft Entra ID accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: acceptIfMfaDoneByFederatedIdp, enforceMfaByFederatedIdp, rejectMfaByFederatedIdp, unknownFutureValue. For more information, see federatedIdpMfaBehavior values.
             ## @return a federated_idp_mfa_behavior
             ## 
             def federated_idp_mfa_behavior
                 return @federated_idp_mfa_behavior
             end
             ## 
-            ## Sets the federatedIdpMfaBehavior property value. Determines whether Azure AD accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: acceptIfMfaDoneByFederatedIdp, enforceMfaByFederatedIdp, rejectMfaByFederatedIdp, unknownFutureValue. For more information, see federatedIdpMfaBehavior values.
+            ## Sets the federatedIdpMfaBehavior property value. Determines whether Microsoft Entra ID accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: acceptIfMfaDoneByFederatedIdp, enforceMfaByFederatedIdp, rejectMfaByFederatedIdp, unknownFutureValue. For more information, see federatedIdpMfaBehavior values.
             ## @param value Value to set for the federatedIdpMfaBehavior property.
             ## @return a void
             ## 
@@ -84,20 +87,21 @@ module MicrosoftGraph
                     "federatedIdpMfaBehavior" => lambda {|n| @federated_idp_mfa_behavior = n.get_enum_value(MicrosoftGraph::Models::FederatedIdpMfaBehavior) },
                     "isSignedAuthenticationRequestRequired" => lambda {|n| @is_signed_authentication_request_required = n.get_boolean_value() },
                     "nextSigningCertificate" => lambda {|n| @next_signing_certificate = n.get_string_value() },
+                    "passwordResetUri" => lambda {|n| @password_reset_uri = n.get_string_value() },
                     "promptLoginBehavior" => lambda {|n| @prompt_login_behavior = n.get_enum_value(MicrosoftGraph::Models::PromptLoginBehavior) },
                     "signOutUri" => lambda {|n| @sign_out_uri = n.get_string_value() },
                     "signingCertificateUpdateStatus" => lambda {|n| @signing_certificate_update_status = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SigningCertificateUpdateStatus.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
-            ## Gets the isSignedAuthenticationRequestRequired property value. If true, when SAML authentication requests are sent to the federated SAML IdP, Azure AD will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP are not signed.
+            ## Gets the isSignedAuthenticationRequestRequired property value. If true, when SAML authentication requests are sent to the federated SAML IdP, Microsoft Entra ID will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP aren't signed.
             ## @return a boolean
             ## 
             def is_signed_authentication_request_required
                 return @is_signed_authentication_request_required
             end
             ## 
-            ## Sets the isSignedAuthenticationRequestRequired property value. If true, when SAML authentication requests are sent to the federated SAML IdP, Azure AD will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP are not signed.
+            ## Sets the isSignedAuthenticationRequestRequired property value. If true, when SAML authentication requests are sent to the federated SAML IdP, Microsoft Entra ID will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP aren't signed.
             ## @param value Value to set for the isSignedAuthenticationRequestRequired property.
             ## @return a void
             ## 
@@ -105,19 +109,34 @@ module MicrosoftGraph
                 @is_signed_authentication_request_required = value
             end
             ## 
-            ## Gets the nextSigningCertificate property value. Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate is not present in the federation properties after the federation service certificate has been updated.
+            ## Gets the nextSigningCertificate property value. Fallback token signing certificate that can also be used to sign tokens, for example when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.
             ## @return a string
             ## 
             def next_signing_certificate
                 return @next_signing_certificate
             end
             ## 
-            ## Sets the nextSigningCertificate property value. Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate is not present in the federation properties after the federation service certificate has been updated.
+            ## Sets the nextSigningCertificate property value. Fallback token signing certificate that can also be used to sign tokens, for example when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP's token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.
             ## @param value Value to set for the nextSigningCertificate property.
             ## @return a void
             ## 
             def next_signing_certificate=(value)
                 @next_signing_certificate = value
+            end
+            ## 
+            ## Gets the passwordResetUri property value. The passwordResetUri property
+            ## @return a string
+            ## 
+            def password_reset_uri
+                return @password_reset_uri
+            end
+            ## 
+            ## Sets the passwordResetUri property value. The passwordResetUri property
+            ## @param value Value to set for the passwordResetUri property.
+            ## @return a void
+            ## 
+            def password_reset_uri=(value)
+                @password_reset_uri = value
             end
             ## 
             ## Gets the promptLoginBehavior property value. Sets the preferred behavior for the sign-in prompt. The possible values are: translateToFreshPasswordAuthentication, nativeSupport, disabled, unknownFutureValue.
@@ -146,19 +165,20 @@ module MicrosoftGraph
                 writer.write_enum_value("federatedIdpMfaBehavior", @federated_idp_mfa_behavior)
                 writer.write_boolean_value("isSignedAuthenticationRequestRequired", @is_signed_authentication_request_required)
                 writer.write_string_value("nextSigningCertificate", @next_signing_certificate)
+                writer.write_string_value("passwordResetUri", @password_reset_uri)
                 writer.write_enum_value("promptLoginBehavior", @prompt_login_behavior)
                 writer.write_string_value("signOutUri", @sign_out_uri)
                 writer.write_object_value("signingCertificateUpdateStatus", @signing_certificate_update_status)
             end
             ## 
-            ## Gets the signOutUri property value. URI that clients are redirected to when they sign out of Azure AD services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+            ## Gets the signOutUri property value. URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
             ## @return a string
             ## 
             def sign_out_uri
                 return @sign_out_uri
             end
             ## 
-            ## Sets the signOutUri property value. URI that clients are redirected to when they sign out of Azure AD services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+            ## Sets the signOutUri property value. URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
             ## @param value Value to set for the signOutUri property.
             ## @return a void
             ## 
