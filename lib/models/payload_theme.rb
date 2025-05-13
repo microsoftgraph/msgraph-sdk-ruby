@@ -1,0 +1,38 @@
+module MicrosoftGraph
+    module Models
+        PayloadTheme = {
+            Unknown: :Unknown,
+            Other: :Other,
+            AccountActivation: :AccountActivation,
+            AccountVerification: :AccountVerification,
+            Billing: :Billing,
+            CleanUpMail: :CleanUpMail,
+            Controversial: :Controversial,
+            DocumentReceived: :DocumentReceived,
+            Expense: :Expense,
+            Fax: :Fax,
+            FinanceReport: :FinanceReport,
+            IncomingMessages: :IncomingMessages,
+            Invoice: :Invoice,
+            ItemReceived: :ItemReceived,
+            LoginAlert: :LoginAlert,
+            MailReceived: :MailReceived,
+            Password: :Password,
+            Payment: :Payment,
+            Payroll: :Payroll,
+            PersonalizedOffer: :PersonalizedOffer,
+            Quarantine: :Quarantine,
+            RemoteWork: :RemoteWork,
+            ReviewMessage: :ReviewMessage,
+            SecurityUpdate: :SecurityUpdate,
+            ServiceSuspended: :ServiceSuspended,
+            SignatureRequired: :SignatureRequired,
+            UpgradeMailboxStorage: :UpgradeMailboxStorage,
+            VerifyMailbox: :VerifyMailbox,
+            Voicemail: :Voicemail,
+            Advertisement: :Advertisement,
+            EmployeeEngagement: :EmployeeEngagement,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
+end

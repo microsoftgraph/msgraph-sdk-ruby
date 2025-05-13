@@ -10,51 +10,51 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The CRC32 value of the file in little endian (if available). Read-only.
+            # The CRC32 value of the file (if available). Read-only.
             @crc32_hash
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
+            # A proprietary hash of the file that can be used to determine if the contents of the file change (if available). Read-only.
             @quick_xor_hash
             ## 
             # SHA1 hash for the contents of the file (if available). Read-only.
             @sha1_hash
             ## 
-            # SHA256 hash for the contents of the file (if available). Read-only.
+            # This property isn't supported. Don't use.
             @sha256_hash
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new hashes and sets the default values.
+            ## Instantiates a new Hashes and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the crc32Hash property value. The CRC32 value of the file in little endian (if available). Read-only.
+            ## Gets the crc32Hash property value. The CRC32 value of the file (if available). Read-only.
             ## @return a string
             ## 
             def crc32_hash
                 return @crc32_hash
             end
             ## 
-            ## Sets the crc32Hash property value. The CRC32 value of the file in little endian (if available). Read-only.
+            ## Sets the crc32Hash property value. The CRC32 value of the file (if available). Read-only.
             ## @param value Value to set for the crc32Hash property.
             ## @return a void
             ## 
@@ -99,14 +99,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
+            ## Gets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file change (if available). Read-only.
             ## @return a string
             ## 
             def quick_xor_hash
                 return @quick_xor_hash
             end
             ## 
-            ## Sets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
+            ## Sets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file change (if available). Read-only.
             ## @param value Value to set for the quickXorHash property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraph
                 @sha1_hash = value
             end
             ## 
-            ## Gets the sha256Hash property value. SHA256 hash for the contents of the file (if available). Read-only.
+            ## Gets the sha256Hash property value. This property isn't supported. Don't use.
             ## @return a string
             ## 
             def sha256_hash
                 return @sha256_hash
             end
             ## 
-            ## Sets the sha256Hash property value. SHA256 hash for the contents of the file (if available). Read-only.
+            ## Sets the sha256Hash property value. This property isn't supported. Don't use.
             ## @param value Value to set for the sha256Hash property.
             ## @return a void
             ## 

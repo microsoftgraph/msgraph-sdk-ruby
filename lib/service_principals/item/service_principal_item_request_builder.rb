@@ -16,6 +16,7 @@ require_relative './created_objects/created_objects_request_builder'
 require_relative './delegated_permission_classifications/delegated_permission_classifications_request_builder'
 require_relative './endpoints/endpoints_request_builder'
 require_relative './federated_identity_credentials/federated_identity_credentials_request_builder'
+require_relative './federated_identity_credentials_with_name/federated_identity_credentials_with_name_request_builder'
 require_relative './get_member_groups/get_member_groups_request_builder'
 require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './home_realm_discovery_policies/home_realm_discovery_policies_request_builder'
@@ -24,6 +25,7 @@ require_relative './member_of/member_of_request_builder'
 require_relative './oauth2_permission_grants/oauth2_permission_grants_request_builder'
 require_relative './owned_objects/owned_objects_request_builder'
 require_relative './owners/owners_request_builder'
+require_relative './remote_desktop_security_configuration/remote_desktop_security_configuration_request_builder'
 require_relative './remove_key/remove_key_request_builder'
 require_relative './remove_password/remove_password_request_builder'
 require_relative './restore/restore_request_builder'
@@ -140,6 +142,11 @@ module MicrosoftGraph
                     return MicrosoftGraph::ServicePrincipals::Item::Owners::OwnersRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the remoteDesktopSecurityConfiguration property of the microsoft.graph.servicePrincipal entity.
+                def remote_desktop_security_configuration()
+                    return MicrosoftGraph::ServicePrincipals::Item::RemoteDesktopSecurityConfiguration::RemoteDesktopSecurityConfigurationRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to call the removeKey method.
                 def remove_key()
                     return MicrosoftGraph::ServicePrincipals::Item::RemoveKey::RemoveKeyRequestBuilder.new(@path_parameters, @request_adapter)
@@ -181,7 +188,7 @@ module MicrosoftGraph
                 ## @return a void
                 ## 
                 def initialize(path_parameters, request_adapter)
-                    super(path_parameters, request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}{?%24select,%24expand}")
+                    super(path_parameters, request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}{?%24expand,%24select}")
                 end
                 ## 
                 ## Delete a servicePrincipal object.
@@ -193,9 +200,17 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
+                end
+                ## 
+                ## Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
+                ## @param name Alternate key of federatedIdentityCredential
+                ## @return a federated_identity_credentials_with_name_request_builder
+                ## 
+                def federated_identity_credentials_with_name(name)
+                    raise StandardError, 'name cannot be null' if name.nil?
+                    return FederatedIdentityCredentialsWithNameRequestBuilder.new(@path_parameters, @request_adapter, name)
                 end
                 ## 
                 ## Retrieve the properties and relationships of a servicePrincipal object.
@@ -207,12 +222,11 @@ module MicrosoftGraph
                         request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServicePrincipal.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update entity in servicePrincipals
+                ## Create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of service_principal
@@ -223,8 +237,7 @@ module MicrosoftGraph
                         body, request_configuration
                     )
                     error_mapping = Hash.new
-                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServicePrincipal.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
@@ -234,13 +247,13 @@ module MicrosoftGraph
                 ## 
                 def to_delete_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :DELETE
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :DELETE
                     return request_info
                 end
                 ## 
@@ -250,19 +263,19 @@ module MicrosoftGraph
                 ## 
                 def to_get_request_information(request_configuration=nil)
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :GET
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                         request_info.add_request_options(request_configuration.options)
                     end
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :GET
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
                 end
                 ## 
-                ## Update entity in servicePrincipals
+                ## Create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -270,16 +283,25 @@ module MicrosoftGraph
                 def to_patch_request_information(body, request_configuration=nil)
                     raise StandardError, 'body cannot be null' if body.nil?
                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                    request_info.url_template = @url_template
-                    request_info.path_parameters = @path_parameters
-                    request_info.http_method = :PATCH
-                    request_info.headers.add('Accept', 'application/json')
                     unless request_configuration.nil?
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
-                    request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                    request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                    request_info.url_template = @url_template
+                    request_info.path_parameters = @path_parameters
+                    request_info.http_method = :PATCH
+                    request_info.headers.try_add('Accept', 'application/json')
                     return request_info
+                end
+                ## 
+                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                ## @param raw_url The raw URL to use for the request builder.
+                ## @return a service_principal_item_request_builder
+                ## 
+                def with_url(raw_url)
+                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                    return ServicePrincipalItemRequestBuilder.new(raw_url, @request_adapter)
                 end
 
                 ## 

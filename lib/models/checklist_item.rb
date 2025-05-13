@@ -14,10 +14,10 @@ module MicrosoftGraph
             # The date and time when the checklistItem was created.
             @created_date_time
             ## 
-            # Field indicating the title of checklistItem.
+            # Indicates the title of the checklistItem.
             @display_name
             ## 
-            # State indicating whether the item is checked off or not.
+            # State that indicates whether the item is checked off or not.
             @is_checked
             ## 
             ## Gets the checkedDateTime property value. The date and time when the checklistItem was finished.
@@ -35,7 +35,7 @@ module MicrosoftGraph
                 @checked_date_time = value
             end
             ## 
-            ## Instantiates a new checklistItem and sets the default values.
+            ## Instantiates a new ChecklistItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -66,14 +66,14 @@ module MicrosoftGraph
                 return ChecklistItem.new
             end
             ## 
-            ## Gets the displayName property value. Field indicating the title of checklistItem.
+            ## Gets the displayName property value. Indicates the title of the checklistItem.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Field indicating the title of checklistItem.
+            ## Sets the displayName property value. Indicates the title of the checklistItem.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -93,14 +93,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isChecked property value. State indicating whether the item is checked off or not.
+            ## Gets the isChecked property value. State that indicates whether the item is checked off or not.
             ## @return a boolean
             ## 
             def is_checked
                 return @is_checked
             end
             ## 
-            ## Sets the isChecked property value. State indicating whether the item is checked off or not.
+            ## Sets the isChecked property value. State that indicates whether the item is checked off or not.
             ## @param value Value to set for the isChecked property.
             ## @return a void
             ## 

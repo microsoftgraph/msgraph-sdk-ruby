@@ -25,10 +25,16 @@ module MicrosoftGraph
             # Information about whether the participant has recording capability.
             @recording_info
             ## 
+            # Indicates the reason why the participant was removed from the roster.
+            @removed_state
+            ## 
             # Indicates the reason or reasons media content from this participant is restricted.
             @restricted_experience
             ## 
-            ## Instantiates a new participant and sets the default values.
+            # Indicates the roster sequence number in which the participant was last updated.
+            @roster_sequence_number
+            ## 
+            ## Instantiates a new Participant and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -55,7 +61,9 @@ module MicrosoftGraph
                     "mediaStreams" => lambda {|n| @media_streams = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MediaStream.create_from_discriminator_value(pn) }) },
                     "metadata" => lambda {|n| @metadata = n.get_string_value() },
                     "recordingInfo" => lambda {|n| @recording_info = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::RecordingInfo.create_from_discriminator_value(pn) }) },
+                    "removedState" => lambda {|n| @removed_state = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::RemovedState.create_from_discriminator_value(pn) }) },
                     "restrictedExperience" => lambda {|n| @restricted_experience = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::OnlineMeetingRestricted.create_from_discriminator_value(pn) }) },
+                    "rosterSequenceNumber" => lambda {|n| @roster_sequence_number = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -149,6 +157,21 @@ module MicrosoftGraph
                 @recording_info = value
             end
             ## 
+            ## Gets the removedState property value. Indicates the reason why the participant was removed from the roster.
+            ## @return a removed_state
+            ## 
+            def removed_state
+                return @removed_state
+            end
+            ## 
+            ## Sets the removedState property value. Indicates the reason why the participant was removed from the roster.
+            ## @param value Value to set for the removedState property.
+            ## @return a void
+            ## 
+            def removed_state=(value)
+                @removed_state = value
+            end
+            ## 
             ## Gets the restrictedExperience property value. Indicates the reason or reasons media content from this participant is restricted.
             ## @return a online_meeting_restricted
             ## 
@@ -164,6 +187,21 @@ module MicrosoftGraph
                 @restricted_experience = value
             end
             ## 
+            ## Gets the rosterSequenceNumber property value. Indicates the roster sequence number in which the participant was last updated.
+            ## @return a int64
+            ## 
+            def roster_sequence_number
+                return @roster_sequence_number
+            end
+            ## 
+            ## Sets the rosterSequenceNumber property value. Indicates the roster sequence number in which the participant was last updated.
+            ## @param value Value to set for the rosterSequenceNumber property.
+            ## @return a void
+            ## 
+            def roster_sequence_number=(value)
+                @roster_sequence_number = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -177,7 +215,9 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("mediaStreams", @media_streams)
                 writer.write_string_value("metadata", @metadata)
                 writer.write_object_value("recordingInfo", @recording_info)
+                writer.write_object_value("removedState", @removed_state)
                 writer.write_object_value("restrictedExperience", @restricted_experience)
+                writer.write_object_value("rosterSequenceNumber", @roster_sequence_number)
             end
         end
     end

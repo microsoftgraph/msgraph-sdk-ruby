@@ -19,28 +19,28 @@ module MicrosoftGraph
             # The property from the externalItem schema. Required.
             @property
             ## 
-            # A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
+            # A collection with one or many strings. One or more specified strings are matched with the specified property using the specified operation. Required.
             @values
             ## 
             # The valuesJoinedBy property
             @values_joined_by
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new externalConnectorsPropertyRule and sets the default values.
+            ## Instantiates a new ExternalConnectorsPropertyRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -128,14 +128,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the values property value. A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
+            ## Gets the values property value. A collection with one or many strings. One or more specified strings are matched with the specified property using the specified operation. Required.
             ## @return a string
             ## 
             def values
                 return @values
             end
             ## 
-            ## Sets the values property value. A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
+            ## Sets the values property value. A collection with one or many strings. One or more specified strings are matched with the specified property using the specified operation. Required.
             ## @param value Value to set for the values property.
             ## @return a void
             ## 

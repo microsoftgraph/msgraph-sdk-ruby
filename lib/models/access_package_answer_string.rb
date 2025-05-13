@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value stored on the requestor's user profile, if this answer is configured to be stored as a specific attribute.
             @value
             ## 
-            ## Instantiates a new accessPackageAnswerString and sets the default values.
+            ## Instantiates a new AccessPackageAnswerString and sets the default values.
             ## @return a void
             ## 
             def initialize()

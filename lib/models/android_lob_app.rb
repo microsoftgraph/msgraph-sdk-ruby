@@ -21,7 +21,7 @@ module MicrosoftGraph
             # The version name of Android Line of Business (LoB) app.
             @version_name
             ## 
-            ## Instantiates a new androidLobApp and sets the default values.
+            ## Instantiates a new AndroidLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

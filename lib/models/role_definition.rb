@@ -24,7 +24,7 @@ module MicrosoftGraph
             # List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
             @role_permissions
             ## 
-            ## Instantiates a new roleDefinition and sets the default values.
+            ## Instantiates a new RoleDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

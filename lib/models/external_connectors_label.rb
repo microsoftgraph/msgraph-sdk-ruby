@@ -11,6 +11,7 @@ module MicrosoftGraph
             FileName: :FileName,
             FileExtension: :FileExtension,
             UnknownFutureValue: :UnknownFutureValue,
+            IconUrl: :IconUrl,
         }
     end
 end

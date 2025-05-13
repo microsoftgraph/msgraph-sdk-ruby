@@ -14,17 +14,20 @@ module MicrosoftGraph
             # The collection of channels and messages associated with the team.
             @channels
             ## 
-            # An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
+            # An optional label. Typically describes the data or business sensitivity of the team. Must match one of a preconfigured set in the tenant's directory.
             @classification
             ## 
             # Timestamp at which the team was created.
             @created_date_time
             ## 
-            # An optional description for the team. Maximum length: 1024 characters.
+            # An optional description for the team. Maximum length: 1,024 characters.
             @description
             ## 
             # The name of the team.
             @display_name
+            ## 
+            # The name of the first channel in the team. This is an optional property, only used during team creation and isn't returned in methods to get and list teams.
+            @first_channel_name
             ## 
             # Settings to configure use of Giphy, memes, and stickers in the team.
             @fun_settings
@@ -41,7 +44,7 @@ module MicrosoftGraph
             # The apps installed in this team.
             @installed_apps
             ## 
-            # A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+            # A unique ID for the team that was used in a few places such as the audit log/Office 365 Management Activity API.
             @internal_id
             ## 
             # Whether this team is in read-only mode.
@@ -59,7 +62,7 @@ module MicrosoftGraph
             # The async operations that ran or are running on this team.
             @operations
             ## 
-            # The permissionGrants property
+            # A collection of permissions granted to apps to access the team.
             @permission_grants
             ## 
             # The profile photo for the team.
@@ -71,7 +74,7 @@ module MicrosoftGraph
             # The schedule of shifts for this team.
             @schedule
             ## 
-            # Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
+            # Optional. Indicates whether the team is intended for a particular use case. Each team specialization has access to unique behaviors and experiences targeted to its use case.
             @specialization
             ## 
             # Contains summary information about the team, including number of owners, members, and guests.
@@ -83,13 +86,13 @@ module MicrosoftGraph
             # The template this team was created from. See available templates.
             @template
             ## 
-            # The ID of the Azure Active Directory tenant.
+            # The ID of the Microsoft Entra tenant.
             @tenant_id
             ## 
             # The visibility of the group and team. Defaults to Public.
             @visibility
             ## 
-            # A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+            # A hyperlink that goes to the team in the Microsoft Teams client. You get this URL when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
             @web_url
             ## 
             ## Gets the allChannels property value. List of channels either hosted in or shared with the team (incoming channels).
@@ -122,14 +125,14 @@ module MicrosoftGraph
                 @channels = value
             end
             ## 
-            ## Gets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
+            ## Gets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a preconfigured set in the tenant's directory.
             ## @return a string
             ## 
             def classification
                 return @classification
             end
             ## 
-            ## Sets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
+            ## Sets the classification property value. An optional label. Typically describes the data or business sensitivity of the team. Must match one of a preconfigured set in the tenant's directory.
             ## @param value Value to set for the classification property.
             ## @return a void
             ## 
@@ -137,7 +140,7 @@ module MicrosoftGraph
                 @classification = value
             end
             ## 
-            ## Instantiates a new team and sets the default values.
+            ## Instantiates a new Team and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -168,14 +171,14 @@ module MicrosoftGraph
                 return Team.new
             end
             ## 
-            ## Gets the description property value. An optional description for the team. Maximum length: 1024 characters.
+            ## Gets the description property value. An optional description for the team. Maximum length: 1,024 characters.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. An optional description for the team. Maximum length: 1024 characters.
+            ## Sets the description property value. An optional description for the team. Maximum length: 1,024 characters.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -196,6 +199,21 @@ module MicrosoftGraph
             ## 
             def display_name=(value)
                 @display_name = value
+            end
+            ## 
+            ## Gets the firstChannelName property value. The name of the first channel in the team. This is an optional property, only used during team creation and isn't returned in methods to get and list teams.
+            ## @return a string
+            ## 
+            def first_channel_name
+                return @first_channel_name
+            end
+            ## 
+            ## Sets the firstChannelName property value. The name of the first channel in the team. This is an optional property, only used during team creation and isn't returned in methods to get and list teams.
+            ## @param value Value to set for the firstChannelName property.
+            ## @return a void
+            ## 
+            def first_channel_name=(value)
+                @first_channel_name = value
             end
             ## 
             ## Gets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
@@ -224,6 +242,7 @@ module MicrosoftGraph
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
+                    "firstChannelName" => lambda {|n| @first_channel_name = n.get_string_value() },
                     "funSettings" => lambda {|n| @fun_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamFunSettings.create_from_discriminator_value(pn) }) },
                     "group" => lambda {|n| @group = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Group.create_from_discriminator_value(pn) }) },
                     "guestSettings" => lambda {|n| @guest_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamGuestSettings.create_from_discriminator_value(pn) }) },
@@ -309,14 +328,14 @@ module MicrosoftGraph
                 @installed_apps = value
             end
             ## 
-            ## Gets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+            ## Gets the internalId property value. A unique ID for the team that was used in a few places such as the audit log/Office 365 Management Activity API.
             ## @return a string
             ## 
             def internal_id
                 return @internal_id
             end
             ## 
-            ## Sets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
+            ## Sets the internalId property value. A unique ID for the team that was used in a few places such as the audit log/Office 365 Management Activity API.
             ## @param value Value to set for the internalId property.
             ## @return a void
             ## 
@@ -399,14 +418,14 @@ module MicrosoftGraph
                 @operations = value
             end
             ## 
-            ## Gets the permissionGrants property value. The permissionGrants property
+            ## Gets the permissionGrants property value. A collection of permissions granted to apps to access the team.
             ## @return a resource_specific_permission_grant
             ## 
             def permission_grants
                 return @permission_grants
             end
             ## 
-            ## Sets the permissionGrants property value. The permissionGrants property
+            ## Sets the permissionGrants property value. A collection of permissions granted to apps to access the team.
             ## @param value Value to set for the permissionGrants property.
             ## @return a void
             ## 
@@ -472,6 +491,7 @@ module MicrosoftGraph
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
+                writer.write_string_value("firstChannelName", @first_channel_name)
                 writer.write_object_value("funSettings", @fun_settings)
                 writer.write_object_value("group", @group)
                 writer.write_object_value("guestSettings", @guest_settings)
@@ -496,14 +516,14 @@ module MicrosoftGraph
                 writer.write_string_value("webUrl", @web_url)
             end
             ## 
-            ## Gets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
+            ## Gets the specialization property value. Optional. Indicates whether the team is intended for a particular use case. Each team specialization has access to unique behaviors and experiences targeted to its use case.
             ## @return a team_specialization
             ## 
             def specialization
                 return @specialization
             end
             ## 
-            ## Sets the specialization property value. Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
+            ## Sets the specialization property value. Optional. Indicates whether the team is intended for a particular use case. Each team specialization has access to unique behaviors and experiences targeted to its use case.
             ## @param value Value to set for the specialization property.
             ## @return a void
             ## 
@@ -556,14 +576,14 @@ module MicrosoftGraph
                 @template = value
             end
             ## 
-            ## Gets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Gets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
+            ## Sets the tenantId property value. The ID of the Microsoft Entra tenant.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
@@ -586,14 +606,14 @@ module MicrosoftGraph
                 @visibility = value
             end
             ## 
-            ## Gets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+            ## Gets the webUrl property value. A hyperlink that goes to the team in the Microsoft Teams client. You get this URL when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
             ## @return a string
             ## 
             def web_url
                 return @web_url
             end
             ## 
-            ## Sets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+            ## Sets the webUrl property value. A hyperlink that goes to the team in the Microsoft Teams client. You get this URL when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
             ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 

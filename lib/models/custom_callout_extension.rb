@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
             @authentication_configuration
             ## 
-            # HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
+            # HTTP connection settings that define how long Microsoft Entra ID can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
             @client_configuration
             ## 
             # Description for the customCalloutExtension object.
@@ -37,14 +37,14 @@ module MicrosoftGraph
                 @authentication_configuration = value
             end
             ## 
-            ## Gets the clientConfiguration property value. HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
+            ## Gets the clientConfiguration property value. HTTP connection settings that define how long Microsoft Entra ID can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
             ## @return a custom_extension_client_configuration
             ## 
             def client_configuration
                 return @client_configuration
             end
             ## 
-            ## Sets the clientConfiguration property value. HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
+            ## Sets the clientConfiguration property value. HTTP connection settings that define how long Microsoft Entra ID can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
             ## @param value Value to set for the clientConfiguration property.
             ## @return a void
             ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @client_configuration = value
             end
             ## 
-            ## Instantiates a new customCalloutExtension and sets the default values.
+            ## Instantiates a new CustomCalloutExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -73,8 +73,16 @@ module MicrosoftGraph
                             return AccessPackageAssignmentRequestWorkflowExtension.new
                         when "#microsoft.graph.accessPackageAssignmentWorkflowExtension"
                             return AccessPackageAssignmentWorkflowExtension.new
+                        when "#microsoft.graph.customAuthenticationExtension"
+                            return CustomAuthenticationExtension.new
                         when "#microsoft.graph.identityGovernance.customTaskExtension"
                             return IdentityGovernanceCustomTaskExtension.new
+                        when "#microsoft.graph.onAttributeCollectionStartCustomExtension"
+                            return OnAttributeCollectionStartCustomExtension.new
+                        when "#microsoft.graph.onAttributeCollectionSubmitCustomExtension"
+                            return OnAttributeCollectionSubmitCustomExtension.new
+                        when "#microsoft.graph.onTokenIssuanceStartCustomExtension"
+                            return OnTokenIssuanceStartCustomExtension.new
                     end
                 end
                 return CustomCalloutExtension.new

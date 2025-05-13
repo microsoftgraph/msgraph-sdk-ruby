@@ -13,13 +13,13 @@ module MicrosoftGraph
             # The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
             @customer_id
             ## 
-            # A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
+            # A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It isn't automatically updated if the customer tenant's default domain name changes.
             @default_domain_name
             ## 
             # A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
             @display_name
             ## 
-            ## Instantiates a new contract and sets the default values.
+            ## Instantiates a new Contract and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -66,14 +66,14 @@ module MicrosoftGraph
                 @customer_id = value
             end
             ## 
-            ## Gets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
+            ## Gets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It isn't automatically updated if the customer tenant's default domain name changes.
             ## @return a string
             ## 
             def default_domain_name
                 return @default_domain_name
             end
             ## 
-            ## Sets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
+            ## Sets the defaultDomainName property value. A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It isn't automatically updated if the customer tenant's default domain name changes.
             ## @param value Value to set for the defaultDomainName property.
             ## @return a void
             ## 

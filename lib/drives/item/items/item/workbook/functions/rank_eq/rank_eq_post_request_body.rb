@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,24 +22,15 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The number property
-                                    @number
-                                    ## 
-                                    # The order property
-                                    @order
-                                    ## 
-                                    # The ref property
-                                    @ref
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -68,55 +58,7 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "number" => lambda {|n| @number = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "order" => lambda {|n| @order = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "ref" => lambda {|n| @ref = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
-                                    end
-                                    ## 
-                                    ## Gets the number property value. The number property
-                                    ## @return a json
-                                    ## 
-                                    def number
-                                        return @number
-                                    end
-                                    ## 
-                                    ## Sets the number property value. The number property
-                                    ## @param value Value to set for the number property.
-                                    ## @return a void
-                                    ## 
-                                    def number=(value)
-                                        @number = value
-                                    end
-                                    ## 
-                                    ## Gets the order property value. The order property
-                                    ## @return a json
-                                    ## 
-                                    def order
-                                        return @order
-                                    end
-                                    ## 
-                                    ## Sets the order property value. The order property
-                                    ## @param value Value to set for the order property.
-                                    ## @return a void
-                                    ## 
-                                    def order=(value)
-                                        @order = value
-                                    end
-                                    ## 
-                                    ## Gets the ref property value. The ref property
-                                    ## @return a json
-                                    ## 
-                                    def ref
-                                        return @ref
-                                    end
-                                    ## 
-                                    ## Sets the ref property value. The ref property
-                                    ## @param value Value to set for the ref property.
-                                    ## @return a void
-                                    ## 
-                                    def ref=(value)
-                                        @ref = value
                                     end
                                     ## 
                                     ## Serializes information the current object
@@ -125,9 +67,6 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("number", @number)
-                                        writer.write_object_value("order", @order)
-                                        writer.write_object_value("ref", @ref)
                                         writer.write_additional_data(@additional_data)
                                     end
                                 end

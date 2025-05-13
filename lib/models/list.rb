@@ -16,13 +16,13 @@ module MicrosoftGraph
             # The displayable title of the list.
             @display_name
             ## 
-            # Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+            # Allows access to the list as a drive resource with driveItems. Only present on document libraries.
             @drive
             ## 
             # All items contained in the list.
             @items
             ## 
-            # Provides additional details about the list.
+            # Contains more details about the list.
             @list
             ## 
             # The collection of long-running operations on the list.
@@ -34,7 +34,7 @@ module MicrosoftGraph
             # The set of subscriptions on the list.
             @subscriptions
             ## 
-            # If present, indicates that this is a system-managed list. Read-only.
+            # If present, indicates that the list is system-managed. Read-only.
             @system
             ## 
             ## Gets the columns property value. The collection of field definitions for this list.
@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @columns = value
             end
             ## 
-            ## Instantiates a new list and sets the default values.
+            ## Instantiates a new List and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -99,14 +99,14 @@ module MicrosoftGraph
                 @display_name = value
             end
             ## 
-            ## Gets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+            ## Gets the drive property value. Allows access to the list as a drive resource with driveItems. Only present on document libraries.
             ## @return a drive
             ## 
             def drive
                 return @drive
             end
             ## 
-            ## Sets the drive property value. Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+            ## Sets the drive property value. Allows access to the list as a drive resource with driveItems. Only present on document libraries.
             ## @param value Value to set for the drive property.
             ## @return a void
             ## 
@@ -147,14 +147,14 @@ module MicrosoftGraph
                 @items = value
             end
             ## 
-            ## Gets the list property value. Provides additional details about the list.
+            ## Gets the list property value. Contains more details about the list.
             ## @return a list_info
             ## 
             def list
                 return @list
             end
             ## 
-            ## Sets the list property value. Provides additional details about the list.
+            ## Sets the list property value. Contains more details about the list.
             ## @param value Value to set for the list property.
             ## @return a void
             ## 
@@ -226,14 +226,14 @@ module MicrosoftGraph
                 @subscriptions = value
             end
             ## 
-            ## Gets the system property value. If present, indicates that this is a system-managed list. Read-only.
+            ## Gets the system property value. If present, indicates that the list is system-managed. Read-only.
             ## @return a system_facet
             ## 
             def system
                 return @system
             end
             ## 
-            ## Sets the system property value. If present, indicates that this is a system-managed list. Read-only.
+            ## Sets the system property value. If present, indicates that the list is system-managed. Read-only.
             ## @param value Value to set for the system property.
             ## @return a void
             ## 

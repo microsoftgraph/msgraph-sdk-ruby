@@ -51,7 +51,7 @@ module MicrosoftGraph
             # Devices must not be jailbroken or rooted.
             @security_block_jailbroken_devices
             ## 
-            ## Instantiates a new iosCompliancePolicy and sets the default values.
+            ## Instantiates a new IosCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The userId property
             @user_id
             ## 
-            ## Instantiates a new aadUserConversationMemberResult and sets the default values.
+            ## Instantiates a new AadUserConversationMemberResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

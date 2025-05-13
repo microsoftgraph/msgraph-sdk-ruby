@@ -7,6 +7,10 @@ module MicrosoftGraph
             NotEnabled: :NotEnabled,
             Unknown: :Unknown,
             UnknownFutureValue: :UnknownFutureValue,
+            ReportOnlySuccess: :ReportOnlySuccess,
+            ReportOnlyFailure: :ReportOnlyFailure,
+            ReportOnlyNotApplied: :ReportOnlyNotApplied,
+            ReportOnlyInterrupted: :ReportOnlyInterrupted,
         }
     end
 end

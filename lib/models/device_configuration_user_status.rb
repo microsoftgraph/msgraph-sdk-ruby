@@ -23,7 +23,7 @@ module MicrosoftGraph
             # UserPrincipalName.
             @user_principal_name
             ## 
-            ## Instantiates a new deviceConfigurationUserStatus and sets the default values.
+            ## Instantiates a new DeviceConfigurationUserStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

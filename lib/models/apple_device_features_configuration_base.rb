@@ -9,7 +9,7 @@ module MicrosoftGraph
         class AppleDeviceFeaturesConfigurationBase < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new appleDeviceFeaturesConfigurationBase and sets the default values.
+            ## Instantiates a new AppleDeviceFeaturesConfigurationBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

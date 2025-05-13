@@ -20,9 +20,6 @@ module MicrosoftGraph
             # Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
             @app_display_name
             ## 
-            # Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
-            @content_info
-            ## 
             # Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).
             @content_url
             ## 
@@ -110,26 +107,11 @@ module MicrosoftGraph
                 @app_display_name = value
             end
             ## 
-            ## Instantiates a new userActivity and sets the default values.
+            ## Instantiates a new UserActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
-            end
-            ## 
-            ## Gets the contentInfo property value. Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
-            ## @return a json
-            ## 
-            def content_info
-                return @content_info
-            end
-            ## 
-            ## Sets the contentInfo property value. Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.
-            ## @param value Value to set for the contentInfo property.
-            ## @return a void
-            ## 
-            def content_info=(value)
-                @content_info = value
             end
             ## 
             ## Gets the contentUrl property value. Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).
@@ -210,7 +192,6 @@ module MicrosoftGraph
                     "activitySourceHost" => lambda {|n| @activity_source_host = n.get_string_value() },
                     "appActivityId" => lambda {|n| @app_activity_id = n.get_string_value() },
                     "appDisplayName" => lambda {|n| @app_display_name = n.get_string_value() },
-                    "contentInfo" => lambda {|n| @content_info = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                     "contentUrl" => lambda {|n| @content_url = n.get_string_value() },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "expirationDateTime" => lambda {|n| @expiration_date_time = n.get_date_time_value() },
@@ -264,7 +245,6 @@ module MicrosoftGraph
                 writer.write_string_value("activitySourceHost", @activity_source_host)
                 writer.write_string_value("appActivityId", @app_activity_id)
                 writer.write_string_value("appDisplayName", @app_display_name)
-                writer.write_object_value("contentInfo", @content_info)
                 writer.write_string_value("contentUrl", @content_url)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_date_time_value("expirationDateTime", @expiration_date_time)

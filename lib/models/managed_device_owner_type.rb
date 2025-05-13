@@ -6,6 +6,7 @@ module MicrosoftGraph
             Unknown: :Unknown,
             Company: :Company,
             Personal: :Personal,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

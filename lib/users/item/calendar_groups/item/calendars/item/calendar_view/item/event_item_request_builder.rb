@@ -15,10 +15,12 @@ require_relative './calendar/calendar_request_builder'
 require_relative './cancel/cancel_request_builder'
 require_relative './decline/decline_request_builder'
 require_relative './dismiss_reminder/dismiss_reminder_request_builder'
+require_relative './exception_occurrences/exception_occurrences_request_builder'
 require_relative './extensions/extensions_request_builder'
 require_relative './forward/forward_request_builder'
 require_relative './instances/instances_request_builder'
 require_relative './item'
+require_relative './permanent_delete/permanent_delete_request_builder'
 require_relative './snooze_reminder/snooze_reminder_request_builder'
 require_relative './tentatively_accept/tentatively_accept_request_builder'
 
@@ -66,6 +68,11 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarView::Item::DismissReminder::DismissReminderRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        # Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
+                                        def exception_occurrences()
+                                            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarView::Item::ExceptionOccurrences::ExceptionOccurrencesRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
                                         # Provides operations to manage the extensions property of the microsoft.graph.event entity.
                                         def extensions()
                                             return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarView::Item::Extensions::ExtensionsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -79,6 +86,11 @@ module MicrosoftGraph
                                         # Provides operations to manage the instances property of the microsoft.graph.event entity.
                                         def instances()
                                             return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarView::Item::Instances::InstancesRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        # Provides operations to call the permanentDelete method.
+                                        def permanent_delete()
+                                            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarView::Item::PermanentDelete::PermanentDeleteRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
                                         # Provides operations to call the snoozeReminder method.
@@ -97,7 +109,7 @@ module MicrosoftGraph
                                         ## @return a void
                                         ## 
                                         def initialize(path_parameters, request_adapter)
-                                            super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}{?%24select}")
+                                            super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24expand,%24select}")
                                         end
                                         ## 
                                         ## The calendar view for the calendar. Navigation property. Read-only.
@@ -109,8 +121,7 @@ module MicrosoftGraph
                                                 request_configuration
                                             )
                                             error_mapping = Hash.new
-                                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                            error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Event.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
@@ -120,16 +131,25 @@ module MicrosoftGraph
                                         ## 
                                         def to_get_request_information(request_configuration=nil)
                                             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                            request_info.url_template = @url_template
-                                            request_info.path_parameters = @path_parameters
-                                            request_info.http_method = :GET
-                                            request_info.headers.add('Accept', 'application/json')
                                             unless request_configuration.nil?
                                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                                 request_info.add_request_options(request_configuration.options)
                                             end
+                                            request_info.url_template = @url_template
+                                            request_info.path_parameters = @path_parameters
+                                            request_info.http_method = :GET
+                                            request_info.headers.try_add('Accept', 'application/json')
                                             return request_info
+                                        end
+                                        ## 
+                                        ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                        ## @param raw_url The raw URL to use for the request builder.
+                                        ## @return a event_item_request_builder
+                                        ## 
+                                        def with_url(raw_url)
+                                            raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                            return EventItemRequestBuilder.new(raw_url, @request_adapter)
                                         end
 
                                         ## 
@@ -137,8 +157,17 @@ module MicrosoftGraph
                                         class EventItemRequestBuilderGetQueryParameters
                                             
                                             ## 
+                                            # The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
+                                            attr_accessor :end_date_time
+                                            ## 
+                                            # Expand related entities
+                                            attr_accessor :expand
+                                            ## 
                                             # Select properties to be returned
                                             attr_accessor :select
+                                            ## 
+                                            # The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
+                                            attr_accessor :start_date_time
                                             ## 
                                             ## Maps the query parameters names to their encoded names for the URI template parsing.
                                             ## @param original_name The original query parameter name in the class.
@@ -147,8 +176,14 @@ module MicrosoftGraph
                                             def get_query_parameter(original_name)
                                                 raise StandardError, 'original_name cannot be null' if original_name.nil?
                                                 case original_name
+                                                    when "end_date_time"
+                                                        return "endDateTime"
+                                                    when "expand"
+                                                        return "%24expand"
                                                     when "select"
                                                         return "%24select"
+                                                    when "start_date_time"
+                                                        return "startDateTime"
                                                     else
                                                         return original_name
                                                 end

@@ -26,7 +26,7 @@ module MicrosoftGraph
             # Details about the remediation status.
             @remediation_status_details
             ## 
-            # The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+            # The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
             @roles
             ## 
             # Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
@@ -35,22 +35,22 @@ module MicrosoftGraph
             # The verdict property
             @verdict
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new securityAlertEvidence and sets the default values.
+            ## Instantiates a new SecurityAlertEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -94,6 +94,10 @@ module MicrosoftGraph
                             return SecurityBlobEvidence.new
                         when "#microsoft.graph.security.cloudApplicationEvidence"
                             return SecurityCloudApplicationEvidence.new
+                        when "#microsoft.graph.security.cloudLogonRequestEvidence"
+                            return SecurityCloudLogonRequestEvidence.new
+                        when "#microsoft.graph.security.cloudLogonSessionEvidence"
+                            return SecurityCloudLogonSessionEvidence.new
                         when "#microsoft.graph.security.containerEvidence"
                             return SecurityContainerEvidence.new
                         when "#microsoft.graph.security.containerImageEvidence"
@@ -102,10 +106,24 @@ module MicrosoftGraph
                             return SecurityContainerRegistryEvidence.new
                         when "#microsoft.graph.security.deviceEvidence"
                             return SecurityDeviceEvidence.new
+                        when "#microsoft.graph.security.dnsEvidence"
+                            return SecurityDnsEvidence.new
                         when "#microsoft.graph.security.fileEvidence"
                             return SecurityFileEvidence.new
+                        when "#microsoft.graph.security.fileHashEvidence"
+                            return SecurityFileHashEvidence.new
+                        when "#microsoft.graph.security.gitHubOrganizationEvidence"
+                            return SecurityGitHubOrganizationEvidence.new
+                        when "#microsoft.graph.security.gitHubRepoEvidence"
+                            return SecurityGitHubRepoEvidence.new
+                        when "#microsoft.graph.security.gitHubUserEvidence"
+                            return SecurityGitHubUserEvidence.new
                         when "#microsoft.graph.security.googleCloudResourceEvidence"
                             return SecurityGoogleCloudResourceEvidence.new
+                        when "#microsoft.graph.security.hostLogonSessionEvidence"
+                            return SecurityHostLogonSessionEvidence.new
+                        when "#microsoft.graph.security.ioTDeviceEvidence"
+                            return SecurityIoTDeviceEvidence.new
                         when "#microsoft.graph.security.ipEvidence"
                             return SecurityIpEvidence.new
                         when "#microsoft.graph.security.kubernetesClusterEvidence"
@@ -122,10 +140,18 @@ module MicrosoftGraph
                             return SecurityKubernetesServiceAccountEvidence.new
                         when "#microsoft.graph.security.kubernetesServiceEvidence"
                             return SecurityKubernetesServiceEvidence.new
+                        when "#microsoft.graph.security.mailboxConfigurationEvidence"
+                            return SecurityMailboxConfigurationEvidence.new
                         when "#microsoft.graph.security.mailboxEvidence"
                             return SecurityMailboxEvidence.new
                         when "#microsoft.graph.security.mailClusterEvidence"
                             return SecurityMailClusterEvidence.new
+                        when "#microsoft.graph.security.malwareEvidence"
+                            return SecurityMalwareEvidence.new
+                        when "#microsoft.graph.security.networkConnectionEvidence"
+                            return SecurityNetworkConnectionEvidence.new
+                        when "#microsoft.graph.security.nicEvidence"
+                            return SecurityNicEvidence.new
                         when "#microsoft.graph.security.oauthApplicationEvidence"
                             return SecurityOauthApplicationEvidence.new
                         when "#microsoft.graph.security.processEvidence"
@@ -134,8 +160,16 @@ module MicrosoftGraph
                             return SecurityRegistryKeyEvidence.new
                         when "#microsoft.graph.security.registryValueEvidence"
                             return SecurityRegistryValueEvidence.new
+                        when "#microsoft.graph.security.sasTokenEvidence"
+                            return SecuritySasTokenEvidence.new
                         when "#microsoft.graph.security.securityGroupEvidence"
                             return SecuritySecurityGroupEvidence.new
+                        when "#microsoft.graph.security.servicePrincipalEvidence"
+                            return SecurityServicePrincipalEvidence.new
+                        when "#microsoft.graph.security.submissionMailEvidence"
+                            return SecuritySubmissionMailEvidence.new
+                        when "#microsoft.graph.security.teamsMessageEvidence"
+                            return SecurityTeamsMessageEvidence.new
                         when "#microsoft.graph.security.urlEvidence"
                             return SecurityUrlEvidence.new
                         when "#microsoft.graph.security.userEvidence"
@@ -221,14 +255,14 @@ module MicrosoftGraph
                 @remediation_status_details = value
             end
             ## 
-            ## Gets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+            ## Gets the roles property value. The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
             ## @return a security_evidence_role
             ## 
             def roles
                 return @roles
             end
             ## 
-            ## Sets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
+            ## Sets the roles property value. The role/s that an evidence entity represents in an alert, for example, an IP address that is associated with an attacker has the evidence role Attacker.
             ## @param value Value to set for the roles property.
             ## @return a void
             ## 

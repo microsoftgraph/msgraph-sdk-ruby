@@ -10,34 +10,34 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The id property
+            # The unique identifier for the addIn object.
             @id
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The properties property
+            # The collection of key-value pairs that define parameters that the consuming service can use or call. You must specify this property when performing a POST or a PATCH operation on the addIns collection. Required.
             @properties
             ## 
-            # The type property
+            # The unique name for the functionality exposed by the app.
             @type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new addIn and sets the default values.
+            ## Instantiates a new AddIn and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -65,14 +65,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the id property value. The id property
+            ## Gets the id property value. The unique identifier for the addIn object.
             ## @return a guid
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The id property
+            ## Sets the id property value. The unique identifier for the addIn object.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 
@@ -95,14 +95,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the properties property value. The properties property
+            ## Gets the properties property value. The collection of key-value pairs that define parameters that the consuming service can use or call. You must specify this property when performing a POST or a PATCH operation on the addIns collection. Required.
             ## @return a key_value
             ## 
             def properties
                 return @properties
             end
             ## 
-            ## Sets the properties property value. The properties property
+            ## Sets the properties property value. The collection of key-value pairs that define parameters that the consuming service can use or call. You must specify this property when performing a POST or a PATCH operation on the addIns collection. Required.
             ## @param value Value to set for the properties property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the type property value. The type property
+            ## Gets the type property value. The unique name for the functionality exposed by the app.
             ## @return a string
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. The type property
+            ## Sets the type property value. The unique name for the functionality exposed by the app.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

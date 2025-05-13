@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @cluster_by_value = value
             end
             ## 
-            ## Instantiates a new securityMailClusterEvidence and sets the default values.
+            ## Instantiates a new SecurityMailClusterEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

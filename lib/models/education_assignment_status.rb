@@ -5,6 +5,7 @@ module MicrosoftGraph
             Published: :Published,
             Assigned: :Assigned,
             UnknownFutureValue: :UnknownFutureValue,
+            Inactive: :Inactive,
         }
     end
 end

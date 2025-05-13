@@ -7,7 +7,7 @@ module MicrosoftGraph
         class AuthenticationMethod < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new authenticationMethod and sets the default values.
+            ## Instantiates a new AuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -34,6 +34,8 @@ module MicrosoftGraph
                             return PasswordAuthenticationMethod.new
                         when "#microsoft.graph.phoneAuthenticationMethod"
                             return PhoneAuthenticationMethod.new
+                        when "#microsoft.graph.platformCredentialAuthenticationMethod"
+                            return PlatformCredentialAuthenticationMethod.new
                         when "#microsoft.graph.softwareOathAuthenticationMethod"
                             return SoftwareOathAuthenticationMethod.new
                         when "#microsoft.graph.temporaryAccessPassAuthenticationMethod"

@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,28 +22,22 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The principal property
-                                    @principal
-                                    ## 
-                                    # The schedule property
-                                    @schedule
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new fvschedulePostRequestBody and sets the default values.
+                                    ## Instantiates a new FvschedulePostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -65,39 +58,7 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "principal" => lambda {|n| @principal = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "schedule" => lambda {|n| @schedule = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
-                                    end
-                                    ## 
-                                    ## Gets the principal property value. The principal property
-                                    ## @return a json
-                                    ## 
-                                    def principal
-                                        return @principal
-                                    end
-                                    ## 
-                                    ## Sets the principal property value. The principal property
-                                    ## @param value Value to set for the principal property.
-                                    ## @return a void
-                                    ## 
-                                    def principal=(value)
-                                        @principal = value
-                                    end
-                                    ## 
-                                    ## Gets the schedule property value. The schedule property
-                                    ## @return a json
-                                    ## 
-                                    def schedule
-                                        return @schedule
-                                    end
-                                    ## 
-                                    ## Sets the schedule property value. The schedule property
-                                    ## @param value Value to set for the schedule property.
-                                    ## @return a void
-                                    ## 
-                                    def schedule=(value)
-                                        @schedule = value
                                     end
                                     ## 
                                     ## Serializes information the current object
@@ -106,8 +67,6 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("principal", @principal)
-                                        writer.write_object_value("schedule", @schedule)
                                         writer.write_additional_data(@additional_data)
                                     end
                                 end

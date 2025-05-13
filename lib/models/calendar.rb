@@ -16,13 +16,13 @@ module MicrosoftGraph
             # The calendar view for the calendar. Navigation property. Read-only.
             @calendar_view
             ## 
-            # true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
+            # true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who shared a calendar and granted write access.
             @can_edit
             ## 
-            # true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
+            # true if the user has permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
             @can_share
             ## 
-            # true if the user can read calendar items that have been marked private, false otherwise.
+            # If true, the user can read calendar items that have been marked private, false otherwise.
             @can_view_private_items
             ## 
             # Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
@@ -106,14 +106,14 @@ module MicrosoftGraph
                 @calendar_view = value
             end
             ## 
-            ## Gets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
+            ## Gets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who shared a calendar and granted write access.
             ## @return a boolean
             ## 
             def can_edit
                 return @can_edit
             end
             ## 
-            ## Sets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
+            ## Sets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who shared a calendar and granted write access.
             ## @param value Value to set for the canEdit property.
             ## @return a void
             ## 
@@ -121,14 +121,14 @@ module MicrosoftGraph
                 @can_edit = value
             end
             ## 
-            ## Gets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
+            ## Gets the canShare property value. true if the user has permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
             ## @return a boolean
             ## 
             def can_share
                 return @can_share
             end
             ## 
-            ## Sets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
+            ## Sets the canShare property value. true if the user has permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
             ## @param value Value to set for the canShare property.
             ## @return a void
             ## 
@@ -136,14 +136,14 @@ module MicrosoftGraph
                 @can_share = value
             end
             ## 
-            ## Gets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise.
+            ## Gets the canViewPrivateItems property value. If true, the user can read calendar items that have been marked private, false otherwise.
             ## @return a boolean
             ## 
             def can_view_private_items
                 return @can_view_private_items
             end
             ## 
-            ## Sets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise.
+            ## Sets the canViewPrivateItems property value. If true, the user can read calendar items that have been marked private, false otherwise.
             ## @param value Value to set for the canViewPrivateItems property.
             ## @return a void
             ## 
@@ -181,7 +181,7 @@ module MicrosoftGraph
                 @color = value
             end
             ## 
-            ## Instantiates a new calendar and sets the default values.
+            ## Instantiates a new Calendar and sets the default values.
             ## @return a void
             ## 
             def initialize()

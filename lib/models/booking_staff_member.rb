@@ -1,3 +1,4 @@
+require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
@@ -12,14 +13,23 @@ module MicrosoftGraph
             # True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
             @availability_is_affected_by_personal_calendar
             ## 
+            # The date, time, and time zone when the staff member was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            @created_date_time
+            ## 
             # The name of the staff member, as displayed to customers. Required.
             @display_name
             ## 
-            # The email address of the staff member. This can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
+            # The email address of the staff member. This email address can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
             @email_address
             ## 
-            # True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
+            # Indicates that a staff member is notified via email when a booking assigned to them is created or changed. The default value is true.
             @is_email_notification_enabled
+            ## 
+            # The date, time, and time zone when the staff member was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            @last_updated_date_time
+            ## 
+            # The membershipStatus property
+            @membership_status
             ## 
             # The role property
             @role
@@ -30,7 +40,7 @@ module MicrosoftGraph
             # True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
             @use_business_hours
             ## 
-            # The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
+            # The range of hours each day of the week that the staff member is available for booking. By default, they're initialized to be the same as the businessHours property of the business.
             @working_hours
             ## 
             ## Gets the availabilityIsAffectedByPersonalCalendar property value. True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
@@ -48,12 +58,27 @@ module MicrosoftGraph
                 @availability_is_affected_by_personal_calendar = value
             end
             ## 
-            ## Instantiates a new bookingStaffMember and sets the default values.
+            ## Instantiates a new BookingStaffMember and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
                 @odata_type = "#microsoft.graph.bookingStaffMember"
+            end
+            ## 
+            ## Gets the createdDateTime property value. The date, time, and time zone when the staff member was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @return a date_time
+            ## 
+            def created_date_time
+                return @created_date_time
+            end
+            ## 
+            ## Sets the createdDateTime property value. The date, time, and time zone when the staff member was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @param value Value to set for the createdDateTime property.
+            ## @return a void
+            ## 
+            def created_date_time=(value)
+                @created_date_time = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -80,14 +105,14 @@ module MicrosoftGraph
                 @display_name = value
             end
             ## 
-            ## Gets the emailAddress property value. The email address of the staff member. This can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
+            ## Gets the emailAddress property value. The email address of the staff member. This email address can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
             ## @return a string
             ## 
             def email_address
                 return @email_address
             end
             ## 
-            ## Sets the emailAddress property value. The email address of the staff member. This can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
+            ## Sets the emailAddress property value. The email address of the staff member. This email address can be in the same Microsoft 365 tenant as the business, or in a different email domain. This email address can be used if the sendConfirmationsToOwner property is set to true in the scheduling policy of the business. Required.
             ## @param value Value to set for the emailAddress property.
             ## @return a void
             ## 
@@ -101,9 +126,12 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "availabilityIsAffectedByPersonalCalendar" => lambda {|n| @availability_is_affected_by_personal_calendar = n.get_boolean_value() },
+                    "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "emailAddress" => lambda {|n| @email_address = n.get_string_value() },
                     "isEmailNotificationEnabled" => lambda {|n| @is_email_notification_enabled = n.get_boolean_value() },
+                    "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
+                    "membershipStatus" => lambda {|n| @membership_status = n.get_enum_value(MicrosoftGraph::Models::BookingStaffMembershipStatus) },
                     "role" => lambda {|n| @role = n.get_enum_value(MicrosoftGraph::Models::BookingStaffRole) },
                     "timeZone" => lambda {|n| @time_zone = n.get_string_value() },
                     "useBusinessHours" => lambda {|n| @use_business_hours = n.get_boolean_value() },
@@ -111,19 +139,49 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
+            ## Gets the isEmailNotificationEnabled property value. Indicates that a staff member is notified via email when a booking assigned to them is created or changed. The default value is true.
             ## @return a boolean
             ## 
             def is_email_notification_enabled
                 return @is_email_notification_enabled
             end
             ## 
-            ## Sets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
+            ## Sets the isEmailNotificationEnabled property value. Indicates that a staff member is notified via email when a booking assigned to them is created or changed. The default value is true.
             ## @param value Value to set for the isEmailNotificationEnabled property.
             ## @return a void
             ## 
             def is_email_notification_enabled=(value)
                 @is_email_notification_enabled = value
+            end
+            ## 
+            ## Gets the lastUpdatedDateTime property value. The date, time, and time zone when the staff member was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @return a date_time
+            ## 
+            def last_updated_date_time
+                return @last_updated_date_time
+            end
+            ## 
+            ## Sets the lastUpdatedDateTime property value. The date, time, and time zone when the staff member was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            ## @param value Value to set for the lastUpdatedDateTime property.
+            ## @return a void
+            ## 
+            def last_updated_date_time=(value)
+                @last_updated_date_time = value
+            end
+            ## 
+            ## Gets the membershipStatus property value. The membershipStatus property
+            ## @return a booking_staff_membership_status
+            ## 
+            def membership_status
+                return @membership_status
+            end
+            ## 
+            ## Sets the membershipStatus property value. The membershipStatus property
+            ## @param value Value to set for the membershipStatus property.
+            ## @return a void
+            ## 
+            def membership_status=(value)
+                @membership_status = value
             end
             ## 
             ## Gets the role property value. The role property
@@ -149,9 +207,12 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_boolean_value("availabilityIsAffectedByPersonalCalendar", @availability_is_affected_by_personal_calendar)
+                writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("emailAddress", @email_address)
                 writer.write_boolean_value("isEmailNotificationEnabled", @is_email_notification_enabled)
+                writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
+                writer.write_enum_value("membershipStatus", @membership_status)
                 writer.write_enum_value("role", @role)
                 writer.write_string_value("timeZone", @time_zone)
                 writer.write_boolean_value("useBusinessHours", @use_business_hours)
@@ -188,14 +249,14 @@ module MicrosoftGraph
                 @use_business_hours = value
             end
             ## 
-            ## Gets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
+            ## Gets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they're initialized to be the same as the businessHours property of the business.
             ## @return a booking_work_hours
             ## 
             def working_hours
                 return @working_hours
             end
             ## 
-            ## Sets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
+            ## Sets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they're initialized to be the same as the businessHours property of the business.
             ## @param value Value to set for the workingHours property.
             ## @return a void
             ## 
