@@ -34,7 +34,7 @@ module MicrosoftGraph
             # The pod service account.
             @service_account
             ## 
-            ## Instantiates a new securityKubernetesPodEvidence and sets the default values.
+            ## Instantiates a new SecurityKubernetesPodEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
