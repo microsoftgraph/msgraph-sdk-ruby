@@ -10,13 +10,13 @@ module MicrosoftGraph
         class VppToken < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The apple Id associated with the given Apple Volume Purchase Program Token.
+            # The Apple ID associated with the given Apple Volume Purchase Program Token.
             @apple_id
             ## 
             # Whether or not apps for the VPP token will be automatically updated.
             @automatically_update_apps
             ## 
-            # Whether or not apps for the VPP token will be automatically updated.
+            # The country or region associated with the Apple Volume Purchase Program Token.
             @country_or_region
             ## 
             # The expiration date time of the Apple Volume Purchase Program Token.
@@ -43,14 +43,14 @@ module MicrosoftGraph
             # Possible types of an Apple Volume Purchase Program token.
             @vpp_token_account_type
             ## 
-            ## Gets the appleId property value. The apple Id associated with the given Apple Volume Purchase Program Token.
+            ## Gets the appleId property value. The Apple ID associated with the given Apple Volume Purchase Program Token.
             ## @return a string
             ## 
             def apple_id
                 return @apple_id
             end
             ## 
-            ## Sets the appleId property value. The apple Id associated with the given Apple Volume Purchase Program Token.
+            ## Sets the appleId property value. The Apple ID associated with the given Apple Volume Purchase Program Token.
             ## @param value Value to set for the appleId property.
             ## @return a void
             ## 
@@ -73,21 +73,21 @@ module MicrosoftGraph
                 @automatically_update_apps = value
             end
             ## 
-            ## Instantiates a new vppToken and sets the default values.
+            ## Instantiates a new VppToken and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the countryOrRegion property value. Whether or not apps for the VPP token will be automatically updated.
+            ## Gets the countryOrRegion property value. The country or region associated with the Apple Volume Purchase Program Token.
             ## @return a string
             ## 
             def country_or_region
                 return @country_or_region
             end
             ## 
-            ## Sets the countryOrRegion property value. Whether or not apps for the VPP token will be automatically updated.
+            ## Sets the countryOrRegion property value. The country or region associated with the Apple Volume Purchase Program Token.
             ## @param value Value to set for the countryOrRegion property.
             ## @return a void
             ## 

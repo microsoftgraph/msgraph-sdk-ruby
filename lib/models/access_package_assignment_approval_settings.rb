@@ -10,11 +10,14 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # If false, then approval is not required for new requests in this policy.
+            # If false, then approval isn't required for new requests in this policy.
             @is_approval_required_for_add
             ## 
-            # If false, then approval is not required for updates to requests in this policy.
+            # If false, then approval isn't required for updates to requests in this policy.
             @is_approval_required_for_update
+            ## 
+            # If false, then requestor justification isn't required for updates to requests in this policy.
+            @is_requestor_justification_required
             ## 
             # The OdataType property
             @odata_type
@@ -22,22 +25,22 @@ module MicrosoftGraph
             # If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.
             @stages
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new accessPackageAssignmentApprovalSettings and sets the default values.
+            ## Instantiates a new AccessPackageAssignmentApprovalSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -60,19 +63,20 @@ module MicrosoftGraph
                 return {
                     "isApprovalRequiredForAdd" => lambda {|n| @is_approval_required_for_add = n.get_boolean_value() },
                     "isApprovalRequiredForUpdate" => lambda {|n| @is_approval_required_for_update = n.get_boolean_value() },
+                    "isRequestorJustificationRequired" => lambda {|n| @is_requestor_justification_required = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "stages" => lambda {|n| @stages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageApprovalStage.create_from_discriminator_value(pn) }) },
                 }
             end
             ## 
-            ## Gets the isApprovalRequiredForAdd property value. If false, then approval is not required for new requests in this policy.
+            ## Gets the isApprovalRequiredForAdd property value. If false, then approval isn't required for new requests in this policy.
             ## @return a boolean
             ## 
             def is_approval_required_for_add
                 return @is_approval_required_for_add
             end
             ## 
-            ## Sets the isApprovalRequiredForAdd property value. If false, then approval is not required for new requests in this policy.
+            ## Sets the isApprovalRequiredForAdd property value. If false, then approval isn't required for new requests in this policy.
             ## @param value Value to set for the isApprovalRequiredForAdd property.
             ## @return a void
             ## 
@@ -80,19 +84,34 @@ module MicrosoftGraph
                 @is_approval_required_for_add = value
             end
             ## 
-            ## Gets the isApprovalRequiredForUpdate property value. If false, then approval is not required for updates to requests in this policy.
+            ## Gets the isApprovalRequiredForUpdate property value. If false, then approval isn't required for updates to requests in this policy.
             ## @return a boolean
             ## 
             def is_approval_required_for_update
                 return @is_approval_required_for_update
             end
             ## 
-            ## Sets the isApprovalRequiredForUpdate property value. If false, then approval is not required for updates to requests in this policy.
+            ## Sets the isApprovalRequiredForUpdate property value. If false, then approval isn't required for updates to requests in this policy.
             ## @param value Value to set for the isApprovalRequiredForUpdate property.
             ## @return a void
             ## 
             def is_approval_required_for_update=(value)
                 @is_approval_required_for_update = value
+            end
+            ## 
+            ## Gets the isRequestorJustificationRequired property value. If false, then requestor justification isn't required for updates to requests in this policy.
+            ## @return a boolean
+            ## 
+            def is_requestor_justification_required
+                return @is_requestor_justification_required
+            end
+            ## 
+            ## Sets the isRequestorJustificationRequired property value. If false, then requestor justification isn't required for updates to requests in this policy.
+            ## @param value Value to set for the isRequestorJustificationRequired property.
+            ## @return a void
+            ## 
+            def is_requestor_justification_required=(value)
+                @is_requestor_justification_required = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -118,6 +137,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_boolean_value("isApprovalRequiredForAdd", @is_approval_required_for_add)
                 writer.write_boolean_value("isApprovalRequiredForUpdate", @is_approval_required_for_update)
+                writer.write_boolean_value("isRequestorJustificationRequired", @is_requestor_justification_required)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_collection_of_object_values("stages", @stages)
                 writer.write_additional_data(@additional_data)

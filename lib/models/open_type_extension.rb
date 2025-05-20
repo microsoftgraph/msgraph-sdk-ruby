@@ -10,7 +10,7 @@ module MicrosoftGraph
             # A unique text identifier for an open type data extension. Optional.
             @extension_name
             ## 
-            ## Instantiates a new openTypeExtension and sets the default values.
+            ## Instantiates a new OpenTypeExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()
