@@ -18,7 +18,7 @@ module MicrosoftGraph
             # The file or folder name to look up.
             @file_or_folder_name
             ## 
-            # Contains all supported file system detection type.
+            # A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.
             @operation_type
             ## 
             # Contains properties for detection operator.
@@ -57,7 +57,7 @@ module MicrosoftGraph
                 @comparison_value = value
             end
             ## 
-            ## Instantiates a new win32LobAppFileSystemRule and sets the default values.
+            ## Instantiates a new Win32LobAppFileSystemRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -103,14 +103,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the operationType property value. Contains all supported file system detection type.
+            ## Gets the operationType property value. A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.
             ## @return a win32_lob_app_file_system_operation_type
             ## 
             def operation_type
                 return @operation_type
             end
             ## 
-            ## Sets the operationType property value. Contains all supported file system detection type.
+            ## Sets the operationType property value. A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.
             ## @param value Value to set for the operationType property.
             ## @return a void
             ## 

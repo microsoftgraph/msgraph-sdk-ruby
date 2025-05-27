@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../microsoft_graph'
-require_relative '../../../../../../../../../models/json'
 require_relative '../../../../../../../../drives'
 require_relative '../../../../../../../item'
 require_relative '../../../../../../items'
@@ -33,18 +32,15 @@ module MicrosoftGraph
                                             # The name property
                                             @name
                                             ## 
-                                            # The reference property
-                                            @reference
-                                            ## 
-                                            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                             ## @return a i_dictionary
                                             ## 
                                             def additional_data
                                                 return @additional_data
                                             end
                                             ## 
-                                            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                            ## @param value Value to set for the additionalData property.
+                                            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                            ## @param value Value to set for the AdditionalData property.
                                             ## @return a void
                                             ## 
                                             def additional_data=(value)
@@ -66,7 +62,7 @@ module MicrosoftGraph
                                                 @comment = value
                                             end
                                             ## 
-                                            ## Instantiates a new addPostRequestBody and sets the default values.
+                                            ## Instantiates a new AddPostRequestBody and sets the default values.
                                             ## @return a void
                                             ## 
                                             def initialize()
@@ -89,7 +85,6 @@ module MicrosoftGraph
                                                 return {
                                                     "comment" => lambda {|n| @comment = n.get_string_value() },
                                                     "name" => lambda {|n| @name = n.get_string_value() },
-                                                    "reference" => lambda {|n| @reference = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                                 }
                                             end
                                             ## 
@@ -108,21 +103,6 @@ module MicrosoftGraph
                                                 @name = value
                                             end
                                             ## 
-                                            ## Gets the reference property value. The reference property
-                                            ## @return a json
-                                            ## 
-                                            def reference
-                                                return @reference
-                                            end
-                                            ## 
-                                            ## Sets the reference property value. The reference property
-                                            ## @param value Value to set for the reference property.
-                                            ## @return a void
-                                            ## 
-                                            def reference=(value)
-                                                @reference = value
-                                            end
-                                            ## 
                                             ## Serializes information the current object
                                             ## @param writer Serialization writer to use to serialize this model
                                             ## @return a void
@@ -131,7 +111,6 @@ module MicrosoftGraph
                                                 raise StandardError, 'writer cannot be null' if writer.nil?
                                                 writer.write_string_value("comment", @comment)
                                                 writer.write_string_value("name", @name)
-                                                writer.write_object_value("reference", @reference)
                                                 writer.write_additional_data(@additional_data)
                                             end
                                         end

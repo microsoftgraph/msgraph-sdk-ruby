@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The text property
+            # The string to display for this answer; if an Accept-Language header is provided, and there is a matching localization in localizations, this string will be the matching localized string; otherwise, this string remains as the default non-localized string. Required.
             @text
             ## 
             ## Gets the actualValue property value. The actual value of the selected choice. This is typically a string value which is understandable by applications. Required.
@@ -37,22 +37,22 @@ module MicrosoftGraph
                 @actual_value = value
             end
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new accessPackageAnswerChoice and sets the default values.
+            ## Instantiates a new AccessPackageAnswerChoice and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -123,14 +123,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the text property value. The text property
+            ## Gets the text property value. The string to display for this answer; if an Accept-Language header is provided, and there is a matching localization in localizations, this string will be the matching localized string; otherwise, this string remains as the default non-localized string. Required.
             ## @return a string
             ## 
             def text
                 return @text
             end
             ## 
-            ## Sets the text property value. The text property
+            ## Sets the text property value. The string to display for this answer; if an Accept-Language header is provided, and there is a matching localization in localizations, this string will be the matching localized string; otherwise, this string remains as the default non-localized string. Required.
             ## @param value Value to set for the text property.
             ## @return a void
             ## 

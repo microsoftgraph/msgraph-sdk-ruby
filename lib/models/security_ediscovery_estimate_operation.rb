@@ -28,7 +28,7 @@ module MicrosoftGraph
             # The estimated size of unindexed items for the collection.
             @unindexed_items_size
             ## 
-            ## Instantiates a new securityEdiscoveryEstimateOperation and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryEstimateOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

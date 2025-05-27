@@ -16,9 +16,6 @@ module MicrosoftGraph
             # Optional. Background color used to render the activity in the UI - brand color for the application source of the activity. Must be a valid hex color
             @background_color
             ## 
-            # Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
-            @content
-            ## 
             # Optional. Longer text description of the user's unique activity (example: document name, first sentence, and/or metadata)
             @description
             ## 
@@ -28,15 +25,15 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,26 +70,11 @@ module MicrosoftGraph
                 @background_color = value
             end
             ## 
-            ## Instantiates a new visualInfo and sets the default values.
+            ## Instantiates a new VisualInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 @additional_data = Hash.new
-            end
-            ## 
-            ## Gets the content property value. Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
-            ## @return a json
-            ## 
-            def content
-                return @content
-            end
-            ## 
-            ## Sets the content property value. Optional. Custom piece of data - JSON object used to provide custom content to render the activity in the Windows Shell UI
-            ## @param value Value to set for the content property.
-            ## @return a void
-            ## 
-            def content=(value)
-                @content = value
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -141,7 +123,6 @@ module MicrosoftGraph
                 return {
                     "attribution" => lambda {|n| @attribution = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ImageInfo.create_from_discriminator_value(pn) }) },
                     "backgroundColor" => lambda {|n| @background_color = n.get_string_value() },
-                    "content" => lambda {|n| @content = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayText" => lambda {|n| @display_text = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -171,7 +152,6 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_object_value("attribution", @attribution)
                 writer.write_string_value("backgroundColor", @background_color)
-                writer.write_object_value("content", @content)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayText", @display_text)
                 writer.write_string_value("@odata.type", @odata_type)

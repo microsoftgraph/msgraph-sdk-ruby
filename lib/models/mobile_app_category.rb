@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The date and time the mobileAppCategory was last modified.
             @last_modified_date_time
             ## 
-            ## Instantiates a new mobileAppCategory and sets the default values.
+            ## Instantiates a new MobileAppCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -80,7 +80,6 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("displayName", @display_name)
-                writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
             end
         end
     end

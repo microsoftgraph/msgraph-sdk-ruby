@@ -19,7 +19,7 @@ module MicrosoftGraph
             # A path leading to the folder in which the item is stored.
             @container_web_url
             ## 
-            # The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+            # The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
             @media_type
             ## 
             # The OdataType property
@@ -34,25 +34,25 @@ module MicrosoftGraph
             # The item's title text.
             @title
             ## 
-            # The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+            # The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
             @type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new resourceVisualization and sets the default values.
+            ## Instantiates a new ResourceVisualization and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -130,14 +130,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+            ## Gets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
             ## @return a string
             ## 
             def media_type
                 return @media_type
             end
             ## 
-            ## Sets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
+            ## Sets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Not all Media Mime Types are supported.
             ## @param value Value to set for the mediaType property.
             ## @return a void
             ## 
@@ -223,14 +223,14 @@ module MicrosoftGraph
                 @title = value
             end
             ## 
-            ## Gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+            ## Gets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
             ## @return a string
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.
+            ## Sets the type property value. The item's media type. Can be used for filtering for a specific file based on a specific type. See the section Type property values for supported types.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

@@ -19,7 +19,7 @@ module MicrosoftGraph
             # Read-only. Nullable. The collection of tasks in the bucket.
             @tasks
             ## 
-            ## Instantiates a new plannerBucket and sets the default values.
+            ## Instantiates a new PlannerBucket and sets the default values.
             ## @return a void
             ## 
             def initialize()

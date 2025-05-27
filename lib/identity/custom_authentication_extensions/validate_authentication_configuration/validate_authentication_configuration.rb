@@ -1,0 +1,1 @@
+require_relative 'validate_authentication_configuration_post_request_body'

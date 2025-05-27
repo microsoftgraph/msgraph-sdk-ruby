@@ -7,20 +7,20 @@ module MicrosoftGraph
         class EmailAuthenticationMethodConfiguration < MicrosoftGraph::Models::AuthenticationMethodConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
+            # Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who didn't use public preview have email OTP enabled beginning in October 2021.
             @allow_external_id_to_use_email_otp
             ## 
             # A collection of groups that are enabled to use the authentication method.
             @include_targets
             ## 
-            ## Gets the allowExternalIdToUseEmailOtp property value. Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
+            ## Gets the allowExternalIdToUseEmailOtp property value. Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who didn't use public preview have email OTP enabled beginning in October 2021.
             ## @return a external_email_otp_state
             ## 
             def allow_external_id_to_use_email_otp
                 return @allow_external_id_to_use_email_otp
             end
             ## 
-            ## Sets the allowExternalIdToUseEmailOtp property value. Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
+            ## Sets the allowExternalIdToUseEmailOtp property value. Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who didn't use public preview have email OTP enabled beginning in October 2021.
             ## @param value Value to set for the allowExternalIdToUseEmailOtp property.
             ## @return a void
             ## 
@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @allow_external_id_to_use_email_otp = value
             end
             ## 
-            ## Instantiates a new emailAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new EmailAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

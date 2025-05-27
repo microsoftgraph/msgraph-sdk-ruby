@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Indicates the type of query. Allowed value is MicrosoftGraph.
             @query_type
             ## 
-            ## Instantiates a new accessReviewNotificationRecipientQueryScope and sets the default values.
+            ## Instantiates a new AccessReviewNotificationRecipientQueryScope and sets the default values.
             ## @return a void
             ## 
             def initialize()

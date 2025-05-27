@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
             @version_number
             ## 
-            ## Instantiates a new identityGovernanceWorkflowVersion and sets the default values.
+            ## Instantiates a new IdentityGovernanceWorkflowVersion and sets the default values.
             ## @return a void
             ## 
             def initialize()

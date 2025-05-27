@@ -7,20 +7,20 @@ module MicrosoftGraph
         class OnPremisesDirectorySynchronization < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.
+            # Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant. Nullable.
             @configuration
             ## 
             # The features property
             @features
             ## 
-            ## Gets the configuration property value. Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.
+            ## Gets the configuration property value. Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant. Nullable.
             ## @return a on_premises_directory_synchronization_configuration
             ## 
             def configuration
                 return @configuration
             end
             ## 
-            ## Sets the configuration property value. Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.
+            ## Sets the configuration property value. Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant. Nullable.
             ## @param value Value to set for the configuration property.
             ## @return a void
             ## 
@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @configuration = value
             end
             ## 
-            ## Instantiates a new onPremisesDirectorySynchronization and sets the default values.
+            ## Instantiates a new OnPremisesDirectorySynchronization and sets the default values.
             ## @return a void
             ## 
             def initialize()

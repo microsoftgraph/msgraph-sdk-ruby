@@ -37,7 +37,7 @@ module MicrosoftGraph
                 @cloud_resource = value
             end
             ## 
-            ## Instantiates a new securityKubernetesClusterEvidence and sets the default values.
+            ## Instantiates a new SecurityKubernetesClusterEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

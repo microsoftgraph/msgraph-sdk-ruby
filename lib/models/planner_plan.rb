@@ -11,7 +11,7 @@ module MicrosoftGraph
             # Read-only. Nullable. Collection of buckets in the plan.
             @buckets
             ## 
-            # Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            # Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
             @container
             ## 
             # Read-only. The user who created the plan.
@@ -20,10 +20,10 @@ module MicrosoftGraph
             # Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @created_date_time
             ## 
-            # Read-only. Nullable. Additional details about the plan.
+            # Read-only. Nullable. Extra details about the plan.
             @details
             ## 
-            # The owner property
+            # Use the container property instead. ID of the group that owns the plan. After it's set, this property can’t be updated. This property won't return a valid group ID if the container of the plan isn't a group.
             @owner
             ## 
             # Read-only. Nullable. Collection of tasks in the plan.
@@ -47,21 +47,21 @@ module MicrosoftGraph
                 @buckets = value
             end
             ## 
-            ## Instantiates a new plannerPlan and sets the default values.
+            ## Instantiates a new PlannerPlan and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            ## Gets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
             ## @return a planner_plan_container
             ## 
             def container
                 return @container
             end
             ## 
-            ## Sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.
+            ## Sets the container property value. Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it's set, this property can’t be updated. Required.
             ## @param value Value to set for the container property.
             ## @return a void
             ## 
@@ -108,14 +108,14 @@ module MicrosoftGraph
                 return PlannerPlan.new
             end
             ## 
-            ## Gets the details property value. Read-only. Nullable. Additional details about the plan.
+            ## Gets the details property value. Read-only. Nullable. Extra details about the plan.
             ## @return a planner_plan_details
             ## 
             def details
                 return @details
             end
             ## 
-            ## Sets the details property value. Read-only. Nullable. Additional details about the plan.
+            ## Sets the details property value. Read-only. Nullable. Extra details about the plan.
             ## @param value Value to set for the details property.
             ## @return a void
             ## 
@@ -139,14 +139,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the owner property value. The owner property
+            ## Gets the owner property value. Use the container property instead. ID of the group that owns the plan. After it's set, this property can’t be updated. This property won't return a valid group ID if the container of the plan isn't a group.
             ## @return a string
             ## 
             def owner
                 return @owner
             end
             ## 
-            ## Sets the owner property value. The owner property
+            ## Sets the owner property value. Use the container property instead. ID of the group that owns the plan. After it's set, this property can’t be updated. This property won't return a valid group ID if the container of the plan isn't a group.
             ## @param value Value to set for the owner property.
             ## @return a void
             ## 

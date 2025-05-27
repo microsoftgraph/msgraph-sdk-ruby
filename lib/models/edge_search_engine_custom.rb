@@ -12,7 +12,7 @@ module MicrosoftGraph
             # Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.
             @edge_search_engine_open_search_xml_url
             ## 
-            ## Instantiates a new edgeSearchEngineCustom and sets the default values.
+            ## Instantiates a new EdgeSearchEngineCustom and sets the default values.
             ## @return a void
             ## 
             def initialize()

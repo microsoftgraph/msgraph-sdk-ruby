@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The resource URI for the object. For example, the resource URI for a copied page or section.
             @resource_location
             ## 
-            ## Instantiates a new onenoteOperation and sets the default values.
+            ## Instantiates a new OnenoteOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -17,7 +17,7 @@ module MicrosoftGraph
             # The reason for the time off.
             @time_off_reason_id
             ## 
-            ## Instantiates a new timeOffRequest and sets the default values.
+            ## Instantiates a new TimeOffRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

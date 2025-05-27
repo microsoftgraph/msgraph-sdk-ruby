@@ -40,7 +40,7 @@ module MicrosoftGraph
                 @allow_new_time_proposals = value
             end
             ## 
-            ## Instantiates a new eventMessageRequest and sets the default values.
+            ## Instantiates a new EventMessageRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

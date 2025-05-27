@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The unique identifier for the team whose members should receive the notification.
             @team_id
             ## 
-            ## Instantiates a new teamMembersNotificationRecipient and sets the default values.
+            ## Instantiates a new TeamMembersNotificationRecipient and sets the default values.
             ## @return a void
             ## 
             def initialize()

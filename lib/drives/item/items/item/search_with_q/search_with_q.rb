@@ -1,1 +1,1 @@
-require_relative 'search_with_q_response'
+require_relative 'search_with_q_get_response'

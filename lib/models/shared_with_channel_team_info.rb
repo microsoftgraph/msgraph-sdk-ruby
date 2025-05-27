@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @allowed_members = value
             end
             ## 
-            ## Instantiates a new sharedWithChannelTeamInfo and sets the default values.
+            ## Instantiates a new SharedWithChannelTeamInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

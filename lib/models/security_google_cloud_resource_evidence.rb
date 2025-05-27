@@ -7,6 +7,9 @@ module MicrosoftGraph
         class SecurityGoogleCloudResourceEvidence < MicrosoftGraph::Models::SecurityAlertEvidence
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The fullResourceName property
+            @full_resource_name
+            ## 
             # The zone or region where the resource is located.
             @location
             ## 
@@ -25,7 +28,7 @@ module MicrosoftGraph
             # The type of the resource.
             @resource_type
             ## 
-            ## Instantiates a new securityGoogleCloudResourceEvidence and sets the default values.
+            ## Instantiates a new SecurityGoogleCloudResourceEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -42,11 +45,27 @@ module MicrosoftGraph
                 return SecurityGoogleCloudResourceEvidence.new
             end
             ## 
+            ## Gets the fullResourceName property value. The fullResourceName property
+            ## @return a string
+            ## 
+            def full_resource_name
+                return @full_resource_name
+            end
+            ## 
+            ## Sets the fullResourceName property value. The fullResourceName property
+            ## @param value Value to set for the fullResourceName property.
+            ## @return a void
+            ## 
+            def full_resource_name=(value)
+                @full_resource_name = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "fullResourceName" => lambda {|n| @full_resource_name = n.get_string_value() },
                     "location" => lambda {|n| @location = n.get_string_value() },
                     "locationType" => lambda {|n| @location_type = n.get_enum_value(MicrosoftGraph::Models::SecurityGoogleCloudLocationType) },
                     "projectId" => lambda {|n| @project_id = n.get_string_value() },
@@ -153,6 +172,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_string_value("fullResourceName", @full_resource_name)
                 writer.write_string_value("location", @location)
                 writer.write_enum_value("locationType", @location_type)
                 writer.write_string_value("projectId", @project_id)

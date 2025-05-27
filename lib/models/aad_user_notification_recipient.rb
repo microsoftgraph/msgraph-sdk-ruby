@@ -7,10 +7,10 @@ module MicrosoftGraph
         class AadUserNotificationRecipient < MicrosoftGraph::Models::TeamworkNotificationRecipient
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Azure AD user identifier. Use the List users method to get this ID.
+            # Microsoft Entra user identifier. Use the List users method to get this ID.
             @user_id
             ## 
-            ## Instantiates a new aadUserNotificationRecipient and sets the default values.
+            ## Instantiates a new AadUserNotificationRecipient and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -46,14 +46,14 @@ module MicrosoftGraph
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the userId property value. Azure AD user identifier. Use the List users method to get this ID.
+            ## Gets the userId property value. Microsoft Entra user identifier. Use the List users method to get this ID.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. Azure AD user identifier. Use the List users method to get this ID.
+            ## Sets the userId property value. Microsoft Entra user identifier. Use the List users method to get this ID.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 

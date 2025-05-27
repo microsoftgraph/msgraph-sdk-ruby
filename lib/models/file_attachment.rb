@@ -13,10 +13,10 @@ module MicrosoftGraph
             # The ID of the attachment in the Exchange store.
             @content_id
             ## 
-            # Do not use this property as it is not supported.
+            # Don't use this property as it isn't supported.
             @content_location
             ## 
-            ## Instantiates a new fileAttachment and sets the default values.
+            ## Instantiates a new FileAttachment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,14 +54,14 @@ module MicrosoftGraph
                 @content_id = value
             end
             ## 
-            ## Gets the contentLocation property value. Do not use this property as it is not supported.
+            ## Gets the contentLocation property value. Don't use this property as it isn't supported.
             ## @return a string
             ## 
             def content_location
                 return @content_location
             end
             ## 
-            ## Sets the contentLocation property value. Do not use this property as it is not supported.
+            ## Sets the contentLocation property value. Don't use this property as it isn't supported.
             ## @param value Value to set for the contentLocation property.
             ## @return a void
             ## 

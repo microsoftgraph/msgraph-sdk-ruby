@@ -7,13 +7,13 @@ module MicrosoftGraph
         class BasicAuthentication < MicrosoftGraph::Models::ApiAuthenticationConfigurationBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The password. It is not returned in the responses.
+            # The password. It isn't returned in the responses.
             @password
             ## 
             # The username.
             @username
             ## 
-            ## Instantiates a new basicAuthentication and sets the default values.
+            ## Instantiates a new BasicAuthentication and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -40,14 +40,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the password property value. The password. It is not returned in the responses.
+            ## Gets the password property value. The password. It isn't returned in the responses.
             ## @return a string
             ## 
             def password
                 return @password
             end
             ## 
-            ## Sets the password property value. The password. It is not returned in the responses.
+            ## Sets the password property value. The password. It isn't returned in the responses.
             ## @param value Value to set for the password property.
             ## @return a void
             ## 

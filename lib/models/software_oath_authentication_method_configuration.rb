@@ -10,7 +10,7 @@ module MicrosoftGraph
             # A collection of groups that are enabled to use the authentication method. Expanded by default.
             @include_targets
             ## 
-            ## Instantiates a new softwareOathAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new SoftwareOathAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

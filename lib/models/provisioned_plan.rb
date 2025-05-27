@@ -10,41 +10,41 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # For example, 'Enabled'.
+            # Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
             @capability_status
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # For example, 'Success'.
+            # The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
             @provisioning_status
             ## 
-            # The name of the service; for example, 'AccessControlS2S'
+            # The name of the service; for example, 'AccessControlS2S'.
             @service
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the capabilityStatus property value. For example, 'Enabled'.
+            ## Gets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
             ## @return a string
             ## 
             def capability_status
                 return @capability_status
             end
             ## 
-            ## Sets the capabilityStatus property value. For example, 'Enabled'.
+            ## Sets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
             ## @param value Value to set for the capabilityStatus property.
             ## @return a void
             ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @capability_status = value
             end
             ## 
-            ## Instantiates a new provisionedPlan and sets the default values.
+            ## Instantiates a new ProvisionedPlan and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -95,14 +95,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the provisioningStatus property value. For example, 'Success'.
+            ## Gets the provisioningStatus property value. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
             ## @return a string
             ## 
             def provisioning_status
                 return @provisioning_status
             end
             ## 
-            ## Sets the provisioningStatus property value. For example, 'Success'.
+            ## Sets the provisioningStatus property value. The possible values are:Success - Service is fully provisioned.Disabled - Service is disabled.Error - The service plan isn't provisioned and is in an error state.PendingInput - The service isn't provisioned and is awaiting service confirmation.PendingActivation - The service is provisioned but requires explicit activation by an administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it isn't activated in the tenant.
             ## @param value Value to set for the provisioningStatus property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the service property value. The name of the service; for example, 'AccessControlS2S'
+            ## Gets the service property value. The name of the service; for example, 'AccessControlS2S'.
             ## @return a string
             ## 
             def service
                 return @service
             end
             ## 
-            ## Sets the service property value. The name of the service; for example, 'AccessControlS2S'
+            ## Sets the service property value. The name of the service; for example, 'AccessControlS2S'.
             ## @param value Value to set for the service property.
             ## @return a void
             ## 

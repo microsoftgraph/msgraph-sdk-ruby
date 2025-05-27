@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The learningCourseActivities property
             @learning_course_activities
             ## 
-            ## Instantiates a new employeeExperienceUser and sets the default values.
+            ## Instantiates a new EmployeeExperienceUser and sets the default values.
             ## @return a void
             ## 
             def initialize()

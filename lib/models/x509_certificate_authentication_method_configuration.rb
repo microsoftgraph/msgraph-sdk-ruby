@@ -10,8 +10,11 @@ module MicrosoftGraph
             # Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.
             @authentication_mode_configuration
             ## 
-            # Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
+            # Defines fields in the X.509 certificate that map to attributes of the Microsoft Entra user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
             @certificate_user_bindings
+            ## 
+            # The crlValidationConfiguration property
+            @crl_validation_configuration
             ## 
             # A collection of groups that are enabled to use the authentication method.
             @include_targets
@@ -31,14 +34,14 @@ module MicrosoftGraph
                 @authentication_mode_configuration = value
             end
             ## 
-            ## Gets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
+            ## Gets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Microsoft Entra user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
             ## @return a x509_certificate_user_binding
             ## 
             def certificate_user_bindings
                 return @certificate_user_bindings
             end
             ## 
-            ## Sets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
+            ## Sets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Microsoft Entra user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
             ## @param value Value to set for the certificateUserBindings property.
             ## @return a void
             ## 
@@ -46,7 +49,7 @@ module MicrosoftGraph
                 @certificate_user_bindings = value
             end
             ## 
-            ## Instantiates a new x509CertificateAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new X509CertificateAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -63,6 +66,21 @@ module MicrosoftGraph
                 return X509CertificateAuthenticationMethodConfiguration.new
             end
             ## 
+            ## Gets the crlValidationConfiguration property value. The crlValidationConfiguration property
+            ## @return a x509_certificate_c_r_l_validation_configuration
+            ## 
+            def crl_validation_configuration
+                return @crl_validation_configuration
+            end
+            ## 
+            ## Sets the crlValidationConfiguration property value. The crlValidationConfiguration property
+            ## @param value Value to set for the crlValidationConfiguration property.
+            ## @return a void
+            ## 
+            def crl_validation_configuration=(value)
+                @crl_validation_configuration = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -70,6 +88,7 @@ module MicrosoftGraph
                 return super.merge({
                     "authenticationModeConfiguration" => lambda {|n| @authentication_mode_configuration = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::X509CertificateAuthenticationModeConfiguration.create_from_discriminator_value(pn) }) },
                     "certificateUserBindings" => lambda {|n| @certificate_user_bindings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::X509CertificateUserBinding.create_from_discriminator_value(pn) }) },
+                    "crlValidationConfiguration" => lambda {|n| @crl_validation_configuration = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::X509CertificateCRLValidationConfiguration.create_from_discriminator_value(pn) }) },
                     "includeTargets" => lambda {|n| @include_targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AuthenticationMethodTarget.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -98,6 +117,7 @@ module MicrosoftGraph
                 super
                 writer.write_object_value("authenticationModeConfiguration", @authentication_mode_configuration)
                 writer.write_collection_of_object_values("certificateUserBindings", @certificate_user_bindings)
+                writer.write_object_value("crlValidationConfiguration", @crl_validation_configuration)
                 writer.write_collection_of_object_values("includeTargets", @include_targets)
             end
         end

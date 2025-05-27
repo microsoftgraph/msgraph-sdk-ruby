@@ -10,10 +10,10 @@ module MicrosoftGraph
             # The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
             @cloud_instance
             ## 
-            # The name of the Azure Active Directory tenant. Read only.
+            # The name of the Microsoft Entra tenant. Read only.
             @display_name
             ## 
-            # The ID of the Azure Active Directory tenant. Read only.
+            # The ID of the Microsoft Entra tenant. Read only.
             @tenant_id
             ## 
             ## Gets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @cloud_instance = value
             end
             ## 
-            ## Instantiates a new crossCloudAzureActiveDirectoryTenant and sets the default values.
+            ## Instantiates a new CrossCloudAzureActiveDirectoryTenant and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,14 +48,14 @@ module MicrosoftGraph
                 return CrossCloudAzureActiveDirectoryTenant.new
             end
             ## 
-            ## Gets the displayName property value. The name of the Azure Active Directory tenant. Read only.
+            ## Gets the displayName property value. The name of the Microsoft Entra tenant. Read only.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The name of the Azure Active Directory tenant. Read only.
+            ## Sets the displayName property value. The name of the Microsoft Entra tenant. Read only.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -86,14 +86,14 @@ module MicrosoftGraph
                 writer.write_string_value("tenantId", @tenant_id)
             end
             ## 
-            ## Gets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
+            ## Gets the tenantId property value. The ID of the Microsoft Entra tenant. Read only.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
+            ## Sets the tenantId property value. The ID of the Microsoft Entra tenant. Read only.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

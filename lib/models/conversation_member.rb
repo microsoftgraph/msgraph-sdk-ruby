@@ -11,13 +11,13 @@ module MicrosoftGraph
             # The display name of the user.
             @display_name
             ## 
-            # The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
+            # The roles for that user. This property contains more qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member shouldn't have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
             @roles
             ## 
             # The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
             @visible_history_start_date_time
             ## 
-            ## Instantiates a new conversationMember and sets the default values.
+            ## Instantiates a new ConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -77,14 +77,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the roles property value. The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
+            ## Gets the roles property value. The roles for that user. This property contains more qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member shouldn't have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
             ## @return a string
             ## 
             def roles
                 return @roles
             end
             ## 
-            ## Sets the roles property value. The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
+            ## Sets the roles property value. The roles for that user. This property contains more qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member shouldn't have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
             ## @param value Value to set for the roles property.
             ## @return a void
             ## 

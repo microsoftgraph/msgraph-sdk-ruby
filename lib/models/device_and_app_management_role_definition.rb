@@ -9,7 +9,7 @@ module MicrosoftGraph
         class DeviceAndAppManagementRoleDefinition < MicrosoftGraph::Models::RoleDefinition
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new deviceAndAppManagementRoleDefinition and sets the default values.
+            ## Instantiates a new DeviceAndAppManagementRoleDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

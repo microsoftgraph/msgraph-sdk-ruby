@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
             @workflow_schedule_interval_in_hours
             ## 
-            ## Instantiates a new identityGovernanceLifecycleManagementSettings and sets the default values.
+            ## Instantiates a new IdentityGovernanceLifecycleManagementSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
