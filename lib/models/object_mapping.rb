@@ -37,15 +37,15 @@ module MicrosoftGraph
             # Name of the object in target directory. Must match the object name from the target directory definition.
             @target_object_name
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
                 @attribute_mappings = value
             end
             ## 
-            ## Instantiates a new objectMapping and sets the default values.
+            ## Instantiates a new ObjectMapping and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -120,7 +120,7 @@ module MicrosoftGraph
                 return {
                     "attributeMappings" => lambda {|n| @attribute_mappings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AttributeMapping.create_from_discriminator_value(pn) }) },
                     "enabled" => lambda {|n| @enabled = n.get_boolean_value() },
-                    "flowTypes" => lambda {|n| @flow_types = n.get_enum_value(MicrosoftGraph::Models::ObjectFlowTypes) },
+                    "flowTypes" => lambda {|n| @flow_types = n.get_enum_values(MicrosoftGraph::Models::ObjectFlowTypes) },
                     "metadata" => lambda {|n| @metadata = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ObjectMappingMetadataEntry.create_from_discriminator_value(pn) }) },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },

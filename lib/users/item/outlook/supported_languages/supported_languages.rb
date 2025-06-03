@@ -1,1 +1,1 @@
-require_relative 'supported_languages_response'
+require_relative 'supported_languages_get_response'

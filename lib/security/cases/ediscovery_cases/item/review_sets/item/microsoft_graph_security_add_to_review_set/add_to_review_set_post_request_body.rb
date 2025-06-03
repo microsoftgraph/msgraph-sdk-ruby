@@ -30,15 +30,15 @@ module MicrosoftGraph
                                     # The search property
                                     @search
                                     ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -60,7 +60,7 @@ module MicrosoftGraph
                                         @additional_data_options = value
                                     end
                                     ## 
-                                    ## Instantiates a new addToReviewSetPostRequestBody and sets the default values.
+                                    ## Instantiates a new AddToReviewSetPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -81,7 +81,7 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "additionalDataOptions" => lambda {|n| @additional_data_options = n.get_enum_value(MicrosoftGraph::Models::SecurityAdditionalDataOptions) },
+                                            "additionalDataOptions" => lambda {|n| @additional_data_options = n.get_enum_values(MicrosoftGraph::Models::SecurityAdditionalDataOptions) },
                                             "search" => lambda {|n| @search = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoverySearch.create_from_discriminator_value(pn) }) },
                                         }
                                     end

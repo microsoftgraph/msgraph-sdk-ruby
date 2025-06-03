@@ -11,34 +11,37 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The maxLifetime property
+            # String value that indicates the maximum lifetime for password expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to passwordLifetime.
             @max_lifetime
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
+            # Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.
             @restrict_for_apps_created_after_date_time
             ## 
-            # The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
+            # The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime, customPasswordAddition, and unknownFutureValue. Each value of restrictionType can be used only once per policy.
             @restriction_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # The state property
+            @state
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new passwordCredentialConfiguration and sets the default values.
+            ## Instantiates a new PasswordCredentialConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -63,17 +66,18 @@ module MicrosoftGraph
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "restrictForAppsCreatedAfterDateTime" => lambda {|n| @restrict_for_apps_created_after_date_time = n.get_date_time_value() },
                     "restrictionType" => lambda {|n| @restriction_type = n.get_enum_value(MicrosoftGraph::Models::AppCredentialRestrictionType) },
+                    "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::AppManagementRestrictionState) },
                 }
             end
             ## 
-            ## Gets the maxLifetime property value. The maxLifetime property
+            ## Gets the maxLifetime property value. String value that indicates the maximum lifetime for password expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to passwordLifetime.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def max_lifetime
                 return @max_lifetime
             end
             ## 
-            ## Sets the maxLifetime property value. The maxLifetime property
+            ## Sets the maxLifetime property value. String value that indicates the maximum lifetime for password expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to passwordLifetime.
             ## @param value Value to set for the maxLifetime property.
             ## @return a void
             ## 
@@ -96,14 +100,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the restrictForAppsCreatedAfterDateTime property value. Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
+            ## Gets the restrictForAppsCreatedAfterDateTime property value. Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.
             ## @return a date_time
             ## 
             def restrict_for_apps_created_after_date_time
                 return @restrict_for_apps_created_after_date_time
             end
             ## 
-            ## Sets the restrictForAppsCreatedAfterDateTime property value. Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
+            ## Sets the restrictForAppsCreatedAfterDateTime property value. Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.
             ## @param value Value to set for the restrictForAppsCreatedAfterDateTime property.
             ## @return a void
             ## 
@@ -111,14 +115,14 @@ module MicrosoftGraph
                 @restrict_for_apps_created_after_date_time = value
             end
             ## 
-            ## Gets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
+            ## Gets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime, customPasswordAddition, and unknownFutureValue. Each value of restrictionType can be used only once per policy.
             ## @return a app_credential_restriction_type
             ## 
             def restriction_type
                 return @restriction_type
             end
             ## 
-            ## Sets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime,customPasswordAddition, unknownFutureValue. Each value of restrictionType can be used only once per policy.
+            ## Sets the restrictionType property value. The type of restriction being applied. The possible values are: passwordAddition, passwordLifetime, symmetricKeyAddition, symmetricKeyLifetime, customPasswordAddition, and unknownFutureValue. Each value of restrictionType can be used only once per policy.
             ## @param value Value to set for the restrictionType property.
             ## @return a void
             ## 
@@ -136,7 +140,23 @@ module MicrosoftGraph
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_date_time_value("restrictForAppsCreatedAfterDateTime", @restrict_for_apps_created_after_date_time)
                 writer.write_enum_value("restrictionType", @restriction_type)
+                writer.write_enum_value("state", @state)
                 writer.write_additional_data(@additional_data)
+            end
+            ## 
+            ## Gets the state property value. The state property
+            ## @return a app_management_restriction_state
+            ## 
+            def state
+                return @state
+            end
+            ## 
+            ## Sets the state property value. The state property
+            ## @param value Value to set for the state property.
+            ## @return a void
+            ## 
+            def state=(value)
+                @state = value
             end
         end
     end

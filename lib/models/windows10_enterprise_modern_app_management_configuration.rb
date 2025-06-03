@@ -12,7 +12,7 @@ module MicrosoftGraph
             # Indicates whether or not to uninstall a fixed list of built-in Windows apps.
             @uninstall_built_in_apps
             ## 
-            ## Instantiates a new windows10EnterpriseModernAppManagementConfiguration and sets the default values.
+            ## Instantiates a new Windows10EnterpriseModernAppManagementConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

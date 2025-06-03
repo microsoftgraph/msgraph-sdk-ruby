@@ -16,28 +16,28 @@ module MicrosoftGraph
             # String used to represent the mention. For example, a user's display name, a team name.
             @mention_text
             ## 
-            # The entity (user, application, team, or channel) that was @mentioned.
+            # The entity (user, application, team, channel, or chat) that was @mentioned.
             @mentioned
             ## 
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new chatMessageMention and sets the default values.
+            ## Instantiates a new ChatMessageMention and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -95,14 +95,14 @@ module MicrosoftGraph
                 @mention_text = value
             end
             ## 
-            ## Gets the mentioned property value. The entity (user, application, team, or channel) that was @mentioned.
+            ## Gets the mentioned property value. The entity (user, application, team, channel, or chat) that was @mentioned.
             ## @return a chat_message_mentioned_identity_set
             ## 
             def mentioned
                 return @mentioned
             end
             ## 
-            ## Sets the mentioned property value. The entity (user, application, team, or channel) that was @mentioned.
+            ## Sets the mentioned property value. The entity (user, application, team, channel, or chat) that was @mentioned.
             ## @param value Value to set for the mentioned property.
             ## @return a void
             ## 

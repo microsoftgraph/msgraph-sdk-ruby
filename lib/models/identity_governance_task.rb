@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The category property
             @category
             ## 
-            # A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.
+            # A Boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
             @continue_on_error
             ## 
             # A string that describes the purpose of the task for administrative use. Optional.
@@ -22,13 +22,13 @@ module MicrosoftGraph
             # A unique string that identifies the task. Required.Supports $filter(eq, ne) and orderBy.
             @display_name
             ## 
-            # An integer that states in what order the task will run in a workflow.Supports $orderby.
+            # An integer that states in what order the task runs in a workflow.Supports $orderby.
             @execution_sequence
             ## 
-            # A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
+            # A Boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
             @is_enabled
             ## 
-            # A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).
+            # A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.Supports $filter(eq, ne).
             @task_definition_id
             ## 
             # The result of processing the task.
@@ -64,21 +64,21 @@ module MicrosoftGraph
                 @category = value
             end
             ## 
-            ## Instantiates a new identityGovernanceTask and sets the default values.
+            ## Instantiates a new IdentityGovernanceTask and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the continueOnError property value. A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.
+            ## Gets the continueOnError property value. A Boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
             ## @return a boolean
             ## 
             def continue_on_error
                 return @continue_on_error
             end
             ## 
-            ## Sets the continueOnError property value. A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.
+            ## Sets the continueOnError property value. A Boolean value that specifies whether, if this task fails, the workflow stops, and subsequent tasks aren't run. Optional.
             ## @param value Value to set for the continueOnError property.
             ## @return a void
             ## 
@@ -125,14 +125,14 @@ module MicrosoftGraph
                 @display_name = value
             end
             ## 
-            ## Gets the executionSequence property value. An integer that states in what order the task will run in a workflow.Supports $orderby.
+            ## Gets the executionSequence property value. An integer that states in what order the task runs in a workflow.Supports $orderby.
             ## @return a integer
             ## 
             def execution_sequence
                 return @execution_sequence
             end
             ## 
-            ## Sets the executionSequence property value. An integer that states in what order the task will run in a workflow.Supports $orderby.
+            ## Sets the executionSequence property value. An integer that states in what order the task runs in a workflow.Supports $orderby.
             ## @param value Value to set for the executionSequence property.
             ## @return a void
             ## 
@@ -146,7 +146,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "arguments" => lambda {|n| @arguments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::KeyValuePair.create_from_discriminator_value(pn) }) },
-                    "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraph::Models::IdentityGovernanceLifecycleTaskCategory) },
+                    "category" => lambda {|n| @category = n.get_enum_values(MicrosoftGraph::Models::IdentityGovernanceLifecycleTaskCategory) },
                     "continueOnError" => lambda {|n| @continue_on_error = n.get_boolean_value() },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
@@ -157,14 +157,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isEnabled property value. A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
+            ## Gets the isEnabled property value. A Boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
             ## @return a boolean
             ## 
             def is_enabled
                 return @is_enabled
             end
             ## 
-            ## Sets the isEnabled property value. A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
+            ## Sets the isEnabled property value. A Boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
             ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
@@ -190,14 +190,14 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("taskProcessingResults", @task_processing_results)
             end
             ## 
-            ## Gets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).
+            ## Gets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.Supports $filter(eq, ne).
             ## @return a string
             ## 
             def task_definition_id
                 return @task_definition_id
             end
             ## 
-            ## Sets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).
+            ## Sets the taskDefinitionId property value. A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.Supports $filter(eq, ne).
             ## @param value Value to set for the taskDefinitionId property.
             ## @return a void
             ## 

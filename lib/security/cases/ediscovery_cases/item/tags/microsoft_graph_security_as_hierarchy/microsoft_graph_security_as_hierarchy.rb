@@ -1,1 +1,1 @@
-require_relative 'as_hierarchy_response'
+require_relative 'as_hierarchy_get_response'

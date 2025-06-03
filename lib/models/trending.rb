@@ -8,7 +8,7 @@ module MicrosoftGraph
         class Trending < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The lastModifiedDateTime property
+            # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @last_modified_date_time
             ## 
             # Used for navigating to the trending document.
@@ -23,7 +23,7 @@ module MicrosoftGraph
             # Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.
             @weight
             ## 
-            ## Instantiates a new trending and sets the default values.
+            ## Instantiates a new Trending and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -52,14 +52,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Gets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+            ## Sets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 

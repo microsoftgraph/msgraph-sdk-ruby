@@ -1,1 +1,1 @@
-require_relative 'is_published_response'
+require_relative 'is_published_get_response'

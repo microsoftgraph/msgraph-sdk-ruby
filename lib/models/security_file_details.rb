@@ -25,6 +25,9 @@ module MicrosoftGraph
             # The certificate authority (CA) that issued the certificate.
             @issuer
             ## 
+            # The Md5 cryptographic hash of the file content.
+            @md5
+            ## 
             # The OdataType property
             @odata_type
             ## 
@@ -34,25 +37,28 @@ module MicrosoftGraph
             # The Sha256 cryptographic hash of the file content.
             @sha256
             ## 
+            # The sha256Ac property
+            @sha256_ac
+            ## 
             # The signer of the signed file.
             @signer
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new securityFileDetails and sets the default values.
+            ## Instantiates a new SecurityFileDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -138,9 +144,11 @@ module MicrosoftGraph
                     "filePublisher" => lambda {|n| @file_publisher = n.get_string_value() },
                     "fileSize" => lambda {|n| @file_size = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "issuer" => lambda {|n| @issuer = n.get_string_value() },
+                    "md5" => lambda {|n| @md5 = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "sha1" => lambda {|n| @sha1 = n.get_string_value() },
                     "sha256" => lambda {|n| @sha256 = n.get_string_value() },
+                    "sha256Ac" => lambda {|n| @sha256_ac = n.get_string_value() },
                     "signer" => lambda {|n| @signer = n.get_string_value() },
                 }
             end
@@ -158,6 +166,21 @@ module MicrosoftGraph
             ## 
             def issuer=(value)
                 @issuer = value
+            end
+            ## 
+            ## Gets the md5 property value. The Md5 cryptographic hash of the file content.
+            ## @return a string
+            ## 
+            def md5
+                return @md5
+            end
+            ## 
+            ## Sets the md5 property value. The Md5 cryptographic hash of the file content.
+            ## @param value Value to set for the md5 property.
+            ## @return a void
+            ## 
+            def md5=(value)
+                @md5 = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -186,9 +209,11 @@ module MicrosoftGraph
                 writer.write_string_value("filePublisher", @file_publisher)
                 writer.write_object_value("fileSize", @file_size)
                 writer.write_string_value("issuer", @issuer)
+                writer.write_string_value("md5", @md5)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("sha1", @sha1)
                 writer.write_string_value("sha256", @sha256)
+                writer.write_string_value("sha256Ac", @sha256_ac)
                 writer.write_string_value("signer", @signer)
                 writer.write_additional_data(@additional_data)
             end
@@ -221,6 +246,21 @@ module MicrosoftGraph
             ## 
             def sha256=(value)
                 @sha256 = value
+            end
+            ## 
+            ## Gets the sha256Ac property value. The sha256Ac property
+            ## @return a string
+            ## 
+            def sha256_ac
+                return @sha256_ac
+            end
+            ## 
+            ## Sets the sha256Ac property value. The sha256Ac property
+            ## @param value Value to set for the sha256Ac property.
+            ## @return a void
+            ## 
+            def sha256_ac=(value)
+                @sha256_ac = value
             end
             ## 
             ## Gets the signer property value. The signer of the signed file.

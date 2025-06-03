@@ -7,7 +7,7 @@ module MicrosoftGraph
         class TokenLifetimePolicy < MicrosoftGraph::Models::StsPolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new tokenLifetimePolicy and sets the default values.
+            ## Instantiates a new TokenLifetimePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

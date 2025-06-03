@@ -15,7 +15,7 @@ module MicrosoftGraph
             # The assignment target for eBook.
             @target
             ## 
-            ## Instantiates a new managedEBookAssignment and sets the default values.
+            ## Instantiates a new ManagedEBookAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

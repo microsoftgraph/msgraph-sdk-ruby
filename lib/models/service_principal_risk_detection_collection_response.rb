@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new servicePrincipalRiskDetectionCollectionResponse and sets the default values.
+            ## Instantiates a new ServicePrincipalRiskDetectionCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

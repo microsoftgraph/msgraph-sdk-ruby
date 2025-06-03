@@ -18,7 +18,7 @@ module MicrosoftGraph
             # Name that is displayed to the user.
             @payload_name
             ## 
-            ## Instantiates a new iosCustomConfiguration and sets the default values.
+            ## Instantiates a new IosCustomConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

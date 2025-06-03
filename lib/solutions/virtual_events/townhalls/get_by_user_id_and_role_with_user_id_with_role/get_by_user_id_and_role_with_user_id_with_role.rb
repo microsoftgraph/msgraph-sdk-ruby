@@ -1,0 +1,1 @@
+require_relative 'get_by_user_id_and_role_with_user_id_with_role_get_response'

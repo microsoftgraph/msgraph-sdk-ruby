@@ -44,7 +44,7 @@ module MicrosoftGraph
                 @configuration_version = value
             end
             ## 
-            ## Instantiates a new deviceComplianceUserOverview and sets the default values.
+            ## Instantiates a new DeviceComplianceUserOverview and sets the default values.
             ## @return a void
             ## 
             def initialize()

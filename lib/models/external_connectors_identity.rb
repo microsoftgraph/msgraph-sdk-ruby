@@ -7,10 +7,10 @@ module MicrosoftGraph
         class ExternalConnectorsIdentity < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
+            # The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.
             @type
             ## 
-            ## Instantiates a new externalConnectorsIdentity and sets the default values.
+            ## Instantiates a new ExternalConnectorsIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -45,14 +45,14 @@ module MicrosoftGraph
                 writer.write_enum_value("type", @type)
             end
             ## 
-            ## Gets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
+            ## Gets the type property value. The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.
             ## @return a external_connectors_identity_type
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
+            ## Sets the type property value. The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

@@ -10,16 +10,16 @@ module MicrosoftGraph
             # The dataType property
             @data_type
             ## 
-            # The description of the user flow attribute that's shown to the user at the time of sign-up.
+            # The description of the user flow attribute that's shown to the user at the time of sign up.
             @description
             ## 
-            # The display name of the user flow attribute.
+            # The display name of the user flow attribute.  Supports $filter (eq, ne).
             @display_name
             ## 
             # The userFlowAttributeType property
             @user_flow_attribute_type
             ## 
-            ## Instantiates a new identityUserFlowAttribute and sets the default values.
+            ## Instantiates a new IdentityUserFlowAttribute and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -60,14 +60,14 @@ module MicrosoftGraph
                 @data_type = value
             end
             ## 
-            ## Gets the description property value. The description of the user flow attribute that's shown to the user at the time of sign-up.
+            ## Gets the description property value. The description of the user flow attribute that's shown to the user at the time of sign up.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description of the user flow attribute that's shown to the user at the time of sign-up.
+            ## Sets the description property value. The description of the user flow attribute that's shown to the user at the time of sign up.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -75,14 +75,14 @@ module MicrosoftGraph
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. The display name of the user flow attribute.
+            ## Gets the displayName property value. The display name of the user flow attribute.  Supports $filter (eq, ne).
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name of the user flow attribute.
+            ## Sets the displayName property value. The display name of the user flow attribute.  Supports $filter (eq, ne).
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

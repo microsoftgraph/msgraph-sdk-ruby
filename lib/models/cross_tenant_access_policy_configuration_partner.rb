@@ -13,23 +13,26 @@ module MicrosoftGraph
             # Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
             @automatic_user_consent_settings
             ## 
-            # Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
+            # Defines your partner-specific configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
             @b2b_collaboration_inbound
             ## 
-            # Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
+            # Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
             @b2b_collaboration_outbound
             ## 
             # Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.
             @b2b_direct_connect_inbound
             ## 
-            # Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
+            # Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
             @b2b_direct_connect_outbound
             ## 
-            # Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
+            # Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
             @identity_synchronization
             ## 
-            # Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
+            # Determines the partner-specific configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
             @inbound_trust
+            ## 
+            # Identifies whether a tenant is a member of a multitenant organization.
+            @is_in_multi_tenant_organization
             ## 
             # Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
             @is_service_provider
@@ -37,18 +40,21 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The tenant identifier for the partner Azure AD organization. Read-only. Key.
+            # The tenant identifier for the partner Microsoft Entra organization. Read-only. Key.
             @tenant_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # Defines the partner-specific tenant restrictions configuration for users in your organization who access a partner organization using partner supplied identities on your network or devices.
+            @tenant_restrictions
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -70,14 +76,14 @@ module MicrosoftGraph
                 @automatic_user_consent_settings = value
             end
             ## 
-            ## Gets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
+            ## Gets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
             def b2b_collaboration_inbound
                 return @b2b_collaboration_inbound
             end
             ## 
-            ## Sets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
+            ## Sets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
             ## @param value Value to set for the b2bCollaborationInbound property.
             ## @return a void
             ## 
@@ -85,14 +91,14 @@ module MicrosoftGraph
                 @b2b_collaboration_inbound = value
             end
             ## 
-            ## Gets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
+            ## Gets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
             def b2b_collaboration_outbound
                 return @b2b_collaboration_outbound
             end
             ## 
-            ## Sets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
+            ## Sets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
             ## @param value Value to set for the b2bCollaborationOutbound property.
             ## @return a void
             ## 
@@ -115,14 +121,14 @@ module MicrosoftGraph
                 @b2b_direct_connect_inbound = value
             end
             ## 
-            ## Gets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
+            ## Gets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
             def b2b_direct_connect_outbound
                 return @b2b_direct_connect_outbound
             end
             ## 
-            ## Sets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
+            ## Sets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
             ## @param value Value to set for the b2bDirectConnectOutbound property.
             ## @return a void
             ## 
@@ -130,7 +136,7 @@ module MicrosoftGraph
                 @b2b_direct_connect_outbound = value
             end
             ## 
-            ## Instantiates a new crossTenantAccessPolicyConfigurationPartner and sets the default values.
+            ## Instantiates a new CrossTenantAccessPolicyConfigurationPartner and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -158,20 +164,22 @@ module MicrosoftGraph
                     "b2bDirectConnectOutbound" => lambda {|n| @b2b_direct_connect_outbound = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "identitySynchronization" => lambda {|n| @identity_synchronization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantIdentitySyncPolicyPartner.create_from_discriminator_value(pn) }) },
                     "inboundTrust" => lambda {|n| @inbound_trust = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyInboundTrust.create_from_discriminator_value(pn) }) },
+                    "isInMultiTenantOrganization" => lambda {|n| @is_in_multi_tenant_organization = n.get_boolean_value() },
                     "isServiceProvider" => lambda {|n| @is_service_provider = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "tenantId" => lambda {|n| @tenant_id = n.get_string_value() },
+                    "tenantRestrictions" => lambda {|n| @tenant_restrictions = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyTenantRestrictions.create_from_discriminator_value(pn) }) },
                 }
             end
             ## 
-            ## Gets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
+            ## Gets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
             ## @return a cross_tenant_identity_sync_policy_partner
             ## 
             def identity_synchronization
                 return @identity_synchronization
             end
             ## 
-            ## Sets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
+            ## Sets the identitySynchronization property value. Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
             ## @param value Value to set for the identitySynchronization property.
             ## @return a void
             ## 
@@ -179,19 +187,34 @@ module MicrosoftGraph
                 @identity_synchronization = value
             end
             ## 
-            ## Gets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
+            ## Gets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
             ## @return a cross_tenant_access_policy_inbound_trust
             ## 
             def inbound_trust
                 return @inbound_trust
             end
             ## 
-            ## Sets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
+            ## Sets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
             ## @param value Value to set for the inboundTrust property.
             ## @return a void
             ## 
             def inbound_trust=(value)
                 @inbound_trust = value
+            end
+            ## 
+            ## Gets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multitenant organization.
+            ## @return a boolean
+            ## 
+            def is_in_multi_tenant_organization
+                return @is_in_multi_tenant_organization
+            end
+            ## 
+            ## Sets the isInMultiTenantOrganization property value. Identifies whether a tenant is a member of a multitenant organization.
+            ## @param value Value to set for the isInMultiTenantOrganization property.
+            ## @return a void
+            ## 
+            def is_in_multi_tenant_organization=(value)
+                @is_in_multi_tenant_organization = value
             end
             ## 
             ## Gets the isServiceProvider property value. Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
@@ -237,25 +260,42 @@ module MicrosoftGraph
                 writer.write_object_value("b2bDirectConnectOutbound", @b2b_direct_connect_outbound)
                 writer.write_object_value("identitySynchronization", @identity_synchronization)
                 writer.write_object_value("inboundTrust", @inbound_trust)
+                writer.write_boolean_value("isInMultiTenantOrganization", @is_in_multi_tenant_organization)
                 writer.write_boolean_value("isServiceProvider", @is_service_provider)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("tenantId", @tenant_id)
+                writer.write_object_value("tenantRestrictions", @tenant_restrictions)
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.
+            ## Gets the tenantId property value. The tenant identifier for the partner Microsoft Entra organization. Read-only. Key.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.
+            ## Sets the tenantId property value. The tenant identifier for the partner Microsoft Entra organization. Read-only. Key.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
             def tenant_id=(value)
                 @tenant_id = value
+            end
+            ## 
+            ## Gets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for users in your organization who access a partner organization using partner supplied identities on your network or devices.
+            ## @return a cross_tenant_access_policy_tenant_restrictions
+            ## 
+            def tenant_restrictions
+                return @tenant_restrictions
+            end
+            ## 
+            ## Sets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for users in your organization who access a partner organization using partner supplied identities on your network or devices.
+            ## @param value Value to set for the tenantRestrictions property.
+            ## @return a void
+            ## 
+            def tenant_restrictions=(value)
+                @tenant_restrictions = value
             end
         end
     end

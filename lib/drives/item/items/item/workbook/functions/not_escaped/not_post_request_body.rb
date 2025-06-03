@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,25 +22,22 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The logical property
-                                    @logical
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new notPostRequestBody and sets the default values.
+                                    ## Instantiates a new NotPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -62,23 +58,7 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "logical" => lambda {|n| @logical = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
-                                    end
-                                    ## 
-                                    ## Gets the logical property value. The logical property
-                                    ## @return a json
-                                    ## 
-                                    def logical
-                                        return @logical
-                                    end
-                                    ## 
-                                    ## Sets the logical property value. The logical property
-                                    ## @param value Value to set for the logical property.
-                                    ## @return a void
-                                    ## 
-                                    def logical=(value)
-                                        @logical = value
                                     end
                                     ## 
                                     ## Serializes information the current object
@@ -87,7 +67,6 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("logical", @logical)
                                         writer.write_additional_data(@additional_data)
                                     end
                                 end

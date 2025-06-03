@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,28 +22,22 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The xNum property
-                                    @x_num
-                                    ## 
-                                    # The yNum property
-                                    @y_num
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new atan2PostRequestBody and sets the default values.
+                                    ## Instantiates a new Atan2PostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -65,8 +58,6 @@ module MicrosoftGraph
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "xNum" => lambda {|n| @x_num = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "yNum" => lambda {|n| @y_num = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
                                     end
                                     ## 
@@ -76,39 +67,7 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("xNum", @x_num)
-                                        writer.write_object_value("yNum", @y_num)
                                         writer.write_additional_data(@additional_data)
-                                    end
-                                    ## 
-                                    ## Gets the xNum property value. The xNum property
-                                    ## @return a json
-                                    ## 
-                                    def x_num
-                                        return @x_num
-                                    end
-                                    ## 
-                                    ## Sets the xNum property value. The xNum property
-                                    ## @param value Value to set for the xNum property.
-                                    ## @return a void
-                                    ## 
-                                    def x_num=(value)
-                                        @x_num = value
-                                    end
-                                    ## 
-                                    ## Gets the yNum property value. The yNum property
-                                    ## @return a json
-                                    ## 
-                                    def y_num
-                                        return @y_num
-                                    end
-                                    ## 
-                                    ## Sets the yNum property value. The yNum property
-                                    ## @param value Value to set for the yNum property.
-                                    ## @return a void
-                                    ## 
-                                    def y_num=(value)
-                                        @y_num = value
                                     end
                                 end
                             end

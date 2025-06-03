@@ -23,15 +23,15 @@ module MicrosoftGraph
             # Request Id as tracked internally by the service
             @request_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,15 +69,15 @@ module MicrosoftGraph
                 return ODataErrorsInnerError.new
             end
             ## 
-            ## Gets the Date property value. Date when the error occured.
+            ## Gets the date property value. Date when the error occured.
             ## @return a date_time
             ## 
             def date
                 return @date
             end
             ## 
-            ## Sets the Date property value. Date when the error occured.
-            ## @param value Value to set for the Date property.
+            ## Sets the date property value. Date when the error occured.
+            ## @param value Value to set for the date property.
             ## @return a void
             ## 
             def date=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "client-request-id" => lambda {|n| @client_request_id = n.get_string_value() },
-                    "Date" => lambda {|n| @date = n.get_date_time_value() },
+                    "date" => lambda {|n| @date = n.get_date_time_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "request-id" => lambda {|n| @request_id = n.get_string_value() },
                 }
@@ -133,7 +133,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("client-request-id", @client_request_id)
-                writer.write_date_time_value("Date", @date)
+                writer.write_date_time_value("date", @date)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("request-id", @request_id)
                 writer.write_additional_data(@additional_data)

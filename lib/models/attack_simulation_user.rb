@@ -19,25 +19,25 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
+            # This is the id property value of the user resource that represents the user in the Microsoft Entra tenant.
             @user_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new attackSimulationUser and sets the default values.
+            ## Instantiates a new AttackSimulationUser and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -123,14 +123,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the userId property value. This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
+            ## Gets the userId property value. This is the id property value of the user resource that represents the user in the Microsoft Entra tenant.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
+            ## Sets the userId property value. This is the id property value of the user resource that represents the user in the Microsoft Entra tenant.
             ## @param value Value to set for the userId property.
             ## @return a void
             ## 

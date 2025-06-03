@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The service account namespace.
             @namespace
             ## 
-            ## Instantiates a new securityKubernetesServiceAccountEvidence and sets the default values.
+            ## Instantiates a new SecurityKubernetesServiceAccountEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

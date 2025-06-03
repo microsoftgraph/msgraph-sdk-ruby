@@ -9,7 +9,7 @@ module MicrosoftGraph
         class AndroidManagedAppRegistration < MicrosoftGraph::Models::ManagedAppRegistration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new androidManagedAppRegistration and sets the default values.
+            ## Instantiates a new AndroidManagedAppRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()

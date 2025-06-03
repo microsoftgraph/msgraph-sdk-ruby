@@ -7,10 +7,13 @@ module MicrosoftGraph
         class SecurityUserEvidence < MicrosoftGraph::Models::SecurityAlertEvidence
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The stream property
+            @stream
+            ## 
             # The user account details.
             @user_account
             ## 
-            ## Instantiates a new securityUserEvidence and sets the default values.
+            ## Instantiates a new SecurityUserEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,6 +35,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "stream" => lambda {|n| @stream = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityStream.create_from_discriminator_value(pn) }) },
                     "userAccount" => lambda {|n| @user_account = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityUserAccount.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -43,7 +47,23 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("stream", @stream)
                 writer.write_object_value("userAccount", @user_account)
+            end
+            ## 
+            ## Gets the stream property value. The stream property
+            ## @return a security_stream
+            ## 
+            def stream
+                return @stream
+            end
+            ## 
+            ## Sets the stream property value. The stream property
+            ## @param value Value to set for the stream property.
+            ## @return a void
+            ## 
+            def stream=(value)
+                @stream = value
             end
             ## 
             ## Gets the userAccount property value. The user account details.
