@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Represents queries within the review set.
             @queries
             ## 
-            ## Instantiates a new securityEdiscoveryReviewSet and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryReviewSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraph
         class CallRecordsClientUserAgent < MicrosoftGraph::Models::CallRecordsUserAgent
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The unique identifier of the Azure AD application used by this endpoint.
+            # The unique identifier of the Microsoft Entra application used by this endpoint.
             @azure_a_d_app_id
             ## 
             # Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.
@@ -19,14 +19,14 @@ module MicrosoftGraph
             # The productFamily property
             @product_family
             ## 
-            ## Gets the azureADAppId property value. The unique identifier of the Azure AD application used by this endpoint.
+            ## Gets the azureADAppId property value. The unique identifier of the Microsoft Entra application used by this endpoint.
             ## @return a string
             ## 
             def azure_a_d_app_id
                 return @azure_a_d_app_id
             end
             ## 
-            ## Sets the azureADAppId property value. The unique identifier of the Azure AD application used by this endpoint.
+            ## Sets the azureADAppId property value. The unique identifier of the Microsoft Entra application used by this endpoint.
             ## @param value Value to set for the azureADAppId property.
             ## @return a void
             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @communication_service_id = value
             end
             ## 
-            ## Instantiates a new callRecordsClientUserAgent and sets the default values.
+            ## Instantiates a new CallRecordsClientUserAgent and sets the default values.
             ## @return a void
             ## 
             def initialize()

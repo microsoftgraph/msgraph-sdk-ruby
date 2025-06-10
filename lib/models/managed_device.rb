@@ -73,6 +73,9 @@ module MicrosoftGraph
             # Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
             @enrolled_date_time
             ## 
+            # Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.
+            @enrollment_profile_name
+            ## 
             # Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
             @ethernet_mac_address
             ## 
@@ -292,7 +295,7 @@ module MicrosoftGraph
                 @configuration_manager_client_enabled_features = value
             end
             ## 
-            ## Instantiates a new managedDevice and sets the default values.
+            ## Instantiates a new ManagedDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -518,6 +521,21 @@ module MicrosoftGraph
                 @enrolled_date_time = value
             end
             ## 
+            ## Gets the enrollmentProfileName property value. Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.
+            ## @return a string
+            ## 
+            def enrollment_profile_name
+                return @enrollment_profile_name
+            end
+            ## 
+            ## Sets the enrollmentProfileName property value. Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.
+            ## @param value Value to set for the enrollmentProfileName property.
+            ## @return a void
+            ## 
+            def enrollment_profile_name=(value)
+                @enrollment_profile_name = value
+            end
+            ## 
             ## Gets the ethernetMacAddress property value. Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
             ## @return a string
             ## 
@@ -619,6 +637,7 @@ module MicrosoftGraph
                     "easDeviceId" => lambda {|n| @eas_device_id = n.get_string_value() },
                     "emailAddress" => lambda {|n| @email_address = n.get_string_value() },
                     "enrolledDateTime" => lambda {|n| @enrolled_date_time = n.get_date_time_value() },
+                    "enrollmentProfileName" => lambda {|n| @enrollment_profile_name = n.get_string_value() },
                     "ethernetMacAddress" => lambda {|n| @ethernet_mac_address = n.get_string_value() },
                     "exchangeAccessState" => lambda {|n| @exchange_access_state = n.get_enum_value(MicrosoftGraph::Models::DeviceManagementExchangeAccessState) },
                     "exchangeAccessStateReason" => lambda {|n| @exchange_access_state_reason = n.get_enum_value(MicrosoftGraph::Models::DeviceManagementExchangeAccessStateReason) },

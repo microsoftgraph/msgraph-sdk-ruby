@@ -7,17 +7,17 @@ module MicrosoftGraph
         class AuthenticationCombinationConfiguration < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
+            # Which authentication method combinations this configuration applies to. Must be an allowedCombinations object, part of the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
             @applies_to_combinations
             ## 
-            ## Gets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
+            ## Gets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object, part of the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
             ## @return a authentication_method_modes
             ## 
             def applies_to_combinations
                 return @applies_to_combinations
             end
             ## 
-            ## Sets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
+            ## Sets the appliesToCombinations property value. Which authentication method combinations this configuration applies to. Must be an allowedCombinations object, part of the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
             ## @param value Value to set for the appliesToCombinations property.
             ## @return a void
             ## 
@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @applies_to_combinations = value
             end
             ## 
-            ## Instantiates a new authenticationCombinationConfiguration and sets the default values.
+            ## Instantiates a new AuthenticationCombinationConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,6 +44,8 @@ module MicrosoftGraph
                     case mapping_value
                         when "#microsoft.graph.fido2CombinationConfiguration"
                             return Fido2CombinationConfiguration.new
+                        when "#microsoft.graph.x509CertificateCombinationConfiguration"
+                            return X509CertificateCombinationConfiguration.new
                     end
                 end
                 return AuthenticationCombinationConfiguration.new

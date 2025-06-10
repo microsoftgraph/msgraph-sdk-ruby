@@ -15,7 +15,7 @@ module MicrosoftGraph
             # Version of the entity.
             @version
             ## 
-            ## Instantiates a new managedMobileApp and sets the default values.
+            ## Instantiates a new ManagedMobileApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

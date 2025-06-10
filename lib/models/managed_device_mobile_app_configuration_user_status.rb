@@ -25,7 +25,7 @@ module MicrosoftGraph
             # UserPrincipalName.
             @user_principal_name
             ## 
-            ## Instantiates a new managedDeviceMobileAppConfigurationUserStatus and sets the default values.
+            ## Instantiates a new ManagedDeviceMobileAppConfigurationUserStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

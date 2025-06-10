@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @color = value
             end
             ## 
-            ## Instantiates a new outlookCategory and sets the default values.
+            ## Instantiates a new OutlookCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

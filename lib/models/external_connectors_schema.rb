@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @base_type = value
             end
             ## 
-            ## Instantiates a new externalConnectorsSchema and sets the default values.
+            ## Instantiates a new ExternalConnectorsSchema and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -41,7 +41,7 @@ module MicrosoftGraph
             # The userTags property
             @user_tags
             ## 
-            ## Instantiates a new onenotePage and sets the default values.
+            ## Instantiates a new OnenotePage and sets the default values.
             ## @return a void
             ## 
             def initialize()

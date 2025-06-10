@@ -7,10 +7,10 @@ module MicrosoftGraph
         class SignInFrequencySessionControl < MicrosoftGraph::Models::ConditionalAccessSessionControl
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
+            # The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue. This property isn't required when using frequencyInterval with the value of timeBased.
             @authentication_type
             ## 
-            # The possible values are timeBased, everyTime, unknownFutureValue.
+            # The possible values are timeBased, everyTime, unknownFutureValue. Sign-in frequency of everyTime is available for risky users, risky sign-ins, and Intune device enrollment. For more information, see Require reauthentication every time.
             @frequency_interval
             ## 
             # Possible values are: days, hours.
@@ -19,14 +19,14 @@ module MicrosoftGraph
             # The number of days or hours.
             @value
             ## 
-            ## Gets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
+            ## Gets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue. This property isn't required when using frequencyInterval with the value of timeBased.
             ## @return a sign_in_frequency_authentication_type
             ## 
             def authentication_type
                 return @authentication_type
             end
             ## 
-            ## Sets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
+            ## Sets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue. This property isn't required when using frequencyInterval with the value of timeBased.
             ## @param value Value to set for the authenticationType property.
             ## @return a void
             ## 
@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @authentication_type = value
             end
             ## 
-            ## Instantiates a new signInFrequencySessionControl and sets the default values.
+            ## Instantiates a new SignInFrequencySessionControl and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -51,14 +51,14 @@ module MicrosoftGraph
                 return SignInFrequencySessionControl.new
             end
             ## 
-            ## Gets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
+            ## Gets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue. Sign-in frequency of everyTime is available for risky users, risky sign-ins, and Intune device enrollment. For more information, see Require reauthentication every time.
             ## @return a sign_in_frequency_interval
             ## 
             def frequency_interval
                 return @frequency_interval
             end
             ## 
-            ## Sets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
+            ## Sets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue. Sign-in frequency of everyTime is available for risky users, risky sign-ins, and Intune device enrollment. For more information, see Require reauthentication every time.
             ## @param value Value to set for the frequencyInterval property.
             ## @return a void
             ## 

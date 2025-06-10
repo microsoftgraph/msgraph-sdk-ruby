@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The to [term] of the relation. The term to which the relationship is defined.
             @to_term
             ## 
-            ## Instantiates a new termStoreRelation and sets the default values.
+            ## Instantiates a new TermStoreRelation and sets the default values.
             ## @return a void
             ## 
             def initialize()

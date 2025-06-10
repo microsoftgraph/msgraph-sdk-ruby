@@ -17,28 +17,28 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # Type of asynchronous operation. The values can be ForceDelete or Verification
+            # Type of asynchronous operation. The values can be ForceDelete or Verification.
             @operation
             ## 
-            # Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
+            # Current status of the operation.  Scheduled - Operation is scheduled but hasn't started.  InProgress - Task is in progress.  Failed - The operation failed.
             @status
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new domainState and sets the default values.
+            ## Instantiates a new DomainState and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -96,14 +96,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the operation property value. Type of asynchronous operation. The values can be ForceDelete or Verification
+            ## Gets the operation property value. Type of asynchronous operation. The values can be ForceDelete or Verification.
             ## @return a string
             ## 
             def operation
                 return @operation
             end
             ## 
-            ## Sets the operation property value. Type of asynchronous operation. The values can be ForceDelete or Verification
+            ## Sets the operation property value. Type of asynchronous operation. The values can be ForceDelete or Verification.
             ## @param value Value to set for the operation property.
             ## @return a void
             ## 
@@ -124,14 +124,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the status property value. Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
+            ## Gets the status property value. Current status of the operation.  Scheduled - Operation is scheduled but hasn't started.  InProgress - Task is in progress.  Failed - The operation failed.
             ## @return a string
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. Current status of the operation.  Scheduled - Operation has been scheduled but has not started.  InProgress - Task has started and is in progress.  Failed - Operation has failed.
+            ## Sets the status property value. Current status of the operation.  Scheduled - Operation is scheduled but hasn't started.  InProgress - Task is in progress.  Failed - The operation failed.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

@@ -46,7 +46,7 @@ module MicrosoftGraph
                 @assignments = value
             end
             ## 
-            ## Instantiates a new deviceEnrollmentConfiguration and sets the default values.
+            ## Instantiates a new DeviceEnrollmentConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,6 +84,8 @@ module MicrosoftGraph
                             return DeviceEnrollmentPlatformRestrictionsConfiguration.new
                         when "#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration"
                             return DeviceEnrollmentWindowsHelloForBusinessConfiguration.new
+                        when "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration"
+                            return Windows10EnrollmentCompletionPageConfiguration.new
                     end
                 end
                 return DeviceEnrollmentConfiguration.new

@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Support for this Entity is being deprecated starting May 2026 & will no longer be supported.
         class DeviceConfigurationDeviceStatus < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -44,7 +46,7 @@ module MicrosoftGraph
                 @compliance_grace_period_expiration_date_time = value
             end
             ## 
-            ## Instantiates a new deviceConfigurationDeviceStatus and sets the default values.
+            ## Instantiates a new DeviceConfigurationDeviceStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

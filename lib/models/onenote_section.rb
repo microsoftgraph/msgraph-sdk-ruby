@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The section group that contains the section.  Read-only.
             @parent_section_group
             ## 
-            ## Instantiates a new onenoteSection and sets the default values.
+            ## Instantiates a new OnenoteSection and sets the default values.
             ## @return a void
             ## 
             def initialize()

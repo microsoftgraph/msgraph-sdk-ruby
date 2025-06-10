@@ -22,22 +22,22 @@ module MicrosoftGraph
             # User principal name of the participant.
             @upn
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new meetingParticipantInfo and sets the default values.
+            ## Instantiates a new MeetingParticipantInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -50,6 +50,14 @@ module MicrosoftGraph
             ## 
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
+                mapping_value_node = parse_node.get_child_node("@odata.type")
+                unless mapping_value_node.nil? then
+                    mapping_value = mapping_value_node.get_string_value
+                    case mapping_value
+                        when "#microsoft.graph.virtualEventPresenterInfo"
+                            return VirtualEventPresenterInfo.new
+                    end
+                end
                 return MeetingParticipantInfo.new
             end
             ## 

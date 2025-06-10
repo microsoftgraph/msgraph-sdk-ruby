@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @arity = value
             end
             ## 
-            ## Instantiates a new filterOperatorSchema and sets the default values.
+            ## Instantiates a new FilterOperatorSchema and sets the default values.
             ## @return a void
             ## 
             def initialize()

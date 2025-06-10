@@ -12,8 +12,17 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # True if to allow customers to choose a specific person for the booking.
+            # True to allow customers to choose a specific person for the booking.
             @allow_staff_selection
+            ## 
+            # Custom availability of the service in a given time frame.
+            @custom_availabilities
+            ## 
+            # General availability of the service defined by the scheduling policy.
+            @general_availability
+            ## 
+            # Indicates whether the meeting invite is sent to the customers. The default value is false.
+            @is_meeting_invite_to_customers_enabled
             ## 
             # Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
             @maximum_advance
@@ -30,29 +39,29 @@ module MicrosoftGraph
             # Duration of each time slot, denoted in ISO 8601 format.
             @time_slot_interval
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the allowStaffSelection property value. True if to allow customers to choose a specific person for the booking.
+            ## Gets the allowStaffSelection property value. True to allow customers to choose a specific person for the booking.
             ## @return a boolean
             ## 
             def allow_staff_selection
                 return @allow_staff_selection
             end
             ## 
-            ## Sets the allowStaffSelection property value. True if to allow customers to choose a specific person for the booking.
+            ## Sets the allowStaffSelection property value. True to allow customers to choose a specific person for the booking.
             ## @param value Value to set for the allowStaffSelection property.
             ## @return a void
             ## 
@@ -60,7 +69,7 @@ module MicrosoftGraph
                 @allow_staff_selection = value
             end
             ## 
-            ## Instantiates a new bookingSchedulingPolicy and sets the default values.
+            ## Instantiates a new BookingSchedulingPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -76,18 +85,66 @@ module MicrosoftGraph
                 return BookingSchedulingPolicy.new
             end
             ## 
+            ## Gets the customAvailabilities property value. Custom availability of the service in a given time frame.
+            ## @return a bookings_availability_window
+            ## 
+            def custom_availabilities
+                return @custom_availabilities
+            end
+            ## 
+            ## Sets the customAvailabilities property value. Custom availability of the service in a given time frame.
+            ## @param value Value to set for the customAvailabilities property.
+            ## @return a void
+            ## 
+            def custom_availabilities=(value)
+                @custom_availabilities = value
+            end
+            ## 
+            ## Gets the generalAvailability property value. General availability of the service defined by the scheduling policy.
+            ## @return a bookings_availability
+            ## 
+            def general_availability
+                return @general_availability
+            end
+            ## 
+            ## Sets the generalAvailability property value. General availability of the service defined by the scheduling policy.
+            ## @param value Value to set for the generalAvailability property.
+            ## @return a void
+            ## 
+            def general_availability=(value)
+                @general_availability = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return {
                     "allowStaffSelection" => lambda {|n| @allow_staff_selection = n.get_boolean_value() },
+                    "customAvailabilities" => lambda {|n| @custom_availabilities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingsAvailabilityWindow.create_from_discriminator_value(pn) }) },
+                    "generalAvailability" => lambda {|n| @general_availability = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::BookingsAvailability.create_from_discriminator_value(pn) }) },
+                    "isMeetingInviteToCustomersEnabled" => lambda {|n| @is_meeting_invite_to_customers_enabled = n.get_boolean_value() },
                     "maximumAdvance" => lambda {|n| @maximum_advance = n.get_duration_value() },
                     "minimumLeadTime" => lambda {|n| @minimum_lead_time = n.get_duration_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "sendConfirmationsToOwner" => lambda {|n| @send_confirmations_to_owner = n.get_boolean_value() },
                     "timeSlotInterval" => lambda {|n| @time_slot_interval = n.get_duration_value() },
                 }
+            end
+            ## 
+            ## Gets the isMeetingInviteToCustomersEnabled property value. Indicates whether the meeting invite is sent to the customers. The default value is false.
+            ## @return a boolean
+            ## 
+            def is_meeting_invite_to_customers_enabled
+                return @is_meeting_invite_to_customers_enabled
+            end
+            ## 
+            ## Sets the isMeetingInviteToCustomersEnabled property value. Indicates whether the meeting invite is sent to the customers. The default value is false.
+            ## @param value Value to set for the isMeetingInviteToCustomersEnabled property.
+            ## @return a void
+            ## 
+            def is_meeting_invite_to_customers_enabled=(value)
+                @is_meeting_invite_to_customers_enabled = value
             end
             ## 
             ## Gets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
@@ -157,6 +214,9 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_boolean_value("allowStaffSelection", @allow_staff_selection)
+                writer.write_collection_of_object_values("customAvailabilities", @custom_availabilities)
+                writer.write_object_value("generalAvailability", @general_availability)
+                writer.write_boolean_value("isMeetingInviteToCustomersEnabled", @is_meeting_invite_to_customers_enabled)
                 writer.write_duration_value("maximumAdvance", @maximum_advance)
                 writer.write_duration_value("minimumLeadTime", @minimum_lead_time)
                 writer.write_string_value("@odata.type", @odata_type)

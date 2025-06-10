@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
             @order_hint
             ## 
-            ## Instantiates a new plannerBucketTaskBoardTaskFormat and sets the default values.
+            ## Instantiates a new PlannerBucketTaskBoardTaskFormat and sets the default values.
             ## @return a void
             ## 
             def initialize()

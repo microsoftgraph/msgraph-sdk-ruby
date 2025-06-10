@@ -15,7 +15,7 @@ module MicrosoftGraph
             # Website url
             @url
             ## 
-            ## Instantiates a new windowsInformationProtectionNetworkLearningSummary and sets the default values.
+            ## Instantiates a new WindowsInformationProtectionNetworkLearningSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

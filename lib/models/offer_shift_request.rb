@@ -8,19 +8,19 @@ module MicrosoftGraph
         class OfferShiftRequest < MicrosoftGraph::Models::ScheduleChangeRequest
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # The date and time when the recipient approved or declined the request.
             @recipient_action_date_time
             ## 
-            # Custom message sent by recipient of the offer shift request.
+            # The message sent by the recipient regarding the request.
             @recipient_action_message
             ## 
-            # User ID of the recipient of the offer shift request.
+            # The recipient's user ID.
             @recipient_user_id
             ## 
-            # User ID of the sender of the offer shift request.
+            # The sender's shift ID.
             @sender_shift_id
             ## 
-            ## Instantiates a new offerShiftRequest and sets the default values.
+            ## Instantiates a new OfferShiftRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -57,14 +57,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the recipientActionDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the recipientActionDateTime property value. The date and time when the recipient approved or declined the request.
             ## @return a date_time
             ## 
             def recipient_action_date_time
                 return @recipient_action_date_time
             end
             ## 
-            ## Sets the recipientActionDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the recipientActionDateTime property value. The date and time when the recipient approved or declined the request.
             ## @param value Value to set for the recipientActionDateTime property.
             ## @return a void
             ## 
@@ -72,14 +72,14 @@ module MicrosoftGraph
                 @recipient_action_date_time = value
             end
             ## 
-            ## Gets the recipientActionMessage property value. Custom message sent by recipient of the offer shift request.
+            ## Gets the recipientActionMessage property value. The message sent by the recipient regarding the request.
             ## @return a string
             ## 
             def recipient_action_message
                 return @recipient_action_message
             end
             ## 
-            ## Sets the recipientActionMessage property value. Custom message sent by recipient of the offer shift request.
+            ## Sets the recipientActionMessage property value. The message sent by the recipient regarding the request.
             ## @param value Value to set for the recipientActionMessage property.
             ## @return a void
             ## 
@@ -87,14 +87,14 @@ module MicrosoftGraph
                 @recipient_action_message = value
             end
             ## 
-            ## Gets the recipientUserId property value. User ID of the recipient of the offer shift request.
+            ## Gets the recipientUserId property value. The recipient's user ID.
             ## @return a string
             ## 
             def recipient_user_id
                 return @recipient_user_id
             end
             ## 
-            ## Sets the recipientUserId property value. User ID of the recipient of the offer shift request.
+            ## Sets the recipientUserId property value. The recipient's user ID.
             ## @param value Value to set for the recipientUserId property.
             ## @return a void
             ## 
@@ -102,14 +102,14 @@ module MicrosoftGraph
                 @recipient_user_id = value
             end
             ## 
-            ## Gets the senderShiftId property value. User ID of the sender of the offer shift request.
+            ## Gets the senderShiftId property value. The sender's shift ID.
             ## @return a string
             ## 
             def sender_shift_id
                 return @sender_shift_id
             end
             ## 
-            ## Sets the senderShiftId property value. User ID of the sender of the offer shift request.
+            ## Sets the senderShiftId property value. The sender's shift ID.
             ## @param value Value to set for the senderShiftId property.
             ## @return a void
             ## 

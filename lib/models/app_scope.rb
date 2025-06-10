@@ -7,13 +7,13 @@ module MicrosoftGraph
         class AppScope < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.
+            # Provides the display name of the app-specific resource represented by the app scope. Read only.
             @display_name
             ## 
-            # Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
+            # Describes the type of app-specific resource represented by the app scope. Read-only.
             @type
             ## 
-            ## Instantiates a new appScope and sets the default values.
+            ## Instantiates a new AppScope and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -29,14 +29,14 @@ module MicrosoftGraph
                 return AppScope.new
             end
             ## 
-            ## Gets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.
+            ## Gets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Read only.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.
+            ## Sets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Read only.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -65,14 +65,14 @@ module MicrosoftGraph
                 writer.write_string_value("type", @type)
             end
             ## 
-            ## Gets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
+            ## Gets the type property value. Describes the type of app-specific resource represented by the app scope. Read-only.
             ## @return a string
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
+            ## Sets the type property value. Describes the type of app-specific resource represented by the app scope. Read-only.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

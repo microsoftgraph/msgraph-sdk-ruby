@@ -12,7 +12,7 @@ module MicrosoftGraph
             # The assignment target for the device configuration.
             @target
             ## 
-            ## Instantiates a new deviceConfigurationAssignment and sets the default values.
+            ## Instantiates a new DeviceConfigurationAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.
             @enabled_rules
             ## 
-            ## Instantiates a new unifiedRoleManagementPolicyEnablementRule and sets the default values.
+            ## Instantiates a new UnifiedRoleManagementPolicyEnablementRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -19,7 +19,7 @@ module MicrosoftGraph
             # Unique identifier of the team.
             @team_id
             ## 
-            ## Instantiates a new teamCreatedEventMessageDetail and sets the default values.
+            ## Instantiates a new TeamCreatedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

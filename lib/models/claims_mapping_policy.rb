@@ -7,7 +7,7 @@ module MicrosoftGraph
         class ClaimsMappingPolicy < MicrosoftGraph::Models::StsPolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new claimsMappingPolicy and sets the default values.
+            ## Instantiates a new ClaimsMappingPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

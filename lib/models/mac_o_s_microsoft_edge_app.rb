@@ -27,7 +27,7 @@ module MicrosoftGraph
                 @channel = value
             end
             ## 
-            ## Instantiates a new macOSMicrosoftEdgeApp and sets the default values.
+            ## Instantiates a new MacOSMicrosoftEdgeApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
