@@ -1,1 +1,1 @@
-require_relative 'revoke_sign_in_sessions_response'
+require_relative 'revoke_sign_in_sessions_post_response'

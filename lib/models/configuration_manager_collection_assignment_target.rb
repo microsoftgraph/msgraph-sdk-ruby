@@ -27,7 +27,7 @@ module MicrosoftGraph
                 @collection_id = value
             end
             ## 
-            ## Instantiates a new configurationManagerCollectionAssignmentTarget and sets the default values.
+            ## Instantiates a new ConfigurationManagerCollectionAssignmentTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

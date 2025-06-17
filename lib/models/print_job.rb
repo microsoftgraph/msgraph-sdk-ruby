@@ -8,6 +8,9 @@ module MicrosoftGraph
         class PrintJob < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The dateTimeOffset when the job was acknowledged. Read-only.
+            @acknowledged_date_time
+            ## 
             # The configuration property
             @configuration
             ## 
@@ -19,6 +22,9 @@ module MicrosoftGraph
             ## 
             # The documents property
             @documents
+            ## 
+            # The error code of the print job. Read-only.
+            @error_code
             ## 
             # If true, document can be fetched by printer.
             @is_fetchable
@@ -35,6 +41,21 @@ module MicrosoftGraph
             # A list of printTasks that were triggered by this print job.
             @tasks
             ## 
+            ## Gets the acknowledgedDateTime property value. The dateTimeOffset when the job was acknowledged. Read-only.
+            ## @return a date_time
+            ## 
+            def acknowledged_date_time
+                return @acknowledged_date_time
+            end
+            ## 
+            ## Sets the acknowledgedDateTime property value. The dateTimeOffset when the job was acknowledged. Read-only.
+            ## @param value Value to set for the acknowledgedDateTime property.
+            ## @return a void
+            ## 
+            def acknowledged_date_time=(value)
+                @acknowledged_date_time = value
+            end
+            ## 
             ## Gets the configuration property value. The configuration property
             ## @return a print_job_configuration
             ## 
@@ -50,7 +71,7 @@ module MicrosoftGraph
                 @configuration = value
             end
             ## 
-            ## Instantiates a new printJob and sets the default values.
+            ## Instantiates a new PrintJob and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -111,15 +132,32 @@ module MicrosoftGraph
                 @documents = value
             end
             ## 
+            ## Gets the errorCode property value. The error code of the print job. Read-only.
+            ## @return a integer
+            ## 
+            def error_code
+                return @error_code
+            end
+            ## 
+            ## Sets the errorCode property value. The error code of the print job. Read-only.
+            ## @param value Value to set for the errorCode property.
+            ## @return a void
+            ## 
+            def error_code=(value)
+                @error_code = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "acknowledgedDateTime" => lambda {|n| @acknowledged_date_time = n.get_date_time_value() },
                     "configuration" => lambda {|n| @configuration = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PrintJobConfiguration.create_from_discriminator_value(pn) }) },
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserIdentity.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "documents" => lambda {|n| @documents = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrintDocument.create_from_discriminator_value(pn) }) },
+                    "errorCode" => lambda {|n| @error_code = n.get_number_value() },
                     "isFetchable" => lambda {|n| @is_fetchable = n.get_boolean_value() },
                     "redirectedFrom" => lambda {|n| @redirected_from = n.get_string_value() },
                     "redirectedTo" => lambda {|n| @redirected_to = n.get_string_value() },
@@ -180,10 +218,12 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_date_time_value("acknowledgedDateTime", @acknowledged_date_time)
                 writer.write_object_value("configuration", @configuration)
                 writer.write_object_value("createdBy", @created_by)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_collection_of_object_values("documents", @documents)
+                writer.write_number_value("errorCode", @error_code)
                 writer.write_boolean_value("isFetchable", @is_fetchable)
                 writer.write_string_value("redirectedFrom", @redirected_from)
                 writer.write_string_value("redirectedTo", @redirected_to)

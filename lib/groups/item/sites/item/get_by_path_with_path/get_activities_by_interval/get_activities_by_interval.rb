@@ -1,0 +1,1 @@
+require_relative 'get_activities_by_interval_get_response'

@@ -8,30 +8,33 @@ module MicrosoftGraph
         class SecurityDataSet < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The createdBy property
+            # The user who created the data set. Read-only.
             @created_by
             ## 
-            # The createdDateTime property
+            # The date and time when the review set was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @created_date_time
             ## 
-            # The displayName property
+            # The description of the data set.
+            @description
+            ## 
+            # The name of the data set. The name is unique with a maximum limit of 64 characters.
             @display_name
             ## 
-            ## Instantiates a new securityDataSet and sets the default values.
+            ## Instantiates a new SecurityDataSet and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdBy property value. The createdBy property
+            ## Gets the createdBy property value. The user who created the data set. Read-only.
             ## @return a identity_set
             ## 
             def created_by
                 return @created_by
             end
             ## 
-            ## Sets the createdBy property value. The createdBy property
+            ## Sets the createdBy property value. The user who created the data set. Read-only.
             ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
@@ -39,14 +42,14 @@ module MicrosoftGraph
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. The createdDateTime property
+            ## Gets the createdDateTime property value. The date and time when the review set was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The createdDateTime property
+            ## Sets the createdDateTime property value. The date and time when the review set was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -71,14 +74,29 @@ module MicrosoftGraph
                 return SecurityDataSet.new
             end
             ## 
-            ## Gets the displayName property value. The displayName property
+            ## Gets the description property value. The description of the data set.
+            ## @return a string
+            ## 
+            def description
+                return @description
+            end
+            ## 
+            ## Sets the description property value. The description of the data set.
+            ## @param value Value to set for the description property.
+            ## @return a void
+            ## 
+            def description=(value)
+                @description = value
+            end
+            ## 
+            ## Gets the displayName property value. The name of the data set. The name is unique with a maximum limit of 64 characters.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The displayName property
+            ## Sets the displayName property value. The name of the data set. The name is unique with a maximum limit of 64 characters.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -93,6 +111,7 @@ module MicrosoftGraph
                 return super.merge({
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
+                    "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                 })
             end
@@ -106,6 +125,7 @@ module MicrosoftGraph
                 super
                 writer.write_object_value("createdBy", @created_by)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
+                writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
             end
         end

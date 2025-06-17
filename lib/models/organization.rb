@@ -14,7 +14,7 @@ module MicrosoftGraph
             # Branding for the organization. Nullable.
             @branding
             ## 
-            # Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+            # Telephone number for the organization. Although this property is a string collection, only one number can be set.
             @business_phones
             ## 
             # Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
@@ -23,13 +23,13 @@ module MicrosoftGraph
             # City name of the address for the organization.
             @city
             ## 
-            # Country/region name of the address for the organization.
+            # Country or region name of the address for the organization.
             @country
             ## 
             # Country or region abbreviation for the organization in ISO 3166-2 format.
             @country_letter_code
             ## 
-            # Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+            # Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @created_date_time
             ## 
             # Two-letter ISO 3166 country code indicating the default service usage location of an organization.
@@ -50,7 +50,7 @@ module MicrosoftGraph
             # The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @on_premises_last_sync_date_time
             ## 
-            # true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
+            # true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object isn't synced from on-premises active directory (default).
             @on_premises_sync_enabled
             ## 
             # The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
@@ -83,7 +83,7 @@ module MicrosoftGraph
             # Not nullable.
             @technical_notification_mails
             ## 
-            # Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
+            # Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
             @tenant_type
             ## 
             # The collection of domains associated with this tenant. Not nullable.
@@ -119,14 +119,14 @@ module MicrosoftGraph
                 @branding = value
             end
             ## 
-            ## Gets the businessPhones property value. Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+            ## Gets the businessPhones property value. Telephone number for the organization. Although this property is a string collection, only one number can be set.
             ## @return a string
             ## 
             def business_phones
                 return @business_phones
             end
             ## 
-            ## Sets the businessPhones property value. Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+            ## Sets the businessPhones property value. Telephone number for the organization. Although this property is a string collection, only one number can be set.
             ## @param value Value to set for the businessPhones property.
             ## @return a void
             ## 
@@ -164,7 +164,7 @@ module MicrosoftGraph
                 @city = value
             end
             ## 
-            ## Instantiates a new organization and sets the default values.
+            ## Instantiates a new Organization and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -172,14 +172,14 @@ module MicrosoftGraph
                 @odata_type = "#microsoft.graph.organization"
             end
             ## 
-            ## Gets the country property value. Country/region name of the address for the organization.
+            ## Gets the country property value. Country or region name of the address for the organization.
             ## @return a string
             ## 
             def country
                 return @country
             end
             ## 
-            ## Sets the country property value. Country/region name of the address for the organization.
+            ## Sets the country property value. Country or region name of the address for the organization.
             ## @param value Value to set for the country property.
             ## @return a void
             ## 
@@ -202,14 +202,14 @@ module MicrosoftGraph
                 @country_letter_code = value
             end
             ## 
-            ## Gets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+            ## Gets the createdDateTime property value. Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+            ## Sets the createdDateTime property value. Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -351,14 +351,14 @@ module MicrosoftGraph
                 @on_premises_last_sync_date_time = value
             end
             ## 
-            ## Gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
+            ## Gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object isn't synced from on-premises active directory (default).
             ## @return a boolean
             ## 
             def on_premises_sync_enabled
                 return @on_premises_sync_enabled
             end
             ## 
-            ## Sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
+            ## Sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object isn't synced from on-premises active directory (default).
             ## @param value Value to set for the onPremisesSyncEnabled property.
             ## @return a void
             ## 
@@ -552,14 +552,14 @@ module MicrosoftGraph
                 @technical_notification_mails = value
             end
             ## 
-            ## Gets the tenantType property value. Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
+            ## Gets the tenantType property value. Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
             ## @return a string
             ## 
             def tenant_type
                 return @tenant_type
             end
             ## 
-            ## Sets the tenantType property value. Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
+            ## Sets the tenantType property value. Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
             ## @param value Value to set for the tenantType property.
             ## @return a void
             ## 

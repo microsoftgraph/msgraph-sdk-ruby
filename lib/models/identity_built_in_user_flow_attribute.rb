@@ -7,7 +7,7 @@ module MicrosoftGraph
         class IdentityBuiltInUserFlowAttribute < MicrosoftGraph::Models::IdentityUserFlowAttribute
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new identityBuiltInUserFlowAttribute and sets the default values.
+            ## Instantiates a new IdentityBuiltInUserFlowAttribute and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Actions to be taken on a message when the corresponding conditions are fulfilled.
             @actions
             ## 
-            # Conditions that when fulfilled, will trigger the corresponding actions for that rule.
+            # Conditions that when fulfilled trigger the corresponding actions for that rule.
             @conditions
             ## 
             # The display name of the rule.
@@ -46,14 +46,14 @@ module MicrosoftGraph
                 @actions = value
             end
             ## 
-            ## Gets the conditions property value. Conditions that when fulfilled, will trigger the corresponding actions for that rule.
+            ## Gets the conditions property value. Conditions that when fulfilled trigger the corresponding actions for that rule.
             ## @return a message_rule_predicates
             ## 
             def conditions
                 return @conditions
             end
             ## 
-            ## Sets the conditions property value. Conditions that when fulfilled, will trigger the corresponding actions for that rule.
+            ## Sets the conditions property value. Conditions that when fulfilled trigger the corresponding actions for that rule.
             ## @param value Value to set for the conditions property.
             ## @return a void
             ## 
@@ -61,7 +61,7 @@ module MicrosoftGraph
                 @conditions = value
             end
             ## 
-            ## Instantiates a new messageRule and sets the default values.
+            ## Instantiates a new MessageRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

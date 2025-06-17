@@ -8,16 +8,16 @@ module MicrosoftGraph
         class TimeOffRequest < MicrosoftGraph::Models::ScheduleChangeRequest
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # The date and time the time off ends in ISO 8601 format and in UTC time.
             @end_date_time
             ## 
-            # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # The date and time the time off starts in ISO 8601 format and in UTC time.
             @start_date_time
             ## 
             # The reason for the time off.
             @time_off_reason_id
             ## 
-            ## Instantiates a new timeOffRequest and sets the default values.
+            ## Instantiates a new TimeOffRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -34,14 +34,14 @@ module MicrosoftGraph
                 return TimeOffRequest.new
             end
             ## 
-            ## Gets the endDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the endDateTime property value. The date and time the time off ends in ISO 8601 format and in UTC time.
             ## @return a date_time
             ## 
             def end_date_time
                 return @end_date_time
             end
             ## 
-            ## Sets the endDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the endDateTime property value. The date and time the time off ends in ISO 8601 format and in UTC time.
             ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
@@ -72,14 +72,14 @@ module MicrosoftGraph
                 writer.write_string_value("timeOffReasonId", @time_off_reason_id)
             end
             ## 
-            ## Gets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the startDateTime property value. The date and time the time off starts in ISO 8601 format and in UTC time.
             ## @return a date_time
             ## 
             def start_date_time
                 return @start_date_time
             end
             ## 
-            ## Sets the startDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the startDateTime property value. The date and time the time off starts in ISO 8601 format and in UTC time.
             ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 

@@ -13,25 +13,13 @@ module MicrosoftGraph
             # Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
             @major_gridlines
             ## 
-            # Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
-            @major_unit
-            ## 
-            # Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-            @maximum
-            ## 
-            # Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-            @minimum
-            ## 
             # Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
             @minor_gridlines
-            ## 
-            # Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
-            @minor_unit
             ## 
             # Represents the axis title. Read-only.
             @title
             ## 
-            ## Instantiates a new workbookChartAxis and sets the default values.
+            ## Instantiates a new WorkbookChartAxis and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -69,11 +57,7 @@ module MicrosoftGraph
                 return super.merge({
                     "format" => lambda {|n| @format = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookChartAxisFormat.create_from_discriminator_value(pn) }) },
                     "majorGridlines" => lambda {|n| @major_gridlines = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookChartGridlines.create_from_discriminator_value(pn) }) },
-                    "majorUnit" => lambda {|n| @major_unit = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                    "maximum" => lambda {|n| @maximum = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                    "minimum" => lambda {|n| @minimum = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                     "minorGridlines" => lambda {|n| @minor_gridlines = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookChartGridlines.create_from_discriminator_value(pn) }) },
-                    "minorUnit" => lambda {|n| @minor_unit = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                     "title" => lambda {|n| @title = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookChartAxisTitle.create_from_discriminator_value(pn) }) },
                 })
             end
@@ -93,51 +77,6 @@ module MicrosoftGraph
                 @major_gridlines = value
             end
             ## 
-            ## Gets the majorUnit property value. Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
-            ## @return a json
-            ## 
-            def major_unit
-                return @major_unit
-            end
-            ## 
-            ## Sets the majorUnit property value. Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
-            ## @param value Value to set for the majorUnit property.
-            ## @return a void
-            ## 
-            def major_unit=(value)
-                @major_unit = value
-            end
-            ## 
-            ## Gets the maximum property value. Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-            ## @return a json
-            ## 
-            def maximum
-                return @maximum
-            end
-            ## 
-            ## Sets the maximum property value. Represents the maximum value on the value axis.  Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-            ## @param value Value to set for the maximum property.
-            ## @return a void
-            ## 
-            def maximum=(value)
-                @maximum = value
-            end
-            ## 
-            ## Gets the minimum property value. Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-            ## @return a json
-            ## 
-            def minimum
-                return @minimum
-            end
-            ## 
-            ## Sets the minimum property value. Represents the minimum value on the value axis. Can be set to a numeric value or an empty string (for automatic axis values).  The returned value is always a number.
-            ## @param value Value to set for the minimum property.
-            ## @return a void
-            ## 
-            def minimum=(value)
-                @minimum = value
-            end
-            ## 
             ## Gets the minorGridlines property value. Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
             ## @return a workbook_chart_gridlines
             ## 
@@ -153,21 +92,6 @@ module MicrosoftGraph
                 @minor_gridlines = value
             end
             ## 
-            ## Gets the minorUnit property value. Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
-            ## @return a json
-            ## 
-            def minor_unit
-                return @minor_unit
-            end
-            ## 
-            ## Sets the minorUnit property value. Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
-            ## @param value Value to set for the minorUnit property.
-            ## @return a void
-            ## 
-            def minor_unit=(value)
-                @minor_unit = value
-            end
-            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -177,11 +101,7 @@ module MicrosoftGraph
                 super
                 writer.write_object_value("format", @format)
                 writer.write_object_value("majorGridlines", @major_gridlines)
-                writer.write_object_value("majorUnit", @major_unit)
-                writer.write_object_value("maximum", @maximum)
-                writer.write_object_value("minimum", @minimum)
                 writer.write_object_value("minorGridlines", @minor_gridlines)
-                writer.write_object_value("minorUnit", @minor_unit)
                 writer.write_object_value("title", @title)
             end
             ## 

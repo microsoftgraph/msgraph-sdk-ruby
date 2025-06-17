@@ -7,7 +7,7 @@ module MicrosoftGraph
         class ColumnDefinition < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # This column stores boolean values.
+            # This column stores Boolean values.
             @boolean
             ## 
             # This column's data is calculated based on other columns.
@@ -64,7 +64,7 @@ module MicrosoftGraph
             # This column's data is looked up from another source in the site.
             @lookup
             ## 
-            # The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.
+            # The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.
             @name
             ## 
             # This column stores number values.
@@ -103,14 +103,14 @@ module MicrosoftGraph
             # This column stores validation formula and message for the column.
             @validation
             ## 
-            ## Gets the boolean property value. This column stores boolean values.
+            ## Gets the boolean property value. This column stores Boolean values.
             ## @return a boolean_column
             ## 
             def boolean
                 return @boolean
             end
             ## 
-            ## Sets the boolean property value. This column stores boolean values.
+            ## Sets the boolean property value. This column stores Boolean values.
             ## @param value Value to set for the boolean property.
             ## @return a void
             ## 
@@ -163,7 +163,7 @@ module MicrosoftGraph
                 @column_group = value
             end
             ## 
-            ## Instantiates a new columnDefinition and sets the default values.
+            ## Instantiates a new ColumnDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -444,14 +444,14 @@ module MicrosoftGraph
                 @lookup = value
             end
             ## 
-            ## Gets the name property value. The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.
+            ## Gets the name property value. The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.
+            ## Sets the name property value. The API-facing name of the column as it appears in the fields on a listItem. For the user-facing name, see displayName.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 

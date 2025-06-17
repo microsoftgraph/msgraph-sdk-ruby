@@ -79,7 +79,7 @@ module MicrosoftGraph
                 @android_managed_app_protections = value
             end
             ## 
-            ## Instantiates a new deviceAppManagement and sets the default values.
+            ## Instantiates a new DeviceAppManagement and sets the default values.
             ## @return a void
             ## 
             def initialize()

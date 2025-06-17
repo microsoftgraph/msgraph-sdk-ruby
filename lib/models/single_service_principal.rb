@@ -13,7 +13,7 @@ module MicrosoftGraph
             # ID of the servicePrincipal.
             @service_principal_id
             ## 
-            ## Instantiates a new singleServicePrincipal and sets the default values.
+            ## Instantiates a new SingleServicePrincipal and sets the default values.
             ## @return a void
             ## 
             def initialize()

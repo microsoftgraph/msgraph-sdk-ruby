@@ -19,28 +19,49 @@ module MicrosoftGraph
                             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                             @additional_data
                             ## 
+                            # The childrenOnly property
+                            @children_only
+                            ## 
+                            # The includeAllVersionHistory property
+                            @include_all_version_history
+                            ## 
                             # The name property
                             @name
                             ## 
                             # The parentReference property
                             @parent_reference
                             ## 
-                            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                             ## @return a i_dictionary
                             ## 
                             def additional_data
                                 return @additional_data
                             end
                             ## 
-                            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                            ## @param value Value to set for the additionalData property.
+                            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                            ## @param value Value to set for the AdditionalData property.
                             ## @return a void
                             ## 
                             def additional_data=(value)
                                 @additional_data = value
                             end
                             ## 
-                            ## Instantiates a new copyPostRequestBody and sets the default values.
+                            ## Gets the childrenOnly property value. The childrenOnly property
+                            ## @return a boolean
+                            ## 
+                            def children_only
+                                return @children_only
+                            end
+                            ## 
+                            ## Sets the childrenOnly property value. The childrenOnly property
+                            ## @param value Value to set for the childrenOnly property.
+                            ## @return a void
+                            ## 
+                            def children_only=(value)
+                                @children_only = value
+                            end
+                            ## 
+                            ## Instantiates a new CopyPostRequestBody and sets the default values.
                             ## @return a void
                             ## 
                             def initialize()
@@ -61,9 +82,26 @@ module MicrosoftGraph
                             ## 
                             def get_field_deserializers()
                                 return {
+                                    "childrenOnly" => lambda {|n| @children_only = n.get_boolean_value() },
+                                    "includeAllVersionHistory" => lambda {|n| @include_all_version_history = n.get_boolean_value() },
                                     "name" => lambda {|n| @name = n.get_string_value() },
                                     "parentReference" => lambda {|n| @parent_reference = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ItemReference.create_from_discriminator_value(pn) }) },
                                 }
+                            end
+                            ## 
+                            ## Gets the includeAllVersionHistory property value. The includeAllVersionHistory property
+                            ## @return a boolean
+                            ## 
+                            def include_all_version_history
+                                return @include_all_version_history
+                            end
+                            ## 
+                            ## Sets the includeAllVersionHistory property value. The includeAllVersionHistory property
+                            ## @param value Value to set for the includeAllVersionHistory property.
+                            ## @return a void
+                            ## 
+                            def include_all_version_history=(value)
+                                @include_all_version_history = value
                             end
                             ## 
                             ## Gets the name property value. The name property
@@ -102,6 +140,8 @@ module MicrosoftGraph
                             ## 
                             def serialize(writer)
                                 raise StandardError, 'writer cannot be null' if writer.nil?
+                                writer.write_boolean_value("childrenOnly", @children_only)
+                                writer.write_boolean_value("includeAllVersionHistory", @include_all_version_history)
                                 writer.write_string_value("name", @name)
                                 writer.write_object_value("parentReference", @parent_reference)
                                 writer.write_additional_data(@additional_data)

@@ -14,13 +14,13 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_modified_date_time
             ## 
-            # The display name of the attachment. This does not need to be the actual file name.
+            # The display name of the attachment. This doesn't need to be the actual file name.
             @name
             ## 
             # The length of the attachment in bytes.
             @size
             ## 
-            ## Instantiates a new attachmentBase and sets the default values.
+            ## Instantiates a new AttachmentBase and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -86,14 +86,14 @@ module MicrosoftGraph
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the name property value. The display name of the attachment. This does not need to be the actual file name.
+            ## Gets the name property value. The display name of the attachment. This doesn't need to be the actual file name.
             ## @return a string
             ## 
             def name
                 return @name
             end
             ## 
-            ## Sets the name property value. The display name of the attachment. This does not need to be the actual file name.
+            ## Sets the name property value. The display name of the attachment. This doesn't need to be the actual file name.
             ## @param value Value to set for the name property.
             ## @return a void
             ## 

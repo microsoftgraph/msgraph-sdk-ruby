@@ -20,31 +20,31 @@ module MicrosoftGraph
             # The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @shared_date_time
             ## 
-            # The sharingReference property
+            # Reference properties of the document, such as the URL and type of the document. Read-only
             @sharing_reference
             ## 
             # The subject with which the document was shared.
             @sharing_subject
             ## 
-            # Determines the way the document was shared, can be by a 'Link', 'Attachment', 'Group', 'Site'.
+            # Determines the way the document was shared. Can be by a 1Link1, 1Attachment1, 1Group1, 1Site1.
             @sharing_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new sharingDetail and sets the default values.
+            ## Instantiates a new SharingDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -133,14 +133,14 @@ module MicrosoftGraph
                 @shared_date_time = value
             end
             ## 
-            ## Gets the sharingReference property value. The sharingReference property
+            ## Gets the sharingReference property value. Reference properties of the document, such as the URL and type of the document. Read-only
             ## @return a resource_reference
             ## 
             def sharing_reference
                 return @sharing_reference
             end
             ## 
-            ## Sets the sharingReference property value. The sharingReference property
+            ## Sets the sharingReference property value. Reference properties of the document, such as the URL and type of the document. Read-only
             ## @param value Value to set for the sharingReference property.
             ## @return a void
             ## 
@@ -163,14 +163,14 @@ module MicrosoftGraph
                 @sharing_subject = value
             end
             ## 
-            ## Gets the sharingType property value. Determines the way the document was shared, can be by a 'Link', 'Attachment', 'Group', 'Site'.
+            ## Gets the sharingType property value. Determines the way the document was shared. Can be by a 1Link1, 1Attachment1, 1Group1, 1Site1.
             ## @return a string
             ## 
             def sharing_type
                 return @sharing_type
             end
             ## 
-            ## Sets the sharingType property value. Determines the way the document was shared, can be by a 'Link', 'Attachment', 'Group', 'Site'.
+            ## Sets the sharingType property value. Determines the way the document was shared. Can be by a 1Link1, 1Attachment1, 1Group1, 1Site1.
             ## @param value Value to set for the sharingType property.
             ## @return a void
             ## 

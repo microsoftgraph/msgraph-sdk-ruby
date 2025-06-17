@@ -8,6 +8,9 @@ module MicrosoftGraph
         class ChangeTrackedEntity < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Identity of the creator of the entity.
+            @created_by
+            ## 
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @created_date_time
             ## 
@@ -17,11 +20,26 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
             @last_modified_date_time
             ## 
-            ## Instantiates a new changeTrackedEntity and sets the default values.
+            ## Instantiates a new ChangeTrackedEntity and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
+            end
+            ## 
+            ## Gets the createdBy property value. Identity of the creator of the entity.
+            ## @return a identity_set
+            ## 
+            def created_by
+                return @created_by
+            end
+            ## 
+            ## Sets the createdBy property value. Identity of the creator of the entity.
+            ## @param value Value to set for the createdBy property.
+            ## @return a void
+            ## 
+            def created_by=(value)
+                @created_by = value
             end
             ## 
             ## Gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -49,6 +67,8 @@ module MicrosoftGraph
                 unless mapping_value_node.nil? then
                     mapping_value = mapping_value_node.get_string_value
                     case mapping_value
+                        when "#microsoft.graph.dayNote"
+                            return DayNote.new
                         when "#microsoft.graph.offerShiftRequest"
                             return OfferShiftRequest.new
                         when "#microsoft.graph.openShift"
@@ -65,6 +85,8 @@ module MicrosoftGraph
                             return ShiftPreferences.new
                         when "#microsoft.graph.swapShiftsChangeRequest"
                             return SwapShiftsChangeRequest.new
+                        when "#microsoft.graph.timeCard"
+                            return TimeCard.new
                         when "#microsoft.graph.timeOff"
                             return TimeOff.new
                         when "#microsoft.graph.timeOffReason"
@@ -83,6 +105,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "lastModifiedBy" => lambda {|n| @last_modified_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
@@ -126,6 +149,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("createdBy", @created_by)
             end
         end
     end

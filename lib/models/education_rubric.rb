@@ -11,7 +11,7 @@ module MicrosoftGraph
             # The user who created this resource.
             @created_by
             ## 
-            # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
             # The description of this rubric.
@@ -20,13 +20,13 @@ module MicrosoftGraph
             # The name of this rubric.
             @display_name
             ## 
-            # The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.
+            # The grading type of this rubric. You can use null for a no-points rubric or educationAssignmentPointsGradeType for a points rubric.
             @grading
             ## 
             # The last user to modify the resource.
             @last_modified_by
             ## 
-            # Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # Moment in time when the resource was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @last_modified_date_time
             ## 
             # The collection of levels making up this rubric.
@@ -35,7 +35,7 @@ module MicrosoftGraph
             # The collection of qualities making up this rubric.
             @qualities
             ## 
-            ## Instantiates a new educationRubric and sets the default values.
+            ## Instantiates a new EducationRubric and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -57,14 +57,14 @@ module MicrosoftGraph
                 @created_by = value
             end
             ## 
-            ## Gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the createdDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the createdDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the grading property value. The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.
+            ## Gets the grading property value. The grading type of this rubric. You can use null for a no-points rubric or educationAssignmentPointsGradeType for a points rubric.
             ## @return a education_assignment_grade_type
             ## 
             def grading
                 return @grading
             end
             ## 
-            ## Sets the grading property value. The grading type of this rubric -- null for a no-points rubric, or educationAssignmentPointsGradeType for a points rubric.
+            ## Sets the grading property value. The grading type of this rubric. You can use null for a no-points rubric or educationAssignmentPointsGradeType for a points rubric.
             ## @param value Value to set for the grading property.
             ## @return a void
             ## 
@@ -158,14 +158,14 @@ module MicrosoftGraph
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the lastModifiedDateTime property value. Moment in time when the resource was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Sets the lastModifiedDateTime property value. Moment in time when the resource was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 

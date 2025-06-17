@@ -12,7 +12,7 @@ module MicrosoftGraph
             # OMA settings. This collection can contain a maximum of 500 elements.
             @oma_settings
             ## 
-            ## Instantiates a new androidWorkProfileCustomConfiguration and sets the default values.
+            ## Instantiates a new AndroidWorkProfileCustomConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

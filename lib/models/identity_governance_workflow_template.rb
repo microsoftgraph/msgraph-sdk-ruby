@@ -37,7 +37,7 @@ module MicrosoftGraph
                 @category = value
             end
             ## 
-            ## Instantiates a new identityGovernanceWorkflowTemplate and sets the default values.
+            ## Instantiates a new IdentityGovernanceWorkflowTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

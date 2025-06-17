@@ -9,7 +9,7 @@ module MicrosoftGraph
         class MdmWindowsInformationProtectionPolicy < MicrosoftGraph::Models::WindowsInformationProtection
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new mdmWindowsInformationProtectionPolicy and sets the default values.
+            ## Instantiates a new MdmWindowsInformationProtectionPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # A list of categories defined for the user.
             @master_categories
             ## 
-            ## Instantiates a new outlookUser and sets the default values.
+            ## Instantiates a new OutlookUser and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -17,7 +17,7 @@ module MicrosoftGraph
             # Indicates a single value {start} that represents the location in the file where the next upload should begin.
             @next_expected_ranges
             ## 
-            ## Instantiates a new attachmentSession and sets the default values.
+            ## Instantiates a new AttachmentSession and sets the default values.
             ## @return a void
             ## 
             def initialize()

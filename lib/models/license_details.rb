@@ -7,16 +7,16 @@ module MicrosoftGraph
         class LicenseDetails < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Information about the service plans assigned with the license. Read-only, Not nullable
+            # Information about the service plans assigned with the license. Read-only. Not nullable.
             @service_plans
             ## 
-            # Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+            # Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
             @sku_id
             ## 
-            # Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
+            # Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.
             @sku_part_number
             ## 
-            ## Instantiates a new licenseDetails and sets the default values.
+            ## Instantiates a new LicenseDetails and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -55,14 +55,14 @@ module MicrosoftGraph
                 writer.write_string_value("skuPartNumber", @sku_part_number)
             end
             ## 
-            ## Gets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
+            ## Gets the servicePlans property value. Information about the service plans assigned with the license. Read-only. Not nullable.
             ## @return a service_plan_info
             ## 
             def service_plans
                 return @service_plans
             end
             ## 
-            ## Sets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
+            ## Sets the servicePlans property value. Information about the service plans assigned with the license. Read-only. Not nullable.
             ## @param value Value to set for the servicePlans property.
             ## @return a void
             ## 
@@ -70,14 +70,14 @@ module MicrosoftGraph
                 @service_plans = value
             end
             ## 
-            ## Gets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+            ## Gets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
             ## @return a guid
             ## 
             def sku_id
                 return @sku_id
             end
             ## 
-            ## Sets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
+            ## Sets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related subscribedSku object. Read-only.
             ## @param value Value to set for the skuId property.
             ## @return a void
             ## 
@@ -85,14 +85,14 @@ module MicrosoftGraph
                 @sku_id = value
             end
             ## 
-            ## Gets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
+            ## Gets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.
             ## @return a string
             ## 
             def sku_part_number
                 return @sku_part_number
             end
             ## 
-            ## Sets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
+            ## Sets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related subscribedSku object; for example, AAD_Premium. Read-only.
             ## @param value Value to set for the skuPartNumber property.
             ## @return a void
             ## 

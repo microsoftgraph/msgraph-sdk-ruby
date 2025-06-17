@@ -29,7 +29,7 @@ module MicrosoftGraph
             # The lastModifiedDateTime property
             @last_modified_date_time
             ## 
-            ## Instantiates a new securitySearch and sets the default values.
+            ## Instantiates a new SecuritySearch and sets the default values.
             ## @return a void
             ## 
             def initialize()

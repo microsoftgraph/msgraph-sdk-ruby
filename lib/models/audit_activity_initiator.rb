@@ -10,38 +10,38 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
+            # If the resource initiating the activity is an app, this property indicates all the app related information like appId and name.
             @app
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
+            # If the resource initiating the activity is a user, this property Indicates all the user related information like user ID and userPrincipalName.
             @user
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
+            ## Gets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId and name.
             ## @return a app_identity
             ## 
             def app
                 return @app
             end
             ## 
-            ## Sets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId, Name, servicePrincipalId, Name.
+            ## Sets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId and name.
             ## @param value Value to set for the app property.
             ## @return a void
             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @app = value
             end
             ## 
-            ## Instantiates a new auditActivityInitiator and sets the default values.
+            ## Instantiates a new AuditActivityInitiator and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -103,14 +103,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
+            ## Gets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like user ID and userPrincipalName.
             ## @return a user_identity
             ## 
             def user
                 return @user
             end
             ## 
-            ## Sets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
+            ## Sets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like user ID and userPrincipalName.
             ## @param value Value to set for the user property.
             ## @return a void
             ## 

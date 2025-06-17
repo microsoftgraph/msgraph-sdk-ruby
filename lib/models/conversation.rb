@@ -26,7 +26,7 @@ module MicrosoftGraph
             # All the users that sent a message to this Conversation.
             @unique_senders
             ## 
-            ## Instantiates a new conversation and sets the default values.
+            ## Instantiates a new Conversation and sets the default values.
             ## @return a void
             ## 
             def initialize()

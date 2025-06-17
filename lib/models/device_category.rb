@@ -15,7 +15,7 @@ module MicrosoftGraph
             # Display name for the device category.
             @display_name
             ## 
-            ## Instantiates a new deviceCategory and sets the default values.
+            ## Instantiates a new DeviceCategory and sets the default values.
             ## @return a void
             ## 
             def initialize()

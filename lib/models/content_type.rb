@@ -7,7 +7,7 @@ module MicrosoftGraph
         class ContentType < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+            # List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
             @associated_hubs_urls
             ## 
             # Parent contentType from which this content type is derived.
@@ -22,7 +22,7 @@ module MicrosoftGraph
             # Column order information in a content type.
             @column_positions
             ## 
-            # The collection of column definitions for this contentType.
+            # The collection of column definitions for this content type.
             @columns
             ## 
             # The descriptive text for the item.
@@ -55,7 +55,7 @@ module MicrosoftGraph
             # The unique identifier of the content type.
             @parent_id
             ## 
-            # If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
+            # If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
             @propagate_changes
             ## 
             # If true, the content type can't be modified unless this value is first set to false.
@@ -64,14 +64,14 @@ module MicrosoftGraph
             # If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
             @sealed
             ## 
-            ## Gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+            ## Gets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
             ## @return a string
             ## 
             def associated_hubs_urls
                 return @associated_hubs_urls
             end
             ## 
-            ## Sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.
+            ## Sets the associatedHubsUrls property value. List of canonical URLs for hub sites with which this content type is associated to. This will contain all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.
             ## @param value Value to set for the associatedHubsUrls property.
             ## @return a void
             ## 
@@ -139,14 +139,14 @@ module MicrosoftGraph
                 @column_positions = value
             end
             ## 
-            ## Gets the columns property value. The collection of column definitions for this contentType.
+            ## Gets the columns property value. The collection of column definitions for this content type.
             ## @return a column_definition
             ## 
             def columns
                 return @columns
             end
             ## 
-            ## Sets the columns property value. The collection of column definitions for this contentType.
+            ## Sets the columns property value. The collection of column definitions for this content type.
             ## @param value Value to set for the columns property.
             ## @return a void
             ## 
@@ -154,7 +154,7 @@ module MicrosoftGraph
                 @columns = value
             end
             ## 
-            ## Instantiates a new contentType and sets the default values.
+            ## Instantiates a new ContentType and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -347,14 +347,14 @@ module MicrosoftGraph
                 @parent_id = value
             end
             ## 
-            ## Gets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
+            ## Gets the propagateChanges property value. If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
             ## @return a boolean
             ## 
             def propagate_changes
                 return @propagate_changes
             end
             ## 
-            ## Sets the propagateChanges property value. If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
+            ## Sets the propagateChanges property value. If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.
             ## @param value Value to set for the propagateChanges property.
             ## @return a void
             ## 

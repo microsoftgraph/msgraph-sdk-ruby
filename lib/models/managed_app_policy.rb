@@ -25,7 +25,7 @@ module MicrosoftGraph
             # Version of the entity.
             @version
             ## 
-            ## Instantiates a new managedAppPolicy and sets the default values.
+            ## Instantiates a new ManagedAppPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

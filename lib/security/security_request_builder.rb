@@ -6,11 +6,14 @@ require_relative './alerts/alerts_request_builder'
 require_relative './alerts_v2/alerts_v2_request_builder'
 require_relative './attack_simulation/attack_simulation_request_builder'
 require_relative './cases/cases_request_builder'
+require_relative './identities/identities_request_builder'
 require_relative './incidents/incidents_request_builder'
+require_relative './labels/labels_request_builder'
 require_relative './microsoft_graph_security_run_hunting_query/microsoft_graph_security_run_hunting_query_request_builder'
 require_relative './secure_score_control_profiles/secure_score_control_profiles_request_builder'
 require_relative './secure_scores/secure_scores_request_builder'
 require_relative './security'
+require_relative './subject_rights_requests/subject_rights_requests_request_builder'
 require_relative './threat_intelligence/threat_intelligence_request_builder'
 require_relative './triggers/triggers_request_builder'
 require_relative './trigger_types/trigger_types_request_builder'
@@ -42,9 +45,19 @@ module MicrosoftGraph
                 return MicrosoftGraph::Security::Cases::CasesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the identities property of the microsoft.graph.security entity.
+            def identities()
+                return MicrosoftGraph::Security::Identities::IdentitiesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the incidents property of the microsoft.graph.security entity.
             def incidents()
                 return MicrosoftGraph::Security::Incidents::IncidentsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the labels property of the microsoft.graph.security entity.
+            def labels()
+                return MicrosoftGraph::Security::Labels::LabelsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to call the runHuntingQuery method.
@@ -60,6 +73,11 @@ module MicrosoftGraph
             # Provides operations to manage the secureScores property of the microsoft.graph.security entity.
             def secure_scores()
                 return MicrosoftGraph::Security::SecureScores::SecureScoresRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
+            def subject_rights_requests()
+                return MicrosoftGraph::Security::SubjectRightsRequests::SubjectRightsRequestsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the threatIntelligence property of the microsoft.graph.security entity.
@@ -83,7 +101,7 @@ module MicrosoftGraph
             ## @return a void
             ## 
             def initialize(path_parameters, request_adapter)
-                super(path_parameters, request_adapter, "{+baseurl}/security{?%24select,%24expand}")
+                super(path_parameters, request_adapter, "{+baseurl}/security{?%24expand,%24select}")
             end
             ## 
             ## Get security
@@ -95,8 +113,7 @@ module MicrosoftGraph
                     request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityModelModelModelModelModelModelModel.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -111,8 +128,7 @@ module MicrosoftGraph
                     body, request_configuration
                 )
                 error_mapping = Hash.new
-                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityModelModelModelModelModelModelModel.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
@@ -122,15 +138,15 @@ module MicrosoftGraph
             ## 
             def to_get_request_information(request_configuration=nil)
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :GET
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                     request_info.add_request_options(request_configuration.options)
                 end
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :GET
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
             end
             ## 
@@ -142,16 +158,25 @@ module MicrosoftGraph
             def to_patch_request_information(body, request_configuration=nil)
                 raise StandardError, 'body cannot be null' if body.nil?
                 request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                request_info.url_template = @url_template
-                request_info.path_parameters = @path_parameters
-                request_info.http_method = :PATCH
-                request_info.headers.add('Accept', 'application/json')
                 unless request_configuration.nil?
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
-                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                request_info.set_content_from_parsable(@request_adapter, 'application/json', body)
+                request_info.url_template = @url_template
+                request_info.path_parameters = @path_parameters
+                request_info.http_method = :PATCH
+                request_info.headers.try_add('Accept', 'application/json')
                 return request_info
+            end
+            ## 
+            ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+            ## @param raw_url The raw URL to use for the request builder.
+            ## @return a security_request_builder
+            ## 
+            def with_url(raw_url)
+                raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                return SecurityRequestBuilder.new(raw_url, @request_adapter)
             end
 
             ## 

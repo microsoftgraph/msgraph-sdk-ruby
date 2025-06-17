@@ -35,7 +35,7 @@ module MicrosoftGraph
                 @action = value
             end
             ## 
-            ## Instantiates a new delegatedAdminRelationshipRequest and sets the default values.
+            ## Instantiates a new DelegatedAdminRelationshipRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

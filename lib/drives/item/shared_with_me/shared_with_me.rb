@@ -1,1 +1,1 @@
-require_relative 'shared_with_me_response'
+require_relative 'shared_with_me_get_response'

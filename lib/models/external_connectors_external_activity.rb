@@ -17,7 +17,7 @@ module MicrosoftGraph
             # The type property
             @type
             ## 
-            ## Instantiates a new externalConnectorsExternalActivity and sets the default values.
+            ## Instantiates a new ExternalConnectorsExternalActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

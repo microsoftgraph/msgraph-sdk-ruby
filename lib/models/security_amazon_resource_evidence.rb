@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @amazon_resource_id = value
             end
             ## 
-            ## Instantiates a new securityAmazonResourceEvidence and sets the default values.
+            ## Instantiates a new SecurityAmazonResourceEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

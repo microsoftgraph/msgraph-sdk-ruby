@@ -129,7 +129,7 @@ module MicrosoftGraph
                 @boot_score = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsDevicePerformance and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsDevicePerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()

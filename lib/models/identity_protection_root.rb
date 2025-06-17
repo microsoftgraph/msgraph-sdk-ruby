@@ -13,34 +13,34 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # Risk detection in Azure AD Identity Protection and the associated information about the detection.
+            # Risk detection in Microsoft Entra ID Protection and the associated information about the detection.
             @risk_detections
             ## 
-            # Azure AD service principals that are at risk.
+            # Microsoft Entra service principals that are at risk.
             @risky_service_principals
             ## 
-            # Users that are flagged as at-risk by Azure AD Identity Protection.
+            # Users that are flagged as at-risk by Microsoft Entra ID Protection.
             @risky_users
             ## 
-            # Represents information about detected at-risk service principals in an Azure AD tenant.
+            # Represents information about detected at-risk service principals in a Microsoft Entra tenant.
             @service_principal_risk_detections
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new identityProtectionRoot and sets the default values.
+            ## Instantiates a new IdentityProtectionRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,14 +84,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.
+            ## Gets the riskDetections property value. Risk detection in Microsoft Entra ID Protection and the associated information about the detection.
             ## @return a risk_detection
             ## 
             def risk_detections
                 return @risk_detections
             end
             ## 
-            ## Sets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.
+            ## Sets the riskDetections property value. Risk detection in Microsoft Entra ID Protection and the associated information about the detection.
             ## @param value Value to set for the riskDetections property.
             ## @return a void
             ## 
@@ -99,14 +99,14 @@ module MicrosoftGraph
                 @risk_detections = value
             end
             ## 
-            ## Gets the riskyServicePrincipals property value. Azure AD service principals that are at risk.
+            ## Gets the riskyServicePrincipals property value. Microsoft Entra service principals that are at risk.
             ## @return a risky_service_principal
             ## 
             def risky_service_principals
                 return @risky_service_principals
             end
             ## 
-            ## Sets the riskyServicePrincipals property value. Azure AD service principals that are at risk.
+            ## Sets the riskyServicePrincipals property value. Microsoft Entra service principals that are at risk.
             ## @param value Value to set for the riskyServicePrincipals property.
             ## @return a void
             ## 
@@ -114,14 +114,14 @@ module MicrosoftGraph
                 @risky_service_principals = value
             end
             ## 
-            ## Gets the riskyUsers property value. Users that are flagged as at-risk by Azure AD Identity Protection.
+            ## Gets the riskyUsers property value. Users that are flagged as at-risk by Microsoft Entra ID Protection.
             ## @return a risky_user
             ## 
             def risky_users
                 return @risky_users
             end
             ## 
-            ## Sets the riskyUsers property value. Users that are flagged as at-risk by Azure AD Identity Protection.
+            ## Sets the riskyUsers property value. Users that are flagged as at-risk by Microsoft Entra ID Protection.
             ## @param value Value to set for the riskyUsers property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the servicePrincipalRiskDetections property value. Represents information about detected at-risk service principals in an Azure AD tenant.
+            ## Gets the servicePrincipalRiskDetections property value. Represents information about detected at-risk service principals in a Microsoft Entra tenant.
             ## @return a service_principal_risk_detection
             ## 
             def service_principal_risk_detections
                 return @service_principal_risk_detections
             end
             ## 
-            ## Sets the servicePrincipalRiskDetections property value. Represents information about detected at-risk service principals in an Azure AD tenant.
+            ## Sets the servicePrincipalRiskDetections property value. Represents information about detected at-risk service principals in a Microsoft Entra tenant.
             ## @param value Value to set for the servicePrincipalRiskDetections property.
             ## @return a void
             ## 

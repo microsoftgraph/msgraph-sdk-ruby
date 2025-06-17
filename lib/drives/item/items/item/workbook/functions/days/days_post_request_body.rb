@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
-require_relative '../../../../../../../models/json'
 require_relative '../../../../../../drives'
 require_relative '../../../../../item'
 require_relative '../../../../items'
@@ -23,28 +22,22 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
-                                    # The endDate property
-                                    @end_date
-                                    ## 
-                                    # The startDate property
-                                    @start_date
-                                    ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new daysPostRequestBody and sets the default values.
+                                    ## Instantiates a new DaysPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -60,28 +53,11 @@ module MicrosoftGraph
                                         return DaysPostRequestBody.new
                                     end
                                     ## 
-                                    ## Gets the endDate property value. The endDate property
-                                    ## @return a json
-                                    ## 
-                                    def end_date
-                                        return @end_date
-                                    end
-                                    ## 
-                                    ## Sets the endDate property value. The endDate property
-                                    ## @param value Value to set for the endDate property.
-                                    ## @return a void
-                                    ## 
-                                    def end_date=(value)
-                                        @end_date = value
-                                    end
-                                    ## 
                                     ## The deserialization information for the current model
                                     ## @return a i_dictionary
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "endDate" => lambda {|n| @end_date = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                                            "startDate" => lambda {|n| @start_date = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                                         }
                                     end
                                     ## 
@@ -91,24 +67,7 @@ module MicrosoftGraph
                                     ## 
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
-                                        writer.write_object_value("endDate", @end_date)
-                                        writer.write_object_value("startDate", @start_date)
                                         writer.write_additional_data(@additional_data)
-                                    end
-                                    ## 
-                                    ## Gets the startDate property value. The startDate property
-                                    ## @return a json
-                                    ## 
-                                    def start_date
-                                        return @start_date
-                                    end
-                                    ## 
-                                    ## Sets the startDate property value. The startDate property
-                                    ## @param value Value to set for the startDate property.
-                                    ## @return a void
-                                    ## 
-                                    def start_date=(value)
-                                        @start_date = value
                                     end
                                 end
                             end

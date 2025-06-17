@@ -25,7 +25,7 @@ module MicrosoftGraph
             # Specifies the version of this policy. When the policy is updated, this version is updated. Read-only.
             @version
             ## 
-            ## Instantiates a new adminConsentRequestPolicy and sets the default values.
+            ## Instantiates a new AdminConsentRequestPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

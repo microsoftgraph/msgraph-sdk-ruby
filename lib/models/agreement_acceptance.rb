@@ -77,7 +77,7 @@ module MicrosoftGraph
                 @agreement_id = value
             end
             ## 
-            ## Instantiates a new agreementAcceptance and sets the default values.
+            ## Instantiates a new AgreementAcceptance and sets the default values.
             ## @return a void
             ## 
             def initialize()

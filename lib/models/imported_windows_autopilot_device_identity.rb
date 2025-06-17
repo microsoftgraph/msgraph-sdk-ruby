@@ -45,7 +45,7 @@ module MicrosoftGraph
                 @assigned_user_principal_name = value
             end
             ## 
-            ## Instantiates a new importedWindowsAutopilotDeviceIdentity and sets the default values.
+            ## Instantiates a new ImportedWindowsAutopilotDeviceIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

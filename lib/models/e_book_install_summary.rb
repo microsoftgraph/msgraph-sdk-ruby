@@ -27,7 +27,7 @@ module MicrosoftGraph
             # Number of Users that did not install this book.
             @not_installed_user_count
             ## 
-            ## Instantiates a new eBookInstallSummary and sets the default values.
+            ## Instantiates a new EBookInstallSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()
