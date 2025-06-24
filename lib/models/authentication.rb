@@ -19,16 +19,19 @@ module MicrosoftGraph
             # The details of the Microsoft Authenticator app registered to a user for authentication.
             @microsoft_authenticator_methods
             ## 
-            # Represents the status of a long-running operation.
+            # Represents the status of a long-running operation, such as a password reset operation.
             @operations
             ## 
-            # Represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
+            # Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.
             @password_methods
             ## 
             # The phone numbers registered to a user for authentication.
             @phone_methods
             ## 
-            # The software OATH TOTP applications registered to a user for authentication.
+            # Represents a platform credential instance registered to a user on Mac OS.
+            @platform_credential_methods
+            ## 
+            # The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
             @software_oath_methods
             ## 
             # Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
@@ -37,7 +40,7 @@ module MicrosoftGraph
             # Represents the Windows Hello for Business authentication method registered to a user for authentication.
             @windows_hello_for_business_methods
             ## 
-            ## Instantiates a new authentication and sets the default values.
+            ## Instantiates a new Authentication and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -95,6 +98,7 @@ module MicrosoftGraph
                     "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::LongRunningOperation.create_from_discriminator_value(pn) }) },
                     "passwordMethods" => lambda {|n| @password_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PasswordAuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "phoneMethods" => lambda {|n| @phone_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PhoneAuthenticationMethod.create_from_discriminator_value(pn) }) },
+                    "platformCredentialMethods" => lambda {|n| @platform_credential_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PlatformCredentialAuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "softwareOathMethods" => lambda {|n| @software_oath_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SoftwareOathAuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "temporaryAccessPassMethods" => lambda {|n| @temporary_access_pass_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TemporaryAccessPassAuthenticationMethod.create_from_discriminator_value(pn) }) },
                     "windowsHelloForBusinessMethods" => lambda {|n| @windows_hello_for_business_methods = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsHelloForBusinessAuthenticationMethod.create_from_discriminator_value(pn) }) },
@@ -131,14 +135,14 @@ module MicrosoftGraph
                 @microsoft_authenticator_methods = value
             end
             ## 
-            ## Gets the operations property value. Represents the status of a long-running operation.
+            ## Gets the operations property value. Represents the status of a long-running operation, such as a password reset operation.
             ## @return a long_running_operation
             ## 
             def operations
                 return @operations
             end
             ## 
-            ## Sets the operations property value. Represents the status of a long-running operation.
+            ## Sets the operations property value. Represents the status of a long-running operation, such as a password reset operation.
             ## @param value Value to set for the operations property.
             ## @return a void
             ## 
@@ -146,14 +150,14 @@ module MicrosoftGraph
                 @operations = value
             end
             ## 
-            ## Gets the passwordMethods property value. Represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
+            ## Gets the passwordMethods property value. Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.
             ## @return a password_authentication_method
             ## 
             def password_methods
                 return @password_methods
             end
             ## 
-            ## Sets the passwordMethods property value. Represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
+            ## Sets the passwordMethods property value. Represents the password registered to a user for authentication. For security, the password itself is never returned in the object, but action can be taken to reset a password.
             ## @param value Value to set for the passwordMethods property.
             ## @return a void
             ## 
@@ -176,6 +180,21 @@ module MicrosoftGraph
                 @phone_methods = value
             end
             ## 
+            ## Gets the platformCredentialMethods property value. Represents a platform credential instance registered to a user on Mac OS.
+            ## @return a platform_credential_authentication_method
+            ## 
+            def platform_credential_methods
+                return @platform_credential_methods
+            end
+            ## 
+            ## Sets the platformCredentialMethods property value. Represents a platform credential instance registered to a user on Mac OS.
+            ## @param value Value to set for the platformCredentialMethods property.
+            ## @return a void
+            ## 
+            def platform_credential_methods=(value)
+                @platform_credential_methods = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -190,19 +209,20 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("operations", @operations)
                 writer.write_collection_of_object_values("passwordMethods", @password_methods)
                 writer.write_collection_of_object_values("phoneMethods", @phone_methods)
+                writer.write_collection_of_object_values("platformCredentialMethods", @platform_credential_methods)
                 writer.write_collection_of_object_values("softwareOathMethods", @software_oath_methods)
                 writer.write_collection_of_object_values("temporaryAccessPassMethods", @temporary_access_pass_methods)
                 writer.write_collection_of_object_values("windowsHelloForBusinessMethods", @windows_hello_for_business_methods)
             end
             ## 
-            ## Gets the softwareOathMethods property value. The software OATH TOTP applications registered to a user for authentication.
+            ## Gets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
             ## @return a software_oath_authentication_method
             ## 
             def software_oath_methods
                 return @software_oath_methods
             end
             ## 
-            ## Sets the softwareOathMethods property value. The software OATH TOTP applications registered to a user for authentication.
+            ## Sets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
             ## @param value Value to set for the softwareOathMethods property.
             ## @return a void
             ## 

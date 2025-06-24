@@ -1,7 +1,10 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../microsoft_graph'
 require_relative '../../../../../../../models/security_additional_data_options'
+require_relative '../../../../../../../models/security_cloud_attachment_version'
+require_relative '../../../../../../../models/security_document_version'
 require_relative '../../../../../../../models/security_ediscovery_search'
+require_relative '../../../../../../../models/security_items_to_include'
 require_relative '../../../../../../security'
 require_relative '../../../../../cases'
 require_relative '../../../../ediscovery_cases'
@@ -27,18 +30,27 @@ module MicrosoftGraph
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     @additional_data
                                     ## 
+                                    # The cloudAttachmentVersion property
+                                    @cloud_attachment_version
+                                    ## 
+                                    # The documentVersion property
+                                    @document_version
+                                    ## 
+                                    # The itemsToInclude property
+                                    @items_to_include
+                                    ## 
                                     # The search property
                                     @search
                                     ## 
-                                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                                     ## @return a i_dictionary
                                     ## 
                                     def additional_data
                                         return @additional_data
                                     end
                                     ## 
-                                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the additionalData property.
+                                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                                    ## @param value Value to set for the AdditionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -60,7 +72,22 @@ module MicrosoftGraph
                                         @additional_data_options = value
                                     end
                                     ## 
-                                    ## Instantiates a new addToReviewSetPostRequestBody and sets the default values.
+                                    ## Gets the cloudAttachmentVersion property value. The cloudAttachmentVersion property
+                                    ## @return a security_cloud_attachment_version
+                                    ## 
+                                    def cloud_attachment_version
+                                        return @cloud_attachment_version
+                                    end
+                                    ## 
+                                    ## Sets the cloudAttachmentVersion property value. The cloudAttachmentVersion property
+                                    ## @param value Value to set for the cloudAttachmentVersion property.
+                                    ## @return a void
+                                    ## 
+                                    def cloud_attachment_version=(value)
+                                        @cloud_attachment_version = value
+                                    end
+                                    ## 
+                                    ## Instantiates a new AddToReviewSetPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -76,14 +103,47 @@ module MicrosoftGraph
                                         return AddToReviewSetPostRequestBody.new
                                     end
                                     ## 
+                                    ## Gets the documentVersion property value. The documentVersion property
+                                    ## @return a security_document_version
+                                    ## 
+                                    def document_version
+                                        return @document_version
+                                    end
+                                    ## 
+                                    ## Sets the documentVersion property value. The documentVersion property
+                                    ## @param value Value to set for the documentVersion property.
+                                    ## @return a void
+                                    ## 
+                                    def document_version=(value)
+                                        @document_version = value
+                                    end
+                                    ## 
                                     ## The deserialization information for the current model
                                     ## @return a i_dictionary
                                     ## 
                                     def get_field_deserializers()
                                         return {
-                                            "additionalDataOptions" => lambda {|n| @additional_data_options = n.get_enum_value(MicrosoftGraph::Models::SecurityAdditionalDataOptions) },
+                                            "additionalDataOptions" => lambda {|n| @additional_data_options = n.get_enum_values(MicrosoftGraph::Models::SecurityAdditionalDataOptions) },
+                                            "cloudAttachmentVersion" => lambda {|n| @cloud_attachment_version = n.get_enum_value(MicrosoftGraph::Models::SecurityCloudAttachmentVersion) },
+                                            "documentVersion" => lambda {|n| @document_version = n.get_enum_value(MicrosoftGraph::Models::SecurityDocumentVersion) },
+                                            "itemsToInclude" => lambda {|n| @items_to_include = n.get_enum_values(MicrosoftGraph::Models::SecurityItemsToInclude) },
                                             "search" => lambda {|n| @search = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoverySearch.create_from_discriminator_value(pn) }) },
                                         }
+                                    end
+                                    ## 
+                                    ## Gets the itemsToInclude property value. The itemsToInclude property
+                                    ## @return a security_items_to_include
+                                    ## 
+                                    def items_to_include
+                                        return @items_to_include
+                                    end
+                                    ## 
+                                    ## Sets the itemsToInclude property value. The itemsToInclude property
+                                    ## @param value Value to set for the itemsToInclude property.
+                                    ## @return a void
+                                    ## 
+                                    def items_to_include=(value)
+                                        @items_to_include = value
                                     end
                                     ## 
                                     ## Gets the search property value. The search property
@@ -108,6 +168,9 @@ module MicrosoftGraph
                                     def serialize(writer)
                                         raise StandardError, 'writer cannot be null' if writer.nil?
                                         writer.write_enum_value("additionalDataOptions", @additional_data_options)
+                                        writer.write_enum_value("cloudAttachmentVersion", @cloud_attachment_version)
+                                        writer.write_enum_value("documentVersion", @document_version)
+                                        writer.write_enum_value("itemsToInclude", @items_to_include)
                                         writer.write_object_value("search", @search)
                                         writer.write_additional_data(@additional_data)
                                     end

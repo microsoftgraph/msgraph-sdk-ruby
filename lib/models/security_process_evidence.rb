@@ -38,7 +38,7 @@ module MicrosoftGraph
             # User details of the user that ran the process.
             @user_account
             ## 
-            ## Instantiates a new securityProcessEvidence and sets the default values.
+            ## Instantiates a new SecurityProcessEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

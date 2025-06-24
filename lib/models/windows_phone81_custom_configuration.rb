@@ -12,7 +12,7 @@ module MicrosoftGraph
             # OMA settings. This collection can contain a maximum of 1000 elements.
             @oma_settings
             ## 
-            ## Instantiates a new windowsPhone81CustomConfiguration and sets the default values.
+            ## Instantiates a new WindowsPhone81CustomConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

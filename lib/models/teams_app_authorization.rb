@@ -10,28 +10,46 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The registration ID of the Microsoft Entra app ID associated with the teamsApp.
+            @client_app_id
+            ## 
             # The OdataType property
             @odata_type
             ## 
             # Set of permissions required by the teamsApp.
             @required_permission_set
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new teamsAppAuthorization and sets the default values.
+            ## Gets the clientAppId property value. The registration ID of the Microsoft Entra app ID associated with the teamsApp.
+            ## @return a string
+            ## 
+            def client_app_id
+                return @client_app_id
+            end
+            ## 
+            ## Sets the clientAppId property value. The registration ID of the Microsoft Entra app ID associated with the teamsApp.
+            ## @param value Value to set for the clientAppId property.
+            ## @return a void
+            ## 
+            def client_app_id=(value)
+                @client_app_id = value
+            end
+            ## 
+            ## Instantiates a new TeamsAppAuthorization and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -52,6 +70,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "clientAppId" => lambda {|n| @client_app_id = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "requiredPermissionSet" => lambda {|n| @required_permission_set = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamsAppPermissionSet.create_from_discriminator_value(pn) }) },
                 }
@@ -93,6 +112,7 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_string_value("clientAppId", @client_app_id)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_object_value("requiredPermissionSet", @required_permission_set)
                 writer.write_additional_data(@additional_data)

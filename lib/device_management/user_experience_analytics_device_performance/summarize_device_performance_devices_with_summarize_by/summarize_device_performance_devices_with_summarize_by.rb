@@ -1,1 +1,1 @@
-require_relative 'summarize_device_performance_devices_with_summarize_by_response'
+require_relative 'summarize_device_performance_devices_with_summarize_by_get_response'

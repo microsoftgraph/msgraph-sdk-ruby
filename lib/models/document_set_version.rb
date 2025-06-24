@@ -20,7 +20,7 @@ module MicrosoftGraph
             # Items within the document set that are captured as part of this version.
             @items
             ## 
-            # If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+            # If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.
             @should_capture_minor_version
             ## 
             ## Gets the comment property value. Comment about the captured version.
@@ -38,7 +38,7 @@ module MicrosoftGraph
                 @comment = value
             end
             ## 
-            ## Instantiates a new documentSetVersion and sets the default values.
+            ## Instantiates a new DocumentSetVersion and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -127,14 +127,14 @@ module MicrosoftGraph
                 writer.write_boolean_value("shouldCaptureMinorVersion", @should_capture_minor_version)
             end
             ## 
-            ## Gets the shouldCaptureMinorVersion property value. If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+            ## Gets the shouldCaptureMinorVersion property value. If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.
             ## @return a boolean
             ## 
             def should_capture_minor_version
                 return @should_capture_minor_version
             end
             ## 
-            ## Sets the shouldCaptureMinorVersion property value. If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
+            ## Sets the shouldCaptureMinorVersion property value. If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.
             ## @param value Value to set for the shouldCaptureMinorVersion property.
             ## @return a void
             ## 

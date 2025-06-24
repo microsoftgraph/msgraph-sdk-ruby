@@ -18,7 +18,7 @@ module MicrosoftGraph
             # Contains properties for detection operator.
             @product_version_operator
             ## 
-            ## Instantiates a new win32LobAppProductCodeRule and sets the default values.
+            ## Instantiates a new Win32LobAppProductCodeRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

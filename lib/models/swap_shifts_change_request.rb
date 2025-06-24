@@ -7,10 +7,10 @@ module MicrosoftGraph
         class SwapShiftsChangeRequest < MicrosoftGraph::Models::OfferShiftRequest
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # ShiftId for the recipient user with whom the request is to swap.
+            # The recipient's Shift ID
             @recipient_shift_id
             ## 
-            ## Instantiates a new swapShiftsChangeRequest and sets the default values.
+            ## Instantiates a new SwapShiftsChangeRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -36,14 +36,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
+            ## Gets the recipientShiftId property value. The recipient's Shift ID
             ## @return a string
             ## 
             def recipient_shift_id
                 return @recipient_shift_id
             end
             ## 
-            ## Sets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
+            ## Sets the recipientShiftId property value. The recipient's Shift ID
             ## @param value Value to set for the recipientShiftId property.
             ## @return a void
             ## 

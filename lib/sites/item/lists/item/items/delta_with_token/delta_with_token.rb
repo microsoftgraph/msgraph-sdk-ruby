@@ -1,0 +1,1 @@
+require_relative 'delta_with_token_get_response'

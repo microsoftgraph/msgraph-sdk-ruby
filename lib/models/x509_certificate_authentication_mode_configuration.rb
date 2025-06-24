@@ -19,22 +19,25 @@ module MicrosoftGraph
             # The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
             @x509_certificate_authentication_default_mode
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # The x509CertificateDefaultRequiredAffinityLevel property
+            @x509_certificate_default_required_affinity_level
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new x509CertificateAuthenticationModeConfiguration and sets the default values.
+            ## Instantiates a new X509CertificateAuthenticationModeConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -58,6 +61,7 @@ module MicrosoftGraph
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "rules" => lambda {|n| @rules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::X509CertificateRule.create_from_discriminator_value(pn) }) },
                     "x509CertificateAuthenticationDefaultMode" => lambda {|n| @x509_certificate_authentication_default_mode = n.get_enum_value(MicrosoftGraph::Models::X509CertificateAuthenticationMode) },
+                    "x509CertificateDefaultRequiredAffinityLevel" => lambda {|n| @x509_certificate_default_required_affinity_level = n.get_enum_value(MicrosoftGraph::Models::X509CertificateAffinityLevel) },
                 }
             end
             ## 
@@ -100,6 +104,7 @@ module MicrosoftGraph
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_collection_of_object_values("rules", @rules)
                 writer.write_enum_value("x509CertificateAuthenticationDefaultMode", @x509_certificate_authentication_default_mode)
+                writer.write_enum_value("x509CertificateDefaultRequiredAffinityLevel", @x509_certificate_default_required_affinity_level)
                 writer.write_additional_data(@additional_data)
             end
             ## 
@@ -116,6 +121,21 @@ module MicrosoftGraph
             ## 
             def x509_certificate_authentication_default_mode=(value)
                 @x509_certificate_authentication_default_mode = value
+            end
+            ## 
+            ## Gets the x509CertificateDefaultRequiredAffinityLevel property value. The x509CertificateDefaultRequiredAffinityLevel property
+            ## @return a x509_certificate_affinity_level
+            ## 
+            def x509_certificate_default_required_affinity_level
+                return @x509_certificate_default_required_affinity_level
+            end
+            ## 
+            ## Sets the x509CertificateDefaultRequiredAffinityLevel property value. The x509CertificateDefaultRequiredAffinityLevel property
+            ## @param value Value to set for the x509CertificateDefaultRequiredAffinityLevel property.
+            ## @return a void
+            ## 
+            def x509_certificate_default_required_affinity_level=(value)
+                @x509_certificate_default_required_affinity_level = value
             end
         end
     end

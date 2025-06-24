@@ -20,7 +20,7 @@ module MicrosoftGraph
             # Status of the attack simulation automation run. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
             @status
             ## 
-            ## Instantiates a new simulationAutomationRun and sets the default values.
+            ## Instantiates a new SimulationAutomationRun and sets the default values.
             ## @return a void
             ## 
             def initialize()

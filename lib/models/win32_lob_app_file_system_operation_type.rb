@@ -1,7 +1,7 @@
 module MicrosoftGraph
     module Models
         ## 
-        # Contains all supported file system detection type.
+        # A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.
         Win32LobAppFileSystemOperationType = {
             NotConfigured: :NotConfigured,
             Exists: :Exists,

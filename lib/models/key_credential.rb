@@ -14,13 +14,13 @@ module MicrosoftGraph
             # A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
             @custom_key_identifier
             ## 
-            # Friendly name for the key. Optional.
+            # The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.
             @display_name
             ## 
             # The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @end_date_time
             ## 
-            # The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
+            # The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it's always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
             @key
             ## 
             # The unique identifier (GUID) for the key.
@@ -38,22 +38,22 @@ module MicrosoftGraph
             # A string that describes the purpose for which the key can be used; for example, Verify.
             @usage
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new keyCredential and sets the default values.
+            ## Instantiates a new KeyCredential and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,14 +84,14 @@ module MicrosoftGraph
                 @custom_key_identifier = value
             end
             ## 
-            ## Gets the displayName property value. Friendly name for the key. Optional.
+            ## Gets the displayName property value. The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Friendly name for the key. Optional.
+            ## Sets the displayName property value. The friendly name for the key, with a maximum length of 90 characters. Longer values are accepted but shortened. Optional.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -131,14 +131,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
+            ## Gets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it's always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
             ## @return a base64url
             ## 
             def key
                 return @key
             end
             ## 
-            ## Sets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
+            ## Sets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it's always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
             ## @param value Value to set for the key property.
             ## @return a void
             ## 

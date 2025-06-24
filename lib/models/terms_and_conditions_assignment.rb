@@ -12,7 +12,7 @@ module MicrosoftGraph
             # Assignment target that the T&C policy is assigned to.
             @target
             ## 
-            ## Instantiates a new termsAndConditionsAssignment and sets the default values.
+            ## Instantiates a new TermsAndConditionsAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

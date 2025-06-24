@@ -10,7 +10,7 @@ module MicrosoftGraph
             # A container for Internet Explorer mode resources.
             @internet_explorer_mode
             ## 
-            ## Instantiates a new edge and sets the default values.
+            ## Instantiates a new Edge and sets the default values.
             ## @return a void
             ## 
             def initialize()

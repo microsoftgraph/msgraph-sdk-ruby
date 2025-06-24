@@ -1,1 +1,1 @@
-require_relative 'set_mobile_device_management_authority_response'
+require_relative 'set_mobile_device_management_authority_post_response'

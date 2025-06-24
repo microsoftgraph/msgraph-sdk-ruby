@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new baseItemCollectionResponse and sets the default values.
+            ## Instantiates a new BaseItemCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

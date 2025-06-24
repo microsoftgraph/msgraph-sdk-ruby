@@ -1,1 +1,1 @@
-require_relative 'image_response'
+require_relative 'image_get_response'

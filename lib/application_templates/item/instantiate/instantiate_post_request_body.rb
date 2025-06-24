@@ -17,22 +17,25 @@ module MicrosoftGraph
                     # The displayName property
                     @display_name
                     ## 
-                    ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                    # The serviceManagementReference property
+                    @service_management_reference
+                    ## 
+                    ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                     ## @return a i_dictionary
                     ## 
                     def additional_data
                         return @additional_data
                     end
                     ## 
-                    ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the additionalData property.
+                    ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                    ## @param value Value to set for the AdditionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
                         @additional_data = value
                     end
                     ## 
-                    ## Instantiates a new instantiatePostRequestBody and sets the default values.
+                    ## Instantiates a new InstantiatePostRequestBody and sets the default values.
                     ## @return a void
                     ## 
                     def initialize()
@@ -69,6 +72,7 @@ module MicrosoftGraph
                     def get_field_deserializers()
                         return {
                             "displayName" => lambda {|n| @display_name = n.get_string_value() },
+                            "serviceManagementReference" => lambda {|n| @service_management_reference = n.get_string_value() },
                         }
                     end
                     ## 
@@ -79,7 +83,23 @@ module MicrosoftGraph
                     def serialize(writer)
                         raise StandardError, 'writer cannot be null' if writer.nil?
                         writer.write_string_value("displayName", @display_name)
+                        writer.write_string_value("serviceManagementReference", @service_management_reference)
                         writer.write_additional_data(@additional_data)
+                    end
+                    ## 
+                    ## Gets the serviceManagementReference property value. The serviceManagementReference property
+                    ## @return a string
+                    ## 
+                    def service_management_reference
+                        return @service_management_reference
+                    end
+                    ## 
+                    ## Sets the serviceManagementReference property value. The serviceManagementReference property
+                    ## @param value Value to set for the serviceManagementReference property.
+                    ## @return a void
+                    ## 
+                    def service_management_reference=(value)
+                        @service_management_reference = value
                     end
                 end
             end

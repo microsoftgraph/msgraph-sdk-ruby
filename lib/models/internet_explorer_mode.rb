@@ -10,7 +10,7 @@ module MicrosoftGraph
             # A collection of site lists to support Internet Explorer mode.
             @site_lists
             ## 
-            ## Instantiates a new internetExplorerMode and sets the default values.
+            ## Instantiates a new InternetExplorerMode and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -25,7 +25,7 @@ module MicrosoftGraph
             # Value to use when configuring the weight property of the SRV record at the DNS host.
             @weight
             ## 
-            ## Instantiates a new domainDnsSrvRecord and sets the default values.
+            ## Instantiates a new DomainDnsSrvRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()
