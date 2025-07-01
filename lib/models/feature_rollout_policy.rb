@@ -7,7 +7,7 @@ module MicrosoftGraph
         class FeatureRolloutPolicy < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Nullable. Specifies a list of directoryObjects that feature is enabled for.
+            # Nullable. Specifies a list of directoryObject resources that feature is enabled for.
             @applies_to
             ## 
             # A description for this feature rollout policy.
@@ -25,14 +25,14 @@ module MicrosoftGraph
             # Indicates whether the feature rollout is enabled.
             @is_enabled
             ## 
-            ## Gets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
+            ## Gets the appliesTo property value. Nullable. Specifies a list of directoryObject resources that feature is enabled for.
             ## @return a directory_object
             ## 
             def applies_to
                 return @applies_to
             end
             ## 
-            ## Sets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
+            ## Sets the appliesTo property value. Nullable. Specifies a list of directoryObject resources that feature is enabled for.
             ## @param value Value to set for the appliesTo property.
             ## @return a void
             ## 
@@ -40,7 +40,7 @@ module MicrosoftGraph
                 @applies_to = value
             end
             ## 
-            ## Instantiates a new featureRolloutPolicy and sets the default values.
+            ## Instantiates a new FeatureRolloutPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

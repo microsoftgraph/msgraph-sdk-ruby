@@ -20,7 +20,7 @@ module MicrosoftGraph
             # Contains tenant scores for a set of controls.
             @control_scores
             ## 
-            # The date when the entity is created.
+            # When the report was created.
             @created_date_time
             ## 
             # Tenant current attained score on specified date.
@@ -83,7 +83,7 @@ module MicrosoftGraph
                 @azure_tenant_id = value
             end
             ## 
-            ## Instantiates a new secureScore and sets the default values.
+            ## Instantiates a new SecureScore and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -105,14 +105,14 @@ module MicrosoftGraph
                 @control_scores = value
             end
             ## 
-            ## Gets the createdDateTime property value. The date when the entity is created.
+            ## Gets the createdDateTime property value. When the report was created.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The date when the entity is created.
+            ## Sets the createdDateTime property value. When the report was created.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 

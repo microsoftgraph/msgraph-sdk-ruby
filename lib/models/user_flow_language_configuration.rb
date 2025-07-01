@@ -7,7 +7,7 @@ module MicrosoftGraph
         class UserFlowLanguageConfiguration < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+            # Collection of pages with the default content to display in a user flow for a specified language. This collection doesn't allow any kind of modification.
             @default_pages
             ## 
             # The language name to display. This property is read-only.
@@ -16,10 +16,10 @@ module MicrosoftGraph
             # Indicates whether the language is enabled within the user flow.
             @is_enabled
             ## 
-            # Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+            # Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
             @overrides_pages
             ## 
-            ## Instantiates a new userFlowLanguageConfiguration and sets the default values.
+            ## Instantiates a new UserFlowLanguageConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,14 +35,14 @@ module MicrosoftGraph
                 return UserFlowLanguageConfiguration.new
             end
             ## 
-            ## Gets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+            ## Gets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection doesn't allow any kind of modification.
             ## @return a user_flow_language_page
             ## 
             def default_pages
                 return @default_pages
             end
             ## 
-            ## Sets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
+            ## Sets the defaultPages property value. Collection of pages with the default content to display in a user flow for a specified language. This collection doesn't allow any kind of modification.
             ## @param value Value to set for the defaultPages property.
             ## @return a void
             ## 
@@ -92,14 +92,14 @@ module MicrosoftGraph
                 @is_enabled = value
             end
             ## 
-            ## Gets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+            ## Gets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
             ## @return a user_flow_language_page
             ## 
             def overrides_pages
                 return @overrides_pages
             end
             ## 
-            ## Sets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).
+            ## Sets the overridesPages property value. Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows you to modify the content of the page, any other modification isn't allowed (creation or deletion of pages).
             ## @param value Value to set for the overridesPages property.
             ## @return a void
             ## 

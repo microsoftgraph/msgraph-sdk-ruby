@@ -17,7 +17,7 @@ module MicrosoftGraph
             # The current status of the operation: notStarted, running, completed, failed
             @status
             ## 
-            ## Instantiates a new operation and sets the default values.
+            ## Instantiates a new Operation and sets the default values.
             ## @return a void
             ## 
             def initialize()

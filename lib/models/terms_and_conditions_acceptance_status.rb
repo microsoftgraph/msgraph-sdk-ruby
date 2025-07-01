@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @accepted_version = value
             end
             ## 
-            ## Instantiates a new termsAndConditionsAcceptanceStatus and sets the default values.
+            ## Instantiates a new TermsAndConditionsAcceptanceStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

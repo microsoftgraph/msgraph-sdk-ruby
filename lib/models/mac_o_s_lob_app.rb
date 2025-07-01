@@ -81,7 +81,7 @@ module MicrosoftGraph
                 @child_apps = value
             end
             ## 
-            ## Instantiates a new macOSLobApp and sets the default values.
+            ## Instantiates a new MacOSLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

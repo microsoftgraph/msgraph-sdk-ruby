@@ -13,31 +13,34 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
+            # The priority of the binding. Microsoft Entra ID uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
             @priority
             ## 
-            # Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
+            # The trustAffinityLevel property
+            @trust_affinity_level
+            ## 
+            # Defines the Microsoft Entra user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
             @user_property
             ## 
             # The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name, SubjectKeyIdentifier, SHA1PublicKey.
             @x509_certificate_field
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new x509CertificateUserBinding and sets the default values.
+            ## Instantiates a new X509CertificateUserBinding and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -60,6 +63,7 @@ module MicrosoftGraph
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "priority" => lambda {|n| @priority = n.get_number_value() },
+                    "trustAffinityLevel" => lambda {|n| @trust_affinity_level = n.get_enum_value(MicrosoftGraph::Models::X509CertificateAffinityLevel) },
                     "userProperty" => lambda {|n| @user_property = n.get_string_value() },
                     "x509CertificateField" => lambda {|n| @x509_certificate_field = n.get_string_value() },
                 }
@@ -80,14 +84,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the priority property value. The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
+            ## Gets the priority property value. The priority of the binding. Microsoft Entra ID uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
             ## @return a integer
             ## 
             def priority
                 return @priority
             end
             ## 
-            ## Sets the priority property value. The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
+            ## Sets the priority property value. The priority of the binding. Microsoft Entra ID uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
             ## @param value Value to set for the priority property.
             ## @return a void
             ## 
@@ -103,19 +107,35 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_number_value("priority", @priority)
+                writer.write_enum_value("trustAffinityLevel", @trust_affinity_level)
                 writer.write_string_value("userProperty", @user_property)
                 writer.write_string_value("x509CertificateField", @x509_certificate_field)
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the userProperty property value. Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
+            ## Gets the trustAffinityLevel property value. The trustAffinityLevel property
+            ## @return a x509_certificate_affinity_level
+            ## 
+            def trust_affinity_level
+                return @trust_affinity_level
+            end
+            ## 
+            ## Sets the trustAffinityLevel property value. The trustAffinityLevel property
+            ## @param value Value to set for the trustAffinityLevel property.
+            ## @return a void
+            ## 
+            def trust_affinity_level=(value)
+                @trust_affinity_level = value
+            end
+            ## 
+            ## Gets the userProperty property value. Defines the Microsoft Entra user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
             ## @return a string
             ## 
             def user_property
                 return @user_property
             end
             ## 
-            ## Sets the userProperty property value. Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
+            ## Sets the userProperty property value. Defines the Microsoft Entra user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
             ## @param value Value to set for the userProperty property.
             ## @return a void
             ## 

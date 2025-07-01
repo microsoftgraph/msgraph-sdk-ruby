@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The status property
             @status
             ## 
-            ## Instantiates a new serviceHealth and sets the default values.
+            ## Instantiates a new ServiceHealth and sets the default values.
             ## @return a void
             ## 
             def initialize()

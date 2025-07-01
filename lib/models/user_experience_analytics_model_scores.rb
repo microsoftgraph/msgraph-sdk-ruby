@@ -66,7 +66,7 @@ module MicrosoftGraph
                 @battery_health_score = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsModelScores and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsModelScores and sets the default values.
             ## @return a void
             ## 
             def initialize()

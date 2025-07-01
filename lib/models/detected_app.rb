@@ -30,7 +30,7 @@ module MicrosoftGraph
             # Version of the discovered application. Read-only
             @version
             ## 
-            ## Instantiates a new detectedApp and sets the default values.
+            ## Instantiates a new DetectedApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

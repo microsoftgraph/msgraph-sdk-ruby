@@ -24,7 +24,7 @@ module MicrosoftGraph
             # The number of Microsoft Store for Business licenses in use.
             @used_license_count
             ## 
-            ## Instantiates a new microsoftStoreForBusinessApp and sets the default values.
+            ## Instantiates a new MicrosoftStoreForBusinessApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

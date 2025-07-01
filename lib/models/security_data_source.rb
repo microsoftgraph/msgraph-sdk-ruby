@@ -14,13 +14,13 @@ module MicrosoftGraph
             # The date and time the dataSource was created.
             @created_date_time
             ## 
-            # The display name of the dataSource. This will be the name of the SharePoint site.
+            # The display name of the dataSource and is the name of the SharePoint site.
             @display_name
             ## 
             # The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial
             @hold_status
             ## 
-            ## Instantiates a new securityDataSource and sets the default values.
+            ## Instantiates a new SecurityDataSource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -78,14 +78,14 @@ module MicrosoftGraph
                 return SecurityDataSource.new
             end
             ## 
-            ## Gets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
+            ## Gets the displayName property value. The display name of the dataSource and is the name of the SharePoint site.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
+            ## Sets the displayName property value. The display name of the dataSource and is the name of the SharePoint site.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 

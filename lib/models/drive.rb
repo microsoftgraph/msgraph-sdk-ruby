@@ -7,10 +7,10 @@ module MicrosoftGraph
         class Drive < MicrosoftGraph::Models::BaseItem
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+            # Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
             @bundles
             ## 
-            # Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+            # Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
             @drive_type
             ## 
             # The list of items the user is following. Only in OneDrive for Business.
@@ -37,17 +37,17 @@ module MicrosoftGraph
             # Collection of common folders available in OneDrive. Read-only. Nullable.
             @special
             ## 
-            # If present, indicates that this is a system-managed drive. Read-only.
+            # If present, indicates that it's a system-managed drive. Read-only.
             @system
             ## 
-            ## Gets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+            ## Gets the bundles property value. Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
             ## @return a drive_item
             ## 
             def bundles
                 return @bundles
             end
             ## 
-            ## Sets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+            ## Sets the bundles property value. Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
             ## @param value Value to set for the bundles property.
             ## @return a void
             ## 
@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @bundles = value
             end
             ## 
-            ## Instantiates a new drive and sets the default values.
+            ## Instantiates a new Drive and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -72,14 +72,14 @@ module MicrosoftGraph
                 return Drive.new
             end
             ## 
-            ## Gets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+            ## Gets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
             ## @return a string
             ## 
             def drive_type
                 return @drive_type
             end
             ## 
-            ## Sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
+            ## Sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
             ## @param value Value to set for the driveType property.
             ## @return a void
             ## 
@@ -246,14 +246,14 @@ module MicrosoftGraph
                 @special = value
             end
             ## 
-            ## Gets the system property value. If present, indicates that this is a system-managed drive. Read-only.
+            ## Gets the system property value. If present, indicates that it's a system-managed drive. Read-only.
             ## @return a system_facet
             ## 
             def system
                 return @system
             end
             ## 
-            ## Sets the system property value. If present, indicates that this is a system-managed drive. Read-only.
+            ## Sets the system property value. If present, indicates that it's a system-managed drive. Read-only.
             ## @param value Value to set for the system property.
             ## @return a void
             ## 

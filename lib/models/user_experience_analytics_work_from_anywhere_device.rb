@@ -246,7 +246,7 @@ module MicrosoftGraph
                 @compliance_policy_set_to_intune = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsWorkFromAnywhereDevice and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsWorkFromAnywhereDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()

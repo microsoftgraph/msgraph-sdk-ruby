@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @authentication_configuration = value
             end
             ## 
-            ## Instantiates a new identityApiConnector and sets the default values.
+            ## Instantiates a new IdentityApiConnector and sets the default values.
             ## @return a void
             ## 
             def initialize()

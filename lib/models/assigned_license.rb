@@ -10,31 +10,31 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # A collection of the unique identifiers for plans that have been disabled.
+            # A collection of the unique identifiers for plans that have been disabled. IDs are available in servicePlans > servicePlanId in the tenant's subscribedSkus or serviceStatus > servicePlanId in the tenant's companySubscription.
             @disabled_plans
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The unique identifier for the SKU.
+            # The unique identifier for the SKU. Corresponds to the skuId from subscribedSkus or companySubscription.
             @sku_id
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new assignedLicense and sets the default values.
+            ## Instantiates a new AssignedLicense and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 return AssignedLicense.new
             end
             ## 
-            ## Gets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.
+            ## Gets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled. IDs are available in servicePlans > servicePlanId in the tenant's subscribedSkus or serviceStatus > servicePlanId in the tenant's companySubscription.
             ## @return a guid
             ## 
             def disabled_plans
                 return @disabled_plans
             end
             ## 
-            ## Sets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.
+            ## Sets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled. IDs are available in servicePlans > servicePlanId in the tenant's subscribedSkus or serviceStatus > servicePlanId in the tenant's companySubscription.
             ## @param value Value to set for the disabledPlans property.
             ## @return a void
             ## 
@@ -103,14 +103,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the skuId property value. The unique identifier for the SKU.
+            ## Gets the skuId property value. The unique identifier for the SKU. Corresponds to the skuId from subscribedSkus or companySubscription.
             ## @return a guid
             ## 
             def sku_id
                 return @sku_id
             end
             ## 
-            ## Sets the skuId property value. The unique identifier for the SKU.
+            ## Sets the skuId property value. The unique identifier for the SKU. Corresponds to the skuId from subscribedSkus or companySubscription.
             ## @param value Value to set for the skuId property.
             ## @return a void
             ## 

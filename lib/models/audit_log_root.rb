@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The signIns property
             @sign_ins
             ## 
-            ## Instantiates a new auditLogRoot and sets the default values.
+            ## Instantiates a new AuditLogRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

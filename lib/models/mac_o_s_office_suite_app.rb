@@ -9,7 +9,7 @@ module MicrosoftGraph
         class MacOSOfficeSuiteApp < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new macOSOfficeSuiteApp and sets the default values.
+            ## Instantiates a new MacOSOfficeSuiteApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

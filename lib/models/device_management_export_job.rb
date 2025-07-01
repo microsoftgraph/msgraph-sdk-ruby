@@ -6,7 +6,7 @@ require_relative './models'
 module MicrosoftGraph
     module Models
         ## 
-        # Entity representing a job to export a report
+        # Entity representing a job to export a report.
         class DeviceManagementExportJob < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -16,10 +16,10 @@ module MicrosoftGraph
             # Filters applied on the report
             @filter
             ## 
-            # Possible values for the file format of a report
+            # Possible values for the file format of a report to be exported.
             @format
             ## 
-            # Configures how the requested export job is localized
+            # Configures how the requested export job is localized.
             @localization_type
             ## 
             # Name of the report
@@ -34,13 +34,13 @@ module MicrosoftGraph
             # A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.
             @snapshot_id
             ## 
-            # Possible statuses associated with a generated report
+            # Possible statuses associated with a generated report.
             @status
             ## 
             # Temporary location of the exported report
             @url
             ## 
-            ## Instantiates a new deviceManagementExportJob and sets the default values.
+            ## Instantiates a new DeviceManagementExportJob and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -86,14 +86,14 @@ module MicrosoftGraph
                 @filter = value
             end
             ## 
-            ## Gets the format property value. Possible values for the file format of a report
+            ## Gets the format property value. Possible values for the file format of a report to be exported.
             ## @return a device_management_report_file_format
             ## 
             def format
                 return @format
             end
             ## 
-            ## Sets the format property value. Possible values for the file format of a report
+            ## Sets the format property value. Possible values for the file format of a report to be exported.
             ## @param value Value to set for the format property.
             ## @return a void
             ## 
@@ -119,14 +119,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the localizationType property value. Configures how the requested export job is localized
+            ## Gets the localizationType property value. Configures how the requested export job is localized.
             ## @return a device_management_export_job_localization_type
             ## 
             def localization_type
                 return @localization_type
             end
             ## 
-            ## Sets the localizationType property value. Configures how the requested export job is localized
+            ## Sets the localizationType property value. Configures how the requested export job is localized.
             ## @param value Value to set for the localizationType property.
             ## @return a void
             ## 
@@ -213,14 +213,14 @@ module MicrosoftGraph
                 @snapshot_id = value
             end
             ## 
-            ## Gets the status property value. Possible statuses associated with a generated report
+            ## Gets the status property value. Possible statuses associated with a generated report.
             ## @return a device_management_report_status
             ## 
             def status
                 return @status
             end
             ## 
-            ## Sets the status property value. Possible statuses associated with a generated report
+            ## Sets the status property value. Possible statuses associated with a generated report.
             ## @param value Value to set for the status property.
             ## @return a void
             ## 

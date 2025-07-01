@@ -7,27 +7,27 @@ module MicrosoftGraph
         class WorkbookCommentReply < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The content of a comment reply.
+            # The content of the reply.
             @content
             ## 
-            # Indicates the type for the comment reply.
+            # The content type for the reply.
             @content_type
             ## 
-            ## Instantiates a new workbookCommentReply and sets the default values.
+            ## Instantiates a new WorkbookCommentReply and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the content property value. The content of a comment reply.
+            ## Gets the content property value. The content of the reply.
             ## @return a string
             ## 
             def content
                 return @content
             end
             ## 
-            ## Sets the content property value. The content of a comment reply.
+            ## Sets the content property value. The content of the reply.
             ## @param value Value to set for the content property.
             ## @return a void
             ## 
@@ -35,14 +35,14 @@ module MicrosoftGraph
                 @content = value
             end
             ## 
-            ## Gets the contentType property value. Indicates the type for the comment reply.
+            ## Gets the contentType property value. The content type for the reply.
             ## @return a string
             ## 
             def content_type
                 return @content_type
             end
             ## 
-            ## Sets the contentType property value. Indicates the type for the comment reply.
+            ## Sets the contentType property value. The content type for the reply.
             ## @param value Value to set for the contentType property.
             ## @return a void
             ## 

@@ -20,7 +20,7 @@ module MicrosoftGraph
             # The contact's direct reports. (The users and contacts that have their manager property set to this contact.)  Read-only. Nullable. Supports $expand.
             @direct_reports
             ## 
-            # Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
+            # Display name for this organizational contact. Maximum length is 256 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
             @display_name
             ## 
             # First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
@@ -29,7 +29,7 @@ module MicrosoftGraph
             # Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
             @job_title
             ## 
-            # The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
+            # The SMTP address for the contact, for example, 'jeff@contoso.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
             @mail
             ## 
             # Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
@@ -55,6 +55,9 @@ module MicrosoftGraph
             ## 
             # For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0).
             @proxy_addresses
+            ## 
+            # Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+            @service_provisioning_errors
             ## 
             # Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
             @surname
@@ -92,7 +95,7 @@ module MicrosoftGraph
                 @company_name = value
             end
             ## 
-            ## Instantiates a new orgContact and sets the default values.
+            ## Instantiates a new OrgContact and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -139,14 +142,14 @@ module MicrosoftGraph
                 @direct_reports = value
             end
             ## 
-            ## Gets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
+            ## Gets the displayName property value. Display name for this organizational contact. Maximum length is 256 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
+            ## Sets the displayName property value. Display name for this organizational contact. Maximum length is 256 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
             ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
@@ -175,6 +178,7 @@ module MicrosoftGraph
                     "onPremisesSyncEnabled" => lambda {|n| @on_premises_sync_enabled = n.get_boolean_value() },
                     "phones" => lambda {|n| @phones = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Phone.create_from_discriminator_value(pn) }) },
                     "proxyAddresses" => lambda {|n| @proxy_addresses = n.get_collection_of_primitive_values(String) },
+                    "serviceProvisioningErrors" => lambda {|n| @service_provisioning_errors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ServiceProvisioningError.create_from_discriminator_value(pn) }) },
                     "surname" => lambda {|n| @surname = n.get_string_value() },
                     "transitiveMemberOf" => lambda {|n| @transitive_member_of = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
                 })
@@ -210,14 +214,14 @@ module MicrosoftGraph
                 @job_title = value
             end
             ## 
-            ## Gets the mail property value. The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
+            ## Gets the mail property value. The SMTP address for the contact, for example, 'jeff@contoso.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
             ## @return a string
             ## 
             def mail
                 return @mail
             end
             ## 
-            ## Sets the mail property value. The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
+            ## Sets the mail property value. The SMTP address for the contact, for example, 'jeff@contoso.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
             ## @param value Value to set for the mail property.
             ## @return a void
             ## 
@@ -368,8 +372,24 @@ module MicrosoftGraph
                 writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
                 writer.write_collection_of_object_values("phones", @phones)
                 writer.write_collection_of_primitive_values("proxyAddresses", @proxy_addresses)
+                writer.write_collection_of_object_values("serviceProvisioningErrors", @service_provisioning_errors)
                 writer.write_string_value("surname", @surname)
                 writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of)
+            end
+            ## 
+            ## Gets the serviceProvisioningErrors property value. Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+            ## @return a service_provisioning_error
+            ## 
+            def service_provisioning_errors
+                return @service_provisioning_errors
+            end
+            ## 
+            ## Sets the serviceProvisioningErrors property value. Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an organizational contact object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+            ## @param value Value to set for the serviceProvisioningErrors property.
+            ## @return a void
+            ## 
+            def service_provisioning_errors=(value)
+                @service_provisioning_errors = value
             end
             ## 
             ## Gets the surname property value. Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).

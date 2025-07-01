@@ -12,7 +12,7 @@ module MicrosoftGraph
             # When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.
             @uninstall_on_device_removal
             ## 
-            ## Instantiates a new macOsLobAppAssignmentSettings and sets the default values.
+            ## Instantiates a new MacOsLobAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

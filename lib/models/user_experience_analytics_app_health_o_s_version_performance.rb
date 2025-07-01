@@ -39,7 +39,7 @@ module MicrosoftGraph
                 @active_device_count = value
             end
             ## 
-            ## Instantiates a new userExperienceAnalyticsAppHealthOSVersionPerformance and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsAppHealthOSVersionPerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()

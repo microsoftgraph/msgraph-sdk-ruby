@@ -1,1 +1,1 @@
-require_relative 'get_user_ids_with_flagged_app_registration_response'
+require_relative 'get_user_ids_with_flagged_app_registration_get_response'

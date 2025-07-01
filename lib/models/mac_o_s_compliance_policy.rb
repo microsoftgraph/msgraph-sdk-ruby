@@ -60,7 +60,7 @@ module MicrosoftGraph
             # Require that devices have enabled system integrity protection.
             @system_integrity_protection_enabled
             ## 
-            ## Instantiates a new macOSCompliancePolicy and sets the default values.
+            ## Instantiates a new MacOSCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -13,8 +13,17 @@ module MicrosoftGraph
             # A container for Microsoft Edge resources. Read-only.
             @edge
             ## 
+            # A container for the Microsoft 365 apps admin functionality.
+            @microsoft365_apps
+            ## 
             # The OdataType property
             @odata_type
+            ## 
+            # Represents a setting to control people-related admin settings in the tenant.
+            @people
+            ## 
+            # A container for administrative resources to manage reports.
+            @report_settings
             ## 
             # A container for service communications resources. Read-only.
             @service_announcement
@@ -22,22 +31,22 @@ module MicrosoftGraph
             # The sharepoint property
             @sharepoint
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new admin and sets the default values.
+            ## Instantiates a new Admin and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,10 +83,28 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "edge" => lambda {|n| @edge = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Edge.create_from_discriminator_value(pn) }) },
+                    "microsoft365Apps" => lambda {|n| @microsoft365_apps = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AdminMicrosoft365Apps.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "people" => lambda {|n| @people = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PeopleAdminSettings.create_from_discriminator_value(pn) }) },
+                    "reportSettings" => lambda {|n| @report_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AdminReportSettings.create_from_discriminator_value(pn) }) },
                     "serviceAnnouncement" => lambda {|n| @service_announcement = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ServiceAnnouncement.create_from_discriminator_value(pn) }) },
                     "sharepoint" => lambda {|n| @sharepoint = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Sharepoint.create_from_discriminator_value(pn) }) },
                 }
+            end
+            ## 
+            ## Gets the microsoft365Apps property value. A container for the Microsoft 365 apps admin functionality.
+            ## @return a admin_microsoft365_apps
+            ## 
+            def microsoft365_apps
+                return @microsoft365_apps
+            end
+            ## 
+            ## Sets the microsoft365Apps property value. A container for the Microsoft 365 apps admin functionality.
+            ## @param value Value to set for the microsoft365Apps property.
+            ## @return a void
+            ## 
+            def microsoft365_apps=(value)
+                @microsoft365_apps = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -95,6 +122,36 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
+            ## Gets the people property value. Represents a setting to control people-related admin settings in the tenant.
+            ## @return a people_admin_settings
+            ## 
+            def people
+                return @people
+            end
+            ## 
+            ## Sets the people property value. Represents a setting to control people-related admin settings in the tenant.
+            ## @param value Value to set for the people property.
+            ## @return a void
+            ## 
+            def people=(value)
+                @people = value
+            end
+            ## 
+            ## Gets the reportSettings property value. A container for administrative resources to manage reports.
+            ## @return a admin_report_settings
+            ## 
+            def report_settings
+                return @report_settings
+            end
+            ## 
+            ## Sets the reportSettings property value. A container for administrative resources to manage reports.
+            ## @param value Value to set for the reportSettings property.
+            ## @return a void
+            ## 
+            def report_settings=(value)
+                @report_settings = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -102,7 +159,10 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_object_value("edge", @edge)
+                writer.write_object_value("microsoft365Apps", @microsoft365_apps)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_object_value("people", @people)
+                writer.write_object_value("reportSettings", @report_settings)
                 writer.write_object_value("serviceAnnouncement", @service_announcement)
                 writer.write_object_value("sharepoint", @sharepoint)
                 writer.write_additional_data(@additional_data)

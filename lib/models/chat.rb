@@ -17,10 +17,13 @@ module MicrosoftGraph
             # A collection of all the apps in the chat. Nullable.
             @installed_apps
             ## 
-            # Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+            # Indicates whether the chat is hidden for all its members. Read-only.
+            @is_hidden_for_all_members
+            ## 
+            # Preview of the last message sent in the chat. Null if no messages were sent in the chat. Currently, only the list chats operation supports this property.
             @last_message_preview
             ## 
-            # Date and time at which the chat was renamed or list of members were last changed. Read-only.
+            # Date and time at which the chat was renamed or the list of members was last changed. Read-only.
             @last_updated_date_time
             ## 
             # A collection of all the members in the chat. Nullable.
@@ -32,7 +35,7 @@ module MicrosoftGraph
             # Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
             @online_meeting_info
             ## 
-            # The permissionGrants property
+            # A collection of permissions granted to apps for the chat.
             @permission_grants
             ## 
             # A collection of all the pinned messages in the chat. Nullable.
@@ -47,7 +50,7 @@ module MicrosoftGraph
             # (Optional) Subject or topic for the chat. Only available for group chats.
             @topic
             ## 
-            # Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
+            # Represents caller-specific information about the chat, such as the last message read date and time. This property is populated only when the request is made in a delegated context.
             @viewpoint
             ## 
             # The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
@@ -68,7 +71,7 @@ module MicrosoftGraph
                 @chat_type = value
             end
             ## 
-            ## Instantiates a new chat and sets the default values.
+            ## Instantiates a new Chat and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -107,6 +110,7 @@ module MicrosoftGraph
                     "chatType" => lambda {|n| @chat_type = n.get_enum_value(MicrosoftGraph::Models::ChatType) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "installedApps" => lambda {|n| @installed_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TeamsAppInstallation.create_from_discriminator_value(pn) }) },
+                    "isHiddenForAllMembers" => lambda {|n| @is_hidden_for_all_members = n.get_boolean_value() },
                     "lastMessagePreview" => lambda {|n| @last_message_preview = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ChatMessageInfo.create_from_discriminator_value(pn) }) },
                     "lastUpdatedDateTime" => lambda {|n| @last_updated_date_time = n.get_date_time_value() },
                     "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConversationMember.create_from_discriminator_value(pn) }) },
@@ -137,14 +141,29 @@ module MicrosoftGraph
                 @installed_apps = value
             end
             ## 
-            ## Gets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+            ## Gets the isHiddenForAllMembers property value. Indicates whether the chat is hidden for all its members. Read-only.
+            ## @return a boolean
+            ## 
+            def is_hidden_for_all_members
+                return @is_hidden_for_all_members
+            end
+            ## 
+            ## Sets the isHiddenForAllMembers property value. Indicates whether the chat is hidden for all its members. Read-only.
+            ## @param value Value to set for the isHiddenForAllMembers property.
+            ## @return a void
+            ## 
+            def is_hidden_for_all_members=(value)
+                @is_hidden_for_all_members = value
+            end
+            ## 
+            ## Gets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages were sent in the chat. Currently, only the list chats operation supports this property.
             ## @return a chat_message_info
             ## 
             def last_message_preview
                 return @last_message_preview
             end
             ## 
-            ## Sets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+            ## Sets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages were sent in the chat. Currently, only the list chats operation supports this property.
             ## @param value Value to set for the lastMessagePreview property.
             ## @return a void
             ## 
@@ -152,14 +171,14 @@ module MicrosoftGraph
                 @last_message_preview = value
             end
             ## 
-            ## Gets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
+            ## Gets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or the list of members was last changed. Read-only.
             ## @return a date_time
             ## 
             def last_updated_date_time
                 return @last_updated_date_time
             end
             ## 
-            ## Sets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
+            ## Sets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or the list of members was last changed. Read-only.
             ## @param value Value to set for the lastUpdatedDateTime property.
             ## @return a void
             ## 
@@ -212,14 +231,14 @@ module MicrosoftGraph
                 @online_meeting_info = value
             end
             ## 
-            ## Gets the permissionGrants property value. The permissionGrants property
+            ## Gets the permissionGrants property value. A collection of permissions granted to apps for the chat.
             ## @return a resource_specific_permission_grant
             ## 
             def permission_grants
                 return @permission_grants
             end
             ## 
-            ## Sets the permissionGrants property value. The permissionGrants property
+            ## Sets the permissionGrants property value. A collection of permissions granted to apps for the chat.
             ## @param value Value to set for the permissionGrants property.
             ## @return a void
             ## 
@@ -252,6 +271,7 @@ module MicrosoftGraph
                 writer.write_enum_value("chatType", @chat_type)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_collection_of_object_values("installedApps", @installed_apps)
+                writer.write_boolean_value("isHiddenForAllMembers", @is_hidden_for_all_members)
                 writer.write_object_value("lastMessagePreview", @last_message_preview)
                 writer.write_date_time_value("lastUpdatedDateTime", @last_updated_date_time)
                 writer.write_collection_of_object_values("members", @members)
@@ -311,14 +331,14 @@ module MicrosoftGraph
                 @topic = value
             end
             ## 
-            ## Gets the viewpoint property value. Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
+            ## Gets the viewpoint property value. Represents caller-specific information about the chat, such as the last message read date and time. This property is populated only when the request is made in a delegated context.
             ## @return a chat_viewpoint
             ## 
             def viewpoint
                 return @viewpoint
             end
             ## 
-            ## Sets the viewpoint property value. Represents caller-specific information about the chat, such as last message read date and time. This property is populated only when the request is made in a delegated context.
+            ## Sets the viewpoint property value. Represents caller-specific information about the chat, such as the last message read date and time. This property is populated only when the request is made in a delegated context.
             ## @param value Value to set for the viewpoint property.
             ## @return a void
             ## 

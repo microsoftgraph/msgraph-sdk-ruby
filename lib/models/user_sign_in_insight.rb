@@ -11,7 +11,7 @@ module MicrosoftGraph
             # Indicates when the user last signed in.
             @last_sign_in_date_time
             ## 
-            ## Instantiates a new userSignInInsight and sets the default values.
+            ## Instantiates a new UserSignInInsight and sets the default values.
             ## @return a void
             ## 
             def initialize()

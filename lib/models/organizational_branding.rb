@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Add different branding based on a locale.
             @localizations
             ## 
-            ## Instantiates a new organizationalBranding and sets the default values.
+            ## Instantiates a new OrganizationalBranding and sets the default values.
             ## @return a void
             ## 
             def initialize()

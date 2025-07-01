@@ -59,7 +59,7 @@ module MicrosoftGraph
                 @comment = value
             end
             ## 
-            ## Instantiates a new browserSharedCookie and sets the default values.
+            ## Instantiates a new BrowserSharedCookie and sets the default values.
             ## @return a void
             ## 
             def initialize()

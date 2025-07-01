@@ -10,6 +10,9 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The backupRestore property
+            @backup_restore
+            ## 
             # The bookingBusinesses property
             @booking_businesses
             ## 
@@ -19,19 +22,37 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            # The virtualEvents property
+            @virtual_events
+            ## 
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
+            end
+            ## 
+            ## Gets the backupRestore property value. The backupRestore property
+            ## @return a backup_restore_root
+            ## 
+            def backup_restore
+                return @backup_restore
+            end
+            ## 
+            ## Sets the backupRestore property value. The backupRestore property
+            ## @param value Value to set for the backupRestore property.
+            ## @return a void
+            ## 
+            def backup_restore=(value)
+                @backup_restore = value
             end
             ## 
             ## Gets the bookingBusinesses property value. The bookingBusinesses property
@@ -64,7 +85,7 @@ module MicrosoftGraph
                 @booking_currencies = value
             end
             ## 
-            ## Instantiates a new solutionsRoot and sets the default values.
+            ## Instantiates a new SolutionsRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -85,9 +106,11 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "backupRestore" => lambda {|n| @backup_restore = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::BackupRestoreRoot.create_from_discriminator_value(pn) }) },
                     "bookingBusinesses" => lambda {|n| @booking_businesses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingBusiness.create_from_discriminator_value(pn) }) },
                     "bookingCurrencies" => lambda {|n| @booking_currencies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingCurrency.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "virtualEvents" => lambda {|n| @virtual_events = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::VirtualEventsRoot.create_from_discriminator_value(pn) }) },
                 }
             end
             ## 
@@ -112,10 +135,27 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("backupRestore", @backup_restore)
                 writer.write_collection_of_object_values("bookingBusinesses", @booking_businesses)
                 writer.write_collection_of_object_values("bookingCurrencies", @booking_currencies)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_object_value("virtualEvents", @virtual_events)
                 writer.write_additional_data(@additional_data)
+            end
+            ## 
+            ## Gets the virtualEvents property value. The virtualEvents property
+            ## @return a virtual_events_root
+            ## 
+            def virtual_events
+                return @virtual_events
+            end
+            ## 
+            ## Sets the virtualEvents property value. The virtualEvents property
+            ## @param value Value to set for the virtualEvents property.
+            ## @return a void
+            ## 
+            def virtual_events=(value)
+                @virtual_events = value
             end
         end
     end

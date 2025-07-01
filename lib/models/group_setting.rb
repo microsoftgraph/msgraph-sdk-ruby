@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced groupSettingTemplates object.
             @values
             ## 
-            ## Instantiates a new groupSetting and sets the default values.
+            ## Instantiates a new GroupSetting and sets the default values.
             ## @return a void
             ## 
             def initialize()
