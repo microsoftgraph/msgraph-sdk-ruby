@@ -19,7 +19,7 @@ module MicrosoftGraph
             # Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
             @sets
             ## 
-            ## Instantiates a new termStoreStore and sets the default values.
+            ## Instantiates a new TermStoreStore and sets the default values.
             ## @return a void
             ## 
             def initialize()

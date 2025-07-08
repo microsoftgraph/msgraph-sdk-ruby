@@ -8,7 +8,7 @@ module MicrosoftGraph
         class BitlockerRecoveryKey < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
+            # The date and time when the key was originally backed up to Microsoft Entra ID. Not nullable.
             @created_date_time
             ## 
             # Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
@@ -20,21 +20,21 @@ module MicrosoftGraph
             # Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
             @volume_type
             ## 
-            ## Instantiates a new bitlockerRecoveryKey and sets the default values.
+            ## Instantiates a new BitlockerRecoveryKey and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
+            ## Gets the createdDateTime property value. The date and time when the key was originally backed up to Microsoft Entra ID. Not nullable.
             ## @return a date_time
             ## 
             def created_date_time
                 return @created_date_time
             end
             ## 
-            ## Sets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
+            ## Sets the createdDateTime property value. The date and time when the key was originally backed up to Microsoft Entra ID. Not nullable.
             ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 

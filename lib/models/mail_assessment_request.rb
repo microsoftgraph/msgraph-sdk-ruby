@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The mail recipient whose policies are used to assess the mail.
             @recipient_email
             ## 
-            ## Instantiates a new mailAssessmentRequest and sets the default values.
+            ## Instantiates a new MailAssessmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

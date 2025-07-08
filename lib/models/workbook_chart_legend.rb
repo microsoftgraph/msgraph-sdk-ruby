@@ -10,16 +10,16 @@ module MicrosoftGraph
             # Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.
             @format
             ## 
-            # Boolean value for whether the chart legend should overlap with the main body of the chart.
+            # Indicates whether the chart legend should overlap with the main body of the chart.
             @overlay
             ## 
             # Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.
             @position
             ## 
-            # A boolean value the represents the visibility of a ChartLegend object.
+            # Indicates whether the chart legend is visible.
             @visible
             ## 
-            ## Instantiates a new workbookChartLegend and sets the default values.
+            ## Instantiates a new WorkbookChartLegend and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -62,14 +62,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the overlay property value. Boolean value for whether the chart legend should overlap with the main body of the chart.
+            ## Gets the overlay property value. Indicates whether the chart legend should overlap with the main body of the chart.
             ## @return a boolean
             ## 
             def overlay
                 return @overlay
             end
             ## 
-            ## Sets the overlay property value. Boolean value for whether the chart legend should overlap with the main body of the chart.
+            ## Sets the overlay property value. Indicates whether the chart legend should overlap with the main body of the chart.
             ## @param value Value to set for the overlay property.
             ## @return a void
             ## 
@@ -105,14 +105,14 @@ module MicrosoftGraph
                 writer.write_boolean_value("visible", @visible)
             end
             ## 
-            ## Gets the visible property value. A boolean value the represents the visibility of a ChartLegend object.
+            ## Gets the visible property value. Indicates whether the chart legend is visible.
             ## @return a boolean
             ## 
             def visible
                 return @visible
             end
             ## 
-            ## Sets the visible property value. A boolean value the represents the visibility of a ChartLegend object.
+            ## Sets the visible property value. Indicates whether the chart legend is visible.
             ## @param value Value to set for the visible property.
             ## @return a void
             ## 

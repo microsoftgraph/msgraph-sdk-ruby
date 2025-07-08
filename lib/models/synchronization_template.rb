@@ -43,7 +43,7 @@ module MicrosoftGraph
                 @application_id = value
             end
             ## 
-            ## Instantiates a new synchronizationTemplate and sets the default values.
+            ## Instantiates a new SynchronizationTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

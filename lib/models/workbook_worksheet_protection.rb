@@ -7,13 +7,13 @@ module MicrosoftGraph
         class WorkbookWorksheetProtection < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Sheet protection options. Read-only.
+            # Worksheet protection options. Read-only.
             @options
             ## 
-            # Indicates if the worksheet is protected.  Read-only.
+            # Indicates whether the worksheet is protected.  Read-only.
             @protected
             ## 
-            ## Instantiates a new workbookWorksheetProtection and sets the default values.
+            ## Instantiates a new WorkbookWorksheetProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -39,14 +39,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the options property value. Sheet protection options. Read-only.
+            ## Gets the options property value. Worksheet protection options. Read-only.
             ## @return a workbook_worksheet_protection_options
             ## 
             def options
                 return @options
             end
             ## 
-            ## Sets the options property value. Sheet protection options. Read-only.
+            ## Sets the options property value. Worksheet protection options. Read-only.
             ## @param value Value to set for the options property.
             ## @return a void
             ## 
@@ -54,14 +54,14 @@ module MicrosoftGraph
                 @options = value
             end
             ## 
-            ## Gets the protected property value. Indicates if the worksheet is protected.  Read-only.
+            ## Gets the protected property value. Indicates whether the worksheet is protected.  Read-only.
             ## @return a boolean
             ## 
             def protected
                 return @protected
             end
             ## 
-            ## Sets the protected property value. Indicates if the worksheet is protected.  Read-only.
+            ## Sets the protected property value. Indicates whether the worksheet is protected.  Read-only.
             ## @param value Value to set for the protected property.
             ## @return a void
             ## 

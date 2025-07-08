@@ -47,7 +47,7 @@ module MicrosoftGraph
                 @category = value
             end
             ## 
-            ## Instantiates a new threatAssessmentRequest and sets the default values.
+            ## Instantiates a new ThreatAssessmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

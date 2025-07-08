@@ -7,7 +7,7 @@ module MicrosoftGraph
         class FieldValueSet < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new fieldValueSet and sets the default values.
+            ## Instantiates a new FieldValueSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -22,13 +22,16 @@ module MicrosoftGraph
             # The number of mailboxes that had search hits.
             @site_count
             ## 
+            # The statisticsOptions property
+            @statistics_options
+            ## 
             # The estimated count of unindexed items for the collection.
             @unindexed_item_count
             ## 
             # The estimated size of unindexed items for the collection.
             @unindexed_items_size
             ## 
-            ## Instantiates a new securityEdiscoveryEstimateOperation and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryEstimateOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,6 +57,7 @@ module MicrosoftGraph
                     "mailboxCount" => lambda {|n| @mailbox_count = n.get_number_value() },
                     "search" => lambda {|n| @search = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityEdiscoverySearch.create_from_discriminator_value(pn) }) },
                     "siteCount" => lambda {|n| @site_count = n.get_number_value() },
+                    "statisticsOptions" => lambda {|n| @statistics_options = n.get_enum_values(MicrosoftGraph::Models::SecurityStatisticsOptions) },
                     "unindexedItemCount" => lambda {|n| @unindexed_item_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "unindexedItemsSize" => lambda {|n| @unindexed_items_size = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                 })
@@ -131,6 +135,7 @@ module MicrosoftGraph
                 writer.write_number_value("mailboxCount", @mailbox_count)
                 writer.write_object_value("search", @search)
                 writer.write_number_value("siteCount", @site_count)
+                writer.write_enum_value("statisticsOptions", @statistics_options)
                 writer.write_object_value("unindexedItemCount", @unindexed_item_count)
                 writer.write_object_value("unindexedItemsSize", @unindexed_items_size)
             end
@@ -148,6 +153,21 @@ module MicrosoftGraph
             ## 
             def site_count=(value)
                 @site_count = value
+            end
+            ## 
+            ## Gets the statisticsOptions property value. The statisticsOptions property
+            ## @return a security_statistics_options
+            ## 
+            def statistics_options
+                return @statistics_options
+            end
+            ## 
+            ## Sets the statisticsOptions property value. The statisticsOptions property
+            ## @param value Value to set for the statisticsOptions property.
+            ## @return a void
+            ## 
+            def statistics_options=(value)
+                @statistics_options = value
             end
             ## 
             ## Gets the unindexedItemCount property value. The estimated count of unindexed items for the collection.

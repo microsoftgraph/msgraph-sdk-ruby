@@ -1,1 +1,1 @@
-require_relative 'get_managed_app_diagnostic_statuses_response'
+require_relative 'get_managed_app_diagnostic_statuses_get_response'

@@ -1,0 +1,2 @@
+require_relative 'process_content_async_post_request_body'
+require_relative 'process_content_async_post_response'

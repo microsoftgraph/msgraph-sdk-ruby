@@ -1,0 +1,1 @@
+require_relative 'search_post_request_body'

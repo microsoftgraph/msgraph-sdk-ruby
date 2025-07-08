@@ -84,7 +84,7 @@ module MicrosoftGraph
                 @configuration_account = value
             end
             ## 
-            ## Instantiates a new windows10SecureAssessmentConfiguration and sets the default values.
+            ## Instantiates a new Windows10SecureAssessmentConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

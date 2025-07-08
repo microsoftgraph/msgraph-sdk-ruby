@@ -10,10 +10,7 @@ module MicrosoftGraph
             # The error property
             @error
             ## 
-            # The value property
-            @value
-            ## 
-            ## Instantiates a new workbookFunctionResult and sets the default values.
+            ## Instantiates a new WorkbookFunctionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -50,7 +47,6 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "error" => lambda {|n| @error = n.get_string_value() },
-                    "value" => lambda {|n| @value = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -62,22 +58,6 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("error", @error)
-                writer.write_object_value("value", @value)
-            end
-            ## 
-            ## Gets the value property value. The value property
-            ## @return a json
-            ## 
-            def value
-                return @value
-            end
-            ## 
-            ## Sets the value property value. The value property
-            ## @param value Value to set for the value property.
-            ## @return a void
-            ## 
-            def value=(value)
-                @value = value
             end
         end
     end

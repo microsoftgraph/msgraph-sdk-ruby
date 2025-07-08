@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The display name to set for the directory role. Read-only.
             @display_name
             ## 
-            ## Instantiates a new directoryRoleTemplate and sets the default values.
+            ## Instantiates a new DirectoryRoleTemplate and sets the default values.
             ## @return a void
             ## 
             def initialize()

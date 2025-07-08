@@ -7,6 +7,7 @@ require_relative '../../item'
 require_relative '../incompatible_groups'
 require_relative './item'
 require_relative './ref/ref_request_builder'
+require_relative './service_provisioning_errors/service_provisioning_errors_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -23,6 +24,11 @@ module MicrosoftGraph
                                 # Provides operations to manage the collection of identityGovernance entities.
                                 def ref()
                                     return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackages::Item::IncompatibleGroups::Item::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                # The serviceProvisioningErrors property
+                                def service_provisioning_errors()
+                                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackages::Item::IncompatibleGroups::Item::ServiceProvisioningErrors::ServiceProvisioningErrorsRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new GroupItemRequestBuilder and sets the default values.

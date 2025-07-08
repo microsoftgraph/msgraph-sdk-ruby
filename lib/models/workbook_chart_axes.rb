@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @category_axis = value
             end
             ## 
-            ## Instantiates a new workbookChartAxes and sets the default values.
+            ## Instantiates a new WorkbookChartAxes and sets the default values.
             ## @return a void
             ## 
             def initialize()

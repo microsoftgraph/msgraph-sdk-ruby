@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @allowed_a_a_g_u_i_ds = value
             end
             ## 
-            ## Instantiates a new fido2CombinationConfiguration and sets the default values.
+            ## Instantiates a new Fido2CombinationConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

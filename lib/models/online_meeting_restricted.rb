@@ -19,22 +19,22 @@ module MicrosoftGraph
             # Specifies the reason video from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.
             @video_disabled
             ## 
-            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
             def additional_data
                 return @additional_data
             end
             ## 
-            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the additionalData property.
+            ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the AdditionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new onlineMeetingRestricted and sets the default values.
+            ## Instantiates a new OnlineMeetingRestricted and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -70,9 +70,9 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "contentSharingDisabled" => lambda {|n| @content_sharing_disabled = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingContentSharingDisabledReason) },
+                    "contentSharingDisabled" => lambda {|n| @content_sharing_disabled = n.get_enum_values(MicrosoftGraph::Models::OnlineMeetingContentSharingDisabledReason) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                    "videoDisabled" => lambda {|n| @video_disabled = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingVideoDisabledReason) },
+                    "videoDisabled" => lambda {|n| @video_disabled = n.get_enum_values(MicrosoftGraph::Models::OnlineMeetingVideoDisabledReason) },
                 }
             end
             ## 

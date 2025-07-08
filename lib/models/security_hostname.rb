@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The registrar for this hostname, from WHOIS data.
             @registrar
             ## 
-            ## Instantiates a new securityHostname and sets the default values.
+            ## Instantiates a new SecurityHostname and sets the default values.
             ## @return a void
             ## 
             def initialize()

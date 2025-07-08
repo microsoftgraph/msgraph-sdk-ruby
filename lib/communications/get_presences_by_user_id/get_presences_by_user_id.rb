@@ -1,2 +1,2 @@
 require_relative 'get_presences_by_user_id_post_request_body'
-require_relative 'get_presences_by_user_id_response'
+require_relative 'get_presences_by_user_id_post_response'

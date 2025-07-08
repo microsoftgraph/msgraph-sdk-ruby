@@ -62,7 +62,7 @@ module MicrosoftGraph
                 @combination_configurations = value
             end
             ## 
-            ## Instantiates a new authenticationStrengthPolicy and sets the default values.
+            ## Instantiates a new AuthenticationStrengthPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -135,7 +135,7 @@ module MicrosoftGraph
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "modifiedDateTime" => lambda {|n| @modified_date_time = n.get_date_time_value() },
                     "policyType" => lambda {|n| @policy_type = n.get_enum_value(MicrosoftGraph::Models::AuthenticationStrengthPolicyType) },
-                    "requirementsSatisfied" => lambda {|n| @requirements_satisfied = n.get_enum_value(MicrosoftGraph::Models::AuthenticationStrengthRequirements) },
+                    "requirementsSatisfied" => lambda {|n| @requirements_satisfied = n.get_enum_values(MicrosoftGraph::Models::AuthenticationStrengthRequirements) },
                 })
             end
             ## 

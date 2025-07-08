@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new b2xIdentityUserFlowCollectionResponse and sets the default values.
+            ## Instantiates a new B2xIdentityUserFlowCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

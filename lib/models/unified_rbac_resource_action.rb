@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @authentication_context_id = value
             end
             ## 
-            ## Instantiates a new unifiedRbacResourceAction and sets the default values.
+            ## Instantiates a new UnifiedRbacResourceAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The ediscoveryCases property
             @ediscovery_cases
             ## 
-            ## Instantiates a new securityCasesRoot and sets the default values.
+            ## Instantiates a new SecurityCasesRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

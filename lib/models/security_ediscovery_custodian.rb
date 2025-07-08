@@ -41,7 +41,7 @@ module MicrosoftGraph
                 @acknowledged_date_time = value
             end
             ## 
-            ## Instantiates a new securityEdiscoveryCustodian and sets the default values.
+            ## Instantiates a new SecurityEdiscoveryCustodian and sets the default values.
             ## @return a void
             ## 
             def initialize()

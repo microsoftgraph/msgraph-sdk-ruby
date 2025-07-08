@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Name of the tab.
             @display_name
             ## 
-            # The application that is linked to the tab. This cannot be changed after tab creation.
+            # The application that is linked to the tab. This can't be changed after tab creation.
             @teams_app
             ## 
             # Deep link URL of the tab instance. Read only.
@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @configuration = value
             end
             ## 
-            ## Instantiates a new teamsTab and sets the default values.
+            ## Instantiates a new TeamsTab and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -90,14 +90,14 @@ module MicrosoftGraph
                 writer.write_string_value("webUrl", @web_url)
             end
             ## 
-            ## Gets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.
+            ## Gets the teamsApp property value. The application that is linked to the tab. This can't be changed after tab creation.
             ## @return a teams_app
             ## 
             def teams_app
                 return @teams_app
             end
             ## 
-            ## Sets the teamsApp property value. The application that is linked to the tab. This cannot be changed after tab creation.
+            ## Sets the teamsApp property value. The application that is linked to the tab. This can't be changed after tab creation.
             ## @param value Value to set for the teamsApp property.
             ## @return a void
             ## 

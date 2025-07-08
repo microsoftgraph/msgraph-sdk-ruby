@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The version of the schema, updated automatically with every schema change.
             @version
             ## 
-            ## Instantiates a new synchronizationSchema and sets the default values.
+            ## Instantiates a new SynchronizationSchema and sets the default values.
             ## @return a void
             ## 
             def initialize()

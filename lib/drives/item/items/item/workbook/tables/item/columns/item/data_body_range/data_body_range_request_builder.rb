@@ -11,7 +11,38 @@ require_relative '../../../../tables'
 require_relative '../../../item'
 require_relative '../../columns'
 require_relative '../item'
+require_relative './bounding_rect_with_another_range/bounding_rect_with_another_range_request_builder'
+require_relative './cell_with_row_with_column/cell_with_row_with_column_request_builder'
+require_relative './clear/clear_request_builder'
+require_relative './columns_after/columns_after_request_builder'
+require_relative './columns_after_with_count/columns_after_with_count_request_builder'
+require_relative './columns_before/columns_before_request_builder'
+require_relative './columns_before_with_count/columns_before_with_count_request_builder'
+require_relative './column_with_column/column_with_column_request_builder'
 require_relative './data_body_range'
+require_relative './delete/delete_request_builder'
+require_relative './entire_column/entire_column_request_builder'
+require_relative './entire_row/entire_row_request_builder'
+require_relative './format/format_request_builder'
+require_relative './insert/insert_request_builder'
+require_relative './intersection_with_another_range/intersection_with_another_range_request_builder'
+require_relative './last_cell/last_cell_request_builder'
+require_relative './last_column/last_column_request_builder'
+require_relative './last_row/last_row_request_builder'
+require_relative './merge/merge_request_builder'
+require_relative './offset_range_with_row_offset_with_column_offset/offset_range_with_row_offset_with_column_offset_request_builder'
+require_relative './resized_range_with_delta_rows_with_delta_columns/resized_range_with_delta_rows_with_delta_columns_request_builder'
+require_relative './rows_above/rows_above_request_builder'
+require_relative './rows_above_with_count/rows_above_with_count_request_builder'
+require_relative './rows_below/rows_below_request_builder'
+require_relative './rows_below_with_count/rows_below_with_count_request_builder'
+require_relative './row_with_row/row_with_row_request_builder'
+require_relative './sort/sort_request_builder'
+require_relative './unmerge/unmerge_request_builder'
+require_relative './used_range/used_range_request_builder'
+require_relative './used_range_with_values_only/used_range_with_values_only_request_builder'
+require_relative './visible_view/visible_view_request_builder'
+require_relative './worksheet/worksheet_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -28,6 +59,148 @@ module MicrosoftGraph
                                             # Provides operations to call the dataBodyRange method.
                                             class DataBodyRangeRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                                 
+                                                ## 
+                                                # Provides operations to call the clear method.
+                                                def clear()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::Clear::ClearRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the columnsAfter method.
+                                                def columns_after()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::ColumnsAfter::ColumnsAfterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the columnsBefore method.
+                                                def columns_before()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::ColumnsBefore::ColumnsBeforeRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the delete method.
+                                                def delete_path()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::Delete::DeleteRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the entireColumn method.
+                                                def entire_column()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::EntireColumn::EntireColumnRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the entireRow method.
+                                                def entire_row()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::EntireRow::EntireRowRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to manage the format property of the microsoft.graph.workbookRange entity.
+                                                def format()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::Format::FormatRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the insert method.
+                                                def insert()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::Insert::InsertRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the lastCell method.
+                                                def last_cell()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::LastCell::LastCellRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the lastColumn method.
+                                                def last_column()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::LastColumn::LastColumnRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the lastRow method.
+                                                def last_row()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::LastRow::LastRowRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the merge method.
+                                                def merge()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::Merge::MergeRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the rowsAbove method.
+                                                def rows_above()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::RowsAbove::RowsAboveRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the rowsBelow method.
+                                                def rows_below()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::RowsBelow::RowsBelowRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to manage the sort property of the microsoft.graph.workbookRange entity.
+                                                def sort()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::Sort::SortRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the unmerge method.
+                                                def unmerge()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::Unmerge::UnmergeRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the usedRange method.
+                                                def used_range()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::UsedRange::UsedRangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to call the visibleView method.
+                                                def visible_view()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::VisibleView::VisibleViewRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                # Provides operations to manage the worksheet property of the microsoft.graph.workbookRange entity.
+                                                def worksheet()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::Worksheet::WorksheetRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                ## Provides operations to call the boundingRect method.
+                                                ## @param another_range Usage: anotherRange='{anotherRange}'
+                                                ## @return a bounding_rect_with_another_range_request_builder
+                                                ## 
+                                                def bounding_rect_with_another_range(another_range)
+                                                    raise StandardError, 'another_range cannot be null' if another_range.nil?
+                                                    return BoundingRectWithAnotherRangeRequestBuilder.new(@path_parameters, @request_adapter, anotherRange)
+                                                end
+                                                ## 
+                                                ## Provides operations to call the cell method.
+                                                ## @param column Usage: column={column}
+                                                ## @param row Usage: row={row}
+                                                ## @return a cell_with_row_with_column_request_builder
+                                                ## 
+                                                def cell_with_row_with_column(column, row)
+                                                    raise StandardError, 'column cannot be null' if column.nil?
+                                                    raise StandardError, 'row cannot be null' if row.nil?
+                                                    return CellWithRowWithColumnRequestBuilder.new(@path_parameters, @request_adapter, column, row)
+                                                end
+                                                ## 
+                                                ## Provides operations to call the columnsAfter method.
+                                                ## @param count Usage: count={count}
+                                                ## @return a columns_after_with_count_request_builder
+                                                ## 
+                                                def columns_after_with_count(count)
+                                                    raise StandardError, 'count cannot be null' if count.nil?
+                                                    return ColumnsAfterWithCountRequestBuilder.new(@path_parameters, @request_adapter, count)
+                                                end
+                                                ## 
+                                                ## Provides operations to call the columnsBefore method.
+                                                ## @param count Usage: count={count}
+                                                ## @return a columns_before_with_count_request_builder
+                                                ## 
+                                                def columns_before_with_count(count)
+                                                    raise StandardError, 'count cannot be null' if count.nil?
+                                                    return ColumnsBeforeWithCountRequestBuilder.new(@path_parameters, @request_adapter, count)
+                                                end
+                                                ## 
+                                                ## Provides operations to call the column method.
+                                                ## @param column Usage: column={column}
+                                                ## @return a column_with_column_request_builder
+                                                ## 
+                                                def column_with_column(column)
+                                                    raise StandardError, 'column cannot be null' if column.nil?
+                                                    return ColumnWithColumnRequestBuilder.new(@path_parameters, @request_adapter, column)
+                                                end
                                                 ## 
                                                 ## Instantiates a new DataBodyRangeRequestBuilder and sets the default values.
                                                 ## @param path_parameters Path parameters for the request
@@ -47,9 +220,66 @@ module MicrosoftGraph
                                                         request_configuration
                                                     )
                                                     error_mapping = Hash.new
-                                                    error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
-                                                    error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
+                                                    error_mapping["XXX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrorsODataError.create_from_discriminator_value(pn) }
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookRange.create_from_discriminator_value(pn) }, error_mapping)
+                                                end
+                                                ## 
+                                                ## Provides operations to call the intersection method.
+                                                ## @param another_range Usage: anotherRange='{anotherRange}'
+                                                ## @return a intersection_with_another_range_request_builder
+                                                ## 
+                                                def intersection_with_another_range(another_range)
+                                                    raise StandardError, 'another_range cannot be null' if another_range.nil?
+                                                    return IntersectionWithAnotherRangeRequestBuilder.new(@path_parameters, @request_adapter, anotherRange)
+                                                end
+                                                ## 
+                                                ## Provides operations to call the offsetRange method.
+                                                ## @param column_offset Usage: columnOffset={columnOffset}
+                                                ## @param row_offset Usage: rowOffset={rowOffset}
+                                                ## @return a offset_range_with_row_offset_with_column_offset_request_builder
+                                                ## 
+                                                def offset_range_with_row_offset_with_column_offset(column_offset, row_offset)
+                                                    raise StandardError, 'column_offset cannot be null' if column_offset.nil?
+                                                    raise StandardError, 'row_offset cannot be null' if row_offset.nil?
+                                                    return OffsetRangeWithRowOffsetWithColumnOffsetRequestBuilder.new(@path_parameters, @request_adapter, columnOffset, rowOffset)
+                                                end
+                                                ## 
+                                                ## Provides operations to call the resizedRange method.
+                                                ## @param delta_columns Usage: deltaColumns={deltaColumns}
+                                                ## @param delta_rows Usage: deltaRows={deltaRows}
+                                                ## @return a resized_range_with_delta_rows_with_delta_columns_request_builder
+                                                ## 
+                                                def resized_range_with_delta_rows_with_delta_columns(delta_columns, delta_rows)
+                                                    raise StandardError, 'delta_columns cannot be null' if delta_columns.nil?
+                                                    raise StandardError, 'delta_rows cannot be null' if delta_rows.nil?
+                                                    return ResizedRangeWithDeltaRowsWithDeltaColumnsRequestBuilder.new(@path_parameters, @request_adapter, deltaColumns, deltaRows)
+                                                end
+                                                ## 
+                                                ## Provides operations to call the rowsAbove method.
+                                                ## @param count Usage: count={count}
+                                                ## @return a rows_above_with_count_request_builder
+                                                ## 
+                                                def rows_above_with_count(count)
+                                                    raise StandardError, 'count cannot be null' if count.nil?
+                                                    return RowsAboveWithCountRequestBuilder.new(@path_parameters, @request_adapter, count)
+                                                end
+                                                ## 
+                                                ## Provides operations to call the rowsBelow method.
+                                                ## @param count Usage: count={count}
+                                                ## @return a rows_below_with_count_request_builder
+                                                ## 
+                                                def rows_below_with_count(count)
+                                                    raise StandardError, 'count cannot be null' if count.nil?
+                                                    return RowsBelowWithCountRequestBuilder.new(@path_parameters, @request_adapter, count)
+                                                end
+                                                ## 
+                                                ## Provides operations to call the row method.
+                                                ## @param row Usage: row={row}
+                                                ## @return a row_with_row_request_builder
+                                                ## 
+                                                def row_with_row(row)
+                                                    raise StandardError, 'row cannot be null' if row.nil?
+                                                    return RowWithRowRequestBuilder.new(@path_parameters, @request_adapter, row)
                                                 end
                                                 ## 
                                                 ## Gets the range object associated with the data body of the column.
@@ -58,15 +288,33 @@ module MicrosoftGraph
                                                 ## 
                                                 def to_get_request_information(request_configuration=nil)
                                                     request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                                    request_info.url_template = @url_template
-                                                    request_info.path_parameters = @path_parameters
-                                                    request_info.http_method = :GET
-                                                    request_info.headers.add('Accept', 'application/json')
                                                     unless request_configuration.nil?
                                                         request_info.add_headers_from_raw_object(request_configuration.headers)
                                                         request_info.add_request_options(request_configuration.options)
                                                     end
+                                                    request_info.url_template = @url_template
+                                                    request_info.path_parameters = @path_parameters
+                                                    request_info.http_method = :GET
+                                                    request_info.headers.try_add('Accept', 'application/json')
                                                     return request_info
+                                                end
+                                                ## 
+                                                ## Provides operations to call the usedRange method.
+                                                ## @param values_only Usage: valuesOnly={valuesOnly}
+                                                ## @return a used_range_with_values_only_request_builder
+                                                ## 
+                                                def used_range_with_values_only(values_only)
+                                                    raise StandardError, 'values_only cannot be null' if values_only.nil?
+                                                    return UsedRangeWithValuesOnlyRequestBuilder.new(@path_parameters, @request_adapter, valuesOnly)
+                                                end
+                                                ## 
+                                                ## Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+                                                ## @param raw_url The raw URL to use for the request builder.
+                                                ## @return a data_body_range_request_builder
+                                                ## 
+                                                def with_url(raw_url)
+                                                    raise StandardError, 'raw_url cannot be null' if raw_url.nil?
+                                                    return DataBodyRangeRequestBuilder.new(raw_url, @request_adapter)
                                                 end
                                             end
                                         end

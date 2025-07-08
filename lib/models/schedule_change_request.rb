@@ -8,38 +8,38 @@ module MicrosoftGraph
         class ScheduleChangeRequest < MicrosoftGraph::Models::ChangeTrackedEntity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The assignedTo property
+            # Indicates who the request is assigned to. Possible values are: sender, recipient, manager, system, unknownFutureValue.
             @assigned_to
             ## 
-            # The managerActionDateTime property
+            # The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @manager_action_date_time
             ## 
-            # The managerActionMessage property
+            # The message sent by the manager regarding the scheduleChangeRequest. Optional.
             @manager_action_message
             ## 
-            # The managerUserId property
+            # The user ID of the manager who approved or declined the scheduleChangeRequest.
             @manager_user_id
             ## 
-            # The senderDateTime property
+            # The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @sender_date_time
             ## 
-            # The senderMessage property
+            # The message sent by the sender of the scheduleChangeRequest. Optional.
             @sender_message
             ## 
-            # The senderUserId property
+            # The user ID of the sender of the scheduleChangeRequest.
             @sender_user_id
             ## 
-            # The state property
+            # The state of the scheduleChangeRequest. Possible values are: pending, approved, declined, unknownFutureValue.
             @state
             ## 
-            ## Gets the assignedTo property value. The assignedTo property
+            ## Gets the assignedTo property value. Indicates who the request is assigned to. Possible values are: sender, recipient, manager, system, unknownFutureValue.
             ## @return a schedule_change_request_actor
             ## 
             def assigned_to
                 return @assigned_to
             end
             ## 
-            ## Sets the assignedTo property value. The assignedTo property
+            ## Sets the assignedTo property value. Indicates who the request is assigned to. Possible values are: sender, recipient, manager, system, unknownFutureValue.
             ## @param value Value to set for the assignedTo property.
             ## @return a void
             ## 
@@ -47,7 +47,7 @@ module MicrosoftGraph
                 @assigned_to = value
             end
             ## 
-            ## Instantiates a new scheduleChangeRequest and sets the default values.
+            ## Instantiates a new ScheduleChangeRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -94,14 +94,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the managerActionDateTime property value. The managerActionDateTime property
+            ## Gets the managerActionDateTime property value. The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def manager_action_date_time
                 return @manager_action_date_time
             end
             ## 
-            ## Sets the managerActionDateTime property value. The managerActionDateTime property
+            ## Sets the managerActionDateTime property value. The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the managerActionDateTime property.
             ## @return a void
             ## 
@@ -109,14 +109,14 @@ module MicrosoftGraph
                 @manager_action_date_time = value
             end
             ## 
-            ## Gets the managerActionMessage property value. The managerActionMessage property
+            ## Gets the managerActionMessage property value. The message sent by the manager regarding the scheduleChangeRequest. Optional.
             ## @return a string
             ## 
             def manager_action_message
                 return @manager_action_message
             end
             ## 
-            ## Sets the managerActionMessage property value. The managerActionMessage property
+            ## Sets the managerActionMessage property value. The message sent by the manager regarding the scheduleChangeRequest. Optional.
             ## @param value Value to set for the managerActionMessage property.
             ## @return a void
             ## 
@@ -124,14 +124,14 @@ module MicrosoftGraph
                 @manager_action_message = value
             end
             ## 
-            ## Gets the managerUserId property value. The managerUserId property
+            ## Gets the managerUserId property value. The user ID of the manager who approved or declined the scheduleChangeRequest.
             ## @return a string
             ## 
             def manager_user_id
                 return @manager_user_id
             end
             ## 
-            ## Sets the managerUserId property value. The managerUserId property
+            ## Sets the managerUserId property value. The user ID of the manager who approved or declined the scheduleChangeRequest.
             ## @param value Value to set for the managerUserId property.
             ## @return a void
             ## 
@@ -139,14 +139,14 @@ module MicrosoftGraph
                 @manager_user_id = value
             end
             ## 
-            ## Gets the senderDateTime property value. The senderDateTime property
+            ## Gets the senderDateTime property value. The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @return a date_time
             ## 
             def sender_date_time
                 return @sender_date_time
             end
             ## 
-            ## Sets the senderDateTime property value. The senderDateTime property
+            ## Sets the senderDateTime property value. The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             ## @param value Value to set for the senderDateTime property.
             ## @return a void
             ## 
@@ -154,14 +154,14 @@ module MicrosoftGraph
                 @sender_date_time = value
             end
             ## 
-            ## Gets the senderMessage property value. The senderMessage property
+            ## Gets the senderMessage property value. The message sent by the sender of the scheduleChangeRequest. Optional.
             ## @return a string
             ## 
             def sender_message
                 return @sender_message
             end
             ## 
-            ## Sets the senderMessage property value. The senderMessage property
+            ## Sets the senderMessage property value. The message sent by the sender of the scheduleChangeRequest. Optional.
             ## @param value Value to set for the senderMessage property.
             ## @return a void
             ## 
@@ -169,14 +169,14 @@ module MicrosoftGraph
                 @sender_message = value
             end
             ## 
-            ## Gets the senderUserId property value. The senderUserId property
+            ## Gets the senderUserId property value. The user ID of the sender of the scheduleChangeRequest.
             ## @return a string
             ## 
             def sender_user_id
                 return @sender_user_id
             end
             ## 
-            ## Sets the senderUserId property value. The senderUserId property
+            ## Sets the senderUserId property value. The user ID of the sender of the scheduleChangeRequest.
             ## @param value Value to set for the senderUserId property.
             ## @return a void
             ## 
@@ -197,14 +197,14 @@ module MicrosoftGraph
                 writer.write_enum_value("state", @state)
             end
             ## 
-            ## Gets the state property value. The state property
+            ## Gets the state property value. The state of the scheduleChangeRequest. Possible values are: pending, approved, declined, unknownFutureValue.
             ## @return a schedule_change_state
             ## 
             def state
                 return @state
             end
             ## 
-            ## Sets the state property value. The state property
+            ## Sets the state property value. The state of the scheduleChangeRequest. Possible values are: pending, approved, declined, unknownFutureValue.
             ## @param value Value to set for the state property.
             ## @return a void
             ## 

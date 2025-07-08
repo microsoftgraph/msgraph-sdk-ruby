@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Email address of the user.
             @email
             ## 
-            ## Instantiates a new emailIdentity and sets the default values.
+            ## Instantiates a new EmailIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

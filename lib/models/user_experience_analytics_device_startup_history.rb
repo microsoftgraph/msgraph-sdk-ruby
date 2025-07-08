@@ -58,7 +58,7 @@ module MicrosoftGraph
             # The device total login time in milliseconds. Supports: $select, $OrderBy. Read-only.
             @total_login_time_in_ms
             ## 
-            ## Instantiates a new userExperienceAnalyticsDeviceStartupHistory and sets the default values.
+            ## Instantiates a new UserExperienceAnalyticsDeviceStartupHistory and sets the default values.
             ## @return a void
             ## 
             def initialize()

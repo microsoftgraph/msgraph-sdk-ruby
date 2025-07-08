@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new callRecordsSegmentCollectionResponse and sets the default values.
+            ## Instantiates a new CallRecordsSegmentCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

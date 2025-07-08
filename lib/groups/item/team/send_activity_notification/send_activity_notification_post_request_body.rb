@@ -26,11 +26,17 @@ module MicrosoftGraph
                         # The chainId property
                         @chain_id
                         ## 
+                        # The iconId property
+                        @icon_id
+                        ## 
                         # The previewText property
                         @preview_text
                         ## 
                         # The recipient property
                         @recipient
+                        ## 
+                        # The teamsAppId property
+                        @teams_app_id
                         ## 
                         # The templateParameters property
                         @template_parameters
@@ -53,15 +59,15 @@ module MicrosoftGraph
                             @activity_type = value
                         end
                         ## 
-                        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                         ## @return a i_dictionary
                         ## 
                         def additional_data
                             return @additional_data
                         end
                         ## 
-                        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the additionalData property.
+                        ## Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+                        ## @param value Value to set for the AdditionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -83,7 +89,7 @@ module MicrosoftGraph
                             @chain_id = value
                         end
                         ## 
-                        ## Instantiates a new sendActivityNotificationPostRequestBody and sets the default values.
+                        ## Instantiates a new SendActivityNotificationPostRequestBody and sets the default values.
                         ## @return a void
                         ## 
                         def initialize()
@@ -106,11 +112,28 @@ module MicrosoftGraph
                             return {
                                 "activityType" => lambda {|n| @activity_type = n.get_string_value() },
                                 "chainId" => lambda {|n| @chain_id = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
+                                "iconId" => lambda {|n| @icon_id = n.get_string_value() },
                                 "previewText" => lambda {|n| @preview_text = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ItemBody.create_from_discriminator_value(pn) }) },
                                 "recipient" => lambda {|n| @recipient = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamworkNotificationRecipient.create_from_discriminator_value(pn) }) },
+                                "teamsAppId" => lambda {|n| @teams_app_id = n.get_string_value() },
                                 "templateParameters" => lambda {|n| @template_parameters = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::KeyValuePair.create_from_discriminator_value(pn) }) },
                                 "topic" => lambda {|n| @topic = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamworkActivityTopic.create_from_discriminator_value(pn) }) },
                             }
+                        end
+                        ## 
+                        ## Gets the iconId property value. The iconId property
+                        ## @return a string
+                        ## 
+                        def icon_id
+                            return @icon_id
+                        end
+                        ## 
+                        ## Sets the iconId property value. The iconId property
+                        ## @param value Value to set for the iconId property.
+                        ## @return a void
+                        ## 
+                        def icon_id=(value)
+                            @icon_id = value
                         end
                         ## 
                         ## Gets the previewText property value. The previewText property
@@ -151,11 +174,28 @@ module MicrosoftGraph
                             raise StandardError, 'writer cannot be null' if writer.nil?
                             writer.write_string_value("activityType", @activity_type)
                             writer.write_object_value("chainId", @chain_id)
+                            writer.write_string_value("iconId", @icon_id)
                             writer.write_object_value("previewText", @preview_text)
                             writer.write_object_value("recipient", @recipient)
+                            writer.write_string_value("teamsAppId", @teams_app_id)
                             writer.write_collection_of_object_values("templateParameters", @template_parameters)
                             writer.write_object_value("topic", @topic)
                             writer.write_additional_data(@additional_data)
+                        end
+                        ## 
+                        ## Gets the teamsAppId property value. The teamsAppId property
+                        ## @return a string
+                        ## 
+                        def teams_app_id
+                            return @teams_app_id
+                        end
+                        ## 
+                        ## Sets the teamsAppId property value. The teamsAppId property
+                        ## @param value Value to set for the teamsAppId property.
+                        ## @return a void
+                        ## 
+                        def teams_app_id=(value)
+                            @teams_app_id = value
                         end
                         ## 
                         ## Gets the templateParameters property value. The templateParameters property

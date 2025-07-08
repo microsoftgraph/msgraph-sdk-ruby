@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The location where the recording is located.
             @recording_location
             ## 
-            ## Instantiates a new recordOperation and sets the default values.
+            ## Instantiates a new RecordOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

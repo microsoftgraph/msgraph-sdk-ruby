@@ -54,7 +54,7 @@ module MicrosoftGraph
                 @assignments = value
             end
             ## 
-            ## Instantiates a new targetedManagedAppConfiguration and sets the default values.
+            ## Instantiates a new TargetedManagedAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

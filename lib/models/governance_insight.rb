@@ -11,7 +11,7 @@ module MicrosoftGraph
             # Indicates when the insight was created.
             @insight_created_date_time
             ## 
-            ## Instantiates a new governanceInsight and sets the default values.
+            ## Instantiates a new GovernanceInsight and sets the default values.
             ## @return a void
             ## 
             def initialize()

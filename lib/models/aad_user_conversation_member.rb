@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The email address of the user.
             @email
             ## 
-            # TenantId which the Azure AD user belongs to.
+            # TenantId which the Microsoft Entra user belongs to.
             @tenant_id
             ## 
             # The user property
@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The guid of the user.
             @user_id
             ## 
-            ## Instantiates a new aadUserConversationMember and sets the default values.
+            ## Instantiates a new AadUserConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -76,14 +76,14 @@ module MicrosoftGraph
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the tenantId property value. TenantId which the Azure AD user belongs to.
+            ## Gets the tenantId property value. TenantId which the Microsoft Entra user belongs to.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. TenantId which the Azure AD user belongs to.
+            ## Sets the tenantId property value. TenantId which the Microsoft Entra user belongs to.
             ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 

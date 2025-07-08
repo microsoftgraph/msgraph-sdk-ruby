@@ -9,7 +9,7 @@ module MicrosoftGraph
         class ExclusionGroupAssignmentTarget < MicrosoftGraph::Models::GroupAssignmentTarget
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new exclusionGroupAssignmentTarget and sets the default values.
+            ## Instantiates a new ExclusionGroupAssignmentTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()
